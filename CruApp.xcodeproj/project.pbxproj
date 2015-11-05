@@ -12,7 +12,18 @@
 		072519AD1BE9694000F38F81 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 072519AB1BE9694000F38F81 /* Main.storyboard */; };
 		072519AF1BE9694000F38F81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 072519AE1BE9694000F38F81 /* Assets.xcassets */; };
 		072519B21BE9694000F38F81 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 072519B01BE9694000F38F81 /* LaunchScreen.storyboard */; };
+		277E67561BEB6362001C29DD /* CruAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277E67551BEB6362001C29DD /* CruAppTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		277E67581BEB6362001C29DD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0725199C1BE9694000F38F81 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 072519A31BE9694000F38F81;
+			remoteInfo = CruApp;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		072519A41BE9694000F38F81 /* CruApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CruApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -22,10 +33,20 @@
 		072519AE1BE9694000F38F81 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		072519B11BE9694000F38F81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		072519B31BE9694000F38F81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		277E67531BEB6362001C29DD /* CruAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CruAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		277E67551BEB6362001C29DD /* CruAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CruAppTests.swift; sourceTree = "<group>"; };
+		277E67571BEB6362001C29DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		072519A11BE9694000F38F81 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		277E67501BEB6362001C29DD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -39,6 +60,7 @@
 			isa = PBXGroup;
 			children = (
 				072519A61BE9694000F38F81 /* CruApp */,
+				277E67541BEB6362001C29DD /* CruAppTests */,
 				072519A51BE9694000F38F81 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -47,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				072519A41BE9694000F38F81 /* CruApp.app */,
+				277E67531BEB6362001C29DD /* CruAppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -62,6 +85,15 @@
 				072519B31BE9694000F38F81 /* Info.plist */,
 			);
 			path = CruApp;
+			sourceTree = "<group>";
+		};
+		277E67541BEB6362001C29DD /* CruAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				277E67551BEB6362001C29DD /* CruAppTests.swift */,
+				277E67571BEB6362001C29DD /* Info.plist */,
+			);
+			path = CruAppTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -84,6 +116,24 @@
 			productReference = 072519A41BE9694000F38F81 /* CruApp.app */;
 			productType = "com.apple.product-type.application";
 		};
+		277E67521BEB6362001C29DD /* CruAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 277E675C1BEB6362001C29DD /* Build configuration list for PBXNativeTarget "CruAppTests" */;
+			buildPhases = (
+				277E674F1BEB6362001C29DD /* Sources */,
+				277E67501BEB6362001C29DD /* Frameworks */,
+				277E67511BEB6362001C29DD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				277E67591BEB6362001C29DD /* PBXTargetDependency */,
+			);
+			name = CruAppTests;
+			productName = CruAppTests;
+			productReference = 277E67531BEB6362001C29DD /* CruAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -96,6 +146,11 @@
 				TargetAttributes = {
 					072519A31BE9694000F38F81 = {
 						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = HE6C44UYMF;
+					};
+					277E67521BEB6362001C29DD = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = 072519A31BE9694000F38F81;
 					};
 				};
 			};
@@ -113,6 +168,7 @@
 			projectRoot = "";
 			targets = (
 				072519A31BE9694000F38F81 /* CruApp */,
+				277E67521BEB6362001C29DD /* CruAppTests */,
 			);
 		};
 /* End PBXProject section */
@@ -128,6 +184,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		277E67511BEB6362001C29DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -140,7 +203,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		277E674F1BEB6362001C29DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				277E67561BEB6362001C29DD /* CruAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		277E67591BEB6362001C29DD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 072519A31BE9694000F38F81 /* CruApp */;
+			targetProxy = 277E67581BEB6362001C29DD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		072519AB1BE9694000F38F81 /* Main.storyboard */ = {
@@ -179,7 +258,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: its.me.mariel@gmail.com (THSRH4Y39A)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: its.me.mariel@gmail.com (THSRH4Y39A)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -223,7 +303,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: its.me.mariel@gmail.com (THSRH4Y39A)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: its.me.mariel@gmail.com (THSRH4Y39A)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -247,10 +328,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				ENABLE_TESTABILITY = YES;
 				INFOPLIST_FILE = CruApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.iCrew.CruApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -258,10 +344,43 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				ENABLE_TESTABILITY = YES;
 				INFOPLIST_FILE = CruApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.iCrew.CruApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Release;
+		};
+		277E675A1BEB6362001C29DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "";
+				INFOPLIST_FILE = CruAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.MarielSanchez.CruAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "d9f35f7c-d3e0-4305-a3b9-56862d5851e6";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CruApp.app/CruApp";
+			};
+			name = Debug;
+		};
+		277E675B1BEB6362001C29DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "";
+				INFOPLIST_FILE = CruAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.MarielSanchez.CruAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "d9f35f7c-d3e0-4305-a3b9-56862d5851e6";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CruApp.app/CruApp";
 			};
 			name = Release;
 		};
@@ -284,6 +403,16 @@
 				072519B81BE9694000F38F81 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		277E675C1BEB6362001C29DD /* Build configuration list for PBXNativeTarget "CruAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				277E675A1BEB6362001C29DD /* Debug */,
+				277E675B1BEB6362001C29DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

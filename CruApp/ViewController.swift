@@ -16,7 +16,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         myTextLabel.text = "Hello World!"
         print("Hello World!")
-        var timer = NSTimer.scheduledTimerWithTimeInterval(0.25, target: self, selector: "changeColor", userInfo: nil, repeats: true)
+        //var timer = NSTimer.scheduledTimerWithTimeInterval(0.25, target: self, selector: "changeColor", userInfo: nil, repeats: true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,6 +29,10 @@ class ViewController: UIViewController {
         let green = Float(arc4random()) / Float(UINT32_MAX)
         let blue = Float(arc4random()) / Float(UINT32_MAX)
         myTextLabel.textColor = UIColor(red: CGFloat(red), green: CGFloat(green), blue: CGFloat(blue), alpha: 1.0)
+    }
+    
+    func someFunc() -> Bool {
+        return true
     }
 
 }

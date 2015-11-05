@@ -16,7 +16,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         myTextLabel.text = "Hello World!"
         print("Hello World!")
-        //var timer = NSTimer.scheduledTimerWithTimeInterval(0.25, target: self, selector: "changeColor", userInfo: nil, repeats: true)
+        var _ = NSTimer.scheduledTimerWithTimeInterval(0.25, target: self, selector: "changeColor", userInfo: nil, repeats: true)
     }
 
     override func didReceiveMemoryWarning() {

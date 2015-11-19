@@ -12,6 +12,7 @@
 		072519AD1BE9694000F38F81 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 072519AB1BE9694000F38F81 /* Main.storyboard */; };
 		072519AF1BE9694000F38F81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 072519AE1BE9694000F38F81 /* Assets.xcassets */; };
 		072519B21BE9694000F38F81 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 072519B01BE9694000F38F81 /* LaunchScreen.storyboard */; };
+		07EE5F7B1BFE6B89009A2B44 /* ResourceStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07EE5F7A1BFE6B89009A2B44 /* ResourceStoryboard.storyboard */; };
 		277E67561BEB6362001C29DD /* CruAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277E67551BEB6362001C29DD /* CruAppTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,7 @@
 		072519AE1BE9694000F38F81 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		072519B11BE9694000F38F81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		072519B31BE9694000F38F81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		07EE5F7A1BFE6B89009A2B44 /* ResourceStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ResourceStoryboard.storyboard; sourceTree = "<group>"; };
 		277E67531BEB6362001C29DD /* CruAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CruAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		277E67551BEB6362001C29DD /* CruAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CruAppTests.swift; sourceTree = "<group>"; };
 		277E67571BEB6362001C29DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -77,14 +79,31 @@
 		072519A61BE9694000F38F81 /* CruApp */ = {
 			isa = PBXGroup;
 			children = (
-				072519A71BE9694000F38F81 /* AppDelegate.swift */,
-				072519A91BE9694000F38F81 /* ViewController.swift */,
-				072519AB1BE9694000F38F81 /* Main.storyboard */,
-				072519AE1BE9694000F38F81 /* Assets.xcassets */,
-				072519B01BE9694000F38F81 /* LaunchScreen.storyboard */,
 				072519B31BE9694000F38F81 /* Info.plist */,
+				072519AE1BE9694000F38F81 /* Assets.xcassets */,
+				072519A71BE9694000F38F81 /* AppDelegate.swift */,
+				07EE5F7D1BFE6BA8009A2B44 /* VCs */,
+				07EE5F7C1BFE6B92009A2B44 /* Storyboards */,
 			);
 			path = CruApp;
+			sourceTree = "<group>";
+		};
+		07EE5F7C1BFE6B92009A2B44 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				072519AB1BE9694000F38F81 /* Main.storyboard */,
+				07EE5F7A1BFE6B89009A2B44 /* ResourceStoryboard.storyboard */,
+				072519B01BE9694000F38F81 /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		07EE5F7D1BFE6BA8009A2B44 /* VCs */ = {
+			isa = PBXGroup;
+			children = (
+				072519A91BE9694000F38F81 /* ViewController.swift */,
+			);
+			name = VCs;
 			sourceTree = "<group>";
 		};
 		277E67541BEB6362001C29DD /* CruAppTests */ = {
@@ -179,6 +198,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				072519B21BE9694000F38F81 /* LaunchScreen.storyboard in Resources */,
+				07EE5F7B1BFE6B89009A2B44 /* ResourceStoryboard.storyboard in Resources */,
 				072519AF1BE9694000F38F81 /* Assets.xcassets in Resources */,
 				072519AD1BE9694000F38F81 /* Main.storyboard in Resources */,
 			);

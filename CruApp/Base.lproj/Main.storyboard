@@ -1,43 +1,50 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Tab Bar Controller-->
+        <scene sceneID="1NU-s7-um8">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CruApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="My Text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z9s-mt-5QY">
-                                <rect key="frame" x="260" y="296" width="61" height="21"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
+                <tabBarController id="knc-WW-hzZ" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="LTp-9R-1B3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="z9s-mt-5QY" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Jpb-cq-uKI"/>
-                            <constraint firstItem="z9s-mt-5QY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XRQ-YC-sq8"/>
-                        </constraints>
-                    </view>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
                     <connections>
-                        <outlet property="myTextLabel" destination="z9s-mt-5QY" id="iTu-Yb-jYy"/>
+                        <segue destination="QBV-Wt-OfV" kind="relationship" relationship="viewControllers" id="g9U-ZO-dfB"/>
+                        <segue destination="RGz-kb-en0" kind="relationship" relationship="viewControllers" id="Rix-4f-P4n"/>
                     </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zcr-O3-Bgf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="440" y="415"/>
+            <point key="canvasLocation" x="-62" y="251"/>
+        </scene>
+        <!--ResourceStoryboard-->
+        <scene sceneID="jX9-cq-GIS">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ResourceStoryboard" id="RGz-kb-en0" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="qEK-Lk-OHY"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Aoc-oD-YBH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="444.5" y="251"/>
+        </scene>
+        <!--EventViewController-->
+        <scene sceneID="4Ug-VG-yKn">
+            <objects>
+                <viewControllerPlaceholder storyboardName="EventViewController" id="QBV-Wt-OfV" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Events" image="Calendar-25.png" id="Tbc-gI-zV0"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UHR-SP-932" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="444" y="414"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Calendar-25.png" width="25" height="25"/>
+    </resources>
 </document>

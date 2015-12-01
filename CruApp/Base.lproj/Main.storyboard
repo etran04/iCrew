@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="iQX-vQ-iqY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="knc-WW-hzZ">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
     </dependencies>
@@ -21,186 +21,66 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
-                        <segue destination="QPd-rn-vY4" kind="relationship" relationship="viewControllers" id="aQg-ag-xlA"/>
-                        <segue destination="9Yo-Ha-dso" kind="relationship" relationship="viewControllers" id="5Nd-e3-ack"/>
-                        <segue destination="iOS-mX-yL5" kind="relationship" relationship="viewControllers" id="aks-4p-qqy"/>
-                        <segue destination="yMF-BQ-iAf" kind="relationship" relationship="viewControllers" id="VWi-UY-7wD"/>
-                        <segue destination="APQ-AE-Llv" kind="relationship" relationship="viewControllers" id="Rdp-dL-YQM"/>
+                        <segue destination="Xmi-DW-n1A" kind="relationship" relationship="viewControllers" id="rwi-Wu-6fy"/>
+                        <segue destination="qub-re-fda" kind="relationship" relationship="viewControllers" id="vHO-B6-m8n"/>
+                        <segue destination="9vv-Va-TXG" kind="relationship" relationship="viewControllers" id="wTJ-j2-Grj"/>
+                        <segue destination="yAL-CE-UEG" kind="relationship" relationship="viewControllers" id="PWe-8i-2NT"/>
+                        <segue destination="ycp-H2-uQt" kind="relationship" relationship="viewControllers" id="BmD-jy-xHo"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zcr-O3-Bgf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-62" y="251"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="VTb-8e-n8r">
-            <objects>
-                <navigationController id="iQX-vQ-iqY" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="UtO-P8-xfe">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="knc-WW-hzZ" kind="relationship" relationship="rootViewController" id="7QU-oY-OtM"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Dnb-P0-Jqk" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-806" y="251"/>
-        </scene>
-        <!--Summer Missions-->
-        <scene sceneID="v0R-xR-P9z">
-            <objects>
-                <navigationController id="iOS-mX-yL5" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Summer Missions" image="Summer-25.png" id="mOT-99-Xdo"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="03n-m5-Gp2">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="Sgh-vS-ueQ" kind="relationship" relationship="rootViewController" id="ibL-6h-kGP"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="r0h-EP-dem" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="678" y="251"/>
-        </scene>
-        <!--Resources-->
-        <scene sceneID="iR6-4u-iXb">
-            <objects>
-                <navigationController id="yMF-BQ-iAf" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Resources" image="Literature-25.png" id="GZB-nX-s8N"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="waK-zS-ccd">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="RGz-kb-en0" kind="relationship" relationship="rootViewController" id="AN2-Ld-buR"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3Wv-od-uEQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="678" y="1012"/>
-        </scene>
-        <!--Resources-->
-        <scene sceneID="jX9-cq-GIS">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Resources" id="RGz-kb-en0" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Resources" id="qEK-Lk-OHY"/>
-                    <navigationItem key="navigationItem" id="fln-mu-9yk"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Aoc-oD-YBH" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1299" y="1012"/>
-        </scene>
-        <!--Activity-->
-        <scene sceneID="0IQ-tr-zZP">
-            <objects>
-                <navigationController id="QPd-rn-vY4" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Activity" image="Planner-25.png" id="64r-r9-mgz"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qcZ-Oq-UVF">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="QBV-Wt-OfV" kind="relationship" relationship="rootViewController" id="KPO-A6-Ngw"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WDs-YB-DVz" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="678" y="-1253"/>
+            <point key="canvasLocation" x="-748" y="231"/>
         </scene>
         <!--EventsAndRides-->
-        <scene sceneID="4Ug-VG-yKn">
+        <scene sceneID="v2i-uq-Dyh">
             <objects>
-                <viewControllerPlaceholder storyboardName="EventsAndRides" id="QBV-Wt-OfV" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Events" image="Calendar-25.png" id="Tbc-gI-zV0"/>
-                    <navigationItem key="navigationItem" id="kSy-Yv-8GP"/>
+                <viewControllerPlaceholder storyboardName="EventsAndRides" id="Xmi-DW-n1A" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="0oK-gF-eqt"/>
                 </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="UHR-SP-932" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="odO-LC-yNA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1281.5" y="-1253"/>
-        </scene>
-        <!--Get Involved-->
-        <scene sceneID="hSs-N7-8ml">
-            <objects>
-                <navigationController id="9Yo-Ha-dso" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Get Involved" image="User Group-25.png" id="BVl-5U-bdr"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Tpn-cJ-Knh">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="Fpr-nk-CZ3" kind="relationship" relationship="rootViewController" id="Z4z-vc-LW0"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4PR-qe-uyA" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="678" y="-514"/>
+            <point key="canvasLocation" x="-38.5" y="-25"/>
         </scene>
         <!--GetInvolved-->
-        <scene sceneID="TlP-eU-8T9">
+        <scene sceneID="ojZ-JY-P2Q">
             <objects>
-                <viewControllerPlaceholder storyboardName="GetInvolved" id="Fpr-nk-CZ3" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Get Involved" id="AqP-lr-0QU"/>
-                    <navigationItem key="navigationItem" id="1we-fx-buf"/>
+                <viewControllerPlaceholder storyboardName="GetInvolved" id="qub-re-fda" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="Mw9-nS-Kzu"/>
                 </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="01x-Ln-b2I" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wZ0-bV-Q6l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1295" y="-514"/>
+            <point key="canvasLocation" x="-52" y="116"/>
         </scene>
         <!--SummerMissions-->
-        <scene sceneID="ZTG-tF-kYO">
+        <scene sceneID="bfw-t9-c8n">
             <objects>
-                <viewControllerPlaceholder storyboardName="SummerMissions" id="Sgh-vS-ueQ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Summer Missions" id="ZCm-5C-hSV"/>
-                    <navigationItem key="navigationItem" id="3I2-hq-vC5"/>
+                <viewControllerPlaceholder storyboardName="SummerMissions" id="9vv-Va-TXG" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="aax-JQ-ssQ"/>
                 </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8GO-w3-mmw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fWU-Pp-NHh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1279" y="251"/>
+            <point key="canvasLocation" x="-36" y="231"/>
         </scene>
-        <!--My School-->
-        <scene sceneID="gBW-nf-y7E">
+        <!--Resources-->
+        <scene sceneID="fXJ-ae-VNb">
             <objects>
-                <navigationController id="APQ-AE-Llv" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="My School" image="Home-25.png" id="J4m-ub-KoX"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="474-eW-T6t">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="P9M-ad-ZUh" kind="relationship" relationship="rootViewController" id="tec-ZK-w1i"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Pa0-in-YLC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="Resources" id="yAL-CE-UEG" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="O8a-zF-Dlt"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eqg-KW-smE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="678" y="1810"/>
+            <point key="canvasLocation" x="-56" y="340"/>
         </scene>
         <!--MySchool-->
-        <scene sceneID="yMt-Ie-G8n">
+        <scene sceneID="YvG-KA-SOj">
             <objects>
-                <viewControllerPlaceholder storyboardName="MySchool" id="P9M-ad-ZUh" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="School" id="UNt-zz-l1T"/>
-                    <navigationItem key="navigationItem" id="frD-z1-mpn"/>
+                <viewControllerPlaceholder storyboardName="MySchool" id="ycp-H2-uQt" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="Xp7-OV-wmJ"/>
                 </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aw1-Qa-oYS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7sC-yB-3Rn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1301" y="1810"/>
+            <point key="canvasLocation" x="-58" y="492"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="Calendar-25.png" width="25" height="25"/>
-        <image name="Home-25.png" width="25" height="25"/>
-        <image name="Literature-25.png" width="25" height="25"/>
-        <image name="Planner-25.png" width="25" height="25"/>
-        <image name="Summer-25.png" width="25" height="25"/>
-        <image name="User Group-25.png" width="25" height="25"/>
-    </resources>
 </document>

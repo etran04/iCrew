@@ -12,19 +12,21 @@
 		072519AD1BE9694000F38F81 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 072519AB1BE9694000F38F81 /* Main.storyboard */; };
 		072519AF1BE9694000F38F81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 072519AE1BE9694000F38F81 /* Assets.xcassets */; };
 		072519B21BE9694000F38F81 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 072519B01BE9694000F38F81 /* LaunchScreen.storyboard */; };
-		07EE5F7B1BFE6B89009A2B44 /* Resources.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07EE5F7A1BFE6B89009A2B44 /* Resources.storyboard */; };
 		271BDF631C0D538A0075A29E /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 271BDF541C0D53710075A29E /* Alamofire.framework */; };
 		277E67561BEB6362001C29DD /* CruAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277E67551BEB6362001C29DD /* CruAppTests.swift */; };
-		839F64281C0D202800CAEC9E /* MySchool.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 839F64271C0D202800CAEC9E /* MySchool.storyboard */; };
-		839F642A1C0D203A00CAEC9E /* GetInvolved.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 839F64291C0D203A00CAEC9E /* GetInvolved.storyboard */; };
-		839F642C1C0D204500CAEC9E /* SummerMissions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 839F642B1C0D204500CAEC9E /* SummerMissions.storyboard */; };
-		839F642E1C0D205800CAEC9E /* EventsAndRides.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 839F642D1C0D205800CAEC9E /* EventsAndRides.storyboard */; };
 		839F64411C0D4E4300CAEC9E /* Cru-Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 839F643B1C0D4E4300CAEC9E /* Cru-Logo.png */; };
 		839F64421C0D4E4300CAEC9E /* Home-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 839F643C1C0D4E4300CAEC9E /* Home-25.png */; };
 		839F64431C0D4E4300CAEC9E /* Literature-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 839F643D1C0D4E4300CAEC9E /* Literature-25.png */; };
 		839F64441C0D4E4300CAEC9E /* Planner-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 839F643E1C0D4E4300CAEC9E /* Planner-25.png */; };
 		839F64451C0D4E4300CAEC9E /* Summer-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 839F643F1C0D4E4300CAEC9E /* Summer-25.png */; };
 		839F64461C0D4E4300CAEC9E /* User Group-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 839F64401C0D4E4300CAEC9E /* User Group-25.png */; };
+		839F64491C0D643A00CAEC9E /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 839F64481C0D643A00CAEC9E /* menu.png */; };
+		839F64521C0D6A7900CAEC9E /* EventsAndRides.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 839F64501C0D6A7900CAEC9E /* EventsAndRides.storyboard */; };
+		839F64551C0D6BD100CAEC9E /* GetInvolved.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 839F64531C0D6BD100CAEC9E /* GetInvolved.storyboard */; };
+		839F64581C0D6C1E00CAEC9E /* SummerMissions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 839F64561C0D6C1E00CAEC9E /* SummerMissions.storyboard */; };
+		839F645B1C0D6C4C00CAEC9E /* Resources.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 839F64591C0D6C4C00CAEC9E /* Resources.storyboard */; };
+		839F645E1C0D6C8E00CAEC9E /* MySchool.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 839F645C1C0D6C8E00CAEC9E /* MySchool.storyboard */; };
+		839F64601C0D70AA00CAEC9E /* Box-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 839F645F1C0D70AA00CAEC9E /* Box-25.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,21 +103,23 @@
 		072519AE1BE9694000F38F81 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		072519B11BE9694000F38F81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		072519B31BE9694000F38F81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		07EE5F7A1BFE6B89009A2B44 /* Resources.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Resources.storyboard; sourceTree = "<group>"; };
 		271BDF491C0D53710075A29E /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "frameworks/Alamofire-master/Alamofire.xcodeproj"; sourceTree = "<group>"; };
 		277E67531BEB6362001C29DD /* CruAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CruAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		277E67551BEB6362001C29DD /* CruAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CruAppTests.swift; sourceTree = "<group>"; };
 		277E67571BEB6362001C29DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		839F64271C0D202800CAEC9E /* MySchool.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MySchool.storyboard; sourceTree = "<group>"; };
-		839F64291C0D203A00CAEC9E /* GetInvolved.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GetInvolved.storyboard; sourceTree = "<group>"; };
-		839F642B1C0D204500CAEC9E /* SummerMissions.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SummerMissions.storyboard; sourceTree = "<group>"; };
-		839F642D1C0D205800CAEC9E /* EventsAndRides.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EventsAndRides.storyboard; sourceTree = "<group>"; };
 		839F643B1C0D4E4300CAEC9E /* Cru-Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Cru-Logo.png"; path = "images/Cru-Logo.png"; sourceTree = "<group>"; };
 		839F643C1C0D4E4300CAEC9E /* Home-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Home-25.png"; path = "images/Home-25.png"; sourceTree = "<group>"; };
 		839F643D1C0D4E4300CAEC9E /* Literature-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Literature-25.png"; path = "images/Literature-25.png"; sourceTree = "<group>"; };
 		839F643E1C0D4E4300CAEC9E /* Planner-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Planner-25.png"; path = "images/Planner-25.png"; sourceTree = "<group>"; };
 		839F643F1C0D4E4300CAEC9E /* Summer-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Summer-25.png"; path = "images/Summer-25.png"; sourceTree = "<group>"; };
 		839F64401C0D4E4300CAEC9E /* User Group-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "User Group-25.png"; path = "images/User Group-25.png"; sourceTree = "<group>"; };
+		839F64481C0D643A00CAEC9E /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menu.png; path = images/menu.png; sourceTree = "<group>"; };
+		839F64511C0D6A7900CAEC9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/EventsAndRides.storyboard; sourceTree = "<group>"; };
+		839F64541C0D6BD100CAEC9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/GetInvolved.storyboard; sourceTree = "<group>"; };
+		839F64571C0D6C1E00CAEC9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SummerMissions.storyboard; sourceTree = "<group>"; };
+		839F645A1C0D6C4C00CAEC9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Resources.storyboard; sourceTree = "<group>"; };
+		839F645D1C0D6C8E00CAEC9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MySchool.storyboard; sourceTree = "<group>"; };
+		839F645F1C0D70AA00CAEC9E /* Box-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Box-25.png"; path = "images/Box-25.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,11 +177,11 @@
 			isa = PBXGroup;
 			children = (
 				072519AB1BE9694000F38F81 /* Main.storyboard */,
-				839F642D1C0D205800CAEC9E /* EventsAndRides.storyboard */,
-				839F64291C0D203A00CAEC9E /* GetInvolved.storyboard */,
-				839F642B1C0D204500CAEC9E /* SummerMissions.storyboard */,
-				07EE5F7A1BFE6B89009A2B44 /* Resources.storyboard */,
-				839F64271C0D202800CAEC9E /* MySchool.storyboard */,
+				839F64501C0D6A7900CAEC9E /* EventsAndRides.storyboard */,
+				839F64531C0D6BD100CAEC9E /* GetInvolved.storyboard */,
+				839F64561C0D6C1E00CAEC9E /* SummerMissions.storyboard */,
+				839F64591C0D6C4C00CAEC9E /* Resources.storyboard */,
+				839F645C1C0D6C8E00CAEC9E /* MySchool.storyboard */,
 				072519B01BE9694000F38F81 /* LaunchScreen.storyboard */,
 			);
 			name = Storyboards;
@@ -217,6 +221,8 @@
 		A43482D11C0D290E00B62D6C /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				839F645F1C0D70AA00CAEC9E /* Box-25.png */,
+				839F64481C0D643A00CAEC9E /* menu.png */,
 				839F643B1C0D4E4300CAEC9E /* Cru-Logo.png */,
 				839F643C1C0D4E4300CAEC9E /* Home-25.png */,
 				839F643D1C0D4E4300CAEC9E /* Literature-25.png */,
@@ -371,18 +377,20 @@
 			files = (
 				839F64461C0D4E4300CAEC9E /* User Group-25.png in Resources */,
 				839F64451C0D4E4300CAEC9E /* Summer-25.png in Resources */,
-				839F642A1C0D203A00CAEC9E /* GetInvolved.storyboard in Resources */,
-				839F64281C0D202800CAEC9E /* MySchool.storyboard in Resources */,
+				839F64551C0D6BD100CAEC9E /* GetInvolved.storyboard in Resources */,
 				072519B21BE9694000F38F81 /* LaunchScreen.storyboard in Resources */,
-				07EE5F7B1BFE6B89009A2B44 /* Resources.storyboard in Resources */,
+				839F645B1C0D6C4C00CAEC9E /* Resources.storyboard in Resources */,
 				839F64411C0D4E4300CAEC9E /* Cru-Logo.png in Resources */,
 				839F64441C0D4E4300CAEC9E /* Planner-25.png in Resources */,
+				839F645E1C0D6C8E00CAEC9E /* MySchool.storyboard in Resources */,
 				839F64431C0D4E4300CAEC9E /* Literature-25.png in Resources */,
 				839F64421C0D4E4300CAEC9E /* Home-25.png in Resources */,
+				839F64601C0D70AA00CAEC9E /* Box-25.png in Resources */,
 				072519AF1BE9694000F38F81 /* Assets.xcassets in Resources */,
-				839F642C1C0D204500CAEC9E /* SummerMissions.storyboard in Resources */,
+				839F64491C0D643A00CAEC9E /* menu.png in Resources */,
 				072519AD1BE9694000F38F81 /* Main.storyboard in Resources */,
-				839F642E1C0D205800CAEC9E /* EventsAndRides.storyboard in Resources */,
+				839F64581C0D6C1E00CAEC9E /* SummerMissions.storyboard in Resources */,
+				839F64521C0D6A7900CAEC9E /* EventsAndRides.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,6 +451,46 @@
 				072519B11BE9694000F38F81 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		839F64501C0D6A7900CAEC9E /* EventsAndRides.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				839F64511C0D6A7900CAEC9E /* Base */,
+			);
+			name = EventsAndRides.storyboard;
+			sourceTree = "<group>";
+		};
+		839F64531C0D6BD100CAEC9E /* GetInvolved.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				839F64541C0D6BD100CAEC9E /* Base */,
+			);
+			name = GetInvolved.storyboard;
+			sourceTree = "<group>";
+		};
+		839F64561C0D6C1E00CAEC9E /* SummerMissions.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				839F64571C0D6C1E00CAEC9E /* Base */,
+			);
+			name = SummerMissions.storyboard;
+			sourceTree = "<group>";
+		};
+		839F64591C0D6C4C00CAEC9E /* Resources.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				839F645A1C0D6C4C00CAEC9E /* Base */,
+			);
+			name = Resources.storyboard;
+			sourceTree = "<group>";
+		};
+		839F645C1C0D6C8E00CAEC9E /* MySchool.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				839F645D1C0D6C8E00CAEC9E /* Base */,
+			);
+			name = MySchool.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

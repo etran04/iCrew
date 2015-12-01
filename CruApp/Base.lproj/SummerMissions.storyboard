@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="iOS-mX-yL5">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+    </dependencies>
+    <scenes>
+        <!--Summer Missions-->
+        <scene sceneID="v0R-xR-P9z">
+            <objects>
+                <navigationController id="iOS-mX-yL5" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Summer Missions" image="Summer-25.png" id="mOT-99-Xdo"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="03n-m5-Gp2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="awF-T6-h85" kind="relationship" relationship="rootViewController" id="0va-j4-F8p"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r0h-EP-dem" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="678" y="251"/>
+        </scene>
+        <!--Summer Missions-->
+        <scene sceneID="LUa-fh-INr">
+            <objects>
+                <viewController id="awF-T6-h85" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wJ7-Ga-uQv"/>
+                        <viewControllerLayoutGuide type="bottom" id="OR6-7c-ZcH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="blM-rG-66W">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Summer Missions" id="sdt-gW-Ni8">
+                        <barButtonItem key="leftBarButtonItem" image="menu.png" id="S5Q-XR-9Ts"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0J2-64-1UE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1438" y="251"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Summer-25.png" width="25" height="25"/>
+        <image name="menu.png" width="22" height="22"/>
+    </resources>
+</document>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="APQ-AE-Llv">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+    </dependencies>
+    <scenes>
+        <!--My School-->
+        <scene sceneID="gBW-nf-y7E">
+            <objects>
+                <navigationController id="APQ-AE-Llv" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="My School" image="Home-25.png" id="J4m-ub-KoX"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="474-eW-T6t">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="E7s-Dg-iAo" kind="relationship" relationship="rootViewController" id="ZBN-R1-bbJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pa0-in-YLC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="678" y="1810"/>
+        </scene>
+        <!--My School-->
+        <scene sceneID="ART-cU-rrC">
+            <objects>
+                <viewController id="E7s-Dg-iAo" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KfT-uw-MLO"/>
+                        <viewControllerLayoutGuide type="bottom" id="s3Q-69-a7D"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7V6-mY-HMp">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="My School" id="Xkf-ne-pDD">
+                        <barButtonItem key="leftBarButtonItem" image="menu.png" id="je3-KQ-0zw"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1NQ-Sq-UxA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1420" y="1810"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Home-25.png" width="25" height="25"/>
+        <image name="menu.png" width="22" height="22"/>
+    </resources>
+</document>

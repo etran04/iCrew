@@ -35,7 +35,7 @@
         <scene sceneID="v0R-xR-P9z">
             <objects>
                 <navigationController id="iOS-mX-yL5" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Summer Missions" id="mOT-99-Xdo"/>
+                    <tabBarItem key="tabBarItem" title="Summer Missions" image="Summer-25.png" id="mOT-99-Xdo"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="03n-m5-Gp2">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -53,7 +53,7 @@
         <scene sceneID="iR6-4u-iXb">
             <objects>
                 <navigationController id="yMF-BQ-iAf" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Resources" id="GZB-nX-s8N"/>
+                    <tabBarItem key="tabBarItem" title="Resources" image="Literature-25.png" id="GZB-nX-s8N"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="waK-zS-ccd">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -82,7 +82,7 @@
         <scene sceneID="0IQ-tr-zZP">
             <objects>
                 <navigationController id="QPd-rn-vY4" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Activity" id="64r-r9-mgz"/>
+                    <tabBarItem key="tabBarItem" title="Activity" image="Planner-25.png" id="64r-r9-mgz"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="qcZ-Oq-UVF">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -111,7 +111,7 @@
         <scene sceneID="hSs-N7-8ml">
             <objects>
                 <navigationController id="9Yo-Ha-dso" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Get Involved" id="BVl-5U-bdr"/>
+                    <tabBarItem key="tabBarItem" title="Get Involved" image="User Group-25.png" id="BVl-5U-bdr"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Tpn-cJ-Knh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -151,7 +151,7 @@
         <scene sceneID="gBW-nf-y7E">
             <objects>
                 <navigationController id="APQ-AE-Llv" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="My School" id="J4m-ub-KoX"/>
+                    <tabBarItem key="tabBarItem" title="My School" image="Home-25.png" id="J4m-ub-KoX"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="474-eW-T6t">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -179,5 +179,10 @@
     </scenes>
     <resources>
         <image name="Calendar-25.png" width="25" height="25"/>
+        <image name="Home-25.png" width="25" height="25"/>
+        <image name="Literature-25.png" width="25" height="25"/>
+        <image name="Planner-25.png" width="25" height="25"/>
+        <image name="Summer-25.png" width="25" height="25"/>
+        <image name="User Group-25.png" width="25" height="25"/>
     </resources>
 </document>

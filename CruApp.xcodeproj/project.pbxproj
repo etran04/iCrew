@@ -19,12 +19,12 @@
 		839F642A1C0D203A00CAEC9E /* GetInvolved.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 839F64291C0D203A00CAEC9E /* GetInvolved.storyboard */; };
 		839F642C1C0D204500CAEC9E /* SummerMissions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 839F642B1C0D204500CAEC9E /* SummerMissions.storyboard */; };
 		839F642E1C0D205800CAEC9E /* EventsAndRides.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 839F642D1C0D205800CAEC9E /* EventsAndRides.storyboard */; };
-		839F64361C0D46BE00CAEC9E /* Home-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 839F64311C0D46BE00CAEC9E /* Home-25.png */; };
-		839F64371C0D46BE00CAEC9E /* Literature-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 839F64321C0D46BE00CAEC9E /* Literature-25.png */; };
-		839F64381C0D46BE00CAEC9E /* Planner-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 839F64331C0D46BE00CAEC9E /* Planner-25.png */; };
-		839F64391C0D46BE00CAEC9E /* Summer-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 839F64341C0D46BE00CAEC9E /* Summer-25.png */; };
-		839F643A1C0D46BE00CAEC9E /* User Group-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 839F64351C0D46BE00CAEC9E /* User Group-25.png */; };
-		A43482D01C0D290900B62D6C /* Calendar-25.png in Resources */ = {isa = PBXBuildFile; fileRef = A43482CF1C0D290900B62D6C /* Calendar-25.png */; };
+		839F64411C0D4E4300CAEC9E /* Cru-Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 839F643B1C0D4E4300CAEC9E /* Cru-Logo.png */; };
+		839F64421C0D4E4300CAEC9E /* Home-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 839F643C1C0D4E4300CAEC9E /* Home-25.png */; };
+		839F64431C0D4E4300CAEC9E /* Literature-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 839F643D1C0D4E4300CAEC9E /* Literature-25.png */; };
+		839F64441C0D4E4300CAEC9E /* Planner-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 839F643E1C0D4E4300CAEC9E /* Planner-25.png */; };
+		839F64451C0D4E4300CAEC9E /* Summer-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 839F643F1C0D4E4300CAEC9E /* Summer-25.png */; };
+		839F64461C0D4E4300CAEC9E /* User Group-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 839F64401C0D4E4300CAEC9E /* User Group-25.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,12 +110,12 @@
 		839F64291C0D203A00CAEC9E /* GetInvolved.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GetInvolved.storyboard; sourceTree = "<group>"; };
 		839F642B1C0D204500CAEC9E /* SummerMissions.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SummerMissions.storyboard; sourceTree = "<group>"; };
 		839F642D1C0D205800CAEC9E /* EventsAndRides.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EventsAndRides.storyboard; sourceTree = "<group>"; };
-		839F64311C0D46BE00CAEC9E /* Home-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Home-25.png"; path = "../../../Downloads/Home-25.png"; sourceTree = "<group>"; };
-		839F64321C0D46BE00CAEC9E /* Literature-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Literature-25.png"; path = "../../../Downloads/Literature-25.png"; sourceTree = "<group>"; };
-		839F64331C0D46BE00CAEC9E /* Planner-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Planner-25.png"; path = "../../../Downloads/Planner-25.png"; sourceTree = "<group>"; };
-		839F64341C0D46BE00CAEC9E /* Summer-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Summer-25.png"; path = "../../../Downloads/Summer-25.png"; sourceTree = "<group>"; };
-		839F64351C0D46BE00CAEC9E /* User Group-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "User Group-25.png"; path = "../../../Downloads/User Group-25.png"; sourceTree = "<group>"; };
-		A43482CF1C0D290900B62D6C /* Calendar-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Calendar-25.png"; sourceTree = "<group>"; };
+		839F643B1C0D4E4300CAEC9E /* Cru-Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Cru-Logo.png"; path = "images/Cru-Logo.png"; sourceTree = "<group>"; };
+		839F643C1C0D4E4300CAEC9E /* Home-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Home-25.png"; path = "images/Home-25.png"; sourceTree = "<group>"; };
+		839F643D1C0D4E4300CAEC9E /* Literature-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Literature-25.png"; path = "images/Literature-25.png"; sourceTree = "<group>"; };
+		839F643E1C0D4E4300CAEC9E /* Planner-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Planner-25.png"; path = "images/Planner-25.png"; sourceTree = "<group>"; };
+		839F643F1C0D4E4300CAEC9E /* Summer-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Summer-25.png"; path = "images/Summer-25.png"; sourceTree = "<group>"; };
+		839F64401C0D4E4300CAEC9E /* User Group-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "User Group-25.png"; path = "images/User Group-25.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,12 +217,12 @@
 		A43482D11C0D290E00B62D6C /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				839F64311C0D46BE00CAEC9E /* Home-25.png */,
-				839F64321C0D46BE00CAEC9E /* Literature-25.png */,
-				839F64331C0D46BE00CAEC9E /* Planner-25.png */,
-				839F64341C0D46BE00CAEC9E /* Summer-25.png */,
-				839F64351C0D46BE00CAEC9E /* User Group-25.png */,
-				A43482CF1C0D290900B62D6C /* Calendar-25.png */,
+				839F643B1C0D4E4300CAEC9E /* Cru-Logo.png */,
+				839F643C1C0D4E4300CAEC9E /* Home-25.png */,
+				839F643D1C0D4E4300CAEC9E /* Literature-25.png */,
+				839F643E1C0D4E4300CAEC9E /* Planner-25.png */,
+				839F643F1C0D4E4300CAEC9E /* Summer-25.png */,
+				839F64401C0D4E4300CAEC9E /* User Group-25.png */,
 			);
 			name = Images;
 			path = ..;
@@ -369,16 +369,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				839F64371C0D46BE00CAEC9E /* Literature-25.png in Resources */,
+				839F64461C0D4E4300CAEC9E /* User Group-25.png in Resources */,
+				839F64451C0D4E4300CAEC9E /* Summer-25.png in Resources */,
 				839F642A1C0D203A00CAEC9E /* GetInvolved.storyboard in Resources */,
-				839F643A1C0D46BE00CAEC9E /* User Group-25.png in Resources */,
 				839F64281C0D202800CAEC9E /* MySchool.storyboard in Resources */,
 				072519B21BE9694000F38F81 /* LaunchScreen.storyboard in Resources */,
 				07EE5F7B1BFE6B89009A2B44 /* Resources.storyboard in Resources */,
-				839F64381C0D46BE00CAEC9E /* Planner-25.png in Resources */,
-				A43482D01C0D290900B62D6C /* Calendar-25.png in Resources */,
-				839F64391C0D46BE00CAEC9E /* Summer-25.png in Resources */,
-				839F64361C0D46BE00CAEC9E /* Home-25.png in Resources */,
+				839F64411C0D4E4300CAEC9E /* Cru-Logo.png in Resources */,
+				839F64441C0D4E4300CAEC9E /* Planner-25.png in Resources */,
+				839F64431C0D4E4300CAEC9E /* Literature-25.png in Resources */,
+				839F64421C0D4E4300CAEC9E /* Home-25.png in Resources */,
 				072519AF1BE9694000F38F81 /* Assets.xcassets in Resources */,
 				839F642C1C0D204500CAEC9E /* SummerMissions.storyboard in Resources */,
 				072519AD1BE9694000F38F81 /* Main.storyboard in Resources */,

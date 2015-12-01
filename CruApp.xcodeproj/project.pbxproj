@@ -13,6 +13,7 @@
 		072519AF1BE9694000F38F81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 072519AE1BE9694000F38F81 /* Assets.xcassets */; };
 		072519B21BE9694000F38F81 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 072519B01BE9694000F38F81 /* LaunchScreen.storyboard */; };
 		07EE5F7B1BFE6B89009A2B44 /* Resources.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07EE5F7A1BFE6B89009A2B44 /* Resources.storyboard */; };
+		271BDF431C0D41EE0075A29E /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 271BDF361C0D3FF20075A29E /* Alamofire.framework */; };
 		277E67561BEB6362001C29DD /* CruAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277E67551BEB6362001C29DD /* CruAppTests.swift */; };
 		839F64281C0D202800CAEC9E /* MySchool.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 839F64271C0D202800CAEC9E /* MySchool.storyboard */; };
 		839F642A1C0D203A00CAEC9E /* GetInvolved.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 839F64291C0D203A00CAEC9E /* GetInvolved.storyboard */; };
@@ -71,6 +72,13 @@
 			remoteGlobalIDString = E4202FE01B667AA100C997FB;
 			remoteInfo = "Alamofire watchOS";
 		};
+		271BDF441C0D41F60075A29E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 271BDF2B1C0D3FF20075A29E /* Alamofire.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = F8111E3219A95C8B0040E7D1;
+			remoteInfo = "Alamofire iOS";
+		};
 		277E67581BEB6362001C29DD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0725199C1BE9694000F38F81 /* Project object */;
@@ -105,6 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				271BDF431C0D41EE0075A29E /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,6 +227,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				271BDF451C0D41F60075A29E /* PBXTargetDependency */,
 			);
 			name = CruApp;
 			productName = CruApp;
@@ -386,6 +396,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		271BDF451C0D41F60075A29E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Alamofire iOS";
+			targetProxy = 271BDF441C0D41F60075A29E /* PBXContainerItemProxy */;
+		};
 		277E67591BEB6362001C29DD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 072519A31BE9694000F38F81 /* CruApp */;

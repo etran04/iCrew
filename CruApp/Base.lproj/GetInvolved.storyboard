@@ -47,7 +47,8 @@
                                         <rect key="frame" x="49" y="207" width="240" height="32"/>
                                         <animations/>
                                         <color key="backgroundColor" red="0.92468368239999998" green="0.92468368239999998" blue="0.92468368239999998" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="0.047058823529411764" green="0.37254901960784315" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                 </subviews>
@@ -66,7 +67,8 @@
                                         <rect key="frame" x="49" y="207" width="240" height="32"/>
                                         <animations/>
                                         <color key="backgroundColor" red="0.92468368239999998" green="0.92468368239999998" blue="0.92468368239999998" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="0.047058823529411764" green="0.37254901960784315" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                 </subviews>

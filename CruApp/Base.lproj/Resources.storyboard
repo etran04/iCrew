@@ -23,10 +23,10 @@
             </objects>
             <point key="canvasLocation" x="678" y="1012"/>
         </scene>
-        <!--Resources-->
+        <!--Resources -->
         <scene sceneID="xg3-bo-7m7">
             <objects>
-                <viewController id="t6P-qX-wmp" sceneMemberID="viewController">
+                <viewController id="t6P-qX-wmp" customClass="VideoViewController" customModule="CruApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0wr-Fm-hx3"/>
                         <viewControllerLayoutGuide type="bottom" id="AKh-2R-scz"/>
@@ -34,16 +34,42 @@
                     <view key="view" contentMode="scaleToFill" id="z7f-dP-Vng">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a3j-XQ-M4I">
+                                <rect key="frame" x="280" y="285" width="40" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Video"/>
+                            </button>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Resources" id="huO-g1-HNG">
+                    <navigationItem key="navigationItem" title="Resources " id="huO-g1-HNG">
                         <barButtonItem key="leftBarButtonItem" image="menu.png" id="UMQ-TY-mnH"/>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gW3-Wc-XHf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1416" y="1012"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Ymb-gm-YHB">
+            <objects>
+                <viewController id="EJm-xX-d8a" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bcw-41-ndm"/>
+                        <viewControllerLayoutGuide type="bottom" id="QL4-Iu-n96"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PsF-XQ-GaX">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QSD-Ka-EJh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1836" y="1374"/>
         </scene>
     </scenes>
     <resources>

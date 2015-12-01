@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		070861B01C0DC67200D6D646 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 271BDF541C0D53710075A29E /* Alamofire.framework */; };
 		070861B11C0DC67200D6D646 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 271BDF541C0D53710075A29E /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		070861C21C0DC88A00D6D646 /* YTPlayerView-iframe-player.html in Resources */ = {isa = PBXBuildFile; fileRef = 070861C11C0DC88A00D6D646 /* YTPlayerView-iframe-player.html */; };
 		072519A81BE9694000F38F81 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072519A71BE9694000F38F81 /* AppDelegate.swift */; };
 		072519AA1BE9694000F38F81 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072519A91BE9694000F38F81 /* ViewController.swift */; };
 		072519AD1BE9694000F38F81 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 072519AB1BE9694000F38F81 /* Main.storyboard */; };
@@ -124,7 +123,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		070861C11C0DC88A00D6D646 /* YTPlayerView-iframe-player.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "YTPlayerView-iframe-player.html"; sourceTree = "<group>"; };
 		072519A41BE9694000F38F81 /* CruApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CruApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		072519A71BE9694000F38F81 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		072519A91BE9694000F38F81 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -184,7 +182,6 @@
 			isa = PBXGroup;
 			children = (
 				072519A61BE9694000F38F81 /* CruApp */,
-				070861C11C0DC88A00D6D646 /* YTPlayerView-iframe-player.html */,
 				277E67541BEB6362001C29DD /* CruAppTests */,
 				072519A51BE9694000F38F81 /* Products */,
 				271BDF491C0D53710075A29E /* Alamofire.xcodeproj */,
@@ -456,7 +453,6 @@
 				839F64451C0D4E4300CAEC9E /* Summer-25.png in Resources */,
 				839F64551C0D6BD100CAEC9E /* GetInvolved.storyboard in Resources */,
 				072519B21BE9694000F38F81 /* LaunchScreen.storyboard in Resources */,
-				070861C21C0DC88A00D6D646 /* YTPlayerView-iframe-player.html in Resources */,
 				839F645B1C0D6C4C00CAEC9E /* Resources.storyboard in Resources */,
 				839F64411C0D4E4300CAEC9E /* Cru-Logo.png in Resources */,
 				839F64441C0D4E4300CAEC9E /* Planner-25.png in Resources */,

@@ -7,12 +7,23 @@
 //
 
 import UIKit
+// Import Swift module
+import YouTubePlayer
+
 
 class ResourcesViewController: UIViewController {
 
+    @IBOutlet var videoPlayer: YouTubePlayerView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        // init YouTubePlayerView w/ playerFrame rect (assume playerFrame declared)
+        //var videoPlayer = YouTubePlayerView(frame: playerFrame)
+        
+        // Load video from YouTube URL
+        //let myVideoURL = NSURL(string: "https://www.youtube.com/watch?v=sc0mi0Ei1CQ")
+        //videoPlayer.loadVideoURL(myVideoURL!)
+        
         // Do any additional setup after loading the view.
     }
 

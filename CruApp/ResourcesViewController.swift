@@ -16,7 +16,7 @@ class ResourcesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.videoPlayer.loadWithVideoId("M7lc1UVf-VE")
+        self.videoPlayer.loadWithVideoId("9cmh72Z9ISI")
     }
 
     override func didReceiveMemoryWarning() {

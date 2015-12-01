@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07C9F7351C0E1B3900C3A40F /* Assets.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 07C9F7341C0E1B3900C3A40F /* Assets.bundle */; };
 		1EF9550ADFB2000CC3E556363758C350 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
 		2539D5C503166E69BE478B152BF68719 /* YTPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 047858D0CB0FF6CEA3782F1C0F021CCF /* YTPlayerView.m */; };
 		2E5C91E645FC938F52671F4DBC5AD3EB /* youtube-ios-player-helper-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5779C179D118A5A5829FCA9136A72989 /* youtube-ios-player-helper-dummy.m */; };
@@ -37,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		047858D0CB0FF6CEA3782F1C0F021CCF /* YTPlayerView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YTPlayerView.m; path = Classes/YTPlayerView.m; sourceTree = "<group>"; };
+		07C9F7341C0E1B3900C3A40F /* Assets.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Assets.bundle; sourceTree = "<group>"; };
 		0981437F12A2E64DC79A6C7AF469E0DF /* youtube-ios-player-helper-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "youtube-ios-player-helper-prefix.pch"; sourceTree = "<group>"; };
 		18A3F9985E6E3C40B83594449DD2A9BD /* Pods-CruApp-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CruApp-acknowledgements.plist"; sourceTree = "<group>"; };
 		25D86C10C3CBC13510B179ECDA0B804A /* Pods-CruApp-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CruApp-frameworks.sh"; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 		1E0B17DF6E55AA5583EEC20F8D8FC43D /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
+				07C9F7341C0E1B3900C3A40F /* Assets.bundle */,
 				5793D259E5CD556F52CB54DBA777380B /* Info.plist */,
 				9CE751FA69EE860BD1EB48C58BB6637D /* youtube-ios-player-helper.modulemap */,
 				7A748117F7B88D08BF8AD856F9C5AF72 /* youtube-ios-player-helper.xcconfig */,
@@ -300,6 +303,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07C9F7351C0E1B3900C3A40F /* Assets.bundle in Resources */,
 				A1104DFA5B15528D2550179265DAA48A /* Assets.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

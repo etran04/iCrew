@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		070861B01C0DC67200D6D646 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 271BDF541C0D53710075A29E /* Alamofire.framework */; };
 		070861B11C0DC67200D6D646 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 271BDF541C0D53710075A29E /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		070861B61C0DC67D00D6D646 /* youtube_ios_player_helper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 070861B51C0DC67D00D6D646 /* youtube_ios_player_helper.framework */; };
 		070861C21C0DC88A00D6D646 /* YTPlayerView-iframe-player.html in Resources */ = {isa = PBXBuildFile; fileRef = 070861C11C0DC88A00D6D646 /* YTPlayerView-iframe-player.html */; };
 		072519A81BE9694000F38F81 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072519A71BE9694000F38F81 /* AppDelegate.swift */; };
 		072519AA1BE9694000F38F81 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072519A91BE9694000F38F81 /* ViewController.swift */; };
@@ -125,7 +124,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		070861B51C0DC67D00D6D646 /* youtube_ios_player_helper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = youtube_ios_player_helper.framework; path = "Pods/../build/Debug-iphoneos/youtube_ios_player_helper.framework"; sourceTree = "<group>"; };
 		070861C11C0DC88A00D6D646 /* YTPlayerView-iframe-player.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "YTPlayerView-iframe-player.html"; sourceTree = "<group>"; };
 		072519A41BE9694000F38F81 /* CruApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CruApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		072519A71BE9694000F38F81 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -166,7 +164,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				070861B61C0DC67D00D6D646 /* youtube_ios_player_helper.framework in Frameworks */,
 				271BDF631C0D538A0075A29E /* Alamofire.framework in Frameworks */,
 				070861B01C0DC67200D6D646 /* Alamofire.framework in Frameworks */,
 				CBF52B4D6C6CD44BBF744548 /* Pods_CruApp.framework in Frameworks */,
@@ -304,7 +301,6 @@
 		C6533B09B2FB930E446D08DE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				070861B51C0DC67D00D6D646 /* youtube_ios_player_helper.framework */,
 				DD14769052309A631372632E /* Pods_CruApp.framework */,
 			);
 			name = Frameworks;

@@ -14,6 +14,7 @@
 		4A6893EB574E62DA60C687EA807C36D5 /* Pods-CruApp-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2753E7F4F1F5A7D04F3B2A9685D8A0 /* Pods-CruApp-dummy.m */; };
 		83B66FFA1C0E4BF5008AEFEF /* Assets.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 83B66FF91C0E4BF5008AEFEF /* Assets.bundle */; };
 		A1104DFA5B15528D2550179265DAA48A /* Assets.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F3D7EFC457695CFAA359DE6F29E73BF3 /* Assets.bundle */; };
+		A40DD9891C0E4B5800BCFEC5 /* Assets.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A40DD9881C0E4B5800BCFEC5 /* Assets.bundle */; };
 		B5F35583A84B13C673926F77068A439B /* youtube-ios-player-helper-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 280B8947B219BD05DBCAFF51DC5B9370 /* youtube-ios-player-helper-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BF54D311CD73E98EBA534C73955AA31B /* YTPlayerView.h in Headers */ = {isa = PBXBuildFile; fileRef = C633248D5F947960D1989D74E2094E2D /* YTPlayerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FB772AF6639C97BB2135EBE5D836C311 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
@@ -50,6 +51,7 @@
 		7F2753E7F4F1F5A7D04F3B2A9685D8A0 /* Pods-CruApp-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CruApp-dummy.m"; sourceTree = "<group>"; };
 		83B66FF91C0E4BF5008AEFEF /* Assets.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Assets.bundle; sourceTree = "<group>"; };
 		9CE751FA69EE860BD1EB48C58BB6637D /* youtube-ios-player-helper.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "youtube-ios-player-helper.modulemap"; sourceTree = "<group>"; };
+		A40DD9881C0E4B5800BCFEC5 /* Assets.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Assets.bundle; sourceTree = "<group>"; };
 		A4C031A1BBD11FD14E3481CB93FCCFD7 /* Pods-CruApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CruApp.release.xcconfig"; sourceTree = "<group>"; };
 		A826D036609D5FE2E4BE459F22730F00 /* youtube_ios_player_helper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = youtube_ios_player_helper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEC52AC9906BAAFC43A280F965E072F8 /* Pods-CruApp.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-CruApp.modulemap"; sourceTree = "<group>"; };

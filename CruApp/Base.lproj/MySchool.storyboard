@@ -15,10 +15,33 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <animations/>
                     </navigationBar>
+                    <connections>
+                        <segue destination="LbC-g2-YCA" kind="relationship" relationship="rootViewController" id="nsx-0u-ZUQ"/>
+                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pa0-in-YLC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="678" y="1810"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="qCS-Mr-aM0">
+            <objects>
+                <viewController id="LbC-g2-YCA" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MJX-P1-gzw"/>
+                        <viewControllerLayoutGuide type="bottom" id="sMb-43-pLZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LAE-55-EMN">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="vP6-Nb-uiC"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OAv-jc-a1f" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1462" y="1803"/>
         </scene>
     </scenes>
     <resources>

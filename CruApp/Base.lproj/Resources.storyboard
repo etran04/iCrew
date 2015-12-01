@@ -35,19 +35,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h9w-j8-UdK" customClass="YTPlayerView">
-                                <rect key="frame" x="0.0" y="139" width="600" height="320"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qgz-BK-S50">
+                                <rect key="frame" x="277" y="284" width="47" height="31"/>
                                 <animations/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
+                                <state key="normal" title="Videos"/>
+                                <connections>
+                                    <segue destination="iFf-Ie-YNt" kind="show" id="28Z-hC-7er"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="h9w-j8-UdK" firstAttribute="top" secondItem="0wr-Fm-hx3" secondAttribute="bottom" constant="75" id="2DE-M2-i9H"/>
-                            <constraint firstItem="h9w-j8-UdK" firstAttribute="leading" secondItem="z7f-dP-Vng" secondAttribute="leading" id="88A-4P-bvL"/>
-                            <constraint firstItem="h9w-j8-UdK" firstAttribute="centerY" secondItem="z7f-dP-Vng" secondAttribute="centerY" constant="-1" id="d67-vb-9jv"/>
-                            <constraint firstItem="h9w-j8-UdK" firstAttribute="centerX" secondItem="z7f-dP-Vng" secondAttribute="centerX" id="ybs-RH-Db9"/>
+                            <constraint firstItem="qgz-BK-S50" firstAttribute="centerX" secondItem="z7f-dP-Vng" secondAttribute="centerX" id="3M6-Mg-V6g"/>
+                            <constraint firstItem="qgz-BK-S50" firstAttribute="centerY" secondItem="z7f-dP-Vng" secondAttribute="centerY" id="drr-gB-mBW"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Resources " id="huO-g1-HNG">
@@ -59,7 +60,42 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gW3-Wc-XHf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1416" y="1012"/>
+            <point key="canvasLocation" x="1394" y="1018"/>
+        </scene>
+        <!--Videos-->
+        <scene sceneID="KzI-0N-oMX">
+            <objects>
+                <viewController title="Videos" id="iFf-Ie-YNt" customClass="VideoViewController" customModule="CruApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7wz-NM-RHb"/>
+                        <viewControllerLayoutGuide type="bottom" id="Edy-hh-QZq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nui-vn-pNn">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h9w-j8-UdK" customClass="YTPlayerView">
+                                <rect key="frame" x="0.0" y="140" width="600" height="320"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="h9w-j8-UdK" firstAttribute="top" secondItem="7wz-NM-RHb" secondAttribute="bottom" constant="76" id="4e1-Tj-ENP"/>
+                            <constraint firstItem="h9w-j8-UdK" firstAttribute="leading" secondItem="nui-vn-pNn" secondAttribute="leading" id="Uxo-et-gji"/>
+                            <constraint firstAttribute="trailing" secondItem="h9w-j8-UdK" secondAttribute="trailing" id="dQd-3j-TRE"/>
+                            <constraint firstItem="h9w-j8-UdK" firstAttribute="centerY" secondItem="nui-vn-pNn" secondAttribute="centerY" id="ufu-YI-NHw"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="videoPlayer" destination="h9w-j8-UdK" id="h7S-Sr-xGZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="buv-HI-g5W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2118" y="1012"/>
         </scene>
     </scenes>
     <resources>

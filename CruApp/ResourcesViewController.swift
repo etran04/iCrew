@@ -7,16 +7,11 @@
 //
 
 import UIKit
-import youtube_ios_player_helper
-
 
 class ResourcesViewController: UIViewController {
-
-    @IBOutlet var videoPlayer: YTPlayerView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.videoPlayer.loadWithVideoId("9cmh72Z9ISI")
     }
 
     override func didReceiveMemoryWarning() {

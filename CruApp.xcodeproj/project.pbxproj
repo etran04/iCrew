@@ -228,6 +228,17 @@
 			path = CruApp;
 			sourceTree = "<group>";
 		};
+		07C196291C0E5B1800375B8D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				07ED81701C0D7ECC007FFB53 /* ResourcesViewController.swift */,
+				1E37E7221C0E362D0054607A /* VideosTableViewController.swift */,
+				1E37E7231C0E362D0054607A /* VideoTableViewController.swift */,
+				1E37E7241C0E362D0054607A /* VideoViewController.swift */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		07EE5F7C1BFE6B92009A2B44 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
@@ -250,13 +261,10 @@
 				1E37E71F1C0E362D0054607A /* EventsAndRidesController.swift */,
 				1E37E7201C0E362D0054607A /* EventService.swift */,
 				1E37E7211C0E362D0054607A /* EventsViewController.swift */,
-				1E37E7221C0E362D0054607A /* VideosTableViewController.swift */,
-				1E37E7231C0E362D0054607A /* VideoTableViewController.swift */,
-				1E37E7241C0E362D0054607A /* VideoViewController.swift */,
-				838564EB1C0D9EB900EB1728 /* SWRevealViewController */,
 				072519A91BE9694000F38F81 /* ViewController.swift */,
 				839F64611C0D77BB00CAEC9E /* ActivityViewController.swift */,
-				07ED81701C0D7ECC007FFB53 /* ResourcesViewController.swift */,
+				838564EB1C0D9EB900EB1728 /* SWRevealViewController */,
+				07C196291C0E5B1800375B8D /* Resources */,
 			);
 			name = VCs;
 			sourceTree = "<group>";

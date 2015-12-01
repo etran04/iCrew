@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        /*let twilioUsername = "ACc18e4b9385be579bdb48ca5526414403"
+        let twilioPassword = "c5e0f0de4c90c803595851a7554c9a98"
+        
+        let data = [
+        "To" : "+17078038796",
+        "From" : "+17074193527",
+        "Body" : "It works!"
+        ]
+        
+        Alamofire.request(.POST, "https://\(twilioUsername):\(twilioPassword)@api.twilio.com/2010-04-01/Accounts/\(twilioUsername)/Messages", parameters: data)
+        .responseData { response in
+        print(response.request)
+        print(response.response)
+        print(response.result)
+        } */
+        
         return true
     }
 

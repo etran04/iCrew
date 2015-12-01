@@ -19,6 +19,7 @@
 		07ED81711C0D7ECC007FFB53 /* ResourcesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07ED81701C0D7ECC007FFB53 /* ResourcesViewController.swift */; };
 		271BDF631C0D538A0075A29E /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 271BDF541C0D53710075A29E /* Alamofire.framework */; };
 		277E67561BEB6362001C29DD /* CruAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277E67551BEB6362001C29DD /* CruAppTests.swift */; };
+		838564F51C0D9EDF00EB1728 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 838564F41C0D9EDF00EB1728 /* SWRevealViewController.m */; };
 		839F64411C0D4E4300CAEC9E /* Cru-Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 839F643B1C0D4E4300CAEC9E /* Cru-Logo.png */; };
 		839F64421C0D4E4300CAEC9E /* Home-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 839F643C1C0D4E4300CAEC9E /* Home-25.png */; };
 		839F64431C0D4E4300CAEC9E /* Literature-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 839F643D1C0D4E4300CAEC9E /* Literature-25.png */; };
@@ -139,6 +140,9 @@
 		277E67551BEB6362001C29DD /* CruAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CruAppTests.swift; sourceTree = "<group>"; };
 		277E67571BEB6362001C29DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		56975AA48A624728978E6E3E /* Pods-CruApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CruApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CruApp/Pods-CruApp.debug.xcconfig"; sourceTree = "<group>"; };
+		838564F21C0D9EDF00EB1728 /* CruApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CruApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		838564F31C0D9EDF00EB1728 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		838564F41C0D9EDF00EB1728 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		839F643B1C0D4E4300CAEC9E /* Cru-Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Cru-Logo.png"; path = "images/Cru-Logo.png"; sourceTree = "<group>"; };
 		839F643C1C0D4E4300CAEC9E /* Home-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Home-25.png"; path = "images/Home-25.png"; sourceTree = "<group>"; };
 		839F643D1C0D4E4300CAEC9E /* Literature-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Literature-25.png"; path = "images/Literature-25.png"; sourceTree = "<group>"; };
@@ -231,6 +235,7 @@
 		07EE5F7D1BFE6BA8009A2B44 /* VCs */ = {
 			isa = PBXGroup;
 			children = (
+				838564EB1C0D9EB900EB1728 /* SWRevealViewController */,
 				072519A91BE9694000F38F81 /* ViewController.swift */,
 				839F64611C0D77BB00CAEC9E /* ActivityViewController.swift */,
 				07ED81701C0D7ECC007FFB53 /* ResourcesViewController.swift */,
@@ -259,6 +264,16 @@
 				277E67571BEB6362001C29DD /* Info.plist */,
 			);
 			path = CruAppTests;
+			sourceTree = "<group>";
+		};
+		838564EB1C0D9EB900EB1728 /* SWRevealViewController */ = {
+			isa = PBXGroup;
+			children = (
+				838564F31C0D9EDF00EB1728 /* SWRevealViewController.h */,
+				838564F41C0D9EDF00EB1728 /* SWRevealViewController.m */,
+				838564F21C0D9EDF00EB1728 /* CruApp-Bridging-Header.h */,
+			);
+			name = SWRevealViewController;
 			sourceTree = "<group>";
 		};
 		A43482D11C0D290E00B62D6C /* Images */ = {
@@ -527,6 +542,7 @@
 				839F64621C0D77BB00CAEC9E /* ActivityViewController.swift in Sources */,
 				07ED81711C0D7ECC007FFB53 /* ResourcesViewController.swift in Sources */,
 				072519A81BE9694000F38F81 /* AppDelegate.swift in Sources */,
+				838564F51C0D9EDF00EB1728 /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -706,6 +722,7 @@
 			baseConfigurationReference = 56975AA48A624728978E6E3E /* Pods-CruApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
@@ -720,6 +737,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.iCrew.CruApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "CruApp/CruApp-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -728,6 +747,7 @@
 			baseConfigurationReference = 9CC50D2817D518EDB9BF800C /* Pods-CruApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
@@ -742,6 +762,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.iCrew.CruApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "CruApp/CruApp-Bridging-Header.h";
 			};
 			name = Release;
 		};

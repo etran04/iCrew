@@ -1,8 +1,8 @@
 //
-//  SampleData.swift
+//  EventsAndRidesController.swift
 //  CruApp
 //
-//  Created by Tammy Kong on 11/30/15.
+//  Created by Jordan Tang on 12/1/15.
 //  Copyright © 2015 iCrew. All rights reserved.
 //
 

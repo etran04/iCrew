@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="9Yo-Ha-dso">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+    </dependencies>
+    <scenes>
+        <!--Get Involved-->
+        <scene sceneID="hSs-N7-8ml">
+            <objects>
+                <navigationController id="9Yo-Ha-dso" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Get Involved" image="User Group-25.png" id="BVl-5U-bdr"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Tpn-cJ-Knh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="T3K-nD-PGz" kind="relationship" relationship="rootViewController" id="YIY-BF-DtO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4PR-qe-uyA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="678" y="-514"/>
+        </scene>
+        <!--Get Involved-->
+        <scene sceneID="onI-5i-aWe">
+            <objects>
+                <viewController id="T3K-nD-PGz" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0yn-rH-HGo"/>
+                        <viewControllerLayoutGuide type="bottom" id="sCz-kw-TUO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TDU-q6-693">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MOL-GO-BAh">
+                                <rect key="frame" x="18" y="79" width="338" height="247"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RKM-SW-nwG">
+                                        <rect key="frame" x="8" y="8" width="322" height="196"/>
+                                        <animations/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Join a Community Group" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="oJw-er-g9L">
+                                        <rect key="frame" x="49" y="207" width="240" height="32"/>
+                                        <animations/>
+                                        <color key="backgroundColor" red="0.92468368239999998" green="0.92468368239999998" blue="0.92468368239999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="0.047058823529411764" green="0.37254901960784315" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" red="0.92468368237347298" green="0.92468368237347298" blue="0.92468368237347298" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4GC-yS-Any">
+                                <rect key="frame" x="18" y="348" width="338" height="247"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2uU-Qg-1qi">
+                                        <rect key="frame" x="8" y="8" width="322" height="196"/>
+                                        <animations/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Join a Ministry Team" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="j59-tI-ABV">
+                                        <rect key="frame" x="49" y="207" width="240" height="32"/>
+                                        <animations/>
+                                        <color key="backgroundColor" red="0.92468368239999998" green="0.92468368239999998" blue="0.92468368239999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="0.047058823529411764" green="0.37254901960784315" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" red="0.92468368239999998" green="0.92468368239999998" blue="0.92468368239999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Get Involved" id="lc9-LI-ktp">
+                        <barButtonItem key="leftBarButtonItem" image="menu.png" id="OIf-6x-hVZ"/>
+                        <barButtonItem key="rightBarButtonItem" image="Box-25.png" id="1f9-Hq-2Kf"/>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zv6-QF-2Yz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1421.5" y="-514.5"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Box-25.png" width="25" height="25"/>
+        <image name="User Group-25.png" width="25" height="25"/>
+        <image name="menu.png" width="22" height="22"/>
+    </resources>
+</document>

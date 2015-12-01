@@ -12,16 +12,85 @@
 		072519AD1BE9694000F38F81 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 072519AB1BE9694000F38F81 /* Main.storyboard */; };
 		072519AF1BE9694000F38F81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 072519AE1BE9694000F38F81 /* Assets.xcassets */; };
 		072519B21BE9694000F38F81 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 072519B01BE9694000F38F81 /* LaunchScreen.storyboard */; };
-		07EE5F7B1BFE6B89009A2B44 /* Resources.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07EE5F7A1BFE6B89009A2B44 /* Resources.storyboard */; };
+		07ED81711C0D7ECC007FFB53 /* ResourcesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07ED81701C0D7ECC007FFB53 /* ResourcesViewController.swift */; };
+		07ED81791C0D7F63007FFB53 /* VideosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07ED81781C0D7F63007FFB53 /* VideosTableViewController.swift */; };
+		271BDF631C0D538A0075A29E /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 271BDF541C0D53710075A29E /* Alamofire.framework */; };
 		277E67561BEB6362001C29DD /* CruAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277E67551BEB6362001C29DD /* CruAppTests.swift */; };
-		839F64281C0D202800CAEC9E /* MySchool.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 839F64271C0D202800CAEC9E /* MySchool.storyboard */; };
-		839F642A1C0D203A00CAEC9E /* GetInvolved.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 839F64291C0D203A00CAEC9E /* GetInvolved.storyboard */; };
-		839F642C1C0D204500CAEC9E /* SummerMissions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 839F642B1C0D204500CAEC9E /* SummerMissions.storyboard */; };
-		839F642E1C0D205800CAEC9E /* EventsAndRides.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 839F642D1C0D205800CAEC9E /* EventsAndRides.storyboard */; };
-		A43482D01C0D290900B62D6C /* Calendar-25.png in Resources */ = {isa = PBXBuildFile; fileRef = A43482CF1C0D290900B62D6C /* Calendar-25.png */; };
+		838564F51C0D9EDF00EB1728 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 838564F41C0D9EDF00EB1728 /* SWRevealViewController.m */; };
+		839F64411C0D4E4300CAEC9E /* Cru-Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 839F643B1C0D4E4300CAEC9E /* Cru-Logo.png */; };
+		839F64421C0D4E4300CAEC9E /* Home-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 839F643C1C0D4E4300CAEC9E /* Home-25.png */; };
+		839F64431C0D4E4300CAEC9E /* Literature-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 839F643D1C0D4E4300CAEC9E /* Literature-25.png */; };
+		839F64441C0D4E4300CAEC9E /* Planner-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 839F643E1C0D4E4300CAEC9E /* Planner-25.png */; };
+		839F64451C0D4E4300CAEC9E /* Summer-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 839F643F1C0D4E4300CAEC9E /* Summer-25.png */; };
+		839F64461C0D4E4300CAEC9E /* User Group-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 839F64401C0D4E4300CAEC9E /* User Group-25.png */; };
+		839F64491C0D643A00CAEC9E /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 839F64481C0D643A00CAEC9E /* menu.png */; };
+		839F64521C0D6A7900CAEC9E /* EventsAndRides.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 839F64501C0D6A7900CAEC9E /* EventsAndRides.storyboard */; };
+		839F64551C0D6BD100CAEC9E /* GetInvolved.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 839F64531C0D6BD100CAEC9E /* GetInvolved.storyboard */; };
+		839F64581C0D6C1E00CAEC9E /* SummerMissions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 839F64561C0D6C1E00CAEC9E /* SummerMissions.storyboard */; };
+		839F645B1C0D6C4C00CAEC9E /* Resources.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 839F64591C0D6C4C00CAEC9E /* Resources.storyboard */; };
+		839F645E1C0D6C8E00CAEC9E /* MySchool.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 839F645C1C0D6C8E00CAEC9E /* MySchool.storyboard */; };
+		839F64601C0D70AA00CAEC9E /* Box-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 839F645F1C0D70AA00CAEC9E /* Box-25.png */; };
+		839F64621C0D77BB00CAEC9E /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839F64611C0D77BB00CAEC9E /* ActivityViewController.swift */; };
+		CBF52B4D6C6CD44BBF744548 /* Pods_CruApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD14769052309A631372632E /* Pods_CruApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		271BDF531C0D53710075A29E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 271BDF491C0D53710075A29E /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F8111E3319A95C8B0040E7D1;
+			remoteInfo = "Alamofire iOS";
+		};
+		271BDF551C0D53710075A29E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 271BDF491C0D53710075A29E /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F8111E3E19A95C8B0040E7D1;
+			remoteInfo = "Alamofire iOS Tests";
+		};
+		271BDF571C0D53710075A29E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 271BDF491C0D53710075A29E /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4DD67C0B1A5C55C900ED2280;
+			remoteInfo = "Alamofire OSX";
+		};
+		271BDF591C0D53710075A29E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 271BDF491C0D53710075A29E /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F829C6B21A7A94F100A2CD59;
+			remoteInfo = "Alamofire OSX Tests";
+		};
+		271BDF5B1C0D53710075A29E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 271BDF491C0D53710075A29E /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4CF626EF1BA7CB3E0011A099;
+			remoteInfo = "Alamofire tvOS";
+		};
+		271BDF5D1C0D53710075A29E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 271BDF491C0D53710075A29E /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4CF626F81BA7CB3E0011A099;
+			remoteInfo = "Alamofire tvOS Tests";
+		};
+		271BDF5F1C0D53710075A29E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 271BDF491C0D53710075A29E /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E4202FE01B667AA100C997FB;
+			remoteInfo = "Alamofire watchOS";
+		};
+		271BDF611C0D53850075A29E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 271BDF491C0D53710075A29E /* Alamofire.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = F8111E3219A95C8B0040E7D1;
+			remoteInfo = "Alamofire iOS";
+		};
 		277E67581BEB6362001C29DD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0725199C1BE9694000F38F81 /* Project object */;
@@ -39,15 +108,32 @@
 		072519AE1BE9694000F38F81 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		072519B11BE9694000F38F81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		072519B31BE9694000F38F81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		07EE5F7A1BFE6B89009A2B44 /* Resources.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Resources.storyboard; sourceTree = "<group>"; };
+		07ED81701C0D7ECC007FFB53 /* ResourcesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourcesViewController.swift; sourceTree = "<group>"; };
+		07ED81781C0D7F63007FFB53 /* VideosTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideosTableViewController.swift; sourceTree = "<group>"; };
+		271BDF491C0D53710075A29E /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "frameworks/Alamofire-master/Alamofire.xcodeproj"; sourceTree = "<group>"; };
 		277E67531BEB6362001C29DD /* CruAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CruAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		277E67551BEB6362001C29DD /* CruAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CruAppTests.swift; sourceTree = "<group>"; };
 		277E67571BEB6362001C29DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		839F64271C0D202800CAEC9E /* MySchool.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MySchool.storyboard; sourceTree = "<group>"; };
-		839F64291C0D203A00CAEC9E /* GetInvolved.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GetInvolved.storyboard; sourceTree = "<group>"; };
-		839F642B1C0D204500CAEC9E /* SummerMissions.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SummerMissions.storyboard; sourceTree = "<group>"; };
-		839F642D1C0D205800CAEC9E /* EventsAndRides.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EventsAndRides.storyboard; sourceTree = "<group>"; };
-		A43482CF1C0D290900B62D6C /* Calendar-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Calendar-25.png"; sourceTree = "<group>"; };
+		56975AA48A624728978E6E3E /* Pods-CruApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CruApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CruApp/Pods-CruApp.debug.xcconfig"; sourceTree = "<group>"; };
+		838564F21C0D9EDF00EB1728 /* CruApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CruApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		838564F31C0D9EDF00EB1728 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		838564F41C0D9EDF00EB1728 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		839F643B1C0D4E4300CAEC9E /* Cru-Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Cru-Logo.png"; path = "images/Cru-Logo.png"; sourceTree = "<group>"; };
+		839F643C1C0D4E4300CAEC9E /* Home-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Home-25.png"; path = "images/Home-25.png"; sourceTree = "<group>"; };
+		839F643D1C0D4E4300CAEC9E /* Literature-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Literature-25.png"; path = "images/Literature-25.png"; sourceTree = "<group>"; };
+		839F643E1C0D4E4300CAEC9E /* Planner-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Planner-25.png"; path = "images/Planner-25.png"; sourceTree = "<group>"; };
+		839F643F1C0D4E4300CAEC9E /* Summer-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Summer-25.png"; path = "images/Summer-25.png"; sourceTree = "<group>"; };
+		839F64401C0D4E4300CAEC9E /* User Group-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "User Group-25.png"; path = "images/User Group-25.png"; sourceTree = "<group>"; };
+		839F64481C0D643A00CAEC9E /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menu.png; path = images/menu.png; sourceTree = "<group>"; };
+		839F64511C0D6A7900CAEC9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/EventsAndRides.storyboard; sourceTree = "<group>"; };
+		839F64541C0D6BD100CAEC9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/GetInvolved.storyboard; sourceTree = "<group>"; };
+		839F64571C0D6C1E00CAEC9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SummerMissions.storyboard; sourceTree = "<group>"; };
+		839F645A1C0D6C4C00CAEC9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Resources.storyboard; sourceTree = "<group>"; };
+		839F645D1C0D6C8E00CAEC9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MySchool.storyboard; sourceTree = "<group>"; };
+		839F645F1C0D70AA00CAEC9E /* Box-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Box-25.png"; path = "images/Box-25.png"; sourceTree = "<group>"; };
+		839F64611C0D77BB00CAEC9E /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
+		9CC50D2817D518EDB9BF800C /* Pods-CruApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CruApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-CruApp/Pods-CruApp.release.xcconfig"; sourceTree = "<group>"; };
+		DD14769052309A631372632E /* Pods_CruApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CruApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +141,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				271BDF631C0D538A0075A29E /* Alamofire.framework in Frameworks */,
+				CBF52B4D6C6CD44BBF744548 /* Pods_CruApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +162,9 @@
 				072519A61BE9694000F38F81 /* CruApp */,
 				277E67541BEB6362001C29DD /* CruAppTests */,
 				072519A51BE9694000F38F81 /* Products */,
+				271BDF491C0D53710075A29E /* Alamofire.xcodeproj */,
+				BE8AAF2EA448B5FE9AB9269C /* Pods */,
+				C6533B09B2FB930E446D08DE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,11 +194,11 @@
 			isa = PBXGroup;
 			children = (
 				072519AB1BE9694000F38F81 /* Main.storyboard */,
-				839F642D1C0D205800CAEC9E /* EventsAndRides.storyboard */,
-				839F64291C0D203A00CAEC9E /* GetInvolved.storyboard */,
-				839F642B1C0D204500CAEC9E /* SummerMissions.storyboard */,
-				07EE5F7A1BFE6B89009A2B44 /* Resources.storyboard */,
-				839F64271C0D202800CAEC9E /* MySchool.storyboard */,
+				839F64501C0D6A7900CAEC9E /* EventsAndRides.storyboard */,
+				839F64531C0D6BD100CAEC9E /* GetInvolved.storyboard */,
+				839F64561C0D6C1E00CAEC9E /* SummerMissions.storyboard */,
+				839F64591C0D6C4C00CAEC9E /* Resources.storyboard */,
+				839F645C1C0D6C8E00CAEC9E /* MySchool.storyboard */,
 				072519B01BE9694000F38F81 /* LaunchScreen.storyboard */,
 			);
 			name = Storyboards;
@@ -116,9 +207,27 @@
 		07EE5F7D1BFE6BA8009A2B44 /* VCs */ = {
 			isa = PBXGroup;
 			children = (
+				838564EB1C0D9EB900EB1728 /* SWRevealViewController */,
 				072519A91BE9694000F38F81 /* ViewController.swift */,
+				839F64611C0D77BB00CAEC9E /* ActivityViewController.swift */,
+				07ED81701C0D7ECC007FFB53 /* ResourcesViewController.swift */,
+				07ED81781C0D7F63007FFB53 /* VideosTableViewController.swift */,
 			);
 			name = VCs;
+			sourceTree = "<group>";
+		};
+		271BDF4A1C0D53710075A29E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				271BDF541C0D53710075A29E /* Alamofire.framework */,
+				271BDF561C0D53710075A29E /* Alamofire iOS Tests.xctest */,
+				271BDF581C0D53710075A29E /* Alamofire.framework */,
+				271BDF5A1C0D53710075A29E /* Alamofire OSX Tests.xctest */,
+				271BDF5C1C0D53710075A29E /* Alamofire.framework */,
+				271BDF5E1C0D53710075A29E /* Alamofire tvOS Tests.xctest */,
+				271BDF601C0D53710075A29E /* Alamofire.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		277E67541BEB6362001C29DD /* CruAppTests */ = {
@@ -130,13 +239,47 @@
 			path = CruAppTests;
 			sourceTree = "<group>";
 		};
+		838564EB1C0D9EB900EB1728 /* SWRevealViewController */ = {
+			isa = PBXGroup;
+			children = (
+				838564F31C0D9EDF00EB1728 /* SWRevealViewController.h */,
+				838564F41C0D9EDF00EB1728 /* SWRevealViewController.m */,
+				838564F21C0D9EDF00EB1728 /* CruApp-Bridging-Header.h */,
+			);
+			name = SWRevealViewController;
+			sourceTree = "<group>";
+		};
 		A43482D11C0D290E00B62D6C /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				A43482CF1C0D290900B62D6C /* Calendar-25.png */,
+				839F645F1C0D70AA00CAEC9E /* Box-25.png */,
+				839F64481C0D643A00CAEC9E /* menu.png */,
+				839F643B1C0D4E4300CAEC9E /* Cru-Logo.png */,
+				839F643C1C0D4E4300CAEC9E /* Home-25.png */,
+				839F643D1C0D4E4300CAEC9E /* Literature-25.png */,
+				839F643E1C0D4E4300CAEC9E /* Planner-25.png */,
+				839F643F1C0D4E4300CAEC9E /* Summer-25.png */,
+				839F64401C0D4E4300CAEC9E /* User Group-25.png */,
 			);
 			name = Images;
 			path = ..;
+			sourceTree = "<group>";
+		};
+		BE8AAF2EA448B5FE9AB9269C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				56975AA48A624728978E6E3E /* Pods-CruApp.debug.xcconfig */,
+				9CC50D2817D518EDB9BF800C /* Pods-CruApp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C6533B09B2FB930E446D08DE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DD14769052309A631372632E /* Pods_CruApp.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,13 +289,17 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 072519B61BE9694000F38F81 /* Build configuration list for PBXNativeTarget "CruApp" */;
 			buildPhases = (
+				C6A82B30E3F50982389CE9C4 /* Check Pods Manifest.lock */,
 				072519A01BE9694000F38F81 /* Sources */,
 				072519A11BE9694000F38F81 /* Frameworks */,
 				072519A21BE9694000F38F81 /* Resources */,
+				72AAEF475E0E0794AF9DA655 /* Embed Pods Frameworks */,
+				FBA992323B80BFBB2DA35B0D /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				271BDF621C0D53850075A29E /* PBXTargetDependency */,
 			);
 			name = CruApp;
 			productName = CruApp;
@@ -208,6 +355,12 @@
 			mainGroup = 0725199B1BE9694000F38F81;
 			productRefGroup = 072519A51BE9694000F38F81 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 271BDF4A1C0D53710075A29E /* Products */;
+					ProjectRef = 271BDF491C0D53710075A29E /* Alamofire.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				072519A31BE9694000F38F81 /* CruApp */,
@@ -216,20 +369,79 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		271BDF541C0D53710075A29E /* Alamofire.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Alamofire.framework;
+			remoteRef = 271BDF531C0D53710075A29E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		271BDF561C0D53710075A29E /* Alamofire iOS Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Alamofire iOS Tests.xctest";
+			remoteRef = 271BDF551C0D53710075A29E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		271BDF581C0D53710075A29E /* Alamofire.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Alamofire.framework;
+			remoteRef = 271BDF571C0D53710075A29E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		271BDF5A1C0D53710075A29E /* Alamofire OSX Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Alamofire OSX Tests.xctest";
+			remoteRef = 271BDF591C0D53710075A29E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		271BDF5C1C0D53710075A29E /* Alamofire.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Alamofire.framework;
+			remoteRef = 271BDF5B1C0D53710075A29E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		271BDF5E1C0D53710075A29E /* Alamofire tvOS Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Alamofire tvOS Tests.xctest";
+			remoteRef = 271BDF5D1C0D53710075A29E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		271BDF601C0D53710075A29E /* Alamofire.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Alamofire.framework;
+			remoteRef = 271BDF5F1C0D53710075A29E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		072519A21BE9694000F38F81 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				839F642A1C0D203A00CAEC9E /* GetInvolved.storyboard in Resources */,
-				839F64281C0D202800CAEC9E /* MySchool.storyboard in Resources */,
+				839F64461C0D4E4300CAEC9E /* User Group-25.png in Resources */,
+				839F64451C0D4E4300CAEC9E /* Summer-25.png in Resources */,
+				839F64551C0D6BD100CAEC9E /* GetInvolved.storyboard in Resources */,
 				072519B21BE9694000F38F81 /* LaunchScreen.storyboard in Resources */,
-				07EE5F7B1BFE6B89009A2B44 /* Resources.storyboard in Resources */,
-				A43482D01C0D290900B62D6C /* Calendar-25.png in Resources */,
+				839F645B1C0D6C4C00CAEC9E /* Resources.storyboard in Resources */,
+				839F64411C0D4E4300CAEC9E /* Cru-Logo.png in Resources */,
+				839F64441C0D4E4300CAEC9E /* Planner-25.png in Resources */,
+				839F645E1C0D6C8E00CAEC9E /* MySchool.storyboard in Resources */,
+				839F64431C0D4E4300CAEC9E /* Literature-25.png in Resources */,
+				839F64421C0D4E4300CAEC9E /* Home-25.png in Resources */,
+				839F64601C0D70AA00CAEC9E /* Box-25.png in Resources */,
 				072519AF1BE9694000F38F81 /* Assets.xcassets in Resources */,
-				839F642C1C0D204500CAEC9E /* SummerMissions.storyboard in Resources */,
+				839F64491C0D643A00CAEC9E /* menu.png in Resources */,
 				072519AD1BE9694000F38F81 /* Main.storyboard in Resources */,
-				839F642E1C0D205800CAEC9E /* EventsAndRides.storyboard in Resources */,
+				839F64581C0D6C1E00CAEC9E /* SummerMissions.storyboard in Resources */,
+				839F64521C0D6A7900CAEC9E /* EventsAndRides.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,13 +454,65 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		72AAEF475E0E0794AF9DA655 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CruApp/Pods-CruApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C6A82B30E3F50982389CE9C4 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FBA992323B80BFBB2DA35B0D /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CruApp/Pods-CruApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		072519A01BE9694000F38F81 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07ED81791C0D7F63007FFB53 /* VideosTableViewController.swift in Sources */,
 				072519AA1BE9694000F38F81 /* ViewController.swift in Sources */,
+				839F64621C0D77BB00CAEC9E /* ActivityViewController.swift in Sources */,
+				07ED81711C0D7ECC007FFB53 /* ResourcesViewController.swift in Sources */,
 				072519A81BE9694000F38F81 /* AppDelegate.swift in Sources */,
+				838564F51C0D9EDF00EB1728 /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +527,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		271BDF621C0D53850075A29E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Alamofire iOS";
+			targetProxy = 271BDF611C0D53850075A29E /* PBXContainerItemProxy */;
+		};
 		277E67591BEB6362001C29DD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 072519A31BE9694000F38F81 /* CruApp */;
@@ -285,6 +554,46 @@
 				072519B11BE9694000F38F81 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		839F64501C0D6A7900CAEC9E /* EventsAndRides.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				839F64511C0D6A7900CAEC9E /* Base */,
+			);
+			name = EventsAndRides.storyboard;
+			sourceTree = "<group>";
+		};
+		839F64531C0D6BD100CAEC9E /* GetInvolved.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				839F64541C0D6BD100CAEC9E /* Base */,
+			);
+			name = GetInvolved.storyboard;
+			sourceTree = "<group>";
+		};
+		839F64561C0D6C1E00CAEC9E /* SummerMissions.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				839F64571C0D6C1E00CAEC9E /* Base */,
+			);
+			name = SummerMissions.storyboard;
+			sourceTree = "<group>";
+		};
+		839F64591C0D6C4C00CAEC9E /* Resources.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				839F645A1C0D6C4C00CAEC9E /* Base */,
+			);
+			name = Resources.storyboard;
+			sourceTree = "<group>";
+		};
+		839F645C1C0D6C8E00CAEC9E /* MySchool.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				839F645D1C0D6C8E00CAEC9E /* Base */,
+			);
+			name = MySchool.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -375,8 +684,10 @@
 		};
 		072519B71BE9694000F38F81 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 56975AA48A624728978E6E3E /* Pods-CruApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
@@ -387,13 +698,17 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.iCrew.CruApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "CruApp/CruApp-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		072519B81BE9694000F38F81 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9CC50D2817D518EDB9BF800C /* Pods-CruApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
@@ -404,6 +719,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.iCrew.CruApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "CruApp/CruApp-Bridging-Header.h";
 			};
 			name = Release;
 		};

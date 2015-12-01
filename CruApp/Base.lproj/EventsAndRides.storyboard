@@ -40,7 +40,7 @@
                                 <animations/>
                                 <state key="normal" title="Create Event"/>
                                 <connections>
-                                    <segue destination="KBp-gY-Akj" kind="push" id="TNb-1J-DyO"/>
+                                    <segue destination="KBp-gY-Akj" kind="show" id="iSe-gk-fJj"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zwd-9G-bfZ">
@@ -54,6 +54,12 @@
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5ev-le-uod" firstAttribute="centerX" secondItem="kOo-sX-07x" secondAttribute="centerX" id="28e-zE-D7B"/>
+                            <constraint firstItem="zwd-9G-bfZ" firstAttribute="top" secondItem="5ev-le-uod" secondAttribute="bottom" constant="47" id="2Od-wh-6ay"/>
+                            <constraint firstItem="5ev-le-uod" firstAttribute="top" secondItem="Vh9-YL-bFc" secondAttribute="bottom" constant="144" id="BkT-df-Ust"/>
+                            <constraint firstItem="zwd-9G-bfZ" firstAttribute="centerX" secondItem="kOo-sX-07x" secondAttribute="centerX" id="efL-f2-NQn"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Activity" id="WwR-dL-FhR">
                         <barButtonItem key="leftBarButtonItem" image="menu.png" id="oHT-qk-SUz"/>
@@ -83,11 +89,11 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="64"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="f9p-Nf-8eQ" id="etK-eK-lzq">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="63.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="63"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vpB-Gx-X4A">
-                                            <rect key="frame" x="15" y="16" width="31.5" height="19.5"/>
+                                            <rect key="frame" x="15" y="15" width="32" height="20"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -95,7 +101,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lEy-Bw-2Ke">
-                                            <rect key="frame" x="15" y="35.5" width="40.5" height="13.5"/>
+                                            <rect key="frame" x="15" y="35" width="41" height="14"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
@@ -120,7 +126,7 @@
             </objects>
             <point key="canvasLocation" x="2010.5" y="-1253.5"/>
         </scene>
-        <!--My School-->
+        <!--Creating Event-->
         <scene sceneID="E0P-xT-IBr">
             <objects>
                 <viewController id="KBp-gY-Akj" customClass="CreateEventViewController" customModule="CruApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -183,8 +189,8 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="My School" id="063-qK-cbg">
-                        <barButtonItem key="leftBarButtonItem" image="menu.png" id="qQQ-ib-dD4"/>
+                    <navigationItem key="navigationItem" title="Creating Event" id="063-qK-cbg">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="19z-Ne-hmo"/>
                     </navigationItem>
                     <connections>
                         <outlet property="addEvent" destination="RgO-Wf-6hh" id="0Yy-e9-8lu"/>
@@ -195,7 +201,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YXt-pu-BKd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1435" y="-408"/>
+            <point key="canvasLocation" x="1440" y="-464"/>
         </scene>
     </scenes>
     <resources>

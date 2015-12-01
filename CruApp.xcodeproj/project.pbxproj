@@ -7,13 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		070861B01C0DC67200D6D646 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 271BDF541C0D53710075A29E /* Alamofire.framework */; };
+		070861B11C0DC67200D6D646 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 271BDF541C0D53710075A29E /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		072519A81BE9694000F38F81 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072519A71BE9694000F38F81 /* AppDelegate.swift */; };
 		072519AA1BE9694000F38F81 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072519A91BE9694000F38F81 /* ViewController.swift */; };
 		072519AD1BE9694000F38F81 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 072519AB1BE9694000F38F81 /* Main.storyboard */; };
 		072519AF1BE9694000F38F81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 072519AE1BE9694000F38F81 /* Assets.xcassets */; };
 		072519B21BE9694000F38F81 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 072519B01BE9694000F38F81 /* LaunchScreen.storyboard */; };
 		07ED81711C0D7ECC007FFB53 /* ResourcesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07ED81701C0D7ECC007FFB53 /* ResourcesViewController.swift */; };
-		07ED81791C0D7F63007FFB53 /* VideosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07ED81781C0D7F63007FFB53 /* VideosTableViewController.swift */; };
+		1E37E7251C0E362D0054607A /* CreateEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E37E71D1C0E362D0054607A /* CreateEventViewController.swift */; };
+		1E37E7261C0E362D0054607A /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E37E71E1C0E362D0054607A /* Event.swift */; };
+		1E37E7271C0E362D0054607A /* EventsAndRidesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E37E71F1C0E362D0054607A /* EventsAndRidesController.swift */; };
+		1E37E7281C0E362D0054607A /* EventService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E37E7201C0E362D0054607A /* EventService.swift */; };
+		1E37E7291C0E362D0054607A /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E37E7211C0E362D0054607A /* EventsViewController.swift */; };
+		1E37E72A1C0E362D0054607A /* VideosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E37E7221C0E362D0054607A /* VideosTableViewController.swift */; };
+		1E37E72B1C0E362D0054607A /* VideoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E37E7231C0E362D0054607A /* VideoTableViewController.swift */; };
+		1E37E72C1C0E362D0054607A /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E37E7241C0E362D0054607A /* VideoViewController.swift */; };
 		271BDF631C0D538A0075A29E /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 271BDF541C0D53710075A29E /* Alamofire.framework */; };
 		277E67561BEB6362001C29DD /* CruAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277E67551BEB6362001C29DD /* CruAppTests.swift */; };
 		838564F51C0D9EDF00EB1728 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 838564F41C0D9EDF00EB1728 /* SWRevealViewController.m */; };
@@ -35,6 +44,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		070861B21C0DC67200D6D646 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 271BDF491C0D53710075A29E /* Alamofire.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = F8111E3219A95C8B0040E7D1;
+			remoteInfo = "Alamofire iOS";
+		};
 		271BDF531C0D53710075A29E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 271BDF491C0D53710075A29E /* Alamofire.xcodeproj */;
@@ -100,6 +116,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		070861B41C0DC67200D6D646 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				070861B11C0DC67200D6D646 /* Alamofire.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		072519A41BE9694000F38F81 /* CruApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CruApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		072519A71BE9694000F38F81 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -109,7 +139,14 @@
 		072519B11BE9694000F38F81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		072519B31BE9694000F38F81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07ED81701C0D7ECC007FFB53 /* ResourcesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourcesViewController.swift; sourceTree = "<group>"; };
-		07ED81781C0D7F63007FFB53 /* VideosTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideosTableViewController.swift; sourceTree = "<group>"; };
+		1E37E71D1C0E362D0054607A /* CreateEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateEventViewController.swift; sourceTree = "<group>"; };
+		1E37E71E1C0E362D0054607A /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		1E37E71F1C0E362D0054607A /* EventsAndRidesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsAndRidesController.swift; sourceTree = "<group>"; };
+		1E37E7201C0E362D0054607A /* EventService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventService.swift; sourceTree = "<group>"; };
+		1E37E7211C0E362D0054607A /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
+		1E37E7221C0E362D0054607A /* VideosTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideosTableViewController.swift; sourceTree = "<group>"; };
+		1E37E7231C0E362D0054607A /* VideoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoTableViewController.swift; sourceTree = "<group>"; };
+		1E37E7241C0E362D0054607A /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		271BDF491C0D53710075A29E /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "frameworks/Alamofire-master/Alamofire.xcodeproj"; sourceTree = "<group>"; };
 		277E67531BEB6362001C29DD /* CruAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CruAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		277E67551BEB6362001C29DD /* CruAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CruAppTests.swift; sourceTree = "<group>"; };
@@ -142,6 +179,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				271BDF631C0D538A0075A29E /* Alamofire.framework in Frameworks */,
+				070861B01C0DC67200D6D646 /* Alamofire.framework in Frameworks */,
 				CBF52B4D6C6CD44BBF744548 /* Pods_CruApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -207,11 +245,18 @@
 		07EE5F7D1BFE6BA8009A2B44 /* VCs */ = {
 			isa = PBXGroup;
 			children = (
+				1E37E71D1C0E362D0054607A /* CreateEventViewController.swift */,
+				1E37E71E1C0E362D0054607A /* Event.swift */,
+				1E37E71F1C0E362D0054607A /* EventsAndRidesController.swift */,
+				1E37E7201C0E362D0054607A /* EventService.swift */,
+				1E37E7211C0E362D0054607A /* EventsViewController.swift */,
+				1E37E7221C0E362D0054607A /* VideosTableViewController.swift */,
+				1E37E7231C0E362D0054607A /* VideoTableViewController.swift */,
+				1E37E7241C0E362D0054607A /* VideoViewController.swift */,
 				838564EB1C0D9EB900EB1728 /* SWRevealViewController */,
 				072519A91BE9694000F38F81 /* ViewController.swift */,
 				839F64611C0D77BB00CAEC9E /* ActivityViewController.swift */,
 				07ED81701C0D7ECC007FFB53 /* ResourcesViewController.swift */,
-				07ED81781C0D7F63007FFB53 /* VideosTableViewController.swift */,
 			);
 			name = VCs;
 			sourceTree = "<group>";
@@ -295,11 +340,13 @@
 				072519A21BE9694000F38F81 /* Resources */,
 				72AAEF475E0E0794AF9DA655 /* Embed Pods Frameworks */,
 				FBA992323B80BFBB2DA35B0D /* Copy Pods Resources */,
+				070861B41C0DC67200D6D646 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				271BDF621C0D53850075A29E /* PBXTargetDependency */,
+				070861B31C0DC67200D6D646 /* PBXTargetDependency */,
 			);
 			name = CruApp;
 			productName = CruApp;
@@ -336,7 +383,7 @@
 				TargetAttributes = {
 					072519A31BE9694000F38F81 = {
 						CreatedOnToolsVersion = 7.1;
-						DevelopmentTeam = HE6C44UYMF;
+						DevelopmentTeam = CWEESB29TK;
 					};
 					277E67521BEB6362001C29DD = {
 						CreatedOnToolsVersion = 7.1;
@@ -507,12 +554,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07ED81791C0D7F63007FFB53 /* VideosTableViewController.swift in Sources */,
 				072519AA1BE9694000F38F81 /* ViewController.swift in Sources */,
 				839F64621C0D77BB00CAEC9E /* ActivityViewController.swift in Sources */,
 				07ED81711C0D7ECC007FFB53 /* ResourcesViewController.swift in Sources */,
 				072519A81BE9694000F38F81 /* AppDelegate.swift in Sources */,
+				1E37E7271C0E362D0054607A /* EventsAndRidesController.swift in Sources */,
+				1E37E72C1C0E362D0054607A /* VideoViewController.swift in Sources */,
 				838564F51C0D9EDF00EB1728 /* SWRevealViewController.m in Sources */,
+				1E37E7281C0E362D0054607A /* EventService.swift in Sources */,
+				1E37E72B1C0E362D0054607A /* VideoTableViewController.swift in Sources */,
+				1E37E7261C0E362D0054607A /* Event.swift in Sources */,
+				1E37E7251C0E362D0054607A /* CreateEventViewController.swift in Sources */,
+				1E37E72A1C0E362D0054607A /* VideosTableViewController.swift in Sources */,
+				1E37E7291C0E362D0054607A /* EventsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -527,6 +581,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		070861B31C0DC67200D6D646 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Alamofire iOS";
+			targetProxy = 070861B21C0DC67200D6D646 /* PBXContainerItemProxy */;
+		};
 		271BDF621C0D53850075A29E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Alamofire iOS";
@@ -692,6 +751,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = CruApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -713,6 +776,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = CruApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

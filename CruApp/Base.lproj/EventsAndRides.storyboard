@@ -42,6 +42,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Text" id="Yuy-qS-gyz"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="menuButton" destination="oHT-qk-SUz" id="asp-iL-hzB"/>
                         <outlet property="textButton" destination="Yuy-qS-gyz" id="hWm-GZ-22D"/>
                     </connections>
                 </viewController>

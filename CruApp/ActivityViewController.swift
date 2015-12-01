@@ -11,11 +11,20 @@ import Alamofire
 
 class ActivityViewController: UIViewController {
     @IBOutlet weak var textButton: UIBarButtonItem!
+    @IBOutlet weak var menuButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.textButton.target = self
         self.textButton.action = "text:"
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        if (self.revealViewController() != nil) {
+            self.menuButton.target = self.revealViewController()
+            self.menuButton.action = "revealToggle:"
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
     }
     
     override func didReceiveMemoryWarning() {

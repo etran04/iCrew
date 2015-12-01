@@ -1,5 +1,5 @@
 //
-//  MySchoolViewController.swift
+//  CreateEventViewController.swift
 //  CruApp
 //
 //  Created by Jordan Tang on 12/1/15.
@@ -9,8 +9,8 @@
 import UIKit
 import EventKit
 
-class MySchoolViewController: UIViewController {
-
+class CreateEventViewController: UIViewController {
+    
     @IBOutlet weak var eventNameField: UITextField!
     
     @IBOutlet weak var eventStartField: UITextField!
@@ -19,10 +19,10 @@ class MySchoolViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -75,15 +75,15 @@ class MySchoolViewController: UIViewController {
             print("Bad")
         }
     }
-
+    
     /*
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // Get the new view controller using segue.destinationViewController.
+    // Pass the selected object to the new view controller.
     }
     */
-
+    
 }

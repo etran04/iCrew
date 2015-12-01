@@ -26,7 +26,7 @@
         <!--Activity-->
         <scene sceneID="h0k-Pv-LaI">
             <objects>
-                <viewController id="ekk-Fa-R83" sceneMemberID="viewController">
+                <viewController id="ekk-Fa-R83" customClass="ActivityViewController" customModule="CruApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Vh9-YL-bFc"/>
                         <viewControllerLayoutGuide type="bottom" id="Hr8-xO-mmO"/>
@@ -34,22 +34,16 @@
                     <view key="view" contentMode="scaleToFill" id="kOo-sX-07x">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="27r-bS-abt">
-                                <rect key="frame" x="30" y="101" width="240" height="128"/>
-                                <animations/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Activity" id="WwR-dL-FhR">
                         <barButtonItem key="leftBarButtonItem" image="menu.png" id="oHT-qk-SUz"/>
+                        <barButtonItem key="rightBarButtonItem" title="Text" id="Yuy-qS-gyz"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="textButton" destination="Yuy-qS-gyz" id="hWm-GZ-22D"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jzr-DB-Auk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

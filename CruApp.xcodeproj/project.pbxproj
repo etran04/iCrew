@@ -18,6 +18,7 @@
 		839F642A1C0D203A00CAEC9E /* GetInvolved.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 839F64291C0D203A00CAEC9E /* GetInvolved.storyboard */; };
 		839F642C1C0D204500CAEC9E /* SummerMissions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 839F642B1C0D204500CAEC9E /* SummerMissions.storyboard */; };
 		839F642E1C0D205800CAEC9E /* EventsAndRides.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 839F642D1C0D205800CAEC9E /* EventsAndRides.storyboard */; };
+		A43482D01C0D290900B62D6C /* Calendar-25.png in Resources */ = {isa = PBXBuildFile; fileRef = A43482CF1C0D290900B62D6C /* Calendar-25.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		839F64291C0D203A00CAEC9E /* GetInvolved.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GetInvolved.storyboard; sourceTree = "<group>"; };
 		839F642B1C0D204500CAEC9E /* SummerMissions.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SummerMissions.storyboard; sourceTree = "<group>"; };
 		839F642D1C0D205800CAEC9E /* EventsAndRides.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EventsAndRides.storyboard; sourceTree = "<group>"; };
+		A43482CF1C0D290900B62D6C /* Calendar-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Calendar-25.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 		072519A61BE9694000F38F81 /* CruApp */ = {
 			isa = PBXGroup;
 			children = (
+				A43482D11C0D290E00B62D6C /* Images */,
 				072519B31BE9694000F38F81 /* Info.plist */,
 				072519AE1BE9694000F38F81 /* Assets.xcassets */,
 				072519A71BE9694000F38F81 /* AppDelegate.swift */,
@@ -125,6 +128,15 @@
 				277E67571BEB6362001C29DD /* Info.plist */,
 			);
 			path = CruAppTests;
+			sourceTree = "<group>";
+		};
+		A43482D11C0D290E00B62D6C /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				A43482CF1C0D290900B62D6C /* Calendar-25.png */,
+			);
+			name = Images;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,6 +225,7 @@
 				839F64281C0D202800CAEC9E /* MySchool.storyboard in Resources */,
 				072519B21BE9694000F38F81 /* LaunchScreen.storyboard in Resources */,
 				07EE5F7B1BFE6B89009A2B44 /* Resources.storyboard in Resources */,
+				A43482D01C0D290900B62D6C /* Calendar-25.png in Resources */,
 				072519AF1BE9694000F38F81 /* Assets.xcassets in Resources */,
 				839F642C1C0D204500CAEC9E /* SummerMissions.storyboard in Resources */,
 				072519AD1BE9694000F38F81 /* Main.storyboard in Resources */,

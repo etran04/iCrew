@@ -12,8 +12,12 @@
 		072519AD1BE9694000F38F81 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 072519AB1BE9694000F38F81 /* Main.storyboard */; };
 		072519AF1BE9694000F38F81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 072519AE1BE9694000F38F81 /* Assets.xcassets */; };
 		072519B21BE9694000F38F81 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 072519B01BE9694000F38F81 /* LaunchScreen.storyboard */; };
-		07EE5F7B1BFE6B89009A2B44 /* ResourceStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07EE5F7A1BFE6B89009A2B44 /* ResourceStoryboard.storyboard */; };
+		07EE5F7B1BFE6B89009A2B44 /* Resources.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07EE5F7A1BFE6B89009A2B44 /* Resources.storyboard */; };
 		277E67561BEB6362001C29DD /* CruAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277E67551BEB6362001C29DD /* CruAppTests.swift */; };
+		839F64281C0D202800CAEC9E /* MySchool.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 839F64271C0D202800CAEC9E /* MySchool.storyboard */; };
+		839F642A1C0D203A00CAEC9E /* GetInvolved.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 839F64291C0D203A00CAEC9E /* GetInvolved.storyboard */; };
+		839F642C1C0D204500CAEC9E /* SummerMissions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 839F642B1C0D204500CAEC9E /* SummerMissions.storyboard */; };
+		839F642E1C0D205800CAEC9E /* EventsAndRides.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 839F642D1C0D205800CAEC9E /* EventsAndRides.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,10 +38,14 @@
 		072519AE1BE9694000F38F81 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		072519B11BE9694000F38F81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		072519B31BE9694000F38F81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		07EE5F7A1BFE6B89009A2B44 /* ResourceStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ResourceStoryboard.storyboard; sourceTree = "<group>"; };
+		07EE5F7A1BFE6B89009A2B44 /* Resources.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Resources.storyboard; sourceTree = "<group>"; };
 		277E67531BEB6362001C29DD /* CruAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CruAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		277E67551BEB6362001C29DD /* CruAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CruAppTests.swift; sourceTree = "<group>"; };
 		277E67571BEB6362001C29DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		839F64271C0D202800CAEC9E /* MySchool.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MySchool.storyboard; sourceTree = "<group>"; };
+		839F64291C0D203A00CAEC9E /* GetInvolved.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GetInvolved.storyboard; sourceTree = "<group>"; };
+		839F642B1C0D204500CAEC9E /* SummerMissions.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SummerMissions.storyboard; sourceTree = "<group>"; };
+		839F642D1C0D205800CAEC9E /* EventsAndRides.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EventsAndRides.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,7 +100,11 @@
 			isa = PBXGroup;
 			children = (
 				072519AB1BE9694000F38F81 /* Main.storyboard */,
-				07EE5F7A1BFE6B89009A2B44 /* ResourceStoryboard.storyboard */,
+				839F642D1C0D205800CAEC9E /* EventsAndRides.storyboard */,
+				839F64291C0D203A00CAEC9E /* GetInvolved.storyboard */,
+				839F642B1C0D204500CAEC9E /* SummerMissions.storyboard */,
+				07EE5F7A1BFE6B89009A2B44 /* Resources.storyboard */,
+				839F64271C0D202800CAEC9E /* MySchool.storyboard */,
 				072519B01BE9694000F38F81 /* LaunchScreen.storyboard */,
 			);
 			name = Storyboards;
@@ -197,10 +209,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				839F642A1C0D203A00CAEC9E /* GetInvolved.storyboard in Resources */,
+				839F64281C0D202800CAEC9E /* MySchool.storyboard in Resources */,
 				072519B21BE9694000F38F81 /* LaunchScreen.storyboard in Resources */,
-				07EE5F7B1BFE6B89009A2B44 /* ResourceStoryboard.storyboard in Resources */,
+				07EE5F7B1BFE6B89009A2B44 /* Resources.storyboard in Resources */,
 				072519AF1BE9694000F38F81 /* Assets.xcassets in Resources */,
+				839F642C1C0D204500CAEC9E /* SummerMissions.storyboard in Resources */,
 				072519AD1BE9694000F38F81 /* Main.storyboard in Resources */,
+				839F642E1C0D205800CAEC9E /* EventsAndRides.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

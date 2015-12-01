@@ -18,10 +18,11 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="pgz-nG-Xtb"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tqi-8S-IjV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="165" y="172"/>
+            <point key="canvasLocation" x="-79" y="172"/>
         </scene>
     </scenes>
 </document>

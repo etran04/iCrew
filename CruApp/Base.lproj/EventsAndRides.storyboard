@@ -32,11 +32,11 @@
                         <viewControllerLayoutGuide type="bottom" id="Hr8-xO-mmO"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kOo-sX-07x">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ev-le-uod">
-                                <rect key="frame" x="234" y="208" width="88" height="30"/>
+                                <rect key="frame" x="143" y="216" width="88" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Create Event"/>
                                 <connections>
@@ -44,7 +44,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zwd-9G-bfZ">
-                                <rect key="frame" x="237" y="285" width="83" height="30"/>
+                                <rect key="frame" x="146" y="351" width="83" height="30"/>
                                 <animations/>
                                 <state key="normal" title="View Events"/>
                                 <connections>
@@ -59,6 +59,7 @@
                         <barButtonItem key="leftBarButtonItem" image="menu.png" id="oHT-qk-SUz"/>
                         <barButtonItem key="rightBarButtonItem" title="Text" id="Yuy-qS-gyz"/>
                     </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="menuButton" destination="oHT-qk-SUz" id="asp-iL-hzB"/>
                         <outlet property="textButton" destination="Yuy-qS-gyz" id="hWm-GZ-22D"/>
@@ -66,7 +67,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jzr-DB-Auk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1440" y="-1253"/>
+            <point key="canvasLocation" x="1377.5" y="-1233.5"/>
         </scene>
         <!--Events-->
         <scene sceneID="2hl-7j-QvT">
@@ -128,7 +129,7 @@
                         <viewControllerLayoutGuide type="bottom" id="VPy-qx-tXh"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Kmv-GA-O46">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RgO-Wf-6hh">

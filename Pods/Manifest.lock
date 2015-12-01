@@ -1,10 +1,10 @@
 PODS:
-  - YouTubePlayer (0.3.0)
+  - youtube-ios-player-helper (0.1.5)
 
 DEPENDENCIES:
-  - YouTubePlayer
+  - youtube-ios-player-helper (~> 0.1.4)
 
 SPEC CHECKSUMS:
-  YouTubePlayer: 88713a96c356f2c88da8925eb61438eda88bcd57
+  youtube-ios-player-helper: 8706bb155ffee74fbe5f2f5cf41c2dafe60dc155
 
 COCOAPODS: 0.39.0

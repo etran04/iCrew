@@ -7,13 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		070861B01C0DC67200D6D646 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 271BDF541C0D53710075A29E /* Alamofire.framework */; };
+		070861B11C0DC67200D6D646 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 271BDF541C0D53710075A29E /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		070861B61C0DC67D00D6D646 /* youtube_ios_player_helper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 070861B51C0DC67D00D6D646 /* youtube_ios_player_helper.framework */; };
+		070861C21C0DC88A00D6D646 /* YTPlayerView-iframe-player.html in Resources */ = {isa = PBXBuildFile; fileRef = 070861C11C0DC88A00D6D646 /* YTPlayerView-iframe-player.html */; };
 		072519A81BE9694000F38F81 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072519A71BE9694000F38F81 /* AppDelegate.swift */; };
 		072519AA1BE9694000F38F81 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072519A91BE9694000F38F81 /* ViewController.swift */; };
 		072519AD1BE9694000F38F81 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 072519AB1BE9694000F38F81 /* Main.storyboard */; };
 		072519AF1BE9694000F38F81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 072519AE1BE9694000F38F81 /* Assets.xcassets */; };
 		072519B21BE9694000F38F81 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 072519B01BE9694000F38F81 /* LaunchScreen.storyboard */; };
 		07ED81711C0D7ECC007FFB53 /* ResourcesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07ED81701C0D7ECC007FFB53 /* ResourcesViewController.swift */; };
-		07ED81791C0D7F63007FFB53 /* VideosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07ED81781C0D7F63007FFB53 /* VideosTableViewController.swift */; };
 		271BDF631C0D538A0075A29E /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 271BDF541C0D53710075A29E /* Alamofire.framework */; };
 		277E67561BEB6362001C29DD /* CruAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277E67551BEB6362001C29DD /* CruAppTests.swift */; };
 		839F64411C0D4E4300CAEC9E /* Cru-Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 839F643B1C0D4E4300CAEC9E /* Cru-Logo.png */; };
@@ -34,6 +37,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		070861B21C0DC67200D6D646 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 271BDF491C0D53710075A29E /* Alamofire.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = F8111E3219A95C8B0040E7D1;
+			remoteInfo = "Alamofire iOS";
+		};
 		271BDF531C0D53710075A29E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 271BDF491C0D53710075A29E /* Alamofire.xcodeproj */;
@@ -99,7 +109,23 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		070861B41C0DC67200D6D646 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				070861B11C0DC67200D6D646 /* Alamofire.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		070861B51C0DC67D00D6D646 /* youtube_ios_player_helper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = youtube_ios_player_helper.framework; path = "Pods/../build/Debug-iphoneos/youtube_ios_player_helper.framework"; sourceTree = "<group>"; };
+		070861C11C0DC88A00D6D646 /* YTPlayerView-iframe-player.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "YTPlayerView-iframe-player.html"; sourceTree = "<group>"; };
 		072519A41BE9694000F38F81 /* CruApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CruApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		072519A71BE9694000F38F81 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		072519A91BE9694000F38F81 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -108,7 +134,6 @@
 		072519B11BE9694000F38F81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		072519B31BE9694000F38F81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07ED81701C0D7ECC007FFB53 /* ResourcesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourcesViewController.swift; sourceTree = "<group>"; };
-		07ED81781C0D7F63007FFB53 /* VideosTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideosTableViewController.swift; sourceTree = "<group>"; };
 		271BDF491C0D53710075A29E /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "frameworks/Alamofire-master/Alamofire.xcodeproj"; sourceTree = "<group>"; };
 		277E67531BEB6362001C29DD /* CruAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CruAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		277E67551BEB6362001C29DD /* CruAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CruAppTests.swift; sourceTree = "<group>"; };
@@ -137,7 +162,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				070861B61C0DC67D00D6D646 /* youtube_ios_player_helper.framework in Frameworks */,
 				271BDF631C0D538A0075A29E /* Alamofire.framework in Frameworks */,
+				070861B01C0DC67200D6D646 /* Alamofire.framework in Frameworks */,
 				CBF52B4D6C6CD44BBF744548 /* Pods_CruApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -156,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				072519A61BE9694000F38F81 /* CruApp */,
+				070861C11C0DC88A00D6D646 /* YTPlayerView-iframe-player.html */,
 				277E67541BEB6362001C29DD /* CruAppTests */,
 				072519A51BE9694000F38F81 /* Products */,
 				271BDF491C0D53710075A29E /* Alamofire.xcodeproj */,
@@ -206,7 +234,6 @@
 				072519A91BE9694000F38F81 /* ViewController.swift */,
 				839F64611C0D77BB00CAEC9E /* ActivityViewController.swift */,
 				07ED81701C0D7ECC007FFB53 /* ResourcesViewController.swift */,
-				07ED81781C0D7F63007FFB53 /* VideosTableViewController.swift */,
 			);
 			name = VCs;
 			sourceTree = "<group>";
@@ -262,6 +289,7 @@
 		C6533B09B2FB930E446D08DE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				070861B51C0DC67D00D6D646 /* youtube_ios_player_helper.framework */,
 				DD14769052309A631372632E /* Pods_CruApp.framework */,
 			);
 			name = Frameworks;
@@ -280,11 +308,13 @@
 				072519A21BE9694000F38F81 /* Resources */,
 				72AAEF475E0E0794AF9DA655 /* Embed Pods Frameworks */,
 				FBA992323B80BFBB2DA35B0D /* Copy Pods Resources */,
+				070861B41C0DC67200D6D646 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				271BDF621C0D53850075A29E /* PBXTargetDependency */,
+				070861B31C0DC67200D6D646 /* PBXTargetDependency */,
 			);
 			name = CruApp;
 			productName = CruApp;
@@ -321,7 +351,7 @@
 				TargetAttributes = {
 					072519A31BE9694000F38F81 = {
 						CreatedOnToolsVersion = 7.1;
-						DevelopmentTeam = HE6C44UYMF;
+						DevelopmentTeam = CWEESB29TK;
 					};
 					277E67521BEB6362001C29DD = {
 						CreatedOnToolsVersion = 7.1;
@@ -415,6 +445,7 @@
 				839F64451C0D4E4300CAEC9E /* Summer-25.png in Resources */,
 				839F64551C0D6BD100CAEC9E /* GetInvolved.storyboard in Resources */,
 				072519B21BE9694000F38F81 /* LaunchScreen.storyboard in Resources */,
+				070861C21C0DC88A00D6D646 /* YTPlayerView-iframe-player.html in Resources */,
 				839F645B1C0D6C4C00CAEC9E /* Resources.storyboard in Resources */,
 				839F64411C0D4E4300CAEC9E /* Cru-Logo.png in Resources */,
 				839F64441C0D4E4300CAEC9E /* Planner-25.png in Resources */,
@@ -492,7 +523,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07ED81791C0D7F63007FFB53 /* VideosTableViewController.swift in Sources */,
 				072519AA1BE9694000F38F81 /* ViewController.swift in Sources */,
 				839F64621C0D77BB00CAEC9E /* ActivityViewController.swift in Sources */,
 				07ED81711C0D7ECC007FFB53 /* ResourcesViewController.swift in Sources */,
@@ -511,6 +541,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		070861B31C0DC67200D6D646 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Alamofire iOS";
+			targetProxy = 070861B21C0DC67200D6D646 /* PBXContainerItemProxy */;
+		};
 		271BDF621C0D53850075A29E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Alamofire iOS";
@@ -675,6 +710,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = CruApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -693,6 +732,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = CruApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

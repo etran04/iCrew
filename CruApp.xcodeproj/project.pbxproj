@@ -21,8 +21,8 @@
 		1E37E7281C0E362D0054607A /* EventService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E37E7201C0E362D0054607A /* EventService.swift */; };
 		1E37E7291C0E362D0054607A /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E37E7211C0E362D0054607A /* EventsViewController.swift */; };
 		1E37E72A1C0E362D0054607A /* VideosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E37E7221C0E362D0054607A /* VideosTableViewController.swift */; };
-		1E37E72B1C0E362D0054607A /* VideoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E37E7231C0E362D0054607A /* VideoTableViewController.swift */; };
-		1E37E72C1C0E362D0054607A /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E37E7241C0E362D0054607A /* VideoViewController.swift */; };
+		1E37E72B1C0E362D0054607A /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E37E7231C0E362D0054607A /* ArticleViewController.swift */; };
+		1E37E72C1C0E362D0054607A /* VideoVideoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E37E7241C0E362D0054607A /* VideoVideoController.swift */; };
 		271BDF631C0D538A0075A29E /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 271BDF541C0D53710075A29E /* Alamofire.framework */; };
 		277E67561BEB6362001C29DD /* CruAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277E67551BEB6362001C29DD /* CruAppTests.swift */; };
 		838564F51C0D9EDF00EB1728 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 838564F41C0D9EDF00EB1728 /* SWRevealViewController.m */; };
@@ -145,8 +145,8 @@
 		1E37E7201C0E362D0054607A /* EventService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventService.swift; sourceTree = "<group>"; };
 		1E37E7211C0E362D0054607A /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		1E37E7221C0E362D0054607A /* VideosTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideosTableViewController.swift; sourceTree = "<group>"; };
-		1E37E7231C0E362D0054607A /* VideoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoTableViewController.swift; sourceTree = "<group>"; };
-		1E37E7241C0E362D0054607A /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
+		1E37E7231C0E362D0054607A /* ArticleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
+		1E37E7241C0E362D0054607A /* VideoVideoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoVideoController.swift; sourceTree = "<group>"; };
 		271BDF491C0D53710075A29E /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "frameworks/Alamofire-master/Alamofire.xcodeproj"; sourceTree = "<group>"; };
 		277E67531BEB6362001C29DD /* CruAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CruAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		277E67551BEB6362001C29DD /* CruAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CruAppTests.swift; sourceTree = "<group>"; };
@@ -233,8 +233,8 @@
 			children = (
 				07ED81701C0D7ECC007FFB53 /* ResourcesViewController.swift */,
 				1E37E7221C0E362D0054607A /* VideosTableViewController.swift */,
-				1E37E7231C0E362D0054607A /* VideoTableViewController.swift */,
-				1E37E7241C0E362D0054607A /* VideoViewController.swift */,
+				1E37E7231C0E362D0054607A /* ArticleViewController.swift */,
+				1E37E7241C0E362D0054607A /* VideoVideoController.swift */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -567,10 +567,10 @@
 				07ED81711C0D7ECC007FFB53 /* ResourcesViewController.swift in Sources */,
 				072519A81BE9694000F38F81 /* AppDelegate.swift in Sources */,
 				1E37E7271C0E362D0054607A /* EventsAndRidesController.swift in Sources */,
-				1E37E72C1C0E362D0054607A /* VideoViewController.swift in Sources */,
+				1E37E72C1C0E362D0054607A /* VideoVideoController.swift in Sources */,
 				838564F51C0D9EDF00EB1728 /* SWRevealViewController.m in Sources */,
 				1E37E7281C0E362D0054607A /* EventService.swift in Sources */,
-				1E37E72B1C0E362D0054607A /* VideoTableViewController.swift in Sources */,
+				1E37E72B1C0E362D0054607A /* ArticleViewController.swift in Sources */,
 				1E37E7261C0E362D0054607A /* Event.swift in Sources */,
 				1E37E7251C0E362D0054607A /* CreateEventViewController.swift in Sources */,
 				1E37E72A1C0E362D0054607A /* VideosTableViewController.swift in Sources */,

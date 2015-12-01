@@ -35,7 +35,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qgz-BK-S50">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qgz-BK-S50">
                                 <rect key="frame" x="277" y="284" width="47" height="31"/>
                                 <animations/>
                                 <state key="normal" title="Videos"/>
@@ -43,12 +43,24 @@
                                     <segue destination="iFf-Ie-YNt" kind="show" id="28Z-hC-7er"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VVR-xn-6kz">
+                                <rect key="frame" x="277" y="342" width="53" height="31"/>
+                                <animations/>
+                                <state key="normal" title="Articles"/>
+                                <connections>
+                                    <segue destination="xVJ-mS-bZd" kind="show" id="jfN-8Z-Jle"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="qgz-BK-S50" firstAttribute="centerX" secondItem="z7f-dP-Vng" secondAttribute="centerX" id="3M6-Mg-V6g"/>
-                            <constraint firstItem="qgz-BK-S50" firstAttribute="centerY" secondItem="z7f-dP-Vng" secondAttribute="centerY" id="drr-gB-mBW"/>
+                            <constraint firstItem="AKh-2R-scz" firstAttribute="top" secondItem="VVR-xn-6kz" secondAttribute="bottom" constant="178" id="6XD-Hb-E3d"/>
+                            <constraint firstItem="qgz-BK-S50" firstAttribute="centerY" secondItem="z7f-dP-Vng" secondAttribute="centerY" id="7J9-nD-hzB"/>
+                            <constraint firstItem="VVR-xn-6kz" firstAttribute="top" secondItem="qgz-BK-S50" secondAttribute="bottom" constant="27" id="Aeg-hn-UXV"/>
+                            <constraint firstItem="qgz-BK-S50" firstAttribute="top" secondItem="0wr-Fm-hx3" secondAttribute="bottom" constant="220" id="bpX-p9-94Q"/>
+                            <constraint firstItem="qgz-BK-S50" firstAttribute="centerX" secondItem="z7f-dP-Vng" secondAttribute="centerX" id="dhG-8X-V9P"/>
+                            <constraint firstItem="VVR-xn-6kz" firstAttribute="leading" secondItem="qgz-BK-S50" secondAttribute="leading" id="h89-Xi-kLS"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Resources " id="huO-g1-HNG">
@@ -61,6 +73,48 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gW3-Wc-XHf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1394" y="1018"/>
+        </scene>
+        <!--Articles-->
+        <scene sceneID="80j-GD-PXq">
+            <objects>
+                <viewController title="Articles" id="xVJ-mS-bZd" customClass="ArticleViewController" customModule="CruApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ej5-83-0Tt"/>
+                        <viewControllerLayoutGuide type="bottom" id="9p5-9b-xOp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jGP-fa-iI9">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x1k-DF-JjP">
+                                <rect key="frame" x="330" y="256" width="0.0" height="0.0"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0SY-Nd-klS">
+                                <rect key="frame" x="227" y="89" width="146" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Discerning God's Will"/>
+                                <connections>
+                                    <action selector="linkPressed:" destination="xVJ-mS-bZd" eventType="touchUpInside" id="xZ1-YQ-6iZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0SY-Nd-klS" firstAttribute="top" secondItem="ej5-83-0Tt" secondAttribute="bottom" constant="25" id="PKQ-jS-DgA"/>
+                            <constraint firstItem="x1k-DF-JjP" firstAttribute="top" secondItem="jGP-fa-iI9" secondAttribute="top" constant="256" id="uYS-uG-jBi"/>
+                            <constraint firstItem="0SY-Nd-klS" firstAttribute="centerX" secondItem="jGP-fa-iI9" secondAttribute="centerX" id="yyI-8H-k9q"/>
+                            <constraint firstAttribute="trailing" secondItem="x1k-DF-JjP" secondAttribute="trailing" constant="270" id="zav-ex-3Ec"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uYq-si-Vod" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1394" y="1856"/>
         </scene>
         <!--Videos-->
         <scene sceneID="KzI-0N-oMX">

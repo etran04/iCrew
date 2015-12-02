@@ -34,9 +34,9 @@ class CreateEventViewController: UIViewController {
         let eventStart = self.eventStartField.text
         let eventEnd = self.eventEndField.text
         
-        var eventService:EventService!
-        eventService = EventService()
-        eventService.postEvent(eventName!)
+        var dbClient:DBClient!
+        dbClient = DBClient()
+        dbClient.postEvent(eventName!)
         
         // 1
         let eventStore = EKEventStore()

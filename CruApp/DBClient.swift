@@ -10,13 +10,13 @@ import Foundation
 
 class DBClient {
     
-    func loadEvents(events: (NSDictionary) -> ()) {
-        displayEvents(getEventData(events))
+    func getData(action: String, dict: (NSDictionary) -> ()) {
+        requestData(action, completionHandler: obtainData(dict))
     }
     
-    func displayEvents(completionHandler : (NSData?, NSURLResponse?, NSError?) -> Void) {
-        request("http://localhost:3000/api/event/list", method: "GET", completionHandler: completionHandler)
-        
+    func requestData(action: String, completionHandler : (NSData?, NSURLResponse?, NSError?) -> Void) {
+        let url = "http://localhost:3000/api/" + action + "/list"
+        request(url, method: "GET", completionHandler: completionHandler)
     }
    
     func postEvent(eventName : String) -> () {
@@ -90,9 +90,8 @@ class DBClient {
         return task
     }
     
-    //func postEventData(events: (NSDictionary) -> ()
     
-    func getEventData(events: (NSDictionary) -> ()) -> (NSData?, NSURLResponse?, NSError?)-> () {
+    func obtainData(dict: (NSDictionary) -> ()) -> (NSData?, NSURLResponse?, NSError?)-> () {
         return {(data : NSData?, response : NSURLResponse?, error : NSError?) in
             
             do {
@@ -102,8 +101,8 @@ class DBClient {
                     let jsonList = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as! NSArray
                     dispatch_async(dispatch_get_main_queue(), {
                         for element in jsonList {
-                            if let dict = element as? [String: AnyObject] {
-                                events(dict)
+                            if let elem = element as? [String: AnyObject] {
+                                dict(elem)
                             }
                         }
                     })

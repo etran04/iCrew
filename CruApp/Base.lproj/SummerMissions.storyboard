@@ -16,7 +16,7 @@
                         <animations/>
                     </navigationBar>
                     <connections>
-                        <segue destination="awF-T6-h85" kind="relationship" relationship="rootViewController" id="0va-j4-F8p"/>
+                        <segue destination="Etk-aC-qez" kind="relationship" relationship="rootViewController" id="XOL-Pm-j4p"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r0h-EP-dem" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -24,26 +24,48 @@
             <point key="canvasLocation" x="678" y="251"/>
         </scene>
         <!--Summer Missions-->
-        <scene sceneID="LUa-fh-INr">
+        <scene sceneID="vKe-u9-8R4">
             <objects>
-                <viewController id="awF-T6-h85" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="wJ7-Ga-uQv"/>
-                        <viewControllerLayoutGuide type="bottom" id="OR6-7c-ZcH"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="blM-rG-66W">
+                <tableViewController id="Etk-aC-qez" customClass="SummerMissionsViewController" customModule="CruApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="l4k-Y4-Ybd">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Summer Missions" id="sdt-gW-Ni8">
-                        <barButtonItem key="leftBarButtonItem" image="menu.png" id="S5Q-XR-9Ts"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MissionCell" textLabel="trc-QM-f7Q" style="IBUITableViewCellStyleDefault" id="Nnt-jF-rrw">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Nnt-jF-rrw" id="muT-NQ-3Ea">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="trc-QM-f7Q">
+                                            <rect key="frame" x="15" y="0.0" width="570" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <animations/>
+                                </tableViewCellContentView>
+                                <animations/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Etk-aC-qez" id="GL7-Xq-ib4"/>
+                            <outlet property="delegate" destination="Etk-aC-qez" id="Ld0-EH-4Ag"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Summer Missions" id="bR7-qk-PI9">
+                        <barButtonItem key="leftBarButtonItem" image="menu.png" id="qg4-wb-OYl"/>
                     </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0J2-64-1UE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DYE-fo-w0o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1438" y="251"/>
+            <point key="canvasLocation" x="1506" y="246"/>
         </scene>
     </scenes>
     <resources>

@@ -31,23 +31,7 @@ class SummerMissionsViewController: UITableViewController {
         let missionObj = Mission(name: name, description: description)
         missionsCollection.append(missionObj)
         self.tableView.reloadData()
-        
     }
-    
-    //    func loadEvents(events: NSArray) {
-    //        for event in events {
-    //            if let dict = event as? [String: AnyObject] {
-    //                let name = dict["name"] as! String
-    //                let description = dict["description"] as! String
-    //                let image = dict["image"] as! String
-    //                let eventObj = Event(name: name, description: description, image: image)
-    //                eventsCollection.append(eventObj)
-    //            }
-    //            dispatch_async(dispatch_get_main_queue()) {
-    //                self.tableView.reloadData()
-    //            }
-    //        }
-    //    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

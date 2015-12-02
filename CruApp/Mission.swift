@@ -12,6 +12,9 @@ import UIKit
 struct Mission {
     var name: String
     var description: String
+    //var cost: Int
+    //var location: CLLocation
+    //var image: UIImage
     
     init(name: String, description: String) {
         self.name = name

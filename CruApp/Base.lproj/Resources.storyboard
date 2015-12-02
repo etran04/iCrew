@@ -37,16 +37,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qgz-BK-S50">
-                                <rect key="frame" x="277" y="284" width="47" height="31"/>
+                                <rect key="frame" x="277" y="179" width="47" height="31"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="Xve-Pp-0Mc"/>
+                                </constraints>
                                 <state key="normal" title="Videos"/>
                                 <connections>
                                     <segue destination="CBw-xl-Jne" kind="show" id="waM-93-Tmv"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VVR-xn-6kz">
-                                <rect key="frame" x="277" y="342" width="53" height="31"/>
+                                <rect key="frame" x="274" y="328" width="53" height="31"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="7KW-NR-fx0"/>
+                                </constraints>
                                 <state key="normal" title="Articles"/>
                                 <connections>
                                     <segue destination="20A-fb-hoq" kind="show" id="cyX-Kr-fgI"/>
@@ -56,12 +62,10 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="AKh-2R-scz" firstAttribute="top" secondItem="VVR-xn-6kz" secondAttribute="bottom" constant="178" id="6XD-Hb-E3d"/>
-                            <constraint firstItem="qgz-BK-S50" firstAttribute="centerY" secondItem="z7f-dP-Vng" secondAttribute="centerY" id="7J9-nD-hzB"/>
-                            <constraint firstItem="VVR-xn-6kz" firstAttribute="top" secondItem="qgz-BK-S50" secondAttribute="bottom" constant="27" id="Aeg-hn-UXV"/>
-                            <constraint firstItem="qgz-BK-S50" firstAttribute="top" secondItem="0wr-Fm-hx3" secondAttribute="bottom" constant="220" id="bpX-p9-94Q"/>
-                            <constraint firstItem="qgz-BK-S50" firstAttribute="centerX" secondItem="z7f-dP-Vng" secondAttribute="centerX" id="dhG-8X-V9P"/>
-                            <constraint firstItem="VVR-xn-6kz" firstAttribute="leading" secondItem="qgz-BK-S50" secondAttribute="leading" id="h89-Xi-kLS"/>
+                            <constraint firstItem="qgz-BK-S50" firstAttribute="top" secondItem="0wr-Fm-hx3" secondAttribute="bottom" constant="115" id="Y0X-21-Alw"/>
+                            <constraint firstItem="VVR-xn-6kz" firstAttribute="centerX" secondItem="qgz-BK-S50" secondAttribute="centerX" id="YlU-A8-AYD"/>
+                            <constraint firstItem="AKh-2R-scz" firstAttribute="top" secondItem="VVR-xn-6kz" secondAttribute="bottom" constant="192" id="Zsa-kJ-lGA"/>
+                            <constraint firstItem="qgz-BK-S50" firstAttribute="centerX" secondItem="z7f-dP-Vng" secondAttribute="centerX" id="w7M-Mv-wRr"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Resources " id="huO-g1-HNG">
@@ -92,7 +96,7 @@
                                 <rect key="frame" x="0.0" y="136" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fXC-QL-udu" id="STU-WB-VMJ">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Article name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fMP-fY-jPL">

@@ -35,16 +35,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ev-le-uod">
-                                <rect key="frame" x="143" y="216" width="88" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ev-le-uod">
+                                <rect key="frame" x="143" y="208" width="88" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Create Event"/>
                                 <connections>
                                     <segue destination="KBp-gY-Akj" kind="show" id="iSe-gk-fJj"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zwd-9G-bfZ">
-                                <rect key="frame" x="146" y="351" width="83" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zwd-9G-bfZ">
+                                <rect key="frame" x="146" y="285" width="83" height="30"/>
                                 <animations/>
                                 <state key="normal" title="View Events"/>
                                 <connections>

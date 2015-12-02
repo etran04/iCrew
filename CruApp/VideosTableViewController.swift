@@ -8,94 +8,101 @@
 
 import UIKit
 
-class VideosTableViewController: UITableViewController {
+class Video {
+    private var id: String?
+    
+    init(id: String) {
+        self.id = id
+    }
+    
+    func getId() -> String {
+        return self.id!
+    }
+}
 
-    var apiKey = "AIzaSyAuxGypLq0g4moprKp80SJiDYKGnlKwmgA"
-    var desiredChannelsArray = ["Apple", "Google", "Microsoft"]
-    var channelIndex = 0
-    var channelsDataArray: Array<Dictionary<NSObject, AnyObject>> = []
+class VideosTableViewController: UITableViewController {
+    
+    var videos = [Video]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.loadVideos()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-
+    func loadVideos() {
+        self.videos += [
+            Video(id: "9cmh72Z9ISI")
+//            Video(id: "BIHVxynRvDk"),
+//            Video(id: "FNf-IGmxElI")
+        ]
+    }
+    
+    // MARK: - Table view data source
+    
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return videos.count
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("VideoTableCell", forIndexPath: indexPath) as! VideoTableViewCell
+        //cell.setVideoInfo(videos[indexPath.row].getId())
+        return cell
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    }
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // Override to support conditional editing of the table view.
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    // Return false if you do not want the specified item to be editable.
+    return true
     }
     */
     
-    func performGetRequest(targetURL: NSURL!, completion: (data: NSData?, HTTPStatusCode: Int, error: NSError?) -> Void) {
-        let request = NSMutableURLRequest(URL: targetURL)
-        request.HTTPMethod = "GET"
-        
-        let sessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
-        
-        let session = NSURLSession(configuration: sessionConfiguration)
-        
-        let task = session.dataTaskWithRequest(request, completionHandler: { (data: NSData?, response: NSURLResponse?, error: NSError?) -> Void in
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                completion(data: data, HTTPStatusCode: (response as! NSHTTPURLResponse).statusCode, error: error)
-            })
-        })
-        
-        task.resume()
+    /*
+    // Override to support editing the table view.
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+    if editingStyle == .Delete {
+    // Delete the row from the data source
+    tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+    } else if editingStyle == .Insert {
+    // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }
+    }
+    */
     
-    func getChannelDetails(useChannelIDParam: Bool) {
-        var urlString: String!
-        if !useChannelIDParam {
-            urlString = "https://www.googleapis.com/youtube/v3/channels?part=contentDetails,snippet&forUsername=\(desiredChannelsArray[channelIndex])&key=\(apiKey)"
-        }
-        else {
-            urlString = "https://www.googleapis.com/youtube/v3/channels?part=contentDetails,snippet&id=SOME_ID_VALUE&key=\(apiKey)"
-        }
-        
-        let targetURL = NSURL(string: urlString)
-        
-        performGetRequest(targetURL, completion: { (data, HTTPStatusCode, error) -> Void in
-            if HTTPStatusCode == 200 && error == nil {
-                do {
-                    // Convert the JSON data to a dictionary.
-                    let resultsDict = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as! Dictionary<NSObject, AnyObject>
-                
-                    // Get the first dictionary item from the returned items (usually there's just one item).
-                    let items: AnyObject! = resultsDict["items"] as AnyObject!
-                    let firstItemDict = (items as! Array<AnyObject>)[0] as! Dictionary<NSObject, AnyObject>
-                
-                    // Get the snippet dictionary that contains the desired data.
-                    let snippetDict = firstItemDict["snippet"] as! Dictionary<NSObject, AnyObject>
-                
-                    // Create a new dictionary to store only the values we care about.
-                    var desiredValuesDict: Dictionary<NSObject, AnyObject> = Dictionary<NSObject, AnyObject>()
-                    desiredValuesDict["title"] = snippetDict["title"]
-                    desiredValuesDict["description"] = snippetDict["description"]
-                    desiredValuesDict["thumbnail"] = ((snippetDict["thumbnails"] as! Dictionary<NSObject, AnyObject>)["default"] as! Dictionary<NSObject, AnyObject>)["url"]
-                
-                    // Save the channel's uploaded videos playlist ID.
-                    desiredValuesDict["playlistID"] = ((firstItemDict["contentDetails"] as! Dictionary<NSObject, AnyObject>)["relatedPlaylists"] as! Dictionary<NSObject, AnyObject>)["uploads"]
-                
-                
-                    // Append the desiredValuesDict dictionary to the following array.
-                    self.channelsDataArray.append(desiredValuesDict)
-                    
-                } catch {
-                    print("json error: \(error)")
-                }
-            }
-        })
+    /*
+    // Override to support rearranging the table view.
+    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
+    
     }
-
+    */
+    
+    /*
+    // Override to support conditional rearranging of the table view.
+    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    // Return false if you do not want the item to be re-orderable.
+    return true
+    }
+    */
+    
+    /*
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    // Get the new view controller using segue.destinationViewController.
+    // Pass the selected object to the new view controller.
+    }
+    */
+    
 }

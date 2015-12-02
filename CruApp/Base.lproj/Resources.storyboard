@@ -41,7 +41,7 @@
                                 <animations/>
                                 <state key="normal" title="Videos"/>
                                 <connections>
-                                    <segue destination="iFf-Ie-YNt" kind="show" id="28Z-hC-7er"/>
+                                    <segue destination="CBw-xl-Jne" kind="show" id="waM-93-Tmv"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VVR-xn-6kz">
@@ -67,9 +67,6 @@
                     <navigationItem key="navigationItem" title="Resources " id="huO-g1-HNG">
                         <barButtonItem key="leftBarButtonItem" image="menu.png" id="UMQ-TY-mnH"/>
                     </navigationItem>
-                    <connections>
-                        <outlet property="videoPlayer" destination="h9w-j8-UdK" id="xmh-aY-mxD"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gW3-Wc-XHf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -132,39 +129,56 @@
             <point key="canvasLocation" x="1394" y="1810"/>
         </scene>
         <!--Videos-->
-        <scene sceneID="KzI-0N-oMX">
+        <scene sceneID="8r8-hg-fhm">
             <objects>
-                <viewController title="Videos" id="iFf-Ie-YNt" customClass="VideoViewController" customModule="CruApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="7wz-NM-RHb"/>
-                        <viewControllerLayoutGuide type="bottom" id="Edy-hh-QZq"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="nui-vn-pNn">
+                <tableViewController title="Videos" id="CBw-xl-Jne" customClass="VideosTableViewController" customModule="CruApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="190" sectionHeaderHeight="28" sectionFooterHeight="28" id="ipU-uC-rEm">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h9w-j8-UdK" customClass="YTPlayerView">
-                                <rect key="frame" x="0.0" y="140" width="600" height="320"/>
-                                <animations/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="h9w-j8-UdK" firstAttribute="top" secondItem="7wz-NM-RHb" secondAttribute="bottom" constant="76" id="4e1-Tj-ENP"/>
-                            <constraint firstItem="h9w-j8-UdK" firstAttribute="leading" secondItem="nui-vn-pNn" secondAttribute="leading" id="Uxo-et-gji"/>
-                            <constraint firstAttribute="trailing" secondItem="h9w-j8-UdK" secondAttribute="trailing" id="dQd-3j-TRE"/>
-                            <constraint firstItem="h9w-j8-UdK" firstAttribute="centerY" secondItem="nui-vn-pNn" secondAttribute="centerY" id="ufu-YI-NHw"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="videoPlayer" destination="h9w-j8-UdK" id="h7S-Sr-xGZ"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="buv-HI-g5W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="9Js-as-HBZ">
+                            <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <animations/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="VideoTableCell" rowHeight="190" id="KO5-f2-AGs" customClass="VideoTableViewCell" customModule="CruApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="136" width="600" height="190"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KO5-f2-AGs" id="BqC-Tn-I46">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="189.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h9w-j8-UdK" customClass="YTPlayerView">
+                                            <rect key="frame" x="158" y="13" width="284" height="164"/>
+                                            <animations/>
+                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </subviews>
+                                    <animations/>
+                                    <constraints>
+                                        <constraint firstItem="h9w-j8-UdK" firstAttribute="centerY" secondItem="BqC-Tn-I46" secondAttribute="centerY" id="L33-XO-BIQ"/>
+                                        <constraint firstItem="h9w-j8-UdK" firstAttribute="top" secondItem="BqC-Tn-I46" secondAttribute="topMargin" constant="5" id="uUd-QN-A6k"/>
+                                        <constraint firstItem="h9w-j8-UdK" firstAttribute="centerX" secondItem="BqC-Tn-I46" secondAttribute="centerX" id="vkg-hD-MZ1"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <animations/>
+                                <connections>
+                                    <outlet property="videoPlayer" destination="h9w-j8-UdK" id="EWL-v2-5Sa"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="CBw-xl-Jne" id="pkL-sR-zux"/>
+                            <outlet property="delegate" destination="CBw-xl-Jne" id="981-SK-gDd"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nyd-Bx-3RO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2118" y="1012"/>
+            <point key="canvasLocation" x="2271" y="1018"/>
         </scene>
     </scenes>
     <resources>

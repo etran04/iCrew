@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yMF-BQ-iAf">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Resources-->
@@ -48,7 +49,7 @@
                                 <animations/>
                                 <state key="normal" title="Articles"/>
                                 <connections>
-                                    <segue destination="xVJ-mS-bZd" kind="show" id="jfN-8Z-Jle"/>
+                                    <segue destination="20A-fb-hoq" kind="show" id="cyX-Kr-fgI"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -75,46 +76,60 @@
             <point key="canvasLocation" x="1394" y="1018"/>
         </scene>
         <!--Articles-->
-        <scene sceneID="80j-GD-PXq">
+        <scene sceneID="b4c-Ji-D6p">
             <objects>
-                <viewController title="Articles" id="xVJ-mS-bZd" customClass="ArticleViewController" customModule="CruApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="ej5-83-0Tt"/>
-                        <viewControllerLayoutGuide type="bottom" id="9p5-9b-xOp"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="jGP-fa-iI9">
+                <tableViewController title="Articles" id="20A-fb-hoq" customClass="ArticlesTableViewController" customModule="CruApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="pec-rB-GxK">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x1k-DF-JjP">
-                                <rect key="frame" x="330" y="256" width="0.0" height="0.0"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0SY-Nd-klS">
-                                <rect key="frame" x="227" y="89" width="146" height="30"/>
-                                <animations/>
-                                <state key="normal" title="Discerning God's Will"/>
-                                <connections>
-                                    <action selector="linkPressed:" destination="xVJ-mS-bZd" eventType="touchUpInside" id="xZ1-YQ-6iZ"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="0SY-Nd-klS" firstAttribute="top" secondItem="ej5-83-0Tt" secondAttribute="bottom" constant="25" id="PKQ-jS-DgA"/>
-                            <constraint firstItem="x1k-DF-JjP" firstAttribute="top" secondItem="jGP-fa-iI9" secondAttribute="top" constant="256" id="uYS-uG-jBi"/>
-                            <constraint firstItem="0SY-Nd-klS" firstAttribute="centerX" secondItem="jGP-fa-iI9" secondAttribute="centerX" id="yyI-8H-k9q"/>
-                            <constraint firstAttribute="trailing" secondItem="x1k-DF-JjP" secondAttribute="trailing" constant="270" id="zav-ex-3Ec"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uYq-si-Vod" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="1wa-Kn-dxT">
+                            <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <animations/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ArticleTableViewCell" id="fXC-QL-udu" customClass="ArticleTableViewCell" customModule="CruApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="136" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fXC-QL-udu" id="STU-WB-VMJ">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Article name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fMP-fY-jPL">
+                                            <rect key="frame" x="8" y="11" width="578" height="21"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <animations/>
+                                    <constraints>
+                                        <constraint firstItem="fMP-fY-jPL" firstAttribute="top" secondItem="STU-WB-VMJ" secondAttribute="topMargin" constant="3" id="lA0-Wh-Shu"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="fMP-fY-jPL" secondAttribute="trailing" constant="6" id="w6C-dU-i2y"/>
+                                        <constraint firstItem="fMP-fY-jPL" firstAttribute="leading" secondItem="STU-WB-VMJ" secondAttribute="leadingMargin" id="wqi-mK-0vj"/>
+                                        <constraint firstItem="fMP-fY-jPL" firstAttribute="centerY" secondItem="STU-WB-VMJ" secondAttribute="centerY" id="x3j-WM-Ole"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <animations/>
+                                <accessibility key="accessibilityConfiguration" identifier="ArticleTableViewCell"/>
+                                <connections>
+                                    <outlet property="articleNameLabel" destination="fMP-fY-jPL" id="TIp-Sx-D1H"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="20A-fb-hoq" id="nkQ-dr-sTF"/>
+                            <outlet property="delegate" destination="20A-fb-hoq" id="b3f-Ot-dZB"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2os-nE-XbX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1394" y="1856"/>
+            <point key="canvasLocation" x="1394" y="1810"/>
         </scene>
         <!--Videos-->
         <scene sceneID="KzI-0N-oMX">

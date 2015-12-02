@@ -9,13 +9,32 @@
 import UIKit
 import SafariServices
 
+class Article {
+    private var name: String?
+    private var url: String?
+    
+    init(name: String, url: String) {
+        self.name = name
+        self.url = url
+    }
+    
+    func getName() -> String {
+        return self.name!
+    }
+    
+    func getURL() -> String {
+        return self.url!
+    }
+}
+
 class ArticlesTableViewController: UITableViewController {
 
-    let links = ["http://www.slocru.com/assets/resources/pdf/Discerning_Gods_Will_by_Youth_Specialties.pdf"]
+    var articles = [Article]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.loadArticles()
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -25,40 +44,46 @@ class ArticlesTableViewController: UITableViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func showLink(url: String) {
         if let url = NSURL(string: url) {
             let vc = SFSafariViewController(URL: url, entersReaderIfAvailable: true)
-            presentViewController(vc, animated: true, completion: nil)
+            presentViewController(vc, animated: false, completion: nil)
         }
     }
 
+    func loadArticles() {
+        self.articles += [
+            Article(name: "Discerning God's Will",
+                    url: "http://www.slocru.com/assets/resources/pdf/Discerning_Gods_Will_by_Youth_Specialties.pdf"),
+            Article(name: "Biblical Career Principals",
+                    url: "http://www.slocru.com/assets/resources/pdf/Biblical_Career_Principals_By_Navigator.pdf")
+        ]
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return links.count
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return links.count
+        return articles.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("ArticleTableViewCell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("ArticleTableViewCell", forIndexPath: indexPath) as! ArticleTableViewCell
 
         // Configure the cell...
-    
-
+        cell.setArticleInfo(articles[indexPath.row].getName(), link: articles[indexPath.row].getURL())
         return cell
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        showLink(links[indexPath.row])
+        showLink(articles[indexPath.row].getURL())
     }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {

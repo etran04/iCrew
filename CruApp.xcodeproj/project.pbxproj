@@ -47,6 +47,7 @@
 		A40DD9AB1C0ED54F00BCFEC5 /* EventViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40DD9AA1C0ED54F00BCFEC5 /* EventViewCell.swift */; };
 		A4110B481C0F7E3400F47AB4 /* Calendar-25.png in Resources */ = {isa = PBXBuildFile; fileRef = A4110B471C0F7E3400F47AB4 /* Calendar-25.png */; };
 		A4110B501C0F7EB500F47AB4 /* Facebook-25.png in Resources */ = {isa = PBXBuildFile; fileRef = A4110B4F1C0F7EB500F47AB4 /* Facebook-25.png */; };
+		A4110B521C0FA44700F47AB4 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4110B511C0FA44700F47AB4 /* Location.swift */; };
 		CBF52B4D6C6CD44BBF744548 /* Pods_CruApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD14769052309A631372632E /* Pods_CruApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -184,6 +185,7 @@
 		A40DD9AA1C0ED54F00BCFEC5 /* EventViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewCell.swift; sourceTree = "<group>"; };
 		A4110B471C0F7E3400F47AB4 /* Calendar-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Calendar-25.png"; path = "images/Calendar-25.png"; sourceTree = "<group>"; };
 		A4110B4F1C0F7EB500F47AB4 /* Facebook-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Facebook-25.png"; path = "images/Facebook-25.png"; sourceTree = "<group>"; };
+		A4110B511C0FA44700F47AB4 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		DD14769052309A631372632E /* Pods_CruApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CruApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -333,6 +335,7 @@
 				1E37E71E1C0E362D0054607A /* Event.swift */,
 				1E37E7211C0E362D0054607A /* EventsViewController.swift */,
 				A40DD9AA1C0ED54F00BCFEC5 /* EventViewCell.swift */,
+				A4110B511C0FA44700F47AB4 /* Location.swift */,
 			);
 			name = Events;
 			sourceTree = "<group>";
@@ -615,6 +618,7 @@
 				1E37E7251C0E362D0054607A /* CreateEventViewController.swift in Sources */,
 				1E37E72A1C0E362D0054607A /* VideosTableViewController.swift in Sources */,
 				07C196331C0E6AD400375B8D /* ArticlesTableViewController.swift in Sources */,
+				A4110B521C0FA44700F47AB4 /* Location.swift in Sources */,
 				A40DD9A41C0EC62F00BCFEC5 /* Mission.swift in Sources */,
 				07C196351C0E6D9F00375B8D /* ArticleTableViewCell.swift in Sources */,
 				1E37E7291C0E362D0054607A /* EventsViewController.swift in Sources */,

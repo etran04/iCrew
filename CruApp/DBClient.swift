@@ -26,8 +26,6 @@ class DBClient {
         let request = NSMutableURLRequest(URL: reqURL!)
         request.HTTPMethod = "POST"
         
-        //let params: NSDictionary = ["name": [eventName, "adfads", "Event", "adfasd"], "location": ["233 Patrica Dr", "34adfad", "location",]
-    
         let params: [AnyObject] = [["name": eventName, "location": ["postcode": 93405,"state": "California", "suburb": "San Luis Obispo", "street1": "233 Patricia Dr", "country": "UnitedStates"]]]
         
         do {
@@ -49,7 +47,7 @@ class DBClient {
                     print(error)
                     return
                 }
-    
+                
                 // parse the result as JSON, since that's what the API provides
                 let post: NSDictionary
                 do {

@@ -53,14 +53,24 @@ class EventsViewController: UITableViewController {
 //    
     func setEvents(event:NSDictionary) {
         //self.tableView.beginUpdates()
-
+        
         let name = event["name"] as! String
-        let date = event["startDate"] as! String!
+        let startDate = event["startDate"] as! String!
         let endDate = event["endDate"] as! String!
         let description = event["description"] as! String
-        let location: String = (event["location"]?.objectForKey("suburb") as! String) + ", " + (event["location"]?.objectForKey("state") as! String)
-        //let image = event["image"] as! String
-        let eventObj = Event(name: name, date: date, location: location, description: description)
+        
+        let location = Location(
+            postcode: event["location"]?.objectForKey("postcode") as! String,
+            state: event["location"]?.objectForKey("state") as! String,
+            suburb: event["location"]?.objectForKey("suburb") as! String,
+            street1: event["location"]?.objectForKey("street1") as! String,
+            country: event["location"]?.objectForKey("country") as! String)
+        
+        let image = event["image"]?.objectForKey("secure_url") as! String!
+        let url = event["url"] as! String
+        
+        let eventObj = Event(name: name, startDate: startDate, endDate: endDate, location: location, image: image, description: description, url: url)
+        
         eventsCollection.append(eventObj)
         self.tableView.reloadData()
 
@@ -103,9 +113,11 @@ class EventsViewController: UITableViewController {
             
             let event = eventsCollection[indexPath.row]
             cell.eventName.text = event.name
-            cell.eventLocation.text = event.location
-            cell.eventStartTime.text = "1:11"
-            cell.eventDate.text = event.date
+            //cell.eventLocation.text = "Where: " + event.location!
+            cell.eventStartTime.text = "Start Time: " + "1:11"
+            cell.eventDate.text = event.startDate
+            //(cell.eventImage).backgroundColor = UIColor(patternImage: UIImage(named: event.image!)!)
+
             return cell
     }
 

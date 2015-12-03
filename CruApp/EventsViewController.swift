@@ -109,25 +109,8 @@ class EventsViewController: UITableViewController {
         
         eventsCollection.append(eventObj)
         self.tableView.reloadData()
-
-        //self.tableView.insertRowsAtIndexPaths([NSIndexPath(forItem: 0, inSection: 0)], withRowAnimation: .Automatic)
-        //self.tableView.endUpdates()
     }
     
-    //    func loadEvents(events: NSArray) {
-    //        for event in events {
-    //            if let dict = event as? [String: AnyObject] {
-    //                let name = dict["name"] as! String
-    //                let description = dict["description"] as! String
-    //                let image = dict["image"] as! String
-    //                let eventObj = Event(name: name, description: description, image: image)
-    //                eventsCollection.append(eventObj)
-    //            }
-    //            dispatch_async(dispatch_get_main_queue()) {
-    //                self.tableView.reloadData()
-    //            }
-    //        }
-    //    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -146,12 +129,21 @@ class EventsViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("EventCell", forIndexPath: indexPath) as! EventViewCell
-        
         let event = eventsCollection[indexPath.row]
-        cell.eventName.text = event.name
-        cell.eventStartTime.text = "Start Time: " + "1:11"
-        cell.eventDate.text = event.startDate
 
+        //date formatting
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.locale = NSLocale(localeIdentifier: "en_US")
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+        let startDate = dateFormatter.dateFromString(event.startDate!)
+        let endDate = dateFormatter.dateFromString(event.endDate!)
+        let calendar = NSCalendar.currentCalendar()
+        let startComp = calendar.components([.Hour, .Minute, .Month, .Day, .Year], fromDate: startDate!)
+        let endComp = calendar.components([.Hour, .Minute, .Month, .Day, .Year], fromDate: endDate!)
+        cell.eventName.text = event.name
+        cell.eventStartTime.text = "Start Time: " + String(startComp.hour) + ":" + String(format: "%02d", startComp.minute)
+        cell.eventDate.text = "Date: " + String(startComp.month) + "/" + String(startComp.day) + "/" + String(startComp.year) + " - " + String(endComp.month) + "/" + String(endComp.day) + "/" + String(endComp.year)
+        cell.eventLocation.text = "Where: " + (event.location?.suburb)! + ", " + (event.location?.state)!
         // Calendar button
         cell.calendarButton.setTitle(String(indexPath.row), forState: UIControlState.Normal)
         cell.calendarButton.addTarget(self, action: "syncCalendar:", forControlEvents: UIControlEvents.TouchUpInside)
@@ -175,7 +167,6 @@ class EventsViewController: UITableViewController {
             cell.eventImage.bounds.size.height = 163
             cell.eventImage.bounds.size.width = 375
             imageView.frame = cell.eventImage.bounds
-//            imageView.frame = CGRectMake(imageView.center.x, imageView.center.y, 100, 100)
             cell.eventImage.contentMode = UIViewContentMode.ScaleAspectFit
             cell.eventImage.addSubview(imageView)
         }
@@ -204,7 +195,7 @@ class EventsViewController: UITableViewController {
         //2015-11-19T22:00:00.000Z
         //dateFormatter.dateFormat = "MMM dd, yyyy, HH:ss"
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
-        
+
         let startDate = dateFormatter.dateFromString(start!)
         
         let endDate = dateFormatter.dateFromString(end!)

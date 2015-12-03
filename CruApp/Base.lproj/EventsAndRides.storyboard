@@ -40,7 +40,7 @@
                                 <animations/>
                                 <state key="normal" title="Create Event"/>
                                 <connections>
-                                    <segue destination="KBp-gY-Akj" kind="push" id="2AM-lT-DhQ"/>
+                                    <segue destination="KBp-gY-Akj" kind="show" id="2AM-lT-DhQ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zwd-9G-bfZ">
@@ -48,7 +48,7 @@
                                 <animations/>
                                 <state key="normal" title="View Events"/>
                                 <connections>
-                                    <segue destination="wac-ew-KxN" kind="push" id="War-m9-zjA"/>
+                                    <segue destination="wac-ew-KxN" kind="show" id="War-m9-zjA"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -89,7 +89,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="148"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="f9p-Nf-8eQ" id="etK-eK-lzq">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="147.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="147"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KlN-3k-s5R">

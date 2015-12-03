@@ -14,10 +14,23 @@ class VideoTableViewCell: UITableViewCell {
     @IBOutlet var videoPlayer: YTPlayerView!
     var videoId: String?
     
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?){
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+//        print(videoId)
+//        self.videoPlayer.loadWithVideoId(videoId)
+//        self.videoPlayer.loadWithVideoId("9cmh72Z9ISI")
+
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        //print(videoId)
-        self.videoPlayer.loadWithVideoId("9cmh72Z9ISI")
+//        print(videoId)
+
+       self.videoPlayer.loadWithVideoId("9cmh72Z9ISI")
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

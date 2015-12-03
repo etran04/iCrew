@@ -116,6 +116,7 @@ class EventsViewController: UITableViewController {
             //cell.eventLocation.text = "Where: " + event.location!
             cell.eventStartTime.text = "Start Time: " + "1:11"
             cell.eventDate.text = event.startDate
+            //cell.calendarButton //JORDAN ADD SOMETHING HERE TO TRIGGER IT
             //(cell.eventImage).backgroundColor = UIColor(patternImage: UIImage(named: event.image!)!)
 
             return cell

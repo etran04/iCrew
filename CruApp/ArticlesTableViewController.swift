@@ -70,7 +70,7 @@ class ArticlesTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("ArticleTableViewCell", forIndexPath: indexPath) as! ArticleTableViewCell
 
         // Configure the cell...
-        cell.setArticleInfo(articles[indexPath.row].getName(), link: articles[indexPath.row].getURL())
+        cell.setArticleInfo(articles[indexPath.row].getName())
         return cell
     }
     

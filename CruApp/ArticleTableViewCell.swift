@@ -20,7 +20,7 @@ class ArticleTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func setArticleInfo(name: String, link: String) {
+    func setArticleInfo(name: String) {
         articleNameLabel.text = name;
     }
 

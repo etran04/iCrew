@@ -10,13 +10,25 @@ import UIKit
 
 class Video {
     private var id: String?
+    private var title: String?
+    private var summary: String?
     
-    init(id: String) {
+    init(id: String, title: String, summary: String) {
         self.id = id
+        self.title = title
+        self.summary = summary
     }
     
     func getId() -> String {
         return self.id!
+    }
+    
+    func getTitle() -> String {
+        return self.title!
+    }
+    
+    func getSummary() -> String {
+        return self.summary!
     }
 }
 
@@ -35,11 +47,10 @@ class VideosTableViewController: UITableViewController {
     
     func loadVideos() {
         self.videos += [
-            Video(id: "9cmh72Z9ISI"),
-            Video(id: "BIHVxynRvDk"),
-            Video(id: "FNf-IGmxElI"),
-            Video(id: "FNf-IGmxElI"),
-            Video(id: "FNf-IGmxElI")
+            Video(id: "9cmh72Z9ISI", title: "chinchilla massage", summary: "Kimchi just loves her scratches"),
+            Video(id: "FNf-IGmxElI", title: "Tiny hamster eatting a tiny pizza", summary: "Inspired by tiny hamster eating tiny burrito, here is Chicken eating a tiny pizza. She is my one year old, russian dwarf hamster. I got her at the Petsmart in Ottawa, ON. She's my first hamster. She is super sweet and the best hamster anyone could ever wish for."),
+            Video(id: "BIHVxynRvDk", title: "Samoyed puppies (37 Days old) - 'manners'", summary: "Six Samoyed puppies born March 31, 2012. More info at www.SamoyedMoms.com and www.PotomacValleySams.com - home of the Potomac Valley Samoyed Club of Washington, D.C., Virginia, Maryland and West Virginia"),
+            Video(id: "-n4XX5nnXhU", title: "ROCKY the French Bulldog puppy jumping", summary: "For licensing/usage please contact: licensing(at)jukinmediadotcom")
         ]
     }
     
@@ -55,8 +66,16 @@ class VideosTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("VideoTableCell", forIndexPath: indexPath) as! VideoTableViewCell
-        cell.setVideoInfo(videos[indexPath.row].getId())
-        //print(videos[indexPath.row].getId())
+       
+        let currentVideo = videos[indexPath.row]
+        cell.setVideoInfo(currentVideo.getId(), title: currentVideo.getTitle(), summary: currentVideo.getSummary())
+        
+        // Make videos a fixed size
+        cell.videoPlayer.contentMode = .ScaleAspectFit
+        cell.videoPlayer.clipsToBounds = true
+        cell.videoPlayer.bounds.size.height = 147
+        cell.videoPlayer.bounds.size.width = 122
+        
         return cell
     }
     

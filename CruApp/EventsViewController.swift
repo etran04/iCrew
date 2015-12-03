@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import EventKit
 
 class EventsViewController: UITableViewController {
 
@@ -117,10 +118,60 @@ class EventsViewController: UITableViewController {
             cell.eventStartTime.text = "Start Time: " + "1:11"
             cell.eventDate.text = event.startDate
             //cell.calendarButton //JORDAN ADD SOMETHING HERE TO TRIGGER IT
+            cell.calendarButton.setTitle(String(indexPath.row), forState: UIControlState.Normal)
+            cell.calendarButton.addTarget(self, action: "syncCalendar:", forControlEvents: UIControlEvents.TouchUpInside)
+            
             //(cell.eventImage).backgroundColor = UIColor(patternImage: UIImage(named: event.image!)!)
 
             return cell
     }
+    
+    func syncCalendar(sender: UIButton!) {
+        
+        let event = eventsCollection[Int(sender.titleLabel!.text!)!]
+        let name = event.name
+        let start = event.startDate
+        let end = event.endDate
+        
+        // 1
+        let eventStore = EKEventStore()
+        let dateFormatter = NSDateFormatter()
+            //2015-11-19T22:00:00.000Z
+        //dateFormatter.dateFormat = "MMM dd, yyyy, HH:ss"
+        dateFormatter.dateFormat = "yyyy-MM-ddTHH:mm:ss.000Z"
+        
+        let startDate = dateFormatter.dateFromString(start!)
+        
+        let endDate = dateFormatter.dateFromString(end!)
+        
+        if(EKEventStore.authorizationStatusForEntityType(.Event) !=
+            EKAuthorizationStatus.Authorized) {
+                eventStore.requestAccessToEntityType(.Event, completion: {
+                    granted, error in
+                    self.createEvent(eventStore, title: name, startDate: startDate!, endDate: endDate!)
+                })
+                
+                
+        }
+        else {
+            createEvent(eventStore, title: name, startDate: startDate!, endDate: endDate!)
+        }
+    }
+    
+    func createEvent(eventStore: EKEventStore, title: String, startDate: NSDate, endDate: NSDate) {
+        let event = EKEvent(eventStore: eventStore)
+        
+        event.title = title
+        event.startDate = startDate
+        event.endDate = endDate
+        event.calendar = eventStore.defaultCalendarForNewEvents
+        do {
+            try eventStore.saveEvent(event, span: .ThisEvent)
+        } catch {
+            print("Bad")
+        }
+    }
+    
 
     /*
     // Override to support conditional editing of the table view.

@@ -109,8 +109,15 @@
                             <outlet property="delegate" destination="wac-ew-KxN" id="SgE-IZ-0sr"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Events" id="kj2-c5-3Oo"/>
+                    <navigationItem key="navigationItem" title="Events" id="kj2-c5-3Oo">
+                        <barButtonItem key="leftBarButtonItem" image="menu.png" id="yWV-Oq-fEi"/>
+                        <barButtonItem key="rightBarButtonItem" title="Text" id="S45-1N-BEg"/>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="menuButton" destination="yWV-Oq-fEi" id="xzd-9l-iow"/>
+                        <outlet property="textButton" destination="S45-1N-BEg" id="Gbx-gS-jEw"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Th6-om-poe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -121,5 +128,6 @@
         <image name="Calendar-25.png" width="25" height="25"/>
         <image name="Facebook-25.png" width="25" height="25"/>
         <image name="Planner-25.png" width="25" height="25"/>
+        <image name="menu.png" width="22" height="22"/>
     </resources>
 </document>

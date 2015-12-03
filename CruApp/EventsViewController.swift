@@ -8,6 +8,7 @@
 
 import UIKit
 import EventKit
+import SafariServices
 
 class EventsViewController: UITableViewController {
 
@@ -114,13 +115,22 @@ class EventsViewController: UITableViewController {
         
         let event = eventsCollection[indexPath.row]
         cell.eventName.text = event.name
-        //cell.eventLocation.text = "Where: " + event.location!
         cell.eventStartTime.text = "Start Time: " + "1:11"
         cell.eventDate.text = event.startDate
-        //cell.calendarButton //JORDAN ADD SOMETHING HERE TO TRIGGER IT
+
+        // Calendar button
         cell.calendarButton.setTitle(String(indexPath.row), forState: UIControlState.Normal)
         cell.calendarButton.addTarget(self, action: "syncCalendar:", forControlEvents: UIControlEvents.TouchUpInside)
         
+        // Facebook button
+        if (event.url != "") {
+            cell.facebookButton.setTitle(String(indexPath.row), forState: UIControlState.Normal)
+            cell.facebookButton.addTarget(self, action: "openFacebook:", forControlEvents: .TouchUpInside)
+        } else {
+            cell.facebookButton.enabled = false
+        }
+        
+        // Load event image is available
         if (event.image != nil) {
             let url = NSURL(string: event.image!)
             let data = NSData(contentsOfURL: url!)
@@ -139,8 +149,16 @@ class EventsViewController: UITableViewController {
         return cell
     }
     
-    func syncCalendar(sender: UIButton!) {
+    func openFacebook(sender:UIButton!) {
+        let event = eventsCollection[Int(sender.titleLabel!.text!)!]
         
+        if let url = NSURL(string: event.url) {
+            let vc = SFSafariViewController(URL: url, entersReaderIfAvailable: true)
+                presentViewController(vc, animated: false, completion: nil)
+        }
+    }
+    
+    func syncCalendar(sender: UIButton!) {
         let event = eventsCollection[Int(sender.titleLabel!.text!)!]
         let name = event.name
         let start = event.startDate

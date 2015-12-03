@@ -39,6 +39,7 @@ class VideosTableViewController: UITableViewController {
             Video(id: "BIHVxynRvDk"),
             Video(id: "FNf-IGmxElI"),
             Video(id: "FNf-IGmxElI"),
+            Video(id: "FNf-IGmxElI")
         ]
     }
     
@@ -55,7 +56,7 @@ class VideosTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("VideoTableCell", forIndexPath: indexPath) as! VideoTableViewCell
         cell.setVideoInfo(videos[indexPath.row].getId())
-        print(videos[indexPath.row].getId())
+        //print(videos[indexPath.row].getId())
         return cell
     }
     

@@ -21,7 +21,6 @@
 		1E37E7251C0E362D0054607A /* CreateEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E37E71D1C0E362D0054607A /* CreateEventViewController.swift */; };
 		1E37E7261C0E362D0054607A /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E37E71E1C0E362D0054607A /* Event.swift */; };
 		1E37E7271C0E362D0054607A /* EventsAndRidesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E37E71F1C0E362D0054607A /* EventsAndRidesController.swift */; };
-		1E37E7281C0E362D0054607A /* EventService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E37E7201C0E362D0054607A /* EventService.swift */; };
 		1E37E7291C0E362D0054607A /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E37E7211C0E362D0054607A /* EventsViewController.swift */; };
 		1E37E72A1C0E362D0054607A /* VideosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E37E7221C0E362D0054607A /* VideosTableViewController.swift */; };
 		1E37E72C1C0E362D0054607A /* VideoVideoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E37E7241C0E362D0054607A /* VideoVideoController.swift */; };
@@ -42,6 +41,14 @@
 		839F645E1C0D6C8E00CAEC9E /* MySchool.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 839F645C1C0D6C8E00CAEC9E /* MySchool.storyboard */; };
 		839F64601C0D70AA00CAEC9E /* Box-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 839F645F1C0D70AA00CAEC9E /* Box-25.png */; };
 		839F64621C0D77BB00CAEC9E /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839F64611C0D77BB00CAEC9E /* ActivityViewController.swift */; };
+		A40DD9941C0EC0FB00BCFEC5 /* DBClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40DD9931C0EC0FB00BCFEC5 /* DBClient.swift */; };
+		A40DD9A21C0EC61600BCFEC5 /* SummerMissionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40DD9A11C0EC61600BCFEC5 /* SummerMissionsViewController.swift */; };
+		A40DD9A41C0EC62F00BCFEC5 /* Mission.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40DD9A31C0EC62F00BCFEC5 /* Mission.swift */; };
+		A40DD9AB1C0ED54F00BCFEC5 /* EventViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40DD9AA1C0ED54F00BCFEC5 /* EventViewCell.swift */; };
+		A4110B481C0F7E3400F47AB4 /* Calendar-25.png in Resources */ = {isa = PBXBuildFile; fileRef = A4110B471C0F7E3400F47AB4 /* Calendar-25.png */; };
+		A4110B501C0F7EB500F47AB4 /* Facebook-25.png in Resources */ = {isa = PBXBuildFile; fileRef = A4110B4F1C0F7EB500F47AB4 /* Facebook-25.png */; };
+		A4110B521C0FA44700F47AB4 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4110B511C0FA44700F47AB4 /* Location.swift */; };
+		A4110B541C0FC35A00F47AB4 /* DBUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4110B531C0FC35A00F47AB4 /* DBUtilities.swift */; };
 		CBF52B4D6C6CD44BBF744548 /* Pods_CruApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD14769052309A631372632E /* Pods_CruApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -147,7 +154,6 @@
 		1E37E71D1C0E362D0054607A /* CreateEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateEventViewController.swift; sourceTree = "<group>"; };
 		1E37E71E1C0E362D0054607A /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		1E37E71F1C0E362D0054607A /* EventsAndRidesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsAndRidesController.swift; sourceTree = "<group>"; };
-		1E37E7201C0E362D0054607A /* EventService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventService.swift; sourceTree = "<group>"; };
 		1E37E7211C0E362D0054607A /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		1E37E7221C0E362D0054607A /* VideosTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideosTableViewController.swift; sourceTree = "<group>"; };
 		1E37E7241C0E362D0054607A /* VideoVideoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoVideoController.swift; sourceTree = "<group>"; };
@@ -174,6 +180,14 @@
 		839F645F1C0D70AA00CAEC9E /* Box-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Box-25.png"; path = "images/Box-25.png"; sourceTree = "<group>"; };
 		839F64611C0D77BB00CAEC9E /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 		9CC50D2817D518EDB9BF800C /* Pods-CruApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CruApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-CruApp/Pods-CruApp.release.xcconfig"; sourceTree = "<group>"; };
+		A40DD9931C0EC0FB00BCFEC5 /* DBClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBClient.swift; sourceTree = "<group>"; };
+		A40DD9A11C0EC61600BCFEC5 /* SummerMissionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummerMissionsViewController.swift; sourceTree = "<group>"; };
+		A40DD9A31C0EC62F00BCFEC5 /* Mission.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mission.swift; sourceTree = "<group>"; };
+		A40DD9AA1C0ED54F00BCFEC5 /* EventViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewCell.swift; sourceTree = "<group>"; };
+		A4110B471C0F7E3400F47AB4 /* Calendar-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Calendar-25.png"; path = "images/Calendar-25.png"; sourceTree = "<group>"; };
+		A4110B4F1C0F7EB500F47AB4 /* Facebook-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Facebook-25.png"; path = "images/Facebook-25.png"; sourceTree = "<group>"; };
+		A4110B511C0FA44700F47AB4 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		A4110B531C0FC35A00F47AB4 /* DBUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBUtilities.swift; sourceTree = "<group>"; };
 		DD14769052309A631372632E /* Pods_CruApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CruApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -262,11 +276,12 @@
 		07EE5F7D1BFE6BA8009A2B44 /* VCs */ = {
 			isa = PBXGroup;
 			children = (
+				A40DD9A51C0EC99100BCFEC5 /* Events */,
+				A40DD9A01C0EC5ED00BCFEC5 /* SummerMissions */,
+				A40DD9931C0EC0FB00BCFEC5 /* DBClient.swift */,
+				A4110B531C0FC35A00F47AB4 /* DBUtilities.swift */,
 				1E37E71D1C0E362D0054607A /* CreateEventViewController.swift */,
-				1E37E71E1C0E362D0054607A /* Event.swift */,
 				1E37E71F1C0E362D0054607A /* EventsAndRidesController.swift */,
-				1E37E7201C0E362D0054607A /* EventService.swift */,
-				1E37E7211C0E362D0054607A /* EventsViewController.swift */,
 				072519A91BE9694000F38F81 /* ViewController.swift */,
 				839F64611C0D77BB00CAEC9E /* ActivityViewController.swift */,
 				838564EB1C0D9EB900EB1728 /* SWRevealViewController */,
@@ -308,9 +323,30 @@
 			name = SWRevealViewController;
 			sourceTree = "<group>";
 		};
+		A40DD9A01C0EC5ED00BCFEC5 /* SummerMissions */ = {
+			isa = PBXGroup;
+			children = (
+				A40DD9A11C0EC61600BCFEC5 /* SummerMissionsViewController.swift */,
+				A40DD9A31C0EC62F00BCFEC5 /* Mission.swift */,
+			);
+			name = SummerMissions;
+			sourceTree = "<group>";
+		};
+		A40DD9A51C0EC99100BCFEC5 /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				1E37E71E1C0E362D0054607A /* Event.swift */,
+				1E37E7211C0E362D0054607A /* EventsViewController.swift */,
+				A40DD9AA1C0ED54F00BCFEC5 /* EventViewCell.swift */,
+				A4110B511C0FA44700F47AB4 /* Location.swift */,
+			);
+			name = Events;
+			sourceTree = "<group>";
+		};
 		A43482D11C0D290E00B62D6C /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				A4110B4F1C0F7EB500F47AB4 /* Facebook-25.png */,
 				839F645F1C0D70AA00CAEC9E /* Box-25.png */,
 				839F64481C0D643A00CAEC9E /* menu.png */,
 				839F643B1C0D4E4300CAEC9E /* Cru-Logo.png */,
@@ -318,6 +354,7 @@
 				839F643D1C0D4E4300CAEC9E /* Literature-25.png */,
 				839F643E1C0D4E4300CAEC9E /* Planner-25.png */,
 				839F643F1C0D4E4300CAEC9E /* Summer-25.png */,
+				A4110B471C0F7E3400F47AB4 /* Calendar-25.png */,
 				839F64401C0D4E4300CAEC9E /* User Group-25.png */,
 			);
 			name = Images;
@@ -495,6 +532,8 @@
 				839F64411C0D4E4300CAEC9E /* Cru-Logo.png in Resources */,
 				839F64441C0D4E4300CAEC9E /* Planner-25.png in Resources */,
 				839F645E1C0D6C8E00CAEC9E /* MySchool.storyboard in Resources */,
+				A4110B501C0F7EB500F47AB4 /* Facebook-25.png in Resources */,
+				A4110B481C0F7E3400F47AB4 /* Calendar-25.png in Resources */,
 				839F64431C0D4E4300CAEC9E /* Literature-25.png in Resources */,
 				839F64421C0D4E4300CAEC9E /* Home-25.png in Resources */,
 				839F64601C0D70AA00CAEC9E /* Box-25.png in Resources */,
@@ -569,17 +608,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				072519AA1BE9694000F38F81 /* ViewController.swift in Sources */,
+				A40DD9941C0EC0FB00BCFEC5 /* DBClient.swift in Sources */,
+				A40DD9A21C0EC61600BCFEC5 /* SummerMissionsViewController.swift in Sources */,
 				839F64621C0D77BB00CAEC9E /* ActivityViewController.swift in Sources */,
 				07ED81711C0D7ECC007FFB53 /* ResourcesViewController.swift in Sources */,
+				A40DD9AB1C0ED54F00BCFEC5 /* EventViewCell.swift in Sources */,
 				072519A81BE9694000F38F81 /* AppDelegate.swift in Sources */,
 				1E37E7271C0E362D0054607A /* EventsAndRidesController.swift in Sources */,
 				1E37E72C1C0E362D0054607A /* VideoVideoController.swift in Sources */,
 				838564F51C0D9EDF00EB1728 /* SWRevealViewController.m in Sources */,
-				1E37E7281C0E362D0054607A /* EventService.swift in Sources */,
+				A4110B541C0FC35A00F47AB4 /* DBUtilities.swift in Sources */,
 				1E37E7261C0E362D0054607A /* Event.swift in Sources */,
 				1E37E7251C0E362D0054607A /* CreateEventViewController.swift in Sources */,
 				1E37E72A1C0E362D0054607A /* VideosTableViewController.swift in Sources */,
 				07C196331C0E6AD400375B8D /* ArticlesTableViewController.swift in Sources */,
+				A4110B521C0FA44700F47AB4 /* Location.swift in Sources */,
+				A40DD9A41C0EC62F00BCFEC5 /* Mission.swift in Sources */,
 				07C196351C0E6D9F00375B8D /* ArticleTableViewCell.swift in Sources */,
 				1E37E7291C0E362D0054607A /* EventsViewController.swift in Sources */,
 				07C196371C0E863000375B8D /* VideoTableViewCell.swift in Sources */,

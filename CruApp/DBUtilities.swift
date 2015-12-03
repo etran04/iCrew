@@ -1,8 +1,8 @@
 //
-//  EventsAndRidesController.swift
+//  DBUtilities.swift
 //  CruApp
 //
-//  Created by Jordan Tang on 12/1/15.
+//  Created by Tammy Kong on 12/2/15.
 //  Copyright © 2015 iCrew. All rights reserved.
 //
 

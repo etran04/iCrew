@@ -8,15 +8,15 @@
 
 import Foundation
 
-class EventService {
+class DBClient {
     
-    func loadEvents(events: (NSDictionary) -> ()) {
-        displayEvents(getEventData(events))
+    func getData(action: String, dict: (NSDictionary) -> ()) {
+        requestData(action, completionHandler: obtainData(dict))
     }
     
-    func displayEvents(completionHandler : (NSData?, NSURLResponse?, NSError?) -> Void) {
-        request("http://localhost:3000/api/event/list", method: "GET", completionHandler: completionHandler)
-        
+    func requestData(action: String, completionHandler : (NSData?, NSURLResponse?, NSError?) -> Void) {
+        let url = "http://pcp070331pcs.wireless.calpoly.edu:3000/" + action + "/list"
+        request(url, method: "GET", completionHandler: completionHandler)
     }
    
     func postEvent(eventName : String) -> () {
@@ -26,8 +26,6 @@ class EventService {
         let request = NSMutableURLRequest(URL: reqURL!)
         request.HTTPMethod = "POST"
         
-        //let params: NSDictionary = ["name": [eventName, "adfads", "Event", "adfasd"], "location": ["233 Patrica Dr", "34adfad", "location",]
-    
         let params: [AnyObject] = [["name": eventName, "location": ["postcode": 93405,"state": "California", "suburb": "San Luis Obispo", "street1": "233 Patricia Dr", "country": "UnitedStates"]]]
         
         do {
@@ -49,7 +47,7 @@ class EventService {
                     print(error)
                     return
                 }
-    
+                
                 // parse the result as JSON, since that's what the API provides
                 let post: NSDictionary
                 do {
@@ -90,9 +88,8 @@ class EventService {
         return task
     }
     
-    //func postEventData(events: (NSDictionary) -> ()
     
-    func getEventData(events: (NSDictionary) -> ()) -> (NSData?, NSURLResponse?, NSError?)-> () {
+    func obtainData(dict: (NSDictionary) -> ()) -> (NSData?, NSURLResponse?, NSError?)-> () {
         return {(data : NSData?, response : NSURLResponse?, error : NSError?) in
             
             do {
@@ -102,8 +99,8 @@ class EventService {
                     let jsonList = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as! NSArray
                     dispatch_async(dispatch_get_main_queue(), {
                         for element in jsonList {
-                            if let dict = element as? [String: AnyObject] {
-                                events(dict)
+                            if let elem = element as? [String: AnyObject] {
+                                dict(elem)
                             }
                         }
                     })

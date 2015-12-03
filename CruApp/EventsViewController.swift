@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import EventKit
 
 class EventsViewController: UITableViewController {
-    
+
     //var events:[Event] = eventsData
     
     var eventsCollection = [Event]()
@@ -37,20 +38,45 @@ class EventsViewController: UITableViewController {
         //            (response) in
         //            self.loadEvents(response)
         //        }
-        var eventService:EventService!
-        eventService = EventService()
-        eventService.loadEvents(setEvents)
+        
+        var dbClient:DBClient!
+        dbClient = DBClient()
+        dbClient.getData("event", dict: setEvents)
     }
     
-    func setEvents(event:NSDictionary) -> () {
+    
+//    func insertEvent(dict : NSDictionary) {
+//        self.tableView.beginUpdates()
+//        events.insert(Event(dict: dict)!, atIndex: 0)
+//        self.tableView.insertRowsAtIndexPaths([NSIndexPath(forItem: 0, inSection: 0)], withRowAnimation: .Automatic)
+//        self.tableView.endUpdates()
+//    }
+//    
+    func setEvents(event:NSDictionary) {
+        //self.tableView.beginUpdates()
+        
         let name = event["name"] as! String
+        let startDate = event["startDate"] as! String!
+        let endDate = event["endDate"] as! String!
         let description = event["description"] as! String
-        //let image = event["image"] as! String
-        let eventObj = Event(name: name, description: description)
+        
+        let location = Location(
+            postcode: event["location"]?.objectForKey("postcode") as! String,
+            state: event["location"]?.objectForKey("state") as! String,
+            suburb: event["location"]?.objectForKey("suburb") as! String,
+            street1: event["location"]?.objectForKey("street1") as! String,
+            country: event["location"]?.objectForKey("country") as! String)
+        
+        let image = event["image"]?.objectForKey("secure_url") as! String!
+        let url = event["url"] as! String
+        
+        let eventObj = Event(name: name, startDate: startDate, endDate: endDate, location: location, image: image, description: description, url: url)
+        
         eventsCollection.append(eventObj)
         self.tableView.reloadData()
-        
-        
+
+        //self.tableView.insertRowsAtIndexPaths([NSIndexPath(forItem: 0, inSection: 0)], withRowAnimation: .Automatic)
+        //self.tableView.endUpdates()
     }
     
     //    func loadEvents(events: NSArray) {
@@ -83,16 +109,70 @@ class EventsViewController: UITableViewController {
         return eventsCollection.count
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath)
-        -> UITableViewCell {
-            let cell = tableView.dequeueReusableCellWithIdentifier("EventCell", forIndexPath: indexPath)
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+            let cell = tableView.dequeueReusableCellWithIdentifier("EventCell", forIndexPath: indexPath) as! EventViewCell
             
             let event = eventsCollection[indexPath.row]
-            cell.textLabel?.text = event.name
-            cell.detailTextLabel?.text = event.description
+            cell.eventName.text = event.name
+            //cell.eventLocation.text = "Where: " + event.location!
+            cell.eventStartTime.text = "Start Time: " + "1:11"
+            cell.eventDate.text = event.startDate
+            //cell.calendarButton //JORDAN ADD SOMETHING HERE TO TRIGGER IT
+            cell.calendarButton.setTitle(String(indexPath.row), forState: UIControlState.Normal)
+            cell.calendarButton.addTarget(self, action: "syncCalendar:", forControlEvents: UIControlEvents.TouchUpInside)
+            
+            //(cell.eventImage).backgroundColor = UIColor(patternImage: UIImage(named: event.image!)!)
+
             return cell
     }
     
+    func syncCalendar(sender: UIButton!) {
+        
+        let event = eventsCollection[Int(sender.titleLabel!.text!)!]
+        let name = event.name
+        let start = event.startDate
+        let end = event.endDate
+        
+        // 1
+        let eventStore = EKEventStore()
+        let dateFormatter = NSDateFormatter()
+            //2015-11-19T22:00:00.000Z
+        //dateFormatter.dateFormat = "MMM dd, yyyy, HH:ss"
+        dateFormatter.dateFormat = "yyyy-MM-ddTHH:mm:ss.000Z"
+        
+        let startDate = dateFormatter.dateFromString(start!)
+        
+        let endDate = dateFormatter.dateFromString(end!)
+        
+        if(EKEventStore.authorizationStatusForEntityType(.Event) !=
+            EKAuthorizationStatus.Authorized) {
+                eventStore.requestAccessToEntityType(.Event, completion: {
+                    granted, error in
+                    self.createEvent(eventStore, title: name, startDate: startDate!, endDate: endDate!)
+                })
+                
+                
+        }
+        else {
+            createEvent(eventStore, title: name, startDate: startDate!, endDate: endDate!)
+        }
+    }
+    
+    func createEvent(eventStore: EKEventStore, title: String, startDate: NSDate, endDate: NSDate) {
+        let event = EKEvent(eventStore: eventStore)
+        
+        event.title = title
+        event.startDate = startDate
+        event.endDate = endDate
+        event.calendar = eventStore.defaultCalendarForNewEvents
+        do {
+            try eventStore.saveEvent(event, span: .ThisEvent)
+        } catch {
+            print("Bad")
+        }
+    }
+    
+
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {

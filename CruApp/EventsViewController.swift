@@ -110,20 +110,33 @@ class EventsViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-            let cell = tableView.dequeueReusableCellWithIdentifier("EventCell", forIndexPath: indexPath) as! EventViewCell
-            
-            let event = eventsCollection[indexPath.row]
-            cell.eventName.text = event.name
-            //cell.eventLocation.text = "Where: " + event.location!
-            cell.eventStartTime.text = "Start Time: " + "1:11"
-            cell.eventDate.text = event.startDate
-            //cell.calendarButton //JORDAN ADD SOMETHING HERE TO TRIGGER IT
-            cell.calendarButton.setTitle(String(indexPath.row), forState: UIControlState.Normal)
-            cell.calendarButton.addTarget(self, action: "syncCalendar:", forControlEvents: UIControlEvents.TouchUpInside)
-            
-            //(cell.eventImage).backgroundColor = UIColor(patternImage: UIImage(named: event.image!)!)
+        let cell = tableView.dequeueReusableCellWithIdentifier("EventCell", forIndexPath: indexPath) as! EventViewCell
+        
+        let event = eventsCollection[indexPath.row]
+        cell.eventName.text = event.name
+        //cell.eventLocation.text = "Where: " + event.location!
+        cell.eventStartTime.text = "Start Time: " + "1:11"
+        cell.eventDate.text = event.startDate
+        //cell.calendarButton //JORDAN ADD SOMETHING HERE TO TRIGGER IT
+        cell.calendarButton.setTitle(String(indexPath.row), forState: UIControlState.Normal)
+        cell.calendarButton.addTarget(self, action: "syncCalendar:", forControlEvents: UIControlEvents.TouchUpInside)
+        
+        if (event.image != nil) {
+            let url = NSURL(string: event.image!)
+            let data = NSData(contentsOfURL: url!)
+            let image = UIImage(data: data!)
+            let imageView = UIImageView(image: image)
+            imageView.contentMode = UIViewContentMode.ScaleAspectFit
+            imageView.clipsToBounds = true
+            cell.eventImage.bounds.size.height = 163
+            cell.eventImage.bounds.size.width = 375
+            imageView.frame = cell.eventImage.bounds
+//            imageView.frame = CGRectMake(imageView.center.x, imageView.center.y, 100, 100)
+            cell.eventImage.contentMode = UIViewContentMode.ScaleAspectFit
+            cell.eventImage.addSubview(imageView)
+        }
 
-            return cell
+        return cell
     }
     
     func syncCalendar(sender: UIButton!) {

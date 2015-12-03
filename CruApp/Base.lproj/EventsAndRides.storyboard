@@ -16,84 +16,32 @@
                         <animations/>
                     </navigationBar>
                     <connections>
-                        <segue destination="ekk-Fa-R83" kind="relationship" relationship="rootViewController" id="hw1-BO-nUL"/>
+                        <segue destination="wac-ew-KxN" kind="relationship" relationship="rootViewController" id="j0K-JP-tWs"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WDs-YB-DVz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="678" y="-1253"/>
         </scene>
-        <!--Activity-->
-        <scene sceneID="h0k-Pv-LaI">
-            <objects>
-                <viewController id="ekk-Fa-R83" customClass="ActivityViewController" customModule="CruApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Vh9-YL-bFc"/>
-                        <viewControllerLayoutGuide type="bottom" id="Hr8-xO-mmO"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kOo-sX-07x">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ev-le-uod">
-                                <rect key="frame" x="143" y="208" width="88" height="30"/>
-                                <animations/>
-                                <state key="normal" title="Create Event"/>
-                                <connections>
-                                    <segue destination="KBp-gY-Akj" kind="show" id="2AM-lT-DhQ"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zwd-9G-bfZ">
-                                <rect key="frame" x="146" y="285" width="83" height="30"/>
-                                <animations/>
-                                <state key="normal" title="View Events"/>
-                                <connections>
-                                    <segue destination="wac-ew-KxN" kind="show" id="War-m9-zjA"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="5ev-le-uod" firstAttribute="centerX" secondItem="kOo-sX-07x" secondAttribute="centerX" id="28e-zE-D7B"/>
-                            <constraint firstItem="zwd-9G-bfZ" firstAttribute="top" secondItem="5ev-le-uod" secondAttribute="bottom" constant="47" id="2Od-wh-6ay"/>
-                            <constraint firstItem="5ev-le-uod" firstAttribute="top" secondItem="Vh9-YL-bFc" secondAttribute="bottom" constant="144" id="BkT-df-Ust"/>
-                            <constraint firstItem="zwd-9G-bfZ" firstAttribute="centerX" secondItem="kOo-sX-07x" secondAttribute="centerX" id="efL-f2-NQn"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Activity" id="WwR-dL-FhR">
-                        <barButtonItem key="leftBarButtonItem" image="menu.png" id="oHT-qk-SUz"/>
-                        <barButtonItem key="rightBarButtonItem" title="Text" id="Yuy-qS-gyz"/>
-                    </navigationItem>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <connections>
-                        <outlet property="menuButton" destination="oHT-qk-SUz" id="asp-iL-hzB"/>
-                        <outlet property="textButton" destination="Yuy-qS-gyz" id="hWm-GZ-22D"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jzr-DB-Auk" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1377.5" y="-1233.5"/>
-        </scene>
         <!--Events-->
         <scene sceneID="2hl-7j-QvT">
             <objects>
                 <tableViewController id="wac-ew-KxN" customClass="EventsViewController" customModule="CruApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="148" sectionHeaderHeight="28" sectionFooterHeight="28" id="MuH-2r-fkL">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="312" sectionHeaderHeight="28" sectionFooterHeight="28" id="MuH-2r-fkL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventCell" rowHeight="148" id="f9p-Nf-8eQ" customClass="EventViewCell" customModule="CruApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="375" height="148"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventCell" rowHeight="312" id="f9p-Nf-8eQ" customClass="EventViewCell" customModule="CruApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="375" height="312"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="f9p-Nf-8eQ" id="etK-eK-lzq">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="147"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="311"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KlN-3k-s5R">
-                                            <rect key="frame" x="138" y="8" width="222" height="21"/>
+                                            <rect key="frame" x="14" y="166" width="246" height="21"/>
                                             <animations/>
                                             <attributedString key="attributedText">
                                                 <fragment content="Title">
@@ -106,41 +54,41 @@
                                             </attributedString>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TA2-Kk-zV0" userLabel="Event Image">
-                                            <rect key="frame" x="14" y="5" width="100" height="100"/>
-                                            <animations/>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RPv-xy-z0i" userLabel="Event Date">
-                                            <rect key="frame" x="138" y="44" width="178" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RPv-xy-z0i" userLabel="Event Date">
+                                            <rect key="frame" x="14" y="195" width="178" height="21"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BHE-65-e4p" userLabel="Start Time">
-                                            <rect key="frame" x="138" y="75" width="178" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Start Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BHE-65-e4p" userLabel="Start Time">
+                                            <rect key="frame" x="14" y="226" width="178" height="21"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tqP-hW-q8l" userLabel="Calendar Button">
-                                            <rect key="frame" x="31" y="113" width="25" height="25"/>
+                                            <rect key="frame" x="152" y="272" width="25" height="25"/>
                                             <animations/>
                                             <state key="normal" image="Calendar-25.png"/>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bo0-hy-T7t" userLabel="Facebook Button">
-                                            <rect key="frame" x="77" y="113" width="25" height="25"/>
+                                            <rect key="frame" x="198" y="272" width="25" height="25"/>
                                             <animations/>
                                             <state key="normal" image="Facebook-25.png"/>
                                         </button>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GZc-FK-UTx" userLabel="Location">
-                                            <rect key="frame" x="138" y="107" width="178" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GZc-FK-UTx" userLabel="Location">
+                                            <rect key="frame" x="14" y="255" width="178" height="21"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TA2-Kk-zV0" userLabel="Event Image">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="158"/>
+                                            <animations/>
+                                        </imageView>
                                     </subviews>
                                     <animations/>
                                 </tableViewCellContentView>
@@ -166,90 +114,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Th6-om-poe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1942.5" y="-1281.5"/>
-        </scene>
-        <!--Creating Event-->
-        <scene sceneID="E0P-xT-IBr">
-            <objects>
-                <viewController id="KBp-gY-Akj" customClass="CreateEventViewController" customModule="CruApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="wdC-NI-hHz"/>
-                        <viewControllerLayoutGuide type="bottom" id="VPy-qx-tXh"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Kmv-GA-O46">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RgO-Wf-6hh">
-                                <rect key="frame" x="137" y="362" width="86" height="47"/>
-                                <animations/>
-                                <state key="normal" title="Add Event"/>
-                                <connections>
-                                    <action selector="addEvent:" destination="KBp-gY-Akj" eventType="touchUpInside" id="ReM-rL-DzV"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Event Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="18Z-J2-el9">
-                                <rect key="frame" x="20" y="154" width="93" height="21"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9j1-Er-ngY">
-                                <rect key="frame" x="137" y="150" width="131" height="30"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Start Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qFf-AA-gKM">
-                                <rect key="frame" x="27" y="221" width="78" height="21"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6nH-Jm-lSj">
-                                <rect key="frame" x="137" y="217" width="131" height="30"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="End Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fdm-hm-dpi">
-                                <rect key="frame" x="31" y="293" width="70" height="21"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lyI-gS-evH">
-                                <rect key="frame" x="137" y="289" width="131" height="30"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                        </subviews>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Creating Event" id="063-qK-cbg">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="19z-Ne-hmo"/>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="addEvent" destination="RgO-Wf-6hh" id="0Yy-e9-8lu"/>
-                        <outlet property="eventEndField" destination="lyI-gS-evH" id="nje-YX-EJ2"/>
-                        <outlet property="eventNameField" destination="9j1-Er-ngY" id="ZLX-c5-jUB"/>
-                        <outlet property="eventStartField" destination="6nH-Jm-lSj" id="OfT-io-Fg7"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YXt-pu-BKd" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1377.5" y="-408.5"/>
+            <point key="canvasLocation" x="1566.5" y="-1219.5"/>
         </scene>
     </scenes>
     <resources>
         <image name="Calendar-25.png" width="25" height="25"/>
         <image name="Facebook-25.png" width="25" height="25"/>
         <image name="Planner-25.png" width="25" height="25"/>
-        <image name="menu.png" width="22" height="22"/>
     </resources>
 </document>

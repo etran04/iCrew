@@ -15,8 +15,8 @@ class DBClient {
     }
     
     func requestData(action: String, completionHandler : (NSData?, NSURLResponse?, NSError?) -> Void) {
-        //let url = "http://pcp070331pcs.wireless.calpoly.edu:3000/api/" + action + "/list"
-        let url = "http://localhost:3000/api/" + action + "/list"
+        let url = "pcp070331pcs.wireless.calpoly.edu:3000/api/" + action + "/list"
+        //let url = "http://localhost:3000/api/" + action + "/list"
         request(url, method: "GET", completionHandler: completionHandler)
     }
    

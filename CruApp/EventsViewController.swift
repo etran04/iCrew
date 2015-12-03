@@ -169,6 +169,11 @@ class EventsViewController: UITableViewController {
         else {
             createEvent(eventStore, title: name, startDate: startDate!, endDate: endDate!)
         }
+        let alertController = UIAlertController(title: name, message:
+            "Event synced to calendar", preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+        
+        self.presentViewController(alertController, animated: true, completion: nil)
     }
     
     func createEvent(eventStore: EKEventStore, title: String, startDate: NSDate, endDate: NSDate) {

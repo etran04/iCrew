@@ -136,9 +136,9 @@ class EventsViewController: UITableViewController {
         // 1
         let eventStore = EKEventStore()
         let dateFormatter = NSDateFormatter()
-            //2015-11-19T22:00:00.000Z
+        //2015-11-19T22:00:00.000Z
         //dateFormatter.dateFormat = "MMM dd, yyyy, HH:ss"
-        dateFormatter.dateFormat = "yyyy-MM-ddTHH:mm:ss.000Z"
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
         
         let startDate = dateFormatter.dateFromString(start!)
         

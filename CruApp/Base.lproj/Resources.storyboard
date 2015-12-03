@@ -136,7 +136,7 @@
         <scene sceneID="8r8-hg-fhm">
             <objects>
                 <tableViewController title="Videos" id="CBw-xl-Jne" customClass="VideosTableViewController" customModule="CruApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="190" sectionHeaderHeight="28" sectionFooterHeight="28" id="ipU-uC-rEm">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="149" sectionHeaderHeight="28" sectionFooterHeight="28" id="ipU-uC-rEm">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
@@ -148,27 +148,52 @@
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="VideoTableCell" rowHeight="190" id="KO5-f2-AGs" customClass="VideoTableViewCell" customModule="CruApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="136" width="600" height="190"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="VideoTableCell" rowHeight="149" id="KO5-f2-AGs" customClass="VideoTableViewCell" customModule="CruApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="136" width="600" height="149"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KO5-f2-AGs" id="BqC-Tn-I46">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="189.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="148.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h9w-j8-UdK" customClass="YTPlayerView">
-                                            <rect key="frame" x="158" y="13" width="284" height="164"/>
+                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h9w-j8-UdK" customClass="YTPlayerView">
+                                            <rect key="frame" x="8" y="8" width="147" height="122"/>
                                             <animations/>
                                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mYP-6P-fbR">
+                                            <rect key="frame" x="163" y="8" width="429" height="33"/>
+                                            <animations/>
+                                            <string key="text">chinchilla massage
+</string>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" text="Kimchi just loves her scratchies." selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uIz-3V-OdK">
+                                            <rect key="frame" x="163" y="49" width="429" height="81"/>
+                                            <animations/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
                                     </subviews>
                                     <animations/>
                                     <constraints>
-                                        <constraint firstItem="h9w-j8-UdK" firstAttribute="centerY" secondItem="BqC-Tn-I46" secondAttribute="centerY" id="L33-XO-BIQ"/>
-                                        <constraint firstItem="h9w-j8-UdK" firstAttribute="top" secondItem="BqC-Tn-I46" secondAttribute="topMargin" constant="5" id="uUd-QN-A6k"/>
-                                        <constraint firstItem="h9w-j8-UdK" firstAttribute="centerX" secondItem="BqC-Tn-I46" secondAttribute="centerX" id="vkg-hD-MZ1"/>
+                                        <constraint firstItem="uIz-3V-OdK" firstAttribute="leading" secondItem="h9w-j8-UdK" secondAttribute="trailing" constant="8" id="3cD-Of-uZR"/>
+                                        <constraint firstItem="uIz-3V-OdK" firstAttribute="height" secondItem="BqC-Tn-I46" secondAttribute="height" id="HCm-6n-8qU"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="uIz-3V-OdK" secondAttribute="trailing" id="HXp-9w-NDF"/>
+                                        <constraint firstAttribute="topMargin" secondItem="h9w-j8-UdK" secondAttribute="top" id="Jil-K4-RQh"/>
+                                        <constraint firstAttribute="leadingMargin" secondItem="h9w-j8-UdK" secondAttribute="leading" id="NnG-xi-8GE"/>
+                                        <constraint firstItem="uIz-3V-OdK" firstAttribute="top" secondItem="mYP-6P-fbR" secondAttribute="bottom" constant="-4" id="PyE-Za-mXH"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="mYP-6P-fbR" secondAttribute="trailing" id="iIP-6Y-rAG"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="h9w-j8-UdK" secondAttribute="bottom" constant="10.5" id="l7R-SF-D3u"/>
+                                        <constraint firstItem="mYP-6P-fbR" firstAttribute="leading" secondItem="h9w-j8-UdK" secondAttribute="trailing" constant="8" id="mrH-Ni-B7X"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="mYP-6P-fbR" secondAttribute="bottom" constant="108" id="vrg-co-z0D"/>
+                                </constraints>
                                 <connections>
                                     <outlet property="videoPlayer" destination="h9w-j8-UdK" id="EWL-v2-5Sa"/>
                                 </connections>

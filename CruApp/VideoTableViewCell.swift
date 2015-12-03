@@ -16,6 +16,7 @@ class VideoTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        //print(videoId)
         self.videoPlayer.loadWithVideoId("9cmh72Z9ISI")
     }
 

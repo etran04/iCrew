@@ -110,17 +110,14 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Events" id="kj2-c5-3Oo">
-                        <barButtonItem key="leftBarButtonItem" image="menu.png" style="plain" id="HNt-AB-nb1"/>
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="bkb-Oh-Tda">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="sTM-oG-H6O">
-                                <rect key="frame" x="276" y="7" width="83" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <animations/>
-                                <state key="normal" title="Text"/>
-                            </button>
-                        </barButtonItem>
+                        <barButtonItem key="leftBarButtonItem" image="menu.png" id="yWV-Oq-fEi"/>
+                        <barButtonItem key="rightBarButtonItem" title="Text" id="S45-1N-BEg"/>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="menuButton" destination="yWV-Oq-fEi" id="xzd-9l-iow"/>
+                        <outlet property="textButton" destination="S45-1N-BEg" id="Gbx-gS-jEw"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Th6-om-poe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

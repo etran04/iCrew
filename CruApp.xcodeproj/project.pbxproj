@@ -429,6 +429,11 @@
 					072519A31BE9694000F38F81 = {
 						CreatedOnToolsVersion = 7.1;
 						DevelopmentTeam = CWEESB29TK;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					277E67521BEB6362001C29DD = {
 						CreatedOnToolsVersion = 7.1;
@@ -805,7 +810,7 @@
 				INFOPLIST_FILE = CruApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.iCrew.CruApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.iCrew.CruApp1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "CruApp/CruApp-Bridging-Header.h";
@@ -827,7 +832,7 @@
 				INFOPLIST_FILE = CruApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.iCrew.CruApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.iCrew.CruApp1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "CruApp/CruApp-Bridging-Header.h";

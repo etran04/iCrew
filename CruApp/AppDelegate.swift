@@ -33,6 +33,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        print(response.result)
 //        }
         
+        let pushSettings = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
+        
+        UIApplication.sharedApplication().registerUserNotificationSettings(pushSettings)
+        UIApplication.sharedApplication().registerForRemoteNotifications()
+        
+
+        
         return true
     }
 
@@ -59,5 +66,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+        print("Received Remote Notification!!")
+    }
+    
+    func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
+        print("Received Local Notification!!")
+    }
+    
 }
 

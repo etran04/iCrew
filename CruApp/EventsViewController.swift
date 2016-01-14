@@ -10,6 +10,7 @@ import UIKit
 import EventKit
 import Alamofire
 import SafariServices
+import ReachabilitySwift
 
 class EventsViewController: UITableViewController {
 
@@ -53,6 +54,42 @@ class EventsViewController: UITableViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
+        
+        let reachability: Reachability
+        do {
+            reachability = try Reachability.reachabilityForInternetConnection()
+        } catch {
+            print("Unable to create Reachability")
+            return
+        }
+        
+        
+        reachability.whenReachable = { reachability in
+            dispatch_async(dispatch_get_main_queue()) {
+                if reachability.isReachableViaWiFi() {
+                    print("Reachable via WiFi")
+                } else {
+                    print("Reachable via Cellular")
+                }
+            }
+        }
+        
+        reachability.whenUnreachable = { reachability in
+            dispatch_async(dispatch_get_main_queue()) {
+                print("Not reachable")
+                //show the network initialization dialog
+                let g_alert = UIAlertController(title: "Checking for Internet...", message: "If this dialog appears, please check to make sure you have internet connectivity. ", preferredStyle: .Alert)
+                
+                self.presentViewController(g_alert, animated: true, completion: nil)
+            }
+        }
+        
+        do {
+            try reachability.startNotifier()
+        } catch {
+            print("Unable to start notifier")
+        }
+        
         if (self.revealViewController() != nil) {
             self.menuButton.target = self.revealViewController()
             self.menuButton.action = "revealToggle:"

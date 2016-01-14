@@ -1,10 +1,22 @@
 PODS:
+  - ReachabilitySwift (2.3.3)
   - youtube-ios-player-helper (0.1.4)
 
 DEPENDENCIES:
+  - ReachabilitySwift (from `https://github.com/ashleymills/Reachability.swift`)
   - youtube-ios-player-helper (~> 0.1.4)
 
+EXTERNAL SOURCES:
+  ReachabilitySwift:
+    :git: https://github.com/ashleymills/Reachability.swift
+
+CHECKOUT OPTIONS:
+  ReachabilitySwift:
+    :commit: 8c4fd976e920e45e50388f69f763e1dea36c7955
+    :git: https://github.com/ashleymills/Reachability.swift
+
 SPEC CHECKSUMS:
+  ReachabilitySwift: e0f6b6f280effb47731acfaaa2d5ffe223703793
   youtube-ios-player-helper: 84b1485ebb4b7c6b619c6e05edcb55186723a7c6
 
 COCOAPODS: 0.39.0

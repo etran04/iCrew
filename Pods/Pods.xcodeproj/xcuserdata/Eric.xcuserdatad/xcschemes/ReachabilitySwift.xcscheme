@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '1135899528BC869296A999BE'
-               BlueprintName = 'youtube-ios-player-helper'
+               BlueprintIdentifier = 'F16A629627092B2DD39E346F'
+               BlueprintName = 'ReachabilitySwift'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'youtube_ios_player_helper.framework'>
+               BuildableName = 'ReachabilitySwift.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

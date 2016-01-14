@@ -33,13 +33,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        print(response.result)
 //        }
         
+        // Register application for push notifications (local and remote)
         let pushSettings = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
-        
         UIApplication.sharedApplication().registerUserNotificationSettings(pushSettings)
         UIApplication.sharedApplication().registerForRemoteNotifications()
-        
+     
 
-        
         return true
     }
 

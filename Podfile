@@ -6,6 +6,7 @@ platform :ios, ‘9.0’
 target 'CruApp' do
 
 pod "youtube-ios-player-helper", "~> 0.1.4"
+pod 'ReachabilitySwift', git: 'https://github.com/ashleymills/Reachability.swift'
 
 end
 

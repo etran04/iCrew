@@ -20,76 +20,74 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WDs-YB-DVz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="678" y="-1253"/>
+            <point key="canvasLocation" x="710" y="-1341"/>
         </scene>
-        <!--Events-->
+        <!--Events View Controller-->
         <scene sceneID="2hl-7j-QvT">
             <objects>
                 <tableViewController id="wac-ew-KxN" customClass="EventsViewController" customModule="CruApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="312" sectionHeaderHeight="28" sectionFooterHeight="28" id="MuH-2r-fkL">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="144" sectionHeaderHeight="28" sectionFooterHeight="28" id="MuH-2r-fkL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventCell" rowHeight="312" id="f9p-Nf-8eQ" customClass="EventViewCell" customModule="CruApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="375" height="312"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventCell" rowHeight="144" id="f9p-Nf-8eQ" customClass="EventViewCell" customModule="CruApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="375" height="144"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="f9p-Nf-8eQ" id="etK-eK-lzq">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="311.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="143.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="blank_calendar.png" translatesAutoresizingMaskIntoConstraints="NO" id="TA2-Kk-zV0" userLabel="Event Image">
+                                            <rect key="frame" x="14" y="18" width="100" height="100"/>
+                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KlN-3k-s5R">
-                                            <rect key="frame" x="14" y="166" width="246" height="21"/>
+                                            <rect key="frame" x="129" y="25" width="230" height="21"/>
                                             <attributedString key="attributedText">
                                                 <fragment content="Title">
                                                     <attributes>
                                                         <color key="NSColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                                        <font key="NSFont" size="20" name="HelveticaNeue"/>
                                                         <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                     </attributes>
                                                 </fragment>
                                             </attributedString>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RPv-xy-z0i" userLabel="Event Date">
-                                            <rect key="frame" x="14" y="194" width="347" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Start Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BHE-65-e4p" userLabel="Start Time">
-                                            <rect key="frame" x="14" y="218" width="347" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <rect key="frame" x="129" y="58" width="164" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tqP-hW-q8l" userLabel="Calendar Button">
-                                            <rect key="frame" x="125" y="272" width="25" height="25"/>
-                                            <state key="normal" image="Calendar-25.png"/>
-                                        </button>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bo0-hy-T7t" userLabel="Facebook Button">
-                                            <rect key="frame" x="228" y="272" width="25" height="25"/>
-                                            <state key="normal" image="Facebook-25.png"/>
-                                        </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GZc-FK-UTx" userLabel="Location">
-                                            <rect key="frame" x="14" y="241" width="347" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <rect key="frame" x="129" y="89" width="347" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TA2-Kk-zV0" userLabel="Event Image">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="158"/>
-                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Day" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b9o-dO-O8d" userLabel="Day Date">
+                                            <rect key="frame" x="25" y="50" width="78" height="59"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Month" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FVT-ev-fam" userLabel="Month Date">
+                                            <rect key="frame" x="25" y="29" width="78" height="21"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="calendarButton" destination="tqP-hW-q8l" id="ZtS-WR-PDe"/>
-                                    <outlet property="eventDate" destination="RPv-xy-z0i" id="aGZ-xd-TtF"/>
+                                    <outlet property="eventDayDate" destination="b9o-dO-O8d" id="xhn-dE-iLp"/>
                                     <outlet property="eventImage" destination="etK-eK-lzq" id="fcq-Cl-Xuz"/>
                                     <outlet property="eventLocation" destination="GZc-FK-UTx" id="F8q-3q-2lY"/>
+                                    <outlet property="eventMonthDate" destination="FVT-ev-fam" id="ixL-dK-JHk"/>
                                     <outlet property="eventName" destination="KlN-3k-s5R" id="UlH-b0-sCY"/>
                                     <outlet property="eventStartTime" destination="BHE-65-e4p" id="0Rp-tY-HyX"/>
-                                    <outlet property="facebookButton" destination="Bo0-hy-T7t" id="tY0-m2-erO"/>
+                                    <segue destination="UuB-8l-udZ" kind="show" id="Iaa-yp-kZ2"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -98,8 +96,17 @@
                             <outlet property="delegate" destination="wac-ew-KxN" id="SgE-IZ-0sr"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Events" id="kj2-c5-3Oo">
+                    <navigationItem key="navigationItem" id="kj2-c5-3Oo">
+                        <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" image="menu.png" id="yWV-Oq-fEi"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="eP5-6z-kyh" userLabel="Events, Ride Share">
+                            <rect key="frame" x="107" y="6.5" width="161" height="31"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="Events"/>
+                                <segment title="Ride Share"/>
+                            </segments>
+                        </segmentedControl>
                         <barButtonItem key="rightBarButtonItem" title="Text" id="S45-1N-BEg"/>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -110,13 +117,103 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Th6-om-poe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1338.5" y="-1253.5"/>
+            <point key="canvasLocation" x="1650.5" y="-1486.5"/>
+        </scene>
+        <!--Event Details View Controller-->
+        <scene sceneID="s7V-WV-l7A">
+            <objects>
+                <viewController id="UuB-8l-udZ" customClass="EventDetailsViewController" customModule="CruApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="f04-9R-37d"/>
+                        <viewControllerLayoutGuide type="bottom" id="jaG-Ti-frZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WSL-3E-Mm2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n1Y-B8-t3a" userLabel="Event Image">
+                                <rect key="frame" x="22" y="85" width="329" height="128"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HuY-Lz-jYx" userLabel="Title Label">
+                                <rect key="frame" x="22" y="229" width="329" height="32"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FZK-uQ-Ald" userLabel="Location Label">
+                                <rect key="frame" x="103" y="299" width="248" height="43"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2FN-Ag-IGf" userLabel="Date Label">
+                                <rect key="frame" x="73" y="269" width="278" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HRy-Ov-E52" userLabel="Facebook Button">
+                                <rect key="frame" x="53" y="567" width="29" height="25"/>
+                                <state key="normal" image="Facebook-25.png"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DOZ-Cg-rg7" userLabel="Google Calendar Button">
+                                <rect key="frame" x="175" y="567" width="25" height="25"/>
+                                <state key="normal" image="Google Plus-25.png"/>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Kpq-vC-Emc">
+                                <rect key="frame" x="20" y="371" width="329" height="178"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FY4-iR-UDm" userLabel="iOS Calendar Button">
+                                <rect key="frame" x="289" y="567" width="31" height="25"/>
+                                <state key="normal" image="Calendar-25.png"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tn2-dJ-IQo">
+                                <rect key="frame" x="23" y="269" width="45" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xgk-Cv-Kyh">
+                                <rect key="frame" x="23" y="301" width="72" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N2a-Ic-Uvj">
+                                <rect key="frame" x="22" y="352" width="95" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="calendarButton" destination="FY4-iR-UDm" id="sMu-SO-yiX"/>
+                        <outlet property="eventDate" destination="2FN-Ag-IGf" id="jhh-T2-NbH"/>
+                        <outlet property="eventDescr" destination="Kpq-vC-Emc" id="5y1-YK-xej"/>
+                        <outlet property="eventImage" destination="n1Y-B8-t3a" id="VIW-9W-s7r"/>
+                        <outlet property="eventLocation" destination="FZK-uQ-Ald" id="2Vk-iu-aGB"/>
+                        <outlet property="eventTitle" destination="HuY-Lz-jYx" id="tzx-9v-Sfs"/>
+                        <outlet property="facebookButton" destination="HRy-Ov-E52" id="rUy-4M-NlU"/>
+                        <outlet property="googleButton" destination="DOZ-Cg-rg7" id="Lre-hN-0MT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nJ7-IQ-UBf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2135.5" y="-1481.5"/>
         </scene>
     </scenes>
     <resources>
         <image name="Calendar-25.png" width="25" height="25"/>
         <image name="Facebook-25.png" width="25" height="25"/>
+        <image name="Google Plus-25.png" width="25" height="25"/>
         <image name="Planner-25.png" width="25" height="25"/>
+        <image name="blank_calendar.png" width="512" height="512"/>
         <image name="menu.png" width="22" height="22"/>
     </resources>
 </document>

@@ -1,0 +1,4 @@
+# GcmExample
+platform :ios, '7.0'
+link_with 'GcmExample', 'GcmExampleSwift'
+pod 'Google/CloudMessaging'

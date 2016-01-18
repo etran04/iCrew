@@ -1,0 +1,4 @@
+platform :ios, '7.0'
+pod 'Google/SignIn'
+
+link_with 'SignInExample', 'SignInExampleSwift'

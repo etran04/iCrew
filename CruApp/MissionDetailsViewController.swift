@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class MissionDetailsViewController: UIViewController {
     
@@ -76,6 +77,15 @@ class MissionDetailsViewController: UIViewController {
                 missionImage.contentMode = UIViewContentMode.ScaleAspectFit
                 missionImage.addSubview(imageView)
             }
+        }
+    }
+    
+    func openLink(sender:UIButton!) {
+        //let event = eventsCollection[Int(sender.titleLabel!.text!)!]
+        
+        if let url = NSURL(string: (mission?.url)!) {
+            let vc = SFSafariViewController(URL: url, entersReaderIfAvailable: true)
+            presentViewController(vc, animated: false, completion: nil)
         }
     }
 

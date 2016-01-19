@@ -13,8 +13,6 @@ import SafariServices
 import ReachabilitySwift
 
 class EventsViewController: UITableViewController {
-
-    //var events:[Event] = eventsData
     
     @IBOutlet weak var menuButton: UIBarButtonItem!
     @IBOutlet weak var textButton: UIBarButtonItem!
@@ -33,19 +31,7 @@ class EventsViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
-        //        service = PostService()
-        //        service.getEvents {
-        //            (response) in
-        //            self.loadEvents(response[]! as NSArray)
-        
-        //        }
-        //        service = EventService()
-        //        service.request(settings.getEvents, method:"GET") {
-        //            (response) in
-        //            self.loadEvents(response)
-        //        }
-        
-        var dbClient:DBClient!
+        var dbClient: DBClient!
         dbClient = DBClient()
         dbClient.getData("event", dict: setEvents)
         
@@ -125,16 +111,8 @@ class EventsViewController: UITableViewController {
         UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
     }
     
-    
-//    func insertEvent(dict : NSDictionary) {
-//        self.tableView.beginUpdates()
-//        events.insert(Event(dict: dict)!, atIndex: 0)
-//        self.tableView.insertRowsAtIndexPaths([NSIndexPath(forItem: 0, inSection: 0)], withRowAnimation: .Automatic)
-//        self.tableView.endUpdates()
-//    }
-//    
-    
     //obtain information from the database to an Object
+    //TODO: Move function into Event.swift
     func setEvents(event:NSDictionary) {
         //self.tableView.beginUpdates()
         

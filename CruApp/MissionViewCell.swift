@@ -9,6 +9,8 @@
 import UIKit
 
 class MissionViewCell: UITableViewCell {
+    @IBOutlet weak var missionTitle: UILabel!
+    @IBOutlet weak var missionDate: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()

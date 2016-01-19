@@ -25,10 +25,25 @@ class SummerMissionsViewController: UITableViewController {
         dbClient.getData("summermission", dict: setEvents)
     }
     
-    func setEvents(missions:NSDictionary) -> () {
-        let name = missions["name"] as! String
-        let description = missions["description"] as! String
-        let missionObj = Mission(name: name, description: description)
+    func setEvents(mission:NSDictionary) -> () {
+        let name = mission["name"] as! String
+        let description = mission["description"] as! String
+        let startDate = mission["startDate"] as! String
+        let endDate = mission["endDate"] as! String
+        let cost = mission["cost"] as! Int
+        let url = mission["url"] as! String
+        let leaders = mission["leaders"] as! [String]
+        let image = mission["image"]?.objectForKey("secure_url") as! String!
+        
+        let location = Location(
+            postcode: mission["location"]?.objectForKey("postcode") as! String,
+            state: mission["location"]?.objectForKey("state") as! String,
+            suburb: mission["location"]?.objectForKey("suburb") as! String,
+            street1: mission["location"]?.objectForKey("street1") as! String,
+            country: mission["location"]?.objectForKey("country") as! String)
+        
+        let missionObj = Mission(name: name, description: description, image: image, cost: cost, location: location, startDate: startDate, endDate: endDate, url: url, leaders: leaders)
+        
         missionsCollection.append(missionObj)
         self.tableView.reloadData()
     }

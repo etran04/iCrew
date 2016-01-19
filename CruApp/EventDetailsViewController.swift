@@ -161,7 +161,6 @@ class EventDetailsViewController: UIViewController {
     }
 
     
-    
     // MARK: - Navigation
 
     

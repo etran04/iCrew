@@ -25,6 +25,7 @@ class SummerMissionsViewController: UITableViewController {
         dbClient.getData("summermission", dict: setMissions)
     }
     
+    //TODO: move it into Mission.swift
     func setMissions(mission:NSDictionary) -> () {
         var url: String
         var leaders: String

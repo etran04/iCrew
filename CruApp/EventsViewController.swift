@@ -41,40 +41,51 @@ class EventsViewController: UITableViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
-        
-        let reachability: Reachability
-        do {
-            reachability = try Reachability.reachabilityForInternetConnection()
-        } catch {
-            print("Unable to create Reachability")
-            return
-        }
-        
-        
-        reachability.whenReachable = { reachability in
-            dispatch_async(dispatch_get_main_queue()) {
-                if reachability.isReachableViaWiFi() {
-                    print("Reachable via WiFi")
-                } else {
-                    print("Reachable via Cellular")
+        /* 
+         * Tokens is a inner class, used to make sure internet connectivity is check
+         * only once when the app is intially launched.
+         */
+        struct Tokens { static var token: dispatch_once_t = 0 }
+        dispatch_once(&Tokens.token) {
+            
+            // Checks for internet connectivity (Wifi/4G)
+            let reachability: Reachability
+            do {
+                reachability = try Reachability.reachabilityForInternetConnection()
+            } catch {
+                print("Unable to create Reachability")
+                return
+            }
+            
+            // If device does have internet
+            reachability.whenReachable = { reachability in
+                dispatch_async(dispatch_get_main_queue()) {
+                    if reachability.isReachableViaWiFi() {
+                        print("Reachable via WiFi")
+                    } else {
+                        print("Reachable via Cellular")
+                    }
                 }
             }
-        }
-        
-        reachability.whenUnreachable = { reachability in
-            dispatch_async(dispatch_get_main_queue()) {
-                print("Not reachable")
-                //show the network initialization dialog
-                let g_alert = UIAlertController(title: "Checking for Internet...", message: "If this dialog appears, please check to make sure you have internet connectivity. ", preferredStyle: .Alert)
-                
-                self.presentViewController(g_alert, animated: true, completion: nil)
+            
+            reachability.whenUnreachable = { reachability in
+                dispatch_async(dispatch_get_main_queue()) {
+                    // If no internet, display an alert notifying user they have no internet connectivity
+                    let g_alert = UIAlertController(title: "Checking for Internet...", message: "If this dialog appears, please check to make sure you have internet connectivity. ", preferredStyle: .Alert)
+                    let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
+                        // Dismiss alert dialog
+                        print("Dismissed No Internet Dialog")
+                    }
+                    g_alert.addAction(OKAction)
+                    self.presentViewController(g_alert, animated: true, completion: nil)
+                }
             }
-        }
-        
-        do {
-            try reachability.startNotifier()
-        } catch {
-            print("Unable to start notifier")
+            
+            do {
+                try reachability.startNotifier()
+            } catch {
+                print("Unable to start notifier")
+            }
         }
         
         if (self.revealViewController() != nil) {

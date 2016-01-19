@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'CBBF70B03AF8B815F2EFFFBD'
+               BlueprintIdentifier = '6F543C4A8AAAE876D7EEAACF'
                BlueprintName = 'youtube-ios-player-helper-Assets'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Assets.bundle'>

@@ -22,10 +22,10 @@ class SummerMissionsViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         var dbClient:DBClient!
         dbClient = DBClient()
-        dbClient.getData("summermission", dict: setEvents)
+        dbClient.getData("summermission", dict: setMissions)
     }
     
-    func setEvents(mission:NSDictionary) -> () {
+    func setMissions(mission:NSDictionary) -> () {
         var url: String
         var leaders: String
         var image: String

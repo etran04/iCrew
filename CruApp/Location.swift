@@ -24,7 +24,7 @@ struct Location {
         self.street1 = street1
         self.country = country
     }
-    
+        
     func getLocation() -> String {
         return street1 + ", " + suburb + ", " + state + " " + postcode
     }

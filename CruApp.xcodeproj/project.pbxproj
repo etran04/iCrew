@@ -48,6 +48,7 @@
 		A45572FB1C4A176F0097DE0F /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45572FA1C4A176F0097DE0F /* EventDetailsViewController.swift */; };
 		A45572FE1C4ADC150097DE0F /* EventsAndRides.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A45572FC1C4ADC150097DE0F /* EventsAndRides.storyboard */; };
 		A45573001C4CDAF60097DE0F /* MissionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45572FF1C4CDAF60097DE0F /* MissionViewCell.swift */; };
+		A45573021C4E219A0097DE0F /* MissionDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45573011C4E219A0097DE0F /* MissionDetailsViewController.swift */; };
 		CBF52B4D6C6CD44BBF744548 /* Pods_CruApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD14769052309A631372632E /* Pods_CruApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -187,6 +188,7 @@
 		A45572FA1C4A176F0097DE0F /* EventDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailsViewController.swift; sourceTree = "<group>"; };
 		A45572FD1C4ADC150097DE0F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/EventsAndRides.storyboard; sourceTree = "<group>"; };
 		A45572FF1C4CDAF60097DE0F /* MissionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MissionViewCell.swift; sourceTree = "<group>"; };
+		A45573011C4E219A0097DE0F /* MissionDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MissionDetailsViewController.swift; sourceTree = "<group>"; };
 		DD14769052309A631372632E /* Pods_CruApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CruApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -329,6 +331,7 @@
 			isa = PBXGroup;
 			children = (
 				A40DD9A11C0EC61600BCFEC5 /* SummerMissionsViewController.swift */,
+				A45573011C4E219A0097DE0F /* MissionDetailsViewController.swift */,
 				A45572FF1C4CDAF60097DE0F /* MissionViewCell.swift */,
 				A40DD9A31C0EC62F00BCFEC5 /* Mission.swift */,
 			);
@@ -637,6 +640,7 @@
 				07C196351C0E6D9F00375B8D /* ArticleTableViewCell.swift in Sources */,
 				1E37E7291C0E362D0054607A /* EventsViewController.swift in Sources */,
 				07C196371C0E863000375B8D /* VideoTableViewCell.swift in Sources */,
+				A45573021C4E219A0097DE0F /* MissionDetailsViewController.swift in Sources */,
 				A45572FB1C4A176F0097DE0F /* EventDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

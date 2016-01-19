@@ -87,7 +87,7 @@
                                     <outlet property="eventMonthDate" destination="FVT-ev-fam" id="ixL-dK-JHk"/>
                                     <outlet property="eventName" destination="KlN-3k-s5R" id="UlH-b0-sCY"/>
                                     <outlet property="eventStartTime" destination="BHE-65-e4p" id="0Rp-tY-HyX"/>
-                                    <segue destination="UuB-8l-udZ" kind="show" id="Iaa-yp-kZ2"/>
+                                    <segue destination="UuB-8l-udZ" kind="show" id="2gF-ej-az8"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -205,7 +205,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nJ7-IQ-UBf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2135.5" y="-1481.5"/>
+            <point key="canvasLocation" x="2234" y="-1486"/>
         </scene>
     </scenes>
     <resources>

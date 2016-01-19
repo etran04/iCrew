@@ -18,9 +18,9 @@ struct Mission {
     var startDate: String?
     var endDate: String?
     var url: String
-    var leaders = [String]()
+    var leaders: String
     
-    init(name: String, description: String, image: String, cost: Int, location: Location, startDate: String, endDate: String, url: String, leaders: [String]) {
+    init(name: String, description: String, image: String, cost: Int, location: Location, startDate: String, endDate: String, url: String, leaders: String) {
         self.name = name
         self.description = description
         self.image = image
@@ -29,7 +29,7 @@ struct Mission {
         self.startDate = startDate
         self.endDate = endDate
         self.url = url
-        self.leaders.appendContentsOf(leaders)
+        self.leaders = leaders
     }
 }
 

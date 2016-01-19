@@ -30,7 +30,7 @@ class MissionDetailsViewController: UIViewController {
             missionTitle.text = mission.name
             missionDescr.text = mission.description
             missionLocation.text = (mission.location?.getLocation())!
-            missionCost.text = String(mission.cost)
+            missionCost.text = "$" + String(mission.cost)
             missionLeaders.text = mission.leaders
             
             //date formatting

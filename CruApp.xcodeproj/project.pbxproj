@@ -25,6 +25,16 @@
 		271C78211C50434000F42EA0 /* InitialCampusTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271C78201C50434000F42EA0 /* InitialCampusTableViewController.swift */; };
 		271C78231C5044B100F42EA0 /* InitialCampusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271C78221C5044B100F42EA0 /* InitialCampusTableViewCell.swift */; };
 		277E67561BEB6362001C29DD /* CruAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277E67551BEB6362001C29DD /* CruAppTests.swift */; };
+		279326ED1C509A8300BAC73D /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = 279326EC1C509A8300BAC73D /* info.png */; };
+		279326FC1C509C2100BAC73D /* PopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 279326EE1C509C2100BAC73D /* PopUpViewController.xib */; };
+		279326FD1C509C2100BAC73D /* PopUpViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 279326EF1C509C2100BAC73D /* PopUpViewController_iPad.xib */; };
+		279326FE1C509C2100BAC73D /* PopUpViewController_iPhone6.xib in Resources */ = {isa = PBXBuildFile; fileRef = 279326F01C509C2100BAC73D /* PopUpViewController_iPhone6.xib */; };
+		279326FF1C509C2100BAC73D /* PopUpViewController_iPhone6Plus.xib in Resources */ = {isa = PBXBuildFile; fileRef = 279326F11C509C2100BAC73D /* PopUpViewController_iPhone6Plus.xib */; };
+		279327001C509C2100BAC73D /* PopUpViewControllerSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279326F21C509C2100BAC73D /* PopUpViewControllerSwift.swift */; };
+		279327011C509C2100BAC73D /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 279326F41C509C2100BAC73D /* Info.plist */; };
+		279327021C509C2100BAC73D /* NMPopUpViewSwift.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 279326F61C509C2100BAC73D /* NMPopUpViewSwift.xcconfig */; };
+		279327051C50A0EC00BAC73D /* InitialMinistryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279327041C50A0EC00BAC73D /* InitialMinistryTableViewController.swift */; };
+		279327071C50A10500BAC73D /* InitialMinistryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279327061C50A10500BAC73D /* InitialMinistryTableViewCell.swift */; };
 		838564F51C0D9EDF00EB1728 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 838564F41C0D9EDF00EB1728 /* SWRevealViewController.m */; };
 		839F64411C0D4E4300CAEC9E /* Cru-Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 839F643B1C0D4E4300CAEC9E /* Cru-Logo.png */; };
 		839F64421C0D4E4300CAEC9E /* Home-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 839F643C1C0D4E4300CAEC9E /* Home-25.png */; };
@@ -168,6 +178,20 @@
 		277E67531BEB6362001C29DD /* CruAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CruAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		277E67551BEB6362001C29DD /* CruAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CruAppTests.swift; sourceTree = "<group>"; };
 		277E67571BEB6362001C29DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		279326EC1C509A8300BAC73D /* info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info.png; sourceTree = "<group>"; };
+		279326EE1C509C2100BAC73D /* PopUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PopUpViewController.xib; path = NMPopUpView/Pod/Classes/PopUpViewController.xib; sourceTree = "<group>"; };
+		279326EF1C509C2100BAC73D /* PopUpViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PopUpViewController_iPad.xib; path = NMPopUpView/Pod/Classes/PopUpViewController_iPad.xib; sourceTree = "<group>"; };
+		279326F01C509C2100BAC73D /* PopUpViewController_iPhone6.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PopUpViewController_iPhone6.xib; path = NMPopUpView/Pod/Classes/PopUpViewController_iPhone6.xib; sourceTree = "<group>"; };
+		279326F11C509C2100BAC73D /* PopUpViewController_iPhone6Plus.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PopUpViewController_iPhone6Plus.xib; path = NMPopUpView/Pod/Classes/PopUpViewController_iPhone6Plus.xib; sourceTree = "<group>"; };
+		279326F21C509C2100BAC73D /* PopUpViewControllerSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PopUpViewControllerSwift.swift; path = NMPopUpView/Pod/Classes/PopUpViewControllerSwift.swift; sourceTree = "<group>"; };
+		279326F41C509C2100BAC73D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		279326F51C509C2100BAC73D /* NMPopUpViewSwift.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = NMPopUpViewSwift.modulemap; sourceTree = "<group>"; };
+		279326F61C509C2100BAC73D /* NMPopUpViewSwift.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = NMPopUpViewSwift.xcconfig; sourceTree = "<group>"; };
+		279326F71C509C2100BAC73D /* NMPopUpViewSwift-dummy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NMPopUpViewSwift-dummy.m"; sourceTree = "<group>"; };
+		279326F81C509C2100BAC73D /* NMPopUpViewSwift-prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NMPopUpViewSwift-prefix.pch"; sourceTree = "<group>"; };
+		279326F91C509C2100BAC73D /* NMPopUpViewSwift-umbrella.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NMPopUpViewSwift-umbrella.h"; sourceTree = "<group>"; };
+		279327041C50A0EC00BAC73D /* InitialMinistryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialMinistryTableViewController.swift; sourceTree = "<group>"; };
+		279327061C50A10500BAC73D /* InitialMinistryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialMinistryTableViewCell.swift; sourceTree = "<group>"; };
 		56975AA48A624728978E6E3E /* Pods-CruApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CruApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CruApp/Pods-CruApp.debug.xcconfig"; sourceTree = "<group>"; };
 		838564F21C0D9EDF00EB1728 /* CruApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CruApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		838564F31C0D9EDF00EB1728 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
@@ -260,6 +284,7 @@
 		072519A61BE9694000F38F81 /* CruApp */ = {
 			isa = PBXGroup;
 			children = (
+				279326FB1C509C2100BAC73D /* NMPopUpViewSwift */,
 				A43482D11C0D290E00B62D6C /* Images */,
 				072519B31BE9694000F38F81 /* Info.plist */,
 				072519AE1BE9694000F38F81 /* Assets.xcassets */,
@@ -331,6 +356,8 @@
 			children = (
 				271C78201C50434000F42EA0 /* InitialCampusTableViewController.swift */,
 				271C78221C5044B100F42EA0 /* InitialCampusTableViewCell.swift */,
+				279327041C50A0EC00BAC73D /* InitialMinistryTableViewController.swift */,
+				279327061C50A10500BAC73D /* InitialMinistryTableViewCell.swift */,
 			);
 			name = Initial;
 			sourceTree = "<group>";
@@ -342,6 +369,42 @@
 				277E67571BEB6362001C29DD /* Info.plist */,
 			);
 			path = CruAppTests;
+			sourceTree = "<group>";
+		};
+		279326F31C509C2100BAC73D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		279326FA1C509C2100BAC73D /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				279326F41C509C2100BAC73D /* Info.plist */,
+				279326F51C509C2100BAC73D /* NMPopUpViewSwift.modulemap */,
+				279326F61C509C2100BAC73D /* NMPopUpViewSwift.xcconfig */,
+				279326F71C509C2100BAC73D /* NMPopUpViewSwift-dummy.m */,
+				279326F81C509C2100BAC73D /* NMPopUpViewSwift-prefix.pch */,
+				279326F91C509C2100BAC73D /* NMPopUpViewSwift-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/NMPopUpViewSwift";
+			sourceTree = "<group>";
+		};
+		279326FB1C509C2100BAC73D /* NMPopUpViewSwift */ = {
+			isa = PBXGroup;
+			children = (
+				279326EE1C509C2100BAC73D /* PopUpViewController.xib */,
+				279326EF1C509C2100BAC73D /* PopUpViewController_iPad.xib */,
+				279326F01C509C2100BAC73D /* PopUpViewController_iPhone6.xib */,
+				279326F11C509C2100BAC73D /* PopUpViewController_iPhone6Plus.xib */,
+				279326F21C509C2100BAC73D /* PopUpViewControllerSwift.swift */,
+				279326F31C509C2100BAC73D /* Resources */,
+				279326FA1C509C2100BAC73D /* Support Files */,
+			);
+			name = NMPopUpViewSwift;
+			path = ../Pods/NMPopUpViewSwift;
 			sourceTree = "<group>";
 		};
 		838564EB1C0D9EB900EB1728 /* SWRevealViewController */ = {
@@ -390,6 +453,7 @@
 		A43482D11C0D290E00B62D6C /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				279326EC1C509A8300BAC73D /* info.png */,
 				0703C7311C4DFA8500C7D8ED /* blank_calendar.png */,
 				A4110B4F1C0F7EB500F47AB4 /* Facebook-25.png */,
 				839F645F1C0D70AA00CAEC9E /* Box-25.png */,
@@ -578,8 +642,10 @@
 				839F64461C0D4E4300CAEC9E /* User Group-25.png in Resources */,
 				839F64451C0D4E4300CAEC9E /* Summer-25.png in Resources */,
 				839F64551C0D6BD100CAEC9E /* GetInvolved.storyboard in Resources */,
+				279326ED1C509A8300BAC73D /* info.png in Resources */,
 				271C78161C5040EA00F42EA0 /* Initial.storyboard in Resources */,
 				072519B21BE9694000F38F81 /* LaunchScreen.storyboard in Resources */,
+				279326FE1C509C2100BAC73D /* PopUpViewController_iPhone6.xib in Resources */,
 				839F645B1C0D6C4C00CAEC9E /* Resources.storyboard in Resources */,
 				839F64411C0D4E4300CAEC9E /* Cru-Logo.png in Resources */,
 				839F64441C0D4E4300CAEC9E /* Planner-25.png in Resources */,
@@ -587,15 +653,20 @@
 				A4110B501C0F7EB500F47AB4 /* Facebook-25.png in Resources */,
 				A4110B481C0F7E3400F47AB4 /* Calendar-25.png in Resources */,
 				839F64431C0D4E4300CAEC9E /* Literature-25.png in Resources */,
+				279326FD1C509C2100BAC73D /* PopUpViewController_iPad.xib in Resources */,
 				839F64421C0D4E4300CAEC9E /* Home-25.png in Resources */,
 				839F64601C0D70AA00CAEC9E /* Box-25.png in Resources */,
 				0703C7321C4DFA8500C7D8ED /* blank_calendar.png in Resources */,
 				072519AF1BE9694000F38F81 /* Assets.xcassets in Resources */,
+				279326FF1C509C2100BAC73D /* PopUpViewController_iPhone6Plus.xib in Resources */,
+				279327011C509C2100BAC73D /* Info.plist in Resources */,
 				A45572F91C49CCE90097DE0F /* Google Plus-25.png in Resources */,
+				279326FC1C509C2100BAC73D /* PopUpViewController.xib in Resources */,
 				839F64491C0D643A00CAEC9E /* menu.png in Resources */,
 				072519AD1BE9694000F38F81 /* Main.storyboard in Resources */,
 				839F64581C0D6C1E00CAEC9E /* SummerMissions.storyboard in Resources */,
 				A45572FE1C4ADC150097DE0F /* EventsAndRides.storyboard in Resources */,
+				279327021C509C2100BAC73D /* NMPopUpViewSwift.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -662,13 +733,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				A40DD9941C0EC0FB00BCFEC5 /* DBClient.swift in Sources */,
+				279327071C50A10500BAC73D /* InitialMinistryTableViewCell.swift in Sources */,
 				A40DD9A21C0EC61600BCFEC5 /* SummerMissionsViewController.swift in Sources */,
 				839F64621C0D77BB00CAEC9E /* ActivityViewController.swift in Sources */,
 				07ED81711C0D7ECC007FFB53 /* ResourcesViewController.swift in Sources */,
 				83B1CB251C4886F700145B6D /* Ministry.swift in Sources */,
+				279327001C509C2100BAC73D /* PopUpViewControllerSwift.swift in Sources */,
 				A40DD9AB1C0ED54F00BCFEC5 /* EventViewCell.swift in Sources */,
 				072519A81BE9694000F38F81 /* AppDelegate.swift in Sources */,
 				838564F51C0D9EDF00EB1728 /* SWRevealViewController.m in Sources */,
+				279327051C50A0EC00BAC73D /* InitialMinistryTableViewController.swift in Sources */,
 				271C78211C50434000F42EA0 /* InitialCampusTableViewController.swift in Sources */,
 				A4110B541C0FC35A00F47AB4 /* DBUtilities.swift in Sources */,
 				83B1CB101C4856BC00145B6D /* CoreDataModel.xcdatamodeld in Sources */,

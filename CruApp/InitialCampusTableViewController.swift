@@ -9,21 +9,43 @@
 import UIKit
 
 class InitialCampusTableViewController: UITableViewController {
+    
+    var popViewController : PopUpViewControllerSwift!
 
     var test: [String] = ["Cal Poly", "UCSB"] //
     var isSelected: [Bool] = [false, false]
     var selected: [String] = []
     
-    @IBAction func info(sender: AnyObject) {
+    
+    @IBAction func clickInfo(sender: AnyObject) {
         
-        let alertController = UIAlertController(title: "Cal Poly", message: "Yo this is Cal Poly", preferredStyle: .Alert)
-        let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in }
-        alertController.addAction(OKAction)
-        self.presentViewController(alertController, animated: true) { }
-        
-        
-        
+        let bundle = NSBundle(forClass: PopUpViewControllerSwift.self)
+        if (UIDevice.currentDevice().userInterfaceIdiom == .Pad)
+        {
+            self.popViewController = PopUpViewControllerSwift(nibName: "PopUpViewController_iPad", bundle: bundle)
+            self.popViewController.title = "This is a popup view"
+            self.popViewController.showInView(self.view, withImage: UIImage(named: "typpzDemo"), withMessage: "You just triggered a great popup window", animated: true)
+        } else
+        {
+            if UIScreen.mainScreen().bounds.size.width > 320 {
+                if UIScreen.mainScreen().scale == 3 {
+                    self.popViewController = PopUpViewControllerSwift(nibName: "PopUpViewController_iPhone6Plus", bundle: bundle)
+                    self.popViewController.title = "This is a popup view"
+                    self.popViewController.showInView(self.view, withImage: UIImage(named: "typpzDemo"), withMessage: "You just triggered a great popup window", animated: true)
+                } else {
+                    self.popViewController = PopUpViewControllerSwift(nibName: "PopUpViewController_iPhone6", bundle: bundle)
+                    self.popViewController.title = "This is a popup view"
+                    self.popViewController.showInView(self.view, withImage: UIImage(named: "typpzDemo"), withMessage: "You just triggered a great popup window", animated: true)
+                }
+            } else {
+                self.popViewController = PopUpViewControllerSwift(nibName: "PopUpViewController", bundle: bundle)
+                self.popViewController.title = "This is a popup view"
+                self.popViewController.showInView(self.view, withImage: UIImage(named: "typpzDemo"), withMessage: "You just triggered a great popup window", animated: true)
+            }
+        }
+
     }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -58,8 +80,10 @@ class InitialCampusTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! InitialCampusTableViewCell
         
         // Configure the cell...
+        cell.campus.text = test[indexPath.row]
         
-        //cell.campus.text = test[indexPath.row]
+        
+        
         
         return cell
     }

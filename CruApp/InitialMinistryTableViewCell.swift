@@ -10,15 +10,15 @@ import UIKit
 
 class InitialMinistryTableViewCell: UITableViewCell {
 
+    @IBOutlet var ministry: UILabel!
+    
+    @IBOutlet var infoButton: UIButton!
+    
     override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+        
+        let infoImage = UIImage(named: "info.png")
+        
+        infoButton.setImage(infoImage, forState: .Normal)
+        
     }
-
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
 }

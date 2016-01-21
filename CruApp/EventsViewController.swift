@@ -13,8 +13,6 @@ import SafariServices
 import ReachabilitySwift
 
 class EventsViewController: UITableViewController {
-
-    //var events:[Event] = eventsData
     
     @IBOutlet weak var menuButton: UIBarButtonItem!
     @IBOutlet weak var textButton: UIBarButtonItem!
@@ -33,61 +31,61 @@ class EventsViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
-        //        service = PostService()
-        //        service.getEvents {
-        //            (response) in
-        //            self.loadEvents(response[]! as NSArray)
-        
-        //        }
-        //        service = EventService()
-        //        service.request(settings.getEvents, method:"GET") {
-        //            (response) in
-        //            self.loadEvents(response)
-        //        }
-        
-        var dbClient:DBClient!
+        var dbClient: DBClient!
         dbClient = DBClient()
         dbClient.getData("event", dict: setEvents)
         
+        //for text testing purposes
         self.textButton.target = self
         self.textButton.action = "text:"
     }
     
     override func viewDidAppear(animated: Bool) {
-        
-        let reachability: Reachability
-        do {
-            reachability = try Reachability.reachabilityForInternetConnection()
-        } catch {
-            print("Unable to create Reachability")
-            return
-        }
-        
-        
-        reachability.whenReachable = { reachability in
-            dispatch_async(dispatch_get_main_queue()) {
-                if reachability.isReachableViaWiFi() {
-                    print("Reachable via WiFi")
-                } else {
-                    print("Reachable via Cellular")
+        /* 
+         * Tokens is a inner class, used to make sure internet connectivity is check
+         * only once when the app is intially launched.
+         */
+        struct Tokens { static var token: dispatch_once_t = 0 }
+        dispatch_once(&Tokens.token) {
+            
+            // Checks for internet connectivity (Wifi/4G)
+            let reachability: Reachability
+            do {
+                reachability = try Reachability.reachabilityForInternetConnection()
+            } catch {
+                print("Unable to create Reachability")
+                return
+            }
+            
+            // If device does have internet
+            reachability.whenReachable = { reachability in
+                dispatch_async(dispatch_get_main_queue()) {
+                    if reachability.isReachableViaWiFi() {
+                        print("Reachable via WiFi")
+                    } else {
+                        print("Reachable via Cellular")
+                    }
                 }
             }
-        }
-        
-        reachability.whenUnreachable = { reachability in
-            dispatch_async(dispatch_get_main_queue()) {
-                print("Not reachable")
-                //show the network initialization dialog
-                let g_alert = UIAlertController(title: "Checking for Internet...", message: "If this dialog appears, please check to make sure you have internet connectivity. ", preferredStyle: .Alert)
-                
-                self.presentViewController(g_alert, animated: true, completion: nil)
+            
+            reachability.whenUnreachable = { reachability in
+                dispatch_async(dispatch_get_main_queue()) {
+                    // If no internet, display an alert notifying user they have no internet connectivity
+                    let g_alert = UIAlertController(title: "Checking for Internet...", message: "If this dialog appears, please check to make sure you have internet connectivity. ", preferredStyle: .Alert)
+                    let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
+                        // Dismiss alert dialog
+                        print("Dismissed No Internet Dialog")
+                    }
+                    g_alert.addAction(OKAction)
+                    self.presentViewController(g_alert, animated: true, completion: nil)
+                }
             }
-        }
-        
-        do {
-            try reachability.startNotifier()
-        } catch {
-            print("Unable to start notifier")
+            
+            do {
+                try reachability.startNotifier()
+            } catch {
+                print("Unable to start notifier")
+            }
         }
         
         if (self.revealViewController() != nil) {
@@ -124,14 +122,8 @@ class EventsViewController: UITableViewController {
         UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
     }
     
-    
-//    func insertEvent(dict : NSDictionary) {
-//        self.tableView.beginUpdates()
-//        events.insert(Event(dict: dict)!, atIndex: 0)
-//        self.tableView.insertRowsAtIndexPaths([NSIndexPath(forItem: 0, inSection: 0)], withRowAnimation: .Automatic)
-//        self.tableView.endUpdates()
-//    }
-//    
+    //obtain information from the database to an Object
+    //TODO: Move function into Event.swift
     func setEvents(event:NSDictionary) {
         //self.tableView.beginUpdates()
         
@@ -176,106 +168,29 @@ class EventsViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("EventCell", forIndexPath: indexPath) as! EventViewCell
         let event = eventsCollection[indexPath.row]
 
+        cell.eventName.text = event.name
+        cell.eventLocation.text = "Where: " + (event.location?.suburb)! + ", " + (event.location?.state)!
+
         //date formatting
         let dateFormatter = NSDateFormatter()
         dateFormatter.locale = NSLocale(localeIdentifier: "en_US")
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
         let startDate = dateFormatter.dateFromString(event.startDate!)
-        let endDate = dateFormatter.dateFromString(event.endDate!)
-        let calendar = NSCalendar.currentCalendar()
-        let startComp = calendar.components([.Hour, .Minute, .Month, .Day, .Year], fromDate: startDate!)
-        let endComp = calendar.components([.Hour, .Minute, .Month, .Day, .Year], fromDate: endDate!)
-        cell.eventName.text = event.name
-        cell.eventStartTime.text = "Start Time: " + String(startComp.hour) + ":" + String(format: "%02d", startComp.minute)
-        cell.eventDate.text = "Date: " + String(startComp.month) + "/" + String(startComp.day) + "/" + String(startComp.year) + " - " + String(endComp.month) + "/" + String(endComp.day) + "/" + String(endComp.year)
-        cell.eventLocation.text = "Where: " + (event.location?.suburb)! + ", " + (event.location?.state)!
-        // Calendar button
-        cell.calendarButton.setTitle(String(indexPath.row), forState: UIControlState.Normal)
-        cell.calendarButton.addTarget(self, action: "syncCalendar:", forControlEvents: UIControlEvents.TouchUpInside)
         
-        // Facebook button
-        if (event.url != "") {
-            cell.facebookButton.setTitle(String(indexPath.row), forState: UIControlState.Normal)
-            cell.facebookButton.addTarget(self, action: "openFacebook:", forControlEvents: .TouchUpInside)
-        } else {
-            cell.facebookButton.enabled = false
-        }
+        //day of month formatter
+        dateFormatter.dateFormat = "d"
+        cell.eventDayDate.text = dateFormatter.stringFromDate(startDate!)
         
-        // Load event image is available
-        if (event.image != nil) {
-            let url = NSURL(string: event.image!)
-            let data = NSData(contentsOfURL: url!)
-            let image = UIImage(data: data!)
-            let imageView = UIImageView(image: image)
-            imageView.contentMode = UIViewContentMode.ScaleAspectFit
-            imageView.clipsToBounds = true
-            cell.eventImage.bounds.size.height = 163
-            cell.eventImage.bounds.size.width = 375
-            imageView.frame = cell.eventImage.bounds
-            cell.eventImage.contentMode = UIViewContentMode.ScaleAspectFit
-            cell.eventImage.addSubview(imageView)
-        }
-
+        //month formatter
+        dateFormatter.dateFormat = "MMM"
+        cell.eventMonthDate.text = dateFormatter.stringFromDate(startDate!)
+        
+        //time formatter
+        dateFormatter.dateFormat = "H:mm"
+        dateFormatter.timeStyle = .ShortStyle
+        cell.eventStartTime.text = "Start Time: " + dateFormatter.stringFromDate(startDate!)
+        
         return cell
-    }
-    
-    func openFacebook(sender:UIButton!) {
-        let event = eventsCollection[Int(sender.titleLabel!.text!)!]
-        
-        if let url = NSURL(string: event.url) {
-            let vc = SFSafariViewController(URL: url, entersReaderIfAvailable: true)
-                presentViewController(vc, animated: false, completion: nil)
-        }
-    }
-    
-    func syncCalendar(sender: UIButton!) {
-        let event = eventsCollection[Int(sender.titleLabel!.text!)!]
-        let name = event.name
-        let start = event.startDate
-        let end = event.endDate
-        
-        // 1
-        let eventStore = EKEventStore()
-        let dateFormatter = NSDateFormatter()
-        //2015-11-19T22:00:00.000Z
-        //dateFormatter.dateFormat = "MMM dd, yyyy, HH:ss"
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
-
-        let startDate = dateFormatter.dateFromString(start!)
-        
-        let endDate = dateFormatter.dateFromString(end!)
-        
-        if(EKEventStore.authorizationStatusForEntityType(.Event) !=
-            EKAuthorizationStatus.Authorized) {
-                eventStore.requestAccessToEntityType(.Event, completion: {
-                    granted, error in
-                    self.createEvent(eventStore, title: name, startDate: startDate!, endDate: endDate!)
-                })
-                
-                
-        }
-        else {
-            createEvent(eventStore, title: name, startDate: startDate!, endDate: endDate!)
-        }
-        let alertController = UIAlertController(title: name, message:
-            "Event synced to calendar", preferredStyle: UIAlertControllerStyle.Alert)
-        alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
-        
-        self.presentViewController(alertController, animated: true, completion: nil)
-    }
-    
-    func createEvent(eventStore: EKEventStore, title: String, startDate: NSDate, endDate: NSDate) {
-        let event = EKEvent(eventStore: eventStore)
-        
-        event.title = title
-        event.startDate = startDate
-        event.endDate = endDate
-        event.calendar = eventStore.defaultCalendarForNewEvents
-        do {
-            try eventStore.saveEvent(event, span: .ThisEvent)
-        } catch {
-            print("Bad")
-        }
     }
     
 
@@ -314,14 +229,24 @@ class EventsViewController: UITableViewController {
     }
     */
     
-    /*
+    
     // MARK: - Navigation
+    
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        let eventDetailViewController = segue.destinationViewController as! EventDetailsViewController
+        if let selectedEventCell = sender as? EventViewCell {
+            let indexPath = tableView.indexPathForCell(selectedEventCell)!
+            let selectedEvent = eventsCollection[indexPath.row]
+            eventDetailViewController.event = selectedEvent
+        }
     // Get the new view controller using segue.destinationViewController.
     // Pass the selected object to the new view controller.
+    
+    
     }
-    */
+
     
 }

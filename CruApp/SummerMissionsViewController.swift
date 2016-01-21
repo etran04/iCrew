@@ -36,19 +36,19 @@ class SummerMissionsViewController: UITableViewController {
         let startDate = nullToNil(mission["startDate"])
         let endDate = nullToNil(mission["endDate"])
         let cost = mission["cost"] as! Int
-        if let value: String = mission["url"] as? String {
+        if ((mission["url"] as? String) != nil) {
             url = mission["url"] as! String
         } else {
             url = ""
         }
         
-        if let value: String = mission["leaders"] as? String {
+        if ((mission["leaders"] as? String) != nil) {
             leaders = mission["leaders"] as! String
         } else {
             leaders = "N/A"
         }
         
-        if let value: String = mission["image"]?.objectForKey("secure_url") as? String {
+        if ((mission["image"]?.objectForKey("secure_url") as? String) != nil) {
             image = mission["image"]?.objectForKey("secure_url") as! String
         } else {
             image = ""

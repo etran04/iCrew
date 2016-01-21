@@ -16,8 +16,8 @@ class EventDetailsViewController: UIViewController {
     @IBOutlet weak var eventTitle: UILabel!
     @IBOutlet weak var eventLocation: UILabel!
     @IBOutlet weak var eventDate: UILabel!
-    @IBOutlet weak var eventDescr: UITextView!
     
+    @IBOutlet weak var eventDescr: UILabel!
     @IBOutlet weak var facebookButton: UIButton!
     @IBOutlet weak var googleButton: UIButton!
     @IBOutlet weak var calendarButton: UIButton!
@@ -30,8 +30,10 @@ class EventDetailsViewController: UIViewController {
         if let event = event {
             eventTitle.text = event.name
             eventDescr.text = event.description
+            eventLocation.sizeToFit()
             eventLocation.text = (event.location?.getLocation())!
-            
+            eventLocation.sizeToFit()
+
             //date formatting
             let dateFormatter = NSDateFormatter()
             dateFormatter.locale = NSLocale(localeIdentifier: "en_US")

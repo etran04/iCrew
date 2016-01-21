@@ -30,7 +30,9 @@ class MissionDetailsViewController: UIViewController {
         if let mission = mission {
             missionTitle.text = mission.name
             missionDescr.text = mission.description
+            missionLocation.sizeToFit()
             missionLocation.text = (mission.location?.getLocation())!
+            missionLocation.sizeToFit()
             missionCost.text = "$" + String(mission.cost)
             missionLeaders.text = mission.leaders
             

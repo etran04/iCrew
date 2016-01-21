@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import CoreData
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -37,8 +38,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let pushSettings = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
         UIApplication.sharedApplication().registerUserNotificationSettings(pushSettings)
         UIApplication.sharedApplication().registerForRemoteNotifications()
-     
-
+        
+        initCoreDataModel();
+        
         return true
     }
 
@@ -62,8 +64,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        do {
+            try self.managedObjectContext!.save()
+        }
+        catch let error as NSError {
+            print(error.localizedDescription)
+        }
     }
-
 
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
         print("Received Remote Notification!!")
@@ -71,6 +78,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
         print("Received Local Notification!!")
+    }
+    
+    var managedObjectContext: NSManagedObjectContext?
+    
+    func initCoreDataModel() {
+        // This resource is the same name as your xcdatamodeld contained in your project.
+        guard let modelURL = NSBundle.mainBundle().URLForResource("CoreDataModel", withExtension:"momd") else {
+            fatalError("Error loading model from bundle")
+        }
+        // The managed object model for the application. It is a fatal error for the application not to be able to find and load its model.
+        guard let mom = NSManagedObjectModel(contentsOfURL: modelURL) else {
+            fatalError("Error initializing mom from: \(modelURL)")
+        }
+        
+        let psc = NSPersistentStoreCoordinator(managedObjectModel: mom)
+        self.managedObjectContext = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
+        self.managedObjectContext!.persistentStoreCoordinator = psc
+        
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0)) {
+            let urls = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
+            let docURL = urls[urls.endIndex-1]
+            /* The directory the application uses to store the Core Data store file.
+            This code uses a file named "DataModel.sqlite" in the application's documents directory.
+            */
+            let storeURL = docURL.URLByAppendingPathComponent("CoreDataModel.sqlite")
+            do {
+                try psc.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: storeURL, options: nil)
+            } catch {
+                fatalError("Error migrating store: \(error)")
+            }
+        }
     }
     
 }

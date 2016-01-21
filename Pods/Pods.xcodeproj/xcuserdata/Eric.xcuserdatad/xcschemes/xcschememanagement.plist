@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>ReachabilitySwift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>youtube-ios-player-helper-Assets.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -22,17 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>207C73E7AE71CE02DA8026F9E83267E1</key>
+		<key>5C92B587FB06739AED4048018C5CCB1E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7FB0E73B82B1B1C70DD5A914E4A28E89</key>
+		<key>912C94568281D9E2246AB07246E0665F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B2D1D256DAD102DAFD552D2215F89369</key>
+		<key>A71E26FEEE72B99580B8D57F69EAAA2B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F69AA1869345023C51DFD0E3CB39517E</key>
 		<dict>
 			<key>primary</key>
 			<true/>

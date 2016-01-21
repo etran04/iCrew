@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yMF-BQ-iAf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yMF-BQ-iAf">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -14,6 +14,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="waK-zS-ccd">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
                     </navigationBar>
                     <connections>
                         <segue destination="t6P-qX-wmp" kind="relationship" relationship="rootViewController" id="2GW-NM-YVO"/>
@@ -35,34 +36,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VVR-xn-6kz">
-                                <rect key="frame" x="274" y="328" width="53" height="31"/>
-                                <state key="normal" title="Articles"/>
-                                <connections>
-                                    <segue destination="20A-fb-hoq" kind="show" id="cyX-Kr-fgI"/>
-                                </connections>
-                            </button>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="KQ3-AP-7TQ">
-                                <rect key="frame" x="45" y="72" width="511" height="29"/>
-                                <segments>
-                                    <segment title="Videos"/>
-                                    <segment title="Articles"/>
-                                    <segment title="Tools"/>
-                                </segments>
-                            </segmentedControl>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qgz-BK-S50">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qgz-BK-S50">
                                 <rect key="frame" x="277" y="179" width="47" height="31"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="Xve-Pp-0Mc"/>
+                                </constraints>
                                 <state key="normal" title="Videos"/>
                                 <connections>
                                     <segue destination="CBw-xl-Jne" kind="show" id="waM-93-Tmv"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VVR-xn-6kz">
+                                <rect key="frame" x="274" y="328" width="53" height="31"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="7KW-NR-fx0"/>
+                                </constraints>
+                                <state key="normal" title="Articles"/>
+                                <connections>
+                                    <segue destination="20A-fb-hoq" kind="show" id="cyX-Kr-fgI"/>
+                                </connections>
+                            </button>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="KQ3-AP-7TQ" firstAttribute="leading" secondItem="z7f-dP-Vng" secondAttribute="leadingMargin" constant="25" id="7ie-vd-zxn"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="KQ3-AP-7TQ" secondAttribute="trailing" constant="24" id="D8q-z5-V9T"/>
-                            <constraint firstItem="KQ3-AP-7TQ" firstAttribute="centerX" secondItem="z7f-dP-Vng" secondAttribute="centerX" id="EKU-90-EmT"/>
+                            <constraint firstItem="qgz-BK-S50" firstAttribute="top" secondItem="0wr-Fm-hx3" secondAttribute="bottom" constant="115" id="Y0X-21-Alw"/>
+                            <constraint firstItem="VVR-xn-6kz" firstAttribute="centerX" secondItem="qgz-BK-S50" secondAttribute="centerX" id="YlU-A8-AYD"/>
+                            <constraint firstItem="AKh-2R-scz" firstAttribute="top" secondItem="VVR-xn-6kz" secondAttribute="bottom" constant="192" id="Zsa-kJ-lGA"/>
+                            <constraint firstItem="qgz-BK-S50" firstAttribute="centerX" secondItem="z7f-dP-Vng" secondAttribute="centerX" id="w7M-Mv-wRr"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Resources " id="huO-g1-HNG">
@@ -80,10 +83,12 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="pec-rB-GxK">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" id="1wa-Kn-dxT">
                             <rect key="frame" x="0.0" y="64" width="600" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <animations/>
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
                         <prototypes>
@@ -91,16 +96,18 @@
                                 <rect key="frame" x="0.0" y="136" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fXC-QL-udu" id="STU-WB-VMJ">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Article name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fMP-fY-jPL">
                                             <rect key="frame" x="8" y="11" width="578" height="21"/>
+                                            <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <animations/>
                                     <constraints>
                                         <constraint firstItem="fMP-fY-jPL" firstAttribute="top" secondItem="STU-WB-VMJ" secondAttribute="topMargin" constant="3" id="lA0-Wh-Shu"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="fMP-fY-jPL" secondAttribute="trailing" constant="6" id="w6C-dU-i2y"/>
@@ -108,6 +115,7 @@
                                         <constraint firstItem="fMP-fY-jPL" firstAttribute="centerY" secondItem="STU-WB-VMJ" secondAttribute="centerY" id="x3j-WM-Ole"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <animations/>
                                 <accessibility key="accessibilityConfiguration" identifier="ArticleTableViewCell"/>
                                 <connections>
                                     <outlet property="articleNameLabel" destination="fMP-fY-jPL" id="TIp-Sx-D1H"/>
@@ -131,10 +139,12 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="149" sectionHeaderHeight="28" sectionFooterHeight="28" id="ipU-uC-rEm">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" id="9Js-as-HBZ">
                             <rect key="frame" x="0.0" y="64" width="600" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <animations/>
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
                         <prototypes>
@@ -142,15 +152,21 @@
                                 <rect key="frame" x="0.0" y="136" width="600" height="149"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KO5-f2-AGs" id="BqC-Tn-I46">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="148.5"/>
+<<<<<<< HEAD
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="149"/>
+=======
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="148"/>
+>>>>>>> a71954dcc09d06ce93b230fbf4ff50b515341fbd
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h9w-j8-UdK" customClass="YTPlayerView">
                                             <rect key="frame" x="8" y="8" width="147" height="122"/>
+                                            <animations/>
                                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mYP-6P-fbR">
                                             <rect key="frame" x="163" y="8" width="429" height="33"/>
+                                            <animations/>
                                             <string key="text">chinchilla massage
 </string>
                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
@@ -159,12 +175,15 @@
                                         </label>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Kimchi just loves her scratchies." selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uIz-3V-OdK">
                                             <rect key="frame" x="163" y="44" width="429" height="81"/>
+                                            <animations/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
                                     </subviews>
+                                    <animations/>
                                 </tableViewCellContentView>
+                                <animations/>
                                 <connections>
                                     <outlet property="summaryTextView" destination="uIz-3V-OdK" id="1hc-el-Y7x"/>
                                     <outlet property="videoPlayer" destination="h9w-j8-UdK" id="EWL-v2-5Sa"/>

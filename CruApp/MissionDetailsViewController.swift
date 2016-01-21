@@ -34,7 +34,12 @@ class MissionDetailsViewController: UIViewController {
             missionLocation.text = (mission.location?.getLocation())!
             missionLocation.sizeToFit()
             missionCost.text = "$" + String(mission.cost)
-            missionLeaders.text = mission.leaders
+            
+            if(mission.leaders == "") {
+                missionLeaders.text = "N/A"
+            } else {
+                missionLeaders.text = mission.leaders
+            }
             
             //date formatting
             let dateFormatter = NSDateFormatter()

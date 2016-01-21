@@ -148,7 +148,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="490"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OhV-5r-wDx" userLabel="Content View">
-                                        <rect key="frame" x="2" y="0.0" width="373" height="490"/>
+                                        <rect key="frame" x="2" y="0.0" width="373" height="500"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N2a-Ic-Uvj">
                                                 <rect key="frame" x="19" y="272" width="95" height="22"/>
@@ -205,23 +205,26 @@
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="373" id="NsI-wz-xTH"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="700" id="sdO-Yu-gMp"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="OhV-5r-wDx" secondAttribute="bottom" constant="13" id="1aB-DM-XR8"/>
-                                    <constraint firstItem="OhV-5r-wDx" firstAttribute="leading" secondItem="ai3-mR-F2h" secondAttribute="leading" id="BTQ-Cd-ciY"/>
-                                    <constraint firstItem="OhV-5r-wDx" firstAttribute="top" secondItem="ai3-mR-F2h" secondAttribute="top" id="asF-1C-elZ"/>
-                                    <constraint firstAttribute="trailing" secondItem="OhV-5r-wDx" secondAttribute="trailing" id="vbv-g2-Yio"/>
+                                    <constraint firstAttribute="bottom" secondItem="OhV-5r-wDx" secondAttribute="bottom" id="IMY-MM-1SH"/>
+                                    <constraint firstItem="OhV-5r-wDx" firstAttribute="leading" secondItem="ai3-mR-F2h" secondAttribute="leading" id="jyr-Z2-QkX"/>
+                                    <constraint firstItem="OhV-5r-wDx" firstAttribute="top" secondItem="ai3-mR-F2h" secondAttribute="top" id="m0L-fi-4Hs"/>
+                                    <constraint firstAttribute="trailing" secondItem="OhV-5r-wDx" secondAttribute="trailing" id="ubG-1l-ZRo"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="ai3-mR-F2h" secondAttribute="trailing" id="7mQ-am-Lgy"/>
-                            <constraint firstItem="ai3-mR-F2h" firstAttribute="leading" secondItem="WSL-3E-Mm2" secondAttribute="leadingMargin" id="CEF-cb-3QY"/>
-                            <constraint firstItem="FY4-iR-UDm" firstAttribute="top" secondItem="ai3-mR-F2h" secondAttribute="bottom" constant="13" id="H9n-cN-eIr"/>
-                            <constraint firstItem="ai3-mR-F2h" firstAttribute="top" secondItem="f04-9R-37d" secondAttribute="bottom" id="RFz-4o-m4M"/>
-                            <constraint firstItem="OhV-5r-wDx" firstAttribute="width" secondItem="WSL-3E-Mm2" secondAttribute="width" id="b1f-zZ-ucQ"/>
+                            <constraint firstItem="FY4-iR-UDm" firstAttribute="top" secondItem="ai3-mR-F2h" secondAttribute="bottom" constant="13" id="2PU-un-69b"/>
+                            <constraint firstItem="ai3-mR-F2h" firstAttribute="top" secondItem="f04-9R-37d" secondAttribute="bottom" id="byO-yR-UN6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ai3-mR-F2h" secondAttribute="trailing" id="h6p-KP-Ijf"/>
+                            <constraint firstItem="ai3-mR-F2h" firstAttribute="leading" secondItem="WSL-3E-Mm2" secondAttribute="leadingMargin" id="quR-bT-BPP"/>
                         </constraints>
                     </view>
                     <connections>

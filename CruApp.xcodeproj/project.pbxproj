@@ -32,7 +32,6 @@
 		279326FF1C509C2100BAC73D /* PopUpViewController_iPhone6Plus.xib in Resources */ = {isa = PBXBuildFile; fileRef = 279326F11C509C2100BAC73D /* PopUpViewController_iPhone6Plus.xib */; };
 		279327001C509C2100BAC73D /* PopUpViewControllerSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279326F21C509C2100BAC73D /* PopUpViewControllerSwift.swift */; };
 		279327011C509C2100BAC73D /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 279326F41C509C2100BAC73D /* Info.plist */; };
-		279327021C509C2100BAC73D /* NMPopUpViewSwift.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 279326F61C509C2100BAC73D /* NMPopUpViewSwift.xcconfig */; };
 		279327051C50A0EC00BAC73D /* InitialMinistryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279327041C50A0EC00BAC73D /* InitialMinistryTableViewController.swift */; };
 		279327071C50A10500BAC73D /* InitialMinistryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279327061C50A10500BAC73D /* InitialMinistryTableViewCell.swift */; };
 		838564F51C0D9EDF00EB1728 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 838564F41C0D9EDF00EB1728 /* SWRevealViewController.m */; };
@@ -539,7 +538,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0710;
-				LastUpgradeCheck = 0710;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = iCrew;
 				TargetAttributes = {
 					072519A31BE9694000F38F81 = {
@@ -666,7 +665,6 @@
 				072519AD1BE9694000F38F81 /* Main.storyboard in Resources */,
 				839F64581C0D6C1E00CAEC9E /* SummerMissions.storyboard in Resources */,
 				A45572FE1C4ADC150097DE0F /* EventsAndRides.storyboard in Resources */,
-				279327021C509C2100BAC73D /* NMPopUpViewSwift.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

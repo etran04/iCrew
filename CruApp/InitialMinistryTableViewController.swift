@@ -13,7 +13,8 @@ class InitialMinistryTableViewController: UITableViewController {
     
     var popViewController : PopUpViewControllerSwift!
     
-    var test: [String] = ["EPIC", "Cru SLO"] //
+    //var test: [String] = ["EPIC", "Cru SLO"] //
+    var ministriesCollection = [String]()
     var isSelected: [Bool] = [false, false]
     var selected: [String] = [String]()
     
@@ -58,7 +59,21 @@ class InitialMinistryTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
+        var dbClient: DBClient!
+        dbClient = DBClient()
+        //”event”, “ministry”, “campus”, etc
+        dbClient.getData("ministry", dict: setMinistries)
+        
         selected = [String]()
+    }
+    
+    func setMinistries(ministry:NSDictionary) {
+        //self.tableView.beginUpdates()
+        
+        let name = ministry["name"] as! String
+    
+        ministriesCollection.append(name)
+        self.tableView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -75,7 +90,7 @@ class InitialMinistryTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return test.count //
+        return ministriesCollection.count //
     }
     
     // Uncomment
@@ -84,7 +99,7 @@ class InitialMinistryTableViewController: UITableViewController {
         
         // Configure the cell...
         
-        cell.ministry.text = test[indexPath.row]
+        cell.ministry.text = ministriesCollection[indexPath.row]
         
         return cell
     }
@@ -95,17 +110,17 @@ class InitialMinistryTableViewController: UITableViewController {
         
         let cell:UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
         
-        if (!selected.contains(test[indexPath.row])) {
+        if (!selected.contains(ministriesCollection[indexPath.row])) {
             
             cell.accessoryType = UITableViewCellAccessoryType.Checkmark
-            selected.append(test[indexPath.row])
+            selected.append(ministriesCollection[indexPath.row])
             dump(selected)
             
         }
         else {
             isSelected[indexPath.row] = false
             cell.accessoryType = UITableViewCellAccessoryType.None
-            selected = selected.filter() {$0 != test[indexPath.row]}
+            selected = selected.filter() {$0 != ministriesCollection[indexPath.row]}
             
             dump(selected)
         }

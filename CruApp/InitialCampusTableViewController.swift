@@ -12,7 +12,8 @@ class InitialCampusTableViewController: UITableViewController {
     
     var popViewController : PopUpViewControllerSwift!
 
-    var test: [String] = ["Cal Poly", "UCSB"] //
+    //var test: [String] = ["Cal Poly", "UCSB"] //
+    var campusesCollection = [String]()
     var isSelected: [Bool] = [false, false]
     var selected: [String] = []
     
@@ -56,6 +57,19 @@ class InitialCampusTableViewController: UITableViewController {
         
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        var dbClient: DBClient!
+        dbClient = DBClient()
+        dbClient.getData("campus", dict: setCampuses)
+        
+        
+    }
+    
+    func setCampuses(campus:NSDictionary) {
+        let name = campus["name"] as! String
+        
+        campusesCollection.append(name)
+        self.tableView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -72,7 +86,7 @@ class InitialCampusTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return test.count //
+        return campusesCollection.count //
     }
     
     // Uncomment
@@ -80,7 +94,7 @@ class InitialCampusTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! InitialCampusTableViewCell
         
         // Configure the cell...
-        cell.campus.text = test[indexPath.row]
+        cell.campus.text = campusesCollection[indexPath.row]
         
         
         
@@ -94,17 +108,17 @@ class InitialCampusTableViewController: UITableViewController {
         
         let cell:UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
         
-        if (!selected.contains(test[indexPath.row])) {
+        if (!selected.contains(campusesCollection[indexPath.row])) {
             
             cell.accessoryType = UITableViewCellAccessoryType.Checkmark
-            selected.append(test[indexPath.row])
+            selected.append(campusesCollection[indexPath.row])
             dump(selected)
             
         }
         else {
             isSelected[indexPath.row] = false
             cell.accessoryType = UITableViewCellAccessoryType.None
-            selected = selected.filter() {$0 != test[indexPath.row]}
+            selected = selected.filter() {$0 != campusesCollection[indexPath.row]}
             
             dump(selected)
         }

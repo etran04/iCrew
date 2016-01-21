@@ -59,7 +59,7 @@ class InitialCampusTableViewController: UITableViewController {
         
         // Configure the cell...
         
-        cell.campus.text = test[indexPath.row]
+        //cell.campus.text = test[indexPath.row]
         
         return cell
     }

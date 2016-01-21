@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qPN-vP-Crs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qPN-vP-Crs">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
@@ -13,15 +13,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="Cell" selectionStyle="default" indentationWidth="10" rowHeight="54" id="6zZ-mg-59L" customClass="InitialCampusTableViewCell" customModule="CruApp" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="Cell" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="54" id="6zZ-mg-59L" customClass="InitialCampusTableViewCell" customModule="CruApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="375" height="54"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6zZ-mg-59L" id="MRI-PG-ndv">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="53.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="53"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B0B-za-reP">
-                                            <rect key="frame" x="14" y="0.0" width="58" height="45.5"/>
+                                            <rect key="frame" x="14" y="0.0" width="58" height="46"/>
                                             <state key="normal" title="Button"/>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="35K-ae-gaj">
@@ -39,10 +39,10 @@
                             <outlet property="delegate" destination="wZA-Gm-DMN" id="TXs-eb-euC"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Select Campus" id="aZ1-wd-3ee">
+                    <navigationItem key="navigationItem" title="Campuses" id="aZ1-wd-3ee">
                         <barButtonItem key="rightBarButtonItem" title="Next" id="Pus-CN-bdd">
                             <connections>
-                                <segue destination="beF-nV-Tik" kind="show" id="Ly2-RI-QLB"/>
+                                <segue destination="beF-nV-Tik" kind="show" id="qlv-R6-WPR"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -52,7 +52,7 @@
             </objects>
             <point key="canvasLocation" x="1785.5" y="213.5"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Ministries-->
         <scene sceneID="wQ9-0j-Mdk">
             <objects>
                 <tableViewController id="beF-nV-Tik" sceneMemberID="viewController">
@@ -65,7 +65,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fqg-0s-ZB7" id="A3L-VI-1rE">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -75,11 +75,28 @@
                             <outlet property="delegate" destination="beF-nV-Tik" id="ONl-By-Mo1"/>
                         </connections>
                     </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Ministries" id="oSt-69-4tA">
+                        <barButtonItem key="rightBarButtonItem" title="Next" id="iXx-d1-viQ">
+                            <connections>
+                                <segue destination="5wo-9Q-WLh" kind="presentation" id="f6E-OD-KiS"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wzV-Q2-tN9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2314.5" y="213.5"/>
+            <point key="canvasLocation" x="2569.5" y="213.5"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="1yz-s6-Tt5">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="5wo-9Q-WLh" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f27-MY-LVh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3080" y="214"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="avT-hL-HZv">
@@ -98,7 +115,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xtC-5g-Yoq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="974" y="214"/>
+            <point key="canvasLocation" x="1073.5" y="213.5"/>
         </scene>
     </scenes>
 </document>

@@ -21,6 +21,9 @@
 		1E37E7291C0E362D0054607A /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E37E7211C0E362D0054607A /* EventsViewController.swift */; };
 		1E37E72A1C0E362D0054607A /* VideosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E37E7221C0E362D0054607A /* VideosTableViewController.swift */; };
 		271BDF631C0D538A0075A29E /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 271BDF541C0D53710075A29E /* Alamofire.framework */; };
+		271C78161C5040EA00F42EA0 /* Initial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 271C78151C5040EA00F42EA0 /* Initial.storyboard */; };
+		271C78211C50434000F42EA0 /* InitialCampusTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271C78201C50434000F42EA0 /* InitialCampusTableViewController.swift */; };
+		271C78231C5044B100F42EA0 /* InitialCampusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271C78221C5044B100F42EA0 /* InitialCampusTableViewCell.swift */; };
 		277E67561BEB6362001C29DD /* CruAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277E67551BEB6362001C29DD /* CruAppTests.swift */; };
 		838564F51C0D9EDF00EB1728 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 838564F41C0D9EDF00EB1728 /* SWRevealViewController.m */; };
 		839F64411C0D4E4300CAEC9E /* Cru-Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 839F643B1C0D4E4300CAEC9E /* Cru-Logo.png */; };
@@ -155,6 +158,9 @@
 		1E37E7211C0E362D0054607A /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		1E37E7221C0E362D0054607A /* VideosTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideosTableViewController.swift; sourceTree = "<group>"; };
 		271BDF491C0D53710075A29E /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "frameworks/Alamofire-master/Alamofire.xcodeproj"; sourceTree = "<group>"; };
+		271C78151C5040EA00F42EA0 /* Initial.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Initial.storyboard; sourceTree = "<group>"; };
+		271C78201C50434000F42EA0 /* InitialCampusTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialCampusTableViewController.swift; sourceTree = "<group>"; };
+		271C78221C5044B100F42EA0 /* InitialCampusTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialCampusTableViewCell.swift; sourceTree = "<group>"; };
 		277E67531BEB6362001C29DD /* CruAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CruAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		277E67551BEB6362001C29DD /* CruAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CruAppTests.swift; sourceTree = "<group>"; };
 		277E67571BEB6362001C29DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -277,6 +283,7 @@
 				839F64591C0D6C4C00CAEC9E /* Resources.storyboard */,
 				839F645C1C0D6C8E00CAEC9E /* MySchool.storyboard */,
 				072519B01BE9694000F38F81 /* LaunchScreen.storyboard */,
+				271C78151C5040EA00F42EA0 /* Initial.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -284,6 +291,7 @@
 		07EE5F7D1BFE6BA8009A2B44 /* VCs */ = {
 			isa = PBXGroup;
 			children = (
+				271C781D1C50429500F42EA0 /* Initial */,
 				071F26AD1C102D2100B748C7 /* DB */,
 				A40DD9A51C0EC99100BCFEC5 /* Events */,
 				A40DD9A01C0EC5ED00BCFEC5 /* SummerMissions */,
@@ -306,6 +314,15 @@
 				271BDF601C0D53710075A29E /* Alamofire.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		271C781D1C50429500F42EA0 /* Initial */ = {
+			isa = PBXGroup;
+			children = (
+				271C78201C50434000F42EA0 /* InitialCampusTableViewController.swift */,
+				271C78221C5044B100F42EA0 /* InitialCampusTableViewCell.swift */,
+			);
+			name = Initial;
 			sourceTree = "<group>";
 		};
 		277E67541BEB6362001C29DD /* CruAppTests */ = {
@@ -541,6 +558,7 @@
 				839F64461C0D4E4300CAEC9E /* User Group-25.png in Resources */,
 				839F64451C0D4E4300CAEC9E /* Summer-25.png in Resources */,
 				839F64551C0D6BD100CAEC9E /* GetInvolved.storyboard in Resources */,
+				271C78161C5040EA00F42EA0 /* Initial.storyboard in Resources */,
 				072519B21BE9694000F38F81 /* LaunchScreen.storyboard in Resources */,
 				839F645B1C0D6C4C00CAEC9E /* Resources.storyboard in Resources */,
 				839F64411C0D4E4300CAEC9E /* Cru-Logo.png in Resources */,
@@ -630,10 +648,12 @@
 				A40DD9AB1C0ED54F00BCFEC5 /* EventViewCell.swift in Sources */,
 				072519A81BE9694000F38F81 /* AppDelegate.swift in Sources */,
 				838564F51C0D9EDF00EB1728 /* SWRevealViewController.m in Sources */,
+				271C78211C50434000F42EA0 /* InitialCampusTableViewController.swift in Sources */,
 				A4110B541C0FC35A00F47AB4 /* DBUtilities.swift in Sources */,
 				1E37E7261C0E362D0054607A /* Event.swift in Sources */,
 				1E37E72A1C0E362D0054607A /* VideosTableViewController.swift in Sources */,
 				07C196331C0E6AD400375B8D /* ArticlesTableViewController.swift in Sources */,
+				271C78231C5044B100F42EA0 /* InitialCampusTableViewCell.swift in Sources */,
 				A4110B521C0FA44700F47AB4 /* Location.swift in Sources */,
 				A40DD9A41C0EC62F00BCFEC5 /* Mission.swift in Sources */,
 				A45573001C4CDAF60097DE0F /* MissionViewCell.swift in Sources */,

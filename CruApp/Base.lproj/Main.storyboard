@@ -55,7 +55,7 @@
                         <segue destination="qub-re-fda" kind="relationship" relationship="viewControllers" id="vHO-B6-m8n"/>
                         <segue destination="9vv-Va-TXG" kind="relationship" relationship="viewControllers" id="wTJ-j2-Grj"/>
                         <segue destination="yAL-CE-UEG" kind="relationship" relationship="viewControllers" id="PWe-8i-2NT"/>
-                        <segue destination="ycp-H2-uQt" kind="relationship" relationship="viewControllers" id="BmD-jy-xHo"/>
+                        <segue destination="ycp-H2-uQt" kind="relationship" relationship="viewControllers" id="rfF-3P-Ass"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zcr-O3-Bgf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -152,10 +152,10 @@
             </objects>
             <point key="canvasLocation" x="-748" y="1006"/>
         </scene>
-        <!--EventsAndRides-->
+        <!--Events-->
         <scene sceneID="v2i-uq-Dyh">
             <objects>
-                <viewControllerPlaceholder storyboardName="EventsAndRides" id="Xmi-DW-n1A" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Events" id="Xmi-DW-n1A" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="0oK-gF-eqt"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="odO-LC-yNA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -170,7 +170,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wZ0-bV-Q6l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-52" y="116"/>
+            <point key="canvasLocation" x="-46" y="143"/>
         </scene>
         <!--SummerMissions-->
         <scene sceneID="bfw-t9-c8n">
@@ -192,15 +192,15 @@
             </objects>
             <point key="canvasLocation" x="-56" y="340"/>
         </scene>
-        <!--MySchool-->
+        <!--RideShare-->
         <scene sceneID="YvG-KA-SOj">
             <objects>
-                <viewControllerPlaceholder storyboardName="MySchool" id="ycp-H2-uQt" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="RideShare" id="ycp-H2-uQt" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="Xp7-OV-wmJ"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7sC-yB-3Rn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-58" y="492"/>
+            <point key="canvasLocation" x="-28" y="60"/>
         </scene>
     </scenes>
 </document>

@@ -11,16 +11,15 @@ import EventKit
 import SafariServices
 
 class EventDetailsViewController: UIViewController {
-
-    @IBOutlet weak var eventImage: UIImageView!
-    @IBOutlet weak var eventTitle: UILabel!
-    @IBOutlet weak var eventLocation: UILabel!
-    @IBOutlet weak var eventDate: UILabel!
+    @IBOutlet weak var eventImage: UIImageView!     //image banner for the event
+    @IBOutlet weak var eventTitle: UILabel!         //title of the event
+    @IBOutlet weak var eventLocation: UILabel!      //location of the event
+    @IBOutlet weak var eventDate: UILabel!          //date and time of the event
+    @IBOutlet weak var eventDescr: UILabel!         //description of the event
     
-    @IBOutlet weak var eventDescr: UILabel!
-    @IBOutlet weak var facebookButton: UIButton!
-    @IBOutlet weak var googleButton: UIButton!
-    @IBOutlet weak var calendarButton: UIButton!
+    @IBOutlet weak var facebookButton: UIButton!    //Facebook button to the event page
+    @IBOutlet weak var googleButton: UIButton!      //Google button to save event to Google calendar
+    @IBOutlet weak var calendarButton: UIButton!    //calendar button to save event to native calendar
     
     var event: Event?
     
@@ -28,9 +27,10 @@ class EventDetailsViewController: UIViewController {
         super.viewDidLoad()
         
         if let event = event {
+            
+            //load events
             eventTitle.text = event.name
             eventDescr.text = event.description
-            eventLocation.sizeToFit()
             eventLocation.text = (event.location?.getLocation())!
             eventLocation.sizeToFit()
 
@@ -46,11 +46,11 @@ class EventDetailsViewController: UIViewController {
             if(dateFormatter.stringFromDate(startDate!) == dateFormatter.stringFromDate(endDate!)) {
                 eventDate.text = dateFormatter.stringFromDate(startDate!)
                 
-                dateFormatter.dateFormat = "H:mm"
+                dateFormatter.dateFormat = "H:mm"  //wuttt is thisssss?!
                 dateFormatter.timeStyle = .ShortStyle
                 dateFormatter.stringFromDate(startDate!)
                 
-                eventDate.text! += ", " + dateFormatter.stringFromDate(startDate!) + " - " +                 dateFormatter.stringFromDate(endDate!)
+                eventDate.text! += ", " + dateFormatter.stringFromDate(startDate!) + " - " + dateFormatter.stringFromDate(endDate!)
             } else {
                 dateFormatter.dateStyle = .ShortStyle
                 dateFormatter.timeStyle = .ShortStyle
@@ -58,6 +58,7 @@ class EventDetailsViewController: UIViewController {
                 eventDate.text = dateFormatter.stringFromDate(startDate!) + " - " + dateFormatter.stringFromDate(endDate!)
             }
             
+            //load buttons
             // Calendar button
             calendarButton.setTitle(event.name, forState: UIControlState.Normal)
             calendarButton.addTarget(self, action: "syncCalendar:", forControlEvents: UIControlEvents.TouchUpInside)
@@ -67,11 +68,12 @@ class EventDetailsViewController: UIViewController {
             if (event.url != "") {
                 facebookButton.setTitle(event.name, forState: UIControlState.Normal)
                 facebookButton.addTarget(self, action: "openFacebook:", forControlEvents: .TouchUpInside)
-                } else {
-                    facebookButton.enabled = false
-                }
+            } else {
+                facebookButton.enabled = false
+            }
         
-            //Load event image is available
+            
+            //Load event image if available
             if (event.image != nil) {
                 let url = NSURL(string: event.image!)
                 let data = NSData(contentsOfURL: url!)

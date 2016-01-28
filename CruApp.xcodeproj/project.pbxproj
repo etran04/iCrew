@@ -45,7 +45,6 @@
 		839F64551C0D6BD100CAEC9E /* GetInvolved.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 839F64531C0D6BD100CAEC9E /* GetInvolved.storyboard */; };
 		839F64581C0D6C1E00CAEC9E /* SummerMissions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 839F64561C0D6C1E00CAEC9E /* SummerMissions.storyboard */; };
 		839F645B1C0D6C4C00CAEC9E /* Resources.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 839F64591C0D6C4C00CAEC9E /* Resources.storyboard */; };
-		839F645E1C0D6C8E00CAEC9E /* MySchool.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 839F645C1C0D6C8E00CAEC9E /* MySchool.storyboard */; };
 		839F64601C0D70AA00CAEC9E /* Box-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 839F645F1C0D70AA00CAEC9E /* Box-25.png */; };
 		839F64621C0D77BB00CAEC9E /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839F64611C0D77BB00CAEC9E /* ActivityViewController.swift */; };
 		83B1CB101C4856BC00145B6D /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 83B1CB0E1C4856BC00145B6D /* CoreDataModel.xcdatamodeld */; };
@@ -60,9 +59,10 @@
 		A4110B501C0F7EB500F47AB4 /* Facebook-25.png in Resources */ = {isa = PBXBuildFile; fileRef = A4110B4F1C0F7EB500F47AB4 /* Facebook-25.png */; };
 		A4110B521C0FA44700F47AB4 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4110B511C0FA44700F47AB4 /* Location.swift */; };
 		A4110B541C0FC35A00F47AB4 /* DBUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4110B531C0FC35A00F47AB4 /* DBUtilities.swift */; };
+		A447DBB31C5AC8D3000C6DEB /* Events.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A447DBAF1C5AC8D3000C6DEB /* Events.storyboard */; };
+		A447DBB41C5AC8D3000C6DEB /* RideShare.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A447DBB11C5AC8D3000C6DEB /* RideShare.storyboard */; };
 		A45572F91C49CCE90097DE0F /* Google Plus-25.png in Resources */ = {isa = PBXBuildFile; fileRef = A45572F81C49CCE90097DE0F /* Google Plus-25.png */; };
 		A45572FB1C4A176F0097DE0F /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45572FA1C4A176F0097DE0F /* EventDetailsViewController.swift */; };
-		A45572FE1C4ADC150097DE0F /* EventsAndRides.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A45572FC1C4ADC150097DE0F /* EventsAndRides.storyboard */; };
 		A45573001C4CDAF60097DE0F /* MissionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45572FF1C4CDAF60097DE0F /* MissionViewCell.swift */; };
 		A45573021C4E219A0097DE0F /* MissionDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45573011C4E219A0097DE0F /* MissionDetailsViewController.swift */; };
 		CBF52B4D6C6CD44BBF744548 /* Pods_CruApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD14769052309A631372632E /* Pods_CruApp.framework */; };
@@ -205,7 +205,6 @@
 		839F64541C0D6BD100CAEC9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/GetInvolved.storyboard; sourceTree = "<group>"; };
 		839F64571C0D6C1E00CAEC9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SummerMissions.storyboard; sourceTree = "<group>"; };
 		839F645A1C0D6C4C00CAEC9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Resources.storyboard; sourceTree = "<group>"; };
-		839F645D1C0D6C8E00CAEC9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MySchool.storyboard; sourceTree = "<group>"; };
 		839F645F1C0D70AA00CAEC9E /* Box-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Box-25.png"; path = "images/Box-25.png"; sourceTree = "<group>"; };
 		839F64611C0D77BB00CAEC9E /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 		83B1CB0F1C4856BC00145B6D /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
@@ -221,9 +220,10 @@
 		A4110B4F1C0F7EB500F47AB4 /* Facebook-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Facebook-25.png"; path = "images/Facebook-25.png"; sourceTree = "<group>"; };
 		A4110B511C0FA44700F47AB4 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		A4110B531C0FC35A00F47AB4 /* DBUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBUtilities.swift; sourceTree = "<group>"; };
+		A447DBB01C5AC8D3000C6DEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Events.storyboard; sourceTree = "<group>"; };
+		A447DBB21C5AC8D3000C6DEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/RideShare.storyboard; sourceTree = "<group>"; };
 		A45572F81C49CCE90097DE0F /* Google Plus-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Google Plus-25.png"; path = "images/Google Plus-25.png"; sourceTree = SOURCE_ROOT; };
 		A45572FA1C4A176F0097DE0F /* EventDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailsViewController.swift; sourceTree = "<group>"; };
-		A45572FD1C4ADC150097DE0F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/EventsAndRides.storyboard; sourceTree = "<group>"; };
 		A45572FF1C4CDAF60097DE0F /* MissionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MissionViewCell.swift; sourceTree = "<group>"; };
 		A45573011C4E219A0097DE0F /* MissionDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MissionDetailsViewController.swift; sourceTree = "<group>"; };
 		DD14769052309A631372632E /* Pods_CruApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CruApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -311,10 +311,10 @@
 			children = (
 				072519AB1BE9694000F38F81 /* Main.storyboard */,
 				839F64531C0D6BD100CAEC9E /* GetInvolved.storyboard */,
-				A45572FC1C4ADC150097DE0F /* EventsAndRides.storyboard */,
+				A447DBAF1C5AC8D3000C6DEB /* Events.storyboard */,
+				A447DBB11C5AC8D3000C6DEB /* RideShare.storyboard */,
 				839F64561C0D6C1E00CAEC9E /* SummerMissions.storyboard */,
 				839F64591C0D6C4C00CAEC9E /* Resources.storyboard */,
-				839F645C1C0D6C8E00CAEC9E /* MySchool.storyboard */,
 				072519B01BE9694000F38F81 /* LaunchScreen.storyboard */,
 				271C78151C5040EA00F42EA0 /* Initial.storyboard */,
 			);
@@ -645,10 +645,11 @@
 				271C78161C5040EA00F42EA0 /* Initial.storyboard in Resources */,
 				072519B21BE9694000F38F81 /* LaunchScreen.storyboard in Resources */,
 				279326FE1C509C2100BAC73D /* PopUpViewController_iPhone6.xib in Resources */,
+				A447DBB41C5AC8D3000C6DEB /* RideShare.storyboard in Resources */,
 				839F645B1C0D6C4C00CAEC9E /* Resources.storyboard in Resources */,
 				839F64411C0D4E4300CAEC9E /* Cru-Logo.png in Resources */,
+				A447DBB31C5AC8D3000C6DEB /* Events.storyboard in Resources */,
 				839F64441C0D4E4300CAEC9E /* Planner-25.png in Resources */,
-				839F645E1C0D6C8E00CAEC9E /* MySchool.storyboard in Resources */,
 				A4110B501C0F7EB500F47AB4 /* Facebook-25.png in Resources */,
 				A4110B481C0F7E3400F47AB4 /* Calendar-25.png in Resources */,
 				839F64431C0D4E4300CAEC9E /* Literature-25.png in Resources */,
@@ -664,7 +665,6 @@
 				839F64491C0D643A00CAEC9E /* menu.png in Resources */,
 				072519AD1BE9694000F38F81 /* Main.storyboard in Resources */,
 				839F64581C0D6C1E00CAEC9E /* SummerMissions.storyboard in Resources */,
-				A45572FE1C4ADC150097DE0F /* EventsAndRides.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -830,20 +830,20 @@
 			name = Resources.storyboard;
 			sourceTree = "<group>";
 		};
-		839F645C1C0D6C8E00CAEC9E /* MySchool.storyboard */ = {
+		A447DBAF1C5AC8D3000C6DEB /* Events.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				839F645D1C0D6C8E00CAEC9E /* Base */,
+				A447DBB01C5AC8D3000C6DEB /* Base */,
 			);
-			name = MySchool.storyboard;
+			name = Events.storyboard;
 			sourceTree = "<group>";
 		};
-		A45572FC1C4ADC150097DE0F /* EventsAndRides.storyboard */ = {
+		A447DBB11C5AC8D3000C6DEB /* RideShare.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				A45572FD1C4ADC150097DE0F /* Base */,
+				A447DBB21C5AC8D3000C6DEB /* Base */,
 			);
-			name = EventsAndRides.storyboard;
+			name = RideShare.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

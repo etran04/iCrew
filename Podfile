@@ -8,6 +8,8 @@ target 'CruApp' do
 pod "youtube-ios-player-helper", "~> 0.1.4"
 pod 'ReachabilitySwift', git: 'https://github.com/ashleymills/Reachability.swift'
 pod "NMPopUpViewSwift"
+pod "DownPicker"
+
 end
 
 target 'CruAppTests' do

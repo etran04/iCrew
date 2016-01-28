@@ -34,21 +34,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pCH-ME-f3u">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pCH-ME-f3u" userLabel="passengerButton">
                                 <rect key="frame" x="283" y="300" width="50" height="50"/>
                                 <state key="normal" title="Button" image="Passenger-52.png"/>
                                 <connections>
                                     <segue destination="8jq-wk-qcF" kind="show" id="UBx-bp-3my"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q66-yO-yn8">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q66-yO-yn8" userLabel="statusButton">
                                 <rect key="frame" x="36" y="300" width="50" height="50"/>
                                 <state key="normal" title="Button" image="Checked Checkbox 2-48.png"/>
                                 <connections>
                                     <segue destination="Di1-0U-bJt" kind="show" id="ddK-Os-yZI"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Phz-Wy-id6">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Phz-Wy-id6" userLabel="driverButton">
                                 <rect key="frame" x="160" y="279" width="54" height="71"/>
                                 <state key="normal" title="Button" image="Filled-Car-100.png"/>
                                 <connections>
@@ -163,10 +163,10 @@
             </objects>
             <point key="canvasLocation" x="1367.5" y="2717.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Driver QuestionaireVC-->
         <scene sceneID="OS9-ZE-4xq">
             <objects>
-                <viewController id="XGh-21-Tdj" sceneMemberID="viewController">
+                <viewController id="XGh-21-Tdj" customClass="DriverQuestionaireVC" customModule="CruApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oKB-DF-Yj2"/>
                         <viewControllerLayoutGuide type="bottom" id="EW0-hu-cXf"/>
@@ -225,11 +225,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qPC-Z0-eAg">
-                                <rect key="frame" x="180" y="498" width="175" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ideal Departure Time:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jb8-LU-m2Q">
                                 <rect key="frame" x="8" y="502" width="166" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -240,15 +235,31 @@
                                 <rect key="frame" x="163" y="569" width="49" height="30"/>
                                 <state key="normal" title="Submit"/>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qPC-Z0-eAg">
+                                <rect key="frame" x="179" y="498" width="175" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eEA-OW-REb">
                                 <rect key="frame" x="77" y="169" width="278" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="0mt-aX-xRa">
+                                <rect key="frame" x="9" y="229" width="346" height="29"/>
+                                <segments>
+                                    <segment title="One-way"/>
+                                    <segment title="Round-trip"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="eventsChoice" destination="eEA-OW-REb" id="ALo-fS-S83"/>
+                        <outlet property="numSeatsAvailChoice" destination="Ie9-S6-4H8" id="Zrm-R3-qgd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Srr-N0-UzC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

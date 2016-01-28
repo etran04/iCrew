@@ -61,6 +61,10 @@
 		A4110B541C0FC35A00F47AB4 /* DBUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4110B531C0FC35A00F47AB4 /* DBUtilities.swift */; };
 		A447DBB31C5AC8D3000C6DEB /* Events.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A447DBAF1C5AC8D3000C6DEB /* Events.storyboard */; };
 		A447DBB41C5AC8D3000C6DEB /* RideShare.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A447DBB11C5AC8D3000C6DEB /* RideShare.storyboard */; };
+		A447DBBF1C5ACBBB000C6DEB /* Car-25.png in Resources */ = {isa = PBXBuildFile; fileRef = A447DBBB1C5ACBBB000C6DEB /* Car-25.png */; };
+		A447DBC01C5ACBBB000C6DEB /* Checked Checkbox 2-48.png in Resources */ = {isa = PBXBuildFile; fileRef = A447DBBC1C5ACBBB000C6DEB /* Checked Checkbox 2-48.png */; };
+		A447DBC11C5ACBBB000C6DEB /* Filled-Car-100.png in Resources */ = {isa = PBXBuildFile; fileRef = A447DBBD1C5ACBBB000C6DEB /* Filled-Car-100.png */; };
+		A447DBC21C5ACBBB000C6DEB /* Passenger-52.png in Resources */ = {isa = PBXBuildFile; fileRef = A447DBBE1C5ACBBB000C6DEB /* Passenger-52.png */; };
 		A45572F91C49CCE90097DE0F /* Google Plus-25.png in Resources */ = {isa = PBXBuildFile; fileRef = A45572F81C49CCE90097DE0F /* Google Plus-25.png */; };
 		A45572FB1C4A176F0097DE0F /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45572FA1C4A176F0097DE0F /* EventDetailsViewController.swift */; };
 		A45573001C4CDAF60097DE0F /* MissionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45572FF1C4CDAF60097DE0F /* MissionViewCell.swift */; };
@@ -222,6 +226,10 @@
 		A4110B531C0FC35A00F47AB4 /* DBUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBUtilities.swift; sourceTree = "<group>"; };
 		A447DBB01C5AC8D3000C6DEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Events.storyboard; sourceTree = "<group>"; };
 		A447DBB21C5AC8D3000C6DEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/RideShare.storyboard; sourceTree = "<group>"; };
+		A447DBBB1C5ACBBB000C6DEB /* Car-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Car-25.png"; path = "images/Car-25.png"; sourceTree = SOURCE_ROOT; };
+		A447DBBC1C5ACBBB000C6DEB /* Checked Checkbox 2-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Checked Checkbox 2-48.png"; path = "images/Checked Checkbox 2-48.png"; sourceTree = SOURCE_ROOT; };
+		A447DBBD1C5ACBBB000C6DEB /* Filled-Car-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Filled-Car-100.png"; path = "images/Filled-Car-100.png"; sourceTree = SOURCE_ROOT; };
+		A447DBBE1C5ACBBB000C6DEB /* Passenger-52.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Passenger-52.png"; path = "images/Passenger-52.png"; sourceTree = SOURCE_ROOT; };
 		A45572F81C49CCE90097DE0F /* Google Plus-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Google Plus-25.png"; path = "images/Google Plus-25.png"; sourceTree = SOURCE_ROOT; };
 		A45572FA1C4A176F0097DE0F /* EventDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailsViewController.swift; sourceTree = "<group>"; };
 		A45572FF1C4CDAF60097DE0F /* MissionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MissionViewCell.swift; sourceTree = "<group>"; };
@@ -463,6 +471,10 @@
 				839F643D1C0D4E4300CAEC9E /* Literature-25.png */,
 				839F643E1C0D4E4300CAEC9E /* Planner-25.png */,
 				839F643F1C0D4E4300CAEC9E /* Summer-25.png */,
+				A447DBBB1C5ACBBB000C6DEB /* Car-25.png */,
+				A447DBBC1C5ACBBB000C6DEB /* Checked Checkbox 2-48.png */,
+				A447DBBD1C5ACBBB000C6DEB /* Filled-Car-100.png */,
+				A447DBBE1C5ACBBB000C6DEB /* Passenger-52.png */,
 				A4110B471C0F7E3400F47AB4 /* Calendar-25.png */,
 				839F64401C0D4E4300CAEC9E /* User Group-25.png */,
 			);
@@ -638,6 +650,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A447DBC11C5ACBBB000C6DEB /* Filled-Car-100.png in Resources */,
+				A447DBC01C5ACBBB000C6DEB /* Checked Checkbox 2-48.png in Resources */,
 				839F64461C0D4E4300CAEC9E /* User Group-25.png in Resources */,
 				839F64451C0D4E4300CAEC9E /* Summer-25.png in Resources */,
 				839F64551C0D6BD100CAEC9E /* GetInvolved.storyboard in Resources */,
@@ -647,6 +661,7 @@
 				279326FE1C509C2100BAC73D /* PopUpViewController_iPhone6.xib in Resources */,
 				A447DBB41C5AC8D3000C6DEB /* RideShare.storyboard in Resources */,
 				839F645B1C0D6C4C00CAEC9E /* Resources.storyboard in Resources */,
+				A447DBC21C5ACBBB000C6DEB /* Passenger-52.png in Resources */,
 				839F64411C0D4E4300CAEC9E /* Cru-Logo.png in Resources */,
 				A447DBB31C5AC8D3000C6DEB /* Events.storyboard in Resources */,
 				839F64441C0D4E4300CAEC9E /* Planner-25.png in Resources */,
@@ -657,6 +672,7 @@
 				839F64421C0D4E4300CAEC9E /* Home-25.png in Resources */,
 				839F64601C0D70AA00CAEC9E /* Box-25.png in Resources */,
 				0703C7321C4DFA8500C7D8ED /* blank_calendar.png in Resources */,
+				A447DBBF1C5ACBBB000C6DEB /* Car-25.png in Resources */,
 				072519AF1BE9694000F38F81 /* Assets.xcassets in Resources */,
 				279326FF1C509C2100BAC73D /* PopUpViewController_iPhone6Plus.xib in Resources */,
 				279327011C509C2100BAC73D /* Info.plist in Resources */,

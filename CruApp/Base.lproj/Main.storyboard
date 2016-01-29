@@ -5,14 +5,6 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Storyboard Reference-->
-        <scene sceneID="7BG-FM-80S">
-            <objects>
-                <viewControllerPlaceholder id="hR9-3M-6yK" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3Ki-eU-H1e" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2152.5" y="229"/>
-        </scene>
         <!--Reveal View Controller-->
         <scene sceneID="Oj2-td-Bgx">
             <objects>

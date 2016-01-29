@@ -13,6 +13,10 @@ import CheckmarkSegmentedControl
 /* This class is used to gather information from a potential driver of the RideShare feature */
 class DriverQuestionaireVC: UIViewController {
 
+    /* constants for setting up datepicker in ideal pickup time */
+    let IDEAL_TIME_INTERVAL = 15
+    let TIME_FORMAT = "hh:mm a"
+    
     @IBOutlet weak var eventsChoice: UITextField!
     @IBOutlet weak var numSeatsAvailChoice: UITextField!
     @IBOutlet weak var depatureTimeChoice: UITextField!
@@ -74,6 +78,7 @@ class DriverQuestionaireVC: UIViewController {
         // Brings up a new datepicker
         datePickerView = UIDatePicker()
         datePickerView.datePickerMode = UIDatePickerMode.Time
+        datePickerView.minuteInterval = IDEAL_TIME_INTERVAL;
         sender.inputView = datePickerView
         
         datePickerView.addTarget(self, action: Selector("handleDatePicker:"), forControlEvents: UIControlEvents.TouchUpInside)
@@ -82,7 +87,7 @@ class DriverQuestionaireVC: UIViewController {
     /* Fills in text field of ideal depature time */
     func handleDatePicker(sender: UIDatePicker) {
         let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "hh:mm a"
+        dateFormatter.dateFormat = TIME_FORMAT;
         depatureTimeChoice.text = dateFormatter.stringFromDate(sender.date)
     }
     

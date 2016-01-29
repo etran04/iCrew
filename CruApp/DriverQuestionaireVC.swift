@@ -14,13 +14,19 @@ class DriverQuestionaireVC: UIViewController {
 
     @IBOutlet weak var eventsChoice: UITextField!
     @IBOutlet weak var numSeatsAvailChoice: UITextField!
+    @IBOutlet weak var depatureTimeChoice: UITextField!
     
     var eventDownPicker: DownPicker!
     var seatDownPicker: DownPicker!
+    var datePickerView  : UIDatePicker!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initializeChoices()
+        
+        //Looks for single or multiple taps.
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        view.addGestureRecognizer(tap)
     }
     
     override func viewDidAppear(animated : Bool) {
@@ -43,9 +49,35 @@ class DriverQuestionaireVC: UIViewController {
         self.seatDownPicker = DownPicker(textField: self.numSeatsAvailChoice, withData: seatChoices)
     }
     
+    /* Callback when ideal depature time is clicked */
+    @IBAction func idealTimeClicked(sender: UITextField) {
+        // Brings up a new datepicker
+        datePickerView = UIDatePicker()
+        datePickerView.datePickerMode = UIDatePickerMode.Time
+        sender.inputView = datePickerView
+        datePickerView.addTarget(self, action: Selector("handleDatePicker:"), forControlEvents: UIControlEvents.TouchUpInside)
+    }
+    
+    /* Fills in text field of ideal depature time */
+    func handleDatePicker(sender: UIDatePicker) {
+        let dateFormatter = NSDateFormatter()
+        
+        dateFormatter.dateFormat = "hh:mm a"
+        depatureTimeChoice.text = dateFormatter.stringFromDate(sender.date)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    //Calls this function when the tap is recognized.
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        
+        // sets depature time before dismissing
+        handleDatePicker(datePickerView)
+        view.endEditing(true)
     }
     
 

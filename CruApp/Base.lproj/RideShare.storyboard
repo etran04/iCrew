@@ -239,6 +239,9 @@
                                 <rect key="frame" x="179" y="498" width="175" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="idealTimeClicked:" destination="XGh-21-Tdj" eventType="editingDidBegin" id="KbP-rj-yvY"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eEA-OW-REb">
                                 <rect key="frame" x="77" y="169" width="278" height="30"/>
@@ -257,6 +260,7 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="depatureTimeChoice" destination="qPC-Z0-eAg" id="U9G-1r-meC"/>
                         <outlet property="eventsChoice" destination="eEA-OW-REb" id="ALo-fS-S83"/>
                         <outlet property="numSeatsAvailChoice" destination="Ie9-S6-4H8" id="Zrm-R3-qgd"/>
                     </connections>

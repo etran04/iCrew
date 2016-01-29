@@ -66,7 +66,7 @@ class DriverQuestionaireVC: UIViewController {
     
     /* Callback for when a new radio button is clicked */
     func optionSelected(sender: AnyObject) {
-        print("Selected option: \(driveTypes.options[driveTypes.selectedIndex])")
+        print("DriverQ - Selected option: \(driveTypes.options[driveTypes.selectedIndex])")
     }
     
     /* Callback when ideal depature time is clicked */

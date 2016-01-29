@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yMF-BQ-iAf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yMF-BQ-iAf">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -38,25 +38,17 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VVR-xn-6kz">
                                 <rect key="frame" x="274" y="328" width="53" height="31"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="31" id="zeg-Z1-l2W"/>
+                                    <constraint firstAttribute="height" constant="31" id="nqn-gI-dM3"/>
                                 </constraints>
                                 <state key="normal" title="Articles"/>
                                 <connections>
                                     <segue destination="20A-fb-hoq" kind="show" id="cyX-Kr-fgI"/>
                                 </connections>
                             </button>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="KQ3-AP-7TQ">
-                                <rect key="frame" x="45" y="72" width="511" height="29"/>
-                                <segments>
-                                    <segment title="Videos"/>
-                                    <segment title="Articles"/>
-                                    <segment title="Tools"/>
-                                </segments>
-                            </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qgz-BK-S50">
                                 <rect key="frame" x="277" y="179" width="47" height="31"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="31" id="hrW-74-lfm"/>
+                                    <constraint firstAttribute="height" constant="31" id="VnV-K3-vdl"/>
                                 </constraints>
                                 <state key="normal" title="Videos"/>
                                 <connections>
@@ -66,13 +58,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="VVR-xn-6kz" firstAttribute="centerX" secondItem="z7f-dP-Vng" secondAttribute="centerX" id="CUH-cb-h0N"/>
-                            <constraint firstItem="qgz-BK-S50" firstAttribute="top" secondItem="KQ3-AP-7TQ" secondAttribute="bottom" constant="79" id="GfA-kL-Cdr"/>
-                            <constraint firstItem="KQ3-AP-7TQ" firstAttribute="top" secondItem="0wr-Fm-hx3" secondAttribute="bottom" constant="8" symbolic="YES" id="KER-3Y-AdX"/>
-                            <constraint firstItem="KQ3-AP-7TQ" firstAttribute="leading" secondItem="z7f-dP-Vng" secondAttribute="leadingMargin" constant="25" id="Xl9-ln-alb"/>
-                            <constraint firstItem="KQ3-AP-7TQ" firstAttribute="centerX" secondItem="qgz-BK-S50" secondAttribute="centerX" id="a6c-TN-P0J"/>
-                            <constraint firstItem="AKh-2R-scz" firstAttribute="top" secondItem="VVR-xn-6kz" secondAttribute="bottom" constant="192" id="c20-mp-rXJ"/>
-                            <constraint firstItem="qgz-BK-S50" firstAttribute="centerX" secondItem="VVR-xn-6kz" secondAttribute="centerX" id="dSn-GK-Pxq"/>
+                            <constraint firstItem="qgz-BK-S50" firstAttribute="centerX" secondItem="z7f-dP-Vng" secondAttribute="centerX" id="5JV-3Z-GO1"/>
+                            <constraint firstItem="AKh-2R-scz" firstAttribute="top" secondItem="VVR-xn-6kz" secondAttribute="bottom" constant="192" id="Cz3-it-2uF"/>
+                            <constraint firstItem="VVR-xn-6kz" firstAttribute="centerX" secondItem="qgz-BK-S50" secondAttribute="centerX" id="Ytl-DZ-rW2"/>
+                            <constraint firstItem="qgz-BK-S50" firstAttribute="top" secondItem="0wr-Fm-hx3" secondAttribute="bottom" constant="115" id="zN3-WK-Y17"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Resources " id="huO-g1-HNG">

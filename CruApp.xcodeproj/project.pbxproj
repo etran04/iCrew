@@ -14,6 +14,8 @@
 		072519AF1BE9694000F38F81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 072519AE1BE9694000F38F81 /* Assets.xcassets */; };
 		072519B21BE9694000F38F81 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 072519B01BE9694000F38F81 /* LaunchScreen.storyboard */; };
 		0727F9A51C5AD13000066948 /* DriverQuestionaireVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0727F9A41C5AD13000066948 /* DriverQuestionaireVC.swift */; };
+		07340BB21C5B3606002C6015 /* RiderQuestionaireVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07340BB11C5B3606002C6015 /* RiderQuestionaireVC.swift */; };
+		07340BBA1C5B36B5002C6015 /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = 07340BB91C5B36B5002C6015 /* info.png */; };
 		07C196331C0E6AD400375B8D /* ArticlesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C196321C0E6AD400375B8D /* ArticlesTableViewController.swift */; };
 		07C196351C0E6D9F00375B8D /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C196341C0E6D9F00375B8D /* ArticleTableViewCell.swift */; };
 		07C196371C0E863000375B8D /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C196361C0E863000375B8D /* VideoTableViewCell.swift */; };
@@ -26,7 +28,6 @@
 		271C78211C50434000F42EA0 /* InitialCampusTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271C78201C50434000F42EA0 /* InitialCampusTableViewController.swift */; };
 		271C78231C5044B100F42EA0 /* InitialCampusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271C78221C5044B100F42EA0 /* InitialCampusTableViewCell.swift */; };
 		277E67561BEB6362001C29DD /* CruAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277E67551BEB6362001C29DD /* CruAppTests.swift */; };
-		279326ED1C509A8300BAC73D /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = 279326EC1C509A8300BAC73D /* info.png */; };
 		279326FC1C509C2100BAC73D /* PopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 279326EE1C509C2100BAC73D /* PopUpViewController.xib */; };
 		279326FD1C509C2100BAC73D /* PopUpViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 279326EF1C509C2100BAC73D /* PopUpViewController_iPad.xib */; };
 		279326FE1C509C2100BAC73D /* PopUpViewController_iPhone6.xib in Resources */ = {isa = PBXBuildFile; fileRef = 279326F01C509C2100BAC73D /* PopUpViewController_iPhone6.xib */; };
@@ -168,6 +169,8 @@
 		072519B11BE9694000F38F81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		072519B31BE9694000F38F81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0727F9A41C5AD13000066948 /* DriverQuestionaireVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriverQuestionaireVC.swift; sourceTree = "<group>"; };
+		07340BB11C5B3606002C6015 /* RiderQuestionaireVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RiderQuestionaireVC.swift; sourceTree = "<group>"; };
+		07340BB91C5B36B5002C6015 /* info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = info.png; path = images/info.png; sourceTree = "<group>"; };
 		07C196321C0E6AD400375B8D /* ArticlesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticlesTableViewController.swift; sourceTree = "<group>"; };
 		07C196341C0E6D9F00375B8D /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
 		07C196361C0E863000375B8D /* VideoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
@@ -182,7 +185,6 @@
 		277E67531BEB6362001C29DD /* CruAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CruAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		277E67551BEB6362001C29DD /* CruAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CruAppTests.swift; sourceTree = "<group>"; };
 		277E67571BEB6362001C29DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		279326EC1C509A8300BAC73D /* info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info.png; sourceTree = "<group>"; };
 		279326EE1C509C2100BAC73D /* PopUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PopUpViewController.xib; path = NMPopUpView/Pod/Classes/PopUpViewController.xib; sourceTree = "<group>"; };
 		279326EF1C509C2100BAC73D /* PopUpViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PopUpViewController_iPad.xib; path = NMPopUpView/Pod/Classes/PopUpViewController_iPad.xib; sourceTree = "<group>"; };
 		279326F01C509C2100BAC73D /* PopUpViewController_iPhone6.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PopUpViewController_iPhone6.xib; path = NMPopUpView/Pod/Classes/PopUpViewController_iPhone6.xib; sourceTree = "<group>"; };
@@ -306,6 +308,7 @@
 			isa = PBXGroup;
 			children = (
 				0727F9A41C5AD13000066948 /* DriverQuestionaireVC.swift */,
+				07340BB11C5B3606002C6015 /* RiderQuestionaireVC.swift */,
 			);
 			name = RideShare;
 			sourceTree = "<group>";
@@ -468,7 +471,7 @@
 		A43482D11C0D290E00B62D6C /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				279326EC1C509A8300BAC73D /* info.png */,
+				07340BB91C5B36B5002C6015 /* info.png */,
 				0703C7311C4DFA8500C7D8ED /* blank_calendar.png */,
 				A4110B4F1C0F7EB500F47AB4 /* Facebook-25.png */,
 				839F645F1C0D70AA00CAEC9E /* Box-25.png */,
@@ -663,8 +666,8 @@
 				839F64461C0D4E4300CAEC9E /* User Group-25.png in Resources */,
 				839F64451C0D4E4300CAEC9E /* Summer-25.png in Resources */,
 				839F64551C0D6BD100CAEC9E /* GetInvolved.storyboard in Resources */,
-				279326ED1C509A8300BAC73D /* info.png in Resources */,
 				271C78161C5040EA00F42EA0 /* Initial.storyboard in Resources */,
+				07340BBA1C5B36B5002C6015 /* info.png in Resources */,
 				072519B21BE9694000F38F81 /* LaunchScreen.storyboard in Resources */,
 				279326FE1C509C2100BAC73D /* PopUpViewController_iPhone6.xib in Resources */,
 				A447DBB41C5AC8D3000C6DEB /* RideShare.storyboard in Resources */,
@@ -780,6 +783,7 @@
 				07C196351C0E6D9F00375B8D /* ArticleTableViewCell.swift in Sources */,
 				1E37E7291C0E362D0054607A /* EventsViewController.swift in Sources */,
 				07C196371C0E863000375B8D /* VideoTableViewCell.swift in Sources */,
+				07340BB21C5B3606002C6015 /* RiderQuestionaireVC.swift in Sources */,
 				A45573021C4E219A0097DE0F /* MissionDetailsViewController.swift in Sources */,
 				A45572FB1C4A176F0097DE0F /* EventDetailsViewController.swift in Sources */,
 			);

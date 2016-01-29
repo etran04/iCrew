@@ -36,6 +36,10 @@ class DriverQuestionaireVC: UIViewController {
     override func viewDidAppear(animated : Bool) {
         super.viewDidAppear(animated)
     }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
 
     /* Helper method to populate choices for # of seats available */
     func initializeChoices() {
@@ -45,8 +49,9 @@ class DriverQuestionaireVC: UIViewController {
             CheckmarkOption(title:"To & From Event \n(Round Trip)"),
             CheckmarkOption(title: "To Event \n(One-way)"),
             CheckmarkOption(title: "From Event \n(One-way)")]
+        driveTypes.addTarget(self, action: "optionSelected:", forControlEvents: UIControlEvents.ValueChanged)
         
-        /* populate event choices */
+        /* TO DO: populate event choices */
         let eventChoices = ["event1", "event2", "event3"]
         self.eventDownPicker = DownPicker(textField: self.eventsChoice, withData: eventChoices)
         
@@ -59,25 +64,26 @@ class DriverQuestionaireVC: UIViewController {
         self.seatDownPicker = DownPicker(textField: self.numSeatsAvailChoice, withData: seatChoices)
     }
     
+    /* Callback for when a new radio button is clicked */
+    func optionSelected(sender: AnyObject) {
+        print("Selected option: \(driveTypes.options[driveTypes.selectedIndex])")
+    }
+    
     /* Callback when ideal depature time is clicked */
     @IBAction func idealTimeClicked(sender: UITextField) {
         // Brings up a new datepicker
         datePickerView = UIDatePicker()
         datePickerView.datePickerMode = UIDatePickerMode.Time
         sender.inputView = datePickerView
+        
         datePickerView.addTarget(self, action: Selector("handleDatePicker:"), forControlEvents: UIControlEvents.TouchUpInside)
     }
     
     /* Fills in text field of ideal depature time */
     func handleDatePicker(sender: UIDatePicker) {
         let dateFormatter = NSDateFormatter()
-        
         dateFormatter.dateFormat = "hh:mm a"
         depatureTimeChoice.text = dateFormatter.stringFromDate(sender.date)
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
     }
     
     /* Calls this function when the tap is recognizedd
@@ -90,6 +96,22 @@ class DriverQuestionaireVC: UIViewController {
         view.endEditing(true)
     }
     
+    /* Callback for when submit button is pressed */
+    @IBAction func submitPressed(sender: UIButton) {
+        
+        /* TO DO: Validate driver information, make sure everything is good to go */
+        
+        /* Show a visual alert displaying successful signup */
+        let successAlert = UIAlertController(title: "Success!", message:
+            "Thank you for signing up as a driver!", preferredStyle: UIAlertControllerStyle.Alert)
+        successAlert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler:
+            {
+                (action: UIAlertAction!) -> Void in
+                self.performSegueWithIdentifier("finishQuestionaire", sender: self)
+            }))
+    
+        self.presentViewController(successAlert, animated: true, completion: nil)
+    }
 
     /*
     // MARK: - Navigation

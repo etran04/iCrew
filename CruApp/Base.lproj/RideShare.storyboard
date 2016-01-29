@@ -97,12 +97,21 @@
                     <view key="view" contentMode="scaleToFill" id="QdW-W8-1yF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Full Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WeG-kx-Xaq">
+                                <rect key="frame" x="11" y="86" width="81" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b9E-xm-yyE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1961.5" y="1764.5"/>
+            <point key="canvasLocation" x="1533" y="3064"/>
         </scene>
         <!--Status-->
         <scene sceneID="pj5-Cq-YEC">
@@ -162,7 +171,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gGT-5j-LcQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1367.5" y="2717.5"/>
+            <point key="canvasLocation" x="727.5" y="3041.5"/>
         </scene>
         <!--Driver Questionaire-->
         <scene sceneID="OS9-ZE-4xq">
@@ -244,6 +253,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fAq-61-Run">
                                 <rect key="frame" x="163" y="569" width="49" height="30"/>
                                 <state key="normal" title="Submit"/>
+                                <connections>
+                                    <action selector="submitPressed:" destination="XGh-21-Tdj" eventType="touchUpInside" id="X7N-K5-93s"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qPC-Z0-eAg">
                                 <rect key="frame" x="179" y="498" width="175" height="30"/>
@@ -314,11 +326,12 @@
                         <outlet property="driveTypes" destination="moz-F5-2Rc" id="PDx-O3-aZJ"/>
                         <outlet property="eventsChoice" destination="eEA-OW-REb" id="ALo-fS-S83"/>
                         <outlet property="numSeatsAvailChoice" destination="Ie9-S6-4H8" id="Zrm-R3-qgd"/>
+                        <segue destination="LbC-g2-YCA" kind="show" identifier="finishQuestionaire" animates="NO" id="0cg-yg-gAR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Srr-N0-UzC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1961.5" y="2717.5"/>
+            <point key="canvasLocation" x="2389.5" y="1764.5"/>
         </scene>
     </scenes>
     <resources>
@@ -328,4 +341,7 @@
         <image name="Passenger-52.png" width="52" height="52"/>
         <image name="menu.png" width="22" height="22"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="0cg-yg-gAR"/>
+    </inferredMetricsTieBreakers>
 </document>

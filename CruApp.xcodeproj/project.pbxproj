@@ -325,6 +325,7 @@
 		07EE5F7C1BFE6B92009A2B44 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				271C78151C5040EA00F42EA0 /* Initial.storyboard */,
 				072519AB1BE9694000F38F81 /* Main.storyboard */,
 				839F64531C0D6BD100CAEC9E /* GetInvolved.storyboard */,
 				A447DBAF1C5AC8D3000C6DEB /* Events.storyboard */,
@@ -332,7 +333,6 @@
 				839F64561C0D6C1E00CAEC9E /* SummerMissions.storyboard */,
 				839F64591C0D6C4C00CAEC9E /* Resources.storyboard */,
 				072519B01BE9694000F38F81 /* LaunchScreen.storyboard */,
-				271C78151C5040EA00F42EA0 /* Initial.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";

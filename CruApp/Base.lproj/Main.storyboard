@@ -62,10 +62,10 @@
             </objects>
             <point key="canvasLocation" x="-748" y="231"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Sidebar-->
         <scene sceneID="P2E-gY-GtB">
             <objects>
-                <tableViewController id="Yjn-Cn-Gki" sceneMemberID="viewController">
+                <tableViewController title="Sidebar" id="Yjn-Cn-Gki" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="zxc-6o-B73">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

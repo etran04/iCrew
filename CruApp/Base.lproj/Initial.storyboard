@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qPN-vP-Crs">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <scenes>
+        <!--Initial Campus Table View Controller-->
+        <scene sceneID="mHd-mI-3YN">
+            <objects>
+                <tableViewController id="wZA-Gm-DMN" userLabel="Initial Campus Table View Controller" customClass="InitialCampusTableViewController" customModule="CruApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="54" sectionHeaderHeight="28" sectionFooterHeight="28" id="h3d-vM-2Bj" userLabel="Campus Table View">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="Cell" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="54" id="6zZ-mg-59L" userLabel="Campus Cell" customClass="InitialCampusTableViewCell" customModule="CruApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="375" height="54"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6zZ-mg-59L" id="MRI-PG-ndv">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="53.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="35K-ae-gaj">
+                                            <rect key="frame" x="63" y="14" width="488" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B0B-za-reP">
+                                            <rect key="frame" x="8" y="8" width="47" height="34"/>
+                                            <connections>
+                                                <action selector="clickInfo:" destination="wZA-Gm-DMN" eventType="touchUpInside" id="A4o-xt-tFn"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="campus" destination="35K-ae-gaj" id="y0x-G8-SbP"/>
+                                    <outlet property="infoButton" destination="B0B-za-reP" id="xXt-Ql-tZ7"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="wZA-Gm-DMN" id="EK3-kR-xKK"/>
+                            <outlet property="delegate" destination="wZA-Gm-DMN" id="TXs-eb-euC"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Campuses" id="aZ1-wd-3ee">
+                        <barButtonItem key="rightBarButtonItem" title="Next" id="Pus-CN-bdd">
+                            <connections>
+                                <segue destination="beF-nV-Tik" kind="show" id="qlv-R6-WPR"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="exy-8O-3Jh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1785.5" y="213.5"/>
+        </scene>
+        <!--Initial Ministry Table View Controller-->
+        <scene sceneID="wQ9-0j-Mdk">
+            <objects>
+                <tableViewController id="beF-nV-Tik" userLabel="Initial Ministry Table View Controller" customClass="InitialMinistryTableViewController" customModule="CruApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="47" sectionHeaderHeight="28" sectionFooterHeight="28" id="gXI-AE-bat" userLabel="Ministry Table View">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell2" rowHeight="47" id="fqg-0s-ZB7" userLabel="Ministry Cell" customClass="InitialMinistryTableViewCell" customModule="CruApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="375" height="47"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fqg-0s-ZB7" id="A3L-VI-1rE">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="46.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CsC-NQ-eB5">
+                                            <rect key="frame" x="63" y="11" width="304" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UAr-rw-kZy">
+                                            <rect key="frame" x="8" y="5" width="47" height="34"/>
+                                            <connections>
+                                                <action selector="clickInfo:" destination="beF-nV-Tik" eventType="touchUpInside" id="jMJ-ll-2gd"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="infoButton" destination="UAr-rw-kZy" id="dZZ-Gj-WdO"/>
+                                    <outlet property="ministry" destination="CsC-NQ-eB5" id="rSE-ua-kwu"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="beF-nV-Tik" id="EPY-5K-fnH"/>
+                            <outlet property="delegate" destination="beF-nV-Tik" id="ONl-By-Mo1"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Ministries" id="oSt-69-4tA">
+                        <barButtonItem key="rightBarButtonItem" title="Next" id="iXx-d1-viQ">
+                            <connections>
+                                <segue destination="5wo-9Q-WLh" kind="presentation" id="f6E-OD-KiS"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wzV-Q2-tN9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2569.5" y="213.5"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="1yz-s6-Tt5">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="5wo-9Q-WLh" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f27-MY-LVh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3080" y="214"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="avT-hL-HZv">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qPN-vP-Crs" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qC0-Vo-cKg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="wZA-Gm-DMN" kind="relationship" relationship="rootViewController" id="3cC-I2-8ZM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xtC-5g-Yoq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1073.5" y="213.5"/>
+        </scene>
+    </scenes>
+</document>

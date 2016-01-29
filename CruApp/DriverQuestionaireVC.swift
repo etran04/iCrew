@@ -8,6 +8,7 @@
 
 import UIKit
 import DownPicker
+import CheckmarkSegmentedControl
 
 /* This class is used to gather information from a potential driver of the RideShare feature */
 class DriverQuestionaireVC: UIViewController {
@@ -15,6 +16,7 @@ class DriverQuestionaireVC: UIViewController {
     @IBOutlet weak var eventsChoice: UITextField!
     @IBOutlet weak var numSeatsAvailChoice: UITextField!
     @IBOutlet weak var depatureTimeChoice: UITextField!
+    @IBOutlet weak var driveTypes: CheckmarkSegmentedControl!
     
     var eventDownPicker: DownPicker!
     var seatDownPicker: DownPicker!
@@ -22,9 +24,11 @@ class DriverQuestionaireVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        /* prepares fields to be filled for questionaire */
         initializeChoices()
         
-        //Looks for single or multiple taps.
+        /* looks for single or multiple taps */
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tap)
     }
@@ -35,6 +39,12 @@ class DriverQuestionaireVC: UIViewController {
 
     /* Helper method to populate choices for # of seats available */
     func initializeChoices() {
+        
+        /* set up radio buttons */
+        driveTypes.options = [
+            CheckmarkOption(title:"To & From Event \n(Round Trip)"),
+            CheckmarkOption(title: "To Event \n(One-way)"),
+            CheckmarkOption(title: "From Event \n(One-way)")]
         
         /* populate event choices */
         let eventChoices = ["event1", "event2", "event3"]
@@ -74,7 +84,9 @@ class DriverQuestionaireVC: UIViewController {
      * Causes the view (or one of its embedded text fields) to resign the first responder status. */
     func dismissKeyboard() {
         // sets depature time before dismissing
-        handleDatePicker(datePickerView)
+        if datePickerView != nil {
+            handleDatePicker(datePickerView)
+        }
         view.endEditing(true)
     }
     

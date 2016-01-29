@@ -23,7 +23,7 @@
             </objects>
             <point key="canvasLocation" x="710" y="-1341"/>
         </scene>
-        <!--Events View Controller-->
+        <!--Events-->
         <scene sceneID="2hl-7j-QvT">
             <objects>
                 <tableViewController id="wac-ew-KxN" customClass="EventsViewController" customModule="CruApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -97,23 +97,12 @@
                             <outlet property="delegate" destination="wac-ew-KxN" id="SgE-IZ-0sr"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="kj2-c5-3Oo">
-                        <nil key="title"/>
+                    <navigationItem key="navigationItem" title="Events" id="kj2-c5-3Oo">
                         <barButtonItem key="leftBarButtonItem" image="menu.png" id="yWV-Oq-fEi"/>
-                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="eP5-6z-kyh" userLabel="Events, Ride Share">
-                            <rect key="frame" x="107" y="7" width="161" height="31"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <segments>
-                                <segment title="Events"/>
-                                <segment title="Ride Share"/>
-                            </segments>
-                        </segmentedControl>
-                        <barButtonItem key="rightBarButtonItem" title="Text" id="S45-1N-BEg"/>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="menuButton" destination="yWV-Oq-fEi" id="xzd-9l-iow"/>
-                        <outlet property="textButton" destination="S45-1N-BEg" id="Gbx-gS-jEw"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Th6-om-poe" userLabel="First Responder" sceneMemberID="firstResponder"/>

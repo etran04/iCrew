@@ -15,7 +15,6 @@ import ReachabilitySwift
 class EventsViewController: UITableViewController {
     
     @IBOutlet weak var menuButton: UIBarButtonItem!
-    @IBOutlet weak var textButton: UIBarButtonItem!
     
     var eventsCollection = [Event]()
     
@@ -34,20 +33,62 @@ class EventsViewController: UITableViewController {
         var dbClient: DBClient!
         dbClient = DBClient()
         dbClient.getData("event", dict: setEvents)
-        
-        //for text testing purposes
-        self.textButton.target = self
-        self.textButton.action = "text:"
     }
     
     override func viewDidAppear(animated: Bool) {
-        /* 
-         * Tokens is a inner class, used to make sure internet connectivity is check
-         * only once when the app is intially launched.
-         */
-        struct Tokens { static var token: dispatch_once_t = 0 }
+        checkInternet()
+        
+        if (self.revealViewController() != nil) {
+            self.menuButton.target = self.revealViewController()
+            self.menuButton.action = "revealToggle:"
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
+    }
+    
+    //obtain information from the database to an Object
+    //TODO: Move function into Event.swift
+    func setEvents(event:NSDictionary) {
+        //self.tableView.beginUpdates()
+        
+        let name = event["name"] as! String
+        let startDate = event["startDate"] as! String!
+        let endDate = event["endDate"] as! String!
+        let description = event["description"] as! String
+        
+        let location = Location(
+            postcode: event["location"]?.objectForKey("postcode") as! String,
+            state: event["location"]?.objectForKey("state") as! String,
+            suburb: event["location"]?.objectForKey("suburb") as! String,
+            street1: event["location"]?.objectForKey("street1") as! String,
+            country: event["location"]?.objectForKey("country") as! String)
+        
+        let image = event["image"]?.objectForKey("secure_url") as! String!
+        let url = event["url"] as! String
+        
+        let eventObj = Event(name: name, startDate: startDate, endDate: endDate, location: location, image: image, description: description, url: url)
+        
+        eventsCollection.append(eventObj)
+        self.tableView.reloadData()
+    }
+    
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    /* Determines whether or not the device is connected to WiFi or 4g. Alerts user if they are not.
+     * Without internet, data might not populate, aside from cached data */
+    func checkInternet() {
+        /*
+        * Tokens is a inner class, used to make sure internet connectivity is check
+        * only once when the app is intially launched.
+        */
+        struct Tokens {
+            static var token: dispatch_once_t = 0
+        }
+        
         dispatch_once(&Tokens.token) {
-            
+
             // Checks for internet connectivity (Wifi/4G)
             let reachability: Reachability
             do {
@@ -87,71 +128,6 @@ class EventsViewController: UITableViewController {
                 print("Unable to start notifier")
             }
         }
-        
-        if (self.revealViewController() != nil) {
-            self.menuButton.target = self.revealViewController()
-            self.menuButton.action = "revealToggle:"
-            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-        }
-    }
-    
-    func text(sender: UIBarButtonItem) {
-        print("texting...")
-//        let twilioUsername = "ACc18e4b9385be579bdb48ca5526414403"
-//        let twilioPassword = "c5e0f0de4c90c803595851a7554c9a98"
-//        
-//        let data = [
-//            "To" : "+17078038796",
-//            "From" : "+17074193527",
-//            "Body" : "It works!"
-//        ]
-//        
-//        Alamofire.request(.POST, "https://\(twilioUsername):\(twilioPassword)@api.twilio.com/2010-04-01/Accounts/\(twilioUsername)/Messages", parameters: data)
-//            .responseData { response in
-//                print(response.request)
-//                print(response.response)
-//                print(response.result)
-//        }
-        let localNotification = UILocalNotification()
-        localNotification.alertAction = "Testing notifications on iOS 8"
-        localNotification.alertBody = "Eric is a poop in butt"
-        localNotification.fireDate = NSDate(timeIntervalSinceNow: 5)
-        localNotification.soundName = UILocalNotificationDefaultSoundName
-        localNotification.category = "invite"
-        
-        UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
-    }
-    
-    //obtain information from the database to an Object
-    //TODO: Move function into Event.swift
-    func setEvents(event:NSDictionary) {
-        //self.tableView.beginUpdates()
-        
-        let name = event["name"] as! String
-        let startDate = event["startDate"] as! String!
-        let endDate = event["endDate"] as! String!
-        let description = event["description"] as! String
-        
-        let location = Location(
-            postcode: event["location"]?.objectForKey("postcode") as! String,
-            state: event["location"]?.objectForKey("state") as! String,
-            suburb: event["location"]?.objectForKey("suburb") as! String,
-            street1: event["location"]?.objectForKey("street1") as! String,
-            country: event["location"]?.objectForKey("country") as! String)
-        
-        let image = event["image"]?.objectForKey("secure_url") as! String!
-        let url = event["url"] as! String
-        
-        let eventObj = Event(name: name, startDate: startDate, endDate: endDate, location: location, image: image, description: description, url: url)
-        
-        eventsCollection.append(eventObj)
-        self.tableView.reloadData()
-    }
-    
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     // MARK: - Table view data source

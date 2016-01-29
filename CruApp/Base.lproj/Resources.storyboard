@@ -38,7 +38,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VVR-xn-6kz">
                                 <rect key="frame" x="274" y="328" width="53" height="31"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="31" id="nqn-gI-dM3"/>
+                                    <constraint firstAttribute="height" constant="31" id="ozc-6e-zHw"/>
                                 </constraints>
                                 <state key="normal" title="Articles"/>
                                 <connections>
@@ -48,20 +48,29 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qgz-BK-S50">
                                 <rect key="frame" x="277" y="179" width="47" height="31"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="31" id="VnV-K3-vdl"/>
+                                    <constraint firstAttribute="height" constant="31" id="3tt-AU-HBY"/>
                                 </constraints>
                                 <state key="normal" title="Videos"/>
                                 <connections>
                                     <segue destination="CBw-xl-Jne" kind="show" id="waM-93-Tmv"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="44r-3e-dyG">
+                                <rect key="frame" x="285" y="443" width="30" height="30"/>
+                                <state key="normal" title="Text"/>
+                                <connections>
+                                    <action selector="text:" destination="t6P-qX-wmp" eventType="touchUpInside" id="Mju-xK-zB1"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="qgz-BK-S50" firstAttribute="centerX" secondItem="z7f-dP-Vng" secondAttribute="centerX" id="5JV-3Z-GO1"/>
-                            <constraint firstItem="AKh-2R-scz" firstAttribute="top" secondItem="VVR-xn-6kz" secondAttribute="bottom" constant="192" id="Cz3-it-2uF"/>
-                            <constraint firstItem="VVR-xn-6kz" firstAttribute="centerX" secondItem="qgz-BK-S50" secondAttribute="centerX" id="Ytl-DZ-rW2"/>
-                            <constraint firstItem="qgz-BK-S50" firstAttribute="top" secondItem="0wr-Fm-hx3" secondAttribute="bottom" constant="115" id="zN3-WK-Y17"/>
+                            <constraint firstItem="44r-3e-dyG" firstAttribute="centerX" secondItem="VVR-xn-6kz" secondAttribute="centerX" id="8FX-ZH-gcN"/>
+                            <constraint firstItem="AKh-2R-scz" firstAttribute="top" secondItem="44r-3e-dyG" secondAttribute="bottom" constant="78" id="HXP-Xl-ANK"/>
+                            <constraint firstItem="VVR-xn-6kz" firstAttribute="centerX" secondItem="z7f-dP-Vng" secondAttribute="centerX" id="Lf1-7g-x4f"/>
+                            <constraint firstItem="44r-3e-dyG" firstAttribute="top" secondItem="VVR-xn-6kz" secondAttribute="bottom" constant="84" id="fYF-u3-En6"/>
+                            <constraint firstItem="qgz-BK-S50" firstAttribute="top" secondItem="0wr-Fm-hx3" secondAttribute="bottom" constant="115" id="gFA-9q-ddL"/>
+                            <constraint firstItem="qgz-BK-S50" firstAttribute="centerX" secondItem="VVR-xn-6kz" secondAttribute="centerX" id="zpp-72-pDE"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Resources " id="huO-g1-HNG">

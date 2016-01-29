@@ -42,13 +42,6 @@
                                     <segue destination="8jq-wk-qcF" kind="show" id="UBx-bp-3my"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q66-yO-yn8" userLabel="statusButton">
-                                <rect key="frame" x="36" y="300" width="50" height="50"/>
-                                <state key="normal" title="Button" image="Checked Checkbox 2-48.png"/>
-                                <connections>
-                                    <segue destination="Di1-0U-bJt" kind="show" id="ddK-Os-yZI"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Phz-Wy-id6" userLabel="driverButton">
                                 <rect key="frame" x="160" y="279" width="54" height="71"/>
                                 <state key="normal" title="Button" image="Filled-Car-100.png"/>
@@ -74,6 +67,13 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q66-yO-yn8" userLabel="statusButton">
+                                <rect key="frame" x="36" y="300" width="50" height="50"/>
+                                <state key="normal" title="Button" image="Checked Checkbox 2-48.png"/>
+                                <connections>
+                                    <segue destination="Di1-0U-bJt" kind="show" id="ddK-Os-yZI"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -84,7 +84,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OAv-jc-a1f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1393.5" y="1764.5"/>
+            <point key="canvasLocation" x="1397.5" y="1809.5"/>
         </scene>
         <!--Rider Questionaire-->
         <scene sceneID="Ya0-Ac-X9b">
@@ -331,7 +331,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Srr-N0-UzC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2389.5" y="1764.5"/>
+            <point key="canvasLocation" x="2193.5" y="1809.5"/>
         </scene>
     </scenes>
     <resources>

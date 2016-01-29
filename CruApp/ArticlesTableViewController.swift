@@ -68,7 +68,7 @@ class ArticlesTableViewController: UITableViewController {
         return 1
     }
 
-    /* Dynamically size the table according to the number of articles */.
+    /* Dynamically size the table according to the number of articles */
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return articles.count
     }

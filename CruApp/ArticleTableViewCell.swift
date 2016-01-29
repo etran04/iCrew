@@ -8,6 +8,8 @@
 
 import UIKit
 
+/* ArticleTableViewCell is a representation of a single cell in our table view controller.
+ * It contains video information that will populate and display an article in the cell */
 class ArticleTableViewCell: UITableViewCell {
 
     @IBOutlet weak var articleNameLabel: UILabel!

@@ -9,6 +9,7 @@
 import UIKit
 import SafariServices
 
+/* Inner class to hold metadata for a single article */
 class Article {
     private var name: String?
     private var url: String?
@@ -27,8 +28,10 @@ class Article {
     }
 }
 
+/* ArticlesTableVC is the screen that holds all articles for user to view */
 class ArticlesTableViewController: UITableViewController {
 
+    /* Holds all articles to be displayed */
     var articles = [Article]()
     
     override func viewDidLoad() {
@@ -40,6 +43,7 @@ class ArticlesTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
     }
     
+    /* Opens a url string in an embedded web browser */
     func showLink(url: String) {
         if let url = NSURL(string: url) {
             let vc = SFSafariViewController(URL: url, entersReaderIfAvailable: true)
@@ -47,6 +51,7 @@ class ArticlesTableViewController: UITableViewController {
         }
     }
 
+    /* Populates our articles from the Cru database */
     func loadArticles() {
         self.articles += [
             Article(name: "Discerning God's Will",
@@ -58,20 +63,24 @@ class ArticlesTableViewController: UITableViewController {
     
     // MARK: - Table view data source
 
+    /* Asks the data source to return the number of sections in the table view. */
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
 
+    /* Dynamically size the table according to the number of articles */.
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return articles.count
     }
     
+    /* Loads each cell in the table with a link */
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("ArticleTableViewCell", forIndexPath: indexPath) as! ArticleTableViewCell
         cell.setArticleInfo(articles[indexPath.row].getName())
         return cell
     }
     
+    /* Callback for when a link is clicked */
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         showLink(articles[indexPath.row].getURL())
     }

@@ -68,13 +68,11 @@ class DriverQuestionaireVC: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-    //Calls this function when the tap is recognized.
+    /* Calls this function when the tap is recognizedd
+     * Causes the view (or one of its embedded text fields) to resign the first responder status. */
     func dismissKeyboard() {
-        //Causes the view (or one of its embedded text fields) to resign the first responder status.
-        
         // sets depature time before dismissing
         handleDatePicker(datePickerView)
         view.endEditing(true)

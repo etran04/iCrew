@@ -9,6 +9,8 @@
 import UIKit
 import youtube_ios_player_helper
 
+/* VideoTableViewCell is a representation of a single cell in our table view controller. 
+ * It contains video information that will populate and display the video in the cell */ 
 class VideoTableViewCell: UITableViewCell {
 
     @IBOutlet var videoPlayer: YTPlayerView!

@@ -8,6 +8,7 @@
 
 import UIKit
 
+/* Video represents a holder for metadata of a single individual youtube video */
 class Video {
     private var id: String?
     private var title: String?
@@ -32,8 +33,10 @@ class Video {
     }
 }
 
+/* VideosTableVC is the screen that loads a list of videos and displays them in a table */
 class VideosTableViewController: UITableViewController {
     
+    /* Holds a list of videos to be loaded */
     var videos = [Video]()
     
     override func viewDidLoad() {
@@ -45,6 +48,7 @@ class VideosTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
     }
     
+    /* Populates the list of videos with videos from the Cru Database */
     func loadVideos() {
         self.videos += [
             Video(id: "9cmh72Z9ISI", title: "chinchilla massage", summary: "Kimchi just loves her scratches"),
@@ -56,14 +60,17 @@ class VideosTableViewController: UITableViewController {
     
     // MARK: - Table view data source
     
+    /* Asks the data source to return the number of sections in the table view. Default is 1. */
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
     
+    /* Dynamically size the number of rows to match the number of videos we have */
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return videos.count
     }
     
+    /* Loads each individual cell in the table with a video */
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("VideoTableCell", forIndexPath: indexPath) as! VideoTableViewCell
        
@@ -79,6 +86,7 @@ class VideosTableViewController: UITableViewController {
         return cell
     }
     
+    /* Callback for when a table cell is selected */
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
     }

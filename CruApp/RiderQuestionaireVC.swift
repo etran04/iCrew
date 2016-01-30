@@ -19,6 +19,8 @@ class RiderQuestionaireVC: UIViewController {
     var eventDownPicker: DownPicker!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        /* prepares fields to be filled for questionaire */
         initializeChoices()
     }
 

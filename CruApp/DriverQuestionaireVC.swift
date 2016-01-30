@@ -26,6 +26,8 @@ class DriverQuestionaireVC: UIViewController {
     var seatDownPicker: DownPicker!
     var datePickerView  : UIDatePicker!
     
+    var eventChoices = [String]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -48,6 +50,9 @@ class DriverQuestionaireVC: UIViewController {
     /* Helper method to populate choices for # of seats available */
     func initializeChoices() {
         
+        var dbClient: DBClient!
+        dbClient = DBClient()
+        
         /* set up radio buttons */
         driveTypes.options = [
             CheckmarkOption(title:"To & From Event \n(Round Trip)"),
@@ -56,7 +61,7 @@ class DriverQuestionaireVC: UIViewController {
         driveTypes.addTarget(self, action: "optionSelected:", forControlEvents: UIControlEvents.ValueChanged)
         
         /* TO DO: populate event choices */
-        let eventChoices = ["event1", "event2", "event3"]
+        dbClient.getData("event", dict: setEvents)
         self.eventDownPicker = DownPicker(textField: self.eventsChoice, withData: eventChoices)
         
         /* populate seat choices */
@@ -66,6 +71,12 @@ class DriverQuestionaireVC: UIViewController {
                 return String(number)
         })
         self.seatDownPicker = DownPicker(textField: self.numSeatsAvailChoice, withData: seatChoices)
+    }
+    
+    // Obtain information from the database to an Object
+    func setEvents(event: NSDictionary) {
+        let name = event["name"] as! String
+        self.eventChoices.append(name)
     }
     
     /* Callback for when a new radio button is clicked */

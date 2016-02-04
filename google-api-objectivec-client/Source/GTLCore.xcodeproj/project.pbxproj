@@ -930,6 +930,9 @@
 					F4368F711B8233BF00E17643 = {
 						CreatedOnToolsVersion = 6.3.2;
 					};
+					F4469D791C40229D00BCFAA1 = {
+						DevelopmentTeam = CWEESB29TK;
+					};
 				};
 			};
 			buildConfigurationList = 1DEB913E08733D840010E9CD /* Build configuration list for PBXProject "GTLCore" */;
@@ -1260,10 +1263,11 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MACH_O_TYPE = staticlib;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "-DDEBUG=1";
-				SDKROOT = macosx;
+				SDKROOT = macosx10.11;
 				WARNING_CFLAGS = (
 					"-Wall",
 					"-Werror",
@@ -1318,8 +1322,9 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MACH_O_TYPE = staticlib;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				SDKROOT = macosx;
+				SDKROOT = macosx10.11;
 				WARNING_CFLAGS = (
 					"-Wall",
 					"-Werror",
@@ -1470,6 +1475,7 @@
 		F4469DB21C40229D00BCFAA1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -1477,6 +1483,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Resources/GTLiOSFramework-Info.plist";
 				INSTALL_PATH = "@loader_path/../Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACH_O_TYPE = staticlib;
 				PRODUCT_BUNDLE_IDENTIFIER = com.google.GTL;
 				PRODUCT_NAME = GTL;
 				SDKROOT = iphoneos;
@@ -1488,6 +1495,7 @@
 		F4469DB31C40229D00BCFAA1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -1495,6 +1503,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Resources/GTLiOSFramework-Info.plist";
 				INSTALL_PATH = "@loader_path/../Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACH_O_TYPE = staticlib;
 				PRODUCT_BUNDLE_IDENTIFIER = com.google.GTL;
 				PRODUCT_NAME = GTL;
 				SDKROOT = iphoneos;

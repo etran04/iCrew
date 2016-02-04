@@ -31,16 +31,21 @@ class DriverQuestionaireVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        /* sets up the database to pull from */
+        var dbClient: DBClient!
+        dbClient = DBClient()
+        dbClient.getData("event", dict: setEvents)
+    }
+    
+    override func viewDidAppear(animated : Bool) {
+        super.viewDidAppear(animated)
+        
         /* prepares fields to be filled for questionaire */
         initializeChoices()
         
         /* looks for single or multiple taps */
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tap)
-    }
-    
-    override func viewDidAppear(animated : Bool) {
-        super.viewDidAppear(animated)
     }
     
     override func didReceiveMemoryWarning() {
@@ -50,9 +55,6 @@ class DriverQuestionaireVC: UIViewController {
     /* Helper method to populate choices for # of seats available */
     func initializeChoices() {
         
-        var dbClient: DBClient!
-        dbClient = DBClient()
-        
         /* set up radio buttons */
         driveTypes.options = [
             CheckmarkOption(title:"To & From Event \n(Round Trip)"),
@@ -60,8 +62,7 @@ class DriverQuestionaireVC: UIViewController {
             CheckmarkOption(title: "From Event \n(One-way)")]
         driveTypes.addTarget(self, action: "optionSelected:", forControlEvents: UIControlEvents.ValueChanged)
         
-        /* TO DO: populate event choices */
-        dbClient.getData("event", dict: setEvents)
+        /* populate event choices */
         self.eventDownPicker = DownPicker(textField: self.eventsChoice, withData: eventChoices)
         self.eventDownPicker.setPlaceholder("Choose an event...")
         
@@ -74,7 +75,7 @@ class DriverQuestionaireVC: UIViewController {
         self.seatDownPicker = DownPicker(textField: self.numSeatsAvailChoice, withData: seatChoices)
     }
     
-    // Obtain information from the database to an Object
+    // Obtain event information from the database to an Object
     func setEvents(event: NSDictionary) {
         let name = event["name"] as! String
         self.eventChoices.append(name)

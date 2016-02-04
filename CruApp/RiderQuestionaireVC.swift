@@ -17,11 +17,26 @@ class RiderQuestionaireVC: UIViewController {
     @IBOutlet weak var eventsChoice: UITextField!
     
     var eventDownPicker: DownPicker!
+    var eventChoices = [String]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        /* sets up the database to pull from */
+        var dbClient: DBClient!
+        dbClient = DBClient()
+        dbClient.getData("event", dict: setEvents)
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
         /* prepares fields to be filled for questionaire */
         initializeChoices()
+        
+        /* looks for single or multiple taps */
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        view.addGestureRecognizer(tap)
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,14 +53,19 @@ class RiderQuestionaireVC: UIViewController {
             CheckmarkOption(title: "From Event \n(One-way)")]
         driveTypes.addTarget(self, action: "optionSelected:", forControlEvents: UIControlEvents.ValueChanged)
         
-        /* TO DO: populate event choices */
-        let eventChoices = ["event1", "event2", "event3"]
+        /* populate event choices */
         self.eventDownPicker = DownPicker(textField: self.eventsChoice, withData: eventChoices)
     }
 
     /* Callback for when a new radio button is clicked */
     func optionSelected(sender: AnyObject) {
         print("RiderQ - Selected option: \(driveTypes.options[driveTypes.selectedIndex])")
+    }
+    
+    // Obtain event information from the database to an Object
+    func setEvents(event: NSDictionary) {
+        let name = event["name"] as! String
+        self.eventChoices.append(name)
     }
     
     /*

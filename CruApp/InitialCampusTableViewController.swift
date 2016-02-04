@@ -14,7 +14,7 @@ class InitialCampusTableViewController: UITableViewController {
 
     //var test: [String] = ["Cal Poly", "UCSB"] //
     var campusesCollection = [String]()
-    var isSelected: [Bool] = [false, false]
+    var isSelected: [Bool] = []
     var selected: [String] = []
     
     
@@ -58,6 +58,10 @@ class InitialCampusTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
+        //adding background image
+        tableView.backgroundView = UIImageView(image: UIImage(named: "Bishop-peak_gray.jpg"))
+        tableView.tableFooterView = UIView()
+        
         var dbClient: DBClient!
         dbClient = DBClient()
         dbClient.getData("campus", dict: setCampuses)
@@ -69,6 +73,7 @@ class InitialCampusTableViewController: UITableViewController {
         let name = campus["name"] as! String
         
         campusesCollection.append(name)
+        isSelected.append(false)
         self.tableView.reloadData()
     }
     
@@ -111,6 +116,8 @@ class InitialCampusTableViewController: UITableViewController {
         if (!selected.contains(campusesCollection[indexPath.row])) {
             
             cell.accessoryType = UITableViewCellAccessoryType.Checkmark
+            cell.contentView.backgroundColor = UIColor(red: CGFloat(98/255.0), green: CGFloat(96/255.0), blue: CGFloat(98/255.0), alpha: CGFloat(0.25) )
+            cell.contentView.superview!.backgroundColor = UIColor(red: CGFloat(98/255.0), green: CGFloat(96/255.0), blue: CGFloat(98/255.0), alpha: CGFloat(0.80) )
             selected.append(campusesCollection[indexPath.row])
             dump(selected)
             
@@ -118,6 +125,8 @@ class InitialCampusTableViewController: UITableViewController {
         else {
             isSelected[indexPath.row] = false
             cell.accessoryType = UITableViewCellAccessoryType.None
+            cell.contentView.backgroundColor = UIColor.clearColor()
+            cell.contentView.superview!.backgroundColor = UIColor.clearColor()
             selected = selected.filter() {$0 != campusesCollection[indexPath.row]}
             
             dump(selected)

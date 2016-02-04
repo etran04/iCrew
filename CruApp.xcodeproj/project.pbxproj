@@ -30,6 +30,7 @@
 		271C78161C5040EA00F42EA0 /* Initial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 271C78151C5040EA00F42EA0 /* Initial.storyboard */; };
 		271C78211C50434000F42EA0 /* InitialCampusTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271C78201C50434000F42EA0 /* InitialCampusTableViewController.swift */; };
 		271C78231C5044B100F42EA0 /* InitialCampusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271C78221C5044B100F42EA0 /* InitialCampusTableViewCell.swift */; };
+		271F1BF51C63F7D5003FFD85 /* Bishop-peak_gray.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 271F1BF41C63F7D5003FFD85 /* Bishop-peak_gray.jpg */; };
 		277E67561BEB6362001C29DD /* CruAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277E67551BEB6362001C29DD /* CruAppTests.swift */; };
 		279326FC1C509C2100BAC73D /* PopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 279326EE1C509C2100BAC73D /* PopUpViewController.xib */; };
 		279326FD1C509C2100BAC73D /* PopUpViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 279326EF1C509C2100BAC73D /* PopUpViewController_iPad.xib */; };
@@ -193,6 +194,7 @@
 		271C78151C5040EA00F42EA0 /* Initial.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Initial.storyboard; path = Base.lproj/Initial.storyboard; sourceTree = "<group>"; };
 		271C78201C50434000F42EA0 /* InitialCampusTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialCampusTableViewController.swift; sourceTree = "<group>"; };
 		271C78221C5044B100F42EA0 /* InitialCampusTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialCampusTableViewCell.swift; sourceTree = "<group>"; };
+		271F1BF41C63F7D5003FFD85 /* Bishop-peak_gray.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "Bishop-peak_gray.jpg"; path = "images/Bishop-peak_gray.jpg"; sourceTree = "<group>"; };
 		277E67531BEB6362001C29DD /* CruAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CruAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		277E67551BEB6362001C29DD /* CruAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CruAppTests.swift; sourceTree = "<group>"; };
 		277E67571BEB6362001C29DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -507,6 +509,7 @@
 				839F64481C0D643A00CAEC9E /* menu.png */,
 				839F643B1C0D4E4300CAEC9E /* Cru-Logo.png */,
 				A45572F81C49CCE90097DE0F /* Google Plus-25.png */,
+				271F1BF41C63F7D5003FFD85 /* Bishop-peak_gray.jpg */,
 				839F643C1C0D4E4300CAEC9E /* Home-25.png */,
 				839F643D1C0D4E4300CAEC9E /* Literature-25.png */,
 				839F643E1C0D4E4300CAEC9E /* Planner-25.png */,
@@ -715,6 +718,7 @@
 				839F64431C0D4E4300CAEC9E /* Literature-25.png in Resources */,
 				279326FD1C509C2100BAC73D /* PopUpViewController_iPad.xib in Resources */,
 				839F64421C0D4E4300CAEC9E /* Home-25.png in Resources */,
+				271F1BF51C63F7D5003FFD85 /* Bishop-peak_gray.jpg in Resources */,
 				839F64601C0D70AA00CAEC9E /* Box-25.png in Resources */,
 				0703C7321C4DFA8500C7D8ED /* blank_calendar.png in Resources */,
 				A447DBBF1C5ACBBB000C6DEB /* Car-25.png in Resources */,

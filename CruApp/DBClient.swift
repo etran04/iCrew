@@ -38,7 +38,7 @@ class DBClient {
     }
     
     func postData(action: String, body: String, dict: (NSDictionary) -> ()) {
-        let url = "http://pcp070614pcs.wireless.calpoly.edu:3000/api/" + action + "/find"
+        let url = "http://pcp070595pcs.wireless.calpoly.edu:3000/api/" + action + "/find"
         //let url = "https://gcm-http.googleapis.com/gcm/send"
         //let bdy = "order={startDate:1}"
         //let params = ["notification":["title":"Portugal vs. Denmark", "message":"great match!"]]

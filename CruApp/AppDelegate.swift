@@ -71,6 +71,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GC
                 } else {
                     self.connectedToGCM = true
                     print("Connected to GCM")
+                    self.subscribeToTopic()
                 }
             })
         }
@@ -115,7 +116,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GC
     func subscribeToTopic() {
         // If the app has a registration token and is connected to GCM, proceed to subscribe to the
         // topic
-        if(registrationToken != nil && connectedToGCM) {
+        if(self.registrationToken != nil && self.connectedToGCM) {
             GCMPubSub.sharedInstance().subscribeWithToken(self.registrationToken, topic: subscriptionTopic,
                 options: nil, handler: {(NSError error) -> Void in
                     if (error != nil) {

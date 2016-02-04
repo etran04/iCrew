@@ -15,7 +15,7 @@ class InitialMinistryTableViewController: UITableViewController {
     
     //var test: [String] = ["EPIC", "Cru SLO"] //
     var ministriesCollection = [String]()
-    var isSelected: [Bool] = [false, false]
+    var isSelected: [Bool] = [Bool]()
     var selected: [String] = [String]()
     
     @IBAction func clickInfo(sender: AnyObject) {
@@ -59,12 +59,14 @@ class InitialMinistryTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
+        tableView.backgroundView = UIImageView(image: UIImage(named: "Bishop-peak_gray.jpg"))
+        tableView.tableFooterView = UIView()
+        
         var dbClient: DBClient!
         dbClient = DBClient()
         //”event”, “ministry”, “campus”, etc
         dbClient.getData("ministry", dict: setMinistries)
         
-        selected = [String]()
     }
     
     func setMinistries(ministry:NSDictionary) {
@@ -73,6 +75,7 @@ class InitialMinistryTableViewController: UITableViewController {
         let name = ministry["name"] as! String
     
         ministriesCollection.append(name)
+        isSelected.append(false);
         self.tableView.reloadData()
     }
     
@@ -109,10 +112,13 @@ class InitialMinistryTableViewController: UITableViewController {
         print(indexPath.row)
         
         let cell:UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
+
         
         if (!selected.contains(ministriesCollection[indexPath.row])) {
             
             cell.accessoryType = UITableViewCellAccessoryType.Checkmark
+            cell.contentView.backgroundColor = UIColor(red: CGFloat(98/255.0), green: CGFloat(96/255.0), blue: CGFloat(98/255.0), alpha: CGFloat(0.25) )
+            cell.contentView.superview!.backgroundColor = UIColor(red: CGFloat(98/255.0), green: CGFloat(96/255.0), blue: CGFloat(98/255.0), alpha: CGFloat(0.80) )
             selected.append(ministriesCollection[indexPath.row])
             dump(selected)
             
@@ -120,6 +126,8 @@ class InitialMinistryTableViewController: UITableViewController {
         else {
             isSelected[indexPath.row] = false
             cell.accessoryType = UITableViewCellAccessoryType.None
+            cell.contentView.backgroundColor = UIColor.clearColor()
+            cell.contentView.superview!.backgroundColor = UIColor.clearColor()
             selected = selected.filter() {$0 != ministriesCollection[indexPath.row]}
             
             dump(selected)

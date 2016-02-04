@@ -28,6 +28,8 @@ class EventDetailsViewController: UIViewController {
     private let scopes = [kGTLAuthScopeCalendar, "https://www.googleapis.com/auth/calendar"]
     private let service = GTLServiceCalendar()
     
+    @IBOutlet var heightScrollConstraint: NSLayoutConstraint!
+    
     var event: Event?
     
     override func viewDidLoad() {
@@ -46,6 +48,7 @@ class EventDetailsViewController: UIViewController {
             //load events
             eventTitle.text = event.name
             eventDescr.text = event.description
+            eventDescr.sizeToFit()
             eventLocation.text = (event.location?.getLocation())!
             eventLocation.sizeToFit()
 
@@ -118,6 +121,12 @@ class EventDetailsViewController: UIViewController {
                 eventImage.addSubview(imageView)
             }
         }
+        
+        
+        //for scrolling
+        self.heightScrollConstraint.constant = self.eventDescr.frame.height + eventDescr.frame.origin.y
+        self.view.layoutIfNeeded()
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -205,6 +214,7 @@ class EventDetailsViewController: UIViewController {
                 )
             }
         }
+
         
     }
     //Insert a new event to Google Calendar

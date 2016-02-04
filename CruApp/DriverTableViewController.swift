@@ -27,8 +27,15 @@ class DriverTableViewController: UITableViewController {
     }
 
     func setDrivers(driver:NSDictionary) {
+        var numOfSeats : Int
         let name = driver["driverName"] as! String
-        let numOfSeats = driver["seats"] as! Int
+        if(driver["seats"] == nil) {
+            numOfSeats = 0
+        }
+        else {
+        
+            numOfSeats = driver["seats"] as! Int
+        }
         let driverObj = Driver(name: name, numOfSeats: numOfSeats)
         driversCollection.append(driverObj)
         self.tableView.reloadData()

@@ -15,9 +15,9 @@ class DBClient {
     }
     
     func requestData(action: String, completionHandler : (NSData?, NSURLResponse?, NSError?) -> Void) {
-        //let url = "http://pcp070614pcs.wireless.calpoly.edu:3000/api/" + action + "/list"
+        let url = "http://pcp070595pcs.wireless.calpoly.edu:3000/api/" + action + "/list"
                 
-        let url = "http://localhost:3000/api/" + action + "/list"
+        //let url = "http://localhost:3000/api/" + action + "/list"
         //for sorting
         //let url = http://localhost:3000/api/minstry/find?order={name: 1}
         sendGetRequest(url, completionHandler: completionHandler)
@@ -38,7 +38,7 @@ class DBClient {
     }
     
     func postData(action: String, body: String, dict: (NSDictionary) -> ()) {
-        let url = "http://pcp070614pcs.wireless.calpoly.edu:3000/api/" + action + "/find"
+        let url = "http://pcp070595pcs.wireless.calpoly.edu:3000/api/" + action + "/find"
         //let url = "https://gcm-http.googleapis.com/gcm/send"
         //let bdy = "order={startDate:1}"
         //let params = ["notification":["title":"Portugal vs. Denmark", "message":"great match!"]]
@@ -52,21 +52,22 @@ class DBClient {
     
     }
     
+    //add data for Driver
     func addData(action: String, direction : String, seats : Int, driverNumber : Int, event : String, driverName : String) {
         
         let params = ["direction": direction, "seats": seats, "driverNumber": driverNumber, "event": "563b11135e926d03001ac15c", "driverName": driverName, "gcm_id" : 1234567]
         
-        let url = "http://pcp070614pcs.wireless.calpoly.edu:3000/api/" + action + "/create"
+        let url = "http://pcp070595pcs.wireless.calpoly.edu:3000/api/" + action + "/create"
         
         do {
             let body = try NSJSONSerialization.dataWithJSONObject(params, options: NSJSONWritingOptions.PrettyPrinted)
-            sendPostRequest(url, body: body, completionHandler: blankCompletionHandler)
+            sendPostRequest(url, body: body, completionHandler: emptyHandler)
         } catch {
             print("Error sending data to database")
         }
     }
     
-    func blankCompletionHandler(data : NSData?, response : NSURLResponse?, error : NSError?) {
+    func emptyHandler(data : NSData?, response : NSURLResponse?, error : NSError?) {
         
     }
     

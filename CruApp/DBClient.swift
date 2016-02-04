@@ -15,25 +15,77 @@ class DBClient {
     }
     
     func requestData(action: String, completionHandler : (NSData?, NSURLResponse?, NSError?) -> Void) {
-        let url = "http://pcp070614pcs.wireless.calpoly.edu:3000/api/" + action + "/list"
+        //let url = "http://pcp070614pcs.wireless.calpoly.edu:3000/api/" + action + "/list"
                 
-        //let url = "http://localhost:3000/api/" + action + "/list"
+        let url = "http://localhost:3000/api/" + action + "/list"
         //for sorting
         //let url = http://localhost:3000/api/minstry/find?order={name: 1}
-        sendGetRequest(url, method: "GET", completionHandler: completionHandler)
+        sendGetRequest(url, completionHandler: completionHandler)
     }
     
     //request --> sendGetRequest
-    func sendGetRequest(url:String, method:String, completionHandler: (NSData?, NSURLResponse?, NSError?) -> Void) -> NSURLSessionDataTask {
+    func sendGetRequest(url:String, completionHandler: (NSData?, NSURLResponse?, NSError?) -> Void) -> NSURLSessionDataTask {
         
         let reqURL = NSURL(string: url)
         let request = NSMutableURLRequest(URL: reqURL!)
-        request.HTTPMethod = method
+        request.HTTPMethod = "GET"
         
         let task = NSURLSession.sharedSession().dataTaskWithRequest(request, completionHandler: completionHandler)
         
         task.resume()
         
+        return task
+    }
+    
+    func postData(action: String, body: String, dict: (NSDictionary) -> ()) {
+        let url = "http://pcp070614pcs.wireless.calpoly.edu:3000/api/" + action + "/find"
+        //let url = "https://gcm-http.googleapis.com/gcm/send"
+        //let bdy = "order={startDate:1}"
+        //let params = ["notification":["title":"Portugal vs. Denmark", "message":"great match!"]]
+        let params = ["order":"{startDate:1}"]
+        do {
+            let bdy = try NSJSONSerialization.dataWithJSONObject(params, options: NSJSONWritingOptions.PrettyPrinted)
+                sendPostRequest(url, body : bdy, completionHandler : obtainData(dict))
+        } catch {
+            print("ERRRROR")
+        }
+    
+    }
+    
+    func addData(action: String, direction : String, seats : Int, driverNumber : Int, event : String, driverName : String) {
+        
+        let params = ["direction": direction, "seats": seats, "driverNumber": driverNumber, "event": "563b11135e926d03001ac15c", "driverName": driverName, "gcm_id" : 1234567]
+        
+        let url = "http://pcp070614pcs.wireless.calpoly.edu:3000/api/" + action + "/create"
+        
+        do {
+            let body = try NSJSONSerialization.dataWithJSONObject(params, options: NSJSONWritingOptions.PrettyPrinted)
+            sendPostRequest(url, body: body, completionHandler: blankCompletionHandler)
+        } catch {
+            print("Error sending data to database")
+        }
+    }
+    
+    func blankCompletionHandler(data : NSData?, response : NSURLResponse?, error : NSError?) {
+        
+    }
+    
+    
+    
+    //HTTP POST request
+    func sendPostRequest(url : String, body : NSData, completionHandler : (NSData?, NSURLResponse?, NSError?) -> Void) -> NSURLSessionDataTask {
+        let reqURL = NSURL(string: url)
+        let request = NSMutableURLRequest(URL: reqURL!)
+        request.HTTPMethod = "POST"
+        //request.setValue("application/json", forHTTPHeaderField:"Conent-Type")
+        //request.setValue("AIzaSyCq4DmBRjJK4pE3ZO7or_6lrKLnHx4Ip7E", forHTTPHeaderField: "Authorization")
+
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+
+        request.HTTPBody = body //.dataUsingEncoding(NSUTF8StringEncoding)
+
+        let task = NSURLSession.sharedSession().dataTaskWithRequest(request, completionHandler : completionHandler)
+        task.resume()
         return task
     }
     
@@ -59,60 +111,4 @@ class DBClient {
             
         }
     }
-    
-//    
-//    func postEvent(eventName : String) -> () {
-//        let postURL: String = "http://localhost:3000/api/event/create"
-//        //let postURL: String = "http://localhost:3000/api/event/create?Content-Type=application/json"
-//        let reqURL = NSURL(string: postURL)
-//        let request = NSMutableURLRequest(URL: reqURL!)
-//        request.HTTPMethod = "POST"
-//        
-//        let params: [AnyObject] = [["name": eventName, "location": ["postcode": 93405,"state": "California", "suburb": "San Luis Obispo", "street1": "233 Patricia Dr", "country": "UnitedStates"]]]
-//        
-//        do {
-//            let jsonPost = try NSJSONSerialization.dataWithJSONObject(params, options: NSJSONWritingOptions.PrettyPrinted)
-//            request.HTTPBody = jsonPost
-//            
-//            
-//            let config = NSURLSessionConfiguration.defaultSessionConfiguration()
-//            let session = NSURLSession(configuration: config)
-//            
-//            let task = session.dataTaskWithRequest(request, completionHandler: {
-//                (data, response, error) in
-//                guard let responseData = data else {
-//                    print("Error: did not receive data")
-//                    return
-//                }
-//                guard error == nil else {
-//                    print("error calling GET on /event/create")
-//                    print(error)
-//                    return
-//                }
-//                
-//                // parse the result as JSON, since that's what the API provides
-//                let post: NSDictionary
-//                do {
-//                    post = try NSJSONSerialization.JSONObjectWithData(responseData,
-//                        options: []) as! NSDictionary
-//                } catch  {
-//                    print("error parsing response from POST on /event")
-//                    return
-//                }
-//                // now we have the post, let's just print it to prove we can access it
-//                //                print("The event is: " + (post["name"] as? String))
-//                
-//                // the post object is a dictionary
-//                // so we just access the title using the "title" key
-//                // so check for a title and print it if we have one
-//                if let eventName = post["name"] as? String
-//                {
-//                    print("The Event Name is: \(eventName)")
-//                }
-//            })
-//            task.resume()
-//        } catch {
-//            print("Error: cannot create JSON from event")
-//        }
-//    }
 }

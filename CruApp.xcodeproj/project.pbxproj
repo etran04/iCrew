@@ -70,6 +70,9 @@
 		A45572FB1C4A176F0097DE0F /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45572FA1C4A176F0097DE0F /* EventDetailsViewController.swift */; };
 		A45573001C4CDAF60097DE0F /* MissionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45572FF1C4CDAF60097DE0F /* MissionViewCell.swift */; };
 		A45573021C4E219A0097DE0F /* MissionDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45573011C4E219A0097DE0F /* MissionDetailsViewController.swift */; };
+		A487BBEF1C6353A5006F9B3C /* DriverViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A487BBEE1C6353A5006F9B3C /* DriverViewCell.swift */; };
+		A487BBF91C63569A006F9B3C /* DriverTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A487BBF81C63569A006F9B3C /* DriverTableViewController.swift */; };
+		A487BBFB1C635E78006F9B3C /* Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = A487BBFA1C635E78006F9B3C /* Driver.swift */; };
 		CBF52B4D6C6CD44BBF744548 /* Pods_CruApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD14769052309A631372632E /* Pods_CruApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -236,6 +239,9 @@
 		A45572FA1C4A176F0097DE0F /* EventDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailsViewController.swift; sourceTree = "<group>"; };
 		A45572FF1C4CDAF60097DE0F /* MissionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MissionViewCell.swift; sourceTree = "<group>"; };
 		A45573011C4E219A0097DE0F /* MissionDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MissionDetailsViewController.swift; sourceTree = "<group>"; };
+		A487BBEE1C6353A5006F9B3C /* DriverViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriverViewCell.swift; sourceTree = "<group>"; };
+		A487BBF81C63569A006F9B3C /* DriverTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriverTableViewController.swift; sourceTree = "<group>"; };
+		A487BBFA1C635E78006F9B3C /* Driver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Driver.swift; sourceTree = "<group>"; };
 		DD14769052309A631372632E /* Pods_CruApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CruApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -310,6 +316,9 @@
 			children = (
 				0727F9A41C5AD13000066948 /* DriverQuestionaireVC.swift */,
 				07340BB11C5B3606002C6015 /* RiderQuestionaireVC.swift */,
+				A487BBEE1C6353A5006F9B3C /* DriverViewCell.swift */,
+				A487BBF81C63569A006F9B3C /* DriverTableViewController.swift */,
+				A487BBFA1C635E78006F9B3C /* Driver.swift */,
 			);
 			name = RideShare;
 			sourceTree = "<group>";
@@ -770,13 +779,16 @@
 				279327001C509C2100BAC73D /* PopUpViewControllerSwift.swift in Sources */,
 				A40DD9AB1C0ED54F00BCFEC5 /* EventViewCell.swift in Sources */,
 				072519A81BE9694000F38F81 /* AppDelegate.swift in Sources */,
+				A487BBFB1C635E78006F9B3C /* Driver.swift in Sources */,
 				838564F51C0D9EDF00EB1728 /* SWRevealViewController.m in Sources */,
 				279327051C50A0EC00BAC73D /* InitialMinistryTableViewController.swift in Sources */,
 				271C78211C50434000F42EA0 /* InitialCampusTableViewController.swift in Sources */,
+				A487BBEF1C6353A5006F9B3C /* DriverViewCell.swift in Sources */,
 				83B1CB101C4856BC00145B6D /* CoreDataModel.xcdatamodeld in Sources */,
 				1E37E7261C0E362D0054607A /* Event.swift in Sources */,
 				1E37E72A1C0E362D0054607A /* VideosTableViewController.swift in Sources */,
 				83B1CB291C48880A00145B6D /* UserProfile.swift in Sources */,
+				A487BBF91C63569A006F9B3C /* DriverTableViewController.swift in Sources */,
 				07C196331C0E6AD400375B8D /* ArticlesTableViewController.swift in Sources */,
 				271C78231C5044B100F42EA0 /* InitialCampusTableViewCell.swift in Sources */,
 				A4110B521C0FA44700F47AB4 /* Location.swift in Sources */,

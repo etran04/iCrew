@@ -17,6 +17,9 @@ class DriverQuestionaireVC: UIViewController {
     let IDEAL_TIME_INTERVAL = 15
     let TIME_FORMAT = "hh:mm a"
     
+    @IBOutlet weak var pickupLocation: UITextField!
+    @IBOutlet weak var driverPhoneNumber: UITextField!
+    @IBOutlet weak var driverFullName: UITextField!
     @IBOutlet weak var eventsChoice: UITextField!
     @IBOutlet weak var numSeatsAvailChoice: UITextField!
     @IBOutlet weak var depatureTimeChoice: UITextField!
@@ -25,14 +28,14 @@ class DriverQuestionaireVC: UIViewController {
     var eventDownPicker: DownPicker!
     var seatDownPicker: DownPicker!
     var datePickerView  : UIDatePicker!
-    
+    var dbClient: DBClient!
+
     var eventChoices = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         /* sets up the database to pull from */
-        var dbClient: DBClient!
         dbClient = DBClient()
         dbClient.getData("event", dict: setEvents)
         
@@ -118,6 +121,23 @@ class DriverQuestionaireVC: UIViewController {
     @IBAction func submitPressed(sender: UIButton) {
         
         /* TO DO: Validate driver information, make sure everything is good to go */
+        
+        //grab questionaire data to add to data
+        
+        var rideDirection : String
+        
+        if(driveTypes.options[driveTypes.selectedIndex].title == "To & From Event \n(Round Trip)") {
+            rideDirection = "both"
+        }
+        else if (driveTypes.options[driveTypes.selectedIndex].title == "To Event \n(One-way)") {
+            rideDirection = "to"
+        } else {
+            rideDirection = "from"
+        }
+        
+        //let params = ["direction": rideDirection, "seats": Int(numSeatsAvailChoice.text!)!, "driverNumber": Int(driverPhoneNumber.text!)!, "event": eventsChoice.text!, "driverName": driverFullName.text!]
+        
+        dbClient.addData("ride", direction : rideDirection, seats : Int(numSeatsAvailChoice.text!)!, driverNumber : Int(driverPhoneNumber.text!)!, event : eventsChoice.text!, driverName : driverFullName.text!)
         
         /* Show a visual alert displaying successful signup */
         let successAlert = UIAlertController(title: "Success!", message:

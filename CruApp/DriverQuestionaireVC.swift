@@ -35,14 +35,14 @@ class DriverQuestionaireVC: UIViewController {
         var dbClient: DBClient!
         dbClient = DBClient()
         dbClient.getData("event", dict: setEvents)
+        
+        /* prepares fields to be filled for questionaire */
+        initializeChoices()
     }
     
     override func viewDidAppear(animated : Bool) {
         super.viewDidAppear(animated)
-        
-        /* prepares fields to be filled for questionaire */
-        initializeChoices()
-        
+
         /* looks for single or multiple taps */
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tap)
@@ -61,11 +61,7 @@ class DriverQuestionaireVC: UIViewController {
             CheckmarkOption(title: "To Event \n(One-way)"),
             CheckmarkOption(title: "From Event \n(One-way)")]
         driveTypes.addTarget(self, action: "optionSelected:", forControlEvents: UIControlEvents.ValueChanged)
-        
-        /* populate event choices */
-        self.eventDownPicker = DownPicker(textField: self.eventsChoice, withData: eventChoices)
-        self.eventDownPicker.setPlaceholder("Choose an event...")
-        
+
         /* populate seat choices */
         let seatChoices = ([Int](1...10)).map(
             {
@@ -79,6 +75,10 @@ class DriverQuestionaireVC: UIViewController {
     func setEvents(event: NSDictionary) {
         let name = event["name"] as! String
         self.eventChoices.append(name)
+        
+        /* populate event choices */
+        self.eventDownPicker = DownPicker(textField: self.eventsChoice, withData: eventChoices)
+        self.eventDownPicker.setPlaceholder("Choose an event...")
     }
     
     /* Callback for when a new radio button is clicked */

@@ -10,6 +10,7 @@ pod 'ReachabilitySwift', git: 'https://github.com/ashleymills/Reachability.swift
 pod "NMPopUpViewSwift"
 pod "DownPicker"
 pod 'CheckmarkSegmentedControl'
+pod 'Google/CloudMessaging'
 
 end
 

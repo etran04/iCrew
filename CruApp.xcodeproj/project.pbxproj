@@ -48,6 +48,7 @@
 		839F64581C0D6C1E00CAEC9E /* SummerMissions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 839F64561C0D6C1E00CAEC9E /* SummerMissions.storyboard */; };
 		839F645B1C0D6C4C00CAEC9E /* Resources.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 839F64591C0D6C4C00CAEC9E /* Resources.storyboard */; };
 		839F64601C0D70AA00CAEC9E /* Box-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 839F645F1C0D70AA00CAEC9E /* Box-25.png */; };
+		83A98E821C63129300338D0A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 83A98E811C63129300338D0A /* GoogleService-Info.plist */; };
 		83B1CB101C4856BC00145B6D /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 83B1CB0E1C4856BC00145B6D /* CoreDataModel.xcdatamodeld */; };
 		83B1CB251C4886F700145B6D /* Ministry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B1CB211C4886F700145B6D /* Ministry.swift */; };
 		83B1CB271C4886F700145B6D /* Campus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B1CB231C4886F700145B6D /* Campus.swift */; };
@@ -212,6 +213,7 @@
 		839F64571C0D6C1E00CAEC9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SummerMissions.storyboard; sourceTree = "<group>"; };
 		839F645A1C0D6C4C00CAEC9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Resources.storyboard; sourceTree = "<group>"; };
 		839F645F1C0D70AA00CAEC9E /* Box-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Box-25.png"; path = "images/Box-25.png"; sourceTree = "<group>"; };
+		83A98E811C63129300338D0A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		83B1CB0F1C4856BC00145B6D /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
 		83B1CB211C4886F700145B6D /* Ministry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ministry.swift; sourceTree = "<group>"; };
 		83B1CB231C4886F700145B6D /* Campus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Campus.swift; sourceTree = "<group>"; };
@@ -290,9 +292,11 @@
 		072519A61BE9694000F38F81 /* CruApp */ = {
 			isa = PBXGroup;
 			children = (
+				838564F21C0D9EDF00EB1728 /* CruApp-Bridging-Header.h */,
 				279326FB1C509C2100BAC73D /* NMPopUpViewSwift */,
 				A43482D11C0D290E00B62D6C /* Images */,
 				072519B31BE9694000F38F81 /* Info.plist */,
+				83A98E811C63129300338D0A /* GoogleService-Info.plist */,
 				072519AE1BE9694000F38F81 /* Assets.xcassets */,
 				072519A71BE9694000F38F81 /* AppDelegate.swift */,
 				07EE5F7D1BFE6BA8009A2B44 /* VCs */,
@@ -427,7 +431,6 @@
 			children = (
 				838564F31C0D9EDF00EB1728 /* SWRevealViewController.h */,
 				838564F41C0D9EDF00EB1728 /* SWRevealViewController.m */,
-				838564F21C0D9EDF00EB1728 /* CruApp-Bridging-Header.h */,
 			);
 			name = SWRevealViewController;
 			sourceTree = "<group>";
@@ -565,6 +568,9 @@
 						CreatedOnToolsVersion = 7.1;
 						DevelopmentTeam = CWEESB29TK;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 							com.apple.Push = {
 								enabled = 1;
 							};
@@ -683,6 +689,7 @@
 				A447DBBF1C5ACBBB000C6DEB /* Car-25.png in Resources */,
 				072519AF1BE9694000F38F81 /* Assets.xcassets in Resources */,
 				279326FF1C509C2100BAC73D /* PopUpViewController_iPhone6Plus.xib in Resources */,
+				83A98E821C63129300338D0A /* GoogleService-Info.plist in Resources */,
 				279327011C509C2100BAC73D /* Info.plist in Resources */,
 				A45572F91C49CCE90097DE0F /* Google Plus-25.png in Resources */,
 				279326FC1C509C2100BAC73D /* PopUpViewController.xib in Resources */,
@@ -965,6 +972,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				ENABLE_BITCODE = NO;
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = CruApp/Info.plist;
@@ -987,6 +995,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				ENABLE_BITCODE = NO;
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = CruApp/Info.plist;

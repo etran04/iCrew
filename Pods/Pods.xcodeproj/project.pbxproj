@@ -7,51 +7,51 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		06B4DE750A94B3AF44F9F46E9D94D5BC /* NMPopUpViewSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E949AFC634456F4B9273F80B45F765D /* NMPopUpViewSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		06B52CFC1C67C1D86C2ACD80E3D6700B /* DownPicker-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4ADA80C0426F6B76688244FD4FE44F8D /* DownPicker-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		06B4DE750A94B3AF44F9F46E9D94D5BC /* NMPopUpViewSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 535E53201ADB562232C3076BF8E6F7D4 /* NMPopUpViewSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		06B52CFC1C67C1D86C2ACD80E3D6700B /* DownPicker-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A6F6995B4DF38DC0FAF969DAFFCEE3E /* DownPicker-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		09B2537B908476047053D84E886915FF /* Assets.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0517DA29953FDF53EFCC10AD17B3BA10 /* Assets.bundle */; };
-		0C4DFD6A101CD4F52FDF6EB095E6B419 /* PopUpViewController.xib in Sources */ = {isa = PBXBuildFile; fileRef = 4D89DF3A39D215A19C5A2FD67E487F4F /* PopUpViewController.xib */; };
-		0E08FB52DEFEDC7DB2AE017AE0DD1DE1 /* PopUpViewController_iPhone6.xib in Sources */ = {isa = PBXBuildFile; fileRef = 1AE7D988E553E73D598F39093FD9A5AD /* PopUpViewController_iPhone6.xib */; };
-		10A0546216B2E2DC95E271F115197B06 /* YTPlayerView.h in Headers */ = {isa = PBXBuildFile; fileRef = E52BDA3DC3890E0B83530249A4057910 /* YTPlayerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2366ACE16590D1A8E50A2F1A3F5C4757 /* PopUpViewController_iPhone6Plus.xib in Sources */ = {isa = PBXBuildFile; fileRef = 0BFD75CC7BF662A56C34C3B4A1A8FEB9 /* PopUpViewController_iPhone6Plus.xib */; };
-		24902F84B18DD5C8D4A5D0D062D5E214 /* PopUpViewController_iPhone6Plus.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BFD75CC7BF662A56C34C3B4A1A8FEB9 /* PopUpViewController_iPhone6Plus.xib */; };
+		0C4DFD6A101CD4F52FDF6EB095E6B419 /* PopUpViewController.xib in Sources */ = {isa = PBXBuildFile; fileRef = B9722E2F1E93B22BE9C36D00DEDCAF68 /* PopUpViewController.xib */; };
+		0E08FB52DEFEDC7DB2AE017AE0DD1DE1 /* PopUpViewController_iPhone6.xib in Sources */ = {isa = PBXBuildFile; fileRef = 96544536ABFFC4558AB5E143196575BE /* PopUpViewController_iPhone6.xib */; };
+		10A0546216B2E2DC95E271F115197B06 /* YTPlayerView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A24F61B9F506CC8B75B2794DECB417E /* YTPlayerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2366ACE16590D1A8E50A2F1A3F5C4757 /* PopUpViewController_iPhone6Plus.xib in Sources */ = {isa = PBXBuildFile; fileRef = D4C6FEC36F28B8F6D34E3B9B30EA0440 /* PopUpViewController_iPhone6Plus.xib */; };
+		24902F84B18DD5C8D4A5D0D062D5E214 /* PopUpViewController_iPhone6Plus.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4C6FEC36F28B8F6D34E3B9B30EA0440 /* PopUpViewController_iPhone6Plus.xib */; };
 		25A0462333B52426B0EEB0E4561EE7F5 /* CheckmarkSegmentedControl.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3659C48B0D55D38608B9A9E8417C4246 /* CheckmarkSegmentedControl.bundle */; };
-		2E612E76A2CEAAB6E22EE91A06EE4547 /* DownPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F9B2C5481593EE69E845A7771FA291A /* DownPicker.m */; };
+		2E612E76A2CEAAB6E22EE91A06EE4547 /* DownPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AC47220ACC5AFE47E25F04F33AFC425 /* DownPicker.m */; };
 		2FFE9D3A1ECF21F00B2925473C54B711 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FACA9CC9B826DA85CD1E3AD17763766 /* Foundation.framework */; };
-		3201DCF54E36ABA480647746D79A5761 /* DownPicker-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FB6B1AD8BE946313752D6BFBF1B462FB /* DownPicker-dummy.m */; };
+		3201DCF54E36ABA480647746D79A5761 /* DownPicker-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E73E985880F7B17FB6A0DF6F504F6D6 /* DownPicker-dummy.m */; };
 		394776F33B57AE9559B9A72DF69295C0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FACA9CC9B826DA85CD1E3AD17763766 /* Foundation.framework */; };
-		3A149B6E38122DD194C18C4784FECD0D /* ReachabilitySwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BED0402E2F8E25E21C6326060139F1E8 /* ReachabilitySwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3A149B6E38122DD194C18C4784FECD0D /* ReachabilitySwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 590B78B60D28040E0DEEE3AC04A3E84A /* ReachabilitySwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		41C078D7054F1141876071C9AAF18BBB /* NMPopUpViewSwift.bundle in Resources */ = {isa = PBXBuildFile; fileRef = EF6E634C7B8C0BF1A7C9CEE33C68C6CB /* NMPopUpViewSwift.bundle */; };
 		53B9782D2F40D14D76156DBE02D9E194 /* DownPicker.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 74315A3000E9DCF985FE6F7C3CBB965C /* DownPicker.bundle */; };
-		5641FBEA86DD15050C65C799724E0A53 /* PopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D89DF3A39D215A19C5A2FD67E487F4F /* PopUpViewController.xib */; };
-		6E27EAC27763ACAE50559BF67F52917B /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8117B3F5F693ABA934ADF39D92025B /* Reachability.swift */; };
+		5641FBEA86DD15050C65C799724E0A53 /* PopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9722E2F1E93B22BE9C36D00DEDCAF68 /* PopUpViewController.xib */; };
+		6E27EAC27763ACAE50559BF67F52917B /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AF35C0592C1922250948BF6F669B2D /* Reachability.swift */; };
 		71D5F2F04C49B96553ABFC00BC33F05E /* Pods-CruApp-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EC1B280D5A61B488F2CAC39EA35D3A2B /* Pods-CruApp-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		725838742376D90E208A6E20F0D58163 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FACA9CC9B826DA85CD1E3AD17763766 /* Foundation.framework */; };
 		745B9B03A951061611BDA486E3046BC7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE07C51563A8537190C45BF7B84469E6 /* UIKit.framework */; };
-		76D2531320D99DCB8112990FF7021FA2 /* downArrow@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30AA2F94E371293C840429DBC04507DB /* downArrow@3x.png */; };
+		76D2531320D99DCB8112990FF7021FA2 /* downArrow@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = FF464AAE3D9F5B99B7B53D8197DF212C /* downArrow@3x.png */; };
 		7CD351A04ACF8B02AF561B9E94D23A53 /* Pods-CruApp-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2753E7F4F1F5A7D04F3B2A9685D8A0 /* Pods-CruApp-dummy.m */; };
-		8ED3C418619D4D165B47CC4910B285D3 /* UIDownPicker.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B19A17D44230AEB2E1D860BF862F9C3 /* UIDownPicker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8ED3C418619D4D165B47CC4910B285D3 /* UIDownPicker.h in Headers */ = {isa = PBXBuildFile; fileRef = 060D914D277C9EC0871307AA7A2AF80A /* UIDownPicker.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8F4F31649AC279DCC47F0299849B7F47 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAE1B33188740B25D40CEDC08A929AF6 /* SystemConfiguration.framework */; };
-		9091864A28173646C666DF639BA242B4 /* PopUpViewController_iPad.xib in Sources */ = {isa = PBXBuildFile; fileRef = C0E7AD7DE161C25DA41C80FD60AE05A2 /* PopUpViewController_iPad.xib */; };
-		92AE086108EA288FA63B3CF5DD69D27D /* CheckmarkSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6DEE96119CCD33C7303924E63FE3F2 /* CheckmarkSegmentedControl.swift */; };
-		93CD342EC33F62C7202550D36804FE19 /* ReachabilitySwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 22376A55BDDBB9557235215A7B181BE5 /* ReachabilitySwift-dummy.m */; };
-		95CDF17C013F37A457BBE5571FAE6419 /* PopUpViewController_iPhone6.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AE7D988E553E73D598F39093FD9A5AD /* PopUpViewController_iPhone6.xib */; };
-		979F49328CBB23CB81FCDA7322C65A2B /* Assets in Resources */ = {isa = PBXBuildFile; fileRef = 89499901282D49410245E5E44178B454 /* Assets */; };
-		9C1A9336B107F5122F67433102B9EAE6 /* CheckmarkSegmentedControl-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 163B7E9283B863EC17EBBE11AFBCA8B0 /* CheckmarkSegmentedControl-dummy.m */; };
-		9DB414107B2FBABB5B7BF9866C3F7549 /* youtube-ios-player-helper-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D76D76123AA259FDD0478394E6F2AA /* youtube-ios-player-helper-dummy.m */; };
-		9ECED560EF9F6CA4E829D50FB586BE6D /* PopUpViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0E7AD7DE161C25DA41C80FD60AE05A2 /* PopUpViewController_iPad.xib */; };
-		9FE9C4E1CCC9F7A029F20576DFD7C90E /* downArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2D471DCDCA1638FCFFD8809F0ED5C52 /* downArrow@2x.png */; };
+		9091864A28173646C666DF639BA242B4 /* PopUpViewController_iPad.xib in Sources */ = {isa = PBXBuildFile; fileRef = C36C2688B46883D06F84D6DA9AD9109C /* PopUpViewController_iPad.xib */; };
+		92AE086108EA288FA63B3CF5DD69D27D /* CheckmarkSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A4D9A00F55D996D89432AFEE7B4AC0 /* CheckmarkSegmentedControl.swift */; };
+		93CD342EC33F62C7202550D36804FE19 /* ReachabilitySwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1070E69699F43B08D08DA02DA3D9396F /* ReachabilitySwift-dummy.m */; };
+		95CDF17C013F37A457BBE5571FAE6419 /* PopUpViewController_iPhone6.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96544536ABFFC4558AB5E143196575BE /* PopUpViewController_iPhone6.xib */; };
+		979F49328CBB23CB81FCDA7322C65A2B /* Assets in Resources */ = {isa = PBXBuildFile; fileRef = 515AD7BF4EE5DA321C07D90188E0775D /* Assets */; };
+		9C1A9336B107F5122F67433102B9EAE6 /* CheckmarkSegmentedControl-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB8B8A496CC866B475B3A18DDE74100 /* CheckmarkSegmentedControl-dummy.m */; };
+		9DB414107B2FBABB5B7BF9866C3F7549 /* youtube-ios-player-helper-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EE3CB47611B579C4F3769FF2CB91EB88 /* youtube-ios-player-helper-dummy.m */; };
+		9ECED560EF9F6CA4E829D50FB586BE6D /* PopUpViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = C36C2688B46883D06F84D6DA9AD9109C /* PopUpViewController_iPad.xib */; };
+		9FE9C4E1CCC9F7A029F20576DFD7C90E /* downArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FF0E614806C83F0FF4989029752032B8 /* downArrow@2x.png */; };
 		AF975D659CC7CEDF2BD46B2F71D0667E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FACA9CC9B826DA85CD1E3AD17763766 /* Foundation.framework */; };
-		B3247C2F1EB2A63BDF79F98A2336EACC /* NMPopUpViewSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C342620EC0BF47711D389471B19E7145 /* NMPopUpViewSwift-dummy.m */; };
-		C4BA9F92F87D49CD4DBCC04E39F9539D /* youtube-ios-player-helper-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DE4A3875BC11054F245A99E23D3689FD /* youtube-ios-player-helper-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3247C2F1EB2A63BDF79F98A2336EACC /* NMPopUpViewSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E49E1F55D32FE59313B46CA697001AAA /* NMPopUpViewSwift-dummy.m */; };
+		C4BA9F92F87D49CD4DBCC04E39F9539D /* youtube-ios-player-helper-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FBA6D80A7967BE9F22E2A727562E0624 /* youtube-ios-player-helper-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CDDD1F3860A4E507E69FBD6B6EBE552C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FACA9CC9B826DA85CD1E3AD17763766 /* Foundation.framework */; };
-		D471F4E13F41BEAF11508CDCD6942333 /* downArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 53C35BAAE486D1670868D1FC0B16BF8C /* downArrow.png */; };
-		D75223FCBA7436870602733F1E208A90 /* YTPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F88C1817C9A784A649D832C39840EEF /* YTPlayerView.m */; };
-		DB49E422B1B2E24C500D33FF4165EF34 /* UIDownPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 70D6293CC0DB8F82F3C1A9E0FE3BD037 /* UIDownPicker.m */; };
-		EACC11EC9EAAD4ACD4237A5EAD62FAC4 /* PopUpViewControllerSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8F438E3CA5A200E5BF09407C4D3837 /* PopUpViewControllerSwift.swift */; };
+		D471F4E13F41BEAF11508CDCD6942333 /* downArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = F86ED1AEE3B8AC3F68A5B02C06F150AA /* downArrow.png */; };
+		D75223FCBA7436870602733F1E208A90 /* YTPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2F9398CDB1F4B5459FA21089787A347 /* YTPlayerView.m */; };
+		DB49E422B1B2E24C500D33FF4165EF34 /* UIDownPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = F1DBC1D71F4FB61EEE8C8E138094C5D1 /* UIDownPicker.m */; };
+		EACC11EC9EAAD4ACD4237A5EAD62FAC4 /* PopUpViewControllerSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF53D4270D6ED7E2EB92F4DF5DE8864B /* PopUpViewControllerSwift.swift */; };
 		ED9944889625F8E19047EAD98370F559 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FACA9CC9B826DA85CD1E3AD17763766 /* Foundation.framework */; };
-		FB9BE52E2634BF86494CD1F025D5E486 /* DownPicker.h in Headers */ = {isa = PBXBuildFile; fileRef = B39B942CE6FDF0C72672D5AD2E8DB8EA /* DownPicker.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FE874853053483A324B33E8DB002D70B /* CheckmarkSegmentedControl-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 46B03616D99F8568DBC89C805C86721C /* CheckmarkSegmentedControl-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FB9BE52E2634BF86494CD1F025D5E486 /* DownPicker.h in Headers */ = {isa = PBXBuildFile; fileRef = CA6A4E992C082222C09D2C5022E3BE14 /* DownPicker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FE874853053483A324B33E8DB002D70B /* CheckmarkSegmentedControl-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D39E11A7789E4A57F5921F509B1D91D /* CheckmarkSegmentedControl-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,77 +121,126 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00DE342D269B35FE8388DAFA2A262DEE /* NMPopUpViewSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = NMPopUpViewSwift.modulemap; sourceTree = "<group>"; };
+		00ECE094B80DEE2621D98454FF0E5764 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		045EDB19B0C12D24F4154B72850EC952 /* GCMReceiverDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCMReceiverDelegate.h; path = Headers/Public/GCMReceiverDelegate.h; sourceTree = "<group>"; };
 		0517DA29953FDF53EFCC10AD17B3BA10 /* Assets.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Assets.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		0B19A17D44230AEB2E1D860BF862F9C3 /* UIDownPicker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = UIDownPicker.h; path = Pod/Classes/UIDownPicker.h; sourceTree = "<group>"; };
-		0BFD75CC7BF662A56C34C3B4A1A8FEB9 /* PopUpViewController_iPhone6Plus.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = PopUpViewController_iPhone6Plus.xib; path = NMPopUpView/Pod/Classes/PopUpViewController_iPhone6Plus.xib; sourceTree = "<group>"; };
-		0F6DEE96119CCD33C7303924E63FE3F2 /* CheckmarkSegmentedControl.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CheckmarkSegmentedControl.swift; path = Pod/Classes/CheckmarkSegmentedControl.swift; sourceTree = "<group>"; };
-		0F9B2C5481593EE69E845A7771FA291A /* DownPicker.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DownPicker.m; path = Pod/Classes/DownPicker.m; sourceTree = "<group>"; };
-		163B7E9283B863EC17EBBE11AFBCA8B0 /* CheckmarkSegmentedControl-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CheckmarkSegmentedControl-dummy.m"; sourceTree = "<group>"; };
+		060D914D277C9EC0871307AA7A2AF80A /* UIDownPicker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = UIDownPicker.h; path = Pod/Classes/UIDownPicker.h; sourceTree = "<group>"; };
+		08F6E1FDA1E0332E85456556FFBA567C /* GGLInstanceIDDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GGLInstanceIDDelegate.h; path = Headers/Public/GGLInstanceIDDelegate.h; sourceTree = "<group>"; };
+		0A24F61B9F506CC8B75B2794DECB417E /* YTPlayerView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YTPlayerView.h; path = Classes/YTPlayerView.h; sourceTree = "<group>"; };
+		0A891FCC6B23106A49B08AF906168B3B /* libProtocolBuffers.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libProtocolBuffers.a; path = Libraries/libProtocolBuffers.a; sourceTree = "<group>"; };
+		0AFE1C586CE60E7741FED5BB1FEFD61E /* Analytics-Module.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Analytics-Module.h"; path = "Headers/ModuleHeaders/Analytics-Module.h"; sourceTree = "<group>"; };
+		0BC1B3336900DBDBD54EBD3A09A727F7 /* libGTM_GTMURLBuilder.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGTM_GTMURLBuilder.a; path = Libraries/libGTM_GTMURLBuilder.a; sourceTree = "<group>"; };
+		0E5A4AF3EB20E48A8E92F3EA305D18FD /* youtube-ios-player-helper.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "youtube-ios-player-helper.xcconfig"; sourceTree = "<group>"; };
+		0F5DEC05DF4D56AFBC7D150714CC6657 /* libGTM_core.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGTM_core.a; path = Libraries/libGTM_core.a; sourceTree = "<group>"; };
+		1070E69699F43B08D08DA02DA3D9396F /* ReachabilitySwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ReachabilitySwift-dummy.m"; sourceTree = "<group>"; };
+		10D89ADC5D9852CEF4BE97A62D6DAE95 /* youtube-ios-player-helper.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "youtube-ios-player-helper.modulemap"; sourceTree = "<group>"; };
 		18A3F9985E6E3C40B83594449DD2A9BD /* Pods-CruApp-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CruApp-acknowledgements.plist"; sourceTree = "<group>"; };
-		18EE3482569019EC462DD70066B209BC /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1AE7D988E553E73D598F39093FD9A5AD /* PopUpViewController_iPhone6.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = PopUpViewController_iPhone6.xib; path = NMPopUpView/Pod/Classes/PopUpViewController_iPhone6.xib; sourceTree = "<group>"; };
-		22376A55BDDBB9557235215A7B181BE5 /* ReachabilitySwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ReachabilitySwift-dummy.m"; sourceTree = "<group>"; };
-		2463ECD955D345AAD4ECFEE3529D7A03 /* DownPicker-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DownPicker-prefix.pch"; sourceTree = "<group>"; };
+		1945AAC84B9D21B405A1D702A1534587 /* libGTM_StringEncoding.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGTM_StringEncoding.a; path = Libraries/libGTM_StringEncoding.a; sourceTree = "<group>"; };
+		1DB8B8A496CC866B475B3A18DDE74100 /* CheckmarkSegmentedControl-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CheckmarkSegmentedControl-dummy.m"; sourceTree = "<group>"; };
+		1E2806085A1B9CF9CA89354BD5DE5E81 /* libGTM_NSData+zlib.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = "libGTM_NSData+zlib.a"; path = "Libraries/libGTM_NSData+zlib.a"; sourceTree = "<group>"; };
+		1EAFABB0EEEDE8A43D1B886C99F703AB /* GGLInstanceIDConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GGLInstanceIDConfig.h; path = Headers/Public/GGLInstanceIDConfig.h; sourceTree = "<group>"; };
+		20143ACCBD7316B0212EE461E9751B1B /* NMPopUpViewSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NMPopUpViewSwift-prefix.pch"; sourceTree = "<group>"; };
+		23EC0AF883F07D5CA82ECC9D68C906AD /* GCMConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCMConfig.h; path = Headers/Public/GCMConfig.h; sourceTree = "<group>"; };
 		25D86C10C3CBC13510B179ECDA0B804A /* Pods-CruApp-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CruApp-frameworks.sh"; sourceTree = "<group>"; };
-		2C8117B3F5F693ABA934ADF39D92025B /* Reachability.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Reachability.swift; path = Reachability/Reachability.swift; sourceTree = "<group>"; };
+		268C717341885A08CEEC27740E1F8BC2 /* Core.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Core.h; path = Headers/GGLCore/Public/Core.h; sourceTree = "<group>"; };
+		2AC47220ACC5AFE47E25F04F33AFC425 /* DownPicker.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DownPicker.m; path = Pod/Classes/DownPicker.m; sourceTree = "<group>"; };
 		2FACA9CC9B826DA85CD1E3AD17763766 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		30AA2F94E371293C840429DBC04507DB /* downArrow@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "downArrow@3x.png"; path = "Pod/Assets/downArrow@3x.png"; sourceTree = "<group>"; };
-		331D9FA9C73477078CB00FE4916EAB84 /* youtube-ios-player-helper.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "youtube-ios-player-helper.modulemap"; sourceTree = "<group>"; };
+		31D8CC42C69DE1F56D1024489BDBCC79 /* CloudMessaging.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CloudMessaging.h; path = Headers/GGLCloudMessaging/Public/CloudMessaging.h; sourceTree = "<group>"; };
+		321CD679F6678067687C959E97196586 /* ReachabilitySwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ReachabilitySwift-prefix.pch"; sourceTree = "<group>"; };
+		321DA3A7538DFDE5931EA580FD21BEA7 /* GoogleCloudMessaging.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GoogleCloudMessaging.h; path = Headers/Public/GoogleCloudMessaging.h; sourceTree = "<group>"; };
+		35C906DA2B798CAD2CF0D06A96E40F26 /* GGLConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GGLConfiguration.h; path = Headers/GGLCore/Public/GGLConfiguration.h; sourceTree = "<group>"; };
 		35DB30BFBA92AC9D3F65FB0F28AE8078 /* Pods_CruApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CruApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		35FA0ACBCA164E5B02928EB3739A0850 /* GGLInstanceIDHeaders.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GGLInstanceIDHeaders.h; path = Headers/Public/GGLInstanceIDHeaders.h; sourceTree = "<group>"; };
 		3659C48B0D55D38608B9A9E8417C4246 /* CheckmarkSegmentedControl.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CheckmarkSegmentedControl.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		3A8F438E3CA5A200E5BF09407C4D3837 /* PopUpViewControllerSwift.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PopUpViewControllerSwift.swift; path = NMPopUpView/Pod/Classes/PopUpViewControllerSwift.swift; sourceTree = "<group>"; };
 		3C61755F63DCA722517358170D313C51 /* CheckmarkSegmentedControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CheckmarkSegmentedControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		45A5A1EDCD3B67EED7FA2E7BC3D1C56C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		46B03616D99F8568DBC89C805C86721C /* CheckmarkSegmentedControl-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CheckmarkSegmentedControl-umbrella.h"; sourceTree = "<group>"; };
-		4ADA80C0426F6B76688244FD4FE44F8D /* DownPicker-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DownPicker-umbrella.h"; sourceTree = "<group>"; };
-		4D89DF3A39D215A19C5A2FD67E487F4F /* PopUpViewController.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = PopUpViewController.xib; path = NMPopUpView/Pod/Classes/PopUpViewController.xib; sourceTree = "<group>"; };
-		4F88C1817C9A784A649D832C39840EEF /* YTPlayerView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YTPlayerView.m; path = Classes/YTPlayerView.m; sourceTree = "<group>"; };
-		53C35BAAE486D1670868D1FC0B16BF8C /* downArrow.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = downArrow.png; path = Pod/Assets/downArrow.png; sourceTree = "<group>"; };
-		55300DE01441A262C1006F9FD85B7FBA /* CheckmarkSegmentedControl.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CheckmarkSegmentedControl.xcconfig; sourceTree = "<group>"; };
-		70D6293CC0DB8F82F3C1A9E0FE3BD037 /* UIDownPicker.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = UIDownPicker.m; path = Pod/Classes/UIDownPicker.m; sourceTree = "<group>"; };
+		40F6B047D914E950206C3C2678FCDE10 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4345B3A41D0C1AEBFBF4EF372BCAAB0D /* CheckmarkSegmentedControl-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CheckmarkSegmentedControl-prefix.pch"; sourceTree = "<group>"; };
+		4C3C5630FFDBC2B0B3891D7497B87B17 /* DownPicker.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DownPicker.xcconfig; sourceTree = "<group>"; };
+		4EF02D5D6156994A42661441CEFC304F /* GGLContext+CloudMessaging.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "GGLContext+CloudMessaging.h"; path = "Headers/GGLCloudMessaging/Public/GGLContext+CloudMessaging.h"; sourceTree = "<group>"; };
+		515AD7BF4EE5DA321C07D90188E0775D /* Assets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = Assets; sourceTree = "<group>"; };
+		535E53201ADB562232C3076BF8E6F7D4 /* NMPopUpViewSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NMPopUpViewSwift-umbrella.h"; sourceTree = "<group>"; };
+		590B78B60D28040E0DEEE3AC04A3E84A /* ReachabilitySwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ReachabilitySwift-umbrella.h"; sourceTree = "<group>"; };
+		5C1B2AAC8C944CA496124A6D0845A42E /* libGSDK_Overload.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGSDK_Overload.a; path = Libraries/libGSDK_Overload.a; sourceTree = "<group>"; };
+		5C759D22B12DC6FB0D48E50F1903D225 /* libGIP_Locale.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGIP_Locale.a; path = Libraries/libGIP_Locale.a; sourceTree = "<group>"; };
+		5DF18FFE9E029AED1BBD264EEB835E72 /* ReachabilitySwift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ReachabilitySwift.xcconfig; sourceTree = "<group>"; };
+		5E73E985880F7B17FB6A0DF6F504F6D6 /* DownPicker-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DownPicker-dummy.m"; sourceTree = "<group>"; };
+		65AF35C0592C1922250948BF6F669B2D /* Reachability.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Reachability.swift; path = Reachability/Reachability.swift; sourceTree = "<group>"; };
+		66A4D9A00F55D996D89432AFEE7B4AC0 /* CheckmarkSegmentedControl.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CheckmarkSegmentedControl.swift; path = Pod/Classes/CheckmarkSegmentedControl.swift; sourceTree = "<group>"; };
+		6701515FC89244E615740A74E1B4B549 /* libGGLCloudMessaging.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGGLCloudMessaging.a; path = Libraries/libGGLCloudMessaging.a; sourceTree = "<group>"; };
+		6C417AB2C52411AA4BCA95F49BEEA895 /* DownPicker.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = DownPicker.modulemap; sourceTree = "<group>"; };
+		6DA32BB223E57EDD0B6A0AC5953F2C09 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6FD99F8F8EE5724DB5AFDC2A90D8948A /* libGTM_NSScannerJSON.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGTM_NSScannerJSON.a; path = Libraries/libGTM_NSScannerJSON.a; sourceTree = "<group>"; };
+		71C0AAA944A16B32A5E93B9C9A17BC19 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		71C34748BEB1613B70E537EF4E3F2D05 /* libGTMSessionFetcher_core.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGTMSessionFetcher_core.a; path = Libraries/libGTMSessionFetcher_core.a; sourceTree = "<group>"; };
 		7230AB79C77D43A239FCC2BBEA01BCC8 /* Pods-CruApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CruApp.debug.xcconfig"; sourceTree = "<group>"; };
 		74315A3000E9DCF985FE6F7C3CBB965C /* DownPicker.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DownPicker.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		758DF97BCF59E915F8481CB0D683CAEC /* libGTM_NSDictionary+URLArguments.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = "libGTM_NSDictionary+URLArguments.a"; path = "Libraries/libGTM_NSDictionary+URLArguments.a"; sourceTree = "<group>"; };
+		7A6F6995B4DF38DC0FAF969DAFFCEE3E /* DownPicker-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DownPicker-umbrella.h"; sourceTree = "<group>"; };
+		7DFCF29C35F3063E41A83956634261A1 /* GCMPubSub.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCMPubSub.h; path = Headers/Public/GCMPubSub.h; sourceTree = "<group>"; };
 		7F2753E7F4F1F5A7D04F3B2A9685D8A0 /* Pods-CruApp-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CruApp-dummy.m"; sourceTree = "<group>"; };
-		802BDC12CE0297B48CBDD41142E01CF3 /* NMPopUpViewSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = NMPopUpViewSwift.modulemap; sourceTree = "<group>"; };
-		89499901282D49410245E5E44178B454 /* Assets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = Assets; sourceTree = "<group>"; };
-		8A40DB6153E96B71732DEDB6BD22179C /* DownPicker.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = DownPicker.modulemap; sourceTree = "<group>"; };
+		7F845A69BFD5614BDEAEBB43CB8B9B2D /* GGLErrorCode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GGLErrorCode.h; path = Headers/GGLCore/Public/GGLErrorCode.h; sourceTree = "<group>"; };
+		87CA95A8232BE07B8CFC7090402AC966 /* ReachabilitySwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = ReachabilitySwift.modulemap; sourceTree = "<group>"; };
+		8B49753B75B5ADBB0713E6F2768B713F /* libGIP_Reachability.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGIP_Reachability.a; path = Libraries/libGIP_Reachability.a; sourceTree = "<group>"; };
 		8DFB01BC855D6F4A813576C359ADDD8F /* youtube_ios_player_helper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = youtube_ios_player_helper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9092E7D50D0CD7F27E59CE9E07745C3C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		91553DDEC9B16BE29DABDFCE58FAA0A7 /* ReachabilitySwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ReachabilitySwift-prefix.pch"; sourceTree = "<group>"; };
-		9E949AFC634456F4B9273F80B45F765D /* NMPopUpViewSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NMPopUpViewSwift-umbrella.h"; sourceTree = "<group>"; };
+		96544536ABFFC4558AB5E143196575BE /* PopUpViewController_iPhone6.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = PopUpViewController_iPhone6.xib; path = NMPopUpView/Pod/Classes/PopUpViewController_iPhone6.xib; sourceTree = "<group>"; };
+		9A3F09EE855D3B54CB83D0EDA886C4DF /* CheckmarkSegmentedControl.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = CheckmarkSegmentedControl.modulemap; sourceTree = "<group>"; };
+		9BAFB19C30EA16387D97C73D0B9532E8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9D39E11A7789E4A57F5921F509B1D91D /* CheckmarkSegmentedControl-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CheckmarkSegmentedControl-umbrella.h"; sourceTree = "<group>"; };
+		A1346BAA7EF0AF8DF0E9D747576EF17D /* CheckmarkSegmentedControl.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CheckmarkSegmentedControl.xcconfig; sourceTree = "<group>"; };
 		A4C031A1BBD11FD14E3481CB93FCCFD7 /* Pods-CruApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CruApp.release.xcconfig"; sourceTree = "<group>"; };
-		A8F29E54DAE16BFEAC2B0F86A23381C8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A6A96627B393E3172A7CD9499D27924F /* libGcmLib.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGcmLib.a; path = Libraries/libGcmLib.a; sourceTree = "<group>"; };
+		A82D5E15CC70445D6F7DC3886520051E /* libGTM_KVO.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGTM_KVO.a; path = Libraries/libGTM_KVO.a; sourceTree = "<group>"; };
+		AB14E7EC4F489C5624C132C479C526C9 /* GGLContext.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GGLContext.h; path = Headers/GGLCore/Public/GGLContext.h; sourceTree = "<group>"; };
+		ACF5AA08DA5EE3A3578C16744B0B6A11 /* NMPopUpViewSwift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NMPopUpViewSwift.xcconfig; sourceTree = "<group>"; };
 		AEC52AC9906BAAFC43A280F965E072F8 /* Pods-CruApp.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-CruApp.modulemap"; sourceTree = "<group>"; };
-		AF7BF80F03EC32DE12A62508F78E2D98 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B39B942CE6FDF0C72672D5AD2E8DB8EA /* DownPicker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DownPicker.h; path = Pod/Classes/DownPicker.h; sourceTree = "<group>"; };
-		B61EE84250770C52CE1144D632FE919B /* NMPopUpViewSwift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NMPopUpViewSwift.xcconfig; sourceTree = "<group>"; };
+		B8D9CD3B1790B25EE3BB1B342E5D9F33 /* Core-Module.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Core-Module.h"; path = "Headers/ModuleHeaders/Core-Module.h"; sourceTree = "<group>"; };
+		B9722E2F1E93B22BE9C36D00DEDCAF68 /* PopUpViewController.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = PopUpViewController.xib; path = NMPopUpView/Pod/Classes/PopUpViewController.xib; sourceTree = "<group>"; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		BAE1B33188740B25D40CEDC08A929AF6 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
-		BED0402E2F8E25E21C6326060139F1E8 /* ReachabilitySwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ReachabilitySwift-umbrella.h"; sourceTree = "<group>"; };
-		C0E7AD7DE161C25DA41C80FD60AE05A2 /* PopUpViewController_iPad.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = PopUpViewController_iPad.xib; path = NMPopUpView/Pod/Classes/PopUpViewController_iPad.xib; sourceTree = "<group>"; };
 		C13C484693043BB1F64D19D1642D2B59 /* Pods-CruApp-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CruApp-acknowledgements.markdown"; sourceTree = "<group>"; };
-		C230D6D7C6B5A6D2BAD5E347669500B4 /* ReachabilitySwift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ReachabilitySwift.xcconfig; sourceTree = "<group>"; };
-		C342620EC0BF47711D389471B19E7145 /* NMPopUpViewSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NMPopUpViewSwift-dummy.m"; sourceTree = "<group>"; };
+		C2F9398CDB1F4B5459FA21089787A347 /* YTPlayerView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YTPlayerView.m; path = Classes/YTPlayerView.m; sourceTree = "<group>"; };
+		C36C2688B46883D06F84D6DA9AD9109C /* PopUpViewController_iPad.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = PopUpViewController_iPad.xib; path = NMPopUpView/Pod/Classes/PopUpViewController_iPad.xib; sourceTree = "<group>"; };
+		C3758E314684830285F844CD4AD1C78B /* DownPicker-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DownPicker-prefix.pch"; sourceTree = "<group>"; };
 		C4179F4F35C750149C591FAB094405FD /* Pods-CruApp-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CruApp-resources.sh"; sourceTree = "<group>"; };
-		C5D76D76123AA259FDD0478394E6F2AA /* youtube-ios-player-helper-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "youtube-ios-player-helper-dummy.m"; sourceTree = "<group>"; };
+		C7CC1E379CEEC2F7682D33172374C643 /* SignIn-Module.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "SignIn-Module.h"; path = "Headers/ModuleHeaders/SignIn-Module.h"; sourceTree = "<group>"; };
+		CA6A4E992C082222C09D2C5022E3BE14 /* DownPicker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DownPicker.h; path = Pod/Classes/DownPicker.h; sourceTree = "<group>"; };
+		CB13A09DA2B04DB34B373AA9870954B0 /* libGTM_UIFont+LineHeight.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = "libGTM_UIFont+LineHeight.a"; path = "Libraries/libGTM_UIFont+LineHeight.a"; sourceTree = "<group>"; };
 		CE07C51563A8537190C45BF7B84469E6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		D0D3D3181370F2C17CBC941E75C1FDFD /* ReachabilitySwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = ReachabilitySwift.modulemap; sourceTree = "<group>"; };
-		D2D471DCDCA1638FCFFD8809F0ED5C52 /* downArrow@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "downArrow@2x.png"; path = "Pod/Assets/downArrow@2x.png"; sourceTree = "<group>"; };
+		CE6C7FF3F9D31017393BB6AE09895F5C /* GGLInstanceID.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GGLInstanceID.h; path = Headers/Public/GGLInstanceID.h; sourceTree = "<group>"; };
+		CF8CCEF53D2A82DDC59F4367D18640FC /* libGTM_NSStringHTML.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGTM_NSStringHTML.a; path = Libraries/libGTM_NSStringHTML.a; sourceTree = "<group>"; };
+		D2E4B848206E92BD770C606C93DD7CC3 /* libGTM_RoundedRectPath.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGTM_RoundedRectPath.a; path = Libraries/libGTM_RoundedRectPath.a; sourceTree = "<group>"; };
+		D4C6FEC36F28B8F6D34E3B9B30EA0440 /* PopUpViewController_iPhone6Plus.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = PopUpViewController_iPhone6Plus.xib; path = NMPopUpView/Pod/Classes/PopUpViewController_iPhone6Plus.xib; sourceTree = "<group>"; };
 		D694D3A50E3C0583633C2AF7C3C92190 /* ReachabilitySwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReachabilitySwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DB754613A6E4B412F792892C434E6F6E /* CheckmarkSegmentedControl-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CheckmarkSegmentedControl-prefix.pch"; sourceTree = "<group>"; };
-		DE13C72AFD501B6F8E03C3908CFC4C46 /* youtube-ios-player-helper.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "youtube-ios-player-helper.xcconfig"; sourceTree = "<group>"; };
-		DE4A3875BC11054F245A99E23D3689FD /* youtube-ios-player-helper-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "youtube-ios-player-helper-umbrella.h"; sourceTree = "<group>"; };
-		E07C21E4C1CE65727D94610B223A9CBF /* CheckmarkSegmentedControl.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = CheckmarkSegmentedControl.modulemap; sourceTree = "<group>"; };
+		D7F66D3DE3FD8DA49A2C78B1EEB4A4AB /* CloudMessaging-Module.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "CloudMessaging-Module.h"; path = "Headers/ModuleHeaders/CloudMessaging-Module.h"; sourceTree = "<group>"; };
+		DB408C8F06B2B384CD3B9F8DC32148D6 /* libGTMStackTrace.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGTMStackTrace.a; path = Libraries/libGTMStackTrace.a; sourceTree = "<group>"; };
+		DC5B3F524699F97229DCA6177E353E6F /* libGGLInstanceIDLib.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGGLInstanceIDLib.a; path = Libraries/libGGLInstanceIDLib.a; sourceTree = "<group>"; };
+		DCD81EF034A1963F69E0A02198A128A0 /* libGTM_AddressBook.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGTM_AddressBook.a; path = Libraries/libGTM_AddressBook.a; sourceTree = "<group>"; };
+		DDA77AE4A7A2B4B2B0A217935BECB3F0 /* libGTM_iPhone.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGTM_iPhone.a; path = Libraries/libGTM_iPhone.a; sourceTree = "<group>"; };
+		DFEBA4928E15C8D0BC0AA55454A4EA3D /* libGTM_Regex.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGTM_Regex.a; path = Libraries/libGTM_Regex.a; sourceTree = "<group>"; };
 		E17FF149B9B4DB32F9DF4C1791171C96 /* DownPicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DownPicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E52BDA3DC3890E0B83530249A4057910 /* YTPlayerView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YTPlayerView.h; path = Classes/YTPlayerView.h; sourceTree = "<group>"; };
+		E49E1F55D32FE59313B46CA697001AAA /* NMPopUpViewSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NMPopUpViewSwift-dummy.m"; sourceTree = "<group>"; };
+		E51B055C9ADE6AC3BB3AA40FB464C70C /* AppInvite-Module.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "AppInvite-Module.h"; path = "Headers/ModuleHeaders/AppInvite-Module.h"; sourceTree = "<group>"; };
+		E63C6548CE345769D201E83E4FB3B29C /* libGTM_DebugUtils.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGTM_DebugUtils.a; path = Libraries/libGTM_DebugUtils.a; sourceTree = "<group>"; };
+		E64680FFD264BC42DD9612B876F52347 /* GCMService.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCMService.h; path = Headers/Public/GCMService.h; sourceTree = "<group>"; };
+		E6849D7A2C534669F0FE5ED4B5B93181 /* libGTM_SystemVersion.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGTM_SystemVersion.a; path = Libraries/libGTM_SystemVersion.a; sourceTree = "<group>"; };
 		E74BB1FCB4E6B9CA3DC19AE5B7E3CF67 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC1B280D5A61B488F2CAC39EA35D3A2B /* Pods-CruApp-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CruApp-umbrella.h"; sourceTree = "<group>"; };
-		ED55849C9E704C730FCEBA188AD435E8 /* DownPicker.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DownPicker.xcconfig; sourceTree = "<group>"; };
+		EC3C482E788507D0E62CD0E72224B28C /* libGGLCore.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGGLCore.a; path = Libraries/libGGLCore.a; sourceTree = "<group>"; };
+		EE3CB47611B579C4F3769FF2CB91EB88 /* youtube-ios-player-helper-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "youtube-ios-player-helper-dummy.m"; sourceTree = "<group>"; };
+		EF53D4270D6ED7E2EB92F4DF5DE8864B /* PopUpViewControllerSwift.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PopUpViewControllerSwift.swift; path = NMPopUpView/Pod/Classes/PopUpViewControllerSwift.swift; sourceTree = "<group>"; };
 		EF6E634C7B8C0BF1A7C9CEE33C68C6CB /* NMPopUpViewSwift.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NMPopUpViewSwift.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		F7049F2A81E519954F083A23CA232A2F /* NMPopUpViewSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NMPopUpViewSwift-prefix.pch"; sourceTree = "<group>"; };
+		F1DBC1D71F4FB61EEE8C8E138094C5D1 /* UIDownPicker.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = UIDownPicker.m; path = Pod/Classes/UIDownPicker.m; sourceTree = "<group>"; };
+		F25F63A30D2C9DB8F1105DAA8F06A586 /* youtube-ios-player-helper-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "youtube-ios-player-helper-prefix.pch"; sourceTree = "<group>"; };
+		F25FDCDBA0A40F22612AFF1CE4B215D2 /* AdMob-Module.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "AdMob-Module.h"; path = "Headers/ModuleHeaders/AdMob-Module.h"; sourceTree = "<group>"; };
+		F30EE3B4293458BAE200037030B83D7A /* libGTM_NSStringXML.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGTM_NSStringXML.a; path = Libraries/libGTM_NSStringXML.a; sourceTree = "<group>"; };
+		F70249C90D573967D895C46F59CEDBA6 /* GMRConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GMRConfiguration.h; path = Headers/GGLCore/Public/GMRConfiguration.h; sourceTree = "<group>"; };
 		F7BA4DEFF4C654C806FF2B3AF0C951D8 /* NMPopUpViewSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NMPopUpViewSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FB6B1AD8BE946313752D6BFBF1B462FB /* DownPicker-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DownPicker-dummy.m"; sourceTree = "<group>"; };
-		FDB01A5AB7B13692588C3946CFD598BB /* youtube-ios-player-helper-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "youtube-ios-player-helper-prefix.pch"; sourceTree = "<group>"; };
+		F86ED1AEE3B8AC3F68A5B02C06F150AA /* downArrow.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = downArrow.png; path = Pod/Assets/downArrow.png; sourceTree = "<group>"; };
+		FBA6D80A7967BE9F22E2A727562E0624 /* youtube-ios-player-helper-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "youtube-ios-player-helper-umbrella.h"; sourceTree = "<group>"; };
+		FEB743B5EFBB68F54872C5F8978286E2 /* libGTMSessionFetcher_full.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGTMSessionFetcher_full.a; path = Libraries/libGTMSessionFetcher_full.a; sourceTree = "<group>"; };
+		FF0E614806C83F0FF4989029752032B8 /* downArrow@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "downArrow@2x.png"; path = "Pod/Assets/downArrow@2x.png"; sourceTree = "<group>"; };
+		FF464AAE3D9F5B99B7B53D8197DF212C /* downArrow@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "downArrow@3x.png"; path = "Pod/Assets/downArrow@3x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -276,25 +325,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		005EEE0F8A8D00ECAE127518B6EBAD7E /* Resources */ = {
+		09BCEE968551C275566193F80C95E34F /* GoogleSymbolUtilities */ = {
 			isa = PBXGroup;
 			children = (
-				89499901282D49410245E5E44178B454 /* Assets */,
+				989A893D8726F3337CF8F925A69202D9 /* Frameworks */,
 			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		04FD9B285948034E17001B4CA7AD3CAE /* DownPicker */ = {
-			isa = PBXGroup;
-			children = (
-				B39B942CE6FDF0C72672D5AD2E8DB8EA /* DownPicker.h */,
-				0F9B2C5481593EE69E845A7771FA291A /* DownPicker.m */,
-				0B19A17D44230AEB2E1D860BF862F9C3 /* UIDownPicker.h */,
-				70D6293CC0DB8F82F3C1A9E0FE3BD037 /* UIDownPicker.m */,
-				98C4ACF7ED98E7036CD8A331C1B0ECDC /* Resources */,
-				EC478570AE7DAA7CD884C9AE8304CFA5 /* Support Files */,
-			);
-			path = DownPicker;
+			path = GoogleSymbolUtilities;
 			sourceTree = "<group>";
 		};
 		122DA2E5084A4393C29BE363C764795C /* Frameworks */ = {
@@ -303,6 +339,16 @@
 				FF2AEA74965EED5FE2760906784C788C /* iOS */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		17345340830C9D8D3183F84BB07C0246 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F86ED1AEE3B8AC3F68A5B02C06F150AA /* downArrow.png */,
+				FF0E614806C83F0FF4989029752032B8 /* downArrow@2x.png */,
+				FF464AAE3D9F5B99B7B53D8197DF212C /* downArrow@3x.png */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		17C407707481EF25FFBF3ACB3225E70C /* Products */ = {
@@ -322,57 +368,129 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		209A418B535CCA59D2896B81519A1D10 /* Support Files */ = {
+		1B19CDAA6F3E0ADC682C236F1FCC53B7 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				18EE3482569019EC462DD70066B209BC /* Info.plist */,
-				D0D3D3181370F2C17CBC941E75C1FDFD /* ReachabilitySwift.modulemap */,
-				C230D6D7C6B5A6D2BAD5E347669500B4 /* ReachabilitySwift.xcconfig */,
-				22376A55BDDBB9557235215A7B181BE5 /* ReachabilitySwift-dummy.m */,
-				91553DDEC9B16BE29DABDFCE58FAA0A7 /* ReachabilitySwift-prefix.pch */,
-				BED0402E2F8E25E21C6326060139F1E8 /* ReachabilitySwift-umbrella.h */,
+				B67DF4C81CF324EF69F2D20731F30A4B /* CheckmarkSegmentedControl */,
+				7CBC9FCE533AE66C277593E8F4AF277B /* DownPicker */,
+				7E5C8F437717EFA78E998514E003C7F8 /* GGLInstanceID */,
+				FCEA520E5A170621C582C114350FC2B9 /* Google */,
+				1CA939D0C5C513078538724F38C6429B /* GoogleCloudMessaging */,
+				506E6581C79A946F492A33A76649EB29 /* GoogleInterchangeUtilities */,
+				61B2478A61FE7F4B61E4568FC7F61D78 /* GoogleIPhoneUtilities */,
+				6B5F5B315BFF92E07918662681FA4C5C /* GoogleNetworkingUtilities */,
+				09BCEE968551C275566193F80C95E34F /* GoogleSymbolUtilities */,
+				F3AC2DF91F182EBC351C33FFFA0A5F61 /* GoogleUtilities */,
+				C2991CDCA259C89101089C997AF43E7D /* NMPopUpViewSwift */,
+				44F1107045BEE0A4532AB095ED829966 /* ReachabilitySwift */,
+				C6EF33F70A8CFDA7EDC0E25B7A0A958A /* youtube-ios-player-helper */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/ReachabilitySwift";
+			name = Pods;
 			sourceTree = "<group>";
 		};
-		42F5A1C5A6EEFAFDB5384377B562F29A /* ReachabilitySwift */ = {
+		1CA939D0C5C513078538724F38C6429B /* GoogleCloudMessaging */ = {
 			isa = PBXGroup;
 			children = (
-				2C8117B3F5F693ABA934ADF39D92025B /* Reachability.swift */,
-				209A418B535CCA59D2896B81519A1D10 /* Support Files */,
+				23EC0AF883F07D5CA82ECC9D68C906AD /* GCMConfig.h */,
+				7DFCF29C35F3063E41A83956634261A1 /* GCMPubSub.h */,
+				045EDB19B0C12D24F4154B72850EC952 /* GCMReceiverDelegate.h */,
+				E64680FFD264BC42DD9612B876F52347 /* GCMService.h */,
+				321DA3A7538DFDE5931EA580FD21BEA7 /* GoogleCloudMessaging.h */,
+				648F0D894AE74B9B46DAF9674BFC4089 /* Frameworks */,
+			);
+			path = GoogleCloudMessaging;
+			sourceTree = "<group>";
+		};
+		387A514F20C153B0D438D161EAEB5A2F /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				71C0AAA944A16B32A5E93B9C9A17BC19 /* Info.plist */,
+				00DE342D269B35FE8388DAFA2A262DEE /* NMPopUpViewSwift.modulemap */,
+				ACF5AA08DA5EE3A3578C16744B0B6A11 /* NMPopUpViewSwift.xcconfig */,
+				E49E1F55D32FE59313B46CA697001AAA /* NMPopUpViewSwift-dummy.m */,
+				20143ACCBD7316B0212EE461E9751B1B /* NMPopUpViewSwift-prefix.pch */,
+				535E53201ADB562232C3076BF8E6F7D4 /* NMPopUpViewSwift-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/NMPopUpViewSwift";
+			sourceTree = "<group>";
+		};
+		44F1107045BEE0A4532AB095ED829966 /* ReachabilitySwift */ = {
+			isa = PBXGroup;
+			children = (
+				65AF35C0592C1922250948BF6F669B2D /* Reachability.swift */,
+				E04B2C1E164DAB69E3AC5A719076D371 /* Support Files */,
 			);
 			path = ReachabilitySwift;
 			sourceTree = "<group>";
 		};
-		4E1D34BBF52FAA00B315959526C14A69 /* CheckmarkSegmentedControl */ = {
-			isa = PBXGroup;
-			children = (
-				0F6DEE96119CCD33C7303924E63FE3F2 /* CheckmarkSegmentedControl.swift */,
-				CEE9924FDF98401B9E8C3BF9A4DC914B /* Support Files */,
-			);
-			path = CheckmarkSegmentedControl;
-			sourceTree = "<group>";
-		};
-		6F3FFAA900233B6FBB148543ADF9878B /* Resources */ = {
+		4DD0D8EC0FE59B693E2627CBE9B4673B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			name = Resources;
 			sourceTree = "<group>";
 		};
-		76699ED90D3BDED0B29A7CE94AB7AE7E /* Support Files */ = {
+		506E6581C79A946F492A33A76649EB29 /* GoogleInterchangeUtilities */ = {
 			isa = PBXGroup;
 			children = (
-				45A5A1EDCD3B67EED7FA2E7BC3D1C56C /* Info.plist */,
-				331D9FA9C73477078CB00FE4916EAB84 /* youtube-ios-player-helper.modulemap */,
-				DE13C72AFD501B6F8E03C3908CFC4C46 /* youtube-ios-player-helper.xcconfig */,
-				C5D76D76123AA259FDD0478394E6F2AA /* youtube-ios-player-helper-dummy.m */,
-				FDB01A5AB7B13692588C3946CFD598BB /* youtube-ios-player-helper-prefix.pch */,
-				DE4A3875BC11054F245A99E23D3689FD /* youtube-ios-player-helper-umbrella.h */,
+				BE5A9D3A51D517B06F88BA4B9926C4CE /* Frameworks */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/youtube-ios-player-helper";
+			path = GoogleInterchangeUtilities;
+			sourceTree = "<group>";
+		};
+		5F3F4BED6BF8ECF4ABF19635C8B67D5B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EC3C482E788507D0E62CD0E72224B28C /* libGGLCore.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		61B2478A61FE7F4B61E4568FC7F61D78 /* GoogleIPhoneUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				B0CA9C1ACA01CA4B793BFB4728C3BE97 /* Frameworks */,
+			);
+			path = GoogleIPhoneUtilities;
+			sourceTree = "<group>";
+		};
+		648F0D894AE74B9B46DAF9674BFC4089 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A6A96627B393E3172A7CD9499D27924F /* libGcmLib.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		673868511937E66060244CAAAFCE4DB8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				71C34748BEB1613B70E537EF4E3F2D05 /* libGTMSessionFetcher_core.a */,
+				FEB743B5EFBB68F54872C5F8978286E2 /* libGTMSessionFetcher_full.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6B5F5B315BFF92E07918662681FA4C5C /* GoogleNetworkingUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				673868511937E66060244CAAAFCE4DB8 /* Frameworks */,
+			);
+			path = GoogleNetworkingUtilities;
+			sourceTree = "<group>";
+		};
+		7CBC9FCE533AE66C277593E8F4AF277B /* DownPicker */ = {
+			isa = PBXGroup;
+			children = (
+				CA6A4E992C082222C09D2C5022E3BE14 /* DownPicker.h */,
+				2AC47220ACC5AFE47E25F04F33AFC425 /* DownPicker.m */,
+				060D914D277C9EC0871307AA7A2AF80A /* UIDownPicker.h */,
+				F1DBC1D71F4FB61EEE8C8E138094C5D1 /* UIDownPicker.m */,
+				17345340830C9D8D3183F84BB07C0246 /* Resources */,
+				89381FE1B5B77905286A0AB75C45462D /* Support Files */,
+			);
+			path = DownPicker;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -380,45 +498,66 @@
 			children = (
 				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
 				122DA2E5084A4393C29BE363C764795C /* Frameworks */,
-				D8EF758BF08296745289245833C5B42D /* Pods */,
+				1B19CDAA6F3E0ADC682C236F1FCC53B7 /* Pods */,
 				17C407707481EF25FFBF3ACB3225E70C /* Products */,
 				DD46B1473F0838CA24634962B08F51B7 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		840DE8529EF06068063F79B54FADBDC5 /* youtube-ios-player-helper */ = {
+		7E5C8F437717EFA78E998514E003C7F8 /* GGLInstanceID */ = {
 			isa = PBXGroup;
 			children = (
-				E52BDA3DC3890E0B83530249A4057910 /* YTPlayerView.h */,
-				4F88C1817C9A784A649D832C39840EEF /* YTPlayerView.m */,
-				005EEE0F8A8D00ECAE127518B6EBAD7E /* Resources */,
-				76699ED90D3BDED0B29A7CE94AB7AE7E /* Support Files */,
+				CE6C7FF3F9D31017393BB6AE09895F5C /* GGLInstanceID.h */,
+				1EAFABB0EEEDE8A43D1B886C99F703AB /* GGLInstanceIDConfig.h */,
+				08F6E1FDA1E0332E85456556FFBA567C /* GGLInstanceIDDelegate.h */,
+				35FA0ACBCA164E5B02928EB3739A0850 /* GGLInstanceIDHeaders.h */,
+				8C9C625D509C4707B0B0D14584D3CE3C /* Frameworks */,
 			);
-			path = "youtube-ios-player-helper";
+			path = GGLInstanceID;
 			sourceTree = "<group>";
 		};
-		98C4ACF7ED98E7036CD8A331C1B0ECDC /* Resources */ = {
+		7F8AEC57ADDB4D493497F316776EB850 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				53C35BAAE486D1670868D1FC0B16BF8C /* downArrow.png */,
-				D2D471DCDCA1638FCFFD8809F0ED5C52 /* downArrow@2x.png */,
-				30AA2F94E371293C840429DBC04507DB /* downArrow@3x.png */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		9AC19E4A43AB9AB03771F221D4F17BD0 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				9092E7D50D0CD7F27E59CE9E07745C3C /* Info.plist */,
-				802BDC12CE0297B48CBDD41142E01CF3 /* NMPopUpViewSwift.modulemap */,
-				B61EE84250770C52CE1144D632FE919B /* NMPopUpViewSwift.xcconfig */,
-				C342620EC0BF47711D389471B19E7145 /* NMPopUpViewSwift-dummy.m */,
-				F7049F2A81E519954F083A23CA232A2F /* NMPopUpViewSwift-prefix.pch */,
-				9E949AFC634456F4B9273F80B45F765D /* NMPopUpViewSwift-umbrella.h */,
+				40F6B047D914E950206C3C2678FCDE10 /* Info.plist */,
+				10D89ADC5D9852CEF4BE97A62D6DAE95 /* youtube-ios-player-helper.modulemap */,
+				0E5A4AF3EB20E48A8E92F3EA305D18FD /* youtube-ios-player-helper.xcconfig */,
+				EE3CB47611B579C4F3769FF2CB91EB88 /* youtube-ios-player-helper-dummy.m */,
+				F25F63A30D2C9DB8F1105DAA8F06A586 /* youtube-ios-player-helper-prefix.pch */,
+				FBA6D80A7967BE9F22E2A727562E0624 /* youtube-ios-player-helper-umbrella.h */,
 			);
 			name = "Support Files";
-			path = "../Target Support Files/NMPopUpViewSwift";
+			path = "../Target Support Files/youtube-ios-player-helper";
+			sourceTree = "<group>";
+		};
+		89381FE1B5B77905286A0AB75C45462D /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				6C417AB2C52411AA4BCA95F49BEEA895 /* DownPicker.modulemap */,
+				4C3C5630FFDBC2B0B3891D7497B87B17 /* DownPicker.xcconfig */,
+				5E73E985880F7B17FB6A0DF6F504F6D6 /* DownPicker-dummy.m */,
+				C3758E314684830285F844CD4AD1C78B /* DownPicker-prefix.pch */,
+				7A6F6995B4DF38DC0FAF969DAFFCEE3E /* DownPicker-umbrella.h */,
+				9BAFB19C30EA16387D97C73D0B9532E8 /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/DownPicker";
+			sourceTree = "<group>";
+		};
+		8C9C625D509C4707B0B0D14584D3CE3C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DC5B3F524699F97229DCA6177E353E6F /* libGGLInstanceIDLib.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		989A893D8726F3337CF8F925A69202D9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5C1B2AAC8C944CA496124A6D0845A42E /* libGSDK_Overload.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		A83AD6618E6240E062BDB7FD6C50970D /* Pods-CruApp */ = {
@@ -439,44 +578,130 @@
 			path = "Target Support Files/Pods-CruApp";
 			sourceTree = "<group>";
 		};
-		C836ECAF50B69BAC299F409123231B98 /* NMPopUpViewSwift */ = {
+		B0CA9C1ACA01CA4B793BFB4728C3BE97 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4D89DF3A39D215A19C5A2FD67E487F4F /* PopUpViewController.xib */,
-				C0E7AD7DE161C25DA41C80FD60AE05A2 /* PopUpViewController_iPad.xib */,
-				1AE7D988E553E73D598F39093FD9A5AD /* PopUpViewController_iPhone6.xib */,
-				0BFD75CC7BF662A56C34C3B4A1A8FEB9 /* PopUpViewController_iPhone6Plus.xib */,
-				3A8F438E3CA5A200E5BF09407C4D3837 /* PopUpViewControllerSwift.swift */,
-				6F3FFAA900233B6FBB148543ADF9878B /* Resources */,
-				9AC19E4A43AB9AB03771F221D4F17BD0 /* Support Files */,
+				5C759D22B12DC6FB0D48E50F1903D225 /* libGIP_Locale.a */,
+				8B49753B75B5ADBB0713E6F2768B713F /* libGIP_Reachability.a */,
 			);
-			path = NMPopUpViewSwift;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		CEE9924FDF98401B9E8C3BF9A4DC914B /* Support Files */ = {
+		B596373B28FA7823021E4243954A2A07 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				E07C21E4C1CE65727D94610B223A9CBF /* CheckmarkSegmentedControl.modulemap */,
-				55300DE01441A262C1006F9FD85B7FBA /* CheckmarkSegmentedControl.xcconfig */,
-				163B7E9283B863EC17EBBE11AFBCA8B0 /* CheckmarkSegmentedControl-dummy.m */,
-				DB754613A6E4B412F792892C434E6F6E /* CheckmarkSegmentedControl-prefix.pch */,
-				46B03616D99F8568DBC89C805C86721C /* CheckmarkSegmentedControl-umbrella.h */,
-				AF7BF80F03EC32DE12A62508F78E2D98 /* Info.plist */,
+				9A3F09EE855D3B54CB83D0EDA886C4DF /* CheckmarkSegmentedControl.modulemap */,
+				A1346BAA7EF0AF8DF0E9D747576EF17D /* CheckmarkSegmentedControl.xcconfig */,
+				1DB8B8A496CC866B475B3A18DDE74100 /* CheckmarkSegmentedControl-dummy.m */,
+				4345B3A41D0C1AEBFBF4EF372BCAAB0D /* CheckmarkSegmentedControl-prefix.pch */,
+				9D39E11A7789E4A57F5921F509B1D91D /* CheckmarkSegmentedControl-umbrella.h */,
+				00ECE094B80DEE2621D98454FF0E5764 /* Info.plist */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/CheckmarkSegmentedControl";
 			sourceTree = "<group>";
 		};
-		D8EF758BF08296745289245833C5B42D /* Pods */ = {
+		B67DF4C81CF324EF69F2D20731F30A4B /* CheckmarkSegmentedControl */ = {
 			isa = PBXGroup;
 			children = (
-				4E1D34BBF52FAA00B315959526C14A69 /* CheckmarkSegmentedControl */,
-				04FD9B285948034E17001B4CA7AD3CAE /* DownPicker */,
-				C836ECAF50B69BAC299F409123231B98 /* NMPopUpViewSwift */,
-				42F5A1C5A6EEFAFDB5384377B562F29A /* ReachabilitySwift */,
-				840DE8529EF06068063F79B54FADBDC5 /* youtube-ios-player-helper */,
+				66A4D9A00F55D996D89432AFEE7B4AC0 /* CheckmarkSegmentedControl.swift */,
+				B596373B28FA7823021E4243954A2A07 /* Support Files */,
 			);
-			name = Pods;
+			path = CheckmarkSegmentedControl;
+			sourceTree = "<group>";
+		};
+		BE4C77F0E653F27EA4C6D3E252A6C80F /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				F25FDCDBA0A40F22612AFF1CE4B215D2 /* AdMob-Module.h */,
+				0AFE1C586CE60E7741FED5BB1FEFD61E /* Analytics-Module.h */,
+				E51B055C9ADE6AC3BB3AA40FB464C70C /* AppInvite-Module.h */,
+				D7F66D3DE3FD8DA49A2C78B1EEB4A4AB /* CloudMessaging-Module.h */,
+				268C717341885A08CEEC27740E1F8BC2 /* Core.h */,
+				B8D9CD3B1790B25EE3BB1B342E5D9F33 /* Core-Module.h */,
+				35C906DA2B798CAD2CF0D06A96E40F26 /* GGLConfiguration.h */,
+				AB14E7EC4F489C5624C132C479C526C9 /* GGLContext.h */,
+				7F845A69BFD5614BDEAEBB43CB8B9B2D /* GGLErrorCode.h */,
+				F70249C90D573967D895C46F59CEDBA6 /* GMRConfiguration.h */,
+				C7CC1E379CEEC2F7682D33172374C643 /* SignIn-Module.h */,
+				5F3F4BED6BF8ECF4ABF19635C8B67D5B /* Frameworks */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		BE5A9D3A51D517B06F88BA4B9926C4CE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0A891FCC6B23106A49B08AF906168B3B /* libProtocolBuffers.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C2991CDCA259C89101089C997AF43E7D /* NMPopUpViewSwift */ = {
+			isa = PBXGroup;
+			children = (
+				B9722E2F1E93B22BE9C36D00DEDCAF68 /* PopUpViewController.xib */,
+				C36C2688B46883D06F84D6DA9AD9109C /* PopUpViewController_iPad.xib */,
+				96544536ABFFC4558AB5E143196575BE /* PopUpViewController_iPhone6.xib */,
+				D4C6FEC36F28B8F6D34E3B9B30EA0440 /* PopUpViewController_iPhone6Plus.xib */,
+				EF53D4270D6ED7E2EB92F4DF5DE8864B /* PopUpViewControllerSwift.swift */,
+				4DD0D8EC0FE59B693E2627CBE9B4673B /* Resources */,
+				387A514F20C153B0D438D161EAEB5A2F /* Support Files */,
+			);
+			path = NMPopUpViewSwift;
+			sourceTree = "<group>";
+		};
+		C6EF33F70A8CFDA7EDC0E25B7A0A958A /* youtube-ios-player-helper */ = {
+			isa = PBXGroup;
+			children = (
+				0A24F61B9F506CC8B75B2794DECB417E /* YTPlayerView.h */,
+				C2F9398CDB1F4B5459FA21089787A347 /* YTPlayerView.m */,
+				D5ECCE1F682181626C73F6E571B09099 /* Resources */,
+				7F8AEC57ADDB4D493497F316776EB850 /* Support Files */,
+			);
+			path = "youtube-ios-player-helper";
+			sourceTree = "<group>";
+		};
+		D5ECCE1F682181626C73F6E571B09099 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				515AD7BF4EE5DA321C07D90188E0775D /* Assets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		DA1C6ACC481F509E7A8AAC2DD2D09473 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DCD81EF034A1963F69E0A02198A128A0 /* libGTM_AddressBook.a */,
+				0F5DEC05DF4D56AFBC7D150714CC6657 /* libGTM_core.a */,
+				E63C6548CE345769D201E83E4FB3B29C /* libGTM_DebugUtils.a */,
+				0BC1B3336900DBDBD54EBD3A09A727F7 /* libGTM_GTMURLBuilder.a */,
+				DDA77AE4A7A2B4B2B0A217935BECB3F0 /* libGTM_iPhone.a */,
+				A82D5E15CC70445D6F7DC3886520051E /* libGTM_KVO.a */,
+				1E2806085A1B9CF9CA89354BD5DE5E81 /* libGTM_NSData+zlib.a */,
+				758DF97BCF59E915F8481CB0D683CAEC /* libGTM_NSDictionary+URLArguments.a */,
+				6FD99F8F8EE5724DB5AFDC2A90D8948A /* libGTM_NSScannerJSON.a */,
+				CF8CCEF53D2A82DDC59F4367D18640FC /* libGTM_NSStringHTML.a */,
+				F30EE3B4293458BAE200037030B83D7A /* libGTM_NSStringXML.a */,
+				DFEBA4928E15C8D0BC0AA55454A4EA3D /* libGTM_Regex.a */,
+				D2E4B848206E92BD770C606C93DD7CC3 /* libGTM_RoundedRectPath.a */,
+				1945AAC84B9D21B405A1D702A1534587 /* libGTM_StringEncoding.a */,
+				E6849D7A2C534669F0FE5ED4B5B93181 /* libGTM_SystemVersion.a */,
+				CB13A09DA2B04DB34B373AA9870954B0 /* libGTM_UIFont+LineHeight.a */,
+				DB408C8F06B2B384CD3B9F8DC32148D6 /* libGTMStackTrace.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DA5B2FC447A75B74E181E1A473F877A8 /* CloudMessaging */ = {
+			isa = PBXGroup;
+			children = (
+				31D8CC42C69DE1F56D1024489BDBCC79 /* CloudMessaging.h */,
+				4EF02D5D6156994A42661441CEFC304F /* GGLContext+CloudMessaging.h */,
+				F147BD3D32D6EAD95A6B09FB0F72805A /* Frameworks */,
+			);
+			name = CloudMessaging;
 			sourceTree = "<group>";
 		};
 		DD46B1473F0838CA24634962B08F51B7 /* Targets Support Files */ = {
@@ -487,18 +712,43 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		EC478570AE7DAA7CD884C9AE8304CFA5 /* Support Files */ = {
+		E04B2C1E164DAB69E3AC5A719076D371 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				8A40DB6153E96B71732DEDB6BD22179C /* DownPicker.modulemap */,
-				ED55849C9E704C730FCEBA188AD435E8 /* DownPicker.xcconfig */,
-				FB6B1AD8BE946313752D6BFBF1B462FB /* DownPicker-dummy.m */,
-				2463ECD955D345AAD4ECFEE3529D7A03 /* DownPicker-prefix.pch */,
-				4ADA80C0426F6B76688244FD4FE44F8D /* DownPicker-umbrella.h */,
-				A8F29E54DAE16BFEAC2B0F86A23381C8 /* Info.plist */,
+				6DA32BB223E57EDD0B6A0AC5953F2C09 /* Info.plist */,
+				87CA95A8232BE07B8CFC7090402AC966 /* ReachabilitySwift.modulemap */,
+				5DF18FFE9E029AED1BBD264EEB835E72 /* ReachabilitySwift.xcconfig */,
+				1070E69699F43B08D08DA02DA3D9396F /* ReachabilitySwift-dummy.m */,
+				321CD679F6678067687C959E97196586 /* ReachabilitySwift-prefix.pch */,
+				590B78B60D28040E0DEEE3AC04A3E84A /* ReachabilitySwift-umbrella.h */,
 			);
 			name = "Support Files";
-			path = "../Target Support Files/DownPicker";
+			path = "../Target Support Files/ReachabilitySwift";
+			sourceTree = "<group>";
+		};
+		F147BD3D32D6EAD95A6B09FB0F72805A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6701515FC89244E615740A74E1B4B549 /* libGGLCloudMessaging.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F3AC2DF91F182EBC351C33FFFA0A5F61 /* GoogleUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				DA1C6ACC481F509E7A8AAC2DD2D09473 /* Frameworks */,
+			);
+			path = GoogleUtilities;
+			sourceTree = "<group>";
+		};
+		FCEA520E5A170621C582C114350FC2B9 /* Google */ = {
+			isa = PBXGroup;
+			children = (
+				DA5B2FC447A75B74E181E1A473F877A8 /* CloudMessaging */,
+				BE4C77F0E653F27EA4C6D3E252A6C80F /* Core */,
+			);
+			path = Google;
 			sourceTree = "<group>";
 		};
 		FF2AEA74965EED5FE2760906784C788C /* iOS */ = {
@@ -1006,7 +1256,7 @@
 /* Begin XCBuildConfiguration section */
 		0EE5D642D4EE2ED21A059B28CFA7A4DC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C230D6D7C6B5A6D2BAD5E347669500B4 /* ReachabilitySwift.xcconfig */;
+			baseConfigurationReference = 5DF18FFE9E029AED1BBD264EEB835E72 /* ReachabilitySwift.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1033,7 +1283,7 @@
 		};
 		283BCA518F7E2DB23F205D8A4AE098A9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 55300DE01441A262C1006F9FD85B7FBA /* CheckmarkSegmentedControl.xcconfig */;
+			baseConfigurationReference = A1346BAA7EF0AF8DF0E9D747576EF17D /* CheckmarkSegmentedControl.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1061,7 +1311,7 @@
 		};
 		2C4F3AC310112A802FE4ABBE1C511394 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B61EE84250770C52CE1144D632FE919B /* NMPopUpViewSwift.xcconfig */;
+			baseConfigurationReference = ACF5AA08DA5EE3A3578C16744B0B6A11 /* NMPopUpViewSwift.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1088,7 +1338,7 @@
 		};
 		32D5CBF6B3CA337EA02A54511621019A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DE13C72AFD501B6F8E03C3908CFC4C46 /* youtube-ios-player-helper.xcconfig */;
+			baseConfigurationReference = 0E5A4AF3EB20E48A8E92F3EA305D18FD /* youtube-ios-player-helper.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1115,7 +1365,7 @@
 		};
 		49F80AF6B9EEBFECF92977C26F43A22E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ED55849C9E704C730FCEBA188AD435E8 /* DownPicker.xcconfig */;
+			baseConfigurationReference = 4C3C5630FFDBC2B0B3891D7497B87B17 /* DownPicker.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1215,7 +1465,7 @@
 		};
 		78E5E8F6538A7CE26DEF680C3C138590 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 55300DE01441A262C1006F9FD85B7FBA /* CheckmarkSegmentedControl.xcconfig */;
+			baseConfigurationReference = A1346BAA7EF0AF8DF0E9D747576EF17D /* CheckmarkSegmentedControl.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1273,7 +1523,7 @@
 		};
 		A34F0C25F3BEEC2B327A0A49BFF28BC5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 55300DE01441A262C1006F9FD85B7FBA /* CheckmarkSegmentedControl.xcconfig */;
+			baseConfigurationReference = A1346BAA7EF0AF8DF0E9D747576EF17D /* CheckmarkSegmentedControl.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				PRODUCT_NAME = CheckmarkSegmentedControl;
@@ -1285,7 +1535,7 @@
 		};
 		A435AC07D1BB99C7AC4089D890631E38 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DE13C72AFD501B6F8E03C3908CFC4C46 /* youtube-ios-player-helper.xcconfig */;
+			baseConfigurationReference = 0E5A4AF3EB20E48A8E92F3EA305D18FD /* youtube-ios-player-helper.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1312,7 +1562,7 @@
 		};
 		AD19ACB192F8E8C04EBB7254915E84DA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 55300DE01441A262C1006F9FD85B7FBA /* CheckmarkSegmentedControl.xcconfig */;
+			baseConfigurationReference = A1346BAA7EF0AF8DF0E9D747576EF17D /* CheckmarkSegmentedControl.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				PRODUCT_NAME = CheckmarkSegmentedControl;
@@ -1354,7 +1604,7 @@
 		};
 		B2F91EF41F013B2159C1948334B416F2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DE13C72AFD501B6F8E03C3908CFC4C46 /* youtube-ios-player-helper.xcconfig */;
+			baseConfigurationReference = 0E5A4AF3EB20E48A8E92F3EA305D18FD /* youtube-ios-player-helper.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				PRODUCT_NAME = Assets;
@@ -1366,7 +1616,7 @@
 		};
 		C3E1D0786AF7EDB039629A6CDA0EB325 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ED55849C9E704C730FCEBA188AD435E8 /* DownPicker.xcconfig */;
+			baseConfigurationReference = 4C3C5630FFDBC2B0B3891D7497B87B17 /* DownPicker.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				PRODUCT_NAME = DownPicker;
@@ -1378,7 +1628,7 @@
 		};
 		CB4B32AE1B2088E35A63B681187FBCFD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B61EE84250770C52CE1144D632FE919B /* NMPopUpViewSwift.xcconfig */;
+			baseConfigurationReference = ACF5AA08DA5EE3A3578C16744B0B6A11 /* NMPopUpViewSwift.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				PRODUCT_NAME = NMPopUpViewSwift;
@@ -1390,7 +1640,7 @@
 		};
 		CBFFD4897397FA6D9FE161CBCA99B220 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B61EE84250770C52CE1144D632FE919B /* NMPopUpViewSwift.xcconfig */;
+			baseConfigurationReference = ACF5AA08DA5EE3A3578C16744B0B6A11 /* NMPopUpViewSwift.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				PRODUCT_NAME = NMPopUpViewSwift;
@@ -1402,7 +1652,7 @@
 		};
 		D627854E265E482885F0C2F9BD474B01 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ED55849C9E704C730FCEBA188AD435E8 /* DownPicker.xcconfig */;
+			baseConfigurationReference = 4C3C5630FFDBC2B0B3891D7497B87B17 /* DownPicker.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				PRODUCT_NAME = DownPicker;
@@ -1414,7 +1664,7 @@
 		};
 		E104BB9B22B2E4489A18D08B2F3D4637 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B61EE84250770C52CE1144D632FE919B /* NMPopUpViewSwift.xcconfig */;
+			baseConfigurationReference = ACF5AA08DA5EE3A3578C16744B0B6A11 /* NMPopUpViewSwift.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1442,7 +1692,7 @@
 		};
 		E5660FF4B918DBDA8A54D276B6CDE641 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C230D6D7C6B5A6D2BAD5E347669500B4 /* ReachabilitySwift.xcconfig */;
+			baseConfigurationReference = 5DF18FFE9E029AED1BBD264EEB835E72 /* ReachabilitySwift.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1470,7 +1720,7 @@
 		};
 		E6018AB7949B328C2082C2B7A7F75E7D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DE13C72AFD501B6F8E03C3908CFC4C46 /* youtube-ios-player-helper.xcconfig */;
+			baseConfigurationReference = 0E5A4AF3EB20E48A8E92F3EA305D18FD /* youtube-ios-player-helper.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				PRODUCT_NAME = Assets;
@@ -1482,7 +1732,7 @@
 		};
 		FEA4E9E33EE178E5EBE2D80623BE4A44 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ED55849C9E704C730FCEBA188AD435E8 /* DownPicker.xcconfig */;
+			baseConfigurationReference = 4C3C5630FFDBC2B0B3891D7497B87B17 /* DownPicker.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;

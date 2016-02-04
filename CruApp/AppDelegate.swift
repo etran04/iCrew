@@ -11,33 +11,35 @@ import Alamofire
 import CoreData
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GCMReceiverDelegate {
 
     var window: UIWindow?
+    
+    // GCM Variables
+    var connectedToGCM = false
+    var subscribedToTopic = false
+    var gcmSenderID: String?
+    var registrationToken: String?
+    var registrationOptions = [String: AnyObject]()
+    let registrationKey = "onRegistrationCompleted"
+    let subscriptionTopic = "/topics/global"
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        
-//        let twilioUsername = "ACc18e4b9385be579bdb48ca5526414403"
-//        let twilioPassword = "c5e0f0de4c90c803595851a7554c9a98"
-//        
-//        let data = [
-//        "To" : "+17078038796",
-//        "From" : "+17074193527",
-//        "Body" : "It works!"
-//        ]
-//        
-//        Alamofire.request(.POST, "https://\(twilioUsername):\(twilioPassword)@api.twilio.com/2010-04-01/Accounts/\(twilioUsername)/Messages", parameters: data)
-//        .responseData { response in
-//        print(response.request)
-//        print(response.response)
-//        print(response.result)
-//        }
-        
         // Register application for push notifications (local and remote)
         let pushSettings = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
         UIApplication.sharedApplication().registerUserNotificationSettings(pushSettings)
         UIApplication.sharedApplication().registerForRemoteNotifications()
+        
+        var configureError:NSError?
+        GGLContext.sharedInstance().configureWithError(&configureError)
+        assert(configureError == nil, "Error configuring Google services: \(configureError)")
+        gcmSenderID = GGLContext.sharedInstance().configuration.gcmSenderID
+        
+        // Starts GCM service
+        let gcmConfig = GCMConfig.defaultConfig()
+        gcmConfig.receiverDelegate = self
+        GCMService.sharedInstance().startWithConfig(gcmConfig)
         
         initCoreDataModel();
         
@@ -52,6 +54,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidEnterBackground(application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        postEvent("hello");
     }
 
     func applicationWillEnterForeground(application: UIApplication) {
@@ -60,6 +63,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        // Connect to the GCM server to receive non-APNS notifications
+        if (!connectedToGCM) {
+            GCMService.sharedInstance().connectWithHandler({
+                (NSError error) -> Void in
+                if error != nil {
+                    print("Could not connect to GCM: \(error.localizedDescription)")
+                } else {
+                    self.connectedToGCM = true
+                    print("Connected to GCM")
+                }
+            })
+        }
     }
 
     func applicationWillTerminate(application: UIApplication) {
@@ -78,6 +93,61 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
         print("Received Local Notification!!")
+    }
+    
+    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
+        print("Error for registering remote notifications: \(error)")
+    }
+    
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+        print("deviceToken = \(deviceToken)")
+        // Create a config and set a delegate that implements the GGLInstaceIDDelegate protocol.
+        let instanceIDConfig = GGLInstanceIDConfig.defaultConfig()
+        instanceIDConfig.delegate = self
+        // Start the GGLInstanceID shared instance with that config and request a registration
+        // token to enable reception of notifications
+        GGLInstanceID.sharedInstance().startWithConfig(instanceIDConfig)
+        registrationOptions = [kGGLInstanceIDRegisterAPNSOption:deviceToken,
+            kGGLInstanceIDAPNSServerTypeSandboxOption:true]
+        GGLInstanceID.sharedInstance().tokenWithAuthorizedEntity(gcmSenderID,
+            scope: kGGLInstanceIDScopeGCM, options: registrationOptions, handler: registrationHandler)
+    }
+    
+    func subscribeToTopic() {
+        // If the app has a registration token and is connected to GCM, proceed to subscribe to the
+        // topic
+        if(registrationToken != nil && connectedToGCM) {
+            GCMPubSub.sharedInstance().subscribeWithToken(self.registrationToken, topic: subscriptionTopic,
+                options: nil, handler: {(NSError error) -> Void in
+                    if (error != nil) {
+                        // Treat the "already subscribed" error more gently
+                        if error.code == 3001 {
+                            print("Already subscribed to \(self.subscriptionTopic)")
+                        } else {
+                            print("Subscription failed: \(error.localizedDescription)");
+                        }
+                    } else {
+                        self.subscribedToTopic = true;
+                        NSLog("Subscribed to \(self.subscriptionTopic)");
+                    }
+            })
+        }
+    }
+    
+    func registrationHandler(registrationToken: String!, error: NSError!) {
+        if (registrationToken != nil) {
+            self.registrationToken = registrationToken
+            print("Registration Token: \(registrationToken)")
+            self.subscribeToTopic()
+            let userInfo = ["registrationToken": registrationToken]
+            NSNotificationCenter.defaultCenter().postNotificationName(
+                self.registrationKey, object: nil, userInfo: userInfo)
+        } else {
+            print("Registration to GCM failed with error: \(error.localizedDescription)")
+            let userInfo = ["error": error.localizedDescription]
+            NSNotificationCenter.defaultCenter().postNotificationName(
+                self.registrationKey, object: nil, userInfo: userInfo)
+        }
     }
     
     var managedObjectContext: NSManagedObjectContext?
@@ -110,6 +180,70 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
+    
+    func onTokenRefresh() {
+        // A rotation of the registration tokens is happening, so the app needs to request a new token.
+        print("The GCM registration token needs to be changed.")
+        GGLInstanceID.sharedInstance().tokenWithAuthorizedEntity(gcmSenderID,
+            scope: kGGLInstanceIDScopeGCM, options: registrationOptions, handler: registrationHandler)
+    }
+    
+    func postEvent(eventName : String) -> () {
+        print("got here!!!!")
+                let postURL: String = "https://gcm-http.googleapis.com/gcm/send"
+                //let postURL: String = "http://localhost:3000/api/event/create?Content-Type=application/json"
+                let reqURL = NSURL(string: postURL)
+                let request = NSMutableURLRequest(URL: reqURL!)
+                request.HTTPMethod = "POST"
+                request.setValue("key=AIzaSyCq4DmBRjJK4pE3ZO7or_6lrKLnHx4Ip7E", forHTTPHeaderField: "Authorization")
+                request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        
+                let params = ["to": "ljmIBALKMOw:APA91bHuiZWGP-yc9JDKbZfeA9hSQSHLXO0tgBP7w_X9aIiaz5oujeU00TLVaH9SLFhWSuCG88FPchYHW74_W3Kc_g9u1LTVkCwRhJy61GQ32a9V-jklbE5reY9xkK2BmS-il4XZ-fFb", "content-available": "1", "notification":["title":"CruApp", "body": "You have an upcoming event!", "sound": "default", "badge":"1"]]
+        
+                do {
+                    let jsonPost = try NSJSONSerialization.dataWithJSONObject(params, options: NSJSONWritingOptions.PrettyPrinted)
+                    request.HTTPBody = jsonPost
+        
+                    let session = NSURLSession.sharedSession()
+        
+                    let task = session.dataTaskWithRequest(request, completionHandler: {
+                        (data, response, error) in
+                        
+                        guard let responseData = data else {
+                            print("Error: did not receive data")
+                            return
+                        }
+                        guard error == nil else {
+                            print("error calling POST on /event/create")
+                            print(error)
+                            return
+                        }
+                        print("Response: \(response)")
+                        let strData = NSString(data: data!, encoding: NSUTF8StringEncoding)
+                        print("Body: \(strData)")
+                        print("successful post!")
+        
+                        // parse the result as JSON, since that's what the API provides
+                        let post: NSDictionary
+                        do {
+                            post = try NSJSONSerialization.JSONObjectWithData(responseData,
+                                options: []) as! NSDictionary
+                        } catch  {
+                            print("error parsing response from POST on /event")
+                            return
+                        }
+                        
+                        if let eventName = post["name"] as? String
+                        {
+                            print("The Event Name is: \(eventName)")
+                        }
+                    })
+                    task.resume()
+                } catch {
+                    print("Error: cannot create JSON from event")
+                }
+            }
     
 }
 

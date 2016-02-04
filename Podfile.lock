@@ -1,9 +1,13 @@
 PODS:
+  - CheckmarkSegmentedControl (0.1.1)
+  - DownPicker (0.1.34)
   - NMPopUpViewSwift (3.0.1)
   - ReachabilitySwift (2.3.3)
   - youtube-ios-player-helper (0.1.4)
 
 DEPENDENCIES:
+  - CheckmarkSegmentedControl
+  - DownPicker
   - NMPopUpViewSwift
   - ReachabilitySwift (from `https://github.com/ashleymills/Reachability.swift`)
   - youtube-ios-player-helper (~> 0.1.4)
@@ -18,6 +22,8 @@ CHECKOUT OPTIONS:
     :git: https://github.com/ashleymills/Reachability.swift
 
 SPEC CHECKSUMS:
+  CheckmarkSegmentedControl: ce70c9fb699b623cef8e72c2b8578b505fbf2f48
+  DownPicker: c00ea63f08ae82116cc93d0eba74e86bf3d4c68e
   NMPopUpViewSwift: 23a44d6db17a9abc6b806f9fac597be6d7e9f300
   ReachabilitySwift: e0f6b6f280effb47731acfaaa2d5ffe223703793
   youtube-ios-player-helper: 84b1485ebb4b7c6b619c6e05edcb55186723a7c6

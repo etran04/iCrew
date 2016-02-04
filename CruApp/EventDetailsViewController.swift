@@ -21,10 +21,25 @@ class EventDetailsViewController: UIViewController {
     @IBOutlet weak var googleButton: UIButton!      //Google button to save event to Google calendar
     @IBOutlet weak var calendarButton: UIButton!    //calendar button to save event to native calendar
     
+    //Keys for accessing Google API
+    private let kKeychainItemName = "Google Calendar API"
+    private let kClientID = "466090597779-cqphfvmo2focdg82kpm2rh5qg4u0vgkd.apps.googleusercontent.com"
+    private let kSecret = "fyM1MvYHSkXPl9plSlkYgYcw"
+    private let scopes = [kGTLAuthScopeCalendar, "https://www.googleapis.com/auth/calendar"]
+    private let service = GTLServiceCalendar()
+    
     var event: Event?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Checks if user's google account is already identified
+        if let auth = GTMOAuth2ViewControllerTouch.authForGoogleFromKeychainForName(
+            kKeychainItemName,
+            clientID: kClientID,
+            clientSecret: kSecret) {
+                service.authorizer = auth
+        }
         
         if let event = event {
             
@@ -71,6 +86,10 @@ class EventDetailsViewController: UIViewController {
             } else {
                 facebookButton.enabled = false
             }
+            
+            googleButton.setTitle(event.name, forState: UIControlState.Normal)
+            googleButton.addTarget(self, action: "googleCalendarSync:",
+                forControlEvents: UIControlEvents.TouchUpInside)
         
             
             //Load event image if available
@@ -115,6 +134,7 @@ class EventDetailsViewController: UIViewController {
         }
     }
     
+    //Triggered when calendar button is pressed, gets information to make event
     func syncCalendar(sender: UIButton!) {
         //let event = eventsCollection[Int(sender.titleLabel!.text!)!]
         if let event = event {
@@ -149,7 +169,7 @@ class EventDetailsViewController: UIViewController {
             self.presentViewController(alertController, animated: true, completion: nil)
         }
     }
-    
+    //Creates event and inserts event into local calendar
     func createEvent(eventStore: EKEventStore, title: String, startDate: NSDate, endDate: NSDate) {
         let event = EKEvent(eventStore: eventStore)
         
@@ -163,7 +183,105 @@ class EventDetailsViewController: UIViewController {
             print("Bad")
         }
     }
-
+    
+    //Sync event to Google Calendar, check for authorization
+    func googleCalendarSync(sender: UIButton!) {
+        if let event = event{
+            
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+            
+            let startDate = dateFormatter.dateFromString(event.startDate!)
+            
+            let endDate = dateFormatter.dateFromString(event.endDate!)
+            if let authorizer = service.authorizer,
+                canAuth = authorizer.canAuthorize where canAuth {
+                    insertGoogleEvent(event.name, startDate: startDate!, endDate: endDate!, desc: event.description)
+            } else {
+                presentViewController(
+                    createAuthController(),
+                    animated: true,
+                    completion: nil
+                )
+            }
+        }
+        
+    }
+    //Insert a new event to Google Calendar
+    func insertGoogleEvent(title: String, startDate: NSDate, endDate: NSDate, desc: String) {
+        let event = GTLCalendarEvent()
+        
+        let eventStart = GTLDateTime(date: startDate, timeZone: NSTimeZone.localTimeZone())
+        let eventEnd = GTLDateTime(date: endDate, timeZone: NSTimeZone.localTimeZone())
+        
+        event.summary = title
+        event.start = GTLCalendarEventDateTime()
+        event.end = GTLCalendarEventDateTime()
+        
+        event.start.dateTime = eventStart
+        event.end.dateTime = eventEnd
+        event.descriptionProperty = desc
+        
+        let calendarID = "primary"
+        let query = GTLQueryCalendar.queryForEventsInsertWithObject(event, calendarId: calendarID)
+        
+        service.executeQuery(
+            query,
+            delegate: self,
+            didFinishSelector: "finishInsert:finishedWithObject:error:"
+        )
+    }
+    //Error if couldn't sync to calendar
+    func finishInsert(
+        ticket: GTLServiceTicket,
+        finishedWithObject response : GTLCalendarEvents,
+        error : NSError?) {
+            
+            if let error = error {
+                showAlert("Error", message: error.localizedDescription)
+                return
+            }
+            else {
+                showAlert("Synced", message: "Synced event to calendar")
+            }
+            
+    }
+    
+    // Creates the auth controller for authorizing access to Google Calendar API
+    private func createAuthController() -> GTMOAuth2ViewControllerTouch {
+        let scopeString = scopes.joinWithSeparator(" ")
+        return GTMOAuth2ViewControllerTouch(
+            scope: scopeString,
+            clientID: kClientID,
+            clientSecret: kSecret,
+            keychainItemName: kKeychainItemName,
+            delegate: self,
+            finishedSelector: "viewController:finishedWithAuth:error:"
+        )
+    }
+    
+    // Handle completion of the authorization process, and update the Google Calendar API
+    // with the new credentials.
+    func viewController(vc : UIViewController,
+        finishedWithAuth authResult : GTMOAuth2Authentication, error : NSError?) {
+            
+            if let error = error {
+                service.authorizer = nil
+                showAlert("Authentication Error", message: error.localizedDescription)
+                return
+            }
+            
+            service.authorizer = authResult
+            dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    // Helper for showing an alert
+    func showAlert(title : String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        let okButton = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
+        alert.addAction(okButton)
+        presentViewController(alert, animated: true, completion: nil)
+    }
     
     // MARK: - Navigation
 

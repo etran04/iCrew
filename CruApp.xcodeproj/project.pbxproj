@@ -59,7 +59,6 @@
 		A4110B481C0F7E3400F47AB4 /* Calendar-25.png in Resources */ = {isa = PBXBuildFile; fileRef = A4110B471C0F7E3400F47AB4 /* Calendar-25.png */; };
 		A4110B501C0F7EB500F47AB4 /* Facebook-25.png in Resources */ = {isa = PBXBuildFile; fileRef = A4110B4F1C0F7EB500F47AB4 /* Facebook-25.png */; };
 		A4110B521C0FA44700F47AB4 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4110B511C0FA44700F47AB4 /* Location.swift */; };
-		A4110B541C0FC35A00F47AB4 /* DBUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4110B531C0FC35A00F47AB4 /* DBUtilities.swift */; };
 		A447DBB31C5AC8D3000C6DEB /* Events.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A447DBAF1C5AC8D3000C6DEB /* Events.storyboard */; };
 		A447DBB41C5AC8D3000C6DEB /* RideShare.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A447DBB11C5AC8D3000C6DEB /* RideShare.storyboard */; };
 		A447DBBF1C5ACBBB000C6DEB /* Car-25.png in Resources */ = {isa = PBXBuildFile; fileRef = A447DBBB1C5ACBBB000C6DEB /* Car-25.png */; };
@@ -225,7 +224,6 @@
 		A4110B471C0F7E3400F47AB4 /* Calendar-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Calendar-25.png"; path = "images/Calendar-25.png"; sourceTree = "<group>"; };
 		A4110B4F1C0F7EB500F47AB4 /* Facebook-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Facebook-25.png"; path = "images/Facebook-25.png"; sourceTree = "<group>"; };
 		A4110B511C0FA44700F47AB4 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
-		A4110B531C0FC35A00F47AB4 /* DBUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBUtilities.swift; sourceTree = "<group>"; };
 		A447DBB01C5AC8D3000C6DEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Events.storyboard; sourceTree = "<group>"; };
 		A447DBB21C5AC8D3000C6DEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/RideShare.storyboard; sourceTree = "<group>"; };
 		A447DBBB1C5ACBBB000C6DEB /* Car-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Car-25.png"; path = "images/Car-25.png"; sourceTree = SOURCE_ROOT; };
@@ -263,7 +261,6 @@
 			isa = PBXGroup;
 			children = (
 				A40DD9931C0EC0FB00BCFEC5 /* DBClient.swift */,
-				A4110B531C0FC35A00F47AB4 /* DBUtilities.swift */,
 			);
 			name = DB;
 			sourceTree = "<group>";
@@ -769,7 +766,6 @@
 				838564F51C0D9EDF00EB1728 /* SWRevealViewController.m in Sources */,
 				279327051C50A0EC00BAC73D /* InitialMinistryTableViewController.swift in Sources */,
 				271C78211C50434000F42EA0 /* InitialCampusTableViewController.swift in Sources */,
-				A4110B541C0FC35A00F47AB4 /* DBUtilities.swift in Sources */,
 				83B1CB101C4856BC00145B6D /* CoreDataModel.xcdatamodeld in Sources */,
 				1E37E7261C0E362D0054607A /* Event.swift in Sources */,
 				1E37E72A1C0E362D0054607A /* VideosTableViewController.swift in Sources */,

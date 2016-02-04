@@ -23,6 +23,9 @@
 		1E37E7261C0E362D0054607A /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E37E71E1C0E362D0054607A /* Event.swift */; };
 		1E37E7291C0E362D0054607A /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E37E7211C0E362D0054607A /* EventsViewController.swift */; };
 		1E37E72A1C0E362D0054607A /* VideosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E37E7221C0E362D0054607A /* VideosTableViewController.swift */; };
+		1EB404DC1C633EAC00220D5B /* GTMOAuth2ViewTouch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EB404DB1C633EAC00220D5B /* GTMOAuth2ViewTouch.xib */; };
+		1EB404DE1C633ED900220D5B /* GTLCalendar_Sources.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EB404DD1C633ED900220D5B /* GTLCalendar_Sources.m */; };
+		1EB404E11C63414A00220D5B /* GTL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EB404E01C63414A00220D5B /* GTL.framework */; };
 		271BDF631C0D538A0075A29E /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 271BDF541C0D53710075A29E /* Alamofire.framework */; };
 		271C78161C5040EA00F42EA0 /* Initial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 271C78151C5040EA00F42EA0 /* Initial.storyboard */; };
 		271C78211C50434000F42EA0 /* InitialCampusTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271C78201C50434000F42EA0 /* InitialCampusTableViewController.swift */; };
@@ -181,6 +184,11 @@
 		1E37E71E1C0E362D0054607A /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		1E37E7211C0E362D0054607A /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		1E37E7221C0E362D0054607A /* VideosTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideosTableViewController.swift; sourceTree = "<group>"; };
+		1EB404D81C633E2500220D5B /* GTL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GTL.framework; path = "../google-api-objectivec-client/Source/build/Debug-iphoneos/GTL.framework"; sourceTree = "<group>"; };
+		1EB404DB1C633EAC00220D5B /* GTMOAuth2ViewTouch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GTMOAuth2ViewTouch.xib; path = "../../google-api-objectivec-client/Deps/gtm-oauth2/Source/Touch/GTMOAuth2ViewTouch.xib"; sourceTree = "<group>"; };
+		1EB404DD1C633ED900220D5B /* GTLCalendar_Sources.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTLCalendar_Sources.m; path = "../../google-api-objectivec-client/Source/Services/Calendar/Generated/GTLCalendar_Sources.m"; sourceTree = "<group>"; };
+		1EB404DF1C633EFA00220D5B /* GTLCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTLCalendar.h; path = "../../google-api-objectivec-client/Source/Services/Calendar/Generated/GTLCalendar.h"; sourceTree = "<group>"; };
+		1EB404E01C63414A00220D5B /* GTL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GTL.framework; path = "../google-api-objectivec-client/Source/build/Debug-iphoneos/GTL.framework"; sourceTree = "<group>"; };
 		271BDF491C0D53710075A29E /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "frameworks/Alamofire-master/Alamofire.xcodeproj"; sourceTree = "<group>"; };
 		271C78151C5040EA00F42EA0 /* Initial.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Initial.storyboard; path = Base.lproj/Initial.storyboard; sourceTree = "<group>"; };
 		271C78201C50434000F42EA0 /* InitialCampusTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialCampusTableViewController.swift; sourceTree = "<group>"; };
@@ -250,6 +258,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1EB404E11C63414A00220D5B /* GTL.framework in Frameworks */,
 				271BDF631C0D538A0075A29E /* Alamofire.framework in Frameworks */,
 				CBF52B4D6C6CD44BBF744548 /* Pods_CruApp.framework in Frameworks */,
 			);
@@ -298,6 +307,9 @@
 		072519A61BE9694000F38F81 /* CruApp */ = {
 			isa = PBXGroup;
 			children = (
+				1EB404DF1C633EFA00220D5B /* GTLCalendar.h */,
+				1EB404DD1C633ED900220D5B /* GTLCalendar_Sources.m */,
+				1EB404DA1C633E6E00220D5B /* Supporting Files */,
 				838564F21C0D9EDF00EB1728 /* CruApp-Bridging-Header.h */,
 				279326FB1C509C2100BAC73D /* NMPopUpViewSwift */,
 				A43482D11C0D290E00B62D6C /* Images */,
@@ -363,6 +375,14 @@
 				07C196291C0E5B1800375B8D /* Resources */,
 			);
 			name = VCs;
+			sourceTree = "<group>";
+		};
+		1EB404DA1C633E6E00220D5B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1EB404DB1C633EAC00220D5B /* GTMOAuth2ViewTouch.xib */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		271BDF4A1C0D53710075A29E /* Products */ = {
@@ -514,6 +534,8 @@
 		C6533B09B2FB930E446D08DE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1EB404E01C63414A00220D5B /* GTL.framework */,
+				1EB404D81C633E2500220D5B /* GTL.framework */,
 				DD14769052309A631372632E /* Pods_CruApp.framework */,
 			);
 			name = Frameworks;
@@ -703,6 +725,7 @@
 				A45572F91C49CCE90097DE0F /* Google Plus-25.png in Resources */,
 				279326FC1C509C2100BAC73D /* PopUpViewController.xib in Resources */,
 				839F64491C0D643A00CAEC9E /* menu.png in Resources */,
+				1EB404DC1C633EAC00220D5B /* GTMOAuth2ViewTouch.xib in Resources */,
 				072519AD1BE9694000F38F81 /* Main.storyboard in Resources */,
 				839F64581C0D6C1E00CAEC9E /* SummerMissions.storyboard in Resources */,
 			);
@@ -796,6 +819,7 @@
 				83B1CB271C4886F700145B6D /* Campus.swift in Sources */,
 				A45573001C4CDAF60097DE0F /* MissionViewCell.swift in Sources */,
 				07C196351C0E6D9F00375B8D /* ArticleTableViewCell.swift in Sources */,
+				1EB404DE1C633ED900220D5B /* GTLCalendar_Sources.m in Sources */,
 				1E37E7291C0E362D0054607A /* EventsViewController.swift in Sources */,
 				07C196371C0E863000375B8D /* VideoTableViewCell.swift in Sources */,
 				07340BB21C5B3606002C6015 /* RiderQuestionaireVC.swift in Sources */,
@@ -919,10 +943,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
+				GCC_PREPROCESSOR_DEFINITIONS = "GTL_BUILT_AS_FRAMEWORK=1";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -933,6 +954,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "CruApp/CruApp-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -962,6 +984,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = "GTL_BUILT_AS_FRAMEWORK=1";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -971,6 +994,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "CruApp/CruApp-Bridging-Header.h";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -987,6 +1011,10 @@
 				ENABLE_BITCODE = NO;
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+				);
 				INFOPLIST_FILE = CruApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1010,6 +1038,11 @@
 				ENABLE_BITCODE = NO;
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+					"GLT_BUILT_AS_FRAMEWORK=1",
+				);
 				INFOPLIST_FILE = CruApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

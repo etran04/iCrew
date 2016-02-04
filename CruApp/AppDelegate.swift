@@ -54,7 +54,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GC
     func applicationDidEnterBackground(application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-        postEvent("hello");
     }
 
     func applicationWillEnterForeground(application: UIApplication) {
@@ -199,7 +198,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GC
                 request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         
-                let params = ["to": "ljmIBALKMOw:APA91bHuiZWGP-yc9JDKbZfeA9hSQSHLXO0tgBP7w_X9aIiaz5oujeU00TLVaH9SLFhWSuCG88FPchYHW74_W3Kc_g9u1LTVkCwRhJy61GQ32a9V-jklbE5reY9xkK2BmS-il4XZ-fFb", "content-available": "1", "notification":["title":"CruApp", "body": "You have an upcoming event!", "sound": "default", "badge":"1"]]
+                let params = ["to": "/topics/global", "content-available": "1", "notification":["title":"CruApp", "body": "You have an upcoming event!", "sound": "default", "badge":"1"]]
         
                 do {
                     let jsonPost = try NSJSONSerialization.dataWithJSONObject(params, options: NSJSONWritingOptions.PrettyPrinted)

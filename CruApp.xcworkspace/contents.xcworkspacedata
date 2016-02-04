@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:../google-api-objectivec-client/Source/GTLCore.xcodeproj">
+      location = "group:google-api-objectivec-client/Source/GTLCore.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:CruApp.xcodeproj">

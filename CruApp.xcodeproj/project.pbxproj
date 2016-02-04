@@ -23,9 +23,9 @@
 		1E37E7261C0E362D0054607A /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E37E71E1C0E362D0054607A /* Event.swift */; };
 		1E37E7291C0E362D0054607A /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E37E7211C0E362D0054607A /* EventsViewController.swift */; };
 		1E37E72A1C0E362D0054607A /* VideosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E37E7221C0E362D0054607A /* VideosTableViewController.swift */; };
-		1EB404DC1C633EAC00220D5B /* GTMOAuth2ViewTouch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EB404DB1C633EAC00220D5B /* GTMOAuth2ViewTouch.xib */; };
-		1EB404DE1C633ED900220D5B /* GTLCalendar_Sources.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EB404DD1C633ED900220D5B /* GTLCalendar_Sources.m */; };
-		1EB404E11C63414A00220D5B /* GTL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EB404E01C63414A00220D5B /* GTL.framework */; };
+		1EB405151C63D6D800220D5B /* GTL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EB405141C63D6D800220D5B /* GTL.framework */; };
+		1EB405181C63D73400220D5B /* GTLCalendar_Sources.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EB405161C63D73400220D5B /* GTLCalendar_Sources.m */; };
+		1EB4051A1C63D74500220D5B /* GTMOAuth2ViewTouch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EB405191C63D74500220D5B /* GTMOAuth2ViewTouch.xib */; };
 		271BDF631C0D538A0075A29E /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 271BDF541C0D53710075A29E /* Alamofire.framework */; };
 		271C78161C5040EA00F42EA0 /* Initial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 271C78151C5040EA00F42EA0 /* Initial.storyboard */; };
 		271C78211C50434000F42EA0 /* InitialCampusTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271C78201C50434000F42EA0 /* InitialCampusTableViewController.swift */; };
@@ -185,10 +185,12 @@
 		1E37E7211C0E362D0054607A /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		1E37E7221C0E362D0054607A /* VideosTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideosTableViewController.swift; sourceTree = "<group>"; };
 		1EB404D81C633E2500220D5B /* GTL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GTL.framework; path = "../google-api-objectivec-client/Source/build/Debug-iphoneos/GTL.framework"; sourceTree = "<group>"; };
-		1EB404DB1C633EAC00220D5B /* GTMOAuth2ViewTouch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GTMOAuth2ViewTouch.xib; path = "../../google-api-objectivec-client/Deps/gtm-oauth2/Source/Touch/GTMOAuth2ViewTouch.xib"; sourceTree = "<group>"; };
-		1EB404DD1C633ED900220D5B /* GTLCalendar_Sources.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTLCalendar_Sources.m; path = "../../google-api-objectivec-client/Source/Services/Calendar/Generated/GTLCalendar_Sources.m"; sourceTree = "<group>"; };
-		1EB404DF1C633EFA00220D5B /* GTLCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTLCalendar.h; path = "../../google-api-objectivec-client/Source/Services/Calendar/Generated/GTLCalendar.h"; sourceTree = "<group>"; };
 		1EB404E01C63414A00220D5B /* GTL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GTL.framework; path = "../google-api-objectivec-client/Source/build/Debug-iphoneos/GTL.framework"; sourceTree = "<group>"; };
+		1EB4050D1C63D0DA00220D5B /* GTL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GTL.framework; path = "google-api-objectivec-client/Source/build/Debug-iphoneos/GTL.framework"; sourceTree = "<group>"; };
+		1EB405141C63D6D800220D5B /* GTL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GTL.framework; path = "google-api-objectivec-client/Source/build/Debug-iphoneos/GTL.framework"; sourceTree = "<group>"; };
+		1EB405161C63D73400220D5B /* GTLCalendar_Sources.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTLCalendar_Sources.m; path = "google-api-objectivec-client/Source/Services/Calendar/Generated/GTLCalendar_Sources.m"; sourceTree = SOURCE_ROOT; };
+		1EB405171C63D73400220D5B /* GTLCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTLCalendar.h; path = "google-api-objectivec-client/Source/Services/Calendar/Generated/GTLCalendar.h"; sourceTree = SOURCE_ROOT; };
+		1EB405191C63D74500220D5B /* GTMOAuth2ViewTouch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GTMOAuth2ViewTouch.xib; path = "google-api-objectivec-client/Deps/gtm-oauth2/Source/Touch/GTMOAuth2ViewTouch.xib"; sourceTree = SOURCE_ROOT; };
 		271BDF491C0D53710075A29E /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "frameworks/Alamofire-master/Alamofire.xcodeproj"; sourceTree = "<group>"; };
 		271C78151C5040EA00F42EA0 /* Initial.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Initial.storyboard; path = Base.lproj/Initial.storyboard; sourceTree = "<group>"; };
 		271C78201C50434000F42EA0 /* InitialCampusTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialCampusTableViewController.swift; sourceTree = "<group>"; };
@@ -258,7 +260,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1EB404E11C63414A00220D5B /* GTL.framework in Frameworks */,
+				1EB405151C63D6D800220D5B /* GTL.framework in Frameworks */,
 				271BDF631C0D538A0075A29E /* Alamofire.framework in Frameworks */,
 				CBF52B4D6C6CD44BBF744548 /* Pods_CruApp.framework in Frameworks */,
 			);
@@ -307,8 +309,8 @@
 		072519A61BE9694000F38F81 /* CruApp */ = {
 			isa = PBXGroup;
 			children = (
-				1EB404DF1C633EFA00220D5B /* GTLCalendar.h */,
-				1EB404DD1C633ED900220D5B /* GTLCalendar_Sources.m */,
+				1EB405161C63D73400220D5B /* GTLCalendar_Sources.m */,
+				1EB405171C63D73400220D5B /* GTLCalendar.h */,
 				1EB404DA1C633E6E00220D5B /* Supporting Files */,
 				838564F21C0D9EDF00EB1728 /* CruApp-Bridging-Header.h */,
 				279326FB1C509C2100BAC73D /* NMPopUpViewSwift */,
@@ -380,7 +382,7 @@
 		1EB404DA1C633E6E00220D5B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				1EB404DB1C633EAC00220D5B /* GTMOAuth2ViewTouch.xib */,
+				1EB405191C63D74500220D5B /* GTMOAuth2ViewTouch.xib */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -534,6 +536,8 @@
 		C6533B09B2FB930E446D08DE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1EB405141C63D6D800220D5B /* GTL.framework */,
+				1EB4050D1C63D0DA00220D5B /* GTL.framework */,
 				1EB404E01C63414A00220D5B /* GTL.framework */,
 				1EB404D81C633E2500220D5B /* GTL.framework */,
 				DD14769052309A631372632E /* Pods_CruApp.framework */,
@@ -725,7 +729,7 @@
 				A45572F91C49CCE90097DE0F /* Google Plus-25.png in Resources */,
 				279326FC1C509C2100BAC73D /* PopUpViewController.xib in Resources */,
 				839F64491C0D643A00CAEC9E /* menu.png in Resources */,
-				1EB404DC1C633EAC00220D5B /* GTMOAuth2ViewTouch.xib in Resources */,
+				1EB4051A1C63D74500220D5B /* GTMOAuth2ViewTouch.xib in Resources */,
 				072519AD1BE9694000F38F81 /* Main.storyboard in Resources */,
 				839F64581C0D6C1E00CAEC9E /* SummerMissions.storyboard in Resources */,
 			);
@@ -813,13 +817,13 @@
 				83B1CB291C48880A00145B6D /* UserProfile.swift in Sources */,
 				A487BBF91C63569A006F9B3C /* DriverTableViewController.swift in Sources */,
 				07C196331C0E6AD400375B8D /* ArticlesTableViewController.swift in Sources */,
+				1EB405181C63D73400220D5B /* GTLCalendar_Sources.m in Sources */,
 				271C78231C5044B100F42EA0 /* InitialCampusTableViewCell.swift in Sources */,
 				A4110B521C0FA44700F47AB4 /* Location.swift in Sources */,
 				A40DD9A41C0EC62F00BCFEC5 /* Mission.swift in Sources */,
 				83B1CB271C4886F700145B6D /* Campus.swift in Sources */,
 				A45573001C4CDAF60097DE0F /* MissionViewCell.swift in Sources */,
 				07C196351C0E6D9F00375B8D /* ArticleTableViewCell.swift in Sources */,
-				1EB404DE1C633ED900220D5B /* GTLCalendar_Sources.m in Sources */,
 				1E37E7291C0E362D0054607A /* EventsViewController.swift in Sources */,
 				07C196371C0E863000375B8D /* VideoTableViewCell.swift in Sources */,
 				07340BB21C5B3606002C6015 /* RiderQuestionaireVC.swift in Sources */,
@@ -1010,7 +1014,10 @@
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_BITCODE = NO;
 				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/google-api-objectivec-client/Source/build/Debug-iphoneos",
+				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					"COCOAPODS=1",
@@ -1037,7 +1044,10 @@
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_BITCODE = NO;
 				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/google-api-objectivec-client/Source/build/Debug-iphoneos",
+				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					"COCOAPODS=1",

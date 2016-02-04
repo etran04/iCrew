@@ -51,38 +51,6 @@ SOFTWARE.
 
 
 
-## GGLInstanceID
-
-Copyright 2015 Google Inc.
-
-## Google
-
-Copyright 2015 Google Inc.
-
-## GoogleCloudMessaging
-
-Copyright 2015 Google Inc.
-
-## GoogleIPhoneUtilities
-
-Copyright 2015 Google Inc.
-
-## GoogleInterchangeUtilities
-
-Copyright 2015 Google Inc.
-
-## GoogleNetworkingUtilities
-
-Copyright 2015 Google Inc.
-
-## GoogleSymbolUtilities
-
-Copyright 2015 Google Inc.
-
-## GoogleUtilities
-
-Copyright 2015 Google Inc.
-
 ## NMPopUpViewSwift
 
 The MIT License (MIT)

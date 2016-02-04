@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '58BA23E6B8867BB0A53E1F8C'
+               BlueprintIdentifier = 'EAD6DC3D2B8F34BE33DE3468'
                BlueprintName = 'CheckmarkSegmentedControl'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'CheckmarkSegmentedControl.framework'>

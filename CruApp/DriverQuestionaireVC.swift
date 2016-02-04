@@ -63,6 +63,7 @@ class DriverQuestionaireVC: UIViewController {
         /* TO DO: populate event choices */
         dbClient.getData("event", dict: setEvents)
         self.eventDownPicker = DownPicker(textField: self.eventsChoice, withData: eventChoices)
+        self.eventDownPicker.setPlaceholder("Choose an event...")
         
         /* populate seat choices */
         let seatChoices = ([Int](1...10)).map(

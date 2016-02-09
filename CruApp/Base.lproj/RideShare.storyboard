@@ -126,6 +126,12 @@
                                 <rect key="frame" x="163" y="605" width="49" height="30"/>
                                 <state key="normal" title="Submit"/>
                             </button>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="15" translatesAutoresizingMaskIntoConstraints="NO" id="zlP-s3-b8q">
+                                <rect key="frame" x="0.0" y="339" width="375" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="476743196.22799498">
+                                    <!--2016-02-09 20:39:56 +0000-->
+                                </date>
+                            </datePicker>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>

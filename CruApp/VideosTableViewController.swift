@@ -80,7 +80,29 @@ class VideosTableViewController: UITableViewController {
     
     /* Asks the data source to return the number of sections in the table view. Default is 1. */
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+        
+//        // Return the number of sections.
+//        if (self.videos.count == 0) {
+//            self.tableView.separatorStyle = .SingleLine;
+//            return 1;
+//            
+//        } else {
+//            
+//            // Display a message when the table is empty
+//            let messageLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.view.bounds.size.width, height: self.view.bounds.size.height))
+//            
+//            messageLabel.text = "No data is currently available. Please pull down to refresh.";
+//            messageLabel.textColor = UIColor.blackColor()
+//            messageLabel.numberOfLines = 0;
+//            messageLabel.textAlignment = .Center
+//            messageLabel.sizeToFit()
+//            
+//            self.tableView.backgroundView = messageLabel;
+//            self.tableView.separatorStyle = .None
+//            
+//        }
+        
+        return 1;
     }
     
     /* Dynamically size the number of rows to match the number of videos we have */
@@ -110,7 +132,7 @@ class VideosTableViewController: UITableViewController {
     
     /* Callback for when a table cell is selected */
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
+        // Empty method, can be filled for functionality if needed.
     }
 
     /* Helper method to perform a simple get request */

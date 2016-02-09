@@ -83,7 +83,11 @@ class VideosTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("VideoTableCell", forIndexPath: indexPath) as! VideoTableViewCell
        
         let currentVideo = videos[indexPath.row]
-        cell.setVideoInfo(currentVideo.getId(), title: currentVideo.getTitle(), summary: currentVideo.getSummary())
+        if (currentVideo.getSummary() == "") {
+            cell.setVideoInfo(currentVideo.getId(), title: currentVideo.getTitle(), summary: "No description available")
+        } else {
+            cell.setVideoInfo(currentVideo.getId(), title: currentVideo.getTitle(), summary: currentVideo.getSummary())
+        }
         
         // Make videos a fixed size
         cell.videoPlayer.contentMode = .ScaleAspectFit
@@ -152,7 +156,6 @@ class VideosTableViewController: UITableViewController {
                     // Save the channel's uploaded videos playlist ID.
                     desiredValuesDict["playlistID"] = ((firstItemDict["contentDetails"] as! Dictionary<NSObject, AnyObject>)["relatedPlaylists"] as! Dictionary<NSObject, AnyObject>)["uploads"]
                     
-                    
                     // Append the desiredValuesDict dictionary to the following array.
                     self.channelsDataArray.append(desiredValuesDict)
                     
@@ -205,7 +208,7 @@ class VideosTableViewController: UITableViewController {
                         
                         // Adds the video to our list of videos
                         let newVideo = Video(id: desiredPlaylistItemDataDict["videoID"] as! String, title: desiredPlaylistItemDataDict["title"] as! String, summary: desiredPlaylistItemDataDict["description"] as! String)
-                        print(newVideo.toString())
+                        //print(newVideo.toString())
                         self.videos.append(newVideo)
                         
                         // Reload the tableview.

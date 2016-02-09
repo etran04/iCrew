@@ -31,17 +31,30 @@ class Video {
     func getSummary() -> String {
         return self.summary!
     }
+    
+    func toString() -> String {
+        return "ID: " + self.id! + ", Title: " + self.title! + ", Summary: " + self.summary!
+    }
 }
 
 /* VideosTableVC is the screen that loads a list of videos and displays them in a table */
 class VideosTableViewController: UITableViewController {
+    
+    /* Key used to access Google YouTube API. From Google Developer Console */
+    var apiKey = "AIzaSyBGaaqJruUGsKohM4PJZO6XnlMOmdt6gsY"
+    
+    /* Video Channel information */
+    var desiredChannelsArray = ["slocrusade"]
+    var channelIndex = 0
+    var channelsDataArray: Array<Dictionary<NSObject, AnyObject>> = []
+    var videosArray: Array<Dictionary<NSObject, AnyObject>> = []
     
     /* Holds a list of videos to be loaded */
     var videos = [Video]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.loadVideos()
+        self.getChannelDetailsAndLoadVideos(false)
     }
 
     override func didReceiveMemoryWarning() {
@@ -50,12 +63,7 @@ class VideosTableViewController: UITableViewController {
     
     /* Populates the list of videos with videos from the Cru Database */
     func loadVideos() {
-        self.videos += [
-            Video(id: "9cmh72Z9ISI", title: "chinchilla massage", summary: "Kimchi just loves her scratches"),
-            Video(id: "FNf-IGmxElI", title: "Tiny hamster eatting a tiny pizza", summary: "Inspired by tiny hamster eating tiny burrito, here is Chicken eating a tiny pizza. She is my one year old, russian dwarf hamster. I got her at the Petsmart in Ottawa, ON. She's my first hamster. She is super sweet and the best hamster anyone could ever wish for."),
-            Video(id: "BIHVxynRvDk", title: "Samoyed puppies (37 Days old) - 'manners'", summary: "Six Samoyed puppies born March 31, 2012. More info at www.SamoyedMoms.com and www.PotomacValleySams.com - home of the Potomac Valley Samoyed Club of Washington, D.C., Virginia, Maryland and West Virginia"),
-            Video(id: "-n4XX5nnXhU", title: "ROCKY the French Bulldog puppy jumping", summary: "For licensing/usage please contact: licensing(at)jukinmediadotcom")
-        ]
+        self.getVideosForChannelAtIndex(0)
     }
     
     // MARK: - Table view data source
@@ -90,50 +98,128 @@ class VideosTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
     }
-    
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-    // Return false if you do not want the specified item to be editable.
-    return true
+
+    /* Helper method to perform a simple get request */
+    func performGetRequest(targetURL: NSURL!, completion: (data: NSData?, HTTPStatusCode: Int, error: NSError?) -> Void) {
+        let request = NSMutableURLRequest(URL: targetURL)
+        request.HTTPMethod = "GET"
+        
+        let sessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        
+        let session = NSURLSession(configuration: sessionConfiguration)
+        
+        let task = session.dataTaskWithRequest(request, completionHandler: { (data: NSData?, response: NSURLResponse?, error: NSError?) -> Void in
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                completion(data: data, HTTPStatusCode: (response as! NSHTTPURLResponse).statusCode, error: error)
+            })
+        })
+        
+        task.resume()
     }
-    */
     
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-    if editingStyle == .Delete {
-    // Delete the row from the data source
-    tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-    } else if editingStyle == .Insert {
-    // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+    /* Retrieves the information about the Cru channel and saves it */
+    func getChannelDetailsAndLoadVideos(useChannelIDParam: Bool) -> Void{
+        var urlString: String!
+        if !useChannelIDParam {
+            urlString = "https://www.googleapis.com/youtube/v3/channels?part=contentDetails,snippet&forUsername=\(desiredChannelsArray[channelIndex])&key=\(apiKey)"
+        }
+        else {
+            urlString = "https://www.googleapis.com/youtube/v3/channels?part=contentDetails,snippet&id=\(desiredChannelsArray[channelIndex])&key=\(apiKey)"
+        }
+        
+        let targetURL = NSURL(string: urlString)
+        
+        performGetRequest(targetURL, completion: { (data, HTTPStatusCode, error) -> Void in
+            if HTTPStatusCode == 200 && error == nil {
+                
+                do {
+                    // Convert the JSON data to a dictionary.
+                    let resultsDict = try NSJSONSerialization.JSONObjectWithData(data!, options: []) as! Dictionary<NSObject, AnyObject>
+                    
+                    // Get the first dictionary item from the returned items (usually there's just one item).
+                    let items: AnyObject! = resultsDict["items"] as AnyObject!
+                    let firstItemDict = (items as! Array<AnyObject>)[0] as! Dictionary<NSObject, AnyObject>
+                    
+                    // Get the snippet dictionary that contains the desired data.
+                    let snippetDict = firstItemDict["snippet"] as! Dictionary<NSObject, AnyObject>
+                    
+                    // Create a new dictionary to store only the values we care about.
+                    var desiredValuesDict: Dictionary<NSObject, AnyObject> = Dictionary<NSObject, AnyObject>()
+                    desiredValuesDict["title"] = snippetDict["title"]
+                    desiredValuesDict["description"] = snippetDict["description"]
+                    desiredValuesDict["thumbnail"] = ((snippetDict["thumbnails"] as! Dictionary<NSObject, AnyObject>)["default"] as! Dictionary<NSObject, AnyObject>)["url"]
+                    
+                    // Save the channel's uploaded videos playlist ID.
+                    desiredValuesDict["playlistID"] = ((firstItemDict["contentDetails"] as! Dictionary<NSObject, AnyObject>)["relatedPlaylists"] as! Dictionary<NSObject, AnyObject>)["uploads"]
+                    
+                    
+                    // Append the desiredValuesDict dictionary to the following array.
+                    self.channelsDataArray.append(desiredValuesDict)
+                    
+                    // Loads the video into the tableview
+                    self.loadVideos()
+                } catch {
+                    print(error)
+                }
+                
+            } else {
+                print("HTTP Status Code = \(HTTPStatusCode)")
+                print("Error while loading channel details: \(error)")
+            }
+        })
     }
+    
+    /* Retrieves the videos for the Cru Channel, and loads it into our table */
+    func getVideosForChannelAtIndex(index: Int) -> Void {
+        // Get the selected channel's playlistID value from the channelsDataArray array and use it for fetching the proper video playlst.
+        
+        let playlistID = channelsDataArray[index]["playlistID"] as! String
+        
+        // Form the request URL string.
+        let urlString = "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=\(playlistID)&key=\(apiKey)"
+        
+        // Create a NSURL object based on the above string.
+        let targetURL = NSURL(string: urlString)
+        
+        // Fetch the playlist from Google.
+        performGetRequest(targetURL, completion: { (data, HTTPStatusCode, error) -> Void in
+            if HTTPStatusCode == 200 && error == nil {
+                do {
+                    // Convert the JSON data into a dictionary.
+                    let resultsDict = try NSJSONSerialization.JSONObjectWithData(data!, options: []) as! Dictionary<NSObject, AnyObject>
+                    
+                    // Get all playlist items ("items" array).
+                    let items: Array<Dictionary<NSObject, AnyObject>> = resultsDict["items"] as! Array<Dictionary<NSObject, AnyObject>>
+                    
+                    // Use a loop to go through all video items.
+                    for var i=0; i<items.count; ++i {
+                        let playlistSnippetDict = (items[i] as Dictionary<NSObject, AnyObject>)["snippet"] as! Dictionary<NSObject, AnyObject>
+                        
+                        // Initialize a new dictionary and store the data of interest.
+                        var desiredPlaylistItemDataDict = Dictionary<NSObject, AnyObject>()
+                        
+                        desiredPlaylistItemDataDict["title"] = playlistSnippetDict["title"]
+                        desiredPlaylistItemDataDict["description"] = playlistSnippetDict["description"]
+                        desiredPlaylistItemDataDict["thumbnail"] = ((playlistSnippetDict["thumbnails"] as! Dictionary<NSObject, AnyObject>)["default"] as! Dictionary<NSObject, AnyObject>)["url"]
+                        desiredPlaylistItemDataDict["videoID"] = (playlistSnippetDict["resourceId"] as! Dictionary<NSObject, AnyObject>)["videoId"]
+                        
+                        // Adds the video to our list of videos
+                        let newVideo = Video(id: desiredPlaylistItemDataDict["videoID"] as! String, title: desiredPlaylistItemDataDict["title"] as! String, summary: desiredPlaylistItemDataDict["description"] as! String)
+                        print(newVideo.toString())
+                        self.videos.append(newVideo)
+                        
+                        // Reload the tableview.
+                        self.tableView.reloadData()
+                    }
+                } catch {
+                    print(error)
+                }
+            }
+            else {
+                print("HTTP Status Code = \(HTTPStatusCode)")
+                print("Error while loading channel videos: \(error)")
+            }
+        })
     }
-    */
-    
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-    
-    }
-    */
-    
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-    // Return false if you do not want the item to be re-orderable.
-    return true
-    }
-    */
-    
-    /*
-    // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
-    }
-    */
     
 }

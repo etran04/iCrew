@@ -71,7 +71,9 @@ class DriverQuestionaireVC: UIViewController {
                 (number: Int) -> String in
                 return String(number)
         })
+        
         self.seatDownPicker = DownPicker(textField: self.numSeatsAvailChoice, withData: seatChoices)
+        self.seatDownPicker.setPlaceholder("# Seats Available")
     }
     
     // Obtain event information from the database to an Object

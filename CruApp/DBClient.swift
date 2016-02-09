@@ -15,7 +15,7 @@ class DBClient {
     }
     
     func requestData(action: String, completionHandler : (NSData?, NSURLResponse?, NSError?) -> Void) {
-        let url = "http://pcp070595pcs.wireless.calpoly.edu:3000/api/" + action + "/list"
+        let url = "http://pcp070557pcs.wireless.calpoly.edu:3000/api/" + action + "/list"
                 
         //let url = "http://localhost:3000/api/" + action + "/list"
         //for sorting
@@ -38,7 +38,7 @@ class DBClient {
     }
     
     func postData(action: String, body: String, dict: (NSDictionary) -> ()) {
-        let url = "http://pcp070595pcs.wireless.calpoly.edu:3000/api/" + action + "/find"
+        let url = "http://pcp070557pcs.wireless.calpoly.edu:3000/api/" + action + "/find"
         //let url = "https://gcm-http.googleapis.com/gcm/send"
         //let bdy = "order={startDate:1}"
         //let params = ["notification":["title":"Portugal vs. Denmark", "message":"great match!"]]
@@ -57,7 +57,8 @@ class DBClient {
         
         let params = ["direction": direction, "seats": seats, "driverNumber": driverNumber, "event": "563b11135e926d03001ac15c", "driverName": driverName, "gcm_id" : 1234567]
         
-        let url = "http://pcp070595pcs.wireless.calpoly.edu:3000/api/" + action + "/create"
+        let url = "http://pcp070557pcs.wireless.calpoly.edu:3000/api/" + action + "/create"
+        //let url = "http://localhost:3000/api/" + action + "/create"
         
         do {
             let body = try NSJSONSerialization.dataWithJSONObject(params, options: NSJSONWritingOptions.PrettyPrinted)

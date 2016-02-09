@@ -52,11 +52,16 @@ class VideosTableViewController: UITableViewController {
     /* Holds a list of videos to be loaded */
     var videos = [Video]()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.getChannelDetailsAndLoadVideos(false)
+        
+        self.refreshControl!.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        self.refreshControl!.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+        self.tableView.addSubview(refreshControl!)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -64,6 +69,11 @@ class VideosTableViewController: UITableViewController {
     /* Populates the list of videos with videos from the Cru Database */
     func loadVideos() {
         self.getVideosForChannelAtIndex(0)
+    }
+    
+    func refresh(sender:AnyObject) {
+        self.tableView.reloadData()
+        self.refreshControl!.endRefreshing()
     }
     
     // MARK: - Table view data source

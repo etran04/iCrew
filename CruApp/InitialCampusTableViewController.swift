@@ -14,7 +14,7 @@ class InitialCampusTableViewController: UITableViewController {
 
     //var test: [String] = ["Cal Poly", "UCSB"] //
     var campusesCollection = [String]()
-    var isSelected: [Bool] = []
+    var isSelected: [Bool] = [false, false,false]
     var selected: [String] = []
     
     
@@ -50,21 +50,16 @@ class InitialCampusTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //pull from database here
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        
-        //adding background image
-        tableView.backgroundView = UIImageView(image: UIImage(named: "Bishop-peak_gray.jpg"))
-        tableView.tableFooterView = UIView()
-        
+        //setup database
         var dbClient: DBClient!
         dbClient = DBClient()
         dbClient.getData("campus", dict: setCampuses)
+        
+        //remove extra separators
+        self.tableView.tableFooterView = UIView()
+        
+        //set empty back button
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.Plain, target:nil, action:nil)
         
         
     }
@@ -94,15 +89,15 @@ class InitialCampusTableViewController: UITableViewController {
         return campusesCollection.count //
     }
     
+
+    
     // Uncomment
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! InitialCampusTableViewCell
-        
-        // Configure the cell...
+
+        //set campus text
         cell.campus.text = campusesCollection[indexPath.row]
-        
-        
-        
+    
         
         return cell
     }
@@ -114,10 +109,7 @@ class InitialCampusTableViewController: UITableViewController {
         let cell:UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
         
         if (!selected.contains(campusesCollection[indexPath.row])) {
-            
             cell.accessoryType = UITableViewCellAccessoryType.Checkmark
-            cell.contentView.backgroundColor = UIColor(red: CGFloat(98/255.0), green: CGFloat(96/255.0), blue: CGFloat(98/255.0), alpha: CGFloat(0.25) )
-            cell.contentView.superview!.backgroundColor = UIColor(red: CGFloat(98/255.0), green: CGFloat(96/255.0), blue: CGFloat(98/255.0), alpha: CGFloat(0.80) )
             selected.append(campusesCollection[indexPath.row])
             dump(selected)
             
@@ -125,13 +117,10 @@ class InitialCampusTableViewController: UITableViewController {
         else {
             isSelected[indexPath.row] = false
             cell.accessoryType = UITableViewCellAccessoryType.None
-            cell.contentView.backgroundColor = UIColor.clearColor()
-            cell.contentView.superview!.backgroundColor = UIColor.clearColor()
             selected = selected.filter() {$0 != campusesCollection[indexPath.row]}
             
             dump(selected)
         }
     }
-
 
 }

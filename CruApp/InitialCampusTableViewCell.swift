@@ -11,7 +11,7 @@ import UIKit
 class InitialCampusTableViewCell: UITableViewCell {
 
     @IBOutlet var campus: UILabel!
-    
+
     @IBOutlet var infoButton: UIButton!
     
     override func awakeFromNib() {

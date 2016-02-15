@@ -45,19 +45,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GC
         GCMService.sharedInstance().startWithConfig(gcmConfig)
         
         initCoreDataModel()
-        
-        setRootViewController()
-        
+
         return true
-    }
-    
-    func setRootViewController() {
-        print("got here \(UserProfile.getCampuses().count)")
-        if (UserProfile.getCampuses().count > 0) {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewControllerWithIdentifier("mainRootViewController") as! SWRevealViewController
-            self.window?.rootViewController = vc
-        }
     }
 
     func applicationWillResignActive(application: UIApplication) {

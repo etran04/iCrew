@@ -50,9 +50,9 @@ class InitialCampusTableViewController: UITableViewController {
         super.viewDidLoad()
         
         if (UserProfile.getCampuses().count > 0) {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewControllerWithIdentifier("mainRootViewController") as! SWRevealViewController
-            self.presentViewController(vc, animated: false, completion: nil)
+//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//            let vc = storyboard.instantiateViewControllerWithIdentifier("mainRootViewController") as! SWRevealViewController
+//            self.presentViewController(vc, animated: false, completion: nil)
         }
         else {
             //pull from database here
@@ -83,6 +83,7 @@ class InitialCampusTableViewController: UITableViewController {
         
         campusesCollection.append(name)
         isSelected.append(false)
+        // TODO: Remove campuses Collection and use cache
         self.tableView.reloadData()
     }
     

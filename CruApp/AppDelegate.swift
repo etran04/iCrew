@@ -23,6 +23,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GC
     var registrationOptions = [String: AnyObject]()
     let registrationKey = "onRegistrationCompleted"
     let subscriptionTopic = "/topics/global"
+    
+    // Core Data Model
+    var managedObjectContext: NSManagedObjectContext?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
@@ -41,9 +44,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GC
         gcmConfig.receiverDelegate = self
         GCMService.sharedInstance().startWithConfig(gcmConfig)
         
-        initCoreDataModel();
+        initCoreDataModel()
+        
+        setRootViewController()
         
         return true
+    }
+    
+    func setRootViewController() {
+        print("got here \(UserProfile.getCampuses().count)")
+        if (UserProfile.getCampuses().count > 0) {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewControllerWithIdentifier("mainRootViewController") as! SWRevealViewController
+            self.window?.rootViewController = vc
+        }
     }
 
     func applicationWillResignActive(application: UIApplication) {
@@ -150,7 +164,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GC
         }
     }
     
-    var managedObjectContext: NSManagedObjectContext?
+
     
     func initCoreDataModel() {
         // This resource is the same name as your xcdatamodeld contained in your project.
@@ -187,63 +201,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GC
         GGLInstanceID.sharedInstance().tokenWithAuthorizedEntity(gcmSenderID,
             scope: kGGLInstanceIDScopeGCM, options: registrationOptions, handler: registrationHandler)
     }
-    
-    func postEvent(eventName : String) -> () {
-        print("got here!!!!")
-                let postURL: String = "https://gcm-http.googleapis.com/gcm/send"
-                //let postURL: String = "http://localhost:3000/api/event/create?Content-Type=application/json"
-                let reqURL = NSURL(string: postURL)
-                let request = NSMutableURLRequest(URL: reqURL!)
-                request.HTTPMethod = "POST"
-                request.setValue("key=AIzaSyCq4DmBRjJK4pE3ZO7or_6lrKLnHx4Ip7E", forHTTPHeaderField: "Authorization")
-                request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue("application/json", forHTTPHeaderField: "Accept")
-        
-                let params = ["to": "/topics/global", "content-available": "1", "notification":["title":"CruApp", "body": "You have an upcoming event!", "sound": "default", "badge":"1"]]
-        
-                do {
-                    let jsonPost = try NSJSONSerialization.dataWithJSONObject(params, options: NSJSONWritingOptions.PrettyPrinted)
-                    request.HTTPBody = jsonPost
-        
-                    let session = NSURLSession.sharedSession()
-        
-                    let task = session.dataTaskWithRequest(request, completionHandler: {
-                        (data, response, error) in
-                        
-                        guard let responseData = data else {
-                            print("Error: did not receive data")
-                            return
-                        }
-                        guard error == nil else {
-                            print("error calling POST on /event/create")
-                            print(error)
-                            return
-                        }
-                        print("Response: \(response)")
-                        let strData = NSString(data: data!, encoding: NSUTF8StringEncoding)
-                        print("Body: \(strData)")
-                        print("successful post!")
-        
-                        // parse the result as JSON, since that's what the API provides
-                        let post: NSDictionary
-                        do {
-                            post = try NSJSONSerialization.JSONObjectWithData(responseData,
-                                options: []) as! NSDictionary
-                        } catch  {
-                            print("error parsing response from POST on /event")
-                            return
-                        }
-                        
-                        if let eventName = post["name"] as? String
-                        {
-                            print("The Event Name is: \(eventName)")
-                        }
-                    })
-                    task.resume()
-                } catch {
-                    print("Error: cannot create JSON from event")
-                }
-            }
-    
 }
 

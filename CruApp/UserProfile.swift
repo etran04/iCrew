@@ -11,12 +11,9 @@ import CoreData
 
 class UserProfile {
     
-    var campuses = [NSManagedObject]()
-    var ministries = [NSManagedObject]()
+    static let coreDataManagedContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     
-    let coreDataManagedContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
-    
-    func saveContext() {
+    class func saveContext() {
         do {
             try coreDataManagedContext?.save()
         }
@@ -25,18 +22,16 @@ class UserProfile {
         }
     }
     
-    func addCampus(campusName: String) {
+    class func addCampus(campusName: String) {
         let entity = NSEntityDescription.entityForName("Campus", inManagedObjectContext: coreDataManagedContext!)
         let campus = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: coreDataManagedContext!)
         
         campus.setValue(campusName, forKey: "name")
         
         saveContext()
-        
-        campuses.append(campus)
     }
     
-    func addMinistry(ministryName: String, campusName: String) {
+    class func addMinistry(ministryName: String, campusName: String) {
         let entity = NSEntityDescription.entityForName("Ministry", inManagedObjectContext: coreDataManagedContext!)
         let ministry = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: coreDataManagedContext!)
         
@@ -44,11 +39,9 @@ class UserProfile {
         ministry.setValue(campusName, forKey: "campusName")
         
         saveContext()
-        
-        ministries.append(ministry)
     }
     
-    func getCampuses() -> [String] {
+    class func getCampuses() -> [String] {
         let fetchRequest = NSFetchRequest(entityName: "Campus")
         var results = [String]()
         
@@ -71,7 +64,7 @@ class UserProfile {
         return results;
     }
     
-    func getMinistries() -> [String] {
+    class func getMinistries() -> [String] {
         let fetchRequest = NSFetchRequest(entityName: "Ministry")
         var results = [String]()
         

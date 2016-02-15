@@ -17,7 +17,6 @@ class InitialCampusTableViewController: UITableViewController {
     var isSelected: [Bool] = []
     var selected: [String] = []
     
-    
     @IBAction func clickInfo(sender: AnyObject) {
         
         let bundle = NSBundle(forClass: PopUpViewControllerSwift.self)
@@ -50,23 +49,27 @@ class InitialCampusTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //pull from database here
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        
-        //adding background image
-        tableView.backgroundView = UIImageView(image: UIImage(named: "Bishop-peak_gray.jpg"))
-        tableView.tableFooterView = UIView()
-        
-        var dbClient: DBClient!
-        dbClient = DBClient()
-        dbClient.getData("campus", dict: setCampuses)
-        
-        
+        if (UserProfile.getCampuses().count > 0) {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewControllerWithIdentifier("mainRootViewController") as! SWRevealViewController
+            self.presentViewController(vc, animated: false, completion: nil)
+        }
+        else {
+            //pull from database here
+            // Uncomment the following line to preserve selection between presentations
+            // self.clearsSelectionOnViewWillAppear = false
+            
+            // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+            // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+            
+            //adding background image
+            tableView.backgroundView = UIImageView(image: UIImage(named: "Bishop-peak_gray.jpg"))
+            tableView.tableFooterView = UIView()
+            
+            var dbClient: DBClient!
+            dbClient = DBClient()
+            dbClient.getData("campus", dict: setCampuses)
+        }
     }
     
     func setCampuses(campus:NSDictionary) {

@@ -36,12 +36,12 @@ class EventDetailsViewController: UIViewController {
         super.viewDidLoad()
         
         //Checks if user's google account is already identified
-//        if let auth = GTMOAuth2ViewControllerTouch.authForGoogleFromKeychainForName(
-//            kKeychainItemName,
-//            clientID: kClientID,
-//            clientSecret: kSecret) {
-//                service.authorizer = auth
-//        }
+        if let auth = GTMOAuth2ViewControllerTouch.authForGoogleFromKeychainForName(
+            kKeychainItemName,
+            clientID: kClientID,
+            clientSecret: kSecret) {
+                service.authorizer = auth
+        }
         
         if let event = event {
             

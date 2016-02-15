@@ -13,7 +13,6 @@ class InitialMinistryTableViewController: UITableViewController {
     
     var popViewController : PopUpViewControllerSwift!
     
-    //var test: [String] = ["EPIC", "Cru SLO"] //
     var ministriesCollection = [String]()
     var isSelected: [Bool] = [Bool]()
     var selected: [String] = [String]()
@@ -59,8 +58,11 @@ class InitialMinistryTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
-        tableView.backgroundView = UIImageView(image: UIImage(named: "Bishop-peak_gray.jpg"))
+        //remove empty separator 
         tableView.tableFooterView = UIView()
+        
+        //set empty back button
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.Plain, target:nil, action:nil)
         
         var dbClient: DBClient!
         dbClient = DBClient()
@@ -117,8 +119,8 @@ class InitialMinistryTableViewController: UITableViewController {
         if (!selected.contains(ministriesCollection[indexPath.row])) {
             
             cell.accessoryType = UITableViewCellAccessoryType.Checkmark
-            cell.contentView.backgroundColor = UIColor(red: CGFloat(98/255.0), green: CGFloat(96/255.0), blue: CGFloat(98/255.0), alpha: CGFloat(0.25) )
-            cell.contentView.superview!.backgroundColor = UIColor(red: CGFloat(98/255.0), green: CGFloat(96/255.0), blue: CGFloat(98/255.0), alpha: CGFloat(0.80) )
+            //cell.contentView.backgroundColor = UIColor(red: CGFloat(98/255.0), green: CGFloat(96/255.0), blue: CGFloat(98/255.0), alpha: CGFloat(0.25) )
+            //cell.contentView.superview!.backgroundColor = UIColor(red: CGFloat(98/255.0), green: CGFloat(96/255.0), blue: CGFloat(98/255.0), alpha: CGFloat(0.80) )
             selected.append(ministriesCollection[indexPath.row])
             dump(selected)
             

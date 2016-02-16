@@ -78,6 +78,7 @@
 		A487BBF91C63569A006F9B3C /* DriverTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A487BBF81C63569A006F9B3C /* DriverTableViewController.swift */; };
 		A487BBFB1C635E78006F9B3C /* Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = A487BBFA1C635E78006F9B3C /* Driver.swift */; };
 		CBF52B4D6C6CD44BBF744548 /* Pods_CruApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD14769052309A631372632E /* Pods_CruApp.framework */; };
+		ED9C86A183880B247B3BFD34 /* Pods_CruAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4F2845EF072292DB7417694 /* Pods_CruAppTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -182,6 +183,7 @@
 		07C196341C0E6D9F00375B8D /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
 		07C196361C0E863000375B8D /* VideoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
 		07ED81701C0D7ECC007FFB53 /* ResourcesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourcesViewController.swift; sourceTree = "<group>"; };
+		14A37DE1D2D4A3701357F6E0 /* Pods-CruAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CruAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CruAppTests/Pods-CruAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		1E37E71E1C0E362D0054607A /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		1E37E7211C0E362D0054607A /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		1E37E7221C0E362D0054607A /* VideosTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideosTableViewController.swift; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 		279326F91C509C2100BAC73D /* NMPopUpViewSwift-umbrella.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NMPopUpViewSwift-umbrella.h"; sourceTree = "<group>"; };
 		279327041C50A0EC00BAC73D /* InitialMinistryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialMinistryTableViewController.swift; sourceTree = "<group>"; };
 		279327061C50A10500BAC73D /* InitialMinistryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialMinistryTableViewCell.swift; sourceTree = "<group>"; };
+		4C75FBE0147F103088890A81 /* Pods-CruAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CruAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CruAppTests/Pods-CruAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		56975AA48A624728978E6E3E /* Pods-CruApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CruApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CruApp/Pods-CruApp.debug.xcconfig"; sourceTree = "<group>"; };
 		838564F21C0D9EDF00EB1728 /* CruApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CruApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		838564F31C0D9EDF00EB1728 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
@@ -252,6 +255,7 @@
 		A487BBEE1C6353A5006F9B3C /* DriverViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriverViewCell.swift; sourceTree = "<group>"; };
 		A487BBF81C63569A006F9B3C /* DriverTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriverTableViewController.swift; sourceTree = "<group>"; };
 		A487BBFA1C635E78006F9B3C /* Driver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Driver.swift; sourceTree = "<group>"; };
+		A4F2845EF072292DB7417694 /* Pods_CruAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CruAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD14769052309A631372632E /* Pods_CruApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CruApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -270,6 +274,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED9C86A183880B247B3BFD34 /* Pods_CruAppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -530,6 +535,8 @@
 			children = (
 				56975AA48A624728978E6E3E /* Pods-CruApp.debug.xcconfig */,
 				9CC50D2817D518EDB9BF800C /* Pods-CruApp.release.xcconfig */,
+				14A37DE1D2D4A3701357F6E0 /* Pods-CruAppTests.debug.xcconfig */,
+				4C75FBE0147F103088890A81 /* Pods-CruAppTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -540,6 +547,7 @@
 				1EB4053E1C63E87200220D5B /* GTL.framework */,
 				1EB405241C63E3F900220D5B /* GTL.framework */,
 				DD14769052309A631372632E /* Pods_CruApp.framework */,
+				A4F2845EF072292DB7417694 /* Pods_CruAppTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -574,9 +582,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 277E675C1BEB6362001C29DD /* Build configuration list for PBXNativeTarget "CruAppTests" */;
 			buildPhases = (
+				8310DD7E35DE3C27C7369908 /* Check Pods Manifest.lock */,
 				277E674F1BEB6362001C29DD /* Sources */,
 				277E67501BEB6362001C29DD /* Frameworks */,
 				277E67511BEB6362001C29DD /* Resources */,
+				E8B1C3698E2571CEFBDE9BEB /* Embed Pods Frameworks */,
+				23139A03565C7A018CEB2BE8 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -745,6 +756,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		23139A03565C7A018CEB2BE8 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CruAppTests/Pods-CruAppTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		72AAEF475E0E0794AF9DA655 /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -760,6 +786,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CruApp/Pods-CruApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		8310DD7E35DE3C27C7369908 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		C6A82B30E3F50982389CE9C4 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -773,6 +814,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E8B1C3698E2571CEFBDE9BEB /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CruAppTests/Pods-CruAppTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FBA992323B80BFBB2DA35B0D /* Copy Pods Resources */ = {
@@ -1011,6 +1067,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = YES;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_BITCODE = NO;
 				ENABLE_TESTABILITY = YES;
@@ -1041,6 +1098,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = YES;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_BITCODE = NO;
 				ENABLE_TESTABILITY = YES;
@@ -1065,6 +1123,7 @@
 		};
 		277E675A1BEB6362001C29DD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 14A37DE1D2D4A3701357F6E0 /* Pods-CruAppTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_IDENTITY = "";
@@ -1079,6 +1138,7 @@
 		};
 		277E675B1BEB6362001C29DD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4C75FBE0147F103088890A81 /* Pods-CruAppTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_IDENTITY = "";

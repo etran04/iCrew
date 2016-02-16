@@ -9,27 +9,29 @@
 /* Begin PBXBuildFile section */
 		06B4DE750A94B3AF44F9F46E9D94D5BC /* NMPopUpViewSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 535E53201ADB562232C3076BF8E6F7D4 /* NMPopUpViewSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		06B52CFC1C67C1D86C2ACD80E3D6700B /* DownPicker-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A6F6995B4DF38DC0FAF969DAFFCEE3E /* DownPicker-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		09B2537B908476047053D84E886915FF /* Assets.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0517DA29953FDF53EFCC10AD17B3BA10 /* Assets.bundle */; };
+		09B2537B908476047053D84E886915FF /* Assets.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3A9515DF0EF0D95E3E14C319D86F1D82 /* Assets.bundle */; };
 		0C4DFD6A101CD4F52FDF6EB095E6B419 /* PopUpViewController.xib in Sources */ = {isa = PBXBuildFile; fileRef = B9722E2F1E93B22BE9C36D00DEDCAF68 /* PopUpViewController.xib */; };
 		0E08FB52DEFEDC7DB2AE017AE0DD1DE1 /* PopUpViewController_iPhone6.xib in Sources */ = {isa = PBXBuildFile; fileRef = 96544536ABFFC4558AB5E143196575BE /* PopUpViewController_iPhone6.xib */; };
 		10A0546216B2E2DC95E271F115197B06 /* YTPlayerView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A24F61B9F506CC8B75B2794DECB417E /* YTPlayerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2366ACE16590D1A8E50A2F1A3F5C4757 /* PopUpViewController_iPhone6Plus.xib in Sources */ = {isa = PBXBuildFile; fileRef = D4C6FEC36F28B8F6D34E3B9B30EA0440 /* PopUpViewController_iPhone6Plus.xib */; };
 		24902F84B18DD5C8D4A5D0D062D5E214 /* PopUpViewController_iPhone6Plus.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4C6FEC36F28B8F6D34E3B9B30EA0440 /* PopUpViewController_iPhone6Plus.xib */; };
-		25A0462333B52426B0EEB0E4561EE7F5 /* CheckmarkSegmentedControl.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3659C48B0D55D38608B9A9E8417C4246 /* CheckmarkSegmentedControl.bundle */; };
+		25A0462333B52426B0EEB0E4561EE7F5 /* CheckmarkSegmentedControl.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 73CADC3F43CB35CCE8B3FECBAE11DFB0 /* CheckmarkSegmentedControl.bundle */; };
 		2E612E76A2CEAAB6E22EE91A06EE4547 /* DownPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AC47220ACC5AFE47E25F04F33AFC425 /* DownPicker.m */; };
 		2FFE9D3A1ECF21F00B2925473C54B711 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FACA9CC9B826DA85CD1E3AD17763766 /* Foundation.framework */; };
 		3201DCF54E36ABA480647746D79A5761 /* DownPicker-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E73E985880F7B17FB6A0DF6F504F6D6 /* DownPicker-dummy.m */; };
+		32EAC93FA7AC363885E2E3E67610A873 /* Pods-CruAppTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C4721E509FDFF72C85F3F9F4B1C2542D /* Pods-CruAppTests-dummy.m */; };
 		394776F33B57AE9559B9A72DF69295C0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FACA9CC9B826DA85CD1E3AD17763766 /* Foundation.framework */; };
 		3A149B6E38122DD194C18C4784FECD0D /* ReachabilitySwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 590B78B60D28040E0DEEE3AC04A3E84A /* ReachabilitySwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		41C078D7054F1141876071C9AAF18BBB /* NMPopUpViewSwift.bundle in Resources */ = {isa = PBXBuildFile; fileRef = EF6E634C7B8C0BF1A7C9CEE33C68C6CB /* NMPopUpViewSwift.bundle */; };
-		53B9782D2F40D14D76156DBE02D9E194 /* DownPicker.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 74315A3000E9DCF985FE6F7C3CBB965C /* DownPicker.bundle */; };
+		41C078D7054F1141876071C9AAF18BBB /* NMPopUpViewSwift.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 153A4ED34D24FC6D21BE7BDCAF1B7D6D /* NMPopUpViewSwift.bundle */; };
+		4F8EBDC662380E7ED43A0E5FFEAD557C /* Pods-CruAppTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 084DBA4A21D3E03BF3BF0319202C2D63 /* Pods-CruAppTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		53B9782D2F40D14D76156DBE02D9E194 /* DownPicker.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3D362790FDFDB55EABC01B971833747C /* DownPicker.bundle */; };
 		5641FBEA86DD15050C65C799724E0A53 /* PopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9722E2F1E93B22BE9C36D00DEDCAF68 /* PopUpViewController.xib */; };
 		6E27EAC27763ACAE50559BF67F52917B /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AF35C0592C1922250948BF6F669B2D /* Reachability.swift */; };
-		71D5F2F04C49B96553ABFC00BC33F05E /* Pods-CruApp-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EC1B280D5A61B488F2CAC39EA35D3A2B /* Pods-CruApp-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		71D5F2F04C49B96553ABFC00BC33F05E /* Pods-CruApp-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EFFE7385059AC279E4ED5292C5F582D9 /* Pods-CruApp-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		725838742376D90E208A6E20F0D58163 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FACA9CC9B826DA85CD1E3AD17763766 /* Foundation.framework */; };
 		745B9B03A951061611BDA486E3046BC7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE07C51563A8537190C45BF7B84469E6 /* UIKit.framework */; };
 		76D2531320D99DCB8112990FF7021FA2 /* downArrow@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = FF464AAE3D9F5B99B7B53D8197DF212C /* downArrow@3x.png */; };
-		7CD351A04ACF8B02AF561B9E94D23A53 /* Pods-CruApp-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F2753E7F4F1F5A7D04F3B2A9685D8A0 /* Pods-CruApp-dummy.m */; };
+		7CD351A04ACF8B02AF561B9E94D23A53 /* Pods-CruApp-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D9A0926198F597FDC3D8C5B930AAB8E /* Pods-CruApp-dummy.m */; };
 		8ED3C418619D4D165B47CC4910B285D3 /* UIDownPicker.h in Headers */ = {isa = PBXBuildFile; fileRef = 060D914D277C9EC0871307AA7A2AF80A /* UIDownPicker.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8F4F31649AC279DCC47F0299849B7F47 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAE1B33188740B25D40CEDC08A929AF6 /* SystemConfiguration.framework */; };
 		9091864A28173646C666DF639BA242B4 /* PopUpViewController_iPad.xib in Sources */ = {isa = PBXBuildFile; fileRef = C36C2688B46883D06F84D6DA9AD9109C /* PopUpViewController_iPad.xib */; };
@@ -41,6 +43,7 @@
 		9DB414107B2FBABB5B7BF9866C3F7549 /* youtube-ios-player-helper-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EE3CB47611B579C4F3769FF2CB91EB88 /* youtube-ios-player-helper-dummy.m */; };
 		9ECED560EF9F6CA4E829D50FB586BE6D /* PopUpViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = C36C2688B46883D06F84D6DA9AD9109C /* PopUpViewController_iPad.xib */; };
 		9FE9C4E1CCC9F7A029F20576DFD7C90E /* downArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FF0E614806C83F0FF4989029752032B8 /* downArrow@2x.png */; };
+		AAE015709E05FA4F9761C06B302600ED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FACA9CC9B826DA85CD1E3AD17763766 /* Foundation.framework */; };
 		AF975D659CC7CEDF2BD46B2F71D0667E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FACA9CC9B826DA85CD1E3AD17763766 /* Foundation.framework */; };
 		B3247C2F1EB2A63BDF79F98A2336EACC /* NMPopUpViewSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E49E1F55D32FE59313B46CA697001AAA /* NMPopUpViewSwift-dummy.m */; };
 		C4BA9F92F87D49CD4DBCC04E39F9539D /* youtube-ios-player-helper-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FBA6D80A7967BE9F22E2A727562E0624 /* youtube-ios-player-helper-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -90,6 +93,27 @@
 			remoteGlobalIDString = F69ACDA8267D09383E82F875B0B714C8;
 			remoteInfo = "DownPicker-DownPicker";
 		};
+		1EE57007D1F63B89C2B932072785837A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E160B084038123F829B8D7CA8A5A63E4;
+			remoteInfo = CheckmarkSegmentedControl;
+		};
+		253359EFA5CB9DFBAE526B49B273ECA1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A8D6C169B703F406C4B4E2AEED7E7D13;
+			remoteInfo = DownPicker;
+		};
+		4EFAC681B250BA042D68240BC2AFCDB3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 16AE5817304ABA8F95F7D55EB003C00C;
+			remoteInfo = ReachabilitySwift;
+		};
 		9D67956A79691F0610BD76C12841DEC7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
@@ -111,6 +135,20 @@
 			remoteGlobalIDString = 16AE5817304ABA8F95F7D55EB003C00C;
 			remoteInfo = ReachabilitySwift;
 		};
+		BC3AAC7DEA757CFA599EF0D0EE6610D8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0DE93A80D9EC89B94FE9F41228A430A6;
+			remoteInfo = NMPopUpViewSwift;
+		};
+		CD3AB11EBEB97EB7190E2C0642E5073B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8718C9994DF60FAE6528E82D52FAEF24;
+			remoteInfo = "youtube-ios-player-helper";
+		};
 		D9A7EEA9C373BD4449266984678B4CA8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
@@ -124,86 +162,99 @@
 		00DE342D269B35FE8388DAFA2A262DEE /* NMPopUpViewSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = NMPopUpViewSwift.modulemap; sourceTree = "<group>"; };
 		00ECE094B80DEE2621D98454FF0E5764 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		045EDB19B0C12D24F4154B72850EC952 /* GCMReceiverDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCMReceiverDelegate.h; path = Headers/Public/GCMReceiverDelegate.h; sourceTree = "<group>"; };
-		0517DA29953FDF53EFCC10AD17B3BA10 /* Assets.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Assets.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		060D914D277C9EC0871307AA7A2AF80A /* UIDownPicker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = UIDownPicker.h; path = Pod/Classes/UIDownPicker.h; sourceTree = "<group>"; };
+		084DBA4A21D3E03BF3BF0319202C2D63 /* Pods-CruAppTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CruAppTests-umbrella.h"; sourceTree = "<group>"; };
+		0871487BFE223F10C4828ED87786B07E /* Pods-CruApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CruApp.debug.xcconfig"; sourceTree = "<group>"; };
 		08F6E1FDA1E0332E85456556FFBA567C /* GGLInstanceIDDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GGLInstanceIDDelegate.h; path = Headers/Public/GGLInstanceIDDelegate.h; sourceTree = "<group>"; };
 		0A24F61B9F506CC8B75B2794DECB417E /* YTPlayerView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YTPlayerView.h; path = Classes/YTPlayerView.h; sourceTree = "<group>"; };
 		0A891FCC6B23106A49B08AF906168B3B /* libProtocolBuffers.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libProtocolBuffers.a; path = Libraries/libProtocolBuffers.a; sourceTree = "<group>"; };
 		0AFE1C586CE60E7741FED5BB1FEFD61E /* Analytics-Module.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Analytics-Module.h"; path = "Headers/ModuleHeaders/Analytics-Module.h"; sourceTree = "<group>"; };
 		0BC1B3336900DBDBD54EBD3A09A727F7 /* libGTM_GTMURLBuilder.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGTM_GTMURLBuilder.a; path = Libraries/libGTM_GTMURLBuilder.a; sourceTree = "<group>"; };
+		0BCCAEA23FACF81D8BD90E7C8B1B6777 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E5A4AF3EB20E48A8E92F3EA305D18FD /* youtube-ios-player-helper.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "youtube-ios-player-helper.xcconfig"; sourceTree = "<group>"; };
 		0F5DEC05DF4D56AFBC7D150714CC6657 /* libGTM_core.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGTM_core.a; path = Libraries/libGTM_core.a; sourceTree = "<group>"; };
 		1070E69699F43B08D08DA02DA3D9396F /* ReachabilitySwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ReachabilitySwift-dummy.m"; sourceTree = "<group>"; };
 		10D89ADC5D9852CEF4BE97A62D6DAE95 /* youtube-ios-player-helper.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "youtube-ios-player-helper.modulemap"; sourceTree = "<group>"; };
-		18A3F9985E6E3C40B83594449DD2A9BD /* Pods-CruApp-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CruApp-acknowledgements.plist"; sourceTree = "<group>"; };
+		153A4ED34D24FC6D21BE7BDCAF1B7D6D /* NMPopUpViewSwift.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NMPopUpViewSwift.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		1945AAC84B9D21B405A1D702A1534587 /* libGTM_StringEncoding.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGTM_StringEncoding.a; path = Libraries/libGTM_StringEncoding.a; sourceTree = "<group>"; };
+		1D8C61434060147A1FC50A0619143E1A /* Pods-CruApp.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-CruApp.modulemap"; sourceTree = "<group>"; };
+		1D9A0926198F597FDC3D8C5B930AAB8E /* Pods-CruApp-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CruApp-dummy.m"; sourceTree = "<group>"; };
 		1DB8B8A496CC866B475B3A18DDE74100 /* CheckmarkSegmentedControl-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CheckmarkSegmentedControl-dummy.m"; sourceTree = "<group>"; };
 		1E2806085A1B9CF9CA89354BD5DE5E81 /* libGTM_NSData+zlib.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = "libGTM_NSData+zlib.a"; path = "Libraries/libGTM_NSData+zlib.a"; sourceTree = "<group>"; };
 		1EAFABB0EEEDE8A43D1B886C99F703AB /* GGLInstanceIDConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GGLInstanceIDConfig.h; path = Headers/Public/GGLInstanceIDConfig.h; sourceTree = "<group>"; };
 		20143ACCBD7316B0212EE461E9751B1B /* NMPopUpViewSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NMPopUpViewSwift-prefix.pch"; sourceTree = "<group>"; };
 		23EC0AF883F07D5CA82ECC9D68C906AD /* GCMConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCMConfig.h; path = Headers/Public/GCMConfig.h; sourceTree = "<group>"; };
-		25D86C10C3CBC13510B179ECDA0B804A /* Pods-CruApp-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CruApp-frameworks.sh"; sourceTree = "<group>"; };
 		268C717341885A08CEEC27740E1F8BC2 /* Core.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Core.h; path = Headers/GGLCore/Public/Core.h; sourceTree = "<group>"; };
+		26E451725B619B722B2822BF6BA05EC9 /* Pods-CruAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CruAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		2AC47220ACC5AFE47E25F04F33AFC425 /* DownPicker.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DownPicker.m; path = Pod/Classes/DownPicker.m; sourceTree = "<group>"; };
+		2D5295BEE987922A7B61F44F0C3F56FC /* Pods_CruApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CruApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FACA9CC9B826DA85CD1E3AD17763766 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		31D8CC42C69DE1F56D1024489BDBCC79 /* CloudMessaging.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CloudMessaging.h; path = Headers/GGLCloudMessaging/Public/CloudMessaging.h; sourceTree = "<group>"; };
 		321CD679F6678067687C959E97196586 /* ReachabilitySwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ReachabilitySwift-prefix.pch"; sourceTree = "<group>"; };
 		321DA3A7538DFDE5931EA580FD21BEA7 /* GoogleCloudMessaging.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GoogleCloudMessaging.h; path = Headers/Public/GoogleCloudMessaging.h; sourceTree = "<group>"; };
+		35412F075038C377469C20AB2E610D90 /* Pods-CruApp-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CruApp-resources.sh"; sourceTree = "<group>"; };
 		35C906DA2B798CAD2CF0D06A96E40F26 /* GGLConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GGLConfiguration.h; path = Headers/GGLCore/Public/GGLConfiguration.h; sourceTree = "<group>"; };
-		35DB30BFBA92AC9D3F65FB0F28AE8078 /* Pods_CruApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CruApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		35FA0ACBCA164E5B02928EB3739A0850 /* GGLInstanceIDHeaders.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GGLInstanceIDHeaders.h; path = Headers/Public/GGLInstanceIDHeaders.h; sourceTree = "<group>"; };
-		3659C48B0D55D38608B9A9E8417C4246 /* CheckmarkSegmentedControl.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CheckmarkSegmentedControl.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		3C61755F63DCA722517358170D313C51 /* CheckmarkSegmentedControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CheckmarkSegmentedControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		362E16EE79CAD62324BBD53B30E506EB /* DownPicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DownPicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A9515DF0EF0D95E3E14C319D86F1D82 /* Assets.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Assets.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BC737ADBC46BAC00F7244DE107DF95C /* Pods-CruAppTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CruAppTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		3D362790FDFDB55EABC01B971833747C /* DownPicker.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DownPicker.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		405C943E5D8B1ADBB564E23994760731 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		40F6B047D914E950206C3C2678FCDE10 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4345B3A41D0C1AEBFBF4EF372BCAAB0D /* CheckmarkSegmentedControl-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CheckmarkSegmentedControl-prefix.pch"; sourceTree = "<group>"; };
 		4C3C5630FFDBC2B0B3891D7497B87B17 /* DownPicker.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DownPicker.xcconfig; sourceTree = "<group>"; };
+		4CBE041549C7AAD51747828CAA220B93 /* Pods-CruAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CruAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		4EF02D5D6156994A42661441CEFC304F /* GGLContext+CloudMessaging.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "GGLContext+CloudMessaging.h"; path = "Headers/GGLCloudMessaging/Public/GGLContext+CloudMessaging.h"; sourceTree = "<group>"; };
 		515AD7BF4EE5DA321C07D90188E0775D /* Assets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = Assets; sourceTree = "<group>"; };
 		535E53201ADB562232C3076BF8E6F7D4 /* NMPopUpViewSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NMPopUpViewSwift-umbrella.h"; sourceTree = "<group>"; };
 		590B78B60D28040E0DEEE3AC04A3E84A /* ReachabilitySwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ReachabilitySwift-umbrella.h"; sourceTree = "<group>"; };
 		5C1B2AAC8C944CA496124A6D0845A42E /* libGSDK_Overload.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGSDK_Overload.a; path = Libraries/libGSDK_Overload.a; sourceTree = "<group>"; };
+		5C251EF330B1E3D6F984B506836A60FB /* Pods-CruAppTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CruAppTests-resources.sh"; sourceTree = "<group>"; };
 		5C759D22B12DC6FB0D48E50F1903D225 /* libGIP_Locale.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGIP_Locale.a; path = Libraries/libGIP_Locale.a; sourceTree = "<group>"; };
+		5DD37808E676AB649BDDF5A4F1C633BA /* Pods-CruApp-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CruApp-acknowledgements.plist"; sourceTree = "<group>"; };
 		5DF18FFE9E029AED1BBD264EEB835E72 /* ReachabilitySwift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ReachabilitySwift.xcconfig; sourceTree = "<group>"; };
 		5E73E985880F7B17FB6A0DF6F504F6D6 /* DownPicker-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DownPicker-dummy.m"; sourceTree = "<group>"; };
 		65AF35C0592C1922250948BF6F669B2D /* Reachability.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Reachability.swift; path = Reachability/Reachability.swift; sourceTree = "<group>"; };
 		66A4D9A00F55D996D89432AFEE7B4AC0 /* CheckmarkSegmentedControl.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CheckmarkSegmentedControl.swift; path = Pod/Classes/CheckmarkSegmentedControl.swift; sourceTree = "<group>"; };
 		6701515FC89244E615740A74E1B4B549 /* libGGLCloudMessaging.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGGLCloudMessaging.a; path = Libraries/libGGLCloudMessaging.a; sourceTree = "<group>"; };
+		67AE5F3B637BDDB022ACF95C826FDF27 /* CheckmarkSegmentedControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CheckmarkSegmentedControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		67FEFAB9E3FC3398C1F0E65859957A6C /* Pods-CruApp-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CruApp-frameworks.sh"; sourceTree = "<group>"; };
 		6C417AB2C52411AA4BCA95F49BEEA895 /* DownPicker.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = DownPicker.modulemap; sourceTree = "<group>"; };
 		6DA32BB223E57EDD0B6A0AC5953F2C09 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6FD99F8F8EE5724DB5AFDC2A90D8948A /* libGTM_NSScannerJSON.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGTM_NSScannerJSON.a; path = Libraries/libGTM_NSScannerJSON.a; sourceTree = "<group>"; };
 		71C0AAA944A16B32A5E93B9C9A17BC19 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		71C34748BEB1613B70E537EF4E3F2D05 /* libGTMSessionFetcher_core.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGTMSessionFetcher_core.a; path = Libraries/libGTMSessionFetcher_core.a; sourceTree = "<group>"; };
-		7230AB79C77D43A239FCC2BBEA01BCC8 /* Pods-CruApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CruApp.debug.xcconfig"; sourceTree = "<group>"; };
-		74315A3000E9DCF985FE6F7C3CBB965C /* DownPicker.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DownPicker.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		7267E32937496204298A5B1F351A11FF /* Pods_CruAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CruAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		73CADC3F43CB35CCE8B3FECBAE11DFB0 /* CheckmarkSegmentedControl.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CheckmarkSegmentedControl.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		758DF97BCF59E915F8481CB0D683CAEC /* libGTM_NSDictionary+URLArguments.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = "libGTM_NSDictionary+URLArguments.a"; path = "Libraries/libGTM_NSDictionary+URLArguments.a"; sourceTree = "<group>"; };
 		7A6F6995B4DF38DC0FAF969DAFFCEE3E /* DownPicker-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DownPicker-umbrella.h"; sourceTree = "<group>"; };
+		7BB4E54106842893EF89F8057786DEDC /* youtube_ios_player_helper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = youtube_ios_player_helper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DFCF29C35F3063E41A83956634261A1 /* GCMPubSub.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCMPubSub.h; path = Headers/Public/GCMPubSub.h; sourceTree = "<group>"; };
-		7F2753E7F4F1F5A7D04F3B2A9685D8A0 /* Pods-CruApp-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CruApp-dummy.m"; sourceTree = "<group>"; };
 		7F845A69BFD5614BDEAEBB43CB8B9B2D /* GGLErrorCode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GGLErrorCode.h; path = Headers/GGLCore/Public/GGLErrorCode.h; sourceTree = "<group>"; };
 		87CA95A8232BE07B8CFC7090402AC966 /* ReachabilitySwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = ReachabilitySwift.modulemap; sourceTree = "<group>"; };
 		8B49753B75B5ADBB0713E6F2768B713F /* libGIP_Reachability.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGIP_Reachability.a; path = Libraries/libGIP_Reachability.a; sourceTree = "<group>"; };
-		8DFB01BC855D6F4A813576C359ADDD8F /* youtube_ios_player_helper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = youtube_ios_player_helper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F4039368D27C76680753DCA7615331E /* NMPopUpViewSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NMPopUpViewSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		96544536ABFFC4558AB5E143196575BE /* PopUpViewController_iPhone6.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = PopUpViewController_iPhone6.xib; path = NMPopUpView/Pod/Classes/PopUpViewController_iPhone6.xib; sourceTree = "<group>"; };
+		99A44DDFA07ECF003D95C29DC1C27A8D /* Pods-CruAppTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-CruAppTests.modulemap"; sourceTree = "<group>"; };
 		9A3F09EE855D3B54CB83D0EDA886C4DF /* CheckmarkSegmentedControl.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = CheckmarkSegmentedControl.modulemap; sourceTree = "<group>"; };
 		9BAFB19C30EA16387D97C73D0B9532E8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D39E11A7789E4A57F5921F509B1D91D /* CheckmarkSegmentedControl-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CheckmarkSegmentedControl-umbrella.h"; sourceTree = "<group>"; };
 		A1346BAA7EF0AF8DF0E9D747576EF17D /* CheckmarkSegmentedControl.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CheckmarkSegmentedControl.xcconfig; sourceTree = "<group>"; };
-		A4C031A1BBD11FD14E3481CB93FCCFD7 /* Pods-CruApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CruApp.release.xcconfig"; sourceTree = "<group>"; };
+		A36B2B61110012B95305DCC6C0502AD7 /* Pods-CruAppTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CruAppTests-frameworks.sh"; sourceTree = "<group>"; };
 		A6A96627B393E3172A7CD9499D27924F /* libGcmLib.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGcmLib.a; path = Libraries/libGcmLib.a; sourceTree = "<group>"; };
 		A82D5E15CC70445D6F7DC3886520051E /* libGTM_KVO.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGTM_KVO.a; path = Libraries/libGTM_KVO.a; sourceTree = "<group>"; };
 		AB14E7EC4F489C5624C132C479C526C9 /* GGLContext.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GGLContext.h; path = Headers/GGLCore/Public/GGLContext.h; sourceTree = "<group>"; };
 		ACF5AA08DA5EE3A3578C16744B0B6A11 /* NMPopUpViewSwift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NMPopUpViewSwift.xcconfig; sourceTree = "<group>"; };
-		AEC52AC9906BAAFC43A280F965E072F8 /* Pods-CruApp.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-CruApp.modulemap"; sourceTree = "<group>"; };
 		B8D9CD3B1790B25EE3BB1B342E5D9F33 /* Core-Module.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Core-Module.h"; path = "Headers/ModuleHeaders/Core-Module.h"; sourceTree = "<group>"; };
 		B9722E2F1E93B22BE9C36D00DEDCAF68 /* PopUpViewController.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = PopUpViewController.xib; path = NMPopUpView/Pod/Classes/PopUpViewController.xib; sourceTree = "<group>"; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		BAE1B33188740B25D40CEDC08A929AF6 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
-		C13C484693043BB1F64D19D1642D2B59 /* Pods-CruApp-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CruApp-acknowledgements.markdown"; sourceTree = "<group>"; };
 		C2F9398CDB1F4B5459FA21089787A347 /* YTPlayerView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YTPlayerView.m; path = Classes/YTPlayerView.m; sourceTree = "<group>"; };
 		C36C2688B46883D06F84D6DA9AD9109C /* PopUpViewController_iPad.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = PopUpViewController_iPad.xib; path = NMPopUpView/Pod/Classes/PopUpViewController_iPad.xib; sourceTree = "<group>"; };
 		C3758E314684830285F844CD4AD1C78B /* DownPicker-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DownPicker-prefix.pch"; sourceTree = "<group>"; };
-		C4179F4F35C750149C591FAB094405FD /* Pods-CruApp-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CruApp-resources.sh"; sourceTree = "<group>"; };
+		C4721E509FDFF72C85F3F9F4B1C2542D /* Pods-CruAppTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CruAppTests-dummy.m"; sourceTree = "<group>"; };
 		C7CC1E379CEEC2F7682D33172374C643 /* SignIn-Module.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "SignIn-Module.h"; path = "Headers/ModuleHeaders/SignIn-Module.h"; sourceTree = "<group>"; };
+		C96016B77A17C2C99B7560F26182A22E /* ReachabilitySwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReachabilitySwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA6A4E992C082222C09D2C5022E3BE14 /* DownPicker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DownPicker.h; path = Pod/Classes/DownPicker.h; sourceTree = "<group>"; };
 		CB13A09DA2B04DB34B373AA9870954B0 /* libGTM_UIFont+LineHeight.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = "libGTM_UIFont+LineHeight.a"; path = "Libraries/libGTM_UIFont+LineHeight.a"; sourceTree = "<group>"; };
 		CE07C51563A8537190C45BF7B84469E6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -211,31 +262,29 @@
 		CF8CCEF53D2A82DDC59F4367D18640FC /* libGTM_NSStringHTML.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGTM_NSStringHTML.a; path = Libraries/libGTM_NSStringHTML.a; sourceTree = "<group>"; };
 		D2E4B848206E92BD770C606C93DD7CC3 /* libGTM_RoundedRectPath.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGTM_RoundedRectPath.a; path = Libraries/libGTM_RoundedRectPath.a; sourceTree = "<group>"; };
 		D4C6FEC36F28B8F6D34E3B9B30EA0440 /* PopUpViewController_iPhone6Plus.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = PopUpViewController_iPhone6Plus.xib; path = NMPopUpView/Pod/Classes/PopUpViewController_iPhone6Plus.xib; sourceTree = "<group>"; };
-		D694D3A50E3C0583633C2AF7C3C92190 /* ReachabilitySwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReachabilitySwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7F66D3DE3FD8DA49A2C78B1EEB4A4AB /* CloudMessaging-Module.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "CloudMessaging-Module.h"; path = "Headers/ModuleHeaders/CloudMessaging-Module.h"; sourceTree = "<group>"; };
 		DB408C8F06B2B384CD3B9F8DC32148D6 /* libGTMStackTrace.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGTMStackTrace.a; path = Libraries/libGTMStackTrace.a; sourceTree = "<group>"; };
 		DC5B3F524699F97229DCA6177E353E6F /* libGGLInstanceIDLib.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGGLInstanceIDLib.a; path = Libraries/libGGLInstanceIDLib.a; sourceTree = "<group>"; };
 		DCD81EF034A1963F69E0A02198A128A0 /* libGTM_AddressBook.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGTM_AddressBook.a; path = Libraries/libGTM_AddressBook.a; sourceTree = "<group>"; };
 		DDA77AE4A7A2B4B2B0A217935BECB3F0 /* libGTM_iPhone.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGTM_iPhone.a; path = Libraries/libGTM_iPhone.a; sourceTree = "<group>"; };
 		DFEBA4928E15C8D0BC0AA55454A4EA3D /* libGTM_Regex.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGTM_Regex.a; path = Libraries/libGTM_Regex.a; sourceTree = "<group>"; };
-		E17FF149B9B4DB32F9DF4C1791171C96 /* DownPicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DownPicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E49E1F55D32FE59313B46CA697001AAA /* NMPopUpViewSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NMPopUpViewSwift-dummy.m"; sourceTree = "<group>"; };
 		E51B055C9ADE6AC3BB3AA40FB464C70C /* AppInvite-Module.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "AppInvite-Module.h"; path = "Headers/ModuleHeaders/AppInvite-Module.h"; sourceTree = "<group>"; };
 		E63C6548CE345769D201E83E4FB3B29C /* libGTM_DebugUtils.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGTM_DebugUtils.a; path = Libraries/libGTM_DebugUtils.a; sourceTree = "<group>"; };
 		E64680FFD264BC42DD9612B876F52347 /* GCMService.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCMService.h; path = Headers/Public/GCMService.h; sourceTree = "<group>"; };
 		E6849D7A2C534669F0FE5ED4B5B93181 /* libGTM_SystemVersion.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGTM_SystemVersion.a; path = Libraries/libGTM_SystemVersion.a; sourceTree = "<group>"; };
-		E74BB1FCB4E6B9CA3DC19AE5B7E3CF67 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EC1B280D5A61B488F2CAC39EA35D3A2B /* Pods-CruApp-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CruApp-umbrella.h"; sourceTree = "<group>"; };
+		E811F2DA6FBA31980CC7D618E2B2FB2E /* Pods-CruApp-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CruApp-acknowledgements.markdown"; sourceTree = "<group>"; };
 		EC3C482E788507D0E62CD0E72224B28C /* libGGLCore.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGGLCore.a; path = Libraries/libGGLCore.a; sourceTree = "<group>"; };
+		EE0D10D4E613905B23E41A7FF88D1F13 /* Pods-CruApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CruApp.release.xcconfig"; sourceTree = "<group>"; };
 		EE3CB47611B579C4F3769FF2CB91EB88 /* youtube-ios-player-helper-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "youtube-ios-player-helper-dummy.m"; sourceTree = "<group>"; };
 		EF53D4270D6ED7E2EB92F4DF5DE8864B /* PopUpViewControllerSwift.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PopUpViewControllerSwift.swift; path = NMPopUpView/Pod/Classes/PopUpViewControllerSwift.swift; sourceTree = "<group>"; };
-		EF6E634C7B8C0BF1A7C9CEE33C68C6CB /* NMPopUpViewSwift.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NMPopUpViewSwift.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		EFFE7385059AC279E4ED5292C5F582D9 /* Pods-CruApp-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CruApp-umbrella.h"; sourceTree = "<group>"; };
+		F066ECC31DFB296D7FCE4D56CA33AB68 /* Pods-CruAppTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CruAppTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		F1DBC1D71F4FB61EEE8C8E138094C5D1 /* UIDownPicker.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = UIDownPicker.m; path = Pod/Classes/UIDownPicker.m; sourceTree = "<group>"; };
 		F25F63A30D2C9DB8F1105DAA8F06A586 /* youtube-ios-player-helper-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "youtube-ios-player-helper-prefix.pch"; sourceTree = "<group>"; };
 		F25FDCDBA0A40F22612AFF1CE4B215D2 /* AdMob-Module.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "AdMob-Module.h"; path = "Headers/ModuleHeaders/AdMob-Module.h"; sourceTree = "<group>"; };
 		F30EE3B4293458BAE200037030B83D7A /* libGTM_NSStringXML.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGTM_NSStringXML.a; path = Libraries/libGTM_NSStringXML.a; sourceTree = "<group>"; };
 		F70249C90D573967D895C46F59CEDBA6 /* GMRConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GMRConfiguration.h; path = Headers/GGLCore/Public/GMRConfiguration.h; sourceTree = "<group>"; };
-		F7BA4DEFF4C654C806FF2B3AF0C951D8 /* NMPopUpViewSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NMPopUpViewSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F86ED1AEE3B8AC3F68A5B02C06F150AA /* downArrow.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = downArrow.png; path = Pod/Assets/downArrow.png; sourceTree = "<group>"; };
 		FBA6D80A7967BE9F22E2A727562E0624 /* youtube-ios-player-helper-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "youtube-ios-player-helper-umbrella.h"; sourceTree = "<group>"; };
 		FEB743B5EFBB68F54872C5F8978286E2 /* libGTMSessionFetcher_full.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGTMSessionFetcher_full.a; path = Libraries/libGTMSessionFetcher_full.a; sourceTree = "<group>"; };
@@ -313,6 +362,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EA7A91E6CC8E329119F880B9E8AD4568 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AAE015709E05FA4F9761C06B302600ED /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EE748520CC24A6751EFBA3EC2CDFE425 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -341,6 +398,24 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		1394C13FA405BE44B38AF898C0EAFB33 /* Pods-CruApp */ = {
+			isa = PBXGroup;
+			children = (
+				0BCCAEA23FACF81D8BD90E7C8B1B6777 /* Info.plist */,
+				1D8C61434060147A1FC50A0619143E1A /* Pods-CruApp.modulemap */,
+				E811F2DA6FBA31980CC7D618E2B2FB2E /* Pods-CruApp-acknowledgements.markdown */,
+				5DD37808E676AB649BDDF5A4F1C633BA /* Pods-CruApp-acknowledgements.plist */,
+				1D9A0926198F597FDC3D8C5B930AAB8E /* Pods-CruApp-dummy.m */,
+				67FEFAB9E3FC3398C1F0E65859957A6C /* Pods-CruApp-frameworks.sh */,
+				35412F075038C377469C20AB2E610D90 /* Pods-CruApp-resources.sh */,
+				EFFE7385059AC279E4ED5292C5F582D9 /* Pods-CruApp-umbrella.h */,
+				0871487BFE223F10C4828ED87786B07E /* Pods-CruApp.debug.xcconfig */,
+				EE0D10D4E613905B23E41A7FF88D1F13 /* Pods-CruApp.release.xcconfig */,
+			);
+			name = "Pods-CruApp";
+			path = "Target Support Files/Pods-CruApp";
+			sourceTree = "<group>";
+		};
 		17345340830C9D8D3183F84BB07C0246 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -349,23 +424,6 @@
 				FF464AAE3D9F5B99B7B53D8197DF212C /* downArrow@3x.png */,
 			);
 			name = Resources;
-			sourceTree = "<group>";
-		};
-		17C407707481EF25FFBF3ACB3225E70C /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				0517DA29953FDF53EFCC10AD17B3BA10 /* Assets.bundle */,
-				3659C48B0D55D38608B9A9E8417C4246 /* CheckmarkSegmentedControl.bundle */,
-				3C61755F63DCA722517358170D313C51 /* CheckmarkSegmentedControl.framework */,
-				74315A3000E9DCF985FE6F7C3CBB965C /* DownPicker.bundle */,
-				E17FF149B9B4DB32F9DF4C1791171C96 /* DownPicker.framework */,
-				EF6E634C7B8C0BF1A7C9CEE33C68C6CB /* NMPopUpViewSwift.bundle */,
-				F7BA4DEFF4C654C806FF2B3AF0C951D8 /* NMPopUpViewSwift.framework */,
-				35DB30BFBA92AC9D3F65FB0F28AE8078 /* Pods_CruApp.framework */,
-				D694D3A50E3C0583633C2AF7C3C92190 /* ReachabilitySwift.framework */,
-				8DFB01BC855D6F4A813576C359ADDD8F /* youtube_ios_player_helper.framework */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		1B19CDAA6F3E0ADC682C236F1FCC53B7 /* Pods */ = {
@@ -399,6 +457,24 @@
 				648F0D894AE74B9B46DAF9674BFC4089 /* Frameworks */,
 			);
 			path = GoogleCloudMessaging;
+			sourceTree = "<group>";
+		};
+		26C71788E1208A5D7E313CF93168D61B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3A9515DF0EF0D95E3E14C319D86F1D82 /* Assets.bundle */,
+				73CADC3F43CB35CCE8B3FECBAE11DFB0 /* CheckmarkSegmentedControl.bundle */,
+				67AE5F3B637BDDB022ACF95C826FDF27 /* CheckmarkSegmentedControl.framework */,
+				3D362790FDFDB55EABC01B971833747C /* DownPicker.bundle */,
+				362E16EE79CAD62324BBD53B30E506EB /* DownPicker.framework */,
+				153A4ED34D24FC6D21BE7BDCAF1B7D6D /* NMPopUpViewSwift.bundle */,
+				8F4039368D27C76680753DCA7615331E /* NMPopUpViewSwift.framework */,
+				2D5295BEE987922A7B61F44F0C3F56FC /* Pods_CruApp.framework */,
+				7267E32937496204298A5B1F351A11FF /* Pods_CruAppTests.framework */,
+				C96016B77A17C2C99B7560F26182A22E /* ReachabilitySwift.framework */,
+				7BB4E54106842893EF89F8057786DEDC /* youtube_ios_player_helper.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		387A514F20C153B0D438D161EAEB5A2F /* Support Files */ = {
@@ -463,6 +539,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		66F407BA89E8D438153D326A28F2F1AE /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				1394C13FA405BE44B38AF898C0EAFB33 /* Pods-CruApp */,
+				A53C539CC360B9CEEEF3022E51AA6D91 /* Pods-CruAppTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
 		673868511937E66060244CAAAFCE4DB8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -499,8 +584,8 @@
 				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
 				122DA2E5084A4393C29BE363C764795C /* Frameworks */,
 				1B19CDAA6F3E0ADC682C236F1FCC53B7 /* Pods */,
-				17C407707481EF25FFBF3ACB3225E70C /* Products */,
-				DD46B1473F0838CA24634962B08F51B7 /* Targets Support Files */,
+				26C71788E1208A5D7E313CF93168D61B /* Products */,
+				66F407BA89E8D438153D326A28F2F1AE /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -560,22 +645,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		A83AD6618E6240E062BDB7FD6C50970D /* Pods-CruApp */ = {
+		A53C539CC360B9CEEEF3022E51AA6D91 /* Pods-CruAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				E74BB1FCB4E6B9CA3DC19AE5B7E3CF67 /* Info.plist */,
-				AEC52AC9906BAAFC43A280F965E072F8 /* Pods-CruApp.modulemap */,
-				C13C484693043BB1F64D19D1642D2B59 /* Pods-CruApp-acknowledgements.markdown */,
-				18A3F9985E6E3C40B83594449DD2A9BD /* Pods-CruApp-acknowledgements.plist */,
-				7F2753E7F4F1F5A7D04F3B2A9685D8A0 /* Pods-CruApp-dummy.m */,
-				25D86C10C3CBC13510B179ECDA0B804A /* Pods-CruApp-frameworks.sh */,
-				C4179F4F35C750149C591FAB094405FD /* Pods-CruApp-resources.sh */,
-				EC1B280D5A61B488F2CAC39EA35D3A2B /* Pods-CruApp-umbrella.h */,
-				7230AB79C77D43A239FCC2BBEA01BCC8 /* Pods-CruApp.debug.xcconfig */,
-				A4C031A1BBD11FD14E3481CB93FCCFD7 /* Pods-CruApp.release.xcconfig */,
+				405C943E5D8B1ADBB564E23994760731 /* Info.plist */,
+				99A44DDFA07ECF003D95C29DC1C27A8D /* Pods-CruAppTests.modulemap */,
+				3BC737ADBC46BAC00F7244DE107DF95C /* Pods-CruAppTests-acknowledgements.markdown */,
+				F066ECC31DFB296D7FCE4D56CA33AB68 /* Pods-CruAppTests-acknowledgements.plist */,
+				C4721E509FDFF72C85F3F9F4B1C2542D /* Pods-CruAppTests-dummy.m */,
+				A36B2B61110012B95305DCC6C0502AD7 /* Pods-CruAppTests-frameworks.sh */,
+				5C251EF330B1E3D6F984B506836A60FB /* Pods-CruAppTests-resources.sh */,
+				084DBA4A21D3E03BF3BF0319202C2D63 /* Pods-CruAppTests-umbrella.h */,
+				26E451725B619B722B2822BF6BA05EC9 /* Pods-CruAppTests.debug.xcconfig */,
+				4CBE041549C7AAD51747828CAA220B93 /* Pods-CruAppTests.release.xcconfig */,
 			);
-			name = "Pods-CruApp";
-			path = "Target Support Files/Pods-CruApp";
+			name = "Pods-CruAppTests";
+			path = "Target Support Files/Pods-CruAppTests";
 			sourceTree = "<group>";
 		};
 		B0CA9C1ACA01CA4B793BFB4728C3BE97 /* Frameworks */ = {
@@ -704,14 +789,6 @@
 			name = CloudMessaging;
 			sourceTree = "<group>";
 		};
-		DD46B1473F0838CA24634962B08F51B7 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				A83AD6618E6240E062BDB7FD6C50970D /* Pods-CruApp */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
 		E04B2C1E164DAB69E3AC5A719076D371 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -805,6 +882,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B03262D66BF7931D834E7FA32D411B76 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F8EBDC662380E7ED43A0E5FFEAD557C /* Pods-CruAppTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EAFE857379C67CA43A72EA84B0D33694 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -832,7 +917,7 @@
 			);
 			name = "youtube-ios-player-helper-Assets";
 			productName = "youtube-ios-player-helper-Assets";
-			productReference = 0517DA29953FDF53EFCC10AD17B3BA10 /* Assets.bundle */;
+			productReference = 3A9515DF0EF0D95E3E14C319D86F1D82 /* Assets.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
 		0DE93A80D9EC89B94FE9F41228A430A6 /* NMPopUpViewSwift */ = {
@@ -851,7 +936,7 @@
 			);
 			name = NMPopUpViewSwift;
 			productName = NMPopUpViewSwift;
-			productReference = F7BA4DEFF4C654C806FF2B3AF0C951D8 /* NMPopUpViewSwift.framework */;
+			productReference = 8F4039368D27C76680753DCA7615331E /* NMPopUpViewSwift.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		16AE5817304ABA8F95F7D55EB003C00C /* ReachabilitySwift */ = {
@@ -868,7 +953,7 @@
 			);
 			name = ReachabilitySwift;
 			productName = ReachabilitySwift;
-			productReference = D694D3A50E3C0583633C2AF7C3C92190 /* ReachabilitySwift.framework */;
+			productReference = C96016B77A17C2C99B7560F26182A22E /* ReachabilitySwift.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		37C4A52281A7AC6AD98D6791B7F19E42 /* CheckmarkSegmentedControl-CheckmarkSegmentedControl */ = {
@@ -885,7 +970,7 @@
 			);
 			name = "CheckmarkSegmentedControl-CheckmarkSegmentedControl";
 			productName = "CheckmarkSegmentedControl-CheckmarkSegmentedControl";
-			productReference = 3659C48B0D55D38608B9A9E8417C4246 /* CheckmarkSegmentedControl.bundle */;
+			productReference = 73CADC3F43CB35CCE8B3FECBAE11DFB0 /* CheckmarkSegmentedControl.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
 		49474230FC75ABDCA36CD731D54357B4 /* Pods-CruApp */ = {
@@ -907,7 +992,7 @@
 			);
 			name = "Pods-CruApp";
 			productName = "Pods-CruApp";
-			productReference = 35DB30BFBA92AC9D3F65FB0F28AE8078 /* Pods_CruApp.framework */;
+			productReference = 2D5295BEE987922A7B61F44F0C3F56FC /* Pods_CruApp.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		5AB4064A892A058275164B0D06D01EB3 /* NMPopUpViewSwift-NMPopUpViewSwift */ = {
@@ -924,7 +1009,7 @@
 			);
 			name = "NMPopUpViewSwift-NMPopUpViewSwift";
 			productName = "NMPopUpViewSwift-NMPopUpViewSwift";
-			productReference = EF6E634C7B8C0BF1A7C9CEE33C68C6CB /* NMPopUpViewSwift.bundle */;
+			productReference = 153A4ED34D24FC6D21BE7BDCAF1B7D6D /* NMPopUpViewSwift.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
 		8718C9994DF60FAE6528E82D52FAEF24 /* youtube-ios-player-helper */ = {
@@ -943,7 +1028,29 @@
 			);
 			name = "youtube-ios-player-helper";
 			productName = "youtube-ios-player-helper";
-			productReference = 8DFB01BC855D6F4A813576C359ADDD8F /* youtube_ios_player_helper.framework */;
+			productReference = 7BB4E54106842893EF89F8057786DEDC /* youtube_ios_player_helper.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		9B547CFD690A65047F7E6258D847908B /* Pods-CruAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5FF8A02D86414162D53E4FD6803F301B /* Build configuration list for PBXNativeTarget "Pods-CruAppTests" */;
+			buildPhases = (
+				ED20C378A727D85555F4F7D51C53263C /* Sources */,
+				EA7A91E6CC8E329119F880B9E8AD4568 /* Frameworks */,
+				B03262D66BF7931D834E7FA32D411B76 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8B040EB506328F75D354B92A4F6BE091 /* PBXTargetDependency */,
+				6A4418FF9777CC8F00FA26002290504B /* PBXTargetDependency */,
+				452C1CCB77D063FF0BD2E91C82A2F412 /* PBXTargetDependency */,
+				E0C5E70AA961E9A26201B65878F20E83 /* PBXTargetDependency */,
+				6570E6781DF4215A3ACAFF0A7814BAAC /* PBXTargetDependency */,
+			);
+			name = "Pods-CruAppTests";
+			productName = "Pods-CruAppTests";
+			productReference = 7267E32937496204298A5B1F351A11FF /* Pods_CruAppTests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		A8D6C169B703F406C4B4E2AEED7E7D13 /* DownPicker */ = {
@@ -962,7 +1069,7 @@
 			);
 			name = DownPicker;
 			productName = DownPicker;
-			productReference = E17FF149B9B4DB32F9DF4C1791171C96 /* DownPicker.framework */;
+			productReference = 362E16EE79CAD62324BBD53B30E506EB /* DownPicker.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		E160B084038123F829B8D7CA8A5A63E4 /* CheckmarkSegmentedControl */ = {
@@ -981,7 +1088,7 @@
 			);
 			name = CheckmarkSegmentedControl;
 			productName = CheckmarkSegmentedControl;
-			productReference = 3C61755F63DCA722517358170D313C51 /* CheckmarkSegmentedControl.framework */;
+			productReference = 67AE5F3B637BDDB022ACF95C826FDF27 /* CheckmarkSegmentedControl.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		F69ACDA8267D09383E82F875B0B714C8 /* DownPicker-DownPicker */ = {
@@ -998,7 +1105,7 @@
 			);
 			name = "DownPicker-DownPicker";
 			productName = "DownPicker-DownPicker";
-			productReference = 74315A3000E9DCF985FE6F7C3CBB965C /* DownPicker.bundle */;
+			productReference = 3D362790FDFDB55EABC01B971833747C /* DownPicker.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -1018,7 +1125,7 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 17C407707481EF25FFBF3ACB3225E70C /* Products */;
+			productRefGroup = 26C71788E1208A5D7E313CF93168D61B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -1029,6 +1136,7 @@
 				0DE93A80D9EC89B94FE9F41228A430A6 /* NMPopUpViewSwift */,
 				5AB4064A892A058275164B0D06D01EB3 /* NMPopUpViewSwift-NMPopUpViewSwift */,
 				49474230FC75ABDCA36CD731D54357B4 /* Pods-CruApp */,
+				9B547CFD690A65047F7E6258D847908B /* Pods-CruAppTests */,
 				16AE5817304ABA8F95F7D55EB003C00C /* ReachabilitySwift */,
 				8718C9994DF60FAE6528E82D52FAEF24 /* youtube-ios-player-helper */,
 				04ED838B31CD304C739C16C50C7AEFAB /* youtube-ios-player-helper-Assets */,
@@ -1178,6 +1286,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		ED20C378A727D85555F4F7D51C53263C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				32EAC93FA7AC363885E2E3E67610A873 /* Pods-CruAppTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F675E5EBFF6EDFDCB201DDE190A54A59 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1215,6 +1331,12 @@
 			target = E160B084038123F829B8D7CA8A5A63E4 /* CheckmarkSegmentedControl */;
 			targetProxy = 9D67956A79691F0610BD76C12841DEC7 /* PBXContainerItemProxy */;
 		};
+		452C1CCB77D063FF0BD2E91C82A2F412 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = NMPopUpViewSwift;
+			target = 0DE93A80D9EC89B94FE9F41228A430A6 /* NMPopUpViewSwift */;
+			targetProxy = BC3AAC7DEA757CFA599EF0D0EE6610D8 /* PBXContainerItemProxy */;
+		};
 		4875BA85D4E1ECEC38381D4DAF071E76 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "DownPicker-DownPicker";
@@ -1233,6 +1355,18 @@
 			target = 04ED838B31CD304C739C16C50C7AEFAB /* youtube-ios-player-helper-Assets */;
 			targetProxy = 1A27F2FA47D5E4A771CA8F99170FABC7 /* PBXContainerItemProxy */;
 		};
+		6570E6781DF4215A3ACAFF0A7814BAAC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "youtube-ios-player-helper";
+			target = 8718C9994DF60FAE6528E82D52FAEF24 /* youtube-ios-player-helper */;
+			targetProxy = CD3AB11EBEB97EB7190E2C0642E5073B /* PBXContainerItemProxy */;
+		};
+		6A4418FF9777CC8F00FA26002290504B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = DownPicker;
+			target = A8D6C169B703F406C4B4E2AEED7E7D13 /* DownPicker */;
+			targetProxy = 253359EFA5CB9DFBAE526B49B273ECA1 /* PBXContainerItemProxy */;
+		};
 		72386D27BDC6807AA09119406E01C6D0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = NMPopUpViewSwift;
@@ -1244,6 +1378,18 @@
 			name = "youtube-ios-player-helper";
 			target = 8718C9994DF60FAE6528E82D52FAEF24 /* youtube-ios-player-helper */;
 			targetProxy = 08B2316592CE65F47D59BC02FB7FAEF4 /* PBXContainerItemProxy */;
+		};
+		8B040EB506328F75D354B92A4F6BE091 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CheckmarkSegmentedControl;
+			target = E160B084038123F829B8D7CA8A5A63E4 /* CheckmarkSegmentedControl */;
+			targetProxy = 1EE57007D1F63B89C2B932072785837A /* PBXContainerItemProxy */;
+		};
+		E0C5E70AA961E9A26201B65878F20E83 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ReachabilitySwift;
+			target = 16AE5817304ABA8F95F7D55EB003C00C /* ReachabilitySwift */;
+			targetProxy = 4EFAC681B250BA042D68240BC2AFCDB3 /* PBXContainerItemProxy */;
 		};
 		F17EE69BABE712E53BEAA66CDF097521 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1429,6 +1575,37 @@
 			};
 			name = Debug;
 		};
+		6F2D7DD880371B59C58F45BD601CA6D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 26E451725B619B722B2822BF6BA05EC9 /* Pods-CruAppTests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-CruAppTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CruAppTests/Pods-CruAppTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_CruAppTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		74857149DC1E0D599B8A01A78349A926 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1490,9 +1667,39 @@
 			};
 			name = Release;
 		};
+		8EF12FA3E7EBEA376F3AE44EF474D0DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4CBE041549C7AAD51747828CAA220B93 /* Pods-CruAppTests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-CruAppTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CruAppTests/Pods-CruAppTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_CruAppTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		8FCA78B0919A8577B8C5738FAD908B8B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7230AB79C77D43A239FCC2BBEA01BCC8 /* Pods-CruApp.debug.xcconfig */;
+			baseConfigurationReference = 0871487BFE223F10C4828ED87786B07E /* Pods-CruApp.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1574,7 +1781,7 @@
 		};
 		B0093C9993BA7B500C4BD9D085C478CD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A4C031A1BBD11FD14E3481CB93FCCFD7 /* Pods-CruApp.release.xcconfig */;
+			baseConfigurationReference = EE0D10D4E613905B23E41A7FF88D1F13 /* Pods-CruApp.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1783,6 +1990,15 @@
 			buildConfigurations = (
 				283BCA518F7E2DB23F205D8A4AE098A9 /* Debug */,
 				78E5E8F6538A7CE26DEF680C3C138590 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5FF8A02D86414162D53E4FD6803F301B /* Build configuration list for PBXNativeTarget "Pods-CruAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6F2D7DD880371B59C58F45BD601CA6D2 /* Debug */,
+				8EF12FA3E7EBEA376F3AE44EF474D0DE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

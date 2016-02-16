@@ -11,9 +11,10 @@ import XCTest
 
 class CruAppTests: XCTestCase {
     
-    func testSomeFunc() {
-        let vc = ViewController()
-        XCTAssertTrue(vc.someFunc());
+    func testCheckInternet() {
+        let vc = EventsViewController()
+        vc.checkInternet()
+        XCTAssertTrue(true)
     }
     
 

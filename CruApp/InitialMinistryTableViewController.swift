@@ -7,56 +7,36 @@
 //
 
 import UIKit
+import Foundation
 
 class InitialMinistryTableViewController: UITableViewController {
 
     
     var popViewController : PopUpViewControllerSwift!
     
-    var ministriesCollection = [String]()
+    var ministriesCollection = [Ministry]()
     var isSelected: [Bool] = [Bool]()
     var selected: [String] = [String]()
     
-    @IBAction func clickInfo(sender: AnyObject) {
-        let bundle = NSBundle(forClass: PopUpViewControllerSwift.self)
-        if (UIDevice.currentDevice().userInterfaceIdiom == .Pad)
-        {
-            self.popViewController = PopUpViewControllerSwift(nibName: "PopUpViewController_iPad", bundle: bundle)
-            self.popViewController.title = "This is a popup view"
-            self.popViewController.showInView(self.view, withImage: UIImage(named: "typpzDemo"), withMessage: "You just triggered a great popup window", animated: true)
-        } else
-        {
-            if UIScreen.mainScreen().bounds.size.width > 320 {
-                if UIScreen.mainScreen().scale == 3 {
-                    self.popViewController = PopUpViewControllerSwift(nibName: "PopUpViewController_iPhone6Plus", bundle: bundle)
-                    self.popViewController.title = "This is a popup view"
-                    self.popViewController.showInView(self.view, withImage: UIImage(named: "typpzDemo"), withMessage: "You just triggered a great popup window", animated: true)
-                } else {
-                    self.popViewController = PopUpViewControllerSwift(nibName: "PopUpViewController_iPhone6", bundle: bundle)
-                    self.popViewController.title = "This is a popup view"
-                    self.popViewController.showInView(self.view, withImage: UIImage(named: "typpzDemo"), withMessage: "You just triggered a great popup window", animated: true)
-                }
-            } else {
-                self.popViewController = PopUpViewControllerSwift(nibName: "PopUpViewController", bundle: bundle)
-                self.popViewController.title = "This is a popup view"
-                self.popViewController.showInView(self.view, withImage: UIImage(named: "typpzDemo"), withMessage: "You just triggered a great popup window", animated: true)
-            }
-        }
-        
+    struct Ministry{
+        var name: String
+        var description: String?
+        var image: String?
+        //var campus: String?
 
+        
+        init(name: String, description: String?, image: String?)
+        {
+            self.name = name
+            self.description = description
+            self.image = image
+            //self.campus = campus
+        }
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //pull from database here
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
         //remove empty separator 
         tableView.tableFooterView = UIView()
@@ -75,8 +55,13 @@ class InitialMinistryTableViewController: UITableViewController {
         //self.tableView.beginUpdates()
         
         let name = ministry["name"] as! String
-    
-        ministriesCollection.append(name)
+        let description = ministry["description"] as! String!
+        let image = ministry["image"]?.objectForKey("secure_url") as! String!
+        //let campus = ministry["campuses"] as! String
+        
+        let ministryObj = Ministry(name: name, description: description, image: image)
+        
+        ministriesCollection.append(ministryObj)
         isSelected.append(false);
         self.tableView.reloadData()
     }
@@ -101,10 +86,12 @@ class InitialMinistryTableViewController: UITableViewController {
     // Uncomment
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell2", forIndexPath: indexPath) as! InitialMinistryTableViewCell
+        let ministry = ministriesCollection[indexPath.row]
         
         // Configure the cell...
         
-        cell.ministry.text = ministriesCollection[indexPath.row]
+        cell.ministry.text = ministry.name
+        cell.infoButton.tag = indexPath.row
         
         return cell
     }
@@ -114,14 +101,11 @@ class InitialMinistryTableViewController: UITableViewController {
         print(indexPath.row)
         
         let cell:UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
-
         
-        if (!selected.contains(ministriesCollection[indexPath.row])) {
+        if (!selected.contains(ministriesCollection[indexPath.row].name)) {
             
             cell.accessoryType = UITableViewCellAccessoryType.Checkmark
-            //cell.contentView.backgroundColor = UIColor(red: CGFloat(98/255.0), green: CGFloat(96/255.0), blue: CGFloat(98/255.0), alpha: CGFloat(0.25) )
-            //cell.contentView.superview!.backgroundColor = UIColor(red: CGFloat(98/255.0), green: CGFloat(96/255.0), blue: CGFloat(98/255.0), alpha: CGFloat(0.80) )
-            selected.append(ministriesCollection[indexPath.row])
+            selected.append(ministriesCollection[indexPath.row].name)
             dump(selected)
             
         }
@@ -130,11 +114,52 @@ class InitialMinistryTableViewController: UITableViewController {
             cell.accessoryType = UITableViewCellAccessoryType.None
             cell.contentView.backgroundColor = UIColor.clearColor()
             cell.contentView.superview!.backgroundColor = UIColor.clearColor()
-            selected = selected.filter() {$0 != ministriesCollection[indexPath.row]}
+            selected = selected.filter() {$0 != ministriesCollection[indexPath.row].name}
             
             dump(selected)
         }
     }
+    
+    @IBAction func clickInfo(sender: AnyObject) {
+        let ministry = ministriesCollection[sender.tag]
+        
+        var image = UIImage(named: "Cru-Logo.png")
+        
+        if(ministry.image != nil) {
+            let url = NSURL(string: ministry.image!)
+            let data = NSData(contentsOfURL: url!)
+            image = UIImage(data: data!)
+        }
+
+        
+        let bundle = NSBundle(forClass: PopUpViewControllerSwift.self)
+        if (UIDevice.currentDevice().userInterfaceIdiom == .Pad)
+        {
+            self.popViewController = PopUpViewControllerSwift(nibName: "PopUpViewController_iPad", bundle: bundle)
+            self.popViewController.title = "This is a popup view"
+            self.popViewController.showInView(self.view, withImage: image, withMessage: ministriesCollection[sender.tag].description, animated: true)
+        } else
+        {
+            if UIScreen.mainScreen().bounds.size.width > 320 {
+                if UIScreen.mainScreen().scale == 3 {
+                    self.popViewController = PopUpViewControllerSwift(nibName: "PopUpViewController_iPhone6Plus", bundle: bundle)
+                    self.popViewController.title = "This is a popup view"
+                    self.popViewController.showInView(self.view, withImage: image, withMessage: ministriesCollection[sender.tag].description, animated: true)
+                } else {
+                    self.popViewController = PopUpViewControllerSwift(nibName: "PopUpViewController_iPhone6", bundle: bundle)
+                    self.popViewController.title = "This is a popup view"
+                    self.popViewController.showInView(self.view, withImage: image, withMessage: ministriesCollection[sender.tag].description, animated: true)
+                }
+            } else {
+                self.popViewController = PopUpViewControllerSwift(nibName: "PopUpViewController", bundle: bundle)
+                self.popViewController.title = "This is a popup view"
+                self.popViewController.showInView(self.view, withImage: image, withMessage: ministriesCollection[sender.tag].description, animated: true)
+            }
+        }
+        
+        
+    }
+
     
 
 }

@@ -17,7 +17,6 @@ class InitialCampusTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         
         let infoImage = UIImage(named: "info.png")
-        
         infoButton.setImage(infoImage, forState: .Normal)
 
     }

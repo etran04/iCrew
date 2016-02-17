@@ -61,6 +61,7 @@ class UserProfile {
             print("Unable to fetch")
         }
         
+        dump(results)
         return results;
     }
     

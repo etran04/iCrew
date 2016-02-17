@@ -55,17 +55,8 @@ class InitialCampusTableViewController: UITableViewController {
 //            self.presentViewController(vc, animated: false, completion: nil)
         }
         else {
-            //pull from database here
-            // Uncomment the following line to preserve selection between presentations
-            // self.clearsSelectionOnViewWillAppear = false
             
-            // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-            // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-            
-            //adding background image
-            tableView.backgroundView = UIImageView(image: UIImage(named: "Bishop-peak_gray.jpg"))
-            tableView.tableFooterView = UIView()
-            
+            //set up database
             var dbClient: DBClient!
             dbClient = DBClient()
             dbClient.getData("campus", dict: setCampuses)

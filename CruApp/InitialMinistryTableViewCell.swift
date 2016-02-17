@@ -11,13 +11,12 @@ import UIKit
 class InitialMinistryTableViewCell: UITableViewCell {
 
     @IBOutlet var ministry: UILabel!
-    
     @IBOutlet var infoButton: UIButton!
+    
     
     override func awakeFromNib() {
         
         let infoImage = UIImage(named: "info.png")
-        
         infoButton.setImage(infoImage, forState: .Normal)
         
     }

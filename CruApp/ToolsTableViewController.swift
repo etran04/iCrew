@@ -1,52 +1,32 @@
 //
-//  ArticlesTableViewController.swift
+//  ToolsTableViewController.swift
 //  CruApp
 //
-//  Created by Eric Tran on 12/1/15.
-//  Copyright © 2015 iCrew. All rights reserved.
+//  Created by Eric Tran on 2/17/16.
+//  Copyright © 2016 iCrew. All rights reserved.
 //
 
 import UIKit
 import SafariServices
 
-/* URLResources is a inner class to hold metadata for a single article or a single tool */
-class URLResources {
-    private var name: String?
-    private var url: String?
+class ToolsTableViewController: UITableViewController {
     
-    init(name: String, url: String) {
-        self.name = name
-        self.url = url
-    }
-    
-    func getName() -> String {
-        return self.name!
-    }
-    
-    func getURL() -> String {
-        return self.url!
-    }
-}
-
-/* ArticlesTableVC is the screen that holds all articles for user to view */
-class ArticlesTableViewController: UITableViewController {
-
     /* A reference to the pull-down-to-refresh ui */
     @IBOutlet weak var refresh: UIRefreshControl!
     
     /* A reference to the animated loading spinner */
     var indicator = UIActivityIndicatorView()
     
-    /* Holds all articles to be displayed */
-    var articles = [URLResources]()
+    /* Holds all tools to be displayed */
+    var tools = [URLResources]()
     
     /* Called when the current view is loaded */
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setUpLoadSpinner()
-        self.loadArticles()
+        self.loadTools()
     }
-
+    
     /* Called when the current view appears */
     override func viewDidAppear(animated: Bool) {
         self.setUpRefresh()
@@ -63,7 +43,6 @@ class ArticlesTableViewController: UITableViewController {
     
     /* Resets the refresh UI control */
     func setUpRefresh() {
-        
         // Update the displayed "Last update: " time in the UIRefreshControl
         let date = NSDate()
         let formatter = NSDateFormatter()
@@ -89,10 +68,10 @@ class ArticlesTableViewController: UITableViewController {
             presentViewController(vc, animated: false, completion: nil)
         }
     }
-
+    
     /* Populates our articles from the Cru database */
-    func loadArticles() {
-        self.articles += [
+    func loadTools() {
+        self.tools += [
             URLResources(name: "Discerning God's Will",
                 url: "http://www.slocru.com/assets/resources/pdf/Discerning_Gods_Will_by_Youth_Specialties.pdf"),
             URLResources(name: "Biblical Career Principals",
@@ -101,27 +80,27 @@ class ArticlesTableViewController: UITableViewController {
     }
     
     // MARK: - Table view data source
-
+    
     /* Asks the data source to return the number of sections in the table view. */
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
-
+    
     /* Dynamically size the table according to the number of articles */
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return articles.count
+        return tools.count
     }
     
     /* Loads each cell in the table with a link */
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("ArticleCell", forIndexPath: indexPath) as! ArticleTableViewCell
-        cell.setName(articles[indexPath.row].getName())
+        let cell = tableView.dequeueReusableCellWithIdentifier("ToolCell", forIndexPath: indexPath) as! ToolTableViewCell
+        cell.setName(tools[indexPath.row].getName())
         return cell
     }
     
     /* Callback for when a link is clicked */
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        showLink(articles[indexPath.row].getURL())
+        showLink(tools[indexPath.row].getURL())
     }
     
     /* Callback for when a cell is individually displayed */
@@ -133,5 +112,4 @@ class ArticlesTableViewController: UITableViewController {
             self.indicator.stopAnimating()
         }
     }
-
 }

@@ -43,6 +43,9 @@ class VideosTableViewController: UITableViewController {
     /* A reference to the pull-down-to-refresh ui */
     @IBOutlet weak var refresh: UIRefreshControl!
     
+    /* A reference to the animated loading spinner */
+    var indicator = UIActivityIndicatorView()
+    
     /* Key used to access Google YouTube API. From Google Developer Console */
     var apiKey = "AIzaSyBGaaqJruUGsKohM4PJZO6XnlMOmdt6gsY"
     
@@ -55,22 +58,35 @@ class VideosTableViewController: UITableViewController {
     /* Holds a list of videos to be loaded */
     var videos = [Video]()
     
+    /* Called when the current view is loaded */
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setUpLoadSpinner()
         self.getChannelDetailsAndLoadVideos(false)
     }
     
+    /* Called when the current view appears */
     override func viewDidAppear(animated: Bool) {
         self.setUpRefresh()
     }
+    
+    /* Sets up and starts the loading indicator */
+    func setUpLoadSpinner() {
+        indicator = UIActivityIndicatorView(frame: CGRectMake(0, 0, 40, 40))
+        indicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
+        indicator.center = self.view.center
+        self.view.addSubview(indicator)
+        indicator.startAnimating()
+    }
+
     
     /* Resets the refresh UI control */
     func setUpRefresh() {
         // Update the displayed "Last update: " time in the UIRefreshControl
         let date = NSDate()
         let formatter = NSDateFormatter()
-        formatter.timeStyle = .ShortStyle
-        let updateString = "Last updated:" + formatter.stringFromDate(date)
+        formatter.timeStyle = .MediumStyle
+        let updateString = "Last updated: " + formatter.stringFromDate(date)
         self.refresh.attributedTitle = NSAttributedString(string: updateString)
         
         /* Set the callback for when pulled down */
@@ -84,6 +100,7 @@ class VideosTableViewController: UITableViewController {
     
     /* Callback method for when user pulls down to refresh */
     func refresh(sender:AnyObject) {
+        self.setUpRefresh()
         self.tableView.reloadData()
         self.refresh.endRefreshing()
     }
@@ -230,11 +247,13 @@ class VideosTableViewController: UITableViewController {
                         
                         // Adds the video to our list of videos
                         let newVideo = Video(id: desiredPlaylistItemDataDict["videoID"] as! String, title: desiredPlaylistItemDataDict["title"] as! String, summary: desiredPlaylistItemDataDict["description"] as! String)
-                        //print(newVideo.toString())
                         self.videos.append(newVideo)
                         
                         // Reload the tableview.
                         self.tableView.reloadData()
+                        
+                        // Finished loading videos, stop the indicator
+                        self.indicator.stopAnimating()
                     }
                 } catch {
                     print(error)

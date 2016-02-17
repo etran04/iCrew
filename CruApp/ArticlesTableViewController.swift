@@ -34,16 +34,31 @@ class ArticlesTableViewController: UITableViewController {
     /* A reference to the pull-down-to-refresh ui */
     @IBOutlet weak var refresh: UIRefreshControl!
     
+    /* A reference to the animated loading spinner */
+    var indicator = UIActivityIndicatorView()
+    
     /* Holds all articles to be displayed */
     var articles = [Article]()
     
+    /* Called when the current view is loaded */
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setUpLoadSpinner()
         self.loadArticles()
     }
 
+    /* Called when the current view appears */
     override func viewDidAppear(animated: Bool) {
         self.setUpRefresh()
+    }
+    
+    /* Sets up and starts the loading indicator */
+    func setUpLoadSpinner() {
+        indicator = UIActivityIndicatorView(frame: CGRectMake(0, 0, 40, 40))
+        indicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
+        indicator.center = self.view.center
+        self.view.addSubview(indicator)
+        indicator.startAnimating()
     }
     
     /* Resets the refresh UI control */
@@ -52,8 +67,8 @@ class ArticlesTableViewController: UITableViewController {
         // Update the displayed "Last update: " time in the UIRefreshControl
         let date = NSDate()
         let formatter = NSDateFormatter()
-        formatter.timeStyle = .ShortStyle
-        let updateString = "Last updated:" + formatter.stringFromDate(date)
+        formatter.timeStyle = .MediumStyle
+        let updateString = "Last updated: " + formatter.stringFromDate(date)
         self.refresh.attributedTitle = NSAttributedString(string: updateString)
         
         /* Set the callback for when pulled down */
@@ -62,6 +77,7 @@ class ArticlesTableViewController: UITableViewController {
     
     /* Callback method for when user pulls down to refresh */
     func refresh(sender:AnyObject) {
+        self.setUpRefresh()
         self.tableView.reloadData()
         self.refresh.endRefreshing()
     }
@@ -106,6 +122,16 @@ class ArticlesTableViewController: UITableViewController {
     /* Callback for when a link is clicked */
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         showLink(articles[indexPath.row].getURL())
+    }
+    
+    /* Callback for when a cell is individually displayed */
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        let sectionsAmount = tableView.numberOfSections
+        let rowsAmount = tableView.numberOfRowsInSection(indexPath.section)
+        if (indexPath.section == sectionsAmount - 1 && indexPath.row == rowsAmount - 1) {
+            // This is the last cell in the table, stop the loading indicator
+            self.indicator.stopAnimating()
+        }
     }
 
 }

@@ -9,7 +9,7 @@
 import UIKit
 import SafariServices
 
-/* Inner class to hold metadata for a single article */
+/* Article is a inner class to hold metadata for a single article */
 class Article {
     private var name: String?
     private var url: String?
@@ -31,6 +31,9 @@ class Article {
 /* ArticlesTableVC is the screen that holds all articles for user to view */
 class ArticlesTableViewController: UITableViewController {
 
+    /* A reference to the pull-down-to-refresh ui */
+    @IBOutlet weak var refresh: UIRefreshControl!
+    
     /* Holds all articles to be displayed */
     var articles = [Article]()
     
@@ -39,8 +42,28 @@ class ArticlesTableViewController: UITableViewController {
         self.loadArticles()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    override func viewDidAppear(animated: Bool) {
+        self.setUpRefresh()
+    }
+    
+    /* Resets the refresh UI control */
+    func setUpRefresh() {
+        
+        // Update the displayed "Last update: " time in the UIRefreshControl
+        let date = NSDate()
+        let formatter = NSDateFormatter()
+        formatter.timeStyle = .ShortStyle
+        let updateString = "Last updated:" + formatter.stringFromDate(date)
+        self.refresh.attributedTitle = NSAttributedString(string: updateString)
+        
+        /* Set the callback for when pulled down */
+        self.refresh.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+    }
+    
+    /* Callback method for when user pulls down to refresh */
+    func refresh(sender:AnyObject) {
+        self.tableView.reloadData()
+        self.refresh.endRefreshing()
     }
     
     /* Opens a url string in an embedded web browser */
@@ -84,50 +107,5 @@ class ArticlesTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         showLink(articles[indexPath.row].getURL())
     }
-    
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

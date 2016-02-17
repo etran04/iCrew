@@ -40,6 +40,9 @@ class Video {
 /* VideosTableVC is the screen that loads a list of videos and displays them in a table */
 class VideosTableViewController: UITableViewController {
     
+    /* A reference to the pull-down-to-refresh ui */
+    @IBOutlet weak var refresh: UIRefreshControl!
+    
     /* Key used to access Google YouTube API. From Google Developer Console */
     var apiKey = "AIzaSyBGaaqJruUGsKohM4PJZO6XnlMOmdt6gsY"
     
@@ -52,18 +55,26 @@ class VideosTableViewController: UITableViewController {
     /* Holds a list of videos to be loaded */
     var videos = [Video]()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.getChannelDetailsAndLoadVideos(false)
-        
-        self.refreshControl!.attributedTitle = NSAttributedString(string: "Pull to refresh")
-        self.refreshControl!.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
-        self.tableView.addSubview(refreshControl!)
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    override func viewDidAppear(animated: Bool) {
+        self.setUpRefresh()
+    }
+    
+    /* Resets the refresh UI control */
+    func setUpRefresh() {
+        // Update the displayed "Last update: " time in the UIRefreshControl
+        let date = NSDate()
+        let formatter = NSDateFormatter()
+        formatter.timeStyle = .ShortStyle
+        let updateString = "Last updated:" + formatter.stringFromDate(date)
+        self.refresh.attributedTitle = NSAttributedString(string: updateString)
+        
+        /* Set the callback for when pulled down */
+        self.refresh.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
     }
     
     /* Populates the list of videos with videos from the Cru Database */
@@ -71,37 +82,16 @@ class VideosTableViewController: UITableViewController {
         self.getVideosForChannelAtIndex(0)
     }
     
+    /* Callback method for when user pulls down to refresh */
     func refresh(sender:AnyObject) {
         self.tableView.reloadData()
-        self.refreshControl!.endRefreshing()
+        self.refresh.endRefreshing()
     }
     
     // MARK: - Table view data source
     
     /* Asks the data source to return the number of sections in the table view. Default is 1. */
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        
-//        // Return the number of sections.
-//        if (self.videos.count == 0) {
-//            self.tableView.separatorStyle = .SingleLine;
-//            return 1;
-//            
-//        } else {
-//            
-//            // Display a message when the table is empty
-//            let messageLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.view.bounds.size.width, height: self.view.bounds.size.height))
-//            
-//            messageLabel.text = "No data is currently available. Please pull down to refresh.";
-//            messageLabel.textColor = UIColor.blackColor()
-//            messageLabel.numberOfLines = 0;
-//            messageLabel.textAlignment = .Center
-//            messageLabel.sizeToFit()
-//            
-//            self.tableView.backgroundView = messageLabel;
-//            self.tableView.separatorStyle = .None
-//            
-//        }
-        
         return 1;
     }
     

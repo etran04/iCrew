@@ -112,8 +112,6 @@ class InitialMinistryTableViewController: UITableViewController {
         else {
             isSelected[indexPath.row] = false
             cell.accessoryType = UITableViewCellAccessoryType.None
-            cell.contentView.backgroundColor = UIColor.clearColor()
-            cell.contentView.superview!.backgroundColor = UIColor.clearColor()
             selected = selected.filter() {$0 != ministriesCollection[indexPath.row].name}
             
             dump(selected)

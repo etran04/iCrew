@@ -12,13 +12,5 @@ class InitialCampusTableViewCell: UITableViewCell {
 
     @IBOutlet var campus: UILabel!
 
-    @IBOutlet var infoButton: UIButton!
-    
-    override func awakeFromNib() {
-        
-        let infoImage = UIImage(named: "info.png")
-        infoButton.setImage(infoImage, forState: .Normal)
-
-    }
 
 }

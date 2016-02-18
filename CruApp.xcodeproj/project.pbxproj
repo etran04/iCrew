@@ -70,8 +70,8 @@
 		A4110B481C0F7E3400F47AB4 /* Calendar-25.png in Resources */ = {isa = PBXBuildFile; fileRef = A4110B471C0F7E3400F47AB4 /* Calendar-25.png */; };
 		A4110B501C0F7EB500F47AB4 /* Facebook-25.png in Resources */ = {isa = PBXBuildFile; fileRef = A4110B4F1C0F7EB500F47AB4 /* Facebook-25.png */; };
 		A4110B521C0FA44700F47AB4 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4110B511C0FA44700F47AB4 /* Location.swift */; };
+		A441CE6C1C75B0FD00663057 /* RideShare.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A441CE6B1C75B0FD00663057 /* RideShare.storyboard */; };
 		A447DBB31C5AC8D3000C6DEB /* Events.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A447DBAF1C5AC8D3000C6DEB /* Events.storyboard */; };
-		A447DBB41C5AC8D3000C6DEB /* RideShare.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A447DBB11C5AC8D3000C6DEB /* RideShare.storyboard */; };
 		A447DBBF1C5ACBBB000C6DEB /* Car-25.png in Resources */ = {isa = PBXBuildFile; fileRef = A447DBBB1C5ACBBB000C6DEB /* Car-25.png */; };
 		A447DBC01C5ACBBB000C6DEB /* Checked Checkbox 2-48.png in Resources */ = {isa = PBXBuildFile; fileRef = A447DBBC1C5ACBBB000C6DEB /* Checked Checkbox 2-48.png */; };
 		A447DBC11C5ACBBB000C6DEB /* Filled-Car-100.png in Resources */ = {isa = PBXBuildFile; fileRef = A447DBBD1C5ACBBB000C6DEB /* Filled-Car-100.png */; };
@@ -254,8 +254,8 @@
 		A4110B471C0F7E3400F47AB4 /* Calendar-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Calendar-25.png"; path = "images/Calendar-25.png"; sourceTree = "<group>"; };
 		A4110B4F1C0F7EB500F47AB4 /* Facebook-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Facebook-25.png"; path = "images/Facebook-25.png"; sourceTree = "<group>"; };
 		A4110B511C0FA44700F47AB4 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		A441CE6B1C75B0FD00663057 /* RideShare.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = RideShare.storyboard; path = Base.lproj/RideShare.storyboard; sourceTree = "<group>"; };
 		A447DBB01C5AC8D3000C6DEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Events.storyboard; sourceTree = "<group>"; };
-		A447DBB21C5AC8D3000C6DEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/RideShare.storyboard; sourceTree = "<group>"; };
 		A447DBBB1C5ACBBB000C6DEB /* Car-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Car-25.png"; path = "images/Car-25.png"; sourceTree = SOURCE_ROOT; };
 		A447DBBC1C5ACBBB000C6DEB /* Checked Checkbox 2-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Checked Checkbox 2-48.png"; path = "images/Checked Checkbox 2-48.png"; sourceTree = SOURCE_ROOT; };
 		A447DBBD1C5ACBBB000C6DEB /* Filled-Car-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Filled-Car-100.png"; path = "images/Filled-Car-100.png"; sourceTree = SOURCE_ROOT; };
@@ -371,11 +371,11 @@
 		07EE5F7C1BFE6B92009A2B44 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				A441CE6B1C75B0FD00663057 /* RideShare.storyboard */,
 				271C78151C5040EA00F42EA0 /* Initial.storyboard */,
 				072519AB1BE9694000F38F81 /* Main.storyboard */,
 				839F64531C0D6BD100CAEC9E /* GetInvolved.storyboard */,
 				A447DBAF1C5AC8D3000C6DEB /* Events.storyboard */,
-				A447DBB11C5AC8D3000C6DEB /* RideShare.storyboard */,
 				839F64561C0D6C1E00CAEC9E /* SummerMissions.storyboard */,
 				839F64591C0D6C4C00CAEC9E /* Resources.storyboard */,
 				072519B01BE9694000F38F81 /* LaunchScreen.storyboard */,
@@ -737,7 +737,6 @@
 				07340BBA1C5B36B5002C6015 /* info.png in Resources */,
 				072519B21BE9694000F38F81 /* LaunchScreen.storyboard in Resources */,
 				279326FE1C509C2100BAC73D /* PopUpViewController_iPhone6.xib in Resources */,
-				A447DBB41C5AC8D3000C6DEB /* RideShare.storyboard in Resources */,
 				839F645B1C0D6C4C00CAEC9E /* Resources.storyboard in Resources */,
 				A447DBC21C5ACBBB000C6DEB /* Passenger-52.png in Resources */,
 				839F64411C0D4E4300CAEC9E /* Cru-Logo.png in Resources */,
@@ -750,6 +749,7 @@
 				279326FD1C509C2100BAC73D /* PopUpViewController_iPad.xib in Resources */,
 				839F64421C0D4E4300CAEC9E /* Home-25.png in Resources */,
 				839F64601C0D70AA00CAEC9E /* Box-25.png in Resources */,
+				A441CE6C1C75B0FD00663057 /* RideShare.storyboard in Resources */,
 				0703C7321C4DFA8500C7D8ED /* blank_calendar.png in Resources */,
 				A447DBBF1C5ACBBB000C6DEB /* Car-25.png in Resources */,
 				072519AF1BE9694000F38F81 /* Assets.xcassets in Resources */,
@@ -987,14 +987,6 @@
 				A447DBB01C5AC8D3000C6DEB /* Base */,
 			);
 			name = Events.storyboard;
-			sourceTree = "<group>";
-		};
-		A447DBB11C5AC8D3000C6DEB /* RideShare.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A447DBB21C5AC8D3000C6DEB /* Base */,
-			);
-			name = RideShare.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

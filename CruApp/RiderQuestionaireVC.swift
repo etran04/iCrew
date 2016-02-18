@@ -13,6 +13,8 @@ import CheckmarkSegmentedControl
 /* This class is used to gather information from a potential rider of the RideShare feature */
 class RiderQuestionaireVC: UIViewController {
 
+    @IBOutlet weak var passengerNumber: UITextField!
+    @IBOutlet weak var passengerFullName: UITextField!
     @IBOutlet weak var driveTypes: CheckmarkSegmentedControl!
     @IBOutlet weak var eventsChoice: UITextField!
     
@@ -68,6 +70,45 @@ class RiderQuestionaireVC: UIViewController {
         self.eventDownPicker = DownPicker(textField: self.eventsChoice, withData: eventChoices)
         self.eventDownPicker.setPlaceholder("Choose an event...")
     }
+    
+    @IBAction func submitPressed(sender: UIButton) {
+        
+        /* TO DO: Validate driver information, make sure everything is good to go */
+        
+        //grab questionaire data to add to data
+        
+        var rideDirection : String
+        
+        if(driveTypes.options[driveTypes.selectedIndex].title == "To & From Event \n(Round Trip)") {
+            rideDirection = "both"
+        }
+        else if (driveTypes.options[driveTypes.selectedIndex].title == "To Event \n(One-way)") {
+            rideDirection = "to"
+        } else {
+            rideDirection = "from"
+        }
+        
+        //let params = ["direction": rideDirection, "phone": Int(driverPhoneNumber.text!)!, "name": driverFullName.text!, "gcm_id" : 1234567]
+        
+//        do {
+//            let body = try NSJSONSerialization.dataWithJSONObject(params, options: NSJSONWritingOptions.PrettyPrinted)
+//            dbClient.addData("ride", body : body)
+//        } catch {
+//            print("Error sending data to database")
+//        }
+        
+        /* Show a visual alert displaying successful signup */
+//        let successAlert = UIAlertController(title: "Success!", message:
+//            "Thank you for signing up as a driver!", preferredStyle: UIAlertControllerStyle.Alert)
+//        successAlert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler:
+//            {
+//                (action: UIAlertAction!) -> Void in
+//                self.performSegueWithIdentifier("finishQuestionaire", sender: self)
+//        }))
+//        
+//        self.presentViewController(successAlert, animated: true, completion: nil)
+    }
+    
     
     /* Calls this function when the tap is recognizedd
     * Causes the view (or one of its embedded text fields) to resign the first responder status. */

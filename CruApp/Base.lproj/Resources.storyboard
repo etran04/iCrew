@@ -39,13 +39,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VVR-xn-6kz">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Videos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Glw-QV-d0Z">
+                                <rect key="frame" x="274" y="267" width="52.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VVR-xn-6kz">
                                 <rect key="frame" x="0.0" y="308" width="600" height="243"/>
                                 <color key="backgroundColor" red="0.97647058823529409" green="0.71372549019607845" blue="0.14509803921568626" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="ozc-6e-zHw"/>
                                 </constraints>
-                                <state key="normal" title="Articles">
+                                <state key="normal" image="ArticlesIcon.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="default">
@@ -57,10 +63,17 @@
                                     <segue destination="20A-fb-hoq" kind="show" id="LBP-sW-0ms"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qgz-BK-S50">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Articles" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6D0-aO-yRu">
+                                <rect key="frame" x="271.5" y="510.5" width="58.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qgz-BK-S50">
                                 <rect key="frame" x="0.0" y="64" width="600" height="244"/>
                                 <color key="backgroundColor" red="0.24313725490196078" green="0.69411764705882351" blue="0.78431372549019607" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Videos">
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                <state key="normal" image="VideoIcon.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -72,6 +85,8 @@
                         <constraints>
                             <constraint firstItem="qgz-BK-S50" firstAttribute="top" secondItem="0wr-Fm-hx3" secondAttribute="bottom" id="4gT-6n-rgQ"/>
                             <constraint firstItem="qgz-BK-S50" firstAttribute="leading" secondItem="z7f-dP-Vng" secondAttribute="leadingMargin" constant="-20" id="Fdr-mh-yvp"/>
+                            <constraint firstItem="6D0-aO-yRu" firstAttribute="bottom" secondItem="VVR-xn-6kz" secondAttribute="bottom" constant="-20" id="IyM-ez-Oyo"/>
+                            <constraint firstItem="Glw-QV-d0Z" firstAttribute="centerX" secondItem="qgz-BK-S50" secondAttribute="centerX" id="PJR-zd-E8q"/>
                             <constraint firstItem="VVR-xn-6kz" firstAttribute="top" secondItem="qgz-BK-S50" secondAttribute="bottom" id="SnP-B8-dPK"/>
                             <constraint firstAttribute="trailingMargin" secondItem="VVR-xn-6kz" secondAttribute="trailing" constant="-20" id="VJJ-n0-af5"/>
                             <constraint firstItem="VVR-xn-6kz" firstAttribute="leading" secondItem="z7f-dP-Vng" secondAttribute="leadingMargin" constant="-20" id="XPX-rQ-eRU"/>
@@ -79,6 +94,8 @@
                             <constraint firstAttribute="trailingMargin" secondItem="qgz-BK-S50" secondAttribute="trailing" constant="-20" id="i2Y-Fk-lQk"/>
                             <constraint firstItem="qgz-BK-S50" firstAttribute="width" secondItem="VVR-xn-6kz" secondAttribute="width" id="lu5-o6-eCE"/>
                             <constraint firstItem="qgz-BK-S50" firstAttribute="height" secondItem="VVR-xn-6kz" secondAttribute="height" constant="1" id="p8Y-Er-gxB"/>
+                            <constraint firstItem="Glw-QV-d0Z" firstAttribute="bottom" secondItem="qgz-BK-S50" secondAttribute="bottom" constant="-20" id="pZm-DW-LW5"/>
+                            <constraint firstItem="6D0-aO-yRu" firstAttribute="centerX" secondItem="VVR-xn-6kz" secondAttribute="centerX" id="yTU-CO-0A4"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Resources " id="huO-g1-HNG">
@@ -86,6 +103,9 @@
                             <color key="tintColor" red="0.40000000000000002" green="0.37647058823529411" blue="0.38431372549019605" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="videosLabel" destination="Glw-QV-d0Z" id="aCm-W3-evv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gW3-Wc-XHf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -206,6 +226,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="sectionIndexBackgroundColor" red="0.24313725490196078" green="0.69411764705882351" blue="0.78431372549019607" alpha="1" colorSpace="calibratedRGB"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" id="9Js-as-HBZ">
                             <rect key="frame" x="0.0" y="64" width="600" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
@@ -223,18 +244,25 @@
                                             <rect key="frame" x="8" y="8" width="147" height="122"/>
                                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="YouTube Video Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mYP-6P-fbR">
-                                            <rect key="frame" x="163" y="8" width="429" height="33"/>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="YouTube summary description goes here." selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uIz-3V-OdK">
                                             <rect key="frame" x="163" y="44" width="429" height="81"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mYP-6P-fbR">
+                                            <rect key="frame" x="163" y="8" width="429" height="33"/>
+                                            <attributedString key="attributedText">
+                                                <fragment content="YouTube Video Title">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
@@ -262,7 +290,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ArticlesIcon.png" width="167" height="126"/>
         <image name="Literature-25.png" width="25" height="25"/>
+        <image name="VideoIcon.png" width="167" height="120"/>
         <image name="menu.png" width="22" height="22"/>
     </resources>
 </document>

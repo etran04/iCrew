@@ -8,12 +8,19 @@
 
 import UIKit
 
+/* ResourcesVC is the main branch, leading into the different
+ * possible resources, such as Videos, Articles, and Tools */ 
 class ResourcesViewController: UIViewController {
     
     @IBOutlet weak var textButton: UIButton!
+    @IBOutlet weak var videosLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        self.view.bringSubviewToFront(videosLabel)
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,6 +44,7 @@ class ResourcesViewController: UIViewController {
         //                print(response.response)
         //                print(response.result)
         //        }
+        
         let localNotification = UILocalNotification()
         localNotification.alertAction = "Testing notifications on iOS 8"
         localNotification.alertBody = "Eric is a poop in butt"
@@ -46,15 +54,5 @@ class ResourcesViewController: UIViewController {
         
         UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

@@ -75,6 +75,11 @@ class VideosTableViewController: UITableViewController {
         indicator = UIActivityIndicatorView(frame: CGRectMake(0, 0, 40, 40))
         indicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
         indicator.center = self.view.center
+        
+        /* scales the indicator to twice the color */
+        let transform = CGAffineTransformMakeScale(2, 2)
+        indicator.transform = transform;
+        
         self.view.addSubview(indicator)
         indicator.startAnimating()
     }

@@ -163,7 +163,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SelectRideCell" rowHeight="91" id="baP-U1-tyi" userLabel="SelectDriverCell" customClass="SelectDriverTableViewCell" customModule="CruApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="375" height="91"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="91"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="baP-U1-tyi" id="GeM-z5-BZ3">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="90.5"/>
@@ -189,6 +189,7 @@
                                 <connections>
                                     <outlet property="availableSeats" destination="gZ2-Mp-SUF" id="Q3N-oC-kvZ"/>
                                     <outlet property="driverName" destination="MU2-rT-spB" id="i7l-Eq-VxI"/>
+                                    <segue destination="DLc-FI-tby" kind="show" id="hFY-Uz-Who"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -202,6 +203,62 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MZh-ud-lkN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2160.5" y="2659.5"/>
+        </scene>
+        <!--Driver Selected View Controller-->
+        <scene sceneID="N6e-2z-gVO">
+            <objects>
+                <viewController id="DLc-FI-tby" customClass="DriverSelectedViewController" customModule="CruApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Kvx-ru-HPh"/>
+                        <viewControllerLayoutGuide type="bottom" id="fLB-Dz-cR5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OUp-hU-BAR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Success!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EUt-nq-qqW">
+                                <rect key="frame" x="144" y="117" width="70" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your driver is...." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GiK-NV-EJe">
+                                <rect key="frame" x="35" y="174" width="119" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bhY-29-XzC" userLabel="driverName">
+                                <rect key="frame" x="35" y="243" width="310" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qh3-4g-6re">
+                                <rect key="frame" x="164" y="507" width="30" height="30"/>
+                                <state key="normal" title="OK"/>
+                                <connections>
+                                    <segue destination="LbC-g2-YCA" kind="show" id="xsW-fa-Wnp"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Phone Number:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RqU-Y6-0xg" userLabel="driverNumber">
+                                <rect key="frame" x="35" y="311" width="120" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="driverName" destination="bhY-29-XzC" id="X7F-4I-jom"/>
+                        <outlet property="driverNumber" destination="RqU-Y6-0xg" id="hq9-Um-K1i"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m5g-R8-TX9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1963.5" y="1655.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="CXQ-BY-n9d">
@@ -232,7 +289,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aby-DW-T8V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3067.5" y="2665.5"/>
+            <point key="canvasLocation" x="3529.5" y="2925.5"/>
         </scene>
         <!--Driver Table View Controller-->
         <scene sceneID="eog-Kr-EiB">
@@ -244,7 +301,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GivingRideCell" rowHeight="78" id="PFd-LG-Vna" customClass="DriverViewCell" customModule="CruApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="375" height="78"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="78"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PFd-LG-Vna" id="g1i-kM-b6H">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="77.5"/>
@@ -279,7 +336,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="McZ-XB-16V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1077.5" y="2635.5"/>
+            <point key="canvasLocation" x="889.5" y="2649.5"/>
         </scene>
         <!--Driver Questionaire-->
         <scene sceneID="OS9-ZE-4xq">
@@ -357,7 +414,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Srr-N0-UzC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2167.5" y="1817.5"/>
+            <point key="canvasLocation" x="1369.5" y="857.5"/>
         </scene>
     </scenes>
     <resources>
@@ -368,6 +425,6 @@
         <image name="menu.png" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="nsx-0u-ZUQ"/>
+        <segue reference="xsW-fa-Wnp"/>
     </inferredMetricsTieBreakers>
 </document>

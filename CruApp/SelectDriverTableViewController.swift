@@ -24,7 +24,6 @@ class SelectDriverTableViewController: UITableViewController {
         var dbClient: DBClient!
         dbClient = DBClient()
         dbClient.getData("ride", dict: setDrivers)
-        print("is this working?")
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,7 +35,6 @@ class SelectDriverTableViewController: UITableViewController {
         let eventId = driver["event"] as! String
         
         if (passenger.eventId == eventId) {
-            print("i guess they're not going in here?")
             let name = driver["driverName"] as! String
             let availableSeats = (driver["seats"] as! Int) - (driver["passengers"]!.count) as Int
             let driverObj = Driver(name: name, numOfSeats: availableSeats)
@@ -73,6 +71,20 @@ class SelectDriverTableViewController: UITableViewController {
         return cell
     }
     
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        let selectedDriverViewController = segue.destinationViewController as! DriverSelectedViewController
+        if let selectedDriverCell = sender as? SelectDriverTableViewCell {
+            let indexPath = tableView.indexPathForCell(selectedDriverCell)!
+            let selectedDriver = driverCollection[indexPath.row]
+            selectedDriverViewController.driver = selectedDriver
+        }
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        
+        
+    }
 
     /*
     // Override to support conditional editing of the table view.

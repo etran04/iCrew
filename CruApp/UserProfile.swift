@@ -87,4 +87,11 @@ class UserProfile {
         
         return results;
     }
+    
+    class func getMinistryIds() -> [String] {
+        let fetchRequest = NSFetchRequest(entityName: "Ministry")
+        var results = [String]()
+        
+        return results;
+    }
 }

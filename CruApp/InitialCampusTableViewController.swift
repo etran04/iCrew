@@ -13,9 +13,8 @@ class InitialCampusTableViewController: UITableViewController {
     var popViewController : PopUpViewControllerSwift!
 
     //var test: [String] = ["Cal Poly", "UCSB"] //
-    var campusesCollection = [String]()
-    var isSelected: [Bool] = [false, false,false]
-    var selected: [String] = []
+    var campusCollection = [CampusData]()
+    var selectedIndices: [Int] = []
     
     @IBAction func clickInfo(sender: AnyObject) {
         
@@ -71,9 +70,9 @@ class InitialCampusTableViewController: UITableViewController {
     
     func setCampuses(campus:NSDictionary) {
         let name = campus["name"] as! String
+        let id = campus["_id"] as! String
         
-        campusesCollection.append(name)
-        isSelected.append(false)
+        campusCollection.append(CampusData(name: name, id: id))
         // TODO: Remove campuses Collection and use cache
         self.tableView.reloadData()
     }
@@ -92,7 +91,7 @@ class InitialCampusTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return campusesCollection.count //
+        return campusCollection.count //
     }
     
 
@@ -102,9 +101,8 @@ class InitialCampusTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! InitialCampusTableViewCell
 
         //set campus text
-        cell.campus.text = campusesCollection[indexPath.row]
+        cell.campus.text = campusCollection[indexPath.row].name;
     
-        
         return cell
     }
     
@@ -114,18 +112,13 @@ class InitialCampusTableViewController: UITableViewController {
         
         let cell:UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
         
-        if (!selected.contains(campusesCollection[indexPath.row])) {
+        if (!selectedIndices.contains(indexPath.row)) {
             cell.accessoryType = UITableViewCellAccessoryType.Checkmark
-            selected.append(campusesCollection[indexPath.row])
-            dump(selected)
-            
+            selectedIndices.append(indexPath.row)
         }
         else {
-            isSelected[indexPath.row] = false
             cell.accessoryType = UITableViewCellAccessoryType.None
-            selected = selected.filter() {$0 != campusesCollection[indexPath.row]}
-            
-            dump(selected)
+            selectedIndices.removeAtIndex(selectedIndices.indexOf(indexPath.row)!);
         }
     }
 

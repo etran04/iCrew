@@ -43,6 +43,8 @@
 		279327011C509C2100BAC73D /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 279326F41C509C2100BAC73D /* Info.plist */; };
 		279327051C50A0EC00BAC73D /* InitialMinistryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279327041C50A0EC00BAC73D /* InitialMinistryTableViewController.swift */; };
 		279327071C50A10500BAC73D /* InitialMinistryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279327061C50A10500BAC73D /* InitialMinistryTableViewCell.swift */; };
+		83244B6E1C7579BA00D913A6 /* CampusData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83244B6D1C7579BA00D913A6 /* CampusData.swift */; };
+		83244B761C7579F000D913A6 /* MinistryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83244B751C7579F000D913A6 /* MinistryData.swift */; };
 		838564F51C0D9EDF00EB1728 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 838564F41C0D9EDF00EB1728 /* SWRevealViewController.m */; };
 		839F64411C0D4E4300CAEC9E /* Cru-Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 839F643B1C0D4E4300CAEC9E /* Cru-Logo.png */; };
 		839F64421C0D4E4300CAEC9E /* Home-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 839F643C1C0D4E4300CAEC9E /* Home-25.png */; };
@@ -221,6 +223,8 @@
 		279327061C50A10500BAC73D /* InitialMinistryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialMinistryTableViewCell.swift; sourceTree = "<group>"; };
 		4C75FBE0147F103088890A81 /* Pods-CruAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CruAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CruAppTests/Pods-CruAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		56975AA48A624728978E6E3E /* Pods-CruApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CruApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CruApp/Pods-CruApp.debug.xcconfig"; sourceTree = "<group>"; };
+		83244B6D1C7579BA00D913A6 /* CampusData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampusData.swift; sourceTree = "<group>"; };
+		83244B751C7579F000D913A6 /* MinistryData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinistryData.swift; sourceTree = "<group>"; };
 		838564F21C0D9EDF00EB1728 /* CruApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CruApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		838564F31C0D9EDF00EB1728 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		838564F41C0D9EDF00EB1728 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
@@ -485,6 +489,8 @@
 				83B1CB211C4886F700145B6D /* Ministry.swift */,
 				83B1CB231C4886F700145B6D /* Campus.swift */,
 				83B1CB281C48880A00145B6D /* UserProfile.swift */,
+				83244B6D1C7579BA00D913A6 /* CampusData.swift */,
+				83244B751C7579F000D913A6 /* MinistryData.swift */,
 			);
 			name = UserProfile;
 			sourceTree = "<group>";
@@ -865,6 +871,7 @@
 			files = (
 				A40DD9941C0EC0FB00BCFEC5 /* DBClient.swift in Sources */,
 				279327071C50A10500BAC73D /* InitialMinistryTableViewCell.swift in Sources */,
+				83244B761C7579F000D913A6 /* MinistryData.swift in Sources */,
 				A40DD9A21C0EC61600BCFEC5 /* SummerMissionsViewController.swift in Sources */,
 				0727F9A51C5AD13000066948 /* DriverQuestionaireVC.swift in Sources */,
 				07ED81711C0D7ECC007FFB53 /* ResourcesViewController.swift in Sources */,
@@ -882,6 +889,7 @@
 				1E37E72A1C0E362D0054607A /* VideosTableViewController.swift in Sources */,
 				83B1CB291C48880A00145B6D /* UserProfile.swift in Sources */,
 				A487BBF91C63569A006F9B3C /* DriverTableViewController.swift in Sources */,
+				83244B6E1C7579BA00D913A6 /* CampusData.swift in Sources */,
 				07AF13D31C749288004C28FA /* ToolTableViewCell.swift in Sources */,
 				07C196331C0E6AD400375B8D /* ArticlesTableViewController.swift in Sources */,
 				1EB405421C63E88A00220D5B /* GTLCalendar_Sources.m in Sources */,

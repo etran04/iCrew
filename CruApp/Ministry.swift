@@ -13,6 +13,9 @@ import CoreData
 class Ministry: NSManagedObject {
 
     @NSManaged var name: String?
-    @NSManaged var campusName: String?
+    @NSManaged var campusId: String?
+    @NSManaged var id: String?
     
 }
+
+

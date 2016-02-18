@@ -13,5 +13,6 @@ import CoreData
 class Campus: NSManagedObject {
 
     @NSManaged var name: String?
+    @NSManaged var id: String?
     
 }

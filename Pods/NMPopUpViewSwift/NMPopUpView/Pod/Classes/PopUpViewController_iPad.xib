@@ -42,10 +42,10 @@
                                 <constraint firstAttribute="width" constant="169" id="Y9s-pZ-2pq"/>
                             </constraints>
                         </imageView>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="243" translatesAutoresizingMaskIntoConstraints="NO" id="zzP-bh-DHM">
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="243" translatesAutoresizingMaskIntoConstraints="NO" id="zzP-bh-DHM">
                             <rect key="frame" x="73" y="199" width="243" height="110"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="110" id="dIE-P4-CkO"/>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="110" id="dIE-P4-CkO"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                             <nil key="highlightedColor"/>

@@ -43,7 +43,7 @@ class ToolsTableViewController: UITableViewController {
         indicator.transform = transform;
         
         self.view.addSubview(indicator)
-        indicator.startAnimating()
+        //indicator.startAnimating()
     }
     
     /* Resets the refresh UI control */
@@ -76,12 +76,7 @@ class ToolsTableViewController: UITableViewController {
     
     /* Populates our articles from the Cru database */
     func loadTools() {
-        self.tools += [
-            URLResources(name: "Discerning God's Will",
-                url: "http://www.slocru.com/assets/resources/pdf/Discerning_Gods_Will_by_Youth_Specialties.pdf"),
-            URLResources(name: "Biblical Career Principals",
-                url: "http://www.slocru.com/assets/resources/pdf/Biblical_Career_Principals_By_Navigator.pdf")
-        ]
+        //#warning to fill in later
     }
     
     // MARK: - Table view data source

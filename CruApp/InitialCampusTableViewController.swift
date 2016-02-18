@@ -48,10 +48,10 @@ class InitialCampusTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if (!UserProfile.isFirstTime()) {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewControllerWithIdentifier("mainRootViewController") as! SWRevealViewController
-            self.presentViewController(vc, animated: false, completion: nil)
+        if (!UserProfile.isFirstTime() && UserProfile.getCampuses().count > 0) {
+//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//            let vc = storyboard.instantiateViewControllerWithIdentifier("mainRootViewController") as! SWRevealViewController
+//            self.presentViewController(vc, animated: false, completion: nil)
         }
         else {
             UserProfile.initialUsage()

@@ -7,7 +7,7 @@
         <!--Initial Campus Table View Controller-->
         <scene sceneID="mHd-mI-3YN">
             <objects>
-                <tableViewController id="wZA-Gm-DMN" userLabel="Initial Campus Table View Controller" customClass="InitialCampusTableViewController" customModule="CruApp" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="campusViewController" id="wZA-Gm-DMN" userLabel="Initial Campus Table View Controller" customClass="InitialCampusTableViewController" customModule="CruApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="54" sectionHeaderHeight="28" sectionFooterHeight="28" id="h3d-vM-2Bj" userLabel="Campus Table View">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -65,7 +65,7 @@
         <!--Initial Ministry Table View Controller-->
         <scene sceneID="wQ9-0j-Mdk">
             <objects>
-                <tableViewController id="beF-nV-Tik" userLabel="Initial Ministry Table View Controller" customClass="InitialMinistryTableViewController" customModule="CruApp" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="ministryViewController" id="beF-nV-Tik" userLabel="Initial Ministry Table View Controller" customClass="InitialMinistryTableViewController" customModule="CruApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="47" sectionHeaderHeight="28" sectionFooterHeight="28" id="gXI-AE-bat" userLabel="Ministry Table View">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -122,6 +122,7 @@
                     <navigationItem key="navigationItem" title="Select Ministries" id="oSt-69-4tA">
                         <barButtonItem key="backBarButtonItem" title="  " id="8JU-Ph-69o"/>
                         <barButtonItem key="rightBarButtonItem" title="Next" id="iXx-d1-viQ">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <segue destination="5wo-9Q-WLh" kind="presentation" id="f6E-OD-KiS"/>
                             </connections>
@@ -145,14 +146,14 @@
         <!--Navigation Controller-->
         <scene sceneID="avT-hL-HZv">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qPN-vP-Crs" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="initialNavController" automaticallyAdjustsScrollViewInsets="NO" id="qPN-vP-Crs" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="qC0-Vo-cKg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.38431372549999998" green="0.37647058820000001" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="tintColor" red="0.38431372549999998" green="0.37647058820000001" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="barTintColor" red="0.97647058819999999" green="0.71372549019999998" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

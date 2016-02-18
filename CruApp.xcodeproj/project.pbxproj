@@ -23,6 +23,7 @@
 		07C196331C0E6AD400375B8D /* ArticlesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C196321C0E6AD400375B8D /* ArticlesTableViewController.swift */; };
 		07C196351C0E6D9F00375B8D /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C196341C0E6D9F00375B8D /* ArticleTableViewCell.swift */; };
 		07C196371C0E863000375B8D /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C196361C0E863000375B8D /* VideoTableViewCell.swift */; };
+		07D2EB351C75B31900D0BDBA /* ToolsIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 07D2EB341C75B31900D0BDBA /* ToolsIcon.png */; };
 		07ED81711C0D7ECC007FFB53 /* ResourcesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07ED81701C0D7ECC007FFB53 /* ResourcesViewController.swift */; };
 		1E37E7261C0E362D0054607A /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E37E71E1C0E362D0054607A /* Event.swift */; };
 		1E37E7291C0E362D0054607A /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E37E7211C0E362D0054607A /* EventsViewController.swift */; };
@@ -46,6 +47,7 @@
 		83244B6E1C7579BA00D913A6 /* CampusData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83244B6D1C7579BA00D913A6 /* CampusData.swift */; };
 		83244B761C7579F000D913A6 /* MinistryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83244B751C7579F000D913A6 /* MinistryData.swift */; };
 		83244B7D1C759E2D00D913A6 /* InitialUsage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83244B7B1C759E2D00D913A6 /* InitialUsage.swift */; };
+		83244B801C75AD9400D913A6 /* SidebarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83244B7F1C75AD9400D913A6 /* SidebarTableViewController.swift */; };
 		838564F51C0D9EDF00EB1728 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 838564F41C0D9EDF00EB1728 /* SWRevealViewController.m */; };
 		839F64411C0D4E4300CAEC9E /* Cru-Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 839F643B1C0D4E4300CAEC9E /* Cru-Logo.png */; };
 		839F64421C0D4E4300CAEC9E /* Home-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 839F643C1C0D4E4300CAEC9E /* Home-25.png */; };
@@ -192,6 +194,7 @@
 		07C196321C0E6AD400375B8D /* ArticlesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticlesTableViewController.swift; sourceTree = "<group>"; };
 		07C196341C0E6D9F00375B8D /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
 		07C196361C0E863000375B8D /* VideoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
+		07D2EB341C75B31900D0BDBA /* ToolsIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ToolsIcon.png; sourceTree = "<group>"; };
 		07ED81701C0D7ECC007FFB53 /* ResourcesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourcesViewController.swift; sourceTree = "<group>"; };
 		14A37DE1D2D4A3701357F6E0 /* Pods-CruAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CruAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CruAppTests/Pods-CruAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		1E37E71E1C0E362D0054607A /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
@@ -227,6 +230,7 @@
 		83244B6D1C7579BA00D913A6 /* CampusData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampusData.swift; sourceTree = "<group>"; };
 		83244B751C7579F000D913A6 /* MinistryData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinistryData.swift; sourceTree = "<group>"; };
 		83244B7B1C759E2D00D913A6 /* InitialUsage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialUsage.swift; sourceTree = "<group>"; };
+		83244B7F1C75AD9400D913A6 /* SidebarTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidebarTableViewController.swift; sourceTree = "<group>"; };
 		838564F21C0D9EDF00EB1728 /* CruApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CruApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		838564F31C0D9EDF00EB1728 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		838564F41C0D9EDF00EB1728 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
@@ -386,6 +390,7 @@
 		07EE5F7D1BFE6BA8009A2B44 /* VCs */ = {
 			isa = PBXGroup;
 			children = (
+				83244B7E1C75AD2300D913A6 /* SideMenu */,
 				0727F9A31C5AD10600066948 /* RideShare */,
 				271C781D1C50429500F42EA0 /* Initial */,
 				83B1CB111C48595000145B6D /* UserProfile */,
@@ -476,6 +481,14 @@
 			path = ../Pods/NMPopUpViewSwift;
 			sourceTree = "<group>";
 		};
+		83244B7E1C75AD2300D913A6 /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				83244B7F1C75AD9400D913A6 /* SidebarTableViewController.swift */,
+			);
+			name = SideMenu;
+			sourceTree = "<group>";
+		};
 		838564EB1C0D9EB900EB1728 /* SWRevealViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -525,6 +538,7 @@
 			isa = PBXGroup;
 			children = (
 				073F3D281C7561D500D03596 /* ArticlesIcon.png */,
+				07D2EB341C75B31900D0BDBA /* ToolsIcon.png */,
 				073F3D2C1C75654700D03596 /* VideoIcon.png */,
 				07340BB91C5B36B5002C6015 /* info.png */,
 				0703C7311C4DFA8500C7D8ED /* blank_calendar.png */,
@@ -740,6 +754,7 @@
 				839F645B1C0D6C4C00CAEC9E /* Resources.storyboard in Resources */,
 				A447DBC21C5ACBBB000C6DEB /* Passenger-52.png in Resources */,
 				839F64411C0D4E4300CAEC9E /* Cru-Logo.png in Resources */,
+				07D2EB351C75B31900D0BDBA /* ToolsIcon.png in Resources */,
 				A447DBB31C5AC8D3000C6DEB /* Events.storyboard in Resources */,
 				839F64441C0D4E4300CAEC9E /* Planner-25.png in Resources */,
 				A4110B501C0F7EB500F47AB4 /* Facebook-25.png in Resources */,
@@ -902,6 +917,7 @@
 				A4110B521C0FA44700F47AB4 /* Location.swift in Sources */,
 				A40DD9A41C0EC62F00BCFEC5 /* Mission.swift in Sources */,
 				83B1CB271C4886F700145B6D /* Campus.swift in Sources */,
+				83244B801C75AD9400D913A6 /* SidebarTableViewController.swift in Sources */,
 				A45573001C4CDAF60097DE0F /* MissionViewCell.swift in Sources */,
 				07C196351C0E6D9F00375B8D /* ArticleTableViewCell.swift in Sources */,
 				1E37E7291C0E362D0054607A /* EventsViewController.swift in Sources */,

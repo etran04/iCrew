@@ -10,21 +10,34 @@ import UIKit
 
 /* ResourcesVC is the main branch, leading into the different
  * possible resources, such as Videos, Articles, and Tools */ 
-class ResourcesViewController: UIViewController {
+class ResourcesViewController: UITableViewController {
     
-    @IBOutlet weak var textButton: UIButton!
-    @IBOutlet weak var videosLabel: UILabel!
+    @IBOutlet var cells: [UITableViewCell]!
+    @IBOutlet weak var menuButton: UIBarButtonItem!
+
+    var rowSizes: [Int: CGFloat] = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        cardsSetup()
     }
     
     override func viewDidAppear(animated: Bool) {
-        self.view.bringSubviewToFront(videosLabel)
+        if (self.revealViewController() != nil) {
+            self.menuButton.target = self.revealViewController()
+            self.menuButton.action = "revealToggle:"
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    
+    func cardsSetup() {
+        for cell in cells {
+            cell.viewWithTag(0)?.alpha = 1;
+            cell.viewWithTag(0)?.layer.masksToBounds = false;
+            cell.viewWithTag(0)?.layer.cornerRadius = 1;
+            cell.viewWithTag(0)?.layer.shadowOffset = CGSizeMake(-0.2, 0.2)
+            cell.viewWithTag(0)?.layer.shadowRadius = 5;
+        }
     }
     
     @IBAction func text(sender: UIButton) {
@@ -54,5 +67,4 @@ class ResourcesViewController: UIViewController {
         
         UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
     }
-
 }

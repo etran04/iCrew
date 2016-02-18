@@ -44,7 +44,11 @@ class ArticlesTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setUpLoadSpinner()
-        self.loadArticles()
+        
+        /* Sets up the database */
+        var dbClient: DBClient!
+        dbClient = DBClient()
+        dbClient.getData("event", dict: loadArticles)
     }
 
     /* Called when the current view appears */
@@ -87,6 +91,32 @@ class ArticlesTableViewController: UITableViewController {
         self.refresh.endRefreshing()
     }
     
+    //obtain information from the database to an Object
+    //TODO: Move function into Event.swift
+    /*func setEvents(event:NSDictionary) {
+        //self.tableView.beginUpdates()
+        
+        let name = event["name"] as! String
+        let startDate = event["startDate"] as! String!
+        let endDate = event["endDate"] as! String!
+        let description = event["description"] as! String
+        
+        let location = Location(
+            postcode: event["location"]?.objectForKey("postcode") as! String,
+            state: event["location"]?.objectForKey("state") as! String,
+            suburb: event["location"]?.objectForKey("suburb") as! String,
+            street1: event["location"]?.objectForKey("street1") as! String,
+            country: event["location"]?.objectForKey("country") as! String)
+        
+        let image = event["image"]?.objectForKey("secure_url") as! String!
+        let url = event["url"] as! String
+        
+        let eventObj = Event(name: name, startDate: startDate, endDate: endDate, location: location, image: image, description: description, url: url)
+        
+        eventsCollection.append(eventObj)
+        self.tableView.reloadData()
+    }*/
+    
     /* Opens a url string in an embedded web browser */
     func showLink(url: String) {
         if let url = NSURL(string: url) {
@@ -96,13 +126,17 @@ class ArticlesTableViewController: UITableViewController {
     }
 
     /* Populates our articles from the Cru database */
-    func loadArticles() {
+    func loadArticles(article: NSDictionary) {
+        print(article)
+        
         self.articles += [
             URLResources(name: "Discerning God's Will",
                 url: "http://www.slocru.com/assets/resources/pdf/Discerning_Gods_Will_by_Youth_Specialties.pdf"),
             URLResources(name: "Biblical Career Principals",
                 url: "http://www.slocru.com/assets/resources/pdf/Biblical_Career_Principals_By_Navigator.pdf")
         ]
+        
+        self.indicator.stopAnimating()
     }
     
     // MARK: - Table view data source

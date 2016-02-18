@@ -68,12 +68,12 @@ class EventDetailsViewController: UIViewController {
                 dateFormatter.timeStyle = .ShortStyle
                 dateFormatter.stringFromDate(startDate!)
                 
-                eventDate.text! += ", " + dateFormatter.stringFromDate(startDate!) + " - " + dateFormatter.stringFromDate(endDate!)
+                eventDate.text! += ", " + dateFormatter.stringFromDate(startDate!) + " – " + dateFormatter.stringFromDate(endDate!)
             } else {
                 dateFormatter.dateStyle = .ShortStyle
                 dateFormatter.timeStyle = .ShortStyle
             
-                eventDate.text = dateFormatter.stringFromDate(startDate!) + " - " + dateFormatter.stringFromDate(endDate!)
+                eventDate.text = dateFormatter.stringFromDate(startDate!) + " – " + dateFormatter.stringFromDate(endDate!)
             }
             
             //load buttons
@@ -104,7 +104,7 @@ class EventDetailsViewController: UIViewController {
                 imageView.contentMode = UIViewContentMode.ScaleAspectFit
                 imageView.clipsToBounds = true
                 eventImage.bounds.size.height = 128
-                eventImage.bounds.size.width = 329
+                eventImage.bounds.size.width = UIScreen.mainScreen().bounds.width
                 imageView.frame = eventImage.bounds
                 eventImage.contentMode = UIViewContentMode.ScaleAspectFit
                 eventImage.addSubview(imageView)
@@ -115,7 +115,7 @@ class EventDetailsViewController: UIViewController {
                 imageView.contentMode = UIViewContentMode.ScaleAspectFit
                 imageView.clipsToBounds = true
                 eventImage.bounds.size.height = 128
-                eventImage.bounds.size.width = 329
+                eventImage.bounds.size.width = UIScreen.mainScreen().bounds.width
                 imageView.frame = eventImage.bounds
                 eventImage.contentMode = UIViewContentMode.ScaleAspectFit
                 eventImage.addSubview(imageView)

@@ -22,35 +22,87 @@ class UserProfile {
         }
     }
     
-    class func addCampus(campusName: String) {
+    class func addCampus(campus: CampusData) {
         let entity = NSEntityDescription.entityForName("Campus", inManagedObjectContext: coreDataManagedContext!)
-        let campus = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: coreDataManagedContext!)
+        let campusObj = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: coreDataManagedContext!)
         
-        campus.setValue(campusName, forKey: "name")
+        campusObj.setValue(campus.name, forKey: "name")
+        campusObj.setValue(campus.id, forKey: "id")
         
         saveContext()
     }
     
-    class func addMinistry(ministryName: String, campusName: String) {
+    class func addMinistry(ministry: MinistryData) {
         let entity = NSEntityDescription.entityForName("Ministry", inManagedObjectContext: coreDataManagedContext!)
-        let ministry = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: coreDataManagedContext!)
+        let ministryObj = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: coreDataManagedContext!)
         
-        ministry.setValue(ministryName, forKey: "name")
-        ministry.setValue(campusName, forKey: "campusName")
+        ministryObj.setValue(ministry.name, forKey: "name")
+        ministryObj.setValue(ministry.campusId, forKey: "campusId")
+        ministryObj.setValue(ministry.id, forKey: "id")
         
         saveContext()
     }
     
-    class func getCampuses() -> [String] {
+    class func initialUsage() {
+        let entity = NSEntityDescription.entityForName("InitialUsage", inManagedObjectContext: coreDataManagedContext!)
+        let initialObj = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: coreDataManagedContext!)
+        
+        initialObj.setValue(false, forKey: "firstTime")
+        
+        saveContext()
+    }
+    
+    class func isFirstTime() -> Bool {
+        let fetchRequest = NSFetchRequest(entityName: "InitialUsage")
+        
+        do {
+            let fetchedResult = try coreDataManagedContext!.executeFetchRequest(fetchRequest) as? [NSManagedObject]
+            
+            return fetchedResult?.count == 0;
+        }
+        catch {
+            print("Unable to fetch")
+        }
+        
+        return false;
+    }
+    
+    class func removeCampuses() {
         let fetchRequest = NSFetchRequest(entityName: "Campus")
-        var results = [String]()
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        
+        do {
+            try coreDataManagedContext?.persistentStoreCoordinator!.executeRequest(deleteRequest, withContext: coreDataManagedContext!)
+        } catch let error as NSError {
+            // TODO: handle the error
+            print(error)
+        }
+    }
+    
+    class func removeMinistries() {
+        let fetchRequest = NSFetchRequest(entityName: "Ministry")
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        
+        do {
+            try coreDataManagedContext?.persistentStoreCoordinator!.executeRequest(deleteRequest, withContext: coreDataManagedContext!)
+        } catch let error as NSError {
+            // TODO: handle the error
+            print(error)
+        }
+    }
+    
+    class func getCampuses() -> [CampusData] {
+        let fetchRequest = NSFetchRequest(entityName: "Campus")
+        var results = [CampusData]()
         
         do {
             let fetchedResult = try coreDataManagedContext!.executeFetchRequest(fetchRequest) as? [NSManagedObject]
             
             if let campuses = fetchedResult {
                 for campus in campuses {
-                    results.append(campus.valueForKey("name") as! String)
+                    let campusObj = CampusData(name: campus.valueForKey("name") as! String,
+                        id: campus.valueForKey("id") as! String)
+                    results.append(campusObj)
                 }
             }
             else {
@@ -65,16 +117,20 @@ class UserProfile {
         return results;
     }
     
-    class func getMinistries() -> [String] {
+    class func getMinistries() -> [MinistryData] {
         let fetchRequest = NSFetchRequest(entityName: "Ministry")
-        var results = [String]()
+        var results = [MinistryData]()
         
         do {
             let fetchedResult = try coreDataManagedContext!.executeFetchRequest(fetchRequest) as? [NSManagedObject]
             
             if let ministries = fetchedResult {
                 for ministry in ministries {
-                    results.append(ministry.valueForKey("name") as! String)
+                    let ministryObj = MinistryData(name: ministry.valueForKey("name") as! String,
+                        id: ministry.valueForKey("id") as! String,
+                        campusId: ministry.valueForKey("campusId") as! String)
+                    
+                    results.append(ministryObj)
                 }
             }
             else {

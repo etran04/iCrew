@@ -10,6 +10,8 @@ import UIKit
 
 class SidebarTableViewController: UITableViewController {
 
+    @IBOutlet weak var loginCell: UITableViewCell!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,6 +20,12 @@ class SidebarTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        //self.tableView.tableHeaderView = nil;
+        //let headerFrame = CGRect(self.tableView.tableHeaderView.frame)
+        //headerFrame.size.height      = self.myStatus.frame.size.height + offset;
+        //self.header.frame            = headerFrame;
+        //self.profile.tableHeaderView = self.header;
     }
 
     override func didReceiveMemoryWarning() {
@@ -52,6 +60,7 @@ class SidebarTableViewController: UITableViewController {
         }
         else {
             // Login!
+            loginView()
         }
     }
     
@@ -102,6 +111,74 @@ class SidebarTableViewController: UITableViewController {
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
          print("got here123")
+    }
+    
+    /*override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = UIView()
+        view.backgroundColor = UIColor.grayColor()
+        view.te
+        
+
+        
+        return view
+    }*/
+    
+    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 45.0
+    }
+    
+    func loginView()
+    {
+        let loginController = UIAlertController(title: "Please Sign In", message: "", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        //read in username and password
+        let loginAction = UIAlertAction(title: "Log In", style: UIAlertActionStyle.Default) { (action:UIAlertAction) -> Void in
+            
+            let loginTextField = loginController.textFields![0] as! UITextField
+            
+            let passwordTextField = loginController.textFields![1] as! UITextField
+            
+            
+        }
+        
+        //setup login view button options
+        loginAction.enabled = false
+    
+        let forgotPasswordAction = UIAlertAction(title: "Forgot Password", style: UIAlertActionStyle.Destructive, handler: nil)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil)
+        
+        //configure login controller
+        loginController.addTextFieldWithConfigurationHandler { (textField:UITextField!) -> Void in
+            
+            textField.placeholder = "Username or Email"
+            
+            textField.keyboardType = UIKeyboardType.EmailAddress
+            
+            NSNotificationCenter.defaultCenter().addObserverForName(UITextFieldTextDidChangeNotification, object: textField, queue: NSOperationQueue.mainQueue(), usingBlock: { (notification:NSNotification!) -> Void in
+                
+                let textField = notification.object as! UITextField
+                
+                loginAction.enabled = !textField.text!.isEmpty
+                
+            })
+            
+        }
+        
+        loginController.addTextFieldWithConfigurationHandler { (textField:UITextField!) -> Void in
+            
+            textField.placeholder = "Password"
+            
+            textField.secureTextEntry = true
+            
+        }
+        // 6
+        loginController.addAction(loginAction)
+        loginController.addAction(forgotPasswordAction)
+        loginController.addAction(cancelAction)
+        // 7
+        presentViewController(loginController, animated: true, completion: nil)
+
     }
 
 }

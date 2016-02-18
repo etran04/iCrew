@@ -79,19 +79,19 @@ class EventDetailsViewController: UIViewController {
             
             //load buttons
             // Calendar button
-            calendarButton.setTitle(event.name, forState: UIControlState.Normal)
+            calendarButton.setTitle("", forState: UIControlState.Normal)
             calendarButton.addTarget(self, action: "syncCalendar:", forControlEvents: UIControlEvents.TouchUpInside)
         
         
             // Facebook button
             if (event.url != "") {
-                facebookButton.setTitle(event.name, forState: UIControlState.Normal)
+                facebookButton.setTitle("", forState: UIControlState.Normal)
                 facebookButton.addTarget(self, action: "openFacebook:", forControlEvents: .TouchUpInside)
             } else {
                 facebookButton.enabled = false
             }
             
-            googleButton.setTitle(event.name, forState: UIControlState.Normal)
+            googleButton.setTitle("", forState: UIControlState.Normal)
             googleButton.addTarget(self, action: "googleCalendarSync:",
                 forControlEvents: UIControlEvents.TouchUpInside)
         

@@ -53,26 +53,18 @@ class DBClient {
     }
     
     //add data for Driver
-    func addData(action: String, direction : String, seats : Int, driverNumber : Int, event : String, driverName : String) {
-        
-        let params = ["direction": direction, "seats": seats, "driverNumber": driverNumber, "event": "563b11135e926d03001ac15c", "driverName": driverName, "gcm_id" : 1234567]
-        
+    //func addData(action: String, direction : String, seats : Int, driverNumber : Int, event : String, driverName : String) {
+    func addData(action : String, body: NSData) {
+
         let url = "http://pcp070587pcs.wireless.calpoly.edu:3000/api/" + action + "/create"
         //let url = "http://localhost:3000/api/" + action + "/create"
-        
-        do {
-            let body = try NSJSONSerialization.dataWithJSONObject(params, options: NSJSONWritingOptions.PrettyPrinted)
-            sendPostRequest(url, body: body, completionHandler: emptyHandler)
-        } catch {
-            print("Error sending data to database")
-        }
+
+        sendPostRequest(url, body: body, completionHandler: emptyHandler)
     }
     
     func emptyHandler(data : NSData?, response : NSURLResponse?, error : NSError?) {
         
     }
-    
-    
     
     //HTTP POST request
     func sendPostRequest(url : String, body : NSData, completionHandler : (NSData?, NSURLResponse?, NSError?) -> Void) -> NSURLSessionDataTask {

@@ -137,9 +137,14 @@ class DriverQuestionaireVC: UIViewController {
             rideDirection = "from"
         }
         
-        //let params = ["direction": rideDirection, "seats": Int(numSeatsAvailChoice.text!)!, "driverNumber": Int(driverPhoneNumber.text!)!, "event": eventsChoice.text!, "driverName": driverFullName.text!]
-        
-        dbClient.addData("ride", direction : rideDirection, seats : Int(numSeatsAvailChoice.text!)!, driverNumber : Int(driverPhoneNumber.text!)!, event : eventsChoice.text!, driverName : driverFullName.text!)
+        let params = ["direction": rideDirection, "seats": Int(numSeatsAvailChoice.text!)!, "driverNumber": Int(driverPhoneNumber.text!)!, "event": "563b11135e926d03001ac15c", "driverName": driverFullName.text!, "gcm_id" : 1234567]
+
+        do {
+            let body = try NSJSONSerialization.dataWithJSONObject(params, options: NSJSONWritingOptions.PrettyPrinted)
+            dbClient.addData("ride", body : body)
+        } catch {
+            print("Error sending data to database")
+        }
         
         /* Show a visual alert displaying successful signup */
         let successAlert = UIAlertController(title: "Success!", message:

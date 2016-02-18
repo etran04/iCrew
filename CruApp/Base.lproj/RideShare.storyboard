@@ -115,6 +115,9 @@
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZIX-m8-ygQ">
                                 <rect key="frame" x="163" y="605" width="49" height="30"/>
                                 <state key="normal" title="Submit"/>
+                                <connections>
+                                    <action selector="submitPressed:" destination="8jq-wk-qcF" eventType="touchUpInside" id="Vw1-9O-THj"/>
+                                </connections>
                             </button>
                             <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="15" translatesAutoresizingMaskIntoConstraints="NO" id="zlP-s3-b8q">
                                 <rect key="frame" x="0.0" y="339" width="375" height="216"/>
@@ -142,6 +145,8 @@
                     <connections>
                         <outlet property="driveTypes" destination="LX3-0z-keB" id="FyI-5R-UpZ"/>
                         <outlet property="eventsChoice" destination="ReG-yo-ycE" id="FAO-6M-VBM"/>
+                        <outlet property="passengerFullName" destination="bl2-LZ-llE" id="wq9-9g-f2y"/>
+                        <outlet property="passengerNumber" destination="hZq-Z4-O2w" id="cLk-Eu-9oO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b9E-xm-yyE" userLabel="First Responder" sceneMemberID="firstResponder"/>

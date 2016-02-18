@@ -113,10 +113,10 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZIX-m8-ygQ">
-                                <rect key="frame" x="163" y="605" width="49" height="30"/>
+                                <rect key="frame" x="163" y="587" width="49" height="30"/>
                                 <state key="normal" title="Submit"/>
                                 <connections>
-                                    <action selector="submitPressed:" destination="8jq-wk-qcF" eventType="touchUpInside" id="Vw1-9O-THj"/>
+                                    <segue destination="WiO-dx-ez4" kind="show" id="8O1-bA-cBH"/>
                                 </connections>
                             </button>
                             <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="15" translatesAutoresizingMaskIntoConstraints="NO" id="zlP-s3-b8q">
@@ -153,6 +153,56 @@
             </objects>
             <point key="canvasLocation" x="1636.5" y="2654.5"/>
         </scene>
+        <!--Select Driver Table View Controller-->
+        <scene sceneID="G7L-m8-Y2Q">
+            <objects>
+                <tableViewController id="WiO-dx-ez4" customClass="SelectDriverTableViewController" customModule="CruApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="91" sectionHeaderHeight="28" sectionFooterHeight="28" id="1g2-uB-Lmo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SelectRideCell" rowHeight="91" id="baP-U1-tyi" userLabel="SelectDriverCell" customClass="SelectDriverTableViewCell" customModule="CruApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="375" height="91"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="baP-U1-tyi" id="GeM-z5-BZ3">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="90.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Filled-Car-100.png" translatesAutoresizingMaskIntoConstraints="NO" id="JWs-rd-B7W">
+                                            <rect key="frame" x="24" y="8" width="59" height="64"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MU2-rT-spB" userLabel="Driver Name">
+                                            <rect key="frame" x="119" y="19" width="191" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gZ2-Mp-SUF" userLabel="available seats">
+                                            <rect key="frame" x="119" y="50" width="191" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="availableSeats" destination="gZ2-Mp-SUF" id="Q3N-oC-kvZ"/>
+                                    <outlet property="driverName" destination="MU2-rT-spB" id="i7l-Eq-VxI"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="WiO-dx-ez4" id="nbx-Fx-cyU"/>
+                            <outlet property="delegate" destination="WiO-dx-ez4" id="cLc-1q-jok"/>
+                        </connections>
+                    </tableView>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MZh-ud-lkN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2160.5" y="2659.5"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="CXQ-BY-n9d">
             <objects>
@@ -182,7 +232,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aby-DW-T8V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2468.5" y="2659.5"/>
+            <point key="canvasLocation" x="3067.5" y="2665.5"/>
         </scene>
         <!--Driver Table View Controller-->
         <scene sceneID="eog-Kr-EiB">
@@ -194,7 +244,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GivingRideCell" rowHeight="78" id="PFd-LG-Vna" customClass="DriverViewCell" customModule="CruApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="78"/>
+                                <rect key="frame" x="0.0" y="92" width="375" height="78"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PFd-LG-Vna" id="g1i-kM-b6H">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="77.5"/>
@@ -318,6 +368,6 @@
         <image name="menu.png" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="0cg-yg-gAR"/>
+        <segue reference="nsx-0u-ZUQ"/>
     </inferredMetricsTieBreakers>
 </document>

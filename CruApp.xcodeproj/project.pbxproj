@@ -73,6 +73,9 @@
 		A4110B501C0F7EB500F47AB4 /* Facebook-25.png in Resources */ = {isa = PBXBuildFile; fileRef = A4110B4F1C0F7EB500F47AB4 /* Facebook-25.png */; };
 		A4110B521C0FA44700F47AB4 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4110B511C0FA44700F47AB4 /* Location.swift */; };
 		A441CE6C1C75B0FD00663057 /* RideShare.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A441CE6B1C75B0FD00663057 /* RideShare.storyboard */; };
+		A441CE6F1C7634CB00663057 /* Passenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A441CE6E1C7634CB00663057 /* Passenger.swift */; };
+		A441CE771C763AC400663057 /* SelectDriverTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A441CE761C763AC400663057 /* SelectDriverTableViewCell.swift */; };
+		A441CE791C764BA600663057 /* SelectDriverTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A441CE781C764BA600663057 /* SelectDriverTableViewController.swift */; };
 		A447DBB31C5AC8D3000C6DEB /* Events.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A447DBAF1C5AC8D3000C6DEB /* Events.storyboard */; };
 		A447DBBF1C5ACBBB000C6DEB /* Car-25.png in Resources */ = {isa = PBXBuildFile; fileRef = A447DBBB1C5ACBBB000C6DEB /* Car-25.png */; };
 		A447DBC01C5ACBBB000C6DEB /* Checked Checkbox 2-48.png in Resources */ = {isa = PBXBuildFile; fileRef = A447DBBC1C5ACBBB000C6DEB /* Checked Checkbox 2-48.png */; };
@@ -259,6 +262,9 @@
 		A4110B4F1C0F7EB500F47AB4 /* Facebook-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Facebook-25.png"; path = "images/Facebook-25.png"; sourceTree = "<group>"; };
 		A4110B511C0FA44700F47AB4 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		A441CE6B1C75B0FD00663057 /* RideShare.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = RideShare.storyboard; path = Base.lproj/RideShare.storyboard; sourceTree = "<group>"; };
+		A441CE6E1C7634CB00663057 /* Passenger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Passenger.swift; sourceTree = "<group>"; };
+		A441CE761C763AC400663057 /* SelectDriverTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectDriverTableViewCell.swift; sourceTree = "<group>"; };
+		A441CE781C764BA600663057 /* SelectDriverTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectDriverTableViewController.swift; sourceTree = "<group>"; };
 		A447DBB01C5AC8D3000C6DEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Events.storyboard; sourceTree = "<group>"; };
 		A447DBBB1C5ACBBB000C6DEB /* Car-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Car-25.png"; path = "images/Car-25.png"; sourceTree = SOURCE_ROOT; };
 		A447DBBC1C5ACBBB000C6DEB /* Checked Checkbox 2-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Checked Checkbox 2-48.png"; path = "images/Checked Checkbox 2-48.png"; sourceTree = SOURCE_ROOT; };
@@ -349,9 +355,12 @@
 		0727F9A31C5AD10600066948 /* RideShare */ = {
 			isa = PBXGroup;
 			children = (
+				A441CE761C763AC400663057 /* SelectDriverTableViewCell.swift */,
+				A441CE781C764BA600663057 /* SelectDriverTableViewController.swift */,
 				0727F9A41C5AD13000066948 /* DriverQuestionaireVC.swift */,
 				07340BB11C5B3606002C6015 /* RiderQuestionaireVC.swift */,
 				A487BBEE1C6353A5006F9B3C /* DriverViewCell.swift */,
+				A441CE6E1C7634CB00663057 /* Passenger.swift */,
 				A487BBF81C63569A006F9B3C /* DriverTableViewController.swift */,
 				A487BBFA1C635E78006F9B3C /* Driver.swift */,
 			);
@@ -912,6 +921,7 @@
 				07C196331C0E6AD400375B8D /* ArticlesTableViewController.swift in Sources */,
 				1EB405421C63E88A00220D5B /* GTLCalendar_Sources.m in Sources */,
 				271C78231C5044B100F42EA0 /* InitialCampusTableViewCell.swift in Sources */,
+				A441CE771C763AC400663057 /* SelectDriverTableViewCell.swift in Sources */,
 				83244B7D1C759E2D00D913A6 /* InitialUsage.swift in Sources */,
 				07AF13CB1C748ACA004C28FA /* ToolsTableViewController.swift in Sources */,
 				A4110B521C0FA44700F47AB4 /* Location.swift in Sources */,
@@ -920,11 +930,13 @@
 				83244B801C75AD9400D913A6 /* SidebarTableViewController.swift in Sources */,
 				A45573001C4CDAF60097DE0F /* MissionViewCell.swift in Sources */,
 				07C196351C0E6D9F00375B8D /* ArticleTableViewCell.swift in Sources */,
+				A441CE791C764BA600663057 /* SelectDriverTableViewController.swift in Sources */,
 				1E37E7291C0E362D0054607A /* EventsViewController.swift in Sources */,
 				07C196371C0E863000375B8D /* VideoTableViewCell.swift in Sources */,
 				07340BB21C5B3606002C6015 /* RiderQuestionaireVC.swift in Sources */,
 				A45573021C4E219A0097DE0F /* MissionDetailsViewController.swift in Sources */,
 				A45572FB1C4A176F0097DE0F /* EventDetailsViewController.swift in Sources */,
+				A441CE6F1C7634CB00663057 /* Passenger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

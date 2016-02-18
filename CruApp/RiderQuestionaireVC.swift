@@ -18,8 +18,10 @@ class RiderQuestionaireVC: UIViewController {
     @IBOutlet weak var driveTypes: CheckmarkSegmentedControl!
     @IBOutlet weak var eventsChoice: UITextField!
     
+    var passenger: Passenger!
     var eventDownPicker: DownPicker!
     var eventChoices = [String]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,11 +73,15 @@ class RiderQuestionaireVC: UIViewController {
         self.eventDownPicker.setPlaceholder("Choose an event...")
     }
     
-    @IBAction func submitPressed(sender: UIButton) {
-        
-        /* TO DO: Validate driver information, make sure everything is good to go */
-        
-        //grab questionaire data to add to data
+    
+    /* Calls this function when the tap is recognizedd
+    * Causes the view (or one of its embedded text fields) to resign the first responder status. */
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         var rideDirection : String
         
@@ -84,36 +90,20 @@ class RiderQuestionaireVC: UIViewController {
         }
         else if (driveTypes.options[driveTypes.selectedIndex].title == "To Event \n(One-way)") {
             rideDirection = "to"
-        } else {
+        }
+        else {
             rideDirection = "from"
         }
         
-        //let params = ["direction": rideDirection, "phone": Int(driverPhoneNumber.text!)!, "name": driverFullName.text!, "gcm_id" : 1234567]
+        passenger = Passenger(name: passengerFullName.text!, eventId: "563b11135e926d03001ac15c", phoneNumber: passengerNumber.text!, direction: rideDirection, gcmId: 1234567)
         
-//        do {
-//            let body = try NSJSONSerialization.dataWithJSONObject(params, options: NSJSONWritingOptions.PrettyPrinted)
-//            dbClient.addData("ride", body : body)
-//        } catch {
-//            print("Error sending data to database")
-//        }
+        let selectDriverViewController = segue.destinationViewController as! SelectDriverTableViewController
+        selectDriverViewController.passenger = passenger
         
-        /* Show a visual alert displaying successful signup */
-//        let successAlert = UIAlertController(title: "Success!", message:
-//            "Thank you for signing up as a driver!", preferredStyle: UIAlertControllerStyle.Alert)
-//        successAlert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler:
-//            {
-//                (action: UIAlertAction!) -> Void in
-//                self.performSegueWithIdentifier("finishQuestionaire", sender: self)
-//        }))
-//        
-//        self.presentViewController(successAlert, animated: true, completion: nil)
-    }
-    
-    
-    /* Calls this function when the tap is recognizedd
-    * Causes the view (or one of its embedded text fields) to resign the first responder status. */
-    func dismissKeyboard() {
-        view.endEditing(true)
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        
+        
     }
     
     /*

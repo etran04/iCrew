@@ -18,10 +18,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FvE-39-pUU">
-                    <rect key="frame" x="27" y="141" width="320" height="386"/>
+                    <rect key="frame" x="27" y="90" width="320" height="407"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="moA-sG-w9U">
-                            <rect key="frame" x="58" y="336" width="203" height="30"/>
+                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="moA-sG-w9U">
+                            <rect key="frame" x="58" y="369" width="203" height="30"/>
                             <color key="backgroundColor" red="0.38431372549999998" green="0.37647058820000001" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="aHx-2t-gNe"/>
@@ -35,11 +35,11 @@
                                 <action selector="closePopup:" destination="-1" eventType="touchUpInside" id="h7o-1k-CN6"/>
                             </connections>
                         </button>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ddu-ny-h6P">
-                            <rect key="frame" x="57" y="20" width="206" height="178"/>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ddu-ny-h6P">
+                            <rect key="frame" x="56" y="8" width="206" height="178"/>
                         </imageView>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="243" translatesAutoresizingMaskIntoConstraints="NO" id="d9y-sm-xub">
-                            <rect key="frame" x="20" y="206" width="280" height="110"/>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Message Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="243" translatesAutoresizingMaskIntoConstraints="NO" id="d9y-sm-xub">
+                            <rect key="frame" x="20" y="225" width="280" height="110"/>
                             <constraints>
                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="110" id="Dwz-kW-iwj"/>
                             </constraints>
@@ -53,21 +53,17 @@
                         <constraint firstItem="d9y-sm-xub" firstAttribute="leading" secondItem="FvE-39-pUU" secondAttribute="leading" constant="20" symbolic="YES" id="DoN-WE-u9g"/>
                         <constraint firstItem="moA-sG-w9U" firstAttribute="centerX" secondItem="d9y-sm-xub" secondAttribute="centerX" id="JBY-EJ-JlQ"/>
                         <constraint firstItem="moA-sG-w9U" firstAttribute="top" secondItem="d9y-sm-xub" secondAttribute="bottom" constant="20" id="RGl-Ta-eqT"/>
-                        <constraint firstItem="d9y-sm-xub" firstAttribute="centerX" secondItem="ddu-ny-h6P" secondAttribute="centerX" id="U5R-iv-cyJ"/>
                         <constraint firstItem="moA-sG-w9U" firstAttribute="leading" secondItem="FvE-39-pUU" secondAttribute="leading" constant="58" id="Ve1-OS-7O4"/>
-                        <constraint firstItem="d9y-sm-xub" firstAttribute="top" secondItem="ddu-ny-h6P" secondAttribute="bottom" constant="8" symbolic="YES" id="WHi-qO-CHb"/>
-                        <constraint firstItem="ddu-ny-h6P" firstAttribute="leading" secondItem="FvE-39-pUU" secondAttribute="leading" constant="57" id="rkT-M8-hOC"/>
                         <constraint firstAttribute="trailing" secondItem="d9y-sm-xub" secondAttribute="trailing" constant="20" symbolic="YES" id="su7-Rw-2vX"/>
-                        <constraint firstItem="ddu-ny-h6P" firstAttribute="top" secondItem="FvE-39-pUU" secondAttribute="top" constant="20" symbolic="YES" id="th5-OE-zhL"/>
                     </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="FvE-39-pUU" secondAttribute="bottom" constant="140" id="R6b-oD-Xs0"/>
+                <constraint firstAttribute="bottom" secondItem="FvE-39-pUU" secondAttribute="bottom" constant="170" id="R6b-oD-Xs0"/>
                 <constraint firstItem="FvE-39-pUU" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="27" id="jiN-gm-aGx"/>
                 <constraint firstItem="FvE-39-pUU" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="sPV-Vy-nUg"/>
-                <constraint firstItem="FvE-39-pUU" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="141" id="xRl-Al-rbF"/>
+                <constraint firstItem="FvE-39-pUU" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="90" id="xRl-Al-rbF"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
             <point key="canvasLocation" x="348.5" y="364.5"/>

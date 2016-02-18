@@ -14,6 +14,7 @@ class InitialMinistryTableViewController: UITableViewController {
     
     var popViewController : PopUpViewControllerSwift!
     
+    var campusCollection: [CampusData] = []
     var ministriesCollection = [Ministry]()
     var isSelected: [Bool] = [Bool]()
     var selected: [String] = [String]()
@@ -44,6 +45,8 @@ class InitialMinistryTableViewController: UITableViewController {
         //set empty back button
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.Plain, target:nil, action:nil)
         
+        campusCollection = UserProfile.getCampuses()
+        
         var dbClient: DBClient!
         dbClient = DBClient()
         //”event”, “ministry”, “campus”, etc
@@ -54,16 +57,33 @@ class InitialMinistryTableViewController: UITableViewController {
     func setMinistries(ministry:NSDictionary) {
         //self.tableView.beginUpdates()
         
-        let name = ministry["name"] as! String
-        let description = ministry["description"] as! String!
-        let image = ministry["image"]?.objectForKey("secure_url") as! String!
-        //let campus = ministry["campuses"] as! String
+        let campus = ministry["campuses"] as! [String]
         
-        let ministryObj = Ministry(name: name, description: description, image: image)
+        if (campus.first == nil) {
+            return;
+        }
         
-        ministriesCollection.append(ministryObj)
-        isSelected.append(false);
-        self.tableView.reloadData()
+        let campusId = campus.first! as String
+        var existsInCampus = false
+        
+        for campusObj in campusCollection {
+            if (campusObj.id == campusId) {
+                existsInCampus = true;
+            }
+        }
+        
+        if (existsInCampus) {
+            let name = ministry["name"] as! String
+            let description = ministry["description"] as! String!
+            let image = ministry["image"]?.objectForKey("secure_url") as! String!
+            //let campus = ministry["campuses"] as! String
+        
+            let ministryObj = Ministry(name: name, description: description, image: image)
+        
+            ministriesCollection.append(ministryObj)
+            isSelected.append(false);
+            self.tableView.reloadData()
+        }
     }
     
     override func didReceiveMemoryWarning() {

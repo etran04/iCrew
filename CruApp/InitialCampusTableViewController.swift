@@ -48,12 +48,13 @@ class InitialCampusTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if (UserProfile.getCampuses().count > 0) {
-//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//            let vc = storyboard.instantiateViewControllerWithIdentifier("mainRootViewController") as! SWRevealViewController
-//            self.presentViewController(vc, animated: false, completion: nil)
+        if (!UserProfile.isFirstTime()) {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewControllerWithIdentifier("mainRootViewController") as! SWRevealViewController
+            self.presentViewController(vc, animated: false, completion: nil)
         }
         else {
+            UserProfile.initialUsage()
             
             //set up database
             var dbClient: DBClient!
@@ -121,5 +122,10 @@ class InitialCampusTableViewController: UITableViewController {
             selectedIndices.removeAtIndex(selectedIndices.indexOf(indexPath.row)!);
         }
     }
-
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        for index in selectedIndices {
+            UserProfile.addCampus(campusCollection[index])
+        }
+    }
 }

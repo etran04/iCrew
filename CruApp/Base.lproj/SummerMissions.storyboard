@@ -48,16 +48,16 @@
                                         <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gx4-4z-5Xy">
                                             <rect key="frame" x="8" y="14" width="359" height="103"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JMh-kW-vtW" userLabel="Title Label">
-                                                    <rect key="frame" x="8" y="17" width="342" height="31"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="36"/>
-                                                    <color key="textColor" red="0.86666666670000003" green="0.49019607840000001" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y9G-Nb-U8f" userLabel="Date Label">
                                                     <rect key="frame" x="8" y="65" width="342" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.45098039220000002" blue="0.59607843140000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JMh-kW-vtW" userLabel="Title Label">
+                                                    <rect key="frame" x="8" y="19" width="342" height="31"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="24"/>
+                                                    <color key="textColor" red="0.86666666670000003" green="0.49019607840000001" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -153,6 +153,9 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qtB-fB-qix" userLabel="Event Image">
+                                        <rect key="frame" x="22" y="0.0" width="329" height="118"/>
+                                    </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gRm-Ob-6Xm" userLabel="Description">
                                         <rect key="frame" x="34" y="341" width="304" height="39"/>
                                         <constraints>
@@ -163,9 +166,6 @@
                                         <color key="textColor" red="0.38431372549999998" green="0.37647058820000001" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qtB-fB-qix" userLabel="Event Image">
-                                        <rect key="frame" x="22" y="0.0" width="329" height="118"/>
-                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

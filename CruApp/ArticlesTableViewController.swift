@@ -104,10 +104,8 @@ class ArticlesTableViewController: UITableViewController {
     func loadArticles() {
         
         self.articles += [
-            URLResources(name: "Discerning God's Will",
-                url: "http://www.slocru.com/assets/resources/pdf/Discerning_Gods_Will_by_Youth_Specialties.pdf"),
-            URLResources(name: "Biblical Career Principals",
-                url: "http://www.slocru.com/assets/resources/pdf/Biblical_Career_Principals_By_Navigator.pdf")
+            URLResources(name: "The Purpose of Prayer",
+                url: "http://www.cru.org/train-and-grow/10-basic-steps/4-prayer.html")
         ]
         
         self.indicator.stopAnimating()

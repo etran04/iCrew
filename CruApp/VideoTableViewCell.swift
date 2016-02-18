@@ -19,6 +19,7 @@ class VideoTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        videoTitle.font = UIFont.boldSystemFontOfSize(16.0)
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

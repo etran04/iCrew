@@ -492,8 +492,8 @@
 				83244B751C7579F000D913A6 /* MinistryData.swift */,
 				83B1CB231C4886F700145B6D /* Campus.swift */,
 				83244B6D1C7579BA00D913A6 /* CampusData.swift */,
-				83B1CB281C48880A00145B6D /* UserProfile.swift */,
 				83244B7B1C759E2D00D913A6 /* InitialUsage.swift */,
+				83B1CB281C48880A00145B6D /* UserProfile.swift */,
 			);
 			name = UserProfile;
 			sourceTree = "<group>";

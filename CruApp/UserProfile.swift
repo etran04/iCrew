@@ -67,6 +67,30 @@ class UserProfile {
         return false;
     }
     
+    class func removeCampuses() {
+        let fetchRequest = NSFetchRequest(entityName: "Campus")
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        
+        do {
+            try coreDataManagedContext?.persistentStoreCoordinator!.executeRequest(deleteRequest, withContext: coreDataManagedContext!)
+        } catch let error as NSError {
+            // TODO: handle the error
+            print(error)
+        }
+    }
+    
+    class func removeMinistries() {
+        let fetchRequest = NSFetchRequest(entityName: "Ministry")
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        
+        do {
+            try coreDataManagedContext?.persistentStoreCoordinator!.executeRequest(deleteRequest, withContext: coreDataManagedContext!)
+        } catch let error as NSError {
+            // TODO: handle the error
+            print(error)
+        }
+    }
+    
     class func getCampuses() -> [CampusData] {
         let fetchRequest = NSFetchRequest(entityName: "Campus")
         var results = [CampusData]()

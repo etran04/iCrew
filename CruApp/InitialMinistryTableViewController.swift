@@ -15,16 +15,15 @@ class InitialMinistryTableViewController: UITableViewController {
     var popViewController : PopUpViewControllerSwift!
     
     var campusCollection: [CampusData] = []
+    var ministryCollection = [MinistryData]()
     var ministriesCollection = [Ministry]()
-    var isSelected: [Bool] = [Bool]()
-    var selected: [String] = [String]()
+    var selectedIndices: [Int] = []
     
     struct Ministry{
         var name: String
         var description: String?
         var image: String?
         //var campus: String?
-
         
         init(name: String, description: String?, image: String?)
         {
@@ -72,18 +71,22 @@ class InitialMinistryTableViewController: UITableViewController {
             }
         }
         
-        if (existsInCampus) {
-            let name = ministry["name"] as! String
-            let description = ministry["description"] as! String!
-            let image = ministry["image"]?.objectForKey("secure_url") as! String!
-            //let campus = ministry["campuses"] as! String
-        
-            let ministryObj = Ministry(name: name, description: description, image: image)
-        
-            ministriesCollection.append(ministryObj)
-            isSelected.append(false);
-            self.tableView.reloadData()
+        if (!existsInCampus) {
+            return;
         }
+        
+        let name = ministry["name"] as! String
+        let id = ministry["_id"] as! String
+        let description = ministry["description"] as! String!
+        let image = ministry["image"]?.objectForKey("secure_url") as! String!
+        //let campus = ministry["campuses"] as! String
+    
+        let ministryObj = Ministry(name: name, description: description, image: image)
+        let ministryDataObj = MinistryData(name: name, id: id, campusId: campusId)
+    
+        ministriesCollection.append(ministryObj)
+        ministryCollection.append(ministryDataObj)
+        self.tableView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -122,19 +125,13 @@ class InitialMinistryTableViewController: UITableViewController {
         
         let cell:UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
         
-        if (!selected.contains(ministriesCollection[indexPath.row].name)) {
-            
+        if (!selectedIndices.contains(indexPath.row)) {
             cell.accessoryType = UITableViewCellAccessoryType.Checkmark
-            selected.append(ministriesCollection[indexPath.row].name)
-            dump(selected)
-            
+            selectedIndices.append(indexPath.row)
         }
         else {
-            isSelected[indexPath.row] = false
             cell.accessoryType = UITableViewCellAccessoryType.None
-            selected = selected.filter() {$0 != ministriesCollection[indexPath.row].name}
-            
-            dump(selected)
+            selectedIndices.removeAtIndex(selectedIndices.indexOf(indexPath.row)!)
         }
     }
     
@@ -174,10 +171,15 @@ class InitialMinistryTableViewController: UITableViewController {
                 self.popViewController.showInView(self.view, withImage: image, withMessage: ministriesCollection[sender.tag].description, animated: true)
             }
         }
-        
-        
     }
 
-    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        UserProfile.removeMinistries()
+        
+        for index in selectedIndices {
+            UserProfile.addMinistry(ministryCollection[index])
+        }
+        dump(UserProfile.getMinistries())
+    }
 
 }

@@ -119,11 +119,13 @@ class InitialCampusTableViewController: UITableViewController {
         }
         else {
             cell.accessoryType = UITableViewCellAccessoryType.None
-            selectedIndices.removeAtIndex(selectedIndices.indexOf(indexPath.row)!);
+            selectedIndices.removeAtIndex(selectedIndices.indexOf(indexPath.row)!)
         }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        UserProfile.removeCampuses()
+        
         for index in selectedIndices {
             UserProfile.addCampus(campusCollection[index])
         }

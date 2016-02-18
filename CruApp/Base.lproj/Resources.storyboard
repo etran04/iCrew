@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.97647058819999999" green="0.71372549019999998" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
-                            <color key="textColor" red="0.40000000000000002" green="0.37647058823529411" blue="0.38431372549019605" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </textAttributes>
                     </navigationBar>
                     <connections>
@@ -259,7 +259,9 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Resources" id="dWj-dW-o6f">
                         <barButtonItem key="backBarButtonItem" title=" " id="KgQ-57-xvo"/>
-                        <barButtonItem key="leftBarButtonItem" image="menu.png" id="5TO-Kh-Txt"/>
+                        <barButtonItem key="leftBarButtonItem" image="menu.png" id="5TO-Kh-Txt">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="menuButton" destination="5TO-Kh-Txt" id="yHr-Ct-GeZ"/>

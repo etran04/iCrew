@@ -109,7 +109,7 @@ class SummerMissionsViewController: UITableViewController {
             let startDate = dateFormatter.dateFromString(mission.startDate!)
             let endDate = dateFormatter.dateFromString(mission.endDate!)
             dateFormatter.dateFormat = "MM/dd/YY"
-            cell.missionDate.text = dateFormatter.stringFromDate(startDate!) + " - " + dateFormatter.stringFromDate(endDate!)
+            cell.missionDate.text = dateFormatter.stringFromDate(startDate!) + " – " + dateFormatter.stringFromDate(endDate!)
             
             return cell
     }

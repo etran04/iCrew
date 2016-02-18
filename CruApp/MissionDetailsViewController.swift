@@ -18,11 +18,16 @@ class MissionDetailsViewController: UIViewController {
     @IBOutlet weak var missionTitle: UILabel!
     @IBOutlet weak var missionLeaders: UILabel!
 
+    @IBOutlet weak var missionDescr: UILabel!
     @IBOutlet weak var missionButton: UIButton!
-    @IBOutlet weak var missionDescr: UITextView!
+    
     @IBOutlet weak var missionCost: UILabel!
     @IBOutlet weak var missionLocation: UILabel!
     @IBOutlet weak var missionDate: UILabel!
+    
+    
+    @IBOutlet weak var heightScrollConstraint: NSLayoutConstraint!
+    //@IBOutlet weak var heightScrollConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +35,7 @@ class MissionDetailsViewController: UIViewController {
         if let mission = mission {
             missionTitle.text = mission.name
             missionDescr.text = mission.description
-            missionLocation.sizeToFit()
+            missionDescr.sizeToFit()
             missionLocation.text = (mission.location?.getLocation())!
             missionLocation.sizeToFit()
             missionCost.text = "$" + String(mission.cost)
@@ -48,7 +53,7 @@ class MissionDetailsViewController: UIViewController {
             let startDate = dateFormatter.dateFromString(mission.startDate!)
             let endDate = dateFormatter.dateFromString(mission.endDate!)
             dateFormatter.dateFormat = "MM/dd/YY"
-            missionDate.text = dateFormatter.stringFromDate(startDate!) + " - " + dateFormatter.stringFromDate(endDate!)
+            missionDate.text = dateFormatter.stringFromDate(startDate!) + " – " + dateFormatter.stringFromDate(endDate!)
             
     
             // Mission link button
@@ -85,6 +90,10 @@ class MissionDetailsViewController: UIViewController {
                 missionImage.addSubview(imageView)
             }
         }
+        
+        //for scrolling
+//        self.heightScrollConstraint.constant = self.missionDescr.frame.height + missionDescr.frame.origin.y
+//        self.view.layoutIfNeeded()
     }
     
     func openLink(sender:UIButton!) {

@@ -23,6 +23,7 @@
 		07C196331C0E6AD400375B8D /* ArticlesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C196321C0E6AD400375B8D /* ArticlesTableViewController.swift */; };
 		07C196351C0E6D9F00375B8D /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C196341C0E6D9F00375B8D /* ArticleTableViewCell.swift */; };
 		07C196371C0E863000375B8D /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C196361C0E863000375B8D /* VideoTableViewCell.swift */; };
+		07D2EB351C75B31900D0BDBA /* ToolsIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 07D2EB341C75B31900D0BDBA /* ToolsIcon.png */; };
 		07ED81711C0D7ECC007FFB53 /* ResourcesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07ED81701C0D7ECC007FFB53 /* ResourcesViewController.swift */; };
 		1E37E7261C0E362D0054607A /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E37E71E1C0E362D0054607A /* Event.swift */; };
 		1E37E7291C0E362D0054607A /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E37E7211C0E362D0054607A /* EventsViewController.swift */; };
@@ -193,6 +194,7 @@
 		07C196321C0E6AD400375B8D /* ArticlesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticlesTableViewController.swift; sourceTree = "<group>"; };
 		07C196341C0E6D9F00375B8D /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
 		07C196361C0E863000375B8D /* VideoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
+		07D2EB341C75B31900D0BDBA /* ToolsIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ToolsIcon.png; sourceTree = "<group>"; };
 		07ED81701C0D7ECC007FFB53 /* ResourcesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourcesViewController.swift; sourceTree = "<group>"; };
 		14A37DE1D2D4A3701357F6E0 /* Pods-CruAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CruAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CruAppTests/Pods-CruAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		1E37E71E1C0E362D0054607A /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
@@ -536,6 +538,7 @@
 			isa = PBXGroup;
 			children = (
 				073F3D281C7561D500D03596 /* ArticlesIcon.png */,
+				07D2EB341C75B31900D0BDBA /* ToolsIcon.png */,
 				073F3D2C1C75654700D03596 /* VideoIcon.png */,
 				07340BB91C5B36B5002C6015 /* info.png */,
 				0703C7311C4DFA8500C7D8ED /* blank_calendar.png */,
@@ -752,6 +755,7 @@
 				839F645B1C0D6C4C00CAEC9E /* Resources.storyboard in Resources */,
 				A447DBC21C5ACBBB000C6DEB /* Passenger-52.png in Resources */,
 				839F64411C0D4E4300CAEC9E /* Cru-Logo.png in Resources */,
+				07D2EB351C75B31900D0BDBA /* ToolsIcon.png in Resources */,
 				A447DBB31C5AC8D3000C6DEB /* Events.storyboard in Resources */,
 				839F64441C0D4E4300CAEC9E /* Planner-25.png in Resources */,
 				A4110B501C0F7EB500F47AB4 /* Facebook-25.png in Resources */,

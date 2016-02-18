@@ -17,6 +17,7 @@ class EventsViewController: UITableViewController {
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
     var eventsCollection = [Event]()
+    var ministryCollection: [MinistryData] = []
     
     //    var service:EventService!
     //    var settings:Settings!
@@ -29,6 +30,8 @@ class EventsViewController: UITableViewController {
         
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        ministryCollection = UserProfile.getMinistries()
         
         var dbClient: DBClient!
         dbClient = DBClient()
@@ -49,6 +52,33 @@ class EventsViewController: UITableViewController {
     //TODO: Move function into Event.swift
     func setEvents(event:NSDictionary) {
         //self.tableView.beginUpdates()
+
+        var existsInMinistry = false
+        
+        if (event["parentMinistry"] == nil) {
+            let parentMinistries = event["parentMinistries"] as! [String]
+            
+            for ministryId in parentMinistries {
+                for ministry in ministryCollection {
+                    if (ministryId == ministry.id) {
+                        existsInMinistry = true;
+                    }
+                }
+            }
+        }
+        else {
+            let ministryId = event["parentMinistry"] as! String
+            
+            for ministry in ministryCollection {
+                if (ministry.id == ministryId) {
+                    existsInMinistry = true;
+                }
+            }
+        }
+        
+        if (!existsInMinistry) {
+            return;
+        }
         
         let name = event["name"] as! String
         let startDate = event["startDate"] as! String!

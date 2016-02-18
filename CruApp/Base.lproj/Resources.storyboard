@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yMF-BQ-iAf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yMF-BQ-iAf">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -27,6 +27,90 @@
             </objects>
             <point key="canvasLocation" x="678" y="1012"/>
         </scene>
+        <!--Resources -->
+        <scene sceneID="xg3-bo-7m7">
+            <objects>
+                <viewController id="t6P-qX-wmp" customClass="ResourcesViewController" customModule="CruApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0wr-Fm-hx3"/>
+                        <viewControllerLayoutGuide type="bottom" id="AKh-2R-scz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="z7f-dP-Vng">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Videos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Glw-QV-d0Z">
+                                <rect key="frame" x="274" y="267" width="53" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VVR-xn-6kz">
+                                <rect key="frame" x="0.0" y="308" width="600" height="243"/>
+                                <color key="backgroundColor" red="0.97647058823529409" green="0.71372549019607845" blue="0.14509803921568626" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="ozc-6e-zHw"/>
+                                </constraints>
+                                <state key="normal" image="ArticlesIcon.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="ozc-6e-zHw"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <segue destination="20A-fb-hoq" kind="show" id="LBP-sW-0ms"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Articles" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6D0-aO-yRu">
+                                <rect key="frame" x="272" y="511" width="58" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qgz-BK-S50">
+                                <rect key="frame" x="0.0" y="64" width="600" height="244"/>
+                                <color key="backgroundColor" red="0.24313725490196078" green="0.69411764705882351" blue="0.78431372549019607" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                <state key="normal" image="VideoIcon.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="CBw-xl-Jne" kind="show" id="waM-93-Tmv"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qgz-BK-S50" firstAttribute="top" secondItem="0wr-Fm-hx3" secondAttribute="bottom" id="4gT-6n-rgQ"/>
+                            <constraint firstItem="qgz-BK-S50" firstAttribute="leading" secondItem="z7f-dP-Vng" secondAttribute="leadingMargin" constant="-20" id="Fdr-mh-yvp"/>
+                            <constraint firstItem="6D0-aO-yRu" firstAttribute="bottom" secondItem="VVR-xn-6kz" secondAttribute="bottom" constant="-20" id="IyM-ez-Oyo"/>
+                            <constraint firstItem="Glw-QV-d0Z" firstAttribute="centerX" secondItem="qgz-BK-S50" secondAttribute="centerX" id="PJR-zd-E8q"/>
+                            <constraint firstItem="VVR-xn-6kz" firstAttribute="top" secondItem="qgz-BK-S50" secondAttribute="bottom" id="SnP-B8-dPK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="VVR-xn-6kz" secondAttribute="trailing" constant="-20" id="VJJ-n0-af5"/>
+                            <constraint firstItem="VVR-xn-6kz" firstAttribute="leading" secondItem="z7f-dP-Vng" secondAttribute="leadingMargin" constant="-20" id="XPX-rQ-eRU"/>
+                            <constraint firstItem="AKh-2R-scz" firstAttribute="top" secondItem="VVR-xn-6kz" secondAttribute="bottom" id="b1g-8d-Tpj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qgz-BK-S50" secondAttribute="trailing" constant="-20" id="i2Y-Fk-lQk"/>
+                            <constraint firstItem="qgz-BK-S50" firstAttribute="width" secondItem="VVR-xn-6kz" secondAttribute="width" id="lu5-o6-eCE"/>
+                            <constraint firstItem="qgz-BK-S50" firstAttribute="height" secondItem="VVR-xn-6kz" secondAttribute="height" constant="1" id="p8Y-Er-gxB"/>
+                            <constraint firstItem="Glw-QV-d0Z" firstAttribute="bottom" secondItem="qgz-BK-S50" secondAttribute="bottom" constant="-20" id="pZm-DW-LW5"/>
+                            <constraint firstItem="6D0-aO-yRu" firstAttribute="centerX" secondItem="VVR-xn-6kz" secondAttribute="centerX" id="yTU-CO-0A4"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Resources " id="huO-g1-HNG">
+                        <barButtonItem key="leftBarButtonItem" image="menu.png" id="UMQ-TY-mnH">
+                            <color key="tintColor" red="0.40000000000000002" green="0.37647058823529411" blue="0.38431372549019605" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="videosLabel" destination="Glw-QV-d0Z" id="aCm-W3-evv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gW3-Wc-XHf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1394" y="1018"/>
+        </scene>
         <!--Articles-->
         <scene sceneID="b4c-Ji-D6p">
             <objects>
@@ -45,7 +129,7 @@
                                 <rect key="frame" x="0.0" y="136" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fXC-QL-udu" id="STU-WB-VMJ">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Article Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fMP-fY-jPL">
@@ -265,7 +349,7 @@
                                 <rect key="frame" x="0.0" y="136" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uWp-uW-KQZ" id="dkC-jH-TA4">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tool Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6uz-KS-BjI">
@@ -316,7 +400,7 @@
                                 <rect key="frame" x="0.0" y="136" width="600" height="149"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KO5-f2-AGs" id="BqC-Tn-I46">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="148.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="148"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h9w-j8-UdK" customClass="YTPlayerView">

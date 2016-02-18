@@ -22,6 +22,7 @@ class EventDetailsViewController: UIViewController {
     @IBOutlet weak var calendarButton: UIButton!    //calendar button to save event to native calendar
     
     //Keys for accessing Google API
+    //These will need to be changed upon release
     private let kKeychainItemName = "Google Calendar API"
     private let kClientID = "466090597779-cqphfvmo2focdg82kpm2rh5qg4u0vgkd.apps.googleusercontent.com"
     private let kSecret = "fyM1MvYHSkXPl9plSlkYgYcw"
@@ -148,8 +149,6 @@ class EventDetailsViewController: UIViewController {
         //let event = eventsCollection[Int(sender.titleLabel!.text!)!]
         if let event = event {
             let name = event.name
-            let start = event.startDate
-            let end = event.endDate
         
             let eventStore = EKEventStore()
             let dateFormatter = NSDateFormatter()
@@ -157,10 +156,11 @@ class EventDetailsViewController: UIViewController {
             //dateFormatter.dateFormat = "MMM dd, yyyy, HH:ss"
             dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
         
-            let startDate = dateFormatter.dateFromString(start!)
+            let startDate = dateFormatter.dateFromString(event.startDate!)
         
-            let endDate = dateFormatter.dateFromString(end!)
+            let endDate = dateFormatter.dateFromString(event.endDate!)
         
+            //checks for authorization to access calendar
             if(EKEventStore.authorizationStatusForEntityType(.Event) !=
                 EKAuthorizationStatus.Authorized) {
                     eventStore.requestAccessToEntityType(.Event, completion: {
@@ -171,6 +171,7 @@ class EventDetailsViewController: UIViewController {
             } else {
                 createEvent(eventStore, title: name, startDate: startDate!, endDate: endDate!)
             }
+            //Alert if calendar sync was succesful
             let alertController = UIAlertController(title: name, message:
                 "Event synced to calendar", preferredStyle: UIAlertControllerStyle.Alert)
             alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
@@ -203,6 +204,8 @@ class EventDetailsViewController: UIViewController {
             let startDate = dateFormatter.dateFromString(event.startDate!)
             
             let endDate = dateFormatter.dateFromString(event.endDate!)
+            
+            //If needed, get user credentials to access Google account
             if let authorizer = service.authorizer,
                 canAuth = authorizer.canAuthorize where canAuth {
                     insertGoogleEvent(event.name, startDate: startDate!, endDate: endDate!, desc: event.description)

@@ -10,6 +10,7 @@ def shared_pods
     pod "DownPicker"
     pod 'CheckmarkSegmentedControl'
     pod 'Google/CloudMessaging'
+    pod 'SwiftLoader'
 end
 
 target 'CruApp' do

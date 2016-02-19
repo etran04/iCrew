@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftLoader
 
 /* Video represents a holder for metadata of a single individual youtube video */
 class Video {
@@ -43,9 +44,6 @@ class VideosTableViewController: UITableViewController {
     /* A reference to the pull-down-to-refresh ui */
     @IBOutlet weak var refresh: UIRefreshControl!
     
-    /* A reference to the animated loading spinner */
-    var indicator = UIActivityIndicatorView()
-    
     /* Key used to access Google YouTube API. From Google Developer Console */
     var apiKey = "AIzaSyBGaaqJruUGsKohM4PJZO6XnlMOmdt6gsY"
     
@@ -72,16 +70,7 @@ class VideosTableViewController: UITableViewController {
     
     /* Sets up and starts the loading indicator */
     func setUpLoadSpinner() {
-        indicator = UIActivityIndicatorView(frame: CGRectMake(0, 0, 40, 40))
-        indicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
-        indicator.center = self.view.center
-        
-        /* scales the indicator to twice the color */
-        let transform = CGAffineTransformMakeScale(2, 2)
-        indicator.transform = transform;
-        
-        self.view.addSubview(indicator)
-        indicator.startAnimating()
+        SwiftLoader.show(title: "Loading...", animated: true)
     }
 
     
@@ -258,7 +247,7 @@ class VideosTableViewController: UITableViewController {
                         self.tableView.reloadData()
                         
                         // Finished loading videos, stop the indicator
-                        self.indicator.stopAnimating()
+                        SwiftLoader.hide()
                     }
                 } catch {
                     print(error)

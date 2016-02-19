@@ -11,6 +11,7 @@ def shared_pods
     pod 'CheckmarkSegmentedControl'
     pod 'Google/CloudMessaging'
     pod 'SwiftLoader'
+    pod 'SwiftSpinner'
 end
 
 target 'CruApp' do

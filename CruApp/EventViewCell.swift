@@ -17,7 +17,8 @@ class EventViewCell: UITableViewCell {
     @IBOutlet weak var eventStartTime: UILabel!
     @IBOutlet weak var eventDayDate: UILabel!
     @IBOutlet weak var eventMonthDate: UILabel!
-    
+    @IBOutlet weak var rideshareButton: UIButton!
+
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,8 +27,6 @@ class EventViewCell: UITableViewCell {
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
     override func layoutSubviews() {
@@ -46,4 +45,18 @@ class EventViewCell: UITableViewCell {
         
     }
 
+    @IBAction func ridesharePressed(sender: AnyObject) {
+        let eventsTV = sender.superview! as! UITableView
+        let eventsTVC = eventsTV.dataSource as! UITableViewController
+        
+        let tvcInside = UITableViewController()
+        tvcInside.modalPresentationStyle = UIModalPresentationStyle.Popover
+        tvcInside.preferredContentSize = CGSizeMake(400, 400)
+        
+        eventsTVC.presentViewController(tvcInside, animated: true, completion: nil)
+        
+        let popoverPresentationController = tvcInside.popoverPresentationController
+        popoverPresentationController?.sourceView = sender as? UIView
+        popoverPresentationController?.sourceRect = CGRectMake(0, 0, sender.frame.size.width, sender.frame.size.height)
+    }
 }

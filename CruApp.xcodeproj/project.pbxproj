@@ -25,6 +25,7 @@
 		07C196371C0E863000375B8D /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C196361C0E863000375B8D /* VideoTableViewCell.swift */; };
 		07D2EB351C75B31900D0BDBA /* ToolsIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 07D2EB341C75B31900D0BDBA /* ToolsIcon.png */; };
 		07ED81711C0D7ECC007FFB53 /* ResourcesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07ED81701C0D7ECC007FFB53 /* ResourcesViewController.swift */; };
+		07F802B91C768CCC00A7A4BC /* rideShareIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 07F802B81C768CCC00A7A4BC /* rideShareIcon.png */; };
 		1E37E7261C0E362D0054607A /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E37E71E1C0E362D0054607A /* Event.swift */; };
 		1E37E7291C0E362D0054607A /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E37E7211C0E362D0054607A /* EventsViewController.swift */; };
 		1E37E72A1C0E362D0054607A /* VideosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E37E7221C0E362D0054607A /* VideosTableViewController.swift */; };
@@ -200,6 +201,7 @@
 		07C196361C0E863000375B8D /* VideoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
 		07D2EB341C75B31900D0BDBA /* ToolsIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ToolsIcon.png; sourceTree = "<group>"; };
 		07ED81701C0D7ECC007FFB53 /* ResourcesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourcesViewController.swift; sourceTree = "<group>"; };
+		07F802B81C768CCC00A7A4BC /* rideShareIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rideShareIcon.png; sourceTree = "<group>"; };
 		14A37DE1D2D4A3701357F6E0 /* Pods-CruAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CruAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CruAppTests/Pods-CruAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		1E37E71E1C0E362D0054607A /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		1E37E7211C0E362D0054607A /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
@@ -549,6 +551,7 @@
 		A43482D11C0D290E00B62D6C /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				07F802B81C768CCC00A7A4BC /* rideShareIcon.png */,
 				073F3D281C7561D500D03596 /* ArticlesIcon.png */,
 				07D2EB341C75B31900D0BDBA /* ToolsIcon.png */,
 				073F3D2C1C75654700D03596 /* VideoIcon.png */,
@@ -785,6 +788,7 @@
 				279327011C509C2100BAC73D /* Info.plist in Resources */,
 				A45572F91C49CCE90097DE0F /* Google Plus-25.png in Resources */,
 				279326FC1C509C2100BAC73D /* PopUpViewController.xib in Resources */,
+				07F802B91C768CCC00A7A4BC /* rideShareIcon.png in Resources */,
 				839F64491C0D643A00CAEC9E /* menu.png in Resources */,
 				1EB405441C63E89900220D5B /* GTMOAuth2ViewTouch.xib in Resources */,
 				072519AD1BE9694000F38F81 /* Main.storyboard in Resources */,

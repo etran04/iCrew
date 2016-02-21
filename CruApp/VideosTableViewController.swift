@@ -71,8 +71,8 @@ class VideosTableViewController: UITableViewController {
     
     /* Sets up and starts the loading indicator */
     func setUpLoadSpinner() {
-        //SwiftLoader.show(title: "Loading...", animated: true)
-        SwiftSpinner.show("Loading...")
+        SwiftLoader.show(title: "Loading...", animated: true)
+        //SwiftSpinner.show("Loading...")
     }
     
     /* Resets the refresh UI control */
@@ -248,8 +248,8 @@ class VideosTableViewController: UITableViewController {
                         self.tableView.reloadData()
                         
                         // Finished loading videos, stop the indicator
-                        //SwiftLoader.hide()
-                        SwiftSpinner.hide()
+                        SwiftLoader.hide()
+                        //SwiftSpinner.hide()
                     }
                 } catch {
                     print(error)

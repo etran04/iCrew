@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:CruApp/Base.lproj/RideShare.storyboard">
-   </FileRef>
-   <FileRef
       location = "group:google-api-objectivec-client/Source/GTLCore.xcodeproj">
    </FileRef>
    <FileRef

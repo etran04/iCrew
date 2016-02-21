@@ -13,23 +13,12 @@ class UserProfile {
     
     static let coreDataManagedContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     
-    class func saveContext() {
-        do {
-            try coreDataManagedContext?.save()
-        }
-        catch {
-            print("Unble to save data")
-        }
-    }
-    
     class func addCampus(campus: CampusData) {
         let entity = NSEntityDescription.entityForName("Campus", inManagedObjectContext: coreDataManagedContext!)
         let campusObj = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: coreDataManagedContext!)
         
         campusObj.setValue(campus.name, forKey: "name")
         campusObj.setValue(campus.id, forKey: "id")
-        
-        saveContext()
     }
     
     class func addMinistry(ministry: MinistryData) {
@@ -39,8 +28,6 @@ class UserProfile {
         ministryObj.setValue(ministry.name, forKey: "name")
         ministryObj.setValue(ministry.campusId, forKey: "campusId")
         ministryObj.setValue(ministry.id, forKey: "id")
-        
-        saveContext()
     }
     
     class func initialUsage() {
@@ -48,8 +35,6 @@ class UserProfile {
         let initialObj = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: coreDataManagedContext!)
         
         initialObj.setValue(false, forKey: "firstTime")
-        
-        saveContext()
     }
     
     class func isFirstTime() -> Bool {

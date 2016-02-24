@@ -26,6 +26,7 @@ PODS:
   - GoogleIPhoneUtilities (1.1.1):
     - GoogleSymbolUtilities (~> 1.0)
     - GoogleUtilities (~> 1.0)
+  - GoogleMaps (1.12.1)
   - GoogleNetworkingUtilities (1.0.0):
     - GoogleSymbolUtilities (~> 1.0)
   - GoogleSymbolUtilities (1.0.3)
@@ -41,6 +42,7 @@ DEPENDENCIES:
   - CheckmarkSegmentedControl
   - DownPicker
   - Google/CloudMessaging
+  - GoogleMaps
   - NMPopUpViewSwift
   - ReachabilitySwift (from `https://github.com/ashleymills/Reachability.swift`)
   - SwiftLoader
@@ -64,6 +66,7 @@ SPEC CHECKSUMS:
   GoogleCloudMessaging: faa057e30845e7300da31de3777060420b2f6579
   GoogleInterchangeUtilities: d7f7174176fbcf9710f696f1acebad4dbd98ac03
   GoogleIPhoneUtilities: 3252d20d075b902e37a08036dcc9f74828cf5595
+  GoogleMaps: d4e7526e96e78faf7131ea95f13dd5411cc2916d
   GoogleNetworkingUtilities: 292992ab31b7b4ba32809a0e8b40e324cdfb2c0c
   GoogleSymbolUtilities: 82ad9f93d3615244b3f4ce440f5ab2515e8b4f56
   GoogleUtilities: 8ed9134debe11719097881711464752900668f10

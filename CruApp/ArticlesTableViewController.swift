@@ -49,7 +49,7 @@ class ArticlesTableViewController: UITableViewController {
         var dbClient: DBClient!
         dbClient = DBClient()
         dbClient.getData("resource", dict: loadArticles)
-        self.loadArticles()
+        //self.loadArticles()
     }
 
     /* Called when the current view appears */
@@ -105,15 +105,15 @@ class ArticlesTableViewController: UITableViewController {
     }
 
     /* Populates our articles from the Cru database */
-    func loadArticles(articles : NSDictionary) {
+    func loadArticles(article : NSDictionary) {
         //for article in articles {
-        if(article["type"] == "Article") {
-            let title = article["title"]
-            let url = article["url"]
-            let tags = article["tag"]
-            let type = article["type"]
+        let type = article["type"] as! String
+        if(type == "Article") {
+            let title = article["title"] as! String
+            let url = article["url"] as! String
+            let tags = article["tag"] as! [String]
             
-            let articleObj = Article(url, type, title, tags)
+            let articleObj = Article(url : url, type : type, title : title, tags : tags)
             articles.append(articleObj)
         }
         self.indicator.stopAnimating()
@@ -134,13 +134,13 @@ class ArticlesTableViewController: UITableViewController {
     /* Loads each cell in the table with a link */
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("ArticleCell", forIndexPath: indexPath) as! ArticleTableViewCell
-        cell.setName(articles[indexPath.row].getName())
+        cell.setName(articles[indexPath.row].title)
         return cell
     }
     
     /* Callback for when a link is clicked */
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        showLink(articles[indexPath.row].getURL())
+        showLink(articles[indexPath.row].url)
     }
     
     /* Callback for when a cell is individually displayed */

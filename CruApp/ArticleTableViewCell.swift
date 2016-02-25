@@ -13,6 +13,7 @@ import UIKit
 class ArticleTableViewCell: UITableViewCell {
 
     @IBOutlet weak var articleNameLabel: UILabel!
+    var article : Article
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,7 +24,7 @@ class ArticleTableViewCell: UITableViewCell {
     }
     
     func setName(name: String) {
-        articleNameLabel.text = name
+        articleNameLabel.text = article.title
     }
 
 }

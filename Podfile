@@ -12,6 +12,8 @@ def shared_pods
     pod 'Google/CloudMessaging'
     pod 'SwiftLoader'
     pod 'SwiftSpinner'
+    pod 'GoogleMaps'
+    pod 'Alamofire'
 end
 
 target 'CruApp' do

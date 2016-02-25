@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import CoreData
+import GoogleMaps
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GCMReceiverDelegate {
@@ -43,6 +44,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GC
         let gcmConfig = GCMConfig.defaultConfig()
         gcmConfig.receiverDelegate = self
         GCMService.sharedInstance().startWithConfig(gcmConfig)
+        
+        //API key for Google Maps
+        GMSServices.provideAPIKey("AIzaSyCLsWMvLiBIEh76VETPgd6fQkeLo0LIJ7g")
         
         initCoreDataModel()
 

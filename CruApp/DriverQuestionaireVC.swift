@@ -9,6 +9,8 @@
 import UIKit
 import DownPicker
 import CheckmarkSegmentedControl
+import Alamofire
+import GoogleMaps
 
 /* This class is used to gather information from a potential driver of the RideShare feature */
 class DriverQuestionaireVC: UIViewController {
@@ -17,6 +19,10 @@ class DriverQuestionaireVC: UIViewController {
     let IDEAL_TIME_INTERVAL = 15
     let TIME_FORMAT = "hh:mm a"
     
+    var resultsViewController: GMSAutocompleteResultsViewController?
+    var searchController: UISearchController?
+    var resultView: UITextView?
+    
     @IBOutlet weak var pickupLocation: UITextField!
     @IBOutlet weak var driverPhoneNumber: UITextField!
     @IBOutlet weak var driverFullName: UITextField!
@@ -24,6 +30,13 @@ class DriverQuestionaireVC: UIViewController {
     @IBOutlet weak var numSeatsAvailChoice: UITextField!
     @IBOutlet weak var depatureTimeChoice: UITextField!
     @IBOutlet weak var driveTypes: CheckmarkSegmentedControl!
+    
+    // Present the Autocomplete view controller when the button is pressed.
+    @IBAction func autocompleteClicked(sender: AnyObject) {
+        let autocompleteController = GMSAutocompleteViewController()
+        //autocompleteController.delegate = self
+        self.presentViewController(autocompleteController, animated: true, completion: nil)
+    }
     
     var eventDownPicker: DownPicker!
     var seatDownPicker: DownPicker!

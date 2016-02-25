@@ -13,6 +13,7 @@ def shared_pods
     pod 'SwiftLoader'
     pod 'SwiftSpinner'
     pod 'GoogleMaps'
+    pod 'Alamofire'
 end
 
 target 'CruApp' do

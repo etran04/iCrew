@@ -18,7 +18,20 @@ class EventViewCell: UITableViewCell {
     @IBOutlet weak var eventDayDate: UILabel!
     @IBOutlet weak var eventMonthDate: UILabel!
     @IBOutlet weak var rideshareButton: UIButton!
-
+    
+    /* Reference to the parent table view controller */
+    var tableController : UITableViewController
+    
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        tableController = UITableViewController()
+        super.init(style: .Default, reuseIdentifier: reuseIdentifier)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        //fatalError("init(coder:) has not been implemented")
+        tableController = UITableViewController()
+        super.init(coder: aDecoder)
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -45,18 +58,43 @@ class EventViewCell: UITableViewCell {
         
     }
 
-    @IBAction func ridesharePressed(sender: AnyObject) {
-        let eventsTV = sender.superview! as! UITableView
-        let eventsTVC = eventsTV.dataSource as! UITableViewController
+    @IBAction func ridesharePressed(sender: UIButton) {
         
-        let tvcInside = UITableViewController()
-        tvcInside.modalPresentationStyle = UIModalPresentationStyle.Popover
-        tvcInside.preferredContentSize = CGSizeMake(400, 400)
+        //Create the AlertController
+        let actionSheetController: UIAlertController = UIAlertController(title: eventName.text!, message: "What would you like for the event?", preferredStyle: .ActionSheet)
         
-        eventsTVC.presentViewController(tvcInside, animated: true, completion: nil)
+        //Create and add the Cancel action
+        let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: .Cancel) { action -> Void in
+            //Just dismiss the action sheet
+        }
+        actionSheetController.addAction(cancelAction)
         
-        let popoverPresentationController = tvcInside.popoverPresentationController
-        popoverPresentationController?.sourceView = sender as? UIView
-        popoverPresentationController?.sourceRect = CGRectMake(0, 0, sender.frame.size.width, sender.frame.size.height)
+        //Create and add first option action
+        let offerRideAction: UIAlertAction = UIAlertAction(title: "Offer a ride", style: .Default)
+            { action -> Void in
+                print("offer a ride selected")
+//                self.tableController.performSegueWithIdentifier("segue_setup_customer", sender: self)
+//                let tabController = self.tableController.tabBarController
+//                tabController?.transitionFromViewController(self.tableController, toViewController: DriverQuestionaireVC(), duration: 2, options: UIViewAnimationOptions.CurveEaseIn, animations: nil, completion: nil)
+                
+        }
+        actionSheetController.addAction(offerRideAction)
+        
+        //Create and add a second option action
+        let requestRideAction: UIAlertAction = UIAlertAction(title: "Request a ride", style: .Default)
+            { action -> Void in
+                print("request a ride selected")
+
+//                self.tableController.performSegueWithIdentifier("segue_setup_provider", sender: self)
+                
+        }
+        actionSheetController.addAction(requestRideAction)
+        
+        //We need to provide a popover sourceView when using it on iPad
+        actionSheetController.popoverPresentationController?.sourceView = sender as UIView
+        
+        //Present the AlertController
+        self.tableController.presentViewController(actionSheetController, animated: true, completion: nil)
+        
     }
 }

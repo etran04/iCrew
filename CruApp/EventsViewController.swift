@@ -174,6 +174,8 @@ class EventsViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("EventCell", forIndexPath: indexPath) as! EventViewCell
+        cell.tableController = self
+        
         let event = eventsCollection[indexPath.row]
 
         cell.eventName.text = event.name

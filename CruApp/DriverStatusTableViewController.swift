@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DriverTableViewController: UITableViewController {
+class DriverStatusTableViewController: UITableViewController {
 
     var driversCollection = [Driver]()
 

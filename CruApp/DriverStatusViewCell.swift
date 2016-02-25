@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DriverViewCell: UITableViewCell {
+class DriverStatusViewCell: UITableViewCell {
 
 
     @IBOutlet weak var name: UILabel!

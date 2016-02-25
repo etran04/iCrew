@@ -83,7 +83,7 @@ class InitialCampusTableViewController: UITableViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        UserProfile.removeCampuses()
+        UserProfile.removeObjects("Campus")
         
         for index in selectedIndices {
             UserProfile.addCampus(campusCollection[index])

@@ -143,10 +143,10 @@
             </objects>
             <point key="canvasLocation" x="3080" y="214"/>
         </scene>
-        <!--View Controller-->
+        <!--Inital ScreenVC-->
         <scene sceneID="f5Y-8r-y1o">
             <objects>
-                <viewController id="iHZ-rT-Kjy" sceneMemberID="viewController">
+                <viewController id="iHZ-rT-Kjy" customClass="InitalScreenVC" customModule="CruApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="NZt-og-wki"/>
                         <viewControllerLayoutGuide type="bottom" id="FtP-ej-gMf"/>
@@ -155,8 +155,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cru-Logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="A9u-RD-OK4">
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cru-Logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="A9u-RD-OK4">
                                 <rect key="frame" x="200" y="230" width="200" height="140"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
+                                </accessibility>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="Eu3-64-9YM"/>
                                     <constraint firstAttribute="height" constant="140" id="oAc-Be-QYO"/>
@@ -170,7 +173,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <segue destination="qPN-vP-Crs" kind="show" id="Oxv-k5-ujl"/>
+                        <segue destination="qPN-vP-Crs" kind="showDetail" identifier="initialSegue" action="showViewController:sender:" id="Oxv-k5-ujl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jwc-nK-ypr" userLabel="First Responder" sceneMemberID="firstResponder"/>

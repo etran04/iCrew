@@ -46,6 +46,8 @@ class EventsViewController: UITableViewController {
             self.menuButton.action = "revealToggle:"
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
+        print("minisitries -")
+        print(ministryCollection.count)
     }
     
     //obtain information from the database to an Object

@@ -148,12 +148,11 @@ class InitialMinistryTableViewController: UITableViewController {
 
         
         let bundle = NSBundle(forClass: PopUpViewControllerSwift.self)
-        if (UIDevice.currentDevice().userInterfaceIdiom == .Pad)
-        {
+        if (UIDevice.currentDevice().userInterfaceIdiom == .Pad) {
             self.popViewController = PopUpViewControllerSwift(nibName: "PopUpViewController_iPad", bundle: bundle)
             self.popViewController.showInView(self.view, withImage: image, withMessage: ministriesCollection[sender.tag].description, animated: true)
-        } else
-        {
+        }
+        else {
             if UIScreen.mainScreen().bounds.size.width > 320 {
                 if UIScreen.mainScreen().scale == 3 {
                     self.popViewController = PopUpViewControllerSwift(nibName: "PopUpViewController_iPhone6Plus", bundle: bundle)
@@ -170,9 +169,11 @@ class InitialMinistryTableViewController: UITableViewController {
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        UserProfile.removeMinistries()
+        print("removing ministries")
+        UserProfile.removeObjects("Ministry")
         
         for index in selectedIndices {
+            print(index)
             UserProfile.addMinistry(ministryCollection[index])
         }
         dump(UserProfile.getMinistries())

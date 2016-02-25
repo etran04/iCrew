@@ -38,7 +38,7 @@ class ArticlesTableViewController: UITableViewController {
     var indicator = UIActivityIndicatorView()
     
     /* Holds all articles to be displayed */
-    var articles = [Article]()
+    var articles = [Resource]()
     
     /* Called when the current view is loaded */
     override func viewDidLoad() {
@@ -107,13 +107,15 @@ class ArticlesTableViewController: UITableViewController {
     /* Populates our articles from the Cru database */
     func loadArticles(article : NSDictionary) {
         //for article in articles {
+        
+        //TODO: need to implement find to grab type=Article
         let type = article["type"] as! String
         if(type == "Article") {
             let title = article["title"] as! String
             let url = article["url"] as! String
             let tags = article["tag"] as! [String]
             
-            let articleObj = Article(url : url, type : type, title : title, tags : tags)
+            let articleObj = Resource(url : url, type : type, title : title, tags : tags)
             articles.append(articleObj)
         }
         self.indicator.stopAnimating()

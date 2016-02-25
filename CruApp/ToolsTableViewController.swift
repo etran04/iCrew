@@ -18,7 +18,7 @@ class ToolsTableViewController: UITableViewController {
     var indicator = UIActivityIndicatorView()
     
     /* Holds all tools to be displayed */
-    var tools = [Article]()
+    var tools = [Resource]()
     
     /* Called when the current view is loaded */
     override func viewDidLoad() {

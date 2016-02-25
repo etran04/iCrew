@@ -29,12 +29,13 @@ class DriverQuestionaireVC: UIViewController {
     @IBOutlet weak var eventsChoice: UITextField!
     @IBOutlet weak var numSeatsAvailChoice: UITextField!
     @IBOutlet weak var depatureTimeChoice: UITextField!
+    @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var driveTypes: CheckmarkSegmentedControl!
     
     // Present the Autocomplete view controller when the button is pressed.
     @IBAction func autocompleteClicked(sender: AnyObject) {
         let autocompleteController = GMSAutocompleteViewController()
-        //autocompleteController.delegate = self
+        autocompleteController.delegate = self
         self.presentViewController(autocompleteController, animated: true, completion: nil)
     }
     
@@ -181,4 +182,36 @@ class DriverQuestionaireVC: UIViewController {
     }
     */
 
+}
+
+extension DriverQuestionaireVC: GMSAutocompleteViewControllerDelegate {
+    
+    // Handle the user's selection.
+    func viewController(viewController: GMSAutocompleteViewController!, didAutocompleteWithPlace place: GMSPlace!) {
+        print("Place name: ", place.name)
+        print("Place address: ", place.formattedAddress)
+        print("Place attributions: ", place.attributions)
+        self.locationLabel.text = place.name + " " + place.formattedAddress
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func viewController(viewController: GMSAutocompleteViewController!, didFailAutocompleteWithError error: NSError!) {
+        // TODO: handle the error.
+        print("Error: ", error.description)
+    }
+    
+    // User canceled the operation.
+    func wasCancelled(viewController: GMSAutocompleteViewController!) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    // Turn the network activity indicator on and off again.
+    func didRequestAutocompletePredictions(viewController: GMSAutocompleteViewController!) {
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+    }
+    
+    func didUpdateAutocompletePredictions(viewController: GMSAutocompleteViewController!) {
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+    }
+    
 }

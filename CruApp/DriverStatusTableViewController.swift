@@ -60,7 +60,7 @@ class DriverStatusTableViewController: UITableViewController {
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("GivingRideCell", forIndexPath: indexPath) as! DriverViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("GivingRideCell", forIndexPath: indexPath) as! DriverStatusViewCell
         let driver = driversCollection[indexPath.row]
         
         cell.name.text = "Driver's Name: " + driver.name

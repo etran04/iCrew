@@ -46,6 +46,8 @@ class EventsViewController: UITableViewController {
             self.menuButton.action = "revealToggle:"
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
+        print("minisitries -")
+        print(ministryCollection.count)
     }
     
     //obtain information from the database to an Object
@@ -172,6 +174,7 @@ class EventsViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("EventCell", forIndexPath: indexPath) as! EventViewCell
+        
         let event = eventsCollection[indexPath.row]
 
         cell.eventName.text = event.name

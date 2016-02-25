@@ -13,12 +13,23 @@ class UserProfile {
     
     static let coreDataManagedContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     
+    class func saveContext() {
+        do {
+            try self.coreDataManagedContext!.save()
+        }
+        catch let error as NSError {
+            print(error.localizedDescription)
+        }
+    }
+    
     class func addCampus(campus: CampusData) {
         let entity = NSEntityDescription.entityForName("Campus", inManagedObjectContext: coreDataManagedContext!)
         let campusObj = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: coreDataManagedContext!)
         
         campusObj.setValue(campus.name, forKey: "name")
         campusObj.setValue(campus.id, forKey: "id")
+        
+        saveContext()
     }
     
     class func addMinistry(ministry: MinistryData) {
@@ -28,52 +39,28 @@ class UserProfile {
         ministryObj.setValue(ministry.name, forKey: "name")
         ministryObj.setValue(ministry.campusId, forKey: "campusId")
         ministryObj.setValue(ministry.id, forKey: "id")
-    }
-    
-    class func initialUsage() {
-        let entity = NSEntityDescription.entityForName("InitialUsage", inManagedObjectContext: coreDataManagedContext!)
-        let initialObj = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: coreDataManagedContext!)
         
-        initialObj.setValue(false, forKey: "firstTime")
+        saveContext()
     }
     
-    class func isFirstTime() -> Bool {
-        let fetchRequest = NSFetchRequest(entityName: "InitialUsage")
+    class func removeObjects(entityName: String) {
+        let fetchRequest = NSFetchRequest(entityName: entityName)
         
         do {
             let fetchedResult = try coreDataManagedContext!.executeFetchRequest(fetchRequest) as? [NSManagedObject]
             
-            return fetchedResult?.count == 0;
+            if let ministries = fetchedResult {
+                for ministry in ministries {
+                    coreDataManagedContext?.deleteObject(ministry)
+                }
+            }
         }
-        catch {
-            print("Unable to fetch")
-        }
-        
-        return false;
-    }
-    
-    class func removeCampuses() {
-        let fetchRequest = NSFetchRequest(entityName: "Campus")
-        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
-        
-        do {
-            try coreDataManagedContext?.persistentStoreCoordinator!.executeRequest(deleteRequest, withContext: coreDataManagedContext!)
-        } catch let error as NSError {
+        catch let error as NSError {
             // TODO: handle the error
             print(error)
         }
-    }
-    
-    class func removeMinistries() {
-        let fetchRequest = NSFetchRequest(entityName: "Ministry")
-        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
-        
-        do {
-            try coreDataManagedContext?.persistentStoreCoordinator!.executeRequest(deleteRequest, withContext: coreDataManagedContext!)
-        } catch let error as NSError {
-            // TODO: handle the error
-            print(error)
-        }
+        saveContext()
+        print("removed ministries: \(getMinistries().count)")
     }
     
     class func getCampuses() -> [CampusData] {
@@ -98,7 +85,6 @@ class UserProfile {
             print("Unable to fetch")
         }
         
-        dump(results)
         return results;
     }
     

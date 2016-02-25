@@ -306,5 +306,45 @@ class EventDetailsViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    @IBAction func rideSharePressed(sender: AnyObject) {
+        
+            //Create the AlertController
+            let actionSheetController: UIAlertController = UIAlertController(title: eventTitle.text!, message: "What would you like for the event?", preferredStyle: .ActionSheet)
+        
+            //Create and add the Cancel action
+            let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: .Cancel) { action -> Void in
+                //Just dismiss the action sheet
+            }
+            actionSheetController.addAction(cancelAction)
+        
+            //Create and add first option action
+            let offerRideAction: UIAlertAction = UIAlertAction(title: "Offer a ride", style: .Default)
+                { action -> Void in
+                    print("offer a ride selected")
+                    //                self.tableController.performSegueWithIdentifier("segue_setup_customer", sender: self)
+                    //                let tabController = self.tableController.tabBarController
+                    //                tabController?.transitionFromViewController(self.tableController, toViewController: DriverQuestionaireVC(), duration: 2, options: UIViewAnimationOptions.CurveEaseIn, animations: nil, completion: nil)
+        
+            }
+            actionSheetController.addAction(offerRideAction)
+        
+            //Create and add a second option action
+            let requestRideAction: UIAlertAction = UIAlertAction(title: "Request a ride", style: .Default)
+                { action -> Void in
+                    print("request a ride selected")
+        
+                    //                self.tableController.performSegueWithIdentifier("segue_setup_provider", sender: self)
+        
+            }
+            actionSheetController.addAction(requestRideAction)
+        
+            //We need to provide a popover sourceView when using it on iPad
+            actionSheetController.popoverPresentationController?.sourceView = sender as! UIView
+            
+            //Present the AlertController
+            self.presentViewController(actionSheetController, animated: true, completion: nil)
+        
+    }
 
 }

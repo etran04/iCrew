@@ -49,6 +49,7 @@
 		83244B761C7579F000D913A6 /* MinistryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83244B751C7579F000D913A6 /* MinistryData.swift */; };
 		83244B7D1C759E2D00D913A6 /* InitialUsage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83244B7B1C759E2D00D913A6 /* InitialUsage.swift */; };
 		83244B801C75AD9400D913A6 /* SidebarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83244B7F1C75AD9400D913A6 /* SidebarTableViewController.swift */; };
+		83688B771C7F71E300470442 /* InitalScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83688B761C7F71E300470442 /* InitalScreenVC.swift */; };
 		838564F51C0D9EDF00EB1728 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 838564F41C0D9EDF00EB1728 /* SWRevealViewController.m */; };
 		839F64411C0D4E4300CAEC9E /* Cru-Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 839F643B1C0D4E4300CAEC9E /* Cru-Logo.png */; };
 		839F64421C0D4E4300CAEC9E /* Home-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 839F643C1C0D4E4300CAEC9E /* Home-25.png */; };
@@ -239,6 +240,7 @@
 		83244B751C7579F000D913A6 /* MinistryData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinistryData.swift; sourceTree = "<group>"; };
 		83244B7B1C759E2D00D913A6 /* InitialUsage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialUsage.swift; sourceTree = "<group>"; };
 		83244B7F1C75AD9400D913A6 /* SidebarTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidebarTableViewController.swift; sourceTree = "<group>"; };
+		83688B761C7F71E300470442 /* InitalScreenVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitalScreenVC.swift; sourceTree = "<group>"; };
 		838564F21C0D9EDF00EB1728 /* CruApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CruApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		838564F31C0D9EDF00EB1728 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		838564F41C0D9EDF00EB1728 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
@@ -452,6 +454,7 @@
 				271C78221C5044B100F42EA0 /* InitialCampusTableViewCell.swift */,
 				279327041C50A0EC00BAC73D /* InitialMinistryTableViewController.swift */,
 				279327061C50A10500BAC73D /* InitialMinistryTableViewCell.swift */,
+				83688B761C7F71E300470442 /* InitalScreenVC.swift */,
 			);
 			name = Initial;
 			sourceTree = "<group>";
@@ -926,6 +929,7 @@
 				A487BBEF1C6353A5006F9B3C /* DriverStatusViewCell.swift in Sources */,
 				A441CE801C7A957500663057 /* Resource.swift in Sources */,
 				83B1CB101C4856BC00145B6D /* CoreDataModel.xcdatamodeld in Sources */,
+				83688B771C7F71E300470442 /* InitalScreenVC.swift in Sources */,
 				1E37E7261C0E362D0054607A /* Event.swift in Sources */,
 				1E37E72A1C0E362D0054607A /* VideosTableViewController.swift in Sources */,
 				83B1CB291C48880A00145B6D /* UserProfile.swift in Sources */,

@@ -17,8 +17,15 @@ class EventViewCell: UITableViewCell {
     @IBOutlet weak var eventStartTime: UILabel!
     @IBOutlet weak var eventDayDate: UILabel!
     @IBOutlet weak var eventMonthDate: UILabel!
-    @IBOutlet weak var rideshareButton: UIButton!
-
+    
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: .Default, reuseIdentifier: reuseIdentifier)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        //fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -43,20 +50,5 @@ class EventViewCell: UITableViewCell {
         //self.cardView.layer.shadowPath = path.CGPath;
         //self.cardView.layer.shadowOpacity = 0.2;
         
-    }
-
-    @IBAction func ridesharePressed(sender: AnyObject) {
-        let eventsTV = sender.superview! as! UITableView
-        let eventsTVC = eventsTV.dataSource as! UITableViewController
-        
-        let tvcInside = UITableViewController()
-        tvcInside.modalPresentationStyle = UIModalPresentationStyle.Popover
-        tvcInside.preferredContentSize = CGSizeMake(400, 400)
-        
-        eventsTVC.presentViewController(tvcInside, animated: true, completion: nil)
-        
-        let popoverPresentationController = tvcInside.popoverPresentationController
-        popoverPresentationController?.sourceView = sender as? UIView
-        popoverPresentationController?.sourceRect = CGRectMake(0, 0, sender.frame.size.width, sender.frame.size.height)
     }
 }

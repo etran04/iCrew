@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="APQ-AE-Llv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="APQ-AE-Llv">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
         <!--Ride Share-->
@@ -13,7 +13,6 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="474-eW-T6t">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
                     </navigationBar>
                     <connections>
                         <segue destination="LbC-g2-YCA" kind="relationship" relationship="rootViewController" id="nsx-0u-ZUQ"/>
@@ -37,7 +36,6 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pCH-ME-f3u" userLabel="passengerButton">
                                 <rect key="frame" x="283" y="300" width="50" height="50"/>
-                                <animations/>
                                 <state key="normal" title="Button" image="Passenger-52.png"/>
                                 <connections>
                                     <segue destination="8jq-wk-qcF" kind="show" id="UBx-bp-3my"/>
@@ -45,7 +43,6 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Phz-Wy-id6" userLabel="driverButton">
                                 <rect key="frame" x="160" y="279" width="54" height="71"/>
-                                <animations/>
                                 <state key="normal" title="Button" image="Filled-Car-100.png"/>
                                 <connections>
                                     <segue destination="XGh-21-Tdj" kind="show" id="MUA-JC-Sw1"/>
@@ -53,35 +50,30 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="driver" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FFo-xV-qlN">
                                 <rect key="frame" x="165" y="358" width="44" height="21"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="passenger" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wkx-EL-cAx">
                                 <rect key="frame" x="268" y="358" width="81" height="21"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mrG-Vi-acE">
                                 <rect key="frame" x="37" y="358" width="48" height="21"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q66-yO-yn8" userLabel="statusButton">
                                 <rect key="frame" x="36" y="300" width="50" height="50"/>
-                                <animations/>
                                 <state key="normal" title="Button" image="Checked Checkbox 2-48.png"/>
                                 <connections>
                                     <segue destination="MvV-tC-19N" kind="show" id="pSQ-4o-JPK"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Ride Share" id="vP6-Nb-uiC">
@@ -107,25 +99,21 @@
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Full Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bl2-LZ-llE">
                                 <rect key="frame" x="21" y="80" width="334" height="30"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hZq-Z4-O2w">
                                 <rect key="frame" x="21" y="123" width="334" height="30"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Choose Event..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ReG-yo-ycE">
                                 <rect key="frame" x="20" y="173" width="335" height="30"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZIX-m8-ygQ">
                                 <rect key="frame" x="163" y="587" width="49" height="30"/>
-                                <animations/>
                                 <state key="normal" title="Submit"/>
                                 <connections>
                                     <segue destination="WiO-dx-ez4" kind="show" id="8O1-bA-cBH"/>
@@ -133,25 +121,21 @@
                             </button>
                             <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="15" translatesAutoresizingMaskIntoConstraints="NO" id="zlP-s3-b8q">
                                 <rect key="frame" x="0.0" y="339" width="375" height="216"/>
-                                <animations/>
                                 <date key="date" timeIntervalSinceReferenceDate="476743196.22799498">
                                     <!--2016-02-09 20:39:56 +0000-->
                                 </date>
                             </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Earliest departure time:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mo6-fW-vzP">
                                 <rect key="frame" x="20" y="310" width="179" height="21"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LX3-0z-keB" customClass="CheckmarkSegmentedControl" customModule="CheckmarkSegmentedControl">
                                 <rect key="frame" x="14" y="221" width="346" height="72"/>
-                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="pjI-Vr-zj1" firstAttribute="top" secondItem="ZIX-m8-ygQ" secondAttribute="bottom" constant="32" id="0i5-av-dPY"/>
@@ -176,38 +160,32 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="91" sectionHeaderHeight="28" sectionFooterHeight="28" id="1g2-uB-Lmo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SelectRideCell" rowHeight="91" id="baP-U1-tyi" userLabel="SelectDriverCell" customClass="SelectDriverTableViewCell" customModule="CruApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="91"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="baP-U1-tyi" id="GeM-z5-BZ3">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="90.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Filled-Car-100.png" translatesAutoresizingMaskIntoConstraints="NO" id="JWs-rd-B7W">
                                             <rect key="frame" x="24" y="8" width="59" height="64"/>
-                                            <animations/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MU2-rT-spB" userLabel="Driver Name">
                                             <rect key="frame" x="119" y="19" width="191" height="21"/>
-                                            <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gZ2-Mp-SUF" userLabel="available seats">
                                             <rect key="frame" x="119" y="50" width="191" height="21"/>
-                                            <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <animations/>
                                 </tableViewCellContentView>
-                                <animations/>
                                 <connections>
                                     <outlet property="availableSeats" destination="gZ2-Mp-SUF" id="Q3N-oC-kvZ"/>
                                     <outlet property="driverName" destination="MU2-rT-spB" id="i7l-Eq-VxI"/>
@@ -240,28 +218,24 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Success!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EUt-nq-qqW">
                                 <rect key="frame" x="144" y="117" width="70" height="21"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your driver is...." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GiK-NV-EJe">
                                 <rect key="frame" x="35" y="174" width="119" height="21"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bhY-29-XzC" userLabel="driverName">
                                 <rect key="frame" x="35" y="243" width="310" height="21"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qh3-4g-6re">
                                 <rect key="frame" x="164" y="507" width="30" height="30"/>
-                                <animations/>
                                 <state key="normal" title="OK"/>
                                 <connections>
                                     <segue destination="LbC-g2-YCA" kind="show" id="xsW-fa-Wnp"/>
@@ -269,13 +243,11 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Phone Number:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RqU-Y6-0xg" userLabel="driverNumber">
                                 <rect key="frame" x="35" y="311" width="120" height="21"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -302,18 +274,15 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Thank You For Signing Up As a Driver" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LLe-a6-9FX">
                                 <rect key="frame" x="44" y="142" width="286" height="225"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="46"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kj1-Yj-xpm">
                                 <rect key="frame" x="172" y="542" width="30" height="30"/>
-                                <animations/>
                                 <state key="normal" title="OK"/>
                             </button>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -329,34 +298,29 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="78" sectionHeaderHeight="28" sectionFooterHeight="28" id="bxC-YV-SBk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GivingRideCell" rowHeight="78" id="PFd-LG-Vna" customClass="DriverViewCell" customModule="CruApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="78"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PFd-LG-Vna" id="g1i-kM-b6H">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="77"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="77.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NtQ-QC-DQ4">
                                             <rect key="frame" x="26" y="16" width="314" height="21"/>
-                                            <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rmw-AT-BRK" userLabel="seats">
                                             <rect key="frame" x="26" y="48" width="314" height="21"/>
-                                            <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <animations/>
                                 </tableViewCellContentView>
-                                <animations/>
                                 <connections>
                                     <outlet property="name" destination="NtQ-QC-DQ4" id="Log-Hy-DKP"/>
                                     <outlet property="numOfSeats" destination="Rmw-AT-BRK" id="Qd5-UB-eL6"/>
@@ -388,24 +352,20 @@
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Full Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eKU-eu-CTc" userLabel="Full Name Text Field">
                                 <rect key="frame" x="8" y="77" width="347" height="30"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Events" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eEA-OW-REb">
                                 <rect key="frame" x="8" y="169" width="347" height="30"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="moz-F5-2Rc" customClass="CheckmarkSegmentedControl" customModule="CheckmarkSegmentedControl">
                                 <rect key="frame" x="20" y="212" width="346" height="72"/>
-                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fAq-61-Run">
                                 <rect key="frame" x="163" y="595" width="49" height="30"/>
-                                <animations/>
                                 <state key="normal" title="Submit"/>
                                 <connections>
                                     <action selector="submitPressed:" destination="XGh-21-Tdj" eventType="touchUpInside" id="X7N-K5-93s"/>
@@ -413,37 +373,42 @@
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tig-dT-5Zz" userLabel="Phone Number Text Field">
                                 <rect key="frame" x="8" y="123" width="347" height="30"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="# Available Seats" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ie9-S6-4H8">
                                 <rect key="frame" x="8" y="348" width="347" height="30"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ideal Departure Time:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jb8-LU-m2Q">
                                 <rect key="frame" x="8" y="394" width="166" height="21"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="15" translatesAutoresizingMaskIntoConstraints="NO" id="oSc-je-Uyx">
                                 <rect key="frame" x="8" y="423" width="358" height="170"/>
-                                <animations/>
                                 <date key="date" timeIntervalSinceReferenceDate="476743478.4443">
                                     <!--2016-02-09 20:44:38 +0000-->
                                 </date>
                             </datePicker>
-                            <searchBar contentMode="redraw" fixedFrame="YES" text="" translatesAutoresizingMaskIntoConstraints="NO" id="boB-Qs-8h8">
-                                <rect key="frame" x="8" y="293" width="347" height="44"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YDh-BL-vQQ">
+                                <rect key="frame" x="8" y="304" width="99" height="30"/>
                                 <animations/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
+                                <state key="normal" title="Enter Location"/>
+                                <connections>
+                                    <action selector="autocompleteClicked:" destination="XGh-21-Tdj" eventType="touchUpInside" id="ebi-AE-hkB"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hPn-Fa-StR">
+                                <rect key="frame" x="115" y="308" width="240" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -452,6 +417,7 @@
                         <outlet property="driverFullName" destination="eKU-eu-CTc" id="R0Q-Lh-qhT"/>
                         <outlet property="driverPhoneNumber" destination="tig-dT-5Zz" id="8UR-Hk-UsS"/>
                         <outlet property="eventsChoice" destination="eEA-OW-REb" id="ALo-fS-S83"/>
+                        <outlet property="locationLabel" destination="hPn-Fa-StR" id="4sy-H7-jhb"/>
                         <outlet property="numSeatsAvailChoice" destination="Ie9-S6-4H8" id="Zrm-R3-qgd"/>
                         <segue destination="LbC-g2-YCA" kind="show" identifier="finishQuestionaire" animates="NO" id="0cg-yg-gAR"/>
                     </connections>

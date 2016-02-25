@@ -151,23 +151,19 @@ class InitialMinistryTableViewController: UITableViewController {
         if (UIDevice.currentDevice().userInterfaceIdiom == .Pad)
         {
             self.popViewController = PopUpViewControllerSwift(nibName: "PopUpViewController_iPad", bundle: bundle)
-            self.popViewController.title = "This is a popup view"
             self.popViewController.showInView(self.view, withImage: image, withMessage: ministriesCollection[sender.tag].description, animated: true)
         } else
         {
             if UIScreen.mainScreen().bounds.size.width > 320 {
                 if UIScreen.mainScreen().scale == 3 {
                     self.popViewController = PopUpViewControllerSwift(nibName: "PopUpViewController_iPhone6Plus", bundle: bundle)
-                    self.popViewController.title = "This is a popup view"
                     self.popViewController.showInView(self.view, withImage: image, withMessage: ministriesCollection[sender.tag].description, animated: true)
                 } else {
                     self.popViewController = PopUpViewControllerSwift(nibName: "PopUpViewController_iPhone6", bundle: bundle)
-                    self.popViewController.title = "This is a popup view"
                     self.popViewController.showInView(self.view, withImage: image, withMessage: ministriesCollection[sender.tag].description, animated: true)
                 }
             } else {
                 self.popViewController = PopUpViewControllerSwift(nibName: "PopUpViewController", bundle: bundle)
-                self.popViewController.title = "This is a popup view"
                 self.popViewController.showInView(self.view, withImage: image, withMessage: ministriesCollection[sender.tag].description, animated: true)
             }
         }

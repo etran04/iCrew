@@ -10,9 +10,6 @@ import UIKit
 
 class InitialCampusTableViewController: UITableViewController {
     
-    var popViewController : PopUpViewControllerSwift!
-
-    //var test: [String] = ["Cal Poly", "UCSB"] //
     var campusCollection = [CampusData]()
     var selectedIndices: [Int] = []
     

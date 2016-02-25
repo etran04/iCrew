@@ -1,16 +1,14 @@
 //
-//  DriverTableViewController.swift
+//  RideShareStatusTableViewController.swift
 //  CruApp
 //
-//  Created by Tammy Kong on 2/4/16.
+//  Created by Tammy Kong on 2/25/16.
 //  Copyright © 2016 iCrew. All rights reserved.
 //
 
 import UIKit
 
-class DriverTableViewController: UITableViewController {
-
-    var driversCollection = [Driver]()
+class RideShareStatusTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,27 +18,8 @@ class DriverTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        
-        var dbClient: DBClient!
-        dbClient = DBClient()
-        dbClient.getData("ride", dict: setDrivers)
     }
 
-    func setDrivers(driver:NSDictionary) {
-        var numOfSeats : Int
-        let name = driver["driverName"] as! String
-        if(driver["seats"] == nil) {
-            numOfSeats = 0
-        }
-        else {
-        
-            numOfSeats = driver["seats"] as! Int
-        }
-        let driverObj = Driver(name: name, numOfSeats: numOfSeats)
-        driversCollection.append(driverObj)
-        self.tableView.reloadData()
-    }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -50,28 +29,23 @@ class DriverTableViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 2
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return driversCollection.count
+        return 10
     }
 
-    
+    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("GivingRideCell", forIndexPath: indexPath) as! DriverViewCell
-        let driver = driversCollection[indexPath.row]
-        
-        cell.name.text = "Driver's Name: " + driver.name
-        cell.numOfSeats.text = "Number Of Seats: " + String(driver.numOfSeats)
-        
-        
+        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+
         // Configure the cell...
 
         return cell
     }
-
+    */
 
     /*
     // Override to support conditional editing of the table view.

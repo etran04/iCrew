@@ -64,18 +64,19 @@ class SidebarTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let storyboard = UIStoryboard(name: "Initial", bundle: nil)
+        let navController = storyboard.instantiateViewControllerWithIdentifier("initialNavController") as! UINavigationController
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
         //go to select ministry screen
         if (indexPath.row == 0) {
             let vc = storyboard.instantiateViewControllerWithIdentifier("ministryViewController") as! UITableViewController
-            let navController = storyboard.instantiateViewControllerWithIdentifier("initialNavController") as! UINavigationController
+            
             navController.showViewController(vc, sender: navController)
-            self.presentViewController(navController, animated: true, completion: nil)
+            appDelegate.window?.rootViewController = navController;
         }
         //go to select campus screen
         else if (indexPath.row == 1) {
-            let navController = storyboard.instantiateViewControllerWithIdentifier("initialNavController") as! UINavigationController
-            self.presentViewController(navController, animated: true, completion: nil)
+            appDelegate.window?.rootViewController = navController;
         }
         //go to login screen
         else {

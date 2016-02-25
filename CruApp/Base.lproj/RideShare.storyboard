@@ -393,10 +393,21 @@
                                     <!--2016-02-09 20:44:38 +0000-->
                                 </date>
                             </datePicker>
-                            <searchBar contentMode="redraw" fixedFrame="YES" text="" translatesAutoresizingMaskIntoConstraints="NO" id="boB-Qs-8h8">
-                                <rect key="frame" x="8" y="293" width="347" height="44"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YDh-BL-vQQ">
+                                <rect key="frame" x="8" y="304" width="99" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Enter Location"/>
+                                <connections>
+                                    <action selector="autocompleteClicked:" destination="XGh-21-Tdj" eventType="touchUpInside" id="ebi-AE-hkB"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hPn-Fa-StR">
+                                <rect key="frame" x="115" y="308" width="240" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -406,6 +417,7 @@
                         <outlet property="driverFullName" destination="eKU-eu-CTc" id="R0Q-Lh-qhT"/>
                         <outlet property="driverPhoneNumber" destination="tig-dT-5Zz" id="8UR-Hk-UsS"/>
                         <outlet property="eventsChoice" destination="eEA-OW-REb" id="ALo-fS-S83"/>
+                        <outlet property="locationLabel" destination="hPn-Fa-StR" id="4sy-H7-jhb"/>
                         <outlet property="numSeatsAvailChoice" destination="Ie9-S6-4H8" id="Zrm-R3-qgd"/>
                         <segue destination="LbC-g2-YCA" kind="show" identifier="finishQuestionaire" animates="NO" id="0cg-yg-gAR"/>
                     </connections>

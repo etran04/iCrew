@@ -9,24 +9,24 @@
 import UIKit
 import SafariServices
 
-/* URLResources is a inner class to hold metadata for a single article or a single tool */
-class URLResources {
-    private var name: String?
-    private var url: String?
-    
-    init(name: String, url: String) {
-        self.name = name
-        self.url = url
-    }
-    
-    func getName() -> String {
-        return self.name!
-    }
-    
-    func getURL() -> String {
-        return self.url!
-    }
-}
+///* URLResources is a inner class to hold metadata for a single article or a single tool */
+//class URLResources {
+//    private var name: String?
+//    private var url: String?
+//    
+//    init(name: String, url: String) {
+//        self.name = name
+//        self.url = url
+//    }
+//    
+//    func getName() -> String {
+//        return self.name!
+//    }
+//    
+//    func getURL() -> String {
+//        return self.url!
+//    }
+//}
 
 /* ArticlesTableVC is the screen that holds all articles for user to view */
 class ArticlesTableViewController: UITableViewController {
@@ -38,7 +38,7 @@ class ArticlesTableViewController: UITableViewController {
     var indicator = UIActivityIndicatorView()
     
     /* Holds all articles to be displayed */
-    var articles = [URLResources]()
+    var articles = [Article]()
     
     /* Called when the current view is loaded */
     override func viewDidLoad() {
@@ -46,9 +46,9 @@ class ArticlesTableViewController: UITableViewController {
         self.setUpLoadSpinner()
         
         /* Sets up the database */
-        //var dbClient: DBClient!
-        //dbClient = DBClient()
-        //dbClient.getData("event", dict: loadArticles)
+        var dbClient: DBClient!
+        dbClient = DBClient()
+        dbClient.getData("resource", dict: loadArticles)
         self.loadArticles()
     }
 
@@ -99,14 +99,22 @@ class ArticlesTableViewController: UITableViewController {
             presentViewController(vc, animated: false, completion: nil)
         }
     }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
 
     /* Populates our articles from the Cru database */
-    func loadArticles() {
+    func loadArticles(articles : NSDictionary) {
+        //for article in articles {
         
-        self.articles += [
-            URLResources(name: "The Purpose of Prayer",
-                url: "http://www.cru.org/train-and-grow/10-basic-steps/4-prayer.html")
-        ]
+        let title = article["title"]
+        let url = article["url"]
+        let tags = article["tag"]
+        let type = article["type"]
+            
+        let articleObj = Article(url, type, title, tags)
+        articles.append(articleObj)
         
         self.indicator.stopAnimating()
     }

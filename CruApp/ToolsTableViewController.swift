@@ -18,7 +18,7 @@ class ToolsTableViewController: UITableViewController {
     var indicator = UIActivityIndicatorView()
     
     /* Holds all tools to be displayed */
-    var tools = [URLResources]()
+    var tools = [Article]()
     
     /* Called when the current view is loaded */
     override func viewDidLoad() {
@@ -94,13 +94,13 @@ class ToolsTableViewController: UITableViewController {
     /* Loads each cell in the table with a link */
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("ToolCell", forIndexPath: indexPath) as! ToolTableViewCell
-        cell.setName(tools[indexPath.row].getName())
+        cell.setName(tools[indexPath.row].title)
         return cell
     }
     
     /* Callback for when a link is clicked */
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        showLink(tools[indexPath.row].getURL())
+        showLink(tools[indexPath.row].url)
     }
     
     /* Callback for when a cell is individually displayed */

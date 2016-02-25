@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-struct Article {
+struct Resource {
     var url: String
     var type: String
     var title: String

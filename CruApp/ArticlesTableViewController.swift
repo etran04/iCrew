@@ -107,15 +107,15 @@ class ArticlesTableViewController: UITableViewController {
     /* Populates our articles from the Cru database */
     func loadArticles(articles : NSDictionary) {
         //for article in articles {
-        
-        let title = article["title"]
-        let url = article["url"]
-        let tags = article["tag"]
-        let type = article["type"]
+        if(article["type"] == "Article") {
+            let title = article["title"]
+            let url = article["url"]
+            let tags = article["tag"]
+            let type = article["type"]
             
-        let articleObj = Article(url, type, title, tags)
-        articles.append(articleObj)
-        
+            let articleObj = Article(url, type, title, tags)
+            articles.append(articleObj)
+        }
         self.indicator.stopAnimating()
     }
     

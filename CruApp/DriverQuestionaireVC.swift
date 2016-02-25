@@ -191,7 +191,7 @@ extension DriverQuestionaireVC: GMSAutocompleteViewControllerDelegate {
         print("Place name: ", place.name)
         print("Place address: ", place.formattedAddress)
         print("Place attributions: ", place.attributions)
-        self.locationLabel.text = place.name + " " + place.formattedAddress!
+        self.locationLabel.text = place.formattedAddress!
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     

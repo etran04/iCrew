@@ -28,6 +28,8 @@ class UserProfile {
         
         campusObj.setValue(campus.name, forKey: "name")
         campusObj.setValue(campus.id, forKey: "id")
+        
+        saveContext()
     }
     
     class func addMinistry(ministry: MinistryData) {
@@ -37,6 +39,8 @@ class UserProfile {
         ministryObj.setValue(ministry.name, forKey: "name")
         ministryObj.setValue(ministry.campusId, forKey: "campusId")
         ministryObj.setValue(ministry.id, forKey: "id")
+        
+        saveContext()
     }
     
     class func removeObjects(entityName: String) {

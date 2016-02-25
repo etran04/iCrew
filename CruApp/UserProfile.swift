@@ -59,8 +59,8 @@ class UserProfile {
             // TODO: handle the error
             print(error)
         }
+        
         saveContext()
-        print("removed ministries: \(getMinistries().count)")
     }
     
     class func getCampuses() -> [CampusData] {

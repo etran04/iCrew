@@ -15,26 +15,17 @@ class InitialCampusTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        //set up database
+        var dbClient: DBClient!
+        dbClient = DBClient()
+        dbClient.getData("campus", dict: setCampuses)
         
-        if (!UserProfile.isFirstTime() && UserProfile.getCampuses().count > 0) {
-//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//            let vc = storyboard.instantiateViewControllerWithIdentifier("mainRootViewController") as! SWRevealViewController
-//            self.presentViewController(vc, animated: false, completion: nil)
-        }
-        else {
-            UserProfile.initialUsage()
-            
-            //set up database
-            var dbClient: DBClient!
-            dbClient = DBClient()
-            dbClient.getData("campus", dict: setCampuses)
-            
-            //remove extra separators
-            self.tableView.tableFooterView = UIView()
-            
-            //set empty back button
-            self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.Plain, target:nil, action:nil)
-        }
+        //remove extra separators
+        self.tableView.tableFooterView = UIView()
+        
+        //set empty back button
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.Plain, target:nil, action:nil)
     }
     
     func setCampuses(campus:NSDictionary) {

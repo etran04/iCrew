@@ -30,28 +30,6 @@ class UserProfile {
         ministryObj.setValue(ministry.id, forKey: "id")
     }
     
-    class func initialUsage() {
-        let entity = NSEntityDescription.entityForName("InitialUsage", inManagedObjectContext: coreDataManagedContext!)
-        let initialObj = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: coreDataManagedContext!)
-        
-        initialObj.setValue(false, forKey: "firstTime")
-    }
-    
-    class func isFirstTime() -> Bool {
-        let fetchRequest = NSFetchRequest(entityName: "InitialUsage")
-        
-        do {
-            let fetchedResult = try coreDataManagedContext!.executeFetchRequest(fetchRequest) as? [NSManagedObject]
-            
-            return fetchedResult?.count == 0;
-        }
-        catch {
-            print("Unable to fetch")
-        }
-        
-        return false;
-    }
-    
     class func removeCampuses() {
         let fetchRequest = NSFetchRequest(entityName: "Campus")
         let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)

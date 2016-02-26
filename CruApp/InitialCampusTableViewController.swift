@@ -10,6 +10,8 @@ import UIKit
 
 class InitialCampusTableViewController: UITableViewController {
     
+    @IBOutlet weak var nextButton: UIBarButtonItem!
+    
     var campusCollection = [CampusData]()
     var selectedIndices: [Int] = []
     
@@ -26,6 +28,7 @@ class InitialCampusTableViewController: UITableViewController {
         
         //set empty back button
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.Plain, target:nil, action:nil)
+        self.nextButton.enabled = false
     }
     
     func setCampuses(campus:NSDictionary) {
@@ -80,6 +83,8 @@ class InitialCampusTableViewController: UITableViewController {
             cell.accessoryType = UITableViewCellAccessoryType.None
             selectedIndices.removeAtIndex(selectedIndices.indexOf(indexPath.row)!)
         }
+        
+        nextButton.enabled = selectedIndices.count > 0
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

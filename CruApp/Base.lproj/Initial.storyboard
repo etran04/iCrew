@@ -57,6 +57,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="nextButton" destination="Pus-CN-bdd" id="M0f-xj-TCM"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="exy-8O-3Jh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -130,6 +133,9 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="nextButton" destination="iXx-d1-viQ" id="7hV-iQ-QyE"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wzV-Q2-tN9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

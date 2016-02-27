@@ -230,7 +230,7 @@
                         <barButtonItem key="rightBarButtonItem" image="rideShareIcon.png" id="fSa-g9-8Ay">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <action selector="rideSharePressed:" destination="UuB-8l-udZ" id="5bh-KT-yoC"/>
+                                <action selector="rideSharePressed:" destination="UuB-8l-udZ" id="4MM-XL-Wh8"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

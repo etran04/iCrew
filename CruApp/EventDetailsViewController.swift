@@ -10,7 +10,7 @@ import UIKit
 import EventKit
 import SafariServices
 
-class EventDetailsViewController: UIViewController {
+class EventDetailsViewController: UIViewController, UIPopoverPresentationControllerDelegate {
     @IBOutlet weak var eventImage: UIImageView!     //image banner for the event
     @IBOutlet weak var eventTitle: UILabel!         //title of the event
     @IBOutlet weak var eventLocation: UILabel!      //location of the event
@@ -296,18 +296,29 @@ class EventDetailsViewController: UIViewController {
         presentViewController(alert, animated: true, completion: nil)
     }
     
-    // MARK: - Navigation
+    
+    @IBAction func rideSharePressed(sender: UIBarButtonItem) {
+//        print("here")
+//        
+//        let vc = UIAlertController(title: "Test", message: "testing", preferredStyle: UIAlertControllerStyle.ActionSheet)
+//        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
+//        vc.modalPresentationStyle = .Popover
+//        vc.addAction(okAction)
+//        if let popover = vc.popoverPresentationController {
+//            popover.barButtonItem = sender
+//            popover.sourceView = self.view
+//            print("here 2")
+//        }
+//        self.presentViewController(vc, animated: true, completion: nil)
 
-    
-    /*
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
-    @IBAction func rideSharePressed(sender: AnyObject) {
+//        presentViewController(alert, animated: true, completion: nil)
+////        vc.modalPresentationStyle = UIModalPresentationStyle.Popover
+////        let popover: UIPopoverPresentationController = vc.popoverPresentationController?
+////        popover?.sourceView = selectedCell?.contentView
+////        popover?.sourceRect = selectedCell!.contentView.frame
+//        popover.barButtonItem = sender
+////        popover.delegate = self
+//        presentViewController(vc, animated: true, completion:nil)
         
             //Create the AlertController
             let actionSheetController: UIAlertController = UIAlertController(title: eventTitle.text!, message: "What would you like for the event?", preferredStyle: .ActionSheet)
@@ -346,5 +357,5 @@ class EventDetailsViewController: UIViewController {
             self.presentViewController(actionSheetController, animated: true, completion: nil)
         
     }
-
+    
 }

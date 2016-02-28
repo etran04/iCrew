@@ -110,10 +110,10 @@ class ArticlesTableViewController: UITableViewController {
         
         //TODO: need to implement find to grab type=Article
         let type = article["type"] as! String
-        if(type == "Article") {
+        if(type == "article") {
             let title = article["title"] as! String
             let url = article["url"] as! String
-            let tags = article["tag"] as! [String]
+            let tags = article["tags"] as! [String]
             
             let articleObj = Resource(url : url, type : type, title : title, tags : tags)
             articles.append(articleObj)

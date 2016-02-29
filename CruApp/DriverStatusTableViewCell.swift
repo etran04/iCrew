@@ -10,10 +10,7 @@ import UIKit
 
 class DriverStatusViewCell: UITableViewCell {
 
-
-    @IBOutlet weak var name: UILabel!
     
-    @IBOutlet weak var numOfSeats: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

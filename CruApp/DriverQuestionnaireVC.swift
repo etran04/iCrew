@@ -13,7 +13,7 @@ import Alamofire
 import GoogleMaps
 
 /* This class is used to gather information from a potential driver of the RideShare feature */
-class DriverQuestionaireVC: UIViewController {
+class DriverQuestionngaireVC: UIViewController {
 
     /* constants for setting up datepicker in ideal pickup time */
     let IDEAL_TIME_INTERVAL = 15

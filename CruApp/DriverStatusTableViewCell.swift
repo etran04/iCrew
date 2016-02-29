@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DriverStatusViewCell: UITableViewCell {
+class DriverStatusTableViewCell: UITableViewCell {
 
     
     override func awakeFromNib() {

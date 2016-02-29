@@ -74,12 +74,24 @@ class SelectDriverTableViewController: UITableViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
+        let params = ["name": passenger.name, "direction": passenger.direction, "phone": passenger.phoneNumber, "gcm_id" : 1234567, "event": passenger.eventId]
+        
+        do {
+            let body = try NSJSONSerialization.dataWithJSONObject(params, options: NSJSONWritingOptions.PrettyPrinted)
+            var dbClient: DBClient!
+            dbClient = DBClient()
+            dbClient.addData("passenger", body : body)
+        } catch {
+            print("Error sending data to database")
+        }
+        
         let selectedDriverViewController = segue.destinationViewController as! DriverSelectedViewController
         if let selectedDriverCell = sender as? SelectDriverTableViewCell {
             let indexPath = tableView.indexPathForCell(selectedDriverCell)!
             let selectedDriver = driverCollection[indexPath.row]
             selectedDriverViewController.driver = selectedDriver
         }
+        
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         

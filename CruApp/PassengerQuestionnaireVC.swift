@@ -11,7 +11,7 @@ import DownPicker
 import CheckmarkSegmentedControl
 
 /* This class is used to gather information from a potential rider of the RideShare feature */
-class RiderQuestionaireVC: UIViewController {
+class PassengerQuestionnaireVC: UIViewController {
 
     @IBOutlet weak var passengerNumber: UITextField!
     @IBOutlet weak var passengerFullName: UITextField!

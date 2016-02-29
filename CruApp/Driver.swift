@@ -19,4 +19,6 @@ struct Driver {
         self.numOfSeats = numOfSeats
 
     }
+    
+    
 }

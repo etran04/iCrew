@@ -13,8 +13,8 @@
 		072519AD1BE9694000F38F81 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 072519AB1BE9694000F38F81 /* Main.storyboard */; };
 		072519AF1BE9694000F38F81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 072519AE1BE9694000F38F81 /* Assets.xcassets */; };
 		072519B21BE9694000F38F81 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 072519B01BE9694000F38F81 /* LaunchScreen.storyboard */; };
-		0727F9A51C5AD13000066948 /* DriverQuestionaireVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0727F9A41C5AD13000066948 /* DriverQuestionaireVC.swift */; };
-		07340BB21C5B3606002C6015 /* RiderQuestionaireVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07340BB11C5B3606002C6015 /* RiderQuestionaireVC.swift */; };
+		0727F9A51C5AD13000066948 /* DriverQuestionnaireVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0727F9A41C5AD13000066948 /* DriverQuestionnaireVC.swift */; };
+		07340BB21C5B3606002C6015 /* PassengerQuestionnaireVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07340BB11C5B3606002C6015 /* PassengerQuestionnaireVC.swift */; };
 		07340BBA1C5B36B5002C6015 /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = 07340BB91C5B36B5002C6015 /* info.png */; };
 		07AF13CB1C748ACA004C28FA /* ToolsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AF13CA1C748ACA004C28FA /* ToolsTableViewController.swift */; };
 		07AF13D31C749288004C28FA /* ToolTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AF13D21C749288004C28FA /* ToolTableViewCell.swift */; };
@@ -90,9 +90,10 @@
 		A45572FB1C4A176F0097DE0F /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45572FA1C4A176F0097DE0F /* EventDetailsViewController.swift */; };
 		A45573001C4CDAF60097DE0F /* MissionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45572FF1C4CDAF60097DE0F /* MissionViewCell.swift */; };
 		A45573021C4E219A0097DE0F /* MissionDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45573011C4E219A0097DE0F /* MissionDetailsViewController.swift */; };
-		A487BBEF1C6353A5006F9B3C /* DriverStatusViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A487BBEE1C6353A5006F9B3C /* DriverStatusViewCell.swift */; };
-		A487BBF91C63569A006F9B3C /* DriverStatusTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A487BBF81C63569A006F9B3C /* DriverStatusTableViewController.swift */; };
+		A487BBEF1C6353A5006F9B3C /* DriverStatusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A487BBEE1C6353A5006F9B3C /* DriverStatusTableViewCell.swift */; };
 		A487BBFB1C635E78006F9B3C /* Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = A487BBFA1C635E78006F9B3C /* Driver.swift */; };
+		A4A836431C83D0AA003FBD8D /* Delete-50.png in Resources */ = {isa = PBXBuildFile; fileRef = A4A836421C83D0AA003FBD8D /* Delete-50.png */; };
+		A4A8364B1C83D396003FBD8D /* PassengerStatusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A8364A1C83D396003FBD8D /* PassengerStatusTableViewCell.swift */; };
 		CBF52B4D6C6CD44BBF744548 /* Pods_CruApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD14769052309A631372632E /* Pods_CruApp.framework */; };
 		ED9C86A183880B247B3BFD34 /* Pods_CruAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4F2845EF072292DB7417694 /* Pods_CruAppTests.framework */; };
 /* End PBXBuildFile section */
@@ -192,8 +193,8 @@
 		072519AE1BE9694000F38F81 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		072519B11BE9694000F38F81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		072519B31BE9694000F38F81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0727F9A41C5AD13000066948 /* DriverQuestionaireVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriverQuestionaireVC.swift; sourceTree = "<group>"; };
-		07340BB11C5B3606002C6015 /* RiderQuestionaireVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RiderQuestionaireVC.swift; sourceTree = "<group>"; };
+		0727F9A41C5AD13000066948 /* DriverQuestionnaireVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriverQuestionnaireVC.swift; sourceTree = "<group>"; };
+		07340BB11C5B3606002C6015 /* PassengerQuestionnaireVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassengerQuestionnaireVC.swift; sourceTree = "<group>"; };
 		07340BB91C5B36B5002C6015 /* info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = info.png; path = images/info.png; sourceTree = "<group>"; };
 		07AF13CA1C748ACA004C28FA /* ToolsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolsTableViewController.swift; sourceTree = "<group>"; };
 		07AF13D21C749288004C28FA /* ToolTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolTableViewCell.swift; sourceTree = "<group>"; };
@@ -284,9 +285,10 @@
 		A45572FA1C4A176F0097DE0F /* EventDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailsViewController.swift; sourceTree = "<group>"; };
 		A45572FF1C4CDAF60097DE0F /* MissionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MissionViewCell.swift; sourceTree = "<group>"; };
 		A45573011C4E219A0097DE0F /* MissionDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MissionDetailsViewController.swift; sourceTree = "<group>"; };
-		A487BBEE1C6353A5006F9B3C /* DriverStatusViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriverStatusViewCell.swift; sourceTree = "<group>"; };
-		A487BBF81C63569A006F9B3C /* DriverStatusTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriverStatusTableViewController.swift; sourceTree = "<group>"; };
+		A487BBEE1C6353A5006F9B3C /* DriverStatusTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriverStatusTableViewCell.swift; sourceTree = "<group>"; };
 		A487BBFA1C635E78006F9B3C /* Driver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Driver.swift; sourceTree = "<group>"; };
+		A4A836421C83D0AA003FBD8D /* Delete-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Delete-50.png"; path = "images/Delete-50.png"; sourceTree = "<group>"; };
+		A4A8364A1C83D396003FBD8D /* PassengerStatusTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassengerStatusTableViewCell.swift; sourceTree = "<group>"; };
 		A4F2845EF072292DB7417694 /* Pods_CruAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CruAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD14769052309A631372632E /* Pods_CruApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CruApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -368,12 +370,12 @@
 				A441CE761C763AC400663057 /* SelectDriverTableViewCell.swift */,
 				A441CE781C764BA600663057 /* SelectDriverTableViewController.swift */,
 				A441CE7A1C765D4800663057 /* DriverSelectedViewController.swift */,
-				0727F9A41C5AD13000066948 /* DriverQuestionaireVC.swift */,
-				07340BB11C5B3606002C6015 /* RiderQuestionaireVC.swift */,
-				A487BBEE1C6353A5006F9B3C /* DriverStatusViewCell.swift */,
+				0727F9A41C5AD13000066948 /* DriverQuestionnaireVC.swift */,
+				07340BB11C5B3606002C6015 /* PassengerQuestionnaireVC.swift */,
+				A487BBEE1C6353A5006F9B3C /* DriverStatusTableViewCell.swift */,
+				A4A8364A1C83D396003FBD8D /* PassengerStatusTableViewCell.swift */,
 				A441CE8F1C7F935600663057 /* RideShareStatusTableViewController.swift */,
 				A441CE6E1C7634CB00663057 /* Passenger.swift */,
-				A487BBF81C63569A006F9B3C /* DriverStatusTableViewController.swift */,
 				A487BBFA1C635E78006F9B3C /* Driver.swift */,
 			);
 			name = RideShare;
@@ -560,6 +562,7 @@
 		A43482D11C0D290E00B62D6C /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				A4A836421C83D0AA003FBD8D /* Delete-50.png */,
 				07F802C01C76930B00A7A4BC /* ArticlesIcon.png */,
 				07F802C11C76930B00A7A4BC /* rideShareIcon.png */,
 				07F802C21C76930B00A7A4BC /* ToolsIcon.png */,
@@ -784,6 +787,7 @@
 				A4110B481C0F7E3400F47AB4 /* Calendar-25.png in Resources */,
 				839F64431C0D4E4300CAEC9E /* Literature-25.png in Resources */,
 				279326FD1C509C2100BAC73D /* PopUpViewController_iPad.xib in Resources */,
+				A4A836431C83D0AA003FBD8D /* Delete-50.png in Resources */,
 				839F64421C0D4E4300CAEC9E /* Home-25.png in Resources */,
 				839F64601C0D70AA00CAEC9E /* Box-25.png in Resources */,
 				A441CE6C1C75B0FD00663057 /* RideShare.storyboard in Resources */,
@@ -912,11 +916,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4A8364B1C83D396003FBD8D /* PassengerStatusTableViewCell.swift in Sources */,
 				A40DD9941C0EC0FB00BCFEC5 /* DBClient.swift in Sources */,
 				279327071C50A10500BAC73D /* InitialMinistryTableViewCell.swift in Sources */,
 				83244B761C7579F000D913A6 /* MinistryData.swift in Sources */,
 				A40DD9A21C0EC61600BCFEC5 /* SummerMissionsViewController.swift in Sources */,
-				0727F9A51C5AD13000066948 /* DriverQuestionaireVC.swift in Sources */,
+				0727F9A51C5AD13000066948 /* DriverQuestionnaireVC.swift in Sources */,
 				07ED81711C0D7ECC007FFB53 /* ResourcesViewController.swift in Sources */,
 				83B1CB251C4886F700145B6D /* Ministry.swift in Sources */,
 				279327001C509C2100BAC73D /* PopUpViewControllerSwift.swift in Sources */,
@@ -926,14 +931,13 @@
 				838564F51C0D9EDF00EB1728 /* SWRevealViewController.m in Sources */,
 				279327051C50A0EC00BAC73D /* InitialMinistryTableViewController.swift in Sources */,
 				271C78211C50434000F42EA0 /* InitialCampusTableViewController.swift in Sources */,
-				A487BBEF1C6353A5006F9B3C /* DriverStatusViewCell.swift in Sources */,
+				A487BBEF1C6353A5006F9B3C /* DriverStatusTableViewCell.swift in Sources */,
 				A441CE801C7A957500663057 /* Resource.swift in Sources */,
 				83B1CB101C4856BC00145B6D /* CoreDataModel.xcdatamodeld in Sources */,
 				83688B771C7F71E300470442 /* InitalScreenVC.swift in Sources */,
 				1E37E7261C0E362D0054607A /* Event.swift in Sources */,
 				1E37E72A1C0E362D0054607A /* VideosTableViewController.swift in Sources */,
 				83B1CB291C48880A00145B6D /* UserProfile.swift in Sources */,
-				A487BBF91C63569A006F9B3C /* DriverStatusTableViewController.swift in Sources */,
 				83244B6E1C7579BA00D913A6 /* CampusData.swift in Sources */,
 				07AF13D31C749288004C28FA /* ToolTableViewCell.swift in Sources */,
 				07C196331C0E6AD400375B8D /* ArticlesTableViewController.swift in Sources */,
@@ -953,7 +957,7 @@
 				1E37E7291C0E362D0054607A /* EventsViewController.swift in Sources */,
 				07C196371C0E863000375B8D /* VideoTableViewCell.swift in Sources */,
 				A441CE7B1C765D4800663057 /* DriverSelectedViewController.swift in Sources */,
-				07340BB21C5B3606002C6015 /* RiderQuestionaireVC.swift in Sources */,
+				07340BB21C5B3606002C6015 /* PassengerQuestionnaireVC.swift in Sources */,
 				A45573021C4E219A0097DE0F /* MissionDetailsViewController.swift in Sources */,
 				A45572FB1C4A176F0097DE0F /* EventDetailsViewController.swift in Sources */,
 				A441CE6F1C7634CB00663057 /* Passenger.swift in Sources */,

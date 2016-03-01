@@ -10,6 +10,9 @@ import UIKit
 
 class DriverStatusTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var eventName: UILabel!
+    @IBOutlet weak var departureTime: UILabel!
+    @IBOutlet weak var availableSeats: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

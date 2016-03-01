@@ -11,19 +11,75 @@ import UIKit
 let kDriverHeader = "You will be a driver for..."
 let kPassengerHeader = "You will be a passenger for..."
 
+let gcm_id = "1234567"
+
+class RideSharePassenger {
+    var rideId:String
+    var passengerId:String
+    var eventId:String
+    var departureTime:String
+    var driverNumber:String
+    var driverName:String
+    
+    init(rideId:String, passengerId:String, eventId:String, departureTime:String, driverNumber:String, driverName:String) {
+        self.rideId = rideId
+        self.passengerId = passengerId
+        self.eventId = eventId
+        self.departureTime = departureTime
+        self.driverNumber = driverNumber
+        self.driverName = driverName
+    }
+}
+
+class PassengerData {
+    var id:String
+    var gcmId:String
+    var phoneNumber:String
+    var name:String
+    
+    init(id:String, gcmId:String, phoneNumber:String, name:String) {
+        self.id = id
+        self.gcmId = gcmId
+        self.phoneNumber = phoneNumber
+        self.name = name
+    }
+}
+
+class RideShareDriver {
+    var rideId:String
+    var eventId:String
+    var departureTime:String
+    var availableSeats:Int
+    var passengers = [PassengerData]()
+    
+    init(rideId:String, eventId:String, departureTime:String, availableSeats:Int, passengers:[PassengerData]) {
+        self.rideId = rideId
+        self.eventId = eventId
+        self.departureTime = departureTime
+        self.availableSeats = availableSeats
+        self.passengers += passengers
+    }
+}
+
 class RideShareStatusTableViewController: UITableViewController {
     
     /* Header titles, can be changed if needed */
     let headerTitles = [kDriverHeader, kPassengerHeader]
     
     /* Arrays used to hold each section of user's rideshare data */
-    var driverCollection = [Driver]()
-    var passengerCollection = [Passenger]()
+    var driverCollection = [RideShareDriver]()
+    var passengerCollection = [RideSharePassenger]()
+    var passengersData = [PassengerData]()
     
     var tableData = [[AnyObject]]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        var dbClient: DBClient!
+        dbClient = DBClient()
+        dbClient.getData("passenger", dict: setPassenger)
+        dbClient.getData("ride", dict: setRides)
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -31,6 +87,52 @@ class RideShareStatusTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
+    
+    func setPassenger(passenger:NSDictionary){
+        let id = passenger["_id"] as! String
+        let gcmId = passenger["gcm_id"] as! String
+        let phoneNumber = passenger["phone"] as! String
+        let name = passenger["name"] as! String
+        
+        let passengerObj = PassengerData(id:id, gcmId:gcmId, phoneNumber:phoneNumber, name:name)
+        passengersData.append(passengerObj)
+    }
+    
+    func setRides(ride:NSDictionary) {
+        
+        let gcmId = ride["gcm_id"] as! String
+        let rideId = ride["_id"] as! String
+        let event = ride["event"] as! String
+        let driverNumber = ride["driverNumber"] as! String
+        let driverName = ride["driverName"] as! String
+        let time = ride["time"] as! String
+        let passengers = ride["passengers"] as! [String]
+        let availableSeats = (ride["seats"] as! Int) - (passengers.count)
+        var passengersInfo = [PassengerData]()
+            
+        for pssngr in passengers{
+            for data in passengersData {
+                if data.id == pssngr {
+                    passengersInfo.append(data)
+                    
+                    //if user is a passenger
+                    if(gcm_id == data.gcmId) {
+                        let passengerObj = RideSharePassenger(rideId:rideId, passengerId:pssngr, eventId:event, departureTime:time, driverNumber:driverNumber, driverName:driverName)
+                        passengerCollection.append(passengerObj)
+                    }
+                }
+            }
+        }
+        
+        //if user is a driver
+        if(gcm_id == gcmId) {
+            let rideObj = RideShareDriver(rideId:rideId, eventId:event, departureTime:time, availableSeats:availableSeats, passengers:passengersInfo)
+            driverCollection.append(rideObj)
+        }
+        
+        self.tableView.reloadData()
+    }
+
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
@@ -46,9 +148,8 @@ class RideShareStatusTableViewController: UITableViewController {
     
     
     func fetchStatuses() {
-        driverCollection = [Driver]()
-        passengerCollection = [Passenger]()
-        
+        driverCollection = [RideShareDriver]()
+        passengerCollection = [RideSharePassenger]()
         
     }
 
@@ -98,47 +199,52 @@ class RideShareStatusTableViewController: UITableViewController {
         
         let driver = driverCollection[indexPath.row]
         
-//        let imagePath = "http://graph.facebook.com/\(order.ownerId!)/picture?type=large"
-//        self.downloadImage(NSURL(string: imagePath)!, picture: cell.picture)
-//        
-//        cell.locationLabel.text = order.location
-//        cell.estimateCostLabel.text = order.estimate
-//        
-//        let formatter = NSDateFormatter()
-//        formatter.timeStyle = .ShortStyle
-//        
-//        let startTime = formatter.stringFromDate(order.startTime!)
-//        let endTime = formatter.stringFromDate(order.endTime!)
-//        cell.availableTimeFrameLabel.text = "Available time: " + startTime + " – " + endTime
+        cell.eventName.text = driver.eventId
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+        let date = dateFormatter.dateFromString(driver.departureTime)
+        dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
+        dateFormatter.timeStyle = .ShortStyle
+        cell.departureTime.text = "Departure Time: " + dateFormatter.stringFromDate(date!)
+        
+        cell.availableSeats.text = String(driver.availableSeats)
+        
+        var spacer: CGFloat = 50
+        for pssngr in driver.passengers {
+            var label = UILabel(frame: CGRectMake(0, 0, 200, 21))
+            label.center = CGPointMake(160, 300 + spacer )
+            label.textAlignment = NSTextAlignment.Center
+            label.text = pssngr.name
+            self.view.addSubview(label)
+            spacer = spacer + 50
+        }
+    
     }
     
     /* Helper function for filling in pending cell with its information */
     func populatePassengerCell(indexPath: NSIndexPath, cell: PassengerStatusTableViewCell) {
-        
         let passenger = passengerCollection[indexPath.row]
+
+        cell.driverName.text = "Driver's Name: " + passenger.driverName
+        cell.driverNumber.text = "Driver's Number: " + passenger.driverNumber
+        cell.eventName.text = passenger.eventId
         
-//        let imagePath = "http://graph.facebook.com/\(order.ownerId!)/picture?type=large"
-//        self.downloadImage(NSURL(string: imagePath)!, picture: cell.picture)
-//        
-//        cell.locationLabel.text = order.location
-//        cell.estimateCostLabel.text = order.estimate
-//        
-//        let formatter = NSDateFormatter()
-//        formatter.timeStyle = .ShortStyle
-//        
-//        let startTime = formatter.stringFromDate(order.startTime!)
-//        let endTime = formatter.stringFromDate(order.endTime!)
-//        cell.availableTimeFrameLabel.text = "Available time: " + startTime + " – " + endTime
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+        let date = dateFormatter.dateFromString(passenger.departureTime)
+        dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
+        dateFormatter.timeStyle = .ShortStyle
+        cell.departureTime.text = "Departure Time: " + dateFormatter.stringFromDate(date!)
     }
     
     
 //    func cancelPendingTransaction(row: Int) {
-//        
-//        let confirmDialog = UIAlertController(title: "Are you sure?", message: "Are you sure you want to cancel your current request?", preferredStyle: .Alert)
+//        let confirmDialog = UIAlertController(title: "Are you sure?", message: "Are you sure you want to cancel your ride?", preferredStyle: .Alert)
 //        let okAction = UIAlertAction(title: "Confirm", style: .Default) { (UIAlertAction) -> Void in
 //            
 //            // removes order from firebase and then the table
-//            FirebaseClient.removeOrder(self.pendingOrders[row].id)
+//            DBClient.postData(self.pendingOrders[row].id)
+//            
 //            self.pendingOrders.removeAtIndex(row)
 //            
 //            // array to hold all orders by section

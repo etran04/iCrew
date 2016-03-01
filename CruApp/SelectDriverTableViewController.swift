@@ -11,7 +11,6 @@ import UIKit
 class SelectDriverTableViewController: UITableViewController {
     var passenger : Passenger!
     var driverCollection = [Driver]()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -91,21 +90,23 @@ class SelectDriverTableViewController: UITableViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        let params = ["name": passenger.name, "direction": passenger.direction, "phone": passenger.phoneNumber, "gcm_id" : 1234567, "event": passenger.eventId]
-        
-        do {
-            let body = try NSJSONSerialization.dataWithJSONObject(params, options: NSJSONWritingOptions.PrettyPrinted)
-            var dbClient: DBClient!
-            dbClient = DBClient()
-            dbClient.addData("passenger", body : body)
-        } catch {
-            print("Error sending data to database")
-        }
-        
         let selectedDriverViewController = segue.destinationViewController as! DriverSelectedViewController
         if let selectedDriverCell = sender as? SelectDriverTableViewCell {
             let indexPath = tableView.indexPathForCell(selectedDriverCell)!
             let selectedDriver = driverCollection[indexPath.row]
+            
+            let params = ["name": passenger.name, "direction": passenger.direction, "phone": passenger.phoneNumber, "gcm_id" : 1234567, "event": passenger.eventId]
+            
+            do {
+                let body = try NSJSONSerialization.dataWithJSONObject(params, options: NSJSONWritingOptions.PrettyPrinted)
+                var dbClient: DBClient!
+                dbClient = DBClient()
+                dbClient.addPassenger(selectedDriver.id, action: "passenger", body : body)
+            } catch {
+                print("Error sending data to database")
+            }
+            
+            
             selectedDriverViewController.driver = selectedDriver
         }
         

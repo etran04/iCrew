@@ -15,9 +15,9 @@ class DBClient {
     }
     
     func requestData(action: String, completionHandler : (NSData?, NSURLResponse?, NSError?) -> Void) {
-        let url = "http://pcp070548pcs.wireless.calpoly.edu:3000/api/" + action + "/list"
+        //let url = "http://pcp070548pcs.wireless.calpoly.edu:3000/api/" + action + "/list"
                 
-        //let url = "http://localhost:3000/api/" + action + "/list"
+        let url = "http://localhost:3001/api/" + action + "/list"
         //for sorting
         //let url = http://localhost:3000/api/minstry/find?order={name: 1}
         sendGetRequest(url, completionHandler: completionHandler)
@@ -56,8 +56,8 @@ class DBClient {
     //func addData(action: String, direction : String, seats : Int, driverNumber : Int, event : String, driverName : String) {
     func addData(action : String, body: NSData) {
 
-        let url = "http://pcp070548pcs.wireless.calpoly.edu:3000/api/" + action + "/create"
-        //let url = "http://localhost:3000/api/" + action + "/create"
+        //let url = "http://pcp070548pcs.wireless.calpoly.edu:3000/api/" + action + "/create"
+        let url = "http://localhost:3001/api/" + action + "/create"
 
         sendPostRequest(url, body: body, completionHandler: emptyHandler)
     }
@@ -105,4 +105,38 @@ class DBClient {
             
         }
     }
+    
+    func addPassenger(rideId: String, action: String, body: NSData) {
+        let url = "http://localhost:3001/api/" + action + "/create"
+        
+        sendPostRequest(url, body: body, completionHandler: {(data : NSData?, response : NSURLResponse?, error : NSError?) in
+            do {
+                if (data != nil) {
+                    let JSONResponse = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers)
+                    let JSONData = JSONResponse as! NSDictionary
+                    let post = JSONData["post"] as! NSDictionary
+                    let passengerId = post["_id"] as! String
+                    print("passengerId: " + passengerId)
+                    let url = "http://localhost:3001/" + "api/ride/addPassenger";
+                    let params = ["ride_id": rideId,"passenger_id": passengerId]
+                    
+                    do {
+                        let body = try NSJSONSerialization.dataWithJSONObject(params, options: NSJSONWritingOptions.PrettyPrinted)
+                        self.sendPostRequest(url, body: body, completionHandler : self.emptyHandler);
+                    } catch {
+                        print("ERROR: Cannot add passenger to driver")
+                    }
+                    
+                }
+                else {
+                    // TODO: display message for user
+                    print("ERROR: Data not obtained from database")
+                }
+            }
+            catch {
+                print("ERROR: Cannot connect to database")
+            }
+        })
+    }
+    
 }

@@ -44,7 +44,7 @@ class InitialMinistryTableViewController: UITableViewController {
         
         //set empty back button
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.Plain, target:nil, action:nil)
-        self.nextButton.enabled = false;
+//        self.nextButton.enabled = false;
         
         campusCollection = UserProfile.getCampuses()
         
@@ -170,19 +170,6 @@ class InitialMinistryTableViewController: UITableViewController {
                 self.popViewController.showInView(self.view, withImage: image, withMessage: ministriesCollection[sender.tag].description, animated: true)
             }
         }
-    }
-    
-    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
-        if (selectedIndices.count == 0) {
-            let dialog = UIAlertController(title: "Choose Campus", message: "Please choose 1 or more campuses", preferredStyle: .Alert)
-            let dismissAction = UIAlertAction(title: "Dismiss", style: .Default, handler: nil)
-            dialog.addAction(dismissAction)
-            
-            self.presentViewController(dialog, animated: true, completion: nil)
-            
-            return false
-        }
-        return true
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

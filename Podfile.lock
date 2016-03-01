@@ -1,6 +1,7 @@
 PODS:
-  - Alamofire (3.2.0)
+  - Alamofire (3.2.1)
   - CheckmarkSegmentedControl (0.1.1)
+  - DatePickerCell (1.0.4)
   - DownPicker (0.1.34)
   - GGLInstanceID (1.1.6)
   - Google/CloudMessaging (1.3.2):
@@ -12,18 +13,16 @@ PODS:
     - GoogleNetworkingUtilities (~> 1.0)
     - GoogleSymbolUtilities (~> 1.0)
     - GoogleUtilities (~> 1.1)
-  - GoogleCloudMessaging (1.1.3):
+  - GoogleCloudMessaging (1.2.0):
     - GoogleInterchangeUtilities (~> 1.0)
     - GoogleIPhoneUtilities (~> 1.0)
-    - GoogleNetworkingUtilities (~> 1.0)
     - GoogleSymbolUtilities (~> 1.0)
-    - GoogleUtilities (~> 1.0)
   - GoogleInterchangeUtilities (1.1.0):
     - GoogleSymbolUtilities (~> 1.0)
-  - GoogleIPhoneUtilities (1.1.1):
+  - GoogleIPhoneUtilities (1.2.0):
     - GoogleSymbolUtilities (~> 1.0)
     - GoogleUtilities (~> 1.0)
-  - GoogleMaps (1.12.2)
+  - GoogleMaps (1.12.3)
   - GoogleNetworkingUtilities (1.0.0):
     - GoogleSymbolUtilities (~> 1.0)
   - GoogleSymbolUtilities (1.0.3)
@@ -38,6 +37,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - CheckmarkSegmentedControl
+  - DatePickerCell
   - DownPicker
   - Google/CloudMessaging
   - GoogleMaps
@@ -57,15 +57,16 @@ CHECKOUT OPTIONS:
     :git: https://github.com/ashleymills/Reachability.swift
 
 SPEC CHECKSUMS:
-  Alamofire: 4da478599fccddff361205c8929333d7fe18dceb
+  Alamofire: f11d8624a05f5d39e0c99309b3e600a3ba64298a
   CheckmarkSegmentedControl: ce70c9fb699b623cef8e72c2b8578b505fbf2f48
+  DatePickerCell: 20d2ba8b5cd5bb8a5a79e2b43bc7758e3b65daf2
   DownPicker: c00ea63f08ae82116cc93d0eba74e86bf3d4c68e
   GGLInstanceID: f92465924a9b8a48f712829d22e223653ab8dc72
   Google: 97618e118111b998cce1d8dd1bd98b82301d72db
-  GoogleCloudMessaging: d1f06cd70691b8c53b3eefd66a0b42b34daeedcc
+  GoogleCloudMessaging: f37ea14dd0f41d4d889c10b5559dd35bbfd9ac26
   GoogleInterchangeUtilities: d7f7174176fbcf9710f696f1acebad4dbd98ac03
-  GoogleIPhoneUtilities: 3252d20d075b902e37a08036dcc9f74828cf5595
-  GoogleMaps: cc76edaa94a4284e80ecd7089ed319d1cca5f37e
+  GoogleIPhoneUtilities: 1c2996078f079d2fc54453dbd13eaf5523666550
+  GoogleMaps: a4ac67918d0b5ba5f6b9893ac80487e357779e6c
   GoogleNetworkingUtilities: 292992ab31b7b4ba32809a0e8b40e324cdfb2c0c
   GoogleSymbolUtilities: 82ad9f93d3615244b3f4ce440f5ab2515e8b4f56
   GoogleUtilities: 8ed9134debe11719097881711464752900668f10

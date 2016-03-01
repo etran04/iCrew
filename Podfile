@@ -14,6 +14,9 @@ def shared_pods
     pod 'SwiftSpinner'
     pod 'GoogleMaps'
     pod 'Alamofire'
+    pod 'DatePickerCell'
+
+
 end
 
 target 'CruApp' do

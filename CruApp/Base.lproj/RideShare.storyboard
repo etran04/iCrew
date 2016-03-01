@@ -69,7 +69,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gjg-09-C9G" userLabel="Cancel Button">
-                                            <rect key="frame" x="326" y="53" width="25" height="25"/>
+                                            <rect key="frame" x="342" y="8" width="25" height="25"/>
                                             <state key="normal" title="Button" image="Delete-50.png"/>
                                         </button>
                                     </subviews>
@@ -114,10 +114,15 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZNi-dX-DXW" userLabel="Cancel Button">
+                                            <rect key="frame" x="342" y="8" width="25" height="25"/>
+                                            <state key="normal" title="Button" image="Delete-50.png"/>
+                                        </button>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="availableSeats" destination="2jd-C5-ddJ" id="6x9-bP-zHm"/>
+                                    <outlet property="cancelDriver" destination="ZNi-dX-DXW" id="F6a-YC-EaJ"/>
                                     <outlet property="departureTime" destination="YMN-t7-Fe6" id="NCk-kU-LVj"/>
                                     <outlet property="eventName" destination="w8S-CD-Foe" id="kHW-mx-pyn"/>
                                 </connections>

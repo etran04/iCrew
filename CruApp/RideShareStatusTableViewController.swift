@@ -218,7 +218,26 @@ class RideShareStatusTableViewController: UITableViewController {
             self.view.addSubview(label)
             spacer = spacer + 50
         }
+        
+        cell.cancelDriver.addTarget(self, action: "cancelDriver:", forControlEvents: .TouchUpInside)
+        cell.cancelDriver.tag = indexPath.row
+    }
     
+    func cancelDriver(sender: UIButton) {
+        let buttonTag = sender.tag
+        
+        let params = ["ride_id": (driverCollection[buttonTag].rideId)]
+        
+        do {
+            let body = try NSJSONSerialization.dataWithJSONObject(params, options: NSJSONWritingOptions.PrettyPrinted)
+            
+            var dbClient: DBClient!
+            dbClient = DBClient()
+            dbClient.postData("api/ride/dropRide", body:body)
+            
+        } catch {
+            print("Error sending data to database")
+        }
     }
     
     /* Helper function for filling in pending cell with its information */
@@ -235,6 +254,25 @@ class RideShareStatusTableViewController: UITableViewController {
         dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
         dateFormatter.timeStyle = .ShortStyle
         cell.departureTime.text = "Departure Time: " + dateFormatter.stringFromDate(date!)
+    
+        cell.cancelButton.addTarget(self, action: "cancelPassenger:", forControlEvents: .TouchUpInside)
+        cell.cancelButton.tag = indexPath.row
+    }
+    
+    func cancelPassenger(sender: UIButton) {
+        let buttonTag = sender.tag
+        
+        let params = ["ride_id": (passengerCollection[buttonTag].rideId), "passenger_id": (passengerCollection[buttonTag].passengerId)]
+        
+        do {
+            let body = try NSJSONSerialization.dataWithJSONObject(params, options: NSJSONWritingOptions.PrettyPrinted)
+            var dbClient: DBClient!
+            dbClient = DBClient()
+            dbClient.postData("api/ride/dropPassenger", body:body)
+            
+        } catch {
+            print("Error sending data to database")
+        }
     }
     
     

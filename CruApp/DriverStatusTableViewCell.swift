@@ -10,6 +10,7 @@ import UIKit
 
 class DriverStatusTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var cancelDriver: UIButton!
     @IBOutlet weak var eventName: UILabel!
     @IBOutlet weak var departureTime: UILabel!
     @IBOutlet weak var availableSeats: UILabel!

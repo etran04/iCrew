@@ -37,20 +37,20 @@ class DBClient {
         return task
     }
     
-    func postData(action: String, body: String, dict: (NSDictionary) -> ()) {
-        let url = "http://pcp070548pcs.wireless.calpoly.edu:3000/api/" + action + "/find"
-        //let url = "https://gcm-http.googleapis.com/gcm/send"
-        //let bdy = "order={startDate:1}"
-        //let params = ["notification":["title":"Portugal vs. Denmark", "message":"great match!"]]
-        let params = ["order":"{startDate:1}"]
-        do {
-            let bdy = try NSJSONSerialization.dataWithJSONObject(params, options: NSJSONWritingOptions.PrettyPrinted)
-                sendPostRequest(url, body : bdy, completionHandler : obtainData(dict))
-        } catch {
-            print("ERRRROR")
-        }
-    
-    }
+//    func postData(action: String, body: String, dict: (NSDictionary) -> ()) {
+//        let url = "http://pcp070548pcs.wireless.calpoly.edu:3000/api/" + action + "/find"
+//        //let url = "https://gcm-http.googleapis.com/gcm/send"
+//        //let bdy = "order={startDate:1}"
+//        //let params = ["notification":["title":"Portugal vs. Denmark", "message":"great match!"]]
+//        let params = ["order":"{startDate:1}"]
+//        do {
+//            let bdy = try NSJSONSerialization.dataWithJSONObject(params, options: NSJSONWritingOptions.PrettyPrinted)
+//                sendPostRequest(url, body : bdy, completionHandler : obtainData(dict))
+//        } catch {
+//            print("ERRRROR")
+//        }
+//    
+//    }
     
     //add data for Driver
     //func addData(action: String, direction : String, seats : Int, driverNumber : Int, event : String, driverName : String) {
@@ -66,13 +66,18 @@ class DBClient {
         
     }
     
+    func postData(action: String, body: NSData) {
+        //let url = "http://pcp070548pcs.wireless.calpoly.edu:3000/api/" + action
+        let url = "http://localhost:3001/api/" + action
+    
+        sendPostRequest(url, body: body, completionHandler: emptyHandler)
+    }
+    
     //HTTP POST request
     func sendPostRequest(url : String, body : NSData, completionHandler : (NSData?, NSURLResponse?, NSError?) -> Void) -> NSURLSessionDataTask {
         let reqURL = NSURL(string: url)
         let request = NSMutableURLRequest(URL: reqURL!)
         request.HTTPMethod = "POST"
-        //request.setValue("application/json", forHTTPHeaderField:"Conent-Type")
-        //request.setValue("AIzaSyCq4DmBRjJK4pE3ZO7or_6lrKLnHx4Ip7E", forHTTPHeaderField: "Authorization")
 
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
 

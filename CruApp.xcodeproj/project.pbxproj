@@ -13,9 +13,14 @@
 		072519AD1BE9694000F38F81 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 072519AB1BE9694000F38F81 /* Main.storyboard */; };
 		072519AF1BE9694000F38F81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 072519AE1BE9694000F38F81 /* Assets.xcassets */; };
 		072519B21BE9694000F38F81 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 072519B01BE9694000F38F81 /* LaunchScreen.storyboard */; };
+		0725A04E1C865269006E8E0C /* AvailNumSeatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0725A04D1C865269006E8E0C /* AvailNumSeatCell.swift */; };
 		0727F9A51C5AD13000066948 /* DriverQuestionnaireVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0727F9A41C5AD13000066948 /* DriverQuestionnaireVC.swift */; };
 		07340BB21C5B3606002C6015 /* PassengerQuestionnaireVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07340BB11C5B3606002C6015 /* PassengerQuestionnaireVC.swift */; };
 		07340BBA1C5B36B5002C6015 /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = 07340BB91C5B36B5002C6015 /* info.png */; };
+		078739881C86178E00D09C14 /* NameFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078739871C86178E00D09C14 /* NameFieldCell.swift */; };
+		078739901C86179D00D09C14 /* PhoneNumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0787398F1C86179D00D09C14 /* PhoneNumCell.swift */; };
+		078739921C8617D000D09C14 /* ScrollPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078739911C8617D000D09C14 /* ScrollPickerCell.swift */; };
+		078739941C8628CA00D09C14 /* StartTimePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078739931C8628CA00D09C14 /* StartTimePickerCell.swift */; };
 		07AF13CB1C748ACA004C28FA /* ToolsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AF13CA1C748ACA004C28FA /* ToolsTableViewController.swift */; };
 		07AF13D31C749288004C28FA /* ToolTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AF13D21C749288004C28FA /* ToolTableViewCell.swift */; };
 		07C196331C0E6AD400375B8D /* ArticlesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C196321C0E6AD400375B8D /* ArticlesTableViewController.swift */; };
@@ -201,9 +206,14 @@
 		072519AE1BE9694000F38F81 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		072519B11BE9694000F38F81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		072519B31BE9694000F38F81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0725A04D1C865269006E8E0C /* AvailNumSeatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvailNumSeatCell.swift; sourceTree = "<group>"; };
 		0727F9A41C5AD13000066948 /* DriverQuestionnaireVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriverQuestionnaireVC.swift; sourceTree = "<group>"; };
 		07340BB11C5B3606002C6015 /* PassengerQuestionnaireVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassengerQuestionnaireVC.swift; sourceTree = "<group>"; };
 		07340BB91C5B36B5002C6015 /* info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = info.png; path = images/info.png; sourceTree = "<group>"; };
+		078739871C86178E00D09C14 /* NameFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameFieldCell.swift; sourceTree = "<group>"; };
+		0787398F1C86179D00D09C14 /* PhoneNumCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneNumCell.swift; sourceTree = "<group>"; };
+		078739911C8617D000D09C14 /* ScrollPickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollPickerCell.swift; sourceTree = "<group>"; };
+		078739931C8628CA00D09C14 /* StartTimePickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartTimePickerCell.swift; sourceTree = "<group>"; };
 		07AF13CA1C748ACA004C28FA /* ToolsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolsTableViewController.swift; sourceTree = "<group>"; };
 		07AF13D21C749288004C28FA /* ToolTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolTableViewCell.swift; sourceTree = "<group>"; };
 		07C196321C0E6AD400375B8D /* ArticlesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticlesTableViewController.swift; sourceTree = "<group>"; };
@@ -393,6 +403,11 @@
 				A441CE8F1C7F935600663057 /* RideShareStatusTableViewController.swift */,
 				A441CE6E1C7634CB00663057 /* Passenger.swift */,
 				A487BBFA1C635E78006F9B3C /* Driver.swift */,
+				078739871C86178E00D09C14 /* NameFieldCell.swift */,
+				0787398F1C86179D00D09C14 /* PhoneNumCell.swift */,
+				078739911C8617D000D09C14 /* ScrollPickerCell.swift */,
+				078739931C8628CA00D09C14 /* StartTimePickerCell.swift */,
+				0725A04D1C865269006E8E0C /* AvailNumSeatCell.swift */,
 			);
 			name = RideShare;
 			sourceTree = "<group>";
@@ -949,10 +964,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4A8364B1C83D396003FBD8D /* PassengerStatusTableViewCell.swift in Sources */,
+				0725A04E1C865269006E8E0C /* AvailNumSeatCell.swift in Sources */,
 				A40DD9941C0EC0FB00BCFEC5 /* DBClient.swift in Sources */,
 				279327071C50A10500BAC73D /* InitialMinistryTableViewCell.swift in Sources */,
 				83244B761C7579F000D913A6 /* MinistryData.swift in Sources */,
 				A40DD9A21C0EC61600BCFEC5 /* SummerMissionsViewController.swift in Sources */,
+				078739881C86178E00D09C14 /* NameFieldCell.swift in Sources */,
 				0727F9A51C5AD13000066948 /* DriverQuestionnaireVC.swift in Sources */,
 				07ED81711C0D7ECC007FFB53 /* ResourcesViewController.swift in Sources */,
 				83B1CB251C4886F700145B6D /* Ministry.swift in Sources */,
@@ -961,6 +978,7 @@
 				072519A81BE9694000F38F81 /* AppDelegate.swift in Sources */,
 				A487BBFB1C635E78006F9B3C /* Driver.swift in Sources */,
 				838564F51C0D9EDF00EB1728 /* SWRevealViewController.m in Sources */,
+				078739921C8617D000D09C14 /* ScrollPickerCell.swift in Sources */,
 				279327051C50A0EC00BAC73D /* InitialMinistryTableViewController.swift in Sources */,
 				271C78211C50434000F42EA0 /* InitialCampusTableViewController.swift in Sources */,
 				A487BBEF1C6353A5006F9B3C /* DriverStatusTableViewCell.swift in Sources */,
@@ -975,6 +993,7 @@
 				832FDCD61C854D2E00836B7C /* CGQuestionnaireVC.swift in Sources */,
 				832FDCCA1C8549FB00836B7C /* MainInvolvedTVC.swift in Sources */,
 				83B1CB291C48880A00145B6D /* UserProfile.swift in Sources */,
+				078739901C86179D00D09C14 /* PhoneNumCell.swift in Sources */,
 				83244B6E1C7579BA00D913A6 /* CampusData.swift in Sources */,
 				07AF13D31C749288004C28FA /* ToolTableViewCell.swift in Sources */,
 				07C196331C0E6AD400375B8D /* ArticlesTableViewController.swift in Sources */,
@@ -997,6 +1016,7 @@
 				1E37E7291C0E362D0054607A /* EventsViewController.swift in Sources */,
 				07C196371C0E863000375B8D /* VideoTableViewCell.swift in Sources */,
 				A441CE7B1C765D4800663057 /* DriverSelectedViewController.swift in Sources */,
+				078739941C8628CA00D09C14 /* StartTimePickerCell.swift in Sources */,
 				07340BB21C5B3606002C6015 /* PassengerQuestionnaireVC.swift in Sources */,
 				A45573021C4E219A0097DE0F /* MissionDetailsViewController.swift in Sources */,
 				A45572FB1C4A176F0097DE0F /* EventDetailsViewController.swift in Sources */,

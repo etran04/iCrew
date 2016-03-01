@@ -13,6 +13,7 @@
 		072519AD1BE9694000F38F81 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 072519AB1BE9694000F38F81 /* Main.storyboard */; };
 		072519AF1BE9694000F38F81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 072519AE1BE9694000F38F81 /* Assets.xcassets */; };
 		072519B21BE9694000F38F81 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 072519B01BE9694000F38F81 /* LaunchScreen.storyboard */; };
+		0725A04E1C865269006E8E0C /* AvailNumSeatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0725A04D1C865269006E8E0C /* AvailNumSeatCell.swift */; };
 		0727F9A51C5AD13000066948 /* DriverQuestionnaireVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0727F9A41C5AD13000066948 /* DriverQuestionnaireVC.swift */; };
 		07340BB21C5B3606002C6015 /* PassengerQuestionnaireVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07340BB11C5B3606002C6015 /* PassengerQuestionnaireVC.swift */; };
 		07340BBA1C5B36B5002C6015 /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = 07340BB91C5B36B5002C6015 /* info.png */; };
@@ -205,6 +206,7 @@
 		072519AE1BE9694000F38F81 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		072519B11BE9694000F38F81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		072519B31BE9694000F38F81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0725A04D1C865269006E8E0C /* AvailNumSeatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvailNumSeatCell.swift; sourceTree = "<group>"; };
 		0727F9A41C5AD13000066948 /* DriverQuestionnaireVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriverQuestionnaireVC.swift; sourceTree = "<group>"; };
 		07340BB11C5B3606002C6015 /* PassengerQuestionnaireVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassengerQuestionnaireVC.swift; sourceTree = "<group>"; };
 		07340BB91C5B36B5002C6015 /* info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = info.png; path = images/info.png; sourceTree = "<group>"; };
@@ -405,6 +407,7 @@
 				0787398F1C86179D00D09C14 /* PhoneNumCell.swift */,
 				078739911C8617D000D09C14 /* ScrollPickerCell.swift */,
 				078739931C8628CA00D09C14 /* StartTimePickerCell.swift */,
+				0725A04D1C865269006E8E0C /* AvailNumSeatCell.swift */,
 			);
 			name = RideShare;
 			sourceTree = "<group>";
@@ -961,6 +964,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4A8364B1C83D396003FBD8D /* PassengerStatusTableViewCell.swift in Sources */,
+				0725A04E1C865269006E8E0C /* AvailNumSeatCell.swift in Sources */,
 				A40DD9941C0EC0FB00BCFEC5 /* DBClient.swift in Sources */,
 				279327071C50A10500BAC73D /* InitialMinistryTableViewCell.swift in Sources */,
 				83244B761C7579F000D913A6 /* MinistryData.swift in Sources */,

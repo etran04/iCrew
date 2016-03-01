@@ -10,17 +10,27 @@ import UIKit
 
 class DriverSelectedViewController: UIViewController {
 
+    @IBOutlet weak var eventName: UILabel!
     @IBOutlet weak var driverName: UILabel!
     @IBOutlet weak var driverNumber: UILabel!
+    @IBOutlet weak var departureTime: UILabel!
     
     var driver : Driver!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        driverName.text = driver.name
-
-        // Do any additional setup after loading the view.
+        driverName.text = "Driver's Name: " + driver.name
+        eventName.text = ""
+        driverNumber.text = "Driver's Phone Number: " + driver.number
+        
+        
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+        let date = dateFormatter.dateFromString(driver.departureTime)
+        dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
+        dateFormatter.timeStyle = .ShortStyle
+        departureTime.text = "Departure Time: " + dateFormatter.stringFromDate(date!)
     }
 
     override func didReceiveMemoryWarning() {

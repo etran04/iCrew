@@ -10,15 +10,17 @@ import Foundation
 import UIKit
 
 struct Driver {
+    var id: String
     var name: String
-    var numOfSeats: Int
-
+    var number: String
+    var eventId: String
+    var departureTime: String
     
-    init(name: String, numOfSeats: Int) {
+    init(id: String, name: String, number: String, eventId: String, departureTime: String) {
+        self.id = id
         self.name = name
-        self.numOfSeats = numOfSeats
-
+        self.number = number
+        self.eventId = eventId
+        self.departureTime = departureTime
     }
-    
-    
 }

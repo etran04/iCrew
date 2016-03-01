@@ -12,6 +12,7 @@ import CheckmarkSegmentedControl
 import Alamofire
 import GoogleMaps
 
+
 /* This class is used to gather information from a potential driver of the RideShare feature */
 class DriverQuestionnaireVC: UIViewController {
 
@@ -45,6 +46,8 @@ class DriverQuestionnaireVC: UIViewController {
     var dbClient: DBClient!
 
     var eventChoices = [String]()
+    var eventIds = [String]()
+    var eventTime = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -93,7 +96,11 @@ class DriverQuestionnaireVC: UIViewController {
     // Obtain event information from the database to an Object
     func setEvents(event: NSDictionary) {
         let name = event["name"] as! String
+        let id = event["_id"] as! String
+        let time = event["startDate"] as! String
         self.eventChoices.append(name)
+        self.eventIds.append(id)
+        self.eventTime.append(time)
         
         /* populate event choices */
         self.eventDownPicker = DownPicker(textField: self.eventsChoice, withData: eventChoices)
@@ -121,6 +128,7 @@ class DriverQuestionnaireVC: UIViewController {
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = TIME_FORMAT;
         depatureTimeChoice.text = dateFormatter.stringFromDate(sender.date)
+        print(depatureTimeChoice.text)
     }
     
     /* Calls this function when the tap is recognizedd
@@ -151,6 +159,7 @@ class DriverQuestionnaireVC: UIViewController {
             rideDirection = "from"
         }
         
+        //TO DO - FIGURE OUT WHICH EVENT IS PICKED
         let params = ["direction": rideDirection, "seats": Int(numSeatsAvailChoice.text!)!, "driverNumber": Int(driverPhoneNumber.text!)!, "event": "563b11135e926d03001ac15c", "driverName": driverFullName.text!, "gcm_id" : 1234567]
 
         do {
@@ -162,7 +171,7 @@ class DriverQuestionnaireVC: UIViewController {
         
         /* Show a visual alert displaying successful signup */
         let successAlert = UIAlertController(title: "Success!", message:
-            "Thank you for signing up as a driver!", preferredStyle: UIAlertControllerStyle.Alert)
+            "Thank you/Users/tammy/OneDrive/Cal Poly/Senior/iCrew/CruApp/EventDetailsViewController.swift for signing up as a driver!", preferredStyle: UIAlertControllerStyle.Alert)
         successAlert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler:
             {
                 (action: UIAlertAction!) -> Void in

@@ -33,11 +33,23 @@ class SelectDriverTableViewController: UITableViewController {
     
     func setDrivers(driver:NSDictionary) {
         let eventId = driver["event"] as! String
+        let availableSeats = (driver["seats"] as! Int) - (driver["passengers"]!.count) as Int
+        let time = driver["time"] as! String
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.locale = NSLocale(localeIdentifier: "en_US")
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+        //let driverTime = dateFormatter.dateFromString(time)
         
-        if (passenger.eventId == eventId) {
+        //how to compare date
+        //driverTime is earlier than passengerTime
+        // driverTime.compare(passengerTime) == NSComparisonResult.OrderedAscending
+        
+        if (passenger.eventId == eventId && availableSeats != 0) {
+            let id = driver["_id"] as! String
             let name = driver["driverName"] as! String
-            let availableSeats = (driver["seats"] as! Int) - (driver["passengers"]!.count) as Int
-            let driverObj = Driver(name: name, numOfSeats: availableSeats)
+            let driverNumber = driver["driverNumber"] as! String
+            
+            let driverObj = Driver(id: id, name: name, number : driverNumber, eventId: eventId, departureTime: time)
             
             driverCollection.append(driverObj)
             self.tableView.reloadData()
@@ -62,11 +74,16 @@ class SelectDriverTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("SelectRideCell", forIndexPath: indexPath) as! SelectDriverTableViewCell
         let driver = driverCollection[indexPath.row]
         
-        cell.driverName.text = driver.name
-        cell.availableSeats.text = "Available Seats " + String(driver.numOfSeats)
-       
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+        let date = dateFormatter.dateFromString(driver.departureTime)
+        dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
+        dateFormatter.timeStyle = .ShortStyle
+        let dateString = dateFormatter.stringFromDate(date!)
         
-        // Configure the cell...
+        cell.driverName.text = "Name: " + driver.name
+        cell.driverNumber.text = "Phone Number: " + driver.number
+        cell.depatureTime.text = "Depature Time: " + dateString
 
         return cell
     }

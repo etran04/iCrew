@@ -10,8 +10,9 @@ import UIKit
 
 class SelectDriverTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var driverNumber: UILabel!
     @IBOutlet weak var driverName: UILabel!
-    @IBOutlet weak var availableSeats: UILabel!
+    @IBOutlet weak var depatureTime: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

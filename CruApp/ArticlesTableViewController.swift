@@ -49,12 +49,23 @@ class ArticlesTableViewController: UITableViewController {
         var dbClient: DBClient!
         dbClient = DBClient()
         dbClient.getData("resource", dict: loadArticles)
-        //self.loadArticles()
+        
+        self.tableView.reloadData()
+        
     }
 
     /* Called when the current view appears */
     override func viewDidAppear(animated: Bool) {
         self.setUpRefresh()
+        
+        /* Sets up the database */
+        var dbClient: DBClient!
+        dbClient = DBClient()
+        dbClient.getData("resource", dict: loadArticles)
+        
+        self.tableView.reloadData()
+        
+        //self.loadArticles()
     }
     
     /* Sets up and starts the loading indicator */

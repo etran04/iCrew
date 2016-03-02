@@ -49,6 +49,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GC
         GMSServices.provideAPIKey("AIzaSyCLsWMvLiBIEh76VETPgd6fQkeLo0LIJ7g")
         
         initCoreDataModel()
+        
+        //print out font families for testing
+        for family: String in UIFont.familyNames()
+        {
+            print("\(family)")
+            for names: String in UIFont.fontNamesForFamilyName(family)
+            {
+                print("== \(names)")
+            }
+        }
+        
+        //set all labels to default font
+        UILabel.appearance().font = UIFont(name: "FreightSansProBook-Regular", size: 17)
 
         return true
     }

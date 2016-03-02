@@ -13,8 +13,8 @@ class MissionDetailsViewController: UIViewController {
     
     var mission: Mission?
 
-    @IBOutlet weak var missionScrollView: UIScrollView!
 
+    @IBOutlet weak var missionScrollView: UIScrollView!
     @IBOutlet weak var missionImage: UIImageView!
     @IBOutlet weak var missionTitle: UILabel!
     @IBOutlet weak var missionLeaders: UILabel!
@@ -95,7 +95,7 @@ class MissionDetailsViewController: UIViewController {
         //for scrolling
         let screenWidth = UIScreen.mainScreen().bounds.width
         let scrollHeight = missionDescr.frame.origin.y + missionDescr.frame.height
-        self.missionScrollView.contentSize = CGSizeMake(screenWidth, scrollHeight);
+        self.missionScrollView.contentSize = CGSizeMake(screenWidth, scrollHeight)
     }
     
     func openLink(sender:UIButton!) {

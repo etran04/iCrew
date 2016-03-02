@@ -185,6 +185,7 @@
                         <outlet property="missionImage" destination="qtB-fB-qix" id="3wm-3A-Dz9"/>
                         <outlet property="missionLeaders" destination="Pu2-D1-pOn" id="Mwg-hZ-oQX"/>
                         <outlet property="missionLocation" destination="aKE-7J-kar" id="EPB-dE-RNo"/>
+                        <outlet property="missionScrollView" destination="qzX-y1-9I0" id="Bh4-97-HqC"/>
                         <outlet property="missionTitle" destination="wZg-Qq-7xc" id="nCh-Kv-4fK"/>
                     </connections>
                 </viewController>

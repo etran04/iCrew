@@ -14,6 +14,7 @@ class MissionDetailsViewController: UIViewController {
     var mission: Mission?
 
 
+    @IBOutlet weak var missionScrollView: UIScrollView!
     @IBOutlet weak var missionImage: UIImageView!
     @IBOutlet weak var missionTitle: UILabel!
     @IBOutlet weak var missionLeaders: UILabel!
@@ -31,7 +32,7 @@ class MissionDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         if let mission = mission {
             missionTitle.text = mission.name
             missionDescr.text = mission.description
@@ -92,8 +93,9 @@ class MissionDetailsViewController: UIViewController {
         }
         
         //for scrolling
-//        self.heightScrollConstraint.constant = self.missionDescr.frame.height + missionDescr.frame.origin.y
-//        self.view.layoutIfNeeded()
+        let screenWidth = UIScreen.mainScreen().bounds.width
+        let scrollHeight = missionDescr.frame.origin.y + missionDescr.frame.height
+        self.missionScrollView.contentSize = CGSizeMake(screenWidth, scrollHeight)
     }
     
     func openLink(sender:UIButton!) {

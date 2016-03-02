@@ -163,6 +163,14 @@ class DriverQuestionnaireVC: UIViewController, UITableViewDelegate, UITableViewD
         
         /* TO DO: Validate driver information, make sure everything is good to go */
         
+        
+        // GETTING DATE FROM DATEPICKER
+        print((cells[3] as! DatePickerCell).datePicker.date)
+        
+        // GETTING EVENT FROM SCROLLPICKER
+        print((cells[2] as! ScrollPickerCell).scrollPicker.selectedRowInComponent(0))
+        
+        
         //grab questionaire data to add to data
         
         var rideDirection : String

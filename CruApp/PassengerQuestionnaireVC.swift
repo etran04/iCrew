@@ -19,6 +19,8 @@ class PassengerQuestionnaireVC: UIViewController, UITableViewDelegate, UITableVi
     var eventChoices = [String]()
     
     var cells = [AnyObject]()
+    var ministryCollection: [MinistryData] = []
+
     let kDefaultCellHeight = 44
     
     @IBOutlet weak var infoTable: UITableView!
@@ -31,13 +33,16 @@ class PassengerQuestionnaireVC: UIViewController, UITableViewDelegate, UITableVi
         dbClient = DBClient()
         dbClient.getData("event", dict: setEvents)
         
-        /* prepares fields to be filled for questionaire */
-        initializeChoices()
+        ministryCollection = UserProfile.getMinistries()
+
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        
+        /* prepares fields to be filled for questionaire */
+        initializeChoices()
+
+
         /* looks for single or multiple taps */
 //        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
 //        view.addGestureRecognizer(tap)
@@ -96,6 +101,34 @@ class PassengerQuestionnaireVC: UIViewController, UITableViewDelegate, UITableVi
     
     // Obtain event information from the database to an Object
     func setEvents(event: NSDictionary) {
+        var existsInMinistry = false
+        
+        //filters events by ministryId
+        if (event["parentMinistry"] == nil) {
+            let parentMinistries = event["parentMinistries"] as! [String]
+            
+            for ministryId in parentMinistries {
+                for ministry in ministryCollection {
+                    if (ministryId == ministry.id) {
+                        existsInMinistry = true;
+                    }
+                }
+            }
+        }
+        else {
+            let ministryId = event["parentMinistry"] as! String
+            
+            for ministry in ministryCollection {
+                if (ministry.id == ministryId) {
+                    existsInMinistry = true;
+                }
+            }
+        }
+        
+        if (!existsInMinistry) {
+            return;
+        }
+        
         let name = event["name"] as! String
         self.eventChoices.append(name)
     }

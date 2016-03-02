@@ -41,6 +41,31 @@
 		271C78211C50434000F42EA0 /* InitialCampusTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271C78201C50434000F42EA0 /* InitialCampusTableViewController.swift */; };
 		271C78231C5044B100F42EA0 /* InitialCampusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271C78221C5044B100F42EA0 /* InitialCampusTableViewCell.swift */; };
 		277E67561BEB6362001C29DD /* CruAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277E67551BEB6362001C29DD /* CruAppTests.swift */; };
+		278C4C371C86640100EB0AC1 /* FreigSanProBlk.otf in Resources */ = {isa = PBXBuildFile; fileRef = 278C4C2A1C86640100EB0AC1 /* FreigSanProBlk.otf */; };
+		278C4C381C86640100EB0AC1 /* FreigSanProBlkIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 278C4C2B1C86640100EB0AC1 /* FreigSanProBlkIt.otf */; };
+		278C4C391C86640100EB0AC1 /* FreigSanProBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 278C4C2C1C86640100EB0AC1 /* FreigSanProBold.otf */; };
+		278C4C3A1C86640100EB0AC1 /* FreigSanProBoldIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 278C4C2D1C86640100EB0AC1 /* FreigSanProBoldIt.otf */; };
+		278C4C3B1C86640100EB0AC1 /* FreigSanProBook.otf in Resources */ = {isa = PBXBuildFile; fileRef = 278C4C2E1C86640100EB0AC1 /* FreigSanProBook.otf */; };
+		278C4C3C1C86640100EB0AC1 /* FreigSanProBookIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 278C4C2F1C86640100EB0AC1 /* FreigSanProBookIt.otf */; };
+		278C4C3D1C86640100EB0AC1 /* FreigSanProLig.otf in Resources */ = {isa = PBXBuildFile; fileRef = 278C4C301C86640100EB0AC1 /* FreigSanProLig.otf */; };
+		278C4C3E1C86640100EB0AC1 /* FreigSanProLigIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 278C4C311C86640100EB0AC1 /* FreigSanProLigIt.otf */; };
+		278C4C3F1C86640100EB0AC1 /* FreigSanProMed.otf in Resources */ = {isa = PBXBuildFile; fileRef = 278C4C321C86640100EB0AC1 /* FreigSanProMed.otf */; };
+		278C4C401C86640100EB0AC1 /* FreigSanProMedIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 278C4C331C86640100EB0AC1 /* FreigSanProMedIt.otf */; };
+		278C4C411C86640100EB0AC1 /* FreigSanProSem.otf in Resources */ = {isa = PBXBuildFile; fileRef = 278C4C341C86640100EB0AC1 /* FreigSanProSem.otf */; };
+		278C4C421C86640100EB0AC1 /* FreigSanProSemIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 278C4C351C86640100EB0AC1 /* FreigSanProSemIt.otf */; };
+		278C4C431C86640100EB0AC1 /* GF End User License.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 278C4C361C86640100EB0AC1 /* GF End User License.rtf */; };
+		278C4C4A1C86646C00EB0AC1 /* FreigSanProBlk.otf in Resources */ = {isa = PBXBuildFile; fileRef = 278C4C2A1C86640100EB0AC1 /* FreigSanProBlk.otf */; };
+		278C4C4B1C86646C00EB0AC1 /* FreigSanProBlkIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 278C4C2B1C86640100EB0AC1 /* FreigSanProBlkIt.otf */; };
+		278C4C4C1C86646C00EB0AC1 /* FreigSanProBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 278C4C2C1C86640100EB0AC1 /* FreigSanProBold.otf */; };
+		278C4C4D1C86646C00EB0AC1 /* FreigSanProBoldIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 278C4C2D1C86640100EB0AC1 /* FreigSanProBoldIt.otf */; };
+		278C4C4E1C86646C00EB0AC1 /* FreigSanProBook.otf in Resources */ = {isa = PBXBuildFile; fileRef = 278C4C2E1C86640100EB0AC1 /* FreigSanProBook.otf */; };
+		278C4C4F1C86646C00EB0AC1 /* FreigSanProBookIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 278C4C2F1C86640100EB0AC1 /* FreigSanProBookIt.otf */; };
+		278C4C501C86646C00EB0AC1 /* FreigSanProLig.otf in Resources */ = {isa = PBXBuildFile; fileRef = 278C4C301C86640100EB0AC1 /* FreigSanProLig.otf */; };
+		278C4C511C86646C00EB0AC1 /* FreigSanProLigIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 278C4C311C86640100EB0AC1 /* FreigSanProLigIt.otf */; };
+		278C4C521C86646C00EB0AC1 /* FreigSanProMed.otf in Resources */ = {isa = PBXBuildFile; fileRef = 278C4C321C86640100EB0AC1 /* FreigSanProMed.otf */; };
+		278C4C531C86646C00EB0AC1 /* FreigSanProMedIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 278C4C331C86640100EB0AC1 /* FreigSanProMedIt.otf */; };
+		278C4C541C86646C00EB0AC1 /* FreigSanProSem.otf in Resources */ = {isa = PBXBuildFile; fileRef = 278C4C341C86640100EB0AC1 /* FreigSanProSem.otf */; };
+		278C4C551C86646C00EB0AC1 /* FreigSanProSemIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 278C4C351C86640100EB0AC1 /* FreigSanProSemIt.otf */; };
 		279326FC1C509C2100BAC73D /* PopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 279326EE1C509C2100BAC73D /* PopUpViewController.xib */; };
 		279326FD1C509C2100BAC73D /* PopUpViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 279326EF1C509C2100BAC73D /* PopUpViewController_iPad.xib */; };
 		279326FE1C509C2100BAC73D /* PopUpViewController_iPhone6.xib in Resources */ = {isa = PBXBuildFile; fileRef = 279326F01C509C2100BAC73D /* PopUpViewController_iPhone6.xib */; };
@@ -238,6 +263,19 @@
 		277E67531BEB6362001C29DD /* CruAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CruAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		277E67551BEB6362001C29DD /* CruAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CruAppTests.swift; sourceTree = "<group>"; };
 		277E67571BEB6362001C29DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		278C4C2A1C86640100EB0AC1 /* FreigSanProBlk.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FreigSanProBlk.otf; sourceTree = "<group>"; };
+		278C4C2B1C86640100EB0AC1 /* FreigSanProBlkIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FreigSanProBlkIt.otf; sourceTree = "<group>"; };
+		278C4C2C1C86640100EB0AC1 /* FreigSanProBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FreigSanProBold.otf; sourceTree = "<group>"; };
+		278C4C2D1C86640100EB0AC1 /* FreigSanProBoldIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FreigSanProBoldIt.otf; sourceTree = "<group>"; };
+		278C4C2E1C86640100EB0AC1 /* FreigSanProBook.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FreigSanProBook.otf; sourceTree = "<group>"; };
+		278C4C2F1C86640100EB0AC1 /* FreigSanProBookIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FreigSanProBookIt.otf; sourceTree = "<group>"; };
+		278C4C301C86640100EB0AC1 /* FreigSanProLig.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FreigSanProLig.otf; sourceTree = "<group>"; };
+		278C4C311C86640100EB0AC1 /* FreigSanProLigIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FreigSanProLigIt.otf; sourceTree = "<group>"; };
+		278C4C321C86640100EB0AC1 /* FreigSanProMed.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FreigSanProMed.otf; sourceTree = "<group>"; };
+		278C4C331C86640100EB0AC1 /* FreigSanProMedIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FreigSanProMedIt.otf; sourceTree = "<group>"; };
+		278C4C341C86640100EB0AC1 /* FreigSanProSem.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FreigSanProSem.otf; sourceTree = "<group>"; };
+		278C4C351C86640100EB0AC1 /* FreigSanProSemIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FreigSanProSemIt.otf; sourceTree = "<group>"; };
+		278C4C361C86640100EB0AC1 /* GF End User License.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "GF End User License.rtf"; sourceTree = "<group>"; };
 		279326EE1C509C2100BAC73D /* PopUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PopUpViewController.xib; path = NMPopUpView/Pod/Classes/PopUpViewController.xib; sourceTree = "<group>"; };
 		279326EF1C509C2100BAC73D /* PopUpViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PopUpViewController_iPad.xib; path = NMPopUpView/Pod/Classes/PopUpViewController_iPad.xib; sourceTree = "<group>"; };
 		279326F01C509C2100BAC73D /* PopUpViewController_iPhone6.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PopUpViewController_iPhone6.xib; path = NMPopUpView/Pod/Classes/PopUpViewController_iPhone6.xib; sourceTree = "<group>"; };
@@ -374,6 +412,7 @@
 		072519A61BE9694000F38F81 /* CruApp */ = {
 			isa = PBXGroup;
 			children = (
+				278C4C291C86640100EB0AC1 /* FreightSansPro  */,
 				1EB404DA1C633E6E00220D5B /* Supporting Files */,
 				838564F21C0D9EDF00EB1728 /* CruApp-Bridging-Header.h */,
 				279326FB1C509C2100BAC73D /* NMPopUpViewSwift */,
@@ -497,6 +536,26 @@
 				277E67571BEB6362001C29DD /* Info.plist */,
 			);
 			path = CruAppTests;
+			sourceTree = "<group>";
+		};
+		278C4C291C86640100EB0AC1 /* FreightSansPro  */ = {
+			isa = PBXGroup;
+			children = (
+				278C4C2A1C86640100EB0AC1 /* FreigSanProBlk.otf */,
+				278C4C2B1C86640100EB0AC1 /* FreigSanProBlkIt.otf */,
+				278C4C2C1C86640100EB0AC1 /* FreigSanProBold.otf */,
+				278C4C2D1C86640100EB0AC1 /* FreigSanProBoldIt.otf */,
+				278C4C2E1C86640100EB0AC1 /* FreigSanProBook.otf */,
+				278C4C2F1C86640100EB0AC1 /* FreigSanProBookIt.otf */,
+				278C4C301C86640100EB0AC1 /* FreigSanProLig.otf */,
+				278C4C311C86640100EB0AC1 /* FreigSanProLigIt.otf */,
+				278C4C321C86640100EB0AC1 /* FreigSanProMed.otf */,
+				278C4C331C86640100EB0AC1 /* FreigSanProMedIt.otf */,
+				278C4C341C86640100EB0AC1 /* FreigSanProSem.otf */,
+				278C4C351C86640100EB0AC1 /* FreigSanProSemIt.otf */,
+				278C4C361C86640100EB0AC1 /* GF End User License.rtf */,
+			);
+			path = "FreightSansPro ";
 			sourceTree = "<group>";
 		};
 		279326F31C509C2100BAC73D /* Resources */ = {
@@ -814,32 +873,43 @@
 			files = (
 				A447DBC11C5ACBBB000C6DEB /* Filled-Car-100.png in Resources */,
 				A447DBC01C5ACBBB000C6DEB /* Checked Checkbox 2-48.png in Resources */,
+				278C4C371C86640100EB0AC1 /* FreigSanProBlk.otf in Resources */,
 				839F64461C0D4E4300CAEC9E /* User Group-25.png in Resources */,
 				839F64451C0D4E4300CAEC9E /* Summer-25.png in Resources */,
+				278C4C3F1C86640100EB0AC1 /* FreigSanProMed.otf in Resources */,
 				839F64551C0D6BD100CAEC9E /* GetInvolved.storyboard in Resources */,
 				271C78161C5040EA00F42EA0 /* Initial.storyboard in Resources */,
 				07340BBA1C5B36B5002C6015 /* info.png in Resources */,
+				278C4C431C86640100EB0AC1 /* GF End User License.rtf in Resources */,
 				072519B21BE9694000F38F81 /* LaunchScreen.storyboard in Resources */,
 				279326FE1C509C2100BAC73D /* PopUpViewController_iPhone6.xib in Resources */,
 				839F645B1C0D6C4C00CAEC9E /* Resources.storyboard in Resources */,
 				A447DBC21C5ACBBB000C6DEB /* Passenger-52.png in Resources */,
 				839F64411C0D4E4300CAEC9E /* Cru-Logo.png in Resources */,
 				A447DBB31C5AC8D3000C6DEB /* Events.storyboard in Resources */,
+				278C4C3A1C86640100EB0AC1 /* FreigSanProBoldIt.otf in Resources */,
 				839F64441C0D4E4300CAEC9E /* Planner-25.png in Resources */,
+				278C4C411C86640100EB0AC1 /* FreigSanProSem.otf in Resources */,
+				278C4C3E1C86640100EB0AC1 /* FreigSanProLigIt.otf in Resources */,
 				07F802C51C76930B00A7A4BC /* rideShareIcon.png in Resources */,
 				A4110B501C0F7EB500F47AB4 /* Facebook-25.png in Resources */,
+				278C4C3D1C86640100EB0AC1 /* FreigSanProLig.otf in Resources */,
 				A4110B481C0F7E3400F47AB4 /* Calendar-25.png in Resources */,
 				839F64431C0D4E4300CAEC9E /* Literature-25.png in Resources */,
+				278C4C3C1C86640100EB0AC1 /* FreigSanProBookIt.otf in Resources */,
 				279326FD1C509C2100BAC73D /* PopUpViewController_iPad.xib in Resources */,
 				A4A836431C83D0AA003FBD8D /* Delete-50.png in Resources */,
 				839F64421C0D4E4300CAEC9E /* Home-25.png in Resources */,
 				839F64601C0D70AA00CAEC9E /* Box-25.png in Resources */,
 				A441CE6C1C75B0FD00663057 /* RideShare.storyboard in Resources */,
+				278C4C3B1C86640100EB0AC1 /* FreigSanProBook.otf in Resources */,
 				0703C7321C4DFA8500C7D8ED /* blank_calendar.png in Resources */,
+				278C4C381C86640100EB0AC1 /* FreigSanProBlkIt.otf in Resources */,
 				07F802C61C76930B00A7A4BC /* ToolsIcon.png in Resources */,
 				A447DBBF1C5ACBBB000C6DEB /* Car-25.png in Resources */,
 				072519AF1BE9694000F38F81 /* Assets.xcassets in Resources */,
 				279326FF1C509C2100BAC73D /* PopUpViewController_iPhone6Plus.xib in Resources */,
+				278C4C421C86640100EB0AC1 /* FreigSanProSemIt.otf in Resources */,
 				83A98E821C63129300338D0A /* GoogleService-Info.plist in Resources */,
 				279327011C509C2100BAC73D /* Info.plist in Resources */,
 				A45572F91C49CCE90097DE0F /* Google Plus-25.png in Resources */,
@@ -847,8 +917,10 @@
 				07F802C41C76930B00A7A4BC /* ArticlesIcon.png in Resources */,
 				839F64491C0D643A00CAEC9E /* menu.png in Resources */,
 				1EB405441C63E89900220D5B /* GTMOAuth2ViewTouch.xib in Resources */,
+				278C4C391C86640100EB0AC1 /* FreigSanProBold.otf in Resources */,
 				07F802C71C76930B00A7A4BC /* VideoIcon.png in Resources */,
 				072519AD1BE9694000F38F81 /* Main.storyboard in Resources */,
+				278C4C401C86640100EB0AC1 /* FreigSanProMedIt.otf in Resources */,
 				839F64581C0D6C1E00CAEC9E /* SummerMissions.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -857,6 +929,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				278C4C4A1C86646C00EB0AC1 /* FreigSanProBlk.otf in Resources */,
+				278C4C4B1C86646C00EB0AC1 /* FreigSanProBlkIt.otf in Resources */,
+				278C4C4C1C86646C00EB0AC1 /* FreigSanProBold.otf in Resources */,
+				278C4C4D1C86646C00EB0AC1 /* FreigSanProBoldIt.otf in Resources */,
+				278C4C4E1C86646C00EB0AC1 /* FreigSanProBook.otf in Resources */,
+				278C4C4F1C86646C00EB0AC1 /* FreigSanProBookIt.otf in Resources */,
+				278C4C501C86646C00EB0AC1 /* FreigSanProLig.otf in Resources */,
+				278C4C511C86646C00EB0AC1 /* FreigSanProLigIt.otf in Resources */,
+				278C4C521C86646C00EB0AC1 /* FreigSanProMed.otf in Resources */,
+				278C4C531C86646C00EB0AC1 /* FreigSanProMedIt.otf in Resources */,
+				278C4C541C86646C00EB0AC1 /* FreigSanProSem.otf in Resources */,
+				278C4C551C86646C00EB0AC1 /* FreigSanProSemIt.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

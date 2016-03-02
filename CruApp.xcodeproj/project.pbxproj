@@ -418,15 +418,11 @@
 		072519A61BE9694000F38F81 /* CruApp */ = {
 			isa = PBXGroup;
 			children = (
-				278C4C291C86640100EB0AC1 /* FreightSansPro  */,
-				1EB404DA1C633E6E00220D5B /* Supporting Files */,
-				838564F21C0D9EDF00EB1728 /* CruApp-Bridging-Header.h */,
-				279326FB1C509C2100BAC73D /* NMPopUpViewSwift */,
-				A43482D11C0D290E00B62D6C /* Images */,
-				072519B31BE9694000F38F81 /* Info.plist */,
-				83A98E811C63129300338D0A /* GoogleService-Info.plist */,
 				072519AE1BE9694000F38F81 /* Assets.xcassets */,
 				072519A71BE9694000F38F81 /* AppDelegate.swift */,
+				072519B31BE9694000F38F81 /* Info.plist */,
+				83A98E811C63129300338D0A /* GoogleService-Info.plist */,
+				1EB404DA1C633E6E00220D5B /* Supporting Files */,
 				07EE5F7D1BFE6BA8009A2B44 /* VCs */,
 				07EE5F7C1BFE6B92009A2B44 /* Storyboards */,
 			);
@@ -523,6 +519,10 @@
 		1EB404DA1C633E6E00220D5B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A43482D11C0D290E00B62D6C /* Images */,
+				279326FB1C509C2100BAC73D /* NMPopUpViewSwift */,
+				278C4C291C86640100EB0AC1 /* FreightSansPro  */,
+				838564F21C0D9EDF00EB1728 /* CruApp-Bridging-Header.h */,
 				1EB405431C63E89900220D5B /* GTMOAuth2ViewTouch.xib */,
 			);
 			name = "Supporting Files";

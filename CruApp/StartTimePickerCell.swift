@@ -19,6 +19,9 @@ class StartTimePickerCell: DatePickerCell {
         super.rightLabel.text = "Choose the ideal time"
         super.datePicker.minuteInterval = 15
         super.datePicker.addTarget(self, action: "saveDate", forControlEvents: UIControlEvents.AllEvents)
+        
+        super.leftLabel.font = UIFont(name: "FreightSansProMedium-Regular", size: 17.0)
+        super.rightLabel.font = UIFont(name: "FreightSansProMedium-Regular", size: 17.0)
     }
     
     required init?(coder aDecoder: NSCoder) {

@@ -8,6 +8,7 @@
 
 import UIKit
 import SafariServices
+import SwiftLoader
 
 ///* URLResources is a inner class to hold metadata for a single article or a single tool */
 //class URLResources {
@@ -43,7 +44,7 @@ class ArticlesTableViewController: UITableViewController {
     /* Called when the current view is loaded */
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setUpLoadSpinner()
+        //self.setUpLoadSpinner()
         
         /* Sets up the database */
         var dbClient: DBClient!
@@ -59,16 +60,7 @@ class ArticlesTableViewController: UITableViewController {
     
     /* Sets up and starts the loading indicator */
     func setUpLoadSpinner() {
-        indicator = UIActivityIndicatorView(frame: CGRectMake(0, 0, 40, 40))
-        indicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
-        indicator.center = self.view.center
-        
-        /* scales the indicator to twice the color */
-        let transform = CGAffineTransformMakeScale(2, 2)
-        indicator.transform = transform;
-        
-        self.view.addSubview(indicator)
-        indicator.startAnimating()
+        SwiftLoader.show(title: "Loading...", animated: true)
     }
     
     /* Resets the refresh UI control */
@@ -77,7 +69,7 @@ class ArticlesTableViewController: UITableViewController {
         // Update the displayed "Last update: " time in the UIRefreshControl
         let date = NSDate()
         let formatter = NSDateFormatter()
-        formatter.timeStyle = .MediumStyle
+        formatter.timeStyle = .ShortStyle
         let updateString = "Last updated: " + formatter.stringFromDate(date)
         self.refresh.attributedTitle = NSAttributedString(string: updateString)
         
@@ -118,7 +110,7 @@ class ArticlesTableViewController: UITableViewController {
             let articleObj = Resource(url : url, type : type, title : title, tags : tags)
             articles.append(articleObj)
         }
-        self.indicator.stopAnimating()
+        SwiftLoader.hide()
     }
     
     // MARK: - Table view data source
@@ -151,7 +143,7 @@ class ArticlesTableViewController: UITableViewController {
         let rowsAmount = tableView.numberOfRowsInSection(indexPath.section)
         if (indexPath.section == sectionsAmount - 1 && indexPath.row == rowsAmount - 1) {
             // This is the last cell in the table, stop the loading indicator
-            self.indicator.stopAnimating()
+            SwiftLoader.hide()
         }
     }
 

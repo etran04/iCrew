@@ -19,7 +19,8 @@ class VideoTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        videoTitle.font = UIFont.boldSystemFontOfSize(15.0)
+        videoTitle.font = UIFont(name: "FreightSansProBold-Regular", size: 17.0)
+        summaryTextView.font = UIFont(name: "FreightSansProMedium-Regular", size: 14.0)
         summaryTextView.textContainer.lineBreakMode = .ByWordWrapping
     }
 

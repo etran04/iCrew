@@ -94,6 +94,11 @@ class DriverQuestionnaireVC: UIViewController, UITableViewDelegate, UITableViewD
         // Sets up scroll picker cell for locations
         let locationPickerCell = ScrollPickerCell(style: .Default, reuseIdentifier: nil)
         self.locationChoices = self.eventChoices
+        
+        if (self.locationChoices.count == 0) {
+            self.locationChoices.append("No events to select")
+        }
+        
         locationPickerCell.setChoices(self.locationChoices)
         
         // Sets up Start Time DatePickerCell

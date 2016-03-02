@@ -72,6 +72,9 @@ class PassengerQuestionnaireVC: UIViewController, UITableViewDelegate, UITableVi
         
         // Sets up scroll picker cell for locations
         let locationPickerCell = ScrollPickerCell(style: .Default, reuseIdentifier: nil)
+        if (self.eventChoices.count == 0) {
+            self.eventChoices.append("No events to select")
+        }
         locationPickerCell.setChoices(self.eventChoices)
         
         // Sets up Start Time DatePickerCell

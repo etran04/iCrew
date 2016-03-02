@@ -226,7 +226,9 @@ class VideosTableViewController: UITableViewController {
         // Form the request URL string for first time fetch
         if (nextPageToken == "") {
             urlString = "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=10&playlistId=\(playlistID)&key=\(apiKey)"
-        } else {
+        }
+        // Or uses the nextPageToken as a user scrolls down the feed 
+        else {
              urlString = "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&pageToken=\(nextPageToken)&maxResults=10&playlistId=\(playlistID)&key=\(apiKey)"
         }
         

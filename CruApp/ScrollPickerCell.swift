@@ -2,7 +2,7 @@
 //  ScrollPickerCell.swift
 //  CruApp
 //
-//  Created by Eric Tran on 3/1/16
+//  Modified by Eric Tran on 3/1/16
 //  Created by Dylan Vann on 2014-10-21.
 //  Copyright (c) 2014 Dylan Vann. All rights reserved.
 //
@@ -81,6 +81,9 @@ public class ScrollPickerCell: UITableViewCell, UIPickerViewDataSource, UIPicker
         
         // The datePicker overhangs the view slightly to avoid invalid constraints.
         self.clipsToBounds = true
+        
+        leftLabel.font = UIFont(name: "FreightSansProMedium-Regular", size: 17.0)
+        rightLabel.font = UIFont(name: "FreightSansProMedium-Regular", size: 17.0)
         
         let views = [leftLabel, rightLabel, seperator, pickerContainer, scrollPicker]
         for view in views {
@@ -270,7 +273,6 @@ public class ScrollPickerCell: UITableViewCell, UIPickerViewDataSource, UIPicker
             ),
             ])
         
-        //datePicker.addTarget(self, action: "datePicked", forControlEvents: UIControlEvents.ValueChanged)
         leftLabel.text = "Event"
     }
     

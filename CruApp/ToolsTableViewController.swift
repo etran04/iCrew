@@ -8,6 +8,7 @@
 
 import UIKit
 import SafariServices
+import SwiftLoader
 
 class ToolsTableViewController: UITableViewController {
     
@@ -23,7 +24,7 @@ class ToolsTableViewController: UITableViewController {
     /* Called when the current view is loaded */
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setUpLoadSpinner()
+        //self.setUpLoadSpinner()
         self.loadTools()
     }
     
@@ -34,16 +35,7 @@ class ToolsTableViewController: UITableViewController {
     
     /* Sets up and starts the loading indicator */
     func setUpLoadSpinner() {
-        indicator = UIActivityIndicatorView(frame: CGRectMake(0, 0, 40, 40))
-        indicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
-        indicator.center = self.view.center
-        
-        /* scales the indicator to twice the color */
-        let transform = CGAffineTransformMakeScale(2, 2)
-        indicator.transform = transform;
-        
-        self.view.addSubview(indicator)
-        //indicator.startAnimating()
+        SwiftLoader.show(title: "Loading...", animated: true)
     }
     
     /* Resets the refresh UI control */
@@ -51,7 +43,7 @@ class ToolsTableViewController: UITableViewController {
         // Update the displayed "Last update: " time in the UIRefreshControl
         let date = NSDate()
         let formatter = NSDateFormatter()
-        formatter.timeStyle = .MediumStyle
+        formatter.timeStyle = .ShortStyle
         let updateString = "Last updated: " + formatter.stringFromDate(date)
         self.refresh.attributedTitle = NSAttributedString(string: updateString)
         
@@ -109,7 +101,7 @@ class ToolsTableViewController: UITableViewController {
         let rowsAmount = tableView.numberOfRowsInSection(indexPath.section)
         if (indexPath.section == sectionsAmount - 1 && indexPath.row == rowsAmount - 1) {
             // This is the last cell in the table, stop the loading indicator
-            self.indicator.stopAnimating()
+            SwiftLoader.hide()
         }
     }
 }

@@ -56,6 +56,9 @@ class VideosTableViewController: UITableViewController {
     /* Holds a list of videos to be loaded */
     var videos = [Video]()
     
+    /* Tracks the the next page of videos when fetching from youtube api */
+    var nextPageToken = ""
+    
     /* Called when the current view is loaded */
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,7 +81,7 @@ class VideosTableViewController: UITableViewController {
         // Update the displayed "Last update: " time in the UIRefreshControl
         let date = NSDate()
         let formatter = NSDateFormatter()
-        formatter.timeStyle = .MediumStyle
+        formatter.timeStyle = .ShortStyle
         let updateString = "Last updated: " + formatter.stringFromDate(date)
         self.refresh.attributedTitle = NSAttributedString(string: updateString)
         
@@ -133,6 +136,14 @@ class VideosTableViewController: UITableViewController {
     /* Callback for when a table cell is selected */
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         // Empty method, can be filled for functionality if needed.
+    }
+    
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        // check if row is last row
+        // perform operation to load new cell
+        if (indexPath.row == self.videos.count - 1) {
+            self.loadVideos()
+        }
     }
 
     /* Helper method to perform a simple get request */
@@ -210,8 +221,16 @@ class VideosTableViewController: UITableViewController {
         
         let playlistID = channelsDataArray[index]["playlistID"] as! String
         
-        // Form the request URL string.
-        let urlString = "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=\(playlistID)&key=\(apiKey)"
+        let urlString: String
+        
+        // Form the request URL string for first time fetch
+        if (nextPageToken == "") {
+            urlString = "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=10&playlistId=\(playlistID)&key=\(apiKey)"
+        }
+        // Or uses the nextPageToken as a user scrolls down the feed 
+        else {
+             urlString = "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&pageToken=\(nextPageToken)&maxResults=10&playlistId=\(playlistID)&key=\(apiKey)"
+        }
         
         // Create a NSURL object based on the above string.
         let targetURL = NSURL(string: urlString)
@@ -222,6 +241,9 @@ class VideosTableViewController: UITableViewController {
                 do {
                     // Convert the JSON data into a dictionary.
                     let resultsDict = try NSJSONSerialization.JSONObjectWithData(data!, options: []) as! Dictionary<NSObject, AnyObject>
+                    
+                    // Save the next page token
+                    self.nextPageToken = resultsDict["nextPageToken"] as! String
                     
                     // Get all playlist items ("items" array).
                     let items: Array<Dictionary<NSObject, AnyObject>> = resultsDict["items"] as! Array<Dictionary<NSObject, AnyObject>>

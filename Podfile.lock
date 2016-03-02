@@ -31,7 +31,6 @@ PODS:
   - NMPopUpViewSwift (3.0.1)
   - ReachabilitySwift (2.3.3)
   - SwiftLoader (0.2.5)
-  - SwiftSpinner (0.8.0)
   - youtube-ios-player-helper (0.1.5)
 
 DEPENDENCIES:
@@ -44,17 +43,23 @@ DEPENDENCIES:
   - NMPopUpViewSwift
   - ReachabilitySwift (from `https://github.com/ashleymills/Reachability.swift`)
   - SwiftLoader
-  - SwiftSpinner
-  - youtube-ios-player-helper (~> 0.1.4)
+  - youtube-ios-player-helper (from `https://github.com/youtube/youtube-ios-player-helper`,
+    commit `head`)
 
 EXTERNAL SOURCES:
   ReachabilitySwift:
     :git: https://github.com/ashleymills/Reachability.swift
+  youtube-ios-player-helper:
+    :commit: head
+    :git: https://github.com/youtube/youtube-ios-player-helper
 
 CHECKOUT OPTIONS:
   ReachabilitySwift:
     :commit: cf126c0584a209143c75bf1d0f23fd904891e26e
     :git: https://github.com/ashleymills/Reachability.swift
+  youtube-ios-player-helper:
+    :commit: head
+    :git: https://github.com/youtube/youtube-ios-player-helper
 
 SPEC CHECKSUMS:
   Alamofire: f11d8624a05f5d39e0c99309b3e600a3ba64298a
@@ -73,7 +78,6 @@ SPEC CHECKSUMS:
   NMPopUpViewSwift: 23a44d6db17a9abc6b806f9fac597be6d7e9f300
   ReachabilitySwift: e0f6b6f280effb47731acfaaa2d5ffe223703793
   SwiftLoader: 12d7a6f661f5e9a2c9a72003e7dd6162f4ff0cc4
-  SwiftSpinner: 11c2c5ec7443d92f3026d3067ca8a91d4adef13f
-  youtube-ios-player-helper: 8706bb155ffee74fbe5f2f5cf41c2dafe60dc155
+  youtube-ios-player-helper: 921da8927a575debc293a94c678c658f38cde150
 
 COCOAPODS: 0.39.0

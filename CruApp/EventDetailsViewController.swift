@@ -351,8 +351,8 @@ class EventDetailsViewController: UIViewController, UIPopoverPresentationControl
             actionSheetController.addAction(requestRideAction)
         
             //We need to provide a popover sourceView when using it on iPad
-            actionSheetController.popoverPresentationController?.sourceView = sender as! UIView
-            
+//            actionSheetController.popoverPresentationController?.sourceView = sender as UIView
+        
             //Present the AlertController
             self.presentViewController(actionSheetController, animated: true, completion: nil)
         

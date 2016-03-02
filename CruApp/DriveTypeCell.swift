@@ -11,7 +11,11 @@ import CheckmarkSegmentedControl
 
 class DriveTypeCell: UITableViewCell {
 
+    // outlet to driver q types
     @IBOutlet weak var driveTypes: CheckmarkSegmentedControl!
+    
+    // outlet to rider q types
+    @IBOutlet weak var driveTypes2: CheckmarkSegmentedControl!
     
     override func awakeFromNib() {
         super.awakeFromNib()

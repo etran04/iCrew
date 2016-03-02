@@ -240,6 +240,15 @@ class RideShareStatusTableViewController: UITableViewController {
 //            self.view.addSubview(label)
 //            spacer = spacer + 50
 //        }
+        var spacer: CGFloat = 50
+        for pssngr in driver.passengers {
+            let label = UILabel(frame: CGRectMake(0, 0, 200, 21))
+            label.center = CGPointMake(160, 300 + spacer )
+            label.textAlignment = NSTextAlignment.Center
+            label.text = pssngr.name
+            self.view.addSubview(label)
+            spacer = spacer + 50
+        }
         
         cell.cancelDriver.addTarget(self, action: "cancelDriver:", forControlEvents: .TouchUpInside)
         cell.cancelDriver.tag = indexPath.row

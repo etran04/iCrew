@@ -8,7 +8,6 @@
 
 import UIKit
 import SwiftLoader
-import SwiftSpinner
 
 /* Video represents a holder for metadata of a single individual youtube video */
 class Video {
@@ -72,7 +71,6 @@ class VideosTableViewController: UITableViewController {
     /* Sets up and starts the loading indicator */
     func setUpLoadSpinner() {
         SwiftLoader.show(title: "Loading...", animated: true)
-        //SwiftSpinner.show("Loading...")
     }
     
     /* Resets the refresh UI control */

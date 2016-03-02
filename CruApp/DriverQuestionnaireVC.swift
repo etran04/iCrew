@@ -112,14 +112,14 @@ class DriverQuestionnaireVC: UIViewController, UITableViewDelegate, UITableViewD
         self.locationChoices = ["The Avenue", "VG Cafe", "Campus Market", "Village Market", "19 Metro Station", "Sandwich Factory"]
         locationPickerCell.setChoices(self.locationChoices)
         
-        // Sets up the number seats available cell 
-        let availNumCell = infoTable.dequeueReusableCellWithIdentifier("availSeatCell") as! AvailNumSeatCell
-        
         // Sets up Start Time DatePickerCell
         let startPickerCell = StartTimePickerCell(style: UITableViewCellStyle.Default, reuseIdentifier: nil)
         
+        // Sets up the number seats available cell
+        let availNumCell = infoTable.dequeueReusableCellWithIdentifier("availSeatCell") as! AvailNumSeatCell
+        
         // Cells is a cells to be used
-        cells = [nameCell!, phoneCell!, locationPickerCell, availNumCell, startPickerCell]
+        cells = [nameCell!, phoneCell!, locationPickerCell, startPickerCell, availNumCell]
         
         // Replaces the extra cells at the end with a clear view
         infoTable.tableFooterView = UIView(frame: CGRect.zero)

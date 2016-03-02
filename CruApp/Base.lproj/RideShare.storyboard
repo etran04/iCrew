@@ -438,10 +438,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="moz-F5-2Rc" customClass="CheckmarkSegmentedControl" customModule="CheckmarkSegmentedControl">
-                                <rect key="frame" x="34" y="560" width="346" height="72"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YDh-BL-vQQ">
                                 <rect key="frame" x="20" y="649" width="99" height="30"/>
                                 <constraints>
@@ -519,8 +515,16 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="availSeatCell" id="j8u-ng-og1" customClass="AvailNumSeatCell" customModule="CruApp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="datePickerCell" id="CYB-DU-ctj" customClass="DatePickerCell" customModule="DatePickerCell">
                                         <rect key="frame" x="0.0" y="160" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CYB-DU-ctj" id="TM8-kg-2Yi">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="availSeatCell" id="j8u-ng-og1" customClass="AvailNumSeatCell" customModule="CruApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="204" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="j8u-ng-og1" id="R4R-hn-0DR">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -544,12 +548,18 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="datePickerCell" id="CYB-DU-ctj" customClass="DatePickerCell" customModule="DatePickerCell">
-                                        <rect key="frame" x="0.0" y="204" width="414" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="115" id="xmL-Bi-RZC">
+                                        <rect key="frame" x="0.0" y="248" width="414" height="115"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CYB-DU-ctj" id="TM8-kg-2Yi">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xmL-Bi-RZC" id="ZFv-0A-gT8">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="114.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="moz-F5-2Rc" customClass="CheckmarkSegmentedControl" customModule="CheckmarkSegmentedControl">
+                                                    <rect key="frame" x="34" y="22" width="346" height="72"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </view>
+                                            </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
@@ -559,10 +569,6 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="VBG-sP-A4d" secondAttribute="trailing" id="0wi-NE-uFr"/>
                             <constraint firstItem="VBG-sP-A4d" firstAttribute="top" secondItem="oKB-DF-Yj2" secondAttribute="bottom" constant="8" symbolic="YES" id="3gI-sW-KBX"/>
-                            <constraint firstItem="moz-F5-2Rc" firstAttribute="top" secondItem="VBG-sP-A4d" secondAttribute="bottom" constant="8" symbolic="YES" id="7WO-Ss-OQd"/>
-                            <constraint firstItem="moz-F5-2Rc" firstAttribute="leading" secondItem="4gR-fl-69e" secondAttribute="leadingMargin" constant="14" id="Bfb-EF-H1C"/>
-                            <constraint firstItem="YDh-BL-vQQ" firstAttribute="top" secondItem="moz-F5-2Rc" secondAttribute="bottom" constant="17" id="K9Q-Tc-voH"/>
-                            <constraint firstItem="moz-F5-2Rc" firstAttribute="centerX" secondItem="VBG-sP-A4d" secondAttribute="centerX" id="Mj6-OP-7YX"/>
                             <constraint firstItem="EW0-hu-cXf" firstAttribute="top" secondItem="YDh-BL-vQQ" secondAttribute="bottom" constant="8" symbolic="YES" id="N5p-KR-Bpv"/>
                             <constraint firstItem="YDh-BL-vQQ" firstAttribute="leading" secondItem="4gR-fl-69e" secondAttribute="leadingMargin" id="Row-KK-IGM"/>
                             <constraint firstItem="hPn-Fa-StR" firstAttribute="baseline" secondItem="YDh-BL-vQQ" secondAttribute="firstBaseline" id="cUy-Rg-mhW"/>
@@ -578,7 +584,6 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
-                        <outlet property="driveTypes" destination="moz-F5-2Rc" id="PDx-O3-aZJ"/>
                         <outlet property="infoTable" destination="VBG-sP-A4d" id="kqn-Ef-hbx"/>
                         <outlet property="locationLabel" destination="hPn-Fa-StR" id="4sy-H7-jhb"/>
                         <segue destination="LbC-g2-YCA" kind="show" identifier="finishQuestionaire" animates="NO" id="0cg-yg-gAR"/>

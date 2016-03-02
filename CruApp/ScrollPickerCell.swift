@@ -135,7 +135,7 @@ public class ScrollPickerCell: UITableViewCell, UIPickerViewDataSource, UIPicker
         
         
         rightLabel.textColor = rightLabelTextColor
-        rightLabel.text = "Choose a location"
+        rightLabel.text = "Choose an event"
         
         // Left label.
         self.contentView.addConstraints([
@@ -271,7 +271,7 @@ public class ScrollPickerCell: UITableViewCell, UIPickerViewDataSource, UIPicker
             ])
         
         //datePicker.addTarget(self, action: "datePicked", forControlEvents: UIControlEvents.ValueChanged)
-        leftLabel.text = "Location"
+        leftLabel.text = "Event"
     }
     
     /**

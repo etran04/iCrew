@@ -15,9 +15,8 @@ class StartTimePickerCell: DatePickerCell {
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        super.leftLabel.text = "Start Time"
-        super.rightLabel.text = "Choose an available time"
-        super.datePicker.datePickerMode = .Time
+        super.leftLabel.text = "Departure time"
+        super.rightLabel.text = "Choose the ideal time"
         super.datePicker.minuteInterval = 15
         super.datePicker.addTarget(self, action: "saveDate", forControlEvents: UIControlEvents.AllEvents)
     }

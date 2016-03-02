@@ -137,8 +137,31 @@ class DriverQuestionnaireVC: UIViewController, UITableViewDelegate, UITableViewD
 //        infoTable.endEditing(true)
 //    }
     
-    /* Callback for when submit button is pressed */
-    @IBAction func submitPressed(sender: UIButton) {
+    func parsePhoneNumber(phoneNum : String) -> Int {
+        // split by '-'
+        let full = phoneNum.componentsSeparatedByString("-")
+        let left = full[0]
+        let right = full[1]
+        
+        // get area code from ()
+        var index1 = left.startIndex.advancedBy(1)
+        let delFirstParen = left.substringFromIndex(index1)
+        let index2 = delFirstParen.startIndex.advancedBy(3)
+        let areaCode = delFirstParen.substringToIndex(index2)
+        
+        // get first three digits 
+        index1 = left.startIndex.advancedBy(6)
+        let threeDigits = left.substringFromIndex(index1)
+        
+        // get last four digits
+        // = right
+
+        let finalPhoneNum = areaCode + threeDigits + right
+        return Int(finalPhoneNum)!
+
+    }
+    
+    @IBAction func submitPressed(sender: UIBarButtonItem) {
         
         /* TO DO: Validate driver information, make sure everything is good to go */
         
@@ -161,14 +184,15 @@ class DriverQuestionnaireVC: UIViewController, UITableViewDelegate, UITableViewD
         //TO DO - FIGURE OUT WHICH EVENT IS PICKED, AND GCM
         
         let driverName = (cells[0] as! NameFieldCell).driverFullName.text
-        let drivePhoneNum = Int((cells[1] as! PhoneNumCell).driverPhoneNum.text!)
+        print((cells[1] as! PhoneNumCell).driverPhoneNum.text!)
+        let drivePhoneNum = parsePhoneNumber(((cells[1] as! PhoneNumCell).driverPhoneNum.text!))
         let numSeatsChoice = Int((cells[4] as! AvailNumSeatCell).stepper.value)
         
         let params : [String: AnyObject] =
         [
             "direction": rideDirection,
             "seats": numSeatsChoice,
-            "driverNumber": drivePhoneNum!,
+            "driverNumber": drivePhoneNum,
             "event": "563b11135e926d03001ac15c",
             "driverName": driverName!,
             "gcm_id" : 1234567

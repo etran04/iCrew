@@ -625,7 +625,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Offer Ride" id="97i-4E-GXh">
-                        <barButtonItem key="rightBarButtonItem" title="Submit" id="RON-SO-say"/>
+                        <barButtonItem key="rightBarButtonItem" title="Submit" id="RON-SO-say">
+                            <connections>
+                                <action selector="submitPressed:" destination="XGh-21-Tdj" id="1Sk-pU-G50"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>

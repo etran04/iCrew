@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SwiftLoader
+
 
 let kDriverHeader = "You will be a driver for..."
 let kPassengerHeader = "You will be a passenger for..."
@@ -76,17 +78,45 @@ class RideShareStatusTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var dbClient: DBClient!
-        dbClient = DBClient()
-        dbClient.getData("passenger", dict: setPassenger)
-        dbClient.getData("ride", dict: setRides)
-
+        // Starts the loading spinner
+        SwiftLoader.show(animated: true)
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        // Replaces the extra cells at the end with a clear view
+        self.tableView.tableFooterView = UIView(frame: CGRect.zero)
+        
+        // Gets the orders from Firebase
+        self.fetchStatuses()
+    }
+    
+    
+    func fetchStatuses() {
+        driverCollection = [RideShareDriver]()
+        passengerCollection = [RideSharePassenger]()
+        tableData = [[AnyObject]]()
+        
+        var dbClient: DBClient!
+        dbClient = DBClient()
+        dbClient.getData("passenger", dict: setPassenger)
+        dbClient.getData("ride", dict: setRides)
+        
+        // array to hold all orders by section
+        self.tableData = [self.driverCollection, self.passengerCollection]
+        
+        SwiftLoader.hide()
+        
+        self.tableView.reloadData()
+    }
+    
     
     func setPassenger(passenger:NSDictionary){
         let id = passenger["_id"] as! String
@@ -116,6 +146,8 @@ class RideShareStatusTableViewController: UITableViewController {
                     passengersInfo.append(data)
                     
                     //if user is a passenger
+                    
+                    print("user is a passenger")
                     if(gcm_id == data.gcmId) {
                         let passengerObj = RideSharePassenger(rideId:rideId, passengerId:pssngr, eventId:event, departureTime:time, driverNumber:driverNumber, driverName:driverName)
                         passengerCollection.append(passengerObj)
@@ -126,6 +158,7 @@ class RideShareStatusTableViewController: UITableViewController {
         
         //if user is a driver
         if(gcm_id == gcmId) {
+            print("user is a driver")
             let rideObj = RideShareDriver(rideId:rideId, eventId:event, departureTime:time, availableSeats:availableSeats, passengers:passengersInfo)
             driverCollection.append(rideObj)
         }
@@ -133,35 +166,24 @@ class RideShareStatusTableViewController: UITableViewController {
         self.tableView.reloadData()
     }
 
-    
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        // Replaces the extra cells at the end with a clear view
-        self.tableView.tableFooterView = UIView(frame: CGRect.zero)
-    }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    
-    func fetchStatuses() {
-        driverCollection = [RideShareDriver]()
-        passengerCollection = [RideSharePassenger]()
-        
-    }
 
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
+        print("table section: \(tableData.count)")
+
         return tableData.count
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        print("table rows: \(tableData[section].count)")
         return tableData[section].count
     }
     
@@ -209,15 +231,15 @@ class RideShareStatusTableViewController: UITableViewController {
         
         cell.availableSeats.text = String(driver.availableSeats)
         
-        var spacer: CGFloat = 50
-        for pssngr in driver.passengers {
-            var label = UILabel(frame: CGRectMake(0, 0, 200, 21))
-            label.center = CGPointMake(160, 300 + spacer )
-            label.textAlignment = NSTextAlignment.Center
-            label.text = pssngr.name
-            self.view.addSubview(label)
-            spacer = spacer + 50
-        }
+//        var spacer: CGFloat = 50
+//        for pssngr in driver.passengers {
+//            var label = UILabel(frame: CGRectMake(0, 0, 200, 21))
+//            label.center = CGPointMake(160, 300 + spacer )
+//            label.textAlignment = NSTextAlignment.Center
+//            label.text = pssngr.name
+//            self.view.addSubview(label)
+//            spacer = spacer + 50
+//        }
         
         cell.cancelDriver.addTarget(self, action: "cancelDriver:", forControlEvents: .TouchUpInside)
         cell.cancelDriver.tag = indexPath.row

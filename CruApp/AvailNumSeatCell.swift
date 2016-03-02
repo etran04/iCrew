@@ -10,13 +10,23 @@ import UIKit
 
 class AvailNumSeatCell: UITableViewCell {
     
+    @IBOutlet weak var numSeatsLabel: UILabel!
+    
+    @IBOutlet weak var stepper: UIStepper!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        stepper.value = 0
+        numSeatsLabel.text = String(stepper.value)
+        
     }
     
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+    }
+    
+    @IBAction func stepperPressed(sender: AnyObject) {
+        numSeatsLabel.text = String(stepper.value)
     }
     
 }

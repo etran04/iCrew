@@ -290,8 +290,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="94.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LX3-0z-keB" customClass="CheckmarkSegmentedControl" customModule="CheckmarkSegmentedControl">
-                                                    <rect key="frame" x="14" y="12" width="346" height="72"/>
+                                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LX3-0z-keB" customClass="CheckmarkSegmentedControl" customModule="CheckmarkSegmentedControl">
+                                                    <rect key="frame" x="14" y="13" width="346" height="70"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </view>
                                             </subviews>
@@ -508,7 +508,7 @@
                                         <rect key="frame" x="0.0" y="92" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZPm-Ty-VnS" id="ack-LC-TZl">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Full Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eKU-eu-CTc" userLabel="Full Name Text Field">
@@ -531,7 +531,7 @@
                                         <rect key="frame" x="0.0" y="136" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FQg-Es-grj" id="fpB-Nb-Lzx">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tig-dT-5Zz" userLabel="Phone Number Text Field">
@@ -554,7 +554,7 @@
                                         <rect key="frame" x="0.0" y="180" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HIg-IE-cJQ" id="S5m-zt-QDm">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -562,7 +562,7 @@
                                         <rect key="frame" x="0.0" y="224" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CYB-DU-ctj" id="TM8-kg-2Yi">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -570,7 +570,7 @@
                                         <rect key="frame" x="0.0" y="268" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="j8u-ng-og1" id="R4R-hn-0DR">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="# Seats Available:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RQ8-tM-Pb0">
@@ -611,15 +611,15 @@
                                             <outlet property="stepper" destination="VGf-RK-fdl" id="gco-uT-8B2"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="driveTypeCell" rowHeight="115" id="xmL-Bi-RZC" customClass="DriveTypeCell" customModule="CruApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="312" width="414" height="115"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="driveTypeCell" rowHeight="99" id="xmL-Bi-RZC" customClass="DriveTypeCell" customModule="CruApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="312" width="414" height="99"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xmL-Bi-RZC" id="ZFv-0A-gT8">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="114.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="99"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="moz-F5-2Rc" customClass="CheckmarkSegmentedControl" customModule="CheckmarkSegmentedControl">
-                                                    <rect key="frame" x="34" y="22" width="346" height="72"/>
+                                                    <rect key="frame" x="34" y="14" width="346" height="70"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="346" id="UvC-eS-Vfo"/>
@@ -628,19 +628,27 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="moz-F5-2Rc" firstAttribute="top" secondItem="ZFv-0A-gT8" secondAttribute="topMargin" constant="14" id="JnK-dc-78H"/>
+                                                <constraint firstItem="moz-F5-2Rc" firstAttribute="top" secondItem="ZFv-0A-gT8" secondAttribute="topMargin" constant="6" id="Mbv-Ho-jc6"/>
                                                 <constraint firstItem="moz-F5-2Rc" firstAttribute="centerY" secondItem="ZFv-0A-gT8" secondAttribute="centerY" id="p4Z-GA-LMr"/>
+                                                <constraint firstItem="moz-F5-2Rc" firstAttribute="top" secondItem="ZFv-0A-gT8" secondAttribute="topMargin" constant="6" id="piG-dx-5wf"/>
                                                 <constraint firstItem="moz-F5-2Rc" firstAttribute="centerX" secondItem="ZFv-0A-gT8" secondAttribute="centerX" id="szU-JU-8Vn"/>
                                             </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="JnK-dc-78H"/>
+                                                    <exclude reference="piG-dx-5wf"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="driveTypes" destination="moz-F5-2Rc" id="1Li-gL-aWe"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="locationCell" id="GHP-Lm-vwF" customClass="EnterLocationPlaceCell" customModule="CruApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="427" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="411" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GHP-Lm-vwF" id="89j-Rq-KYn">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YDh-BL-vQQ">
@@ -653,7 +661,7 @@
                                                         <action selector="autocompleteClicked:" destination="XGh-21-Tdj" eventType="touchUpInside" id="ebi-AE-hkB"/>
                                                     </connections>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location goes here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hPn-Fa-StR">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hPn-Fa-StR">
                                                     <rect key="frame" x="163" y="11" width="202" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -680,10 +688,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="VBG-sP-A4d" firstAttribute="leading" secondItem="4gR-fl-69e" secondAttribute="leading" id="WGl-Pf-TXn"/>
-                            <constraint firstAttribute="trailing" secondItem="VBG-sP-A4d" secondAttribute="trailing" id="Zt5-rC-Uaw"/>
-                            <constraint firstItem="EW0-hu-cXf" firstAttribute="top" secondItem="VBG-sP-A4d" secondAttribute="bottom" id="iO9-yg-5F1"/>
-                            <constraint firstItem="VBG-sP-A4d" firstAttribute="top" secondItem="4gR-fl-69e" secondAttribute="top" id="xW1-Vb-BrY"/>
+                            <constraint firstItem="VBG-sP-A4d" firstAttribute="bottom" secondItem="EW0-hu-cXf" secondAttribute="top" id="F2e-CX-mV8"/>
+                            <constraint firstAttribute="trailing" secondItem="VBG-sP-A4d" secondAttribute="trailing" id="Pf3-K3-PKp"/>
+                            <constraint firstItem="VBG-sP-A4d" firstAttribute="leading" secondItem="4gR-fl-69e" secondAttribute="leading" id="cVp-Wr-hTp"/>
+                            <constraint firstItem="VBG-sP-A4d" firstAttribute="top" secondItem="4gR-fl-69e" secondAttribute="top" id="uoc-RW-gaT"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Offer Ride" id="97i-4E-GXh">

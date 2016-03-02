@@ -217,56 +217,118 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Full Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bl2-LZ-llE">
-                                <rect key="frame" x="21" y="80" width="334" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hZq-Z4-O2w">
-                                <rect key="frame" x="21" y="123" width="334" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Choose Event..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ReG-yo-ycE">
-                                <rect key="frame" x="20" y="173" width="335" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZIX-m8-ygQ">
-                                <rect key="frame" x="163" y="587" width="49" height="30"/>
-                                <state key="normal" title="Submit"/>
-                                <connections>
-                                    <segue destination="WiO-dx-ez4" kind="show" id="8O1-bA-cBH"/>
-                                </connections>
-                            </button>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="15" translatesAutoresizingMaskIntoConstraints="NO" id="zlP-s3-b8q">
-                                <rect key="frame" x="0.0" y="339" width="375" height="216"/>
-                                <date key="date" timeIntervalSinceReferenceDate="476743196.22799498">
-                                    <!--2016-02-09 20:39:56 +0000-->
-                                </date>
-                            </datePicker>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Earliest departure time:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mo6-fW-vzP">
-                                <rect key="frame" x="20" y="310" width="179" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LX3-0z-keB" customClass="CheckmarkSegmentedControl" customModule="CheckmarkSegmentedControl">
-                                <rect key="frame" x="14" y="221" width="346" height="72"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uQw-6j-pn4">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="nameCell" id="YiV-bs-oea" customClass="NameFieldCell" customModule="CruApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YiV-bs-oea" id="gEn-Rv-APe">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Full Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bl2-LZ-llE">
+                                                    <rect key="frame" x="20" y="7" width="334" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="bl2-LZ-llE" firstAttribute="leading" secondItem="gEn-Rv-APe" secondAttribute="leadingMargin" constant="12" id="9Gs-fi-kin"/>
+                                                <constraint firstItem="bl2-LZ-llE" firstAttribute="centerY" secondItem="gEn-Rv-APe" secondAttribute="centerY" id="B9S-Yd-7Ai"/>
+                                                <constraint firstItem="bl2-LZ-llE" firstAttribute="centerX" secondItem="gEn-Rv-APe" secondAttribute="centerX" id="TeX-rU-zz9"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="riderFullName" destination="bl2-LZ-llE" id="7E7-gg-GTc"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="phoneNumCell" id="rFw-l4-Ea3" customClass="PhoneNumCell" customModule="CruApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="136" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rFw-l4-Ea3" id="6NH-1n-Gdi">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hZq-Z4-O2w">
+                                                    <rect key="frame" x="20" y="7" width="334" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="hZq-Z4-O2w" firstAttribute="centerY" secondItem="6NH-1n-Gdi" secondAttribute="centerY" id="50U-U6-68h"/>
+                                                <constraint firstItem="hZq-Z4-O2w" firstAttribute="centerX" secondItem="6NH-1n-Gdi" secondAttribute="centerX" id="bjH-m6-7oj"/>
+                                                <constraint firstItem="hZq-Z4-O2w" firstAttribute="leading" secondItem="6NH-1n-Gdi" secondAttribute="leadingMargin" constant="12" id="eA7-Fa-1BH"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="riderPhoneNum" destination="hZq-Z4-O2w" id="CPd-OA-g1F"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="dkZ-oS-8FM" customClass="ScrollPickerCell" customModule="CruApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="180" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dkZ-oS-8FM" id="1kw-6a-XFz">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="IjH-0s-GUW" customClass="DatePickerCell" customModule="DatePickerCell">
+                                        <rect key="frame" x="0.0" y="224" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IjH-0s-GUW" id="mgM-GM-64Z">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="driveTypeCell" rowHeight="95" id="t0T-PW-1xj" customClass="DriveTypeCell" customModule="CruApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="268" width="375" height="95"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="t0T-PW-1xj" id="w8m-au-Ypy">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="94.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LX3-0z-keB" customClass="CheckmarkSegmentedControl" customModule="CheckmarkSegmentedControl">
+                                                    <rect key="frame" x="14" y="12" width="346" height="72"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="LX3-0z-keB" firstAttribute="leading" secondItem="w8m-au-Ypy" secondAttribute="leadingMargin" constant="6" id="B99-s9-40i"/>
+                                                <constraint firstItem="LX3-0z-keB" firstAttribute="centerX" secondItem="w8m-au-Ypy" secondAttribute="centerX" id="U1y-eb-rub"/>
+                                                <constraint firstItem="LX3-0z-keB" firstAttribute="centerY" secondItem="w8m-au-Ypy" secondAttribute="centerY" id="bfH-Ej-Pfz"/>
+                                                <constraint firstItem="LX3-0z-keB" firstAttribute="top" secondItem="w8m-au-Ypy" secondAttribute="topMargin" constant="4" id="lng-dg-OZo"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="driveTypes2" destination="LX3-0z-keB" id="v9Z-PL-jPK"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="pjI-Vr-zj1" firstAttribute="top" secondItem="ZIX-m8-ygQ" secondAttribute="bottom" constant="32" id="0i5-av-dPY"/>
+                            <constraint firstAttribute="trailing" secondItem="uQw-6j-pn4" secondAttribute="trailing" id="04p-uA-mic"/>
+                            <constraint firstItem="uQw-6j-pn4" firstAttribute="leading" secondItem="QdW-W8-1yF" secondAttribute="leading" id="0eB-fX-uYN"/>
+                            <constraint firstItem="uQw-6j-pn4" firstAttribute="top" secondItem="QdW-W8-1yF" secondAttribute="top" id="Ey0-M3-yuL"/>
+                            <constraint firstItem="uQw-6j-pn4" firstAttribute="bottom" secondItem="pjI-Vr-zj1" secondAttribute="top" id="aUG-X6-hib"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Request Ride" id="DWk-u5-Vxq">
+                        <barButtonItem key="rightBarButtonItem" title="Submit" id="j6u-eP-oQQ">
+                            <connections>
+                                <segue destination="WiO-dx-ez4" kind="show" id="Lpt-oP-5pe"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="driveTypes" destination="LX3-0z-keB" id="FyI-5R-UpZ"/>
-                        <outlet property="eventsChoice" destination="ReG-yo-ycE" id="FAO-6M-VBM"/>
-                        <outlet property="passengerFullName" destination="bl2-LZ-llE" id="wq9-9g-f2y"/>
-                        <outlet property="passengerNumber" destination="hZq-Z4-O2w" id="cLk-Eu-9oO"/>
+                        <outlet property="infoTable" destination="uQw-6j-pn4" id="JaU-vc-PWi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b9E-xm-yyE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -283,7 +345,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SelectRideCell" rowHeight="86" id="baP-U1-tyi" customClass="SelectDriverTableViewCell" customModule="CruApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="86"/>
+                                <rect key="frame" x="0.0" y="92" width="375" height="86"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="baP-U1-tyi" id="GeM-z5-BZ3">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="85.5"/>

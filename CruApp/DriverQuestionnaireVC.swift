@@ -27,8 +27,6 @@ class DriverQuestionnaireVC: UIViewController, UITableViewDelegate, UITableViewD
     var searchController: UISearchController?
     var resultView: UITextView?
     
-    @IBOutlet weak var pickupLocation: UITextField!
-    @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var infoTable: UITableView!
     
     // Present the Autocomplete view controller when the button is pressed.
@@ -184,7 +182,6 @@ class DriverQuestionnaireVC: UIViewController, UITableViewDelegate, UITableViewD
         //TO DO - FIGURE OUT WHICH EVENT IS PICKED, AND GCM
         
         let driverName = (cells[0] as! NameFieldCell).driverFullName.text
-        print((cells[1] as! PhoneNumCell).driverPhoneNum.text!)
         let drivePhoneNum = parsePhoneNumber(((cells[1] as! PhoneNumCell).driverPhoneNum.text!))
         let numSeatsChoice = Int((cells[4] as! AvailNumSeatCell).stepper.value)
         

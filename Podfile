@@ -4,18 +4,16 @@ platform :ios, ‘9.0’
  use_frameworks!
 
 def shared_pods
-    pod "youtube-ios-player-helper", "~> 0.1.4"
+    pod 'youtube-ios-player-helper', :git=>'https://github.com/youtube/youtube-ios-player-helper', :commit=>'head'
     pod 'ReachabilitySwift', git: 'https://github.com/ashleymills/Reachability.swift'
-    pod "NMPopUpViewSwift"
-    pod "DownPicker"
+    pod 'NMPopUpViewSwift'
+    pod 'DownPicker'
     pod 'CheckmarkSegmentedControl'
     pod 'Google/CloudMessaging'
     pod 'SwiftLoader'
-    pod 'SwiftSpinner'
     pod 'GoogleMaps'
     pod 'Alamofire'
     pod 'DatePickerCell'
-
 
 end
 

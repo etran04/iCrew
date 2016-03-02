@@ -211,7 +211,7 @@ class RideShareStatusTableViewController: UITableViewController {
         
         var spacer: CGFloat = 50
         for pssngr in driver.passengers {
-            var label = UILabel(frame: CGRectMake(0, 0, 200, 21))
+            let label = UILabel(frame: CGRectMake(0, 0, 200, 21))
             label.center = CGPointMake(160, 300 + spacer )
             label.textAlignment = NSTextAlignment.Center
             label.text = pssngr.name

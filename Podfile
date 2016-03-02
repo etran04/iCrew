@@ -14,6 +14,7 @@ def shared_pods
     pod 'GoogleMaps'
     pod 'Alamofire'
     pod 'DatePickerCell'
+    pod 'DZNEmptyDataSet'
 
 end
 

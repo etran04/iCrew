@@ -14,6 +14,8 @@
 		072519AF1BE9694000F38F81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 072519AE1BE9694000F38F81 /* Assets.xcassets */; };
 		072519B21BE9694000F38F81 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 072519B01BE9694000F38F81 /* LaunchScreen.storyboard */; };
 		0725A04E1C865269006E8E0C /* AvailNumSeatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0725A04D1C865269006E8E0C /* AvailNumSeatCell.swift */; };
+		0725A05F1C867529006E8E0C /* DriveTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0725A05E1C867529006E8E0C /* DriveTypeCell.swift */; };
+		0725A0611C8679C7006E8E0C /* EnterLocationPlaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0725A0601C8679C7006E8E0C /* EnterLocationPlaceCell.swift */; };
 		0727F9A51C5AD13000066948 /* DriverQuestionnaireVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0727F9A41C5AD13000066948 /* DriverQuestionnaireVC.swift */; };
 		07340BB21C5B3606002C6015 /* PassengerQuestionnaireVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07340BB11C5B3606002C6015 /* PassengerQuestionnaireVC.swift */; };
 		07340BBA1C5B36B5002C6015 /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = 07340BB91C5B36B5002C6015 /* info.png */; };
@@ -232,6 +234,8 @@
 		072519B11BE9694000F38F81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		072519B31BE9694000F38F81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0725A04D1C865269006E8E0C /* AvailNumSeatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvailNumSeatCell.swift; sourceTree = "<group>"; };
+		0725A05E1C867529006E8E0C /* DriveTypeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriveTypeCell.swift; sourceTree = "<group>"; };
+		0725A0601C8679C7006E8E0C /* EnterLocationPlaceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnterLocationPlaceCell.swift; sourceTree = "<group>"; };
 		0727F9A41C5AD13000066948 /* DriverQuestionnaireVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriverQuestionnaireVC.swift; sourceTree = "<group>"; };
 		07340BB11C5B3606002C6015 /* PassengerQuestionnaireVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassengerQuestionnaireVC.swift; sourceTree = "<group>"; };
 		07340BB91C5B36B5002C6015 /* info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = info.png; path = images/info.png; sourceTree = "<group>"; };
@@ -432,6 +436,8 @@
 		0727F9A31C5AD10600066948 /* RideShare */ = {
 			isa = PBXGroup;
 			children = (
+				07D56ACB1C869B86004E8DE4 /* Datatypes */,
+				07D56AC41C869B67004E8DE4 /* Cells */,
 				A441CE761C763AC400663057 /* SelectDriverTableViewCell.swift */,
 				A441CE781C764BA600663057 /* SelectDriverTableViewController.swift */,
 				A441CE7A1C765D4800663057 /* DriverSelectedViewController.swift */,
@@ -440,13 +446,6 @@
 				A487BBEE1C6353A5006F9B3C /* DriverStatusTableViewCell.swift */,
 				A4A8364A1C83D396003FBD8D /* PassengerStatusTableViewCell.swift */,
 				A441CE8F1C7F935600663057 /* RideShareStatusTableViewController.swift */,
-				A441CE6E1C7634CB00663057 /* Passenger.swift */,
-				A487BBFA1C635E78006F9B3C /* Driver.swift */,
-				078739871C86178E00D09C14 /* NameFieldCell.swift */,
-				0787398F1C86179D00D09C14 /* PhoneNumCell.swift */,
-				078739911C8617D000D09C14 /* ScrollPickerCell.swift */,
-				078739931C8628CA00D09C14 /* StartTimePickerCell.swift */,
-				0725A04D1C865269006E8E0C /* AvailNumSeatCell.swift */,
 			);
 			name = RideShare;
 			sourceTree = "<group>";
@@ -464,6 +463,29 @@
 				07AF13CA1C748ACA004C28FA /* ToolsTableViewController.swift */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		07D56AC41C869B67004E8DE4 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				078739871C86178E00D09C14 /* NameFieldCell.swift */,
+				0787398F1C86179D00D09C14 /* PhoneNumCell.swift */,
+				078739911C8617D000D09C14 /* ScrollPickerCell.swift */,
+				078739931C8628CA00D09C14 /* StartTimePickerCell.swift */,
+				0725A04D1C865269006E8E0C /* AvailNumSeatCell.swift */,
+				0725A05E1C867529006E8E0C /* DriveTypeCell.swift */,
+				0725A0601C8679C7006E8E0C /* EnterLocationPlaceCell.swift */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		07D56ACB1C869B86004E8DE4 /* Datatypes */ = {
+			isa = PBXGroup;
+			children = (
+				A487BBFA1C635E78006F9B3C /* Driver.swift */,
+				A441CE6E1C7634CB00663057 /* Passenger.swift */,
+			);
+			name = Datatypes;
 			sourceTree = "<group>";
 		};
 		07EE5F7C1BFE6B92009A2B44 /* Storyboards */ = {
@@ -1066,6 +1088,7 @@
 				279327051C50A0EC00BAC73D /* InitialMinistryTableViewController.swift in Sources */,
 				271C78211C50434000F42EA0 /* InitialCampusTableViewController.swift in Sources */,
 				A487BBEF1C6353A5006F9B3C /* DriverStatusTableViewCell.swift in Sources */,
+				0725A05F1C867529006E8E0C /* DriveTypeCell.swift in Sources */,
 				A441CE801C7A957500663057 /* Resource.swift in Sources */,
 				832FDCD01C854C0900836B7C /* MinistryTeamDetailVC.swift in Sources */,
 				832FDCCC1C854B1600836B7C /* InvolvedGroupsTVC.swift in Sources */,
@@ -1077,6 +1100,7 @@
 				832FDCD61C854D2E00836B7C /* CGQuestionnaireVC.swift in Sources */,
 				832FDCCA1C8549FB00836B7C /* MainInvolvedTVC.swift in Sources */,
 				83B1CB291C48880A00145B6D /* UserProfile.swift in Sources */,
+				0725A0611C8679C7006E8E0C /* EnterLocationPlaceCell.swift in Sources */,
 				078739901C86179D00D09C14 /* PhoneNumCell.swift in Sources */,
 				83244B6E1C7579BA00D913A6 /* CampusData.swift in Sources */,
 				07AF13D31C749288004C28FA /* ToolTableViewCell.swift in Sources */,

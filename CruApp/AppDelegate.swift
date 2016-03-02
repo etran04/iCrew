@@ -61,7 +61,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GC
         }
         
         //set all labels to default font
-        UILabel.appearance().font = UIFont(name: "FreightSansProBook-Regular", size: 17)
+        UILabel.appearance().font = UIFont(name: "FreightSansProMedium-Regular", size: 16)
 
         return true
     }

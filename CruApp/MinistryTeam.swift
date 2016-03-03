@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 struct MinistryTeam {
+    var id: String
     var name: String
     var description: String
     var parentMinistry: String
@@ -18,5 +19,13 @@ struct MinistryTeam {
         self.name = name
         self.description = description
         self.parentMinistry = parentMinistry
+        self.id = ""
+    }
+    
+    init(name: String, parentMinistry: String, id: String) {
+        self.name = name
+        self.description = ""
+        self.parentMinistry = parentMinistry
+        self.id = id
     }
 }

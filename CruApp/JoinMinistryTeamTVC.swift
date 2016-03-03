@@ -115,8 +115,6 @@ class JoinMinistryTeamTVC: UITableViewController {
 
         let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil)
         
-        
-        
         loginController.addAction(signupAction)
         loginController.addAction(cancelAction)
         

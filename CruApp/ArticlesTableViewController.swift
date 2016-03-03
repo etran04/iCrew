@@ -46,12 +46,12 @@ class ArticlesTableViewController: UITableViewController {
         super.viewDidLoad()
         //self.setUpLoadSpinner()
         
-//        /* Sets up the database */
-//        var dbClient: DBClient!
-//        dbClient = DBClient()
-//        dbClient.getData("resource", dict: loadArticles)
-//        
-//        self.tableView.reloadData()
+        /* Sets up the database */
+        var dbClient: DBClient!
+        dbClient = DBClient()
+        dbClient.getData("resource", dict: loadArticles)
+        
+        self.tableView.reloadData()
         
     }
 
@@ -59,12 +59,14 @@ class ArticlesTableViewController: UITableViewController {
     override func viewDidAppear(animated: Bool) {
         self.setUpRefresh()
         
-        /* Sets up the database */
-        var dbClient: DBClient!
-        dbClient = DBClient()
-        dbClient.getData("resource", dict: loadArticles)
-        
-        self.tableView.reloadData()
+//        articlesCollection = [Resource]()
+//        
+//        /* Sets up the database */
+//        var dbClient: DBClient!
+//        dbClient = DBClient()
+//        dbClient.getData("resource", dict: loadArticles)
+//        
+//        self.tableView.reloadData()
         
         //self.loadArticles()
     }

@@ -172,7 +172,7 @@ class UserProfile {
             
             if let communityGroups = fetchedResult {
                 for communityGroup in communityGroups {
-                    let communityGroupObj = CommunityGroupData(id: communityGroup.valueForKey("id") as! String, ministryId: communityGroup.valueForKey("ministryId"), time: communityGroup.valueForKey("time") as! NSDate, leaders: communityGroup.valueForKey("leaders") as! String)
+                    let communityGroupObj = CommunityGroupData(id: communityGroup.valueForKey("id") as! String, ministryId: communityGroup.valueForKey("ministryId") as! String, time: communityGroup.valueForKey("time") as! NSDate, leaders: communityGroup.valueForKey("leaders") as! String)
                     
                     results.append(communityGroupObj)
                 }

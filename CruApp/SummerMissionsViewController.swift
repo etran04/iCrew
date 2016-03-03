@@ -7,19 +7,19 @@
 //
 
 import UIKit
+import DZNEmptyDataSet
 
-class SummerMissionsViewController: UITableViewController {
+class SummerMissionsViewController: UITableViewController, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
 
     var missionsCollection = [Mission]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        // Sets up the controller to display notification screen if no events populate
+        tableView.emptyDataSetSource = self;
+        tableView.emptyDataSetDelegate = self;
+        
         var dbClient:DBClient!
         dbClient = DBClient()
         dbClient.getData("summermission", dict: setMissions)
@@ -114,41 +114,6 @@ class SummerMissionsViewController: UITableViewController {
             return cell
     }
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
     
     // MARK: - Navigation
 
@@ -163,5 +128,34 @@ class SummerMissionsViewController: UITableViewController {
         }
     }
     
+    // MARK: - DZNEmptySet Delegate methods
+    
+    func titleForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
+        let str = "No summer missions to display!"
+        let attrs = [NSFontAttributeName: UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline)]
+        return NSAttributedString(string: str, attributes: attrs)
+    }
+    
+    func descriptionForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
+        let str = "Please check back later or add more ministries."
+        let attrs = [NSFontAttributeName: UIFont.preferredFontForTextStyle(UIFontTextStyleBody)]
+        return NSAttributedString(string: str, attributes: attrs)
+    }
+    
+    //    func imageForEmptyDataSet(scrollView: UIScrollView!) -> UIImage! {
+    //        return UIImage(named: "taylor-swift")
+    //    }
+    
+    //    func buttonTitleForEmptyDataSet(scrollView: UIScrollView!, forState state: UIControlState) -> NSAttributedString! {
+    //        let str = "Placeholder for a button"
+    //        let attrs = [NSFontAttributeName: UIFont.preferredFontForTextStyle(UIFontTextStyleCallout)]
+    //        return NSAttributedString(string: str, attributes: attrs)
+    //    }
+    //
+    //    func emptyDataSetDidTapButton(scrollView: UIScrollView!) {
+    //        let ac = UIAlertController(title: "Button tapped!", message: nil, preferredStyle: .Alert)
+    //        ac.addAction(UIAlertAction(title: "Hurray", style: .Default, handler: nil))
+    //        presentViewController(ac, animated: true, completion: nil)
+    //    }
 
 }

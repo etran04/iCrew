@@ -55,7 +55,6 @@ class DriverQuestionnaireVC: UIViewController, UITableViewDelegate, UITableViewD
         dbClient.getData("event", dict: setEvents)
 
         ministryCollection = UserProfile.getMinistries()
-
     }
     
     override func viewDidAppear(animated : Bool) {

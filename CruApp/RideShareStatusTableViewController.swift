@@ -77,7 +77,7 @@ class RideShareStatusTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         // Starts the loading spinner
         SwiftLoader.show(animated: true)
         
@@ -109,60 +109,62 @@ class RideShareStatusTableViewController: UITableViewController {
         dbClient.getData("passenger", dict: setPassenger)
         dbClient.getData("ride", dict: setRides)
         
-        // array to hold all orders by section
-        self.tableData = [self.driverCollection, self.passengerCollection]
-        
         SwiftLoader.hide()
         
         self.tableView.reloadData()
     }
     
     
-    func setPassenger(passenger:NSDictionary){
-        let id = passenger["_id"] as! String
-        let gcmId = passenger["gcm_id"] as! String
-        let phoneNumber = passenger["phone"] as! String
-        let name = passenger["name"] as! String
+    func setPassenger(passengers:NSArray){
+        for passenger in passengers {
+            let id = passenger["_id"] as! String
+            let gcmId = passenger["gcm_id"] as! String
+            let phoneNumber = passenger["phone"] as! String
+            let name = passenger["name"] as! String
         
-        let passengerObj = PassengerData(id:id, gcmId:gcmId, phoneNumber:phoneNumber, name:name)
-        passengersData.append(passengerObj)
+            let passengerObj = PassengerData(id:id, gcmId:gcmId, phoneNumber:phoneNumber, name:name)
+            passengersData.append(passengerObj)
+        }
     }
     
-    func setRides(ride:NSDictionary) {
-        
-        let gcmId = ride["gcm_id"] as! String
-        let rideId = ride["_id"] as! String
-        let event = ride["event"] as! String
-        let driverNumber = ride["driverNumber"] as! String
-        let driverName = ride["driverName"] as! String
-        let time = ride["time"] as! String
-        let passengers = ride["passengers"] as! [String]
-        let availableSeats = (ride["seats"] as! Int) - (passengers.count)
-        var passengersInfo = [PassengerData]()
+    func setRides(rides:NSArray) {
+        for ride in rides {
+            let gcmId = ride["gcm_id"] as! String
+            let rideId = ride["_id"] as! String
+            let event = ride["event"] as! String
+            let driverNumber = ride["driverNumber"] as! String
+            let driverName = ride["driverName"] as! String
+            let time = ride["time"] as! String
+            let passengers = ride["passengers"] as! [String]
+            let availableSeats = (ride["seats"] as! Int) - (passengers.count)
+            var passengersInfo = [PassengerData]()
             
-        for pssngr in passengers{
-            for data in passengersData {
-                if data.id == pssngr {
-                    passengersInfo.append(data)
+            for pssngr in passengers{
+                for data in passengersData {
+                    if data.id == pssngr {
+                        passengersInfo.append(data)
                     
-                    //if user is a passenger
+                        //if user is a passenger
                     
-                    print("user is a passenger")
-                    if(gcm_id == data.gcmId) {
-                        let passengerObj = RideSharePassenger(rideId:rideId, passengerId:pssngr, eventId:event, departureTime:time, driverNumber:driverNumber, driverName:driverName)
-                        passengerCollection.append(passengerObj)
+                        print("user is a passenger")
+                        if(gcm_id == data.gcmId) {
+                            let passengerObj = RideSharePassenger(rideId:rideId, passengerId:pssngr, eventId:event, departureTime:time, driverNumber:driverNumber, driverName:driverName)
+                            passengerCollection.append(passengerObj)
+                        }
                     }
                 }
             }
+        
+            //if user is a driver
+            if(gcm_id == gcmId) {
+                print("user is a driver")
+                let rideObj = RideShareDriver(rideId:rideId, eventId:event, departureTime:time, availableSeats:availableSeats, passengers:passengersInfo)
+                driverCollection.append(rideObj)
+            }
         }
         
-        //if user is a driver
-        if(gcm_id == gcmId) {
-            print("user is a driver")
-            let rideObj = RideShareDriver(rideId:rideId, eventId:event, departureTime:time, availableSeats:availableSeats, passengers:passengersInfo)
-            driverCollection.append(rideObj)
-        }
-        
+        // array to hold all status by section
+        self.tableData = [self.driverCollection, self.passengerCollection]
         self.tableView.reloadData()
     }
 
@@ -206,7 +208,7 @@ class RideShareStatusTableViewController: UITableViewController {
                 populateDriverCell(indexPath, cell: (cell as! DriverStatusTableViewCell))
                 break
             case kPassengerHeader:
-                cell = tableView.dequeueReusableCellWithIdentifier("Passenger", forIndexPath: indexPath)
+                cell = tableView.dequeueReusableCellWithIdentifier("PassengerCell", forIndexPath: indexPath)
                 populatePassengerCell(indexPath, cell: (cell as! PassengerStatusTableViewCell))
                 break
             default:
@@ -240,15 +242,6 @@ class RideShareStatusTableViewController: UITableViewController {
 //            self.view.addSubview(label)
 //            spacer = spacer + 50
 //        }
-        var spacer: CGFloat = 50
-        for pssngr in driver.passengers {
-            let label = UILabel(frame: CGRectMake(0, 0, 200, 21))
-            label.center = CGPointMake(160, 300 + spacer )
-            label.textAlignment = NSTextAlignment.Center
-            label.text = pssngr.name
-            self.view.addSubview(label)
-            spacer = spacer + 50
-        }
         
         cell.cancelDriver.addTarget(self, action: "cancelDriver:", forControlEvents: .TouchUpInside)
         cell.cancelDriver.tag = indexPath.row
@@ -305,28 +298,6 @@ class RideShareStatusTableViewController: UITableViewController {
             print("Error sending data to database")
         }
     }
-    
-    
-//    func cancelPendingTransaction(row: Int) {
-//        let confirmDialog = UIAlertController(title: "Are you sure?", message: "Are you sure you want to cancel your ride?", preferredStyle: .Alert)
-//        let okAction = UIAlertAction(title: "Confirm", style: .Default) { (UIAlertAction) -> Void in
-//            
-//            // removes order from firebase and then the table
-//            DBClient.postData(self.pendingOrders[row].id)
-//            
-//            self.pendingOrders.removeAtIndex(row)
-//            
-//            // array to hold all orders by section
-//            self.tableData = [self.pendingOrders, self.progressOrders, self.completedOrders]
-//            self.tableView.reloadData()
-//        }
-//        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
-//        
-//        confirmDialog.addAction(okAction)
-//        confirmDialog.addAction(cancelAction)
-//        
-//        self.presentViewController(confirmDialog, animated: true, completion: nil)
-//    }
     
 
     /*

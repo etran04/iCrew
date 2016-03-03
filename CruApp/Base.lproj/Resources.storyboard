@@ -360,17 +360,24 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="YouTube summary description goes here." translatesAutoresizingMaskIntoConstraints="NO" id="uIz-3V-OdK">
-                                            <rect key="frame" x="157" y="36" width="418" height="104"/>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="YouTube summary description goes here." translatesAutoresizingMaskIntoConstraints="NO" id="uIz-3V-OdK">
+                                            <rect key="frame" x="157" y="36" width="435" height="104"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="JJJ-on-HVN"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="mYP-6P-fbR" firstAttribute="leading" secondItem="h9w-j8-UdK" secondAttribute="trailing" constant="8" id="2P8-bu-Lal"/>
                                         <constraint firstItem="h9w-j8-UdK" firstAttribute="top" secondItem="BqC-Tn-I46" secondAttribute="topMargin" constant="6" id="5D5-Ta-mCS"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="uIz-3V-OdK" secondAttribute="bottom" constant="0.5" id="Lba-wt-ys6"/>
+                                        <constraint firstItem="uIz-3V-OdK" firstAttribute="leading" secondItem="h9w-j8-UdK" secondAttribute="trailing" constant="2" id="NMc-2W-tTh"/>
                                         <constraint firstAttribute="topMargin" secondItem="mYP-6P-fbR" secondAttribute="top" constant="-6" id="bTp-2v-Yko"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="uIz-3V-OdK" secondAttribute="trailing" id="lxS-ff-EMB"/>
+                                        <constraint firstItem="uIz-3V-OdK" firstAttribute="top" secondItem="mYP-6P-fbR" secondAttribute="bottom" constant="2.5" id="qjM-49-6KH"/>
                                         <constraint firstAttribute="leadingMargin" secondItem="h9w-j8-UdK" secondAttribute="leading" id="snA-Vi-waP"/>
                                     </constraints>
                                 </tableViewCellContentView>

@@ -312,13 +312,22 @@ class VideosTableViewController: UITableViewController, UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
         self.filterFor = searchBar.text
-        print(self.filterFor)
         self.nextPageToken = ""
         self.filterFlag = true
         self.getVideosForChannelAtIndex(0)
     }
     
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        print("cancel pressed")
+    }
     
-    
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        if (searchText == "") {
+            self.videos = [Video]()
+            self.nextPageToken = ""
+            self.filterFlag = false
+            self.getVideosForChannelAtIndex(0)
+        }
+    }
     
 }

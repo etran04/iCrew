@@ -13,7 +13,10 @@ class JoinMinistryTeamTVC: UITableViewController {
     var popViewController : PopUpViewControllerSwift!
     
     var ministryCollection: [MinistryData] = []
-    var teamCollection = [[MinistryTeam]]()
+    var teamCollection = [[MinistryTeamData]]()
+    var ministryTeamCollection = [MinistryTeamData]()
+    
+    var selectedMinistryTeam : MinistryTeamData?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +26,8 @@ class JoinMinistryTeamTVC: UITableViewController {
         
         //set users ministry collection and the teamMinistry collection array
         ministryCollection = UserProfile.getMinistries()
-        teamCollection = Array(count: ministryCollection.count, repeatedValue: [MinistryTeam]())
+        ministryTeamCollection = UserProfile.getMinistryTeams()
+        teamCollection = Array(count: ministryCollection.count, repeatedValue: [MinistryTeamData]())
     
         //setup database
         var dbClient: DBClient!
@@ -33,28 +37,27 @@ class JoinMinistryTeamTVC: UITableViewController {
     }
 
     //obtain information from the database to an Object
-    func setTeams(ministryteam:NSDictionary) {
-        //self.tableView.beginUpdates()
-        
+    func setTeams(ministryTeams: NSArray) {
         var existsInMinistry = false
-        let ministryId = ministryteam["parentMinistry"] as! String
+        //self.tableView.beginUpdates()
+        for ministryTeam in ministryTeams {
+            let ministryId = ministryTeam["parentMinistry"] as! String
         
-        //go through user's ministries and if a ministry team's parentMinistry matches
-        //one of the user's ministries, add to index of teamCollection that 
-        //corresponds to the parentMinistry
-        for (index, _) in ministryCollection.enumerate() {
-            if (ministryCollection[index].id == ministryId) {
-                let teamObj = MinistryTeam(name: ministryteam["name"] as! String, description: ministryteam["description"] as! String, parentMinistry: ministryteam["parentMinistry"] as! String)
-                teamCollection[index].append(teamObj)
-                existsInMinistry = true;
+            //go through user's ministries and if a ministry team's parentMinistry matches
+            //one of the user's ministries, add to index of teamCollection that
+            //corresponds to the parentMinistry
+            for (index, _) in ministryCollection.enumerate() {
+                if (ministryCollection[index].id == ministryId) {
+                    let teamObj = MinistryTeamData(name: ministryTeam["name"] as! String, description: ministryTeam["description"] as! String, parentMinistry: ministryTeam["parentMinistry"] as! String, id: ministryTeam["id"] as! String)
+                    
+                    teamCollection[index].append(teamObj)
+                    existsInMinistry = true;
+                }
             }
         }
-        
-        
         if (!existsInMinistry) {
             return;
         }
-        
         self.tableView.reloadData()
     }
     
@@ -94,11 +97,9 @@ class JoinMinistryTeamTVC: UITableViewController {
     
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        print(indexPath.row)
-        
         let cell:UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
+        
         viewInfo(cell)
-
     }
     
     func viewInfo(sender: AnyObject) {
@@ -106,10 +107,10 @@ class JoinMinistryTeamTVC: UITableViewController {
         
         let loginController = UIAlertController(title: team.name, message: team.description, preferredStyle: UIAlertControllerStyle.Alert)
         
-        //read in username and password
         let signupAction = UIAlertAction(title: "Sign Up", style: UIAlertActionStyle.Default) { (action:UIAlertAction) -> Void in
             
-           self.performSegueWithIdentifier("MinistryTeamSuccessSeg", sender: self)
+            UserProfile.addMinistryTeam(team)
+            self.performSegueWithIdentifier("MinistryTeamSuccessSeg", sender: self)
         }
 
 
@@ -118,8 +119,6 @@ class JoinMinistryTeamTVC: UITableViewController {
         loginController.addAction(signupAction)
         loginController.addAction(cancelAction)
         
-        self.presentViewController(loginController, animated: true, completion: nil)    }
-
-
-
+        self.presentViewController(loginController, animated: true, completion: nil)
+    }
 }

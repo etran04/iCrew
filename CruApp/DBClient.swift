@@ -10,14 +10,16 @@ import Foundation
 
 class DBClient {
     
-    func getData(action: String, dict: (NSDictionary) -> ()) {
+    func getData(action: String, dict: (NSArray) -> ()) {
         requestData(action, completionHandler: obtainData(dict))
     }
     
     func requestData(action: String, completionHandler : (NSData?, NSURLResponse?, NSError?) -> Void) {
+        let url = "http://localhost:3001/api/" + action + "/list"
         //let url = "http://pcp070548pcs.wireless.calpoly.edu:3000/api/" + action + "/list"
                 
         let url = "http://localhost:3001/api/" + action + "/list"
+        //let url = "http://localhost:3001/api/" + action + "/list"
         //for sorting
         //let url = http://localhost:3000/api/minstry/find?order={name: 1}
         sendGetRequest(url, completionHandler: completionHandler)
@@ -68,6 +70,7 @@ class DBClient {
     
     func postData(action: String, body: NSData) {
         //let url = "http://pcp070548pcs.wireless.calpoly.edu:3000/api/" + action
+        //let url = "http://pcp079837pcs.wireless.calpoly.edu:3000/api/" + action
         let url = "http://localhost:3001/api/" + action
     
         sendPostRequest(url, body: body, completionHandler: emptyHandler)
@@ -88,7 +91,7 @@ class DBClient {
         return task
     }
     
-    func obtainData(dict: (NSDictionary) -> ()) -> (NSData?, NSURLResponse?, NSError?)-> () {
+    func obtainData(dict: (NSArray) -> ()) -> (NSData?, NSURLResponse?, NSError?)-> () {
         return {(data : NSData?, response : NSURLResponse?, error : NSError?) in
             
             do {
@@ -97,11 +100,13 @@ class DBClient {
                 } else {
                     let jsonList = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as! NSArray
                     dispatch_async(dispatch_get_main_queue(), {
-                        for element in jsonList {
-                            if let elem = element as? [String: AnyObject] {
-                                dict(elem)
-                            }
-                        }
+                        
+                        dict(jsonList)
+//                        for element in jsonList {
+//                            if let elem = element as? [String: AnyObject] {
+//                                dict(elem)
+//                            }
+//                        }
                     })
                 }
             } catch {

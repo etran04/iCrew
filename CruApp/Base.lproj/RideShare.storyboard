@@ -579,12 +579,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="15" translatesAutoresizingMaskIntoConstraints="NO" id="VGf-RK-fdl">
-                                                    <rect key="frame" x="302" y="6" width="94" height="29"/>
-                                                    <connections>
-                                                        <action selector="stepperPressed:" destination="j8u-ng-og1" eventType="valueChanged" id="P1N-Uz-Pnb"/>
-                                                    </connections>
-                                                </stepper>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seat Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7RP-st-cRo">
                                                     <rect key="frame" x="175" y="10" width="101" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -600,6 +594,12 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="8" translatesAutoresizingMaskIntoConstraints="NO" id="VGf-RK-fdl">
+                                                    <rect key="frame" x="302" y="6" width="94" height="29"/>
+                                                    <connections>
+                                                        <action selector="stepperPressed:" destination="j8u-ng-og1" eventType="valueChanged" id="P1N-Uz-Pnb"/>
+                                                    </connections>
+                                                </stepper>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="RQ8-tM-Pb0" firstAttribute="baseline" secondItem="7RP-st-cRo" secondAttribute="baseline" id="4Zv-f5-oHg"/>

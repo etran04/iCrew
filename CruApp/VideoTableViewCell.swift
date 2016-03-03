@@ -17,6 +17,8 @@ class VideoTableViewCell: UITableViewCell {
     @IBOutlet weak var videoTitle: UILabel!
     @IBOutlet weak var summaryTextView: UITextView!
     
+    @IBOutlet weak var cardView: UIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         videoTitle.font = UIFont(name: "FreightSansProBold-Regular", size: 17.0)
@@ -37,6 +39,19 @@ class VideoTableViewCell: UITableViewCell {
         self.videoPlayer.loadWithVideoId(id)
         self.videoTitle.text = title
         self.summaryTextView.text = summary
+    }
+    
+    override func layoutSubviews() {
+        self.cardSetup();
+    }
+    
+    func cardSetup() {
+        self.cardView.alpha = 1;
+        self.cardView.layer.masksToBounds = false;
+        self.cardView.layer.cornerRadius = 1;
+        self.cardView.layer.shadowOffset = CGSizeMake(-0.2, 0.2)
+        self.cardView.layer.shadowRadius = 10;
+        
     }
     
 }

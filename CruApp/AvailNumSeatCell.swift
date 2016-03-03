@@ -17,7 +17,7 @@ class AvailNumSeatCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         stepper.value = 0
-        numSeatsLabel.text = String(stepper.value)
+        numSeatsLabel.text = String(Int(stepper.value))
         
     }
     

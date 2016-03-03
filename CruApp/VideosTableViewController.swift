@@ -135,10 +135,10 @@ class VideosTableViewController: UITableViewController, UISearchBarDelegate {
         }
         
         // Make videos a fixed size
-        cell.videoPlayer.contentMode = .ScaleAspectFit
-        cell.videoPlayer.clipsToBounds = true
-        cell.videoPlayer.bounds.size.height = 147
-        cell.videoPlayer.bounds.size.width = 122
+//        cell.videoPlayer.contentMode = .ScaleAspectFit
+//        cell.videoPlayer.clipsToBounds = true
+//        cell.videoPlayer.bounds.size.height = 137
+//        cell.videoPlayer.bounds.size.width = 117
         
         return cell
     }

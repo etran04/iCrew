@@ -14,14 +14,16 @@ struct Passenger {
     var eventId: String
     var phoneNumber: String
     var direction: String
+    var time: String
     var gcmId: Int
     
     
-    init(name: String, eventId: String, phoneNumber: String, direction: String, gcmId: Int) {
+    init(name: String, eventId: String, phoneNumber: String, direction: String, time: String, gcmId: Int) {
         self.name = name
         self.eventId = eventId
         self.phoneNumber = phoneNumber
         self.direction = direction
+        self.time = time
         self.gcmId = gcmId
         
     }

@@ -34,16 +34,25 @@ class SelectDriverTableViewController: UITableViewController {
         let eventId = driver["event"] as! String
         let availableSeats = (driver["seats"] as! Int) - (driver["passengers"]!.count) as Int
         let time = driver["time"] as! String
+        var direction = ""
+        
+        if(driver["direction"] != nil) {
+            direction = driver["direction"] as! String
+        }
+        
         let dateFormatter = NSDateFormatter()
         dateFormatter.locale = NSLocale(localeIdentifier: "en_US")
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
-        //let driverTime = dateFormatter.dateFromString(time)
+        let driverTime = dateFormatter.dateFromString(time)
         
-        //how to compare date
-        //driverTime is earlier than passengerTime
-        // driverTime.compare(passengerTime) == NSComparisonResult.OrderedAscending
-        
-        if (passenger.eventId == eventId && availableSeats != 0) {
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss Z'"
+        let passengerTime = dateFormatter.dateFromString(passenger.time)
+
+        if (passenger.eventId == eventId
+            && availableSeats != 0
+            && driverTime!.compare(passengerTime!) == NSComparisonResult.OrderedAscending
+            && direction == passenger.direction) {
+                print("yay")
             let id = driver["_id"] as! String
             let name = driver["driverName"] as! String
             let driverNumber = driver["driverNumber"] as! String
@@ -82,7 +91,7 @@ class SelectDriverTableViewController: UITableViewController {
         
         cell.driverName.text = "Name: " + driver.name
         cell.driverNumber.text = "Phone Number: " + driver.number
-        cell.depatureTime.text = "Depature Time: " + dateString
+        cell.depatureTime.text = "Departure Time: " + dateString
 
         return cell
     }
@@ -95,7 +104,13 @@ class SelectDriverTableViewController: UITableViewController {
             let indexPath = tableView.indexPathForCell(selectedDriverCell)!
             let selectedDriver = driverCollection[indexPath.row]
             
-            let params = ["name": passenger.name, "direction": passenger.direction, "phone": passenger.phoneNumber, "gcm_id" : 1234567, "event": passenger.eventId]
+            let params =
+            [
+                "name": passenger.name,
+                "direction": passenger.direction,
+                "phone": passenger.phoneNumber,
+                "gcm_id" : 1234567
+            ]
             
             do {
                 let body = try NSJSONSerialization.dataWithJSONObject(params, options: NSJSONWritingOptions.PrettyPrinted)

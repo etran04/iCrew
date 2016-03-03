@@ -57,16 +57,17 @@ class InitialMinistryTableViewController: UITableViewController {
     
     func setMinistries(ministries:NSArray) {
         //self.tableView.beginUpdates()
+        print(ministries)
         for ministry in ministries {
-        
+            
             let campus = ministry["campuses"] as! [String]
         
             if (campus.first == nil) {
-                return;
+                break
             }
-        
+            
+            print(ministry)
             let campusId = campus.first! as String
-            var existsInCampus = false
         
             for (index,_) in campusCollection.enumerate() {
                 if (campusCollection[index].id == campusId) {
@@ -82,14 +83,10 @@ class InitialMinistryTableViewController: UITableViewController {
                     ministriesCollection[index].append(ministryObj)
                     ministryCollection.append(ministryDataObj)
                 }
-            
-                existsInCampus = true;
-            }
-        
-            if (!existsInCampus) {
-                return;
             }
         }
+        
+        //dump(ministryCollection)
     
         self.tableView.reloadData()
     }

@@ -61,7 +61,7 @@ class EventsViewController: UITableViewController, DZNEmptyDataSetDelegate, DZNE
 
             var existsInMinistry = false
         
-            if (event["parentMinistry"] == nil) {
+            if (event["parentMinistry"]! == nil) {
                 let parentMinistries = event["parentMinistries"] as! [String]
             
                 for ministryId in parentMinistries {
@@ -83,7 +83,7 @@ class EventsViewController: UITableViewController, DZNEmptyDataSetDelegate, DZNE
             }
         
             if (!existsInMinistry) {
-                return;
+                break;
             }
         
             let name = event["name"] as! String
@@ -97,8 +97,15 @@ class EventsViewController: UITableViewController, DZNEmptyDataSetDelegate, DZNE
                 suburb: event["location"]?!.objectForKey("suburb") as! String,
                 street1: event["location"]?!.objectForKey("street1") as! String,
                 country: event["location"]?!.objectForKey("country") as! String)
+            
+            var image : String
+            if (event["image"]! == nil) {
+                image = "http://res.cloudinary.com/dcyhqxvmq/image/upload/v1455219332/p33xvrfpnym61n4ycx3a.jpg"
+            }
+            else {
+                image = event["image"]!!.objectForKey("secure_url") as! String!
+            }
         
-            let image = event["image"]?!.objectForKey("secure_url") as! String!
             let url = event["url"] as! String
             let rideShareEnabled = event["rideSharingEnabled"] as! Bool
         

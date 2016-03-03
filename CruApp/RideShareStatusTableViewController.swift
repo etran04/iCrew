@@ -299,28 +299,6 @@ class RideShareStatusTableViewController: UITableViewController {
         }
     }
     
-    
-//    func cancelPendingTransaction(row: Int) {
-//        let confirmDialog = UIAlertController(title: "Are you sure?", message: "Are you sure you want to cancel your ride?", preferredStyle: .Alert)
-//        let okAction = UIAlertAction(title: "Confirm", style: .Default) { (UIAlertAction) -> Void in
-//            
-//            // removes order from firebase and then the table
-//            DBClient.postData(self.pendingOrders[row].id)
-//            
-//            self.pendingOrders.removeAtIndex(row)
-//            
-//            // array to hold all orders by section
-//            self.tableData = [self.pendingOrders, self.progressOrders, self.completedOrders]
-//            self.tableView.reloadData()
-//        }
-//        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
-//        
-//        confirmDialog.addAction(okAction)
-//        confirmDialog.addAction(cancelAction)
-//        
-//        self.presentViewController(confirmDialog, animated: true, completion: nil)
-//    }
-    
 
     /*
     // Override to support conditional editing of the table view.

@@ -314,13 +314,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fpb-Lb-daT">
-                                <rect key="frame" x="163" y="552" width="49" height="30"/>
-                                <state key="normal" title="Submit"/>
-                                <connections>
-                                    <segue destination="lNS-r2-98W" kind="show" id="fkV-yL-Kxr"/>
-                                </connections>
-                            </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VOh-j2-dl0">
                                 <rect key="frame" x="17" y="234" width="341" height="198"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -333,6 +326,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="Sign-up" id="Ifj-6O-kdP">
                         <barButtonItem key="backBarButtonItem" title=" " id="FD2-bP-3Fo"/>
+                        <barButtonItem key="rightBarButtonItem" title="Submit" id="fXb-8O-HW0">
+                            <connections>
+                                <segue destination="lNS-r2-98W" kind="show" id="KeE-br-RSF"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
@@ -447,13 +445,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p7D-jC-WQw">
-                                <rect key="frame" x="167" y="552" width="41" height="30"/>
-                                <state key="normal" title="Finish"/>
-                                <connections>
-                                    <action selector="finishPressed:" destination="lNS-r2-98W" eventType="touchUpInside" id="8SV-eX-L3I"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You have joined the Community Team!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BB0-jf-zoS">
                                 <rect key="frame" x="41" y="125" width="293" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -463,7 +454,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Success!" id="aQC-Lr-eVJ"/>
+                    <navigationItem key="navigationItem" title="Success!" id="aQC-Lr-eVJ">
+                        <barButtonItem key="rightBarButtonItem" title="Finish" id="bfs-S8-uK1">
+                            <connections>
+                                <action selector="finishPressed:" destination="lNS-r2-98W" id="zAj-cC-zaG"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ajv-pZ-K6f" userLabel="First Responder" sceneMemberID="firstResponder"/>

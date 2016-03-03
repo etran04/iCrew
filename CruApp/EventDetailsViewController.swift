@@ -298,27 +298,6 @@ class EventDetailsViewController: UIViewController, UIPopoverPresentationControl
     
     
     @IBAction func rideSharePressed(sender: UIBarButtonItem) {
-//        print("here")
-//        
-//        let vc = UIAlertController(title: "Test", message: "testing", preferredStyle: UIAlertControllerStyle.ActionSheet)
-//        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
-//        vc.modalPresentationStyle = .Popover
-//        vc.addAction(okAction)
-//        if let popover = vc.popoverPresentationController {
-//            popover.barButtonItem = sender
-//            popover.sourceView = self.view
-//            print("here 2")
-//        }
-//        self.presentViewController(vc, animated: true, completion: nil)
-
-//        presentViewController(alert, animated: true, completion: nil)
-////        vc.modalPresentationStyle = UIModalPresentationStyle.Popover
-////        let popover: UIPopoverPresentationController = vc.popoverPresentationController?
-////        popover?.sourceView = selectedCell?.contentView
-////        popover?.sourceRect = selectedCell!.contentView.frame
-//        popover.barButtonItem = sender
-////        popover.delegate = self
-//        presentViewController(vc, animated: true, completion:nil)
         
             //Create the AlertController
             let actionSheetController: UIAlertController = UIAlertController(title: eventTitle.text!, message: "What would you like for the event?", preferredStyle: .ActionSheet)
@@ -333,9 +312,8 @@ class EventDetailsViewController: UIViewController, UIPopoverPresentationControl
             let offerRideAction: UIAlertAction = UIAlertAction(title: "Offer a ride", style: .Default)
                 { action -> Void in
                     print("offer a ride selected")
-                    //                self.tableController.performSegueWithIdentifier("segue_setup_customer", sender: self)
-                    //                let tabController = self.tableController.tabBarController
-                    //                tabController?.transitionFromViewController(self.tableController, toViewController: DriverQuestionaireVC(), duration: 2, options: UIViewAnimationOptions.CurveEaseIn, animations: nil, completion: nil)
+                    self.performSegueWithIdentifier("goToOfferRide", sender: self)
+            
         
             }
             actionSheetController.addAction(offerRideAction)
@@ -344,9 +322,8 @@ class EventDetailsViewController: UIViewController, UIPopoverPresentationControl
             let requestRideAction: UIAlertAction = UIAlertAction(title: "Request a ride", style: .Default)
                 { action -> Void in
                     print("request a ride selected")
-        
-                    //                self.tableController.performSegueWithIdentifier("segue_setup_provider", sender: self)
-        
+                    self.performSegueWithIdentifier("goToRequestRide", sender: self)
+                    
             }
             actionSheetController.addAction(requestRideAction)
         

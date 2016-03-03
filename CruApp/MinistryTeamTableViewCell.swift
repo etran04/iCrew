@@ -11,6 +11,8 @@ import UIKit
 class MinistryTeamTableViewCell: UITableViewCell {
 
     @IBOutlet weak var teamName: UILabel!
+    var row: Int = -1
+    var section: Int = -1
     
     override func awakeFromNib() {
         super.awakeFromNib()

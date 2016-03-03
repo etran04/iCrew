@@ -245,11 +245,29 @@
                         <outlet property="facebookButton" destination="HRy-Ov-E52" id="rUy-4M-NlU"/>
                         <outlet property="googleButton" destination="DOZ-Cg-rg7" id="Lre-hN-0MT"/>
                         <outlet property="heightScrollConstraint" destination="sdO-Yu-gMp" id="obS-Lo-rnI"/>
+                        <segue destination="UeY-o4-sbf" kind="presentation" identifier="goToRequestRide" id="ALS-1t-yOZ"/>
+                        <segue destination="wQi-aZ-FQp" kind="presentation" identifier="goToOfferRide" id="myb-Gc-TO8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nJ7-IQ-UBf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1937.5" y="-1341.5"/>
+        </scene>
+        <!--requestRideVC-->
+        <scene sceneID="eho-BE-vlI">
+            <objects>
+                <viewControllerPlaceholder storyboardName="RideShare" referencedIdentifier="requestRideVC" id="UeY-o4-sbf" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8ld-Hx-rG6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2340" y="-1341"/>
+        </scene>
+        <!--offerRideVC-->
+        <scene sceneID="RjR-oh-rYV">
+            <objects>
+                <viewControllerPlaceholder storyboardName="RideShare" referencedIdentifier="offerRideVC" id="wQi-aZ-FQp" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cQ1-zJ-T8p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2340.5" y="-1525"/>
         </scene>
     </scenes>
     <resources>

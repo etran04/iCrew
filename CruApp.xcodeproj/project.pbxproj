@@ -69,6 +69,9 @@
 		278C4C531C86646C00EB0AC1 /* FreigSanProMedIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 278C4C331C86640100EB0AC1 /* FreigSanProMedIt.otf */; };
 		278C4C541C86646C00EB0AC1 /* FreigSanProSem.otf in Resources */ = {isa = PBXBuildFile; fileRef = 278C4C341C86640100EB0AC1 /* FreigSanProSem.otf */; };
 		278C4C551C86646C00EB0AC1 /* FreigSanProSemIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 278C4C351C86640100EB0AC1 /* FreigSanProSemIt.otf */; };
+		278C4C621C87A2B100EB0AC1 /* JoinMinistryTeamTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278C4C611C87A2B100EB0AC1 /* JoinMinistryTeamTVC.swift */; };
+		278C4C641C87A40A00EB0AC1 /* MinistryTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278C4C631C87A40A00EB0AC1 /* MinistryTeam.swift */; };
+		278C4C661C87AB9A00EB0AC1 /* MinistryTeamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278C4C651C87AB9A00EB0AC1 /* MinistryTeamTableViewCell.swift */; };
 		279326FC1C509C2100BAC73D /* PopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 279326EE1C509C2100BAC73D /* PopUpViewController.xib */; };
 		279326FD1C509C2100BAC73D /* PopUpViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 279326EF1C509C2100BAC73D /* PopUpViewController_iPad.xib */; };
 		279326FE1C509C2100BAC73D /* PopUpViewController_iPhone6.xib in Resources */ = {isa = PBXBuildFile; fileRef = 279326F01C509C2100BAC73D /* PopUpViewController_iPhone6.xib */; };
@@ -83,7 +86,6 @@
 		83244B801C75AD9400D913A6 /* SidebarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83244B7F1C75AD9400D913A6 /* SidebarTableViewController.swift */; };
 		832FDCCA1C8549FB00836B7C /* MainInvolvedTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832FDCC91C8549FB00836B7C /* MainInvolvedTVC.swift */; };
 		832FDCCC1C854B1600836B7C /* InvolvedGroupsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832FDCCB1C854B1600836B7C /* InvolvedGroupsTVC.swift */; };
-		832FDCCE1C854BC600836B7C /* JoinMinistryTeamTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832FDCCD1C854BC600836B7C /* JoinMinistryTeamTVC.swift */; };
 		832FDCD01C854C0900836B7C /* MinistryTeamDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832FDCCF1C854C0900836B7C /* MinistryTeamDetailVC.swift */; };
 		832FDCD21C854CBA00836B7C /* MinistryTeamSignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832FDCD11C854CBA00836B7C /* MinistryTeamSignUpVC.swift */; };
 		832FDCD41C854CE600836B7C /* MinistryTeamSuccessVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832FDCD31C854CE600836B7C /* MinistryTeamSuccessVC.swift */; };
@@ -282,6 +284,9 @@
 		278C4C341C86640100EB0AC1 /* FreigSanProSem.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FreigSanProSem.otf; sourceTree = "<group>"; };
 		278C4C351C86640100EB0AC1 /* FreigSanProSemIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FreigSanProSemIt.otf; sourceTree = "<group>"; };
 		278C4C361C86640100EB0AC1 /* GF End User License.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "GF End User License.rtf"; sourceTree = "<group>"; };
+		278C4C611C87A2B100EB0AC1 /* JoinMinistryTeamTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoinMinistryTeamTVC.swift; sourceTree = "<group>"; };
+		278C4C631C87A40A00EB0AC1 /* MinistryTeam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinistryTeam.swift; sourceTree = "<group>"; };
+		278C4C651C87AB9A00EB0AC1 /* MinistryTeamTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinistryTeamTableViewCell.swift; sourceTree = "<group>"; };
 		279326EE1C509C2100BAC73D /* PopUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PopUpViewController.xib; path = NMPopUpView/Pod/Classes/PopUpViewController.xib; sourceTree = "<group>"; };
 		279326EF1C509C2100BAC73D /* PopUpViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PopUpViewController_iPad.xib; path = NMPopUpView/Pod/Classes/PopUpViewController_iPad.xib; sourceTree = "<group>"; };
 		279326F01C509C2100BAC73D /* PopUpViewController_iPhone6.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PopUpViewController_iPhone6.xib; path = NMPopUpView/Pod/Classes/PopUpViewController_iPhone6.xib; sourceTree = "<group>"; };
@@ -303,7 +308,6 @@
 		83244B7F1C75AD9400D913A6 /* SidebarTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidebarTableViewController.swift; sourceTree = "<group>"; };
 		832FDCC91C8549FB00836B7C /* MainInvolvedTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainInvolvedTVC.swift; sourceTree = "<group>"; };
 		832FDCCB1C854B1600836B7C /* InvolvedGroupsTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvolvedGroupsTVC.swift; sourceTree = "<group>"; };
-		832FDCCD1C854BC600836B7C /* JoinMinistryTeamTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoinMinistryTeamTVC.swift; sourceTree = "<group>"; };
 		832FDCCF1C854C0900836B7C /* MinistryTeamDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinistryTeamDetailVC.swift; sourceTree = "<group>"; };
 		832FDCD11C854CBA00836B7C /* MinistryTeamSignUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinistryTeamSignUpVC.swift; sourceTree = "<group>"; };
 		832FDCD31C854CE600836B7C /* MinistryTeamSuccessVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinistryTeamSuccessVC.swift; sourceTree = "<group>"; };
@@ -632,12 +636,14 @@
 			children = (
 				832FDCC91C8549FB00836B7C /* MainInvolvedTVC.swift */,
 				832FDCCB1C854B1600836B7C /* InvolvedGroupsTVC.swift */,
-				832FDCCD1C854BC600836B7C /* JoinMinistryTeamTVC.swift */,
 				832FDCCF1C854C0900836B7C /* MinistryTeamDetailVC.swift */,
 				832FDCD11C854CBA00836B7C /* MinistryTeamSignUpVC.swift */,
 				832FDCD31C854CE600836B7C /* MinistryTeamSuccessVC.swift */,
 				832FDCD51C854D2E00836B7C /* CGQuestionnaireVC.swift */,
 				832FDCD71C854D8100836B7C /* CGSuccessVC.swift */,
+				278C4C611C87A2B100EB0AC1 /* JoinMinistryTeamTVC.swift */,
+				278C4C631C87A40A00EB0AC1 /* MinistryTeam.swift */,
+				278C4C651C87AB9A00EB0AC1 /* MinistryTeamTableViewCell.swift */,
 			);
 			name = GetInvolved;
 			sourceTree = "<group>";
@@ -1072,6 +1078,7 @@
 				A4A8364B1C83D396003FBD8D /* PassengerStatusTableViewCell.swift in Sources */,
 				0725A04E1C865269006E8E0C /* AvailNumSeatCell.swift in Sources */,
 				A40DD9941C0EC0FB00BCFEC5 /* DBClient.swift in Sources */,
+				278C4C621C87A2B100EB0AC1 /* JoinMinistryTeamTVC.swift in Sources */,
 				279327071C50A10500BAC73D /* InitialMinistryTableViewCell.swift in Sources */,
 				83244B761C7579F000D913A6 /* MinistryData.swift in Sources */,
 				A40DD9A21C0EC61600BCFEC5 /* SummerMissionsViewController.swift in Sources */,
@@ -1101,6 +1108,7 @@
 				832FDCCA1C8549FB00836B7C /* MainInvolvedTVC.swift in Sources */,
 				83B1CB291C48880A00145B6D /* UserProfile.swift in Sources */,
 				0725A0611C8679C7006E8E0C /* EnterLocationPlaceCell.swift in Sources */,
+				278C4C641C87A40A00EB0AC1 /* MinistryTeam.swift in Sources */,
 				078739901C86179D00D09C14 /* PhoneNumCell.swift in Sources */,
 				83244B6E1C7579BA00D913A6 /* CampusData.swift in Sources */,
 				07AF13D31C749288004C28FA /* ToolTableViewCell.swift in Sources */,
@@ -1118,9 +1126,9 @@
 				A441CE901C7F935600663057 /* RideShareStatusTableViewController.swift in Sources */,
 				A45573001C4CDAF60097DE0F /* MissionViewCell.swift in Sources */,
 				07C196351C0E6D9F00375B8D /* ArticleTableViewCell.swift in Sources */,
-				832FDCCE1C854BC600836B7C /* JoinMinistryTeamTVC.swift in Sources */,
 				832FDCD81C854D8100836B7C /* CGSuccessVC.swift in Sources */,
 				A441CE791C764BA600663057 /* SelectDriverTableViewController.swift in Sources */,
+				278C4C661C87AB9A00EB0AC1 /* MinistryTeamTableViewCell.swift in Sources */,
 				1E37E7291C0E362D0054607A /* EventsViewController.swift in Sources */,
 				07C196371C0E863000375B8D /* VideoTableViewCell.swift in Sources */,
 				A441CE7B1C765D4800663057 /* DriverSelectedViewController.swift in Sources */,

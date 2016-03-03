@@ -75,12 +75,12 @@
 		278C4C731C87E6FF00EB0AC1 /* MyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278C4C721C87E6FF00EB0AC1 /* MyButton.swift */; };
 		279326FC1C509C2100BAC73D /* PopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 279326EE1C509C2100BAC73D /* PopUpViewController.xib */; };
 		279326FD1C509C2100BAC73D /* PopUpViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 279326EF1C509C2100BAC73D /* PopUpViewController_iPad.xib */; };
-		279326FE1C509C2100BAC73D /* PopUpViewController_iPhone6.xib in Resources */ = {isa = PBXBuildFile; fileRef = 279326F01C509C2100BAC73D /* PopUpViewController_iPhone6.xib */; };
 		279326FF1C509C2100BAC73D /* PopUpViewController_iPhone6Plus.xib in Resources */ = {isa = PBXBuildFile; fileRef = 279326F11C509C2100BAC73D /* PopUpViewController_iPhone6Plus.xib */; };
 		279327001C509C2100BAC73D /* PopUpViewControllerSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279326F21C509C2100BAC73D /* PopUpViewControllerSwift.swift */; };
 		279327011C509C2100BAC73D /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 279326F41C509C2100BAC73D /* Info.plist */; };
 		279327051C50A0EC00BAC73D /* InitialMinistryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279327041C50A0EC00BAC73D /* InitialMinistryTableViewController.swift */; };
 		279327071C50A10500BAC73D /* InitialMinistryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279327061C50A10500BAC73D /* InitialMinistryTableViewCell.swift */; };
+		27A8DFB71C87F0C100A8F080 /* PopUpViewController_iPhone6.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27A8DFB61C87F0C100A8F080 /* PopUpViewController_iPhone6.xib */; };
 		83244B6E1C7579BA00D913A6 /* CampusData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83244B6D1C7579BA00D913A6 /* CampusData.swift */; };
 		83244B761C7579F000D913A6 /* MinistryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83244B751C7579F000D913A6 /* MinistryData.swift */; };
 		83244B7D1C759E2D00D913A6 /* InitialUsage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83244B7B1C759E2D00D913A6 /* InitialUsage.swift */; };
@@ -291,7 +291,6 @@
 		278C4C721C87E6FF00EB0AC1 /* MyButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyButton.swift; sourceTree = "<group>"; };
 		279326EE1C509C2100BAC73D /* PopUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PopUpViewController.xib; path = NMPopUpView/Pod/Classes/PopUpViewController.xib; sourceTree = "<group>"; };
 		279326EF1C509C2100BAC73D /* PopUpViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PopUpViewController_iPad.xib; path = NMPopUpView/Pod/Classes/PopUpViewController_iPad.xib; sourceTree = "<group>"; };
-		279326F01C509C2100BAC73D /* PopUpViewController_iPhone6.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PopUpViewController_iPhone6.xib; path = NMPopUpView/Pod/Classes/PopUpViewController_iPhone6.xib; sourceTree = "<group>"; };
 		279326F11C509C2100BAC73D /* PopUpViewController_iPhone6Plus.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PopUpViewController_iPhone6Plus.xib; path = NMPopUpView/Pod/Classes/PopUpViewController_iPhone6Plus.xib; sourceTree = "<group>"; };
 		279326F21C509C2100BAC73D /* PopUpViewControllerSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PopUpViewControllerSwift.swift; path = NMPopUpView/Pod/Classes/PopUpViewControllerSwift.swift; sourceTree = "<group>"; };
 		279326F41C509C2100BAC73D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -302,6 +301,7 @@
 		279326F91C509C2100BAC73D /* NMPopUpViewSwift-umbrella.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NMPopUpViewSwift-umbrella.h"; sourceTree = "<group>"; };
 		279327041C50A0EC00BAC73D /* InitialMinistryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialMinistryTableViewController.swift; sourceTree = "<group>"; };
 		279327061C50A10500BAC73D /* InitialMinistryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialMinistryTableViewCell.swift; sourceTree = "<group>"; };
+		27A8DFB61C87F0C100A8F080 /* PopUpViewController_iPhone6.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopUpViewController_iPhone6.xib; sourceTree = "<group>"; };
 		4C75FBE0147F103088890A81 /* Pods-CruAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CruAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CruAppTests/Pods-CruAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		56975AA48A624728978E6E3E /* Pods-CruApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CruApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CruApp/Pods-CruApp.debug.xcconfig"; sourceTree = "<group>"; };
 		83244B6D1C7579BA00D913A6 /* CampusData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampusData.swift; sourceTree = "<group>"; };
@@ -615,8 +615,8 @@
 			isa = PBXGroup;
 			children = (
 				279326EE1C509C2100BAC73D /* PopUpViewController.xib */,
+				27A8DFB61C87F0C100A8F080 /* PopUpViewController_iPhone6.xib */,
 				279326EF1C509C2100BAC73D /* PopUpViewController_iPad.xib */,
-				279326F01C509C2100BAC73D /* PopUpViewController_iPhone6.xib */,
 				279326F11C509C2100BAC73D /* PopUpViewController_iPhone6Plus.xib */,
 				279326F21C509C2100BAC73D /* PopUpViewControllerSwift.swift */,
 				279326F31C509C2100BAC73D /* Resources */,
@@ -916,7 +916,7 @@
 				07340BBA1C5B36B5002C6015 /* info.png in Resources */,
 				278C4C431C86640100EB0AC1 /* GF End User License.rtf in Resources */,
 				072519B21BE9694000F38F81 /* LaunchScreen.storyboard in Resources */,
-				279326FE1C509C2100BAC73D /* PopUpViewController_iPhone6.xib in Resources */,
+				27A8DFB71C87F0C100A8F080 /* PopUpViewController_iPhone6.xib in Resources */,
 				839F645B1C0D6C4C00CAEC9E /* Resources.storyboard in Resources */,
 				A447DBC21C5ACBBB000C6DEB /* Passenger-52.png in Resources */,
 				839F64411C0D4E4300CAEC9E /* Cru-Logo.png in Resources */,

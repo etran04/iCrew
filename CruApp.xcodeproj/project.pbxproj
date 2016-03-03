@@ -83,7 +83,6 @@
 		27A8DFB71C87F0C100A8F080 /* PopUpViewController_iPhone6.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27A8DFB61C87F0C100A8F080 /* PopUpViewController_iPhone6.xib */; };
 		83244B6E1C7579BA00D913A6 /* CampusData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83244B6D1C7579BA00D913A6 /* CampusData.swift */; };
 		83244B761C7579F000D913A6 /* MinistryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83244B751C7579F000D913A6 /* MinistryData.swift */; };
-		83244B7D1C759E2D00D913A6 /* InitialUsage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83244B7B1C759E2D00D913A6 /* InitialUsage.swift */; };
 		83244B801C75AD9400D913A6 /* SidebarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83244B7F1C75AD9400D913A6 /* SidebarTableViewController.swift */; };
 		832FDCCA1C8549FB00836B7C /* MainInvolvedTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832FDCC91C8549FB00836B7C /* MainInvolvedTVC.swift */; };
 		832FDCCC1C854B1600836B7C /* InvolvedGroupsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832FDCCB1C854B1600836B7C /* InvolvedGroupsTVC.swift */; };
@@ -92,6 +91,10 @@
 		832FDCD41C854CE600836B7C /* MinistryTeamSuccessVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832FDCD31C854CE600836B7C /* MinistryTeamSuccessVC.swift */; };
 		832FDCD61C854D2E00836B7C /* CGQuestionnaireVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832FDCD51C854D2E00836B7C /* CGQuestionnaireVC.swift */; };
 		832FDCD81C854D8100836B7C /* CGSuccessVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832FDCD71C854D8100836B7C /* CGSuccessVC.swift */; };
+		832FDCEB1C881EC100836B7C /* MinistryTeamCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832FDCE81C881EC100836B7C /* MinistryTeamCoreData.swift */; };
+		832FDCF61C881F4600836B7C /* CommunityGroupCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832FDCF41C881F4600836B7C /* CommunityGroupCoreData.swift */; };
+		832FDCF91C88224500836B7C /* CommunityGroupData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832FDCF81C88224500836B7C /* CommunityGroupData.swift */; };
+		832FDCFC1C8832BF00836B7C /* JoinCommunityGroupTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832FDCFB1C8832BF00836B7C /* JoinCommunityGroupTVC.swift */; };
 		83688B771C7F71E300470442 /* InitalScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83688B761C7F71E300470442 /* InitalScreenVC.swift */; };
 		838564F51C0D9EDF00EB1728 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 838564F41C0D9EDF00EB1728 /* SWRevealViewController.m */; };
 		839F64411C0D4E4300CAEC9E /* Cru-Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 839F643B1C0D4E4300CAEC9E /* Cru-Logo.png */; };
@@ -107,8 +110,8 @@
 		839F64601C0D70AA00CAEC9E /* Box-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 839F645F1C0D70AA00CAEC9E /* Box-25.png */; };
 		83A98E821C63129300338D0A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 83A98E811C63129300338D0A /* GoogleService-Info.plist */; };
 		83B1CB101C4856BC00145B6D /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 83B1CB0E1C4856BC00145B6D /* CoreDataModel.xcdatamodeld */; };
-		83B1CB251C4886F700145B6D /* Ministry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B1CB211C4886F700145B6D /* Ministry.swift */; };
-		83B1CB271C4886F700145B6D /* Campus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B1CB231C4886F700145B6D /* Campus.swift */; };
+		83B1CB251C4886F700145B6D /* MinistryCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B1CB211C4886F700145B6D /* MinistryCoreData.swift */; };
+		83B1CB271C4886F700145B6D /* CampusCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B1CB231C4886F700145B6D /* CampusCoreData.swift */; };
 		83B1CB291C48880A00145B6D /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B1CB281C48880A00145B6D /* UserProfile.swift */; };
 		A40DD9941C0EC0FB00BCFEC5 /* DBClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40DD9931C0EC0FB00BCFEC5 /* DBClient.swift */; };
 		A40DD9A21C0EC61600BCFEC5 /* SummerMissionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40DD9A11C0EC61600BCFEC5 /* SummerMissionsViewController.swift */; };
@@ -306,7 +309,6 @@
 		56975AA48A624728978E6E3E /* Pods-CruApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CruApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CruApp/Pods-CruApp.debug.xcconfig"; sourceTree = "<group>"; };
 		83244B6D1C7579BA00D913A6 /* CampusData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampusData.swift; sourceTree = "<group>"; };
 		83244B751C7579F000D913A6 /* MinistryData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinistryData.swift; sourceTree = "<group>"; };
-		83244B7B1C759E2D00D913A6 /* InitialUsage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialUsage.swift; sourceTree = "<group>"; };
 		83244B7F1C75AD9400D913A6 /* SidebarTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidebarTableViewController.swift; sourceTree = "<group>"; };
 		832FDCC91C8549FB00836B7C /* MainInvolvedTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainInvolvedTVC.swift; sourceTree = "<group>"; };
 		832FDCCB1C854B1600836B7C /* InvolvedGroupsTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvolvedGroupsTVC.swift; sourceTree = "<group>"; };
@@ -315,6 +317,10 @@
 		832FDCD31C854CE600836B7C /* MinistryTeamSuccessVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinistryTeamSuccessVC.swift; sourceTree = "<group>"; };
 		832FDCD51C854D2E00836B7C /* CGQuestionnaireVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGQuestionnaireVC.swift; sourceTree = "<group>"; };
 		832FDCD71C854D8100836B7C /* CGSuccessVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGSuccessVC.swift; sourceTree = "<group>"; };
+		832FDCE81C881EC100836B7C /* MinistryTeamCoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinistryTeamCoreData.swift; sourceTree = "<group>"; };
+		832FDCF41C881F4600836B7C /* CommunityGroupCoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunityGroupCoreData.swift; sourceTree = "<group>"; };
+		832FDCF81C88224500836B7C /* CommunityGroupData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunityGroupData.swift; sourceTree = "<group>"; };
+		832FDCFB1C8832BF00836B7C /* JoinCommunityGroupTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoinCommunityGroupTVC.swift; sourceTree = "<group>"; };
 		83688B761C7F71E300470442 /* InitalScreenVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitalScreenVC.swift; sourceTree = "<group>"; };
 		838564F21C0D9EDF00EB1728 /* CruApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CruApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		838564F31C0D9EDF00EB1728 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
@@ -332,8 +338,8 @@
 		839F645F1C0D70AA00CAEC9E /* Box-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Box-25.png"; path = "images/Box-25.png"; sourceTree = "<group>"; };
 		83A98E811C63129300338D0A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		83B1CB0F1C4856BC00145B6D /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
-		83B1CB211C4886F700145B6D /* Ministry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ministry.swift; sourceTree = "<group>"; };
-		83B1CB231C4886F700145B6D /* Campus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Campus.swift; sourceTree = "<group>"; };
+		83B1CB211C4886F700145B6D /* MinistryCoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinistryCoreData.swift; sourceTree = "<group>"; };
+		83B1CB231C4886F700145B6D /* CampusCoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampusCoreData.swift; sourceTree = "<group>"; };
 		83B1CB281C48880A00145B6D /* UserProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		9CC50D2817D518EDB9BF800C /* Pods-CruApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CruApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-CruApp/Pods-CruApp.release.xcconfig"; sourceTree = "<group>"; };
 		A40DD9931C0EC0FB00BCFEC5 /* DBClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBClient.swift; sourceTree = "<group>"; };
@@ -645,8 +651,8 @@
 				832FDCD51C854D2E00836B7C /* CGQuestionnaireVC.swift */,
 				832FDCD71C854D8100836B7C /* CGSuccessVC.swift */,
 				278C4C611C87A2B100EB0AC1 /* JoinMinistryTeamTVC.swift */,
-				278C4C631C87A40A00EB0AC1 /* MinistryTeam.swift */,
 				278C4C651C87AB9A00EB0AC1 /* MinistryTeamTableViewCell.swift */,
+				832FDCFB1C8832BF00836B7C /* JoinCommunityGroupTVC.swift */,
 			);
 			name = GetInvolved;
 			sourceTree = "<group>";
@@ -663,12 +669,15 @@
 		83B1CB111C48595000145B6D /* UserProfile */ = {
 			isa = PBXGroup;
 			children = (
-				83B1CB211C4886F700145B6D /* Ministry.swift */,
+				83B1CB211C4886F700145B6D /* MinistryCoreData.swift */,
 				83244B751C7579F000D913A6 /* MinistryData.swift */,
-				83B1CB231C4886F700145B6D /* Campus.swift */,
+				83B1CB231C4886F700145B6D /* CampusCoreData.swift */,
 				83244B6D1C7579BA00D913A6 /* CampusData.swift */,
-				83244B7B1C759E2D00D913A6 /* InitialUsage.swift */,
 				83B1CB281C48880A00145B6D /* UserProfile.swift */,
+				278C4C631C87A40A00EB0AC1 /* MinistryTeam.swift */,
+				832FDCE81C881EC100836B7C /* MinistryTeamCoreData.swift */,
+				832FDCF41C881F4600836B7C /* CommunityGroupCoreData.swift */,
+				832FDCF81C88224500836B7C /* CommunityGroupData.swift */,
 			);
 			name = UserProfile;
 			sourceTree = "<group>";
@@ -1088,7 +1097,7 @@
 				078739881C86178E00D09C14 /* NameFieldCell.swift in Sources */,
 				0727F9A51C5AD13000066948 /* DriverQuestionnaireVC.swift in Sources */,
 				07ED81711C0D7ECC007FFB53 /* ResourcesViewController.swift in Sources */,
-				83B1CB251C4886F700145B6D /* Ministry.swift in Sources */,
+				83B1CB251C4886F700145B6D /* MinistryCoreData.swift in Sources */,
 				279327001C509C2100BAC73D /* PopUpViewControllerSwift.swift in Sources */,
 				A40DD9AB1C0ED54F00BCFEC5 /* EventViewCell.swift in Sources */,
 				072519A81BE9694000F38F81 /* AppDelegate.swift in Sources */,
@@ -1101,16 +1110,20 @@
 				0725A05F1C867529006E8E0C /* DriveTypeCell.swift in Sources */,
 				A441CE801C7A957500663057 /* Resource.swift in Sources */,
 				832FDCD01C854C0900836B7C /* MinistryTeamDetailVC.swift in Sources */,
+				832FDCFC1C8832BF00836B7C /* JoinCommunityGroupTVC.swift in Sources */,
 				832FDCCC1C854B1600836B7C /* InvolvedGroupsTVC.swift in Sources */,
 				83B1CB101C4856BC00145B6D /* CoreDataModel.xcdatamodeld in Sources */,
+				832FDCF61C881F4600836B7C /* CommunityGroupCoreData.swift in Sources */,
 				83688B771C7F71E300470442 /* InitalScreenVC.swift in Sources */,
 				1E37E7261C0E362D0054607A /* Event.swift in Sources */,
 				1E37E72A1C0E362D0054607A /* VideosTableViewController.swift in Sources */,
 				832FDCD41C854CE600836B7C /* MinistryTeamSuccessVC.swift in Sources */,
 				832FDCD61C854D2E00836B7C /* CGQuestionnaireVC.swift in Sources */,
+				832FDCF91C88224500836B7C /* CommunityGroupData.swift in Sources */,
 				832FDCCA1C8549FB00836B7C /* MainInvolvedTVC.swift in Sources */,
 				83B1CB291C48880A00145B6D /* UserProfile.swift in Sources */,
 				0725A0611C8679C7006E8E0C /* EnterLocationPlaceCell.swift in Sources */,
+				832FDCEB1C881EC100836B7C /* MinistryTeamCoreData.swift in Sources */,
 				278C4C641C87A40A00EB0AC1 /* MinistryTeam.swift in Sources */,
 				078739901C86179D00D09C14 /* PhoneNumCell.swift in Sources */,
 				83244B6E1C7579BA00D913A6 /* CampusData.swift in Sources */,
@@ -1120,11 +1133,10 @@
 				271C78231C5044B100F42EA0 /* InitialCampusTableViewCell.swift in Sources */,
 				832FDCD21C854CBA00836B7C /* MinistryTeamSignUpVC.swift in Sources */,
 				A441CE771C763AC400663057 /* SelectDriverTableViewCell.swift in Sources */,
-				83244B7D1C759E2D00D913A6 /* InitialUsage.swift in Sources */,
 				07AF13CB1C748ACA004C28FA /* ToolsTableViewController.swift in Sources */,
 				A4110B521C0FA44700F47AB4 /* Location.swift in Sources */,
 				A40DD9A41C0EC62F00BCFEC5 /* Mission.swift in Sources */,
-				83B1CB271C4886F700145B6D /* Campus.swift in Sources */,
+				83B1CB271C4886F700145B6D /* CampusCoreData.swift in Sources */,
 				83244B801C75AD9400D913A6 /* SidebarTableViewController.swift in Sources */,
 				A441CE901C7F935600663057 /* RideShareStatusTableViewController.swift in Sources */,
 				A45573001C4CDAF60097DE0F /* MissionViewCell.swift in Sources */,

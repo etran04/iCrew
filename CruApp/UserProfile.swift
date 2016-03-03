@@ -43,6 +43,29 @@ class UserProfile {
         saveContext()
     }
     
+    class func addMinistryTeam(ministryTeam: MinistryTeam) {
+        let entity = NSEntityDescription.entityForName("MinistryTeam", inManagedObjectContext: coreDataManagedContext!)
+        let ministryTeamObj = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: coreDataManagedContext!)
+        
+        ministryTeamObj.setValue(ministryTeam.name, forKey: "name")
+        ministryTeamObj.setValue(ministryTeam.parentMinistry, forKey: "ministryId")
+        ministryTeamObj.setValue(ministryTeam.id, forKey: "id")
+        
+        saveContext()
+    }
+    
+    class func addCommunityGroup(communityGroup: CommunityGroupData) {
+        let entity = NSEntityDescription.entityForName("CommunityGroup", inManagedObjectContext: coreDataManagedContext!)
+        let communityGroupObj = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: coreDataManagedContext!)
+        
+        communityGroupObj.setValue(communityGroup.time, forKey: "time")
+        communityGroupObj.setValue(communityGroup.ministryId, forKey: "ministryId")
+        communityGroupObj.setValue(communityGroup.id, forKey: "id")
+        communityGroupObj.setValue(communityGroup.leaders, forKey: "leaders")
+        
+        saveContext()
+    }
+    
     class func removeObjects(entityName: String) {
         let fetchRequest = NSFetchRequest(entityName: entityName)
         
@@ -106,6 +129,56 @@ class UserProfile {
             }
             else {
                 print("Unable to fetch ministries")
+            }
+        }
+        catch {
+            print("Unable to fetch")
+        }
+        
+        return results;
+    }
+    
+    class func getMinistryTeams() -> [MinistryTeam] {
+        let fetchRequest = NSFetchRequest(entityName: "MinistryTeam")
+        var results = [MinistryTeam]()
+        
+        do {
+            let fetchedResult = try coreDataManagedContext!.executeFetchRequest(fetchRequest) as? [NSManagedObject]
+            
+            if let ministryTeams = fetchedResult {
+                for ministryTeam in ministryTeams {
+                    let ministryTeamObj = MinistryTeam(name: ministryTeam.valueForKey("name") as! String, parentMinistry: ministryTeam.valueForKey("ministryId") as! String, id: ministryTeam.valueForKey("id") as! String)
+                    
+                    results.append(ministryTeamObj)
+                }
+            }
+            else {
+                print("Unable to fetch ministry teams")
+            }
+        }
+        catch {
+            print("Unable to fetch")
+        }
+        
+        return results;
+    }
+    
+    class func getCommunityGroups() -> [CommunityGroupData] {
+        let fetchRequest = NSFetchRequest(entityName: "Ministry")
+        var results = [CommunityGroupData]()
+        
+        do {
+            let fetchedResult = try coreDataManagedContext!.executeFetchRequest(fetchRequest) as? [NSManagedObject]
+            
+            if let communityGroups = fetchedResult {
+                for communityGroup in communityGroups {
+                    let communityGroupObj = CommunityGroupData(id: communityGroup.valueForKey("id") as! String, ministryId: communityGroup.valueForKey("ministryId") as! String, time: communityGroup.valueForKey("time") as! NSDate, leaders: communityGroup.valueForKey("leaders") as! String)
+                    
+                    results.append(communityGroupObj)
+                }
+            }
+            else {
+                print("Unable to fetch community groups")
             }
         }
         catch {

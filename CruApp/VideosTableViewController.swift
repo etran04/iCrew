@@ -39,10 +39,12 @@ class Video {
 }
 
 /* VideosTableVC is the screen that loads a list of videos and displays them in a table */
-class VideosTableViewController: UITableViewController {
+class VideosTableViewController: UITableViewController, UISearchBarDelegate {
     
     /* A reference to the pull-down-to-refresh ui */
     @IBOutlet weak var refresh: UIRefreshControl!
+    /* A reference to the search bar */
+    @IBOutlet weak var searchBar: UISearchBar!
     
     /* Key used to access Google YouTube API. From Google Developer Console */
     var apiKey = "AIzaSyBGaaqJruUGsKohM4PJZO6XnlMOmdt6gsY"
@@ -59,6 +61,11 @@ class VideosTableViewController: UITableViewController {
     /* Tracks the the next page of videos when fetching from youtube api */
     var nextPageToken = ""
     
+    /* Variables used in filtering a search */
+    var filtered:[Video] = []
+    var filterFor: String?
+    var filterFlag = false
+    
     /* Called when the current view is loaded */
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,7 +75,8 @@ class VideosTableViewController: UITableViewController {
     
     /* Called when the current view appears */
     override func viewDidAppear(animated: Bool) {
-        self.setUpRefresh()
+        //self.setUpRefresh()
+        searchBar.delegate = self
     }
     
     /* Sets up and starts the loading indicator */
@@ -94,13 +102,13 @@ class VideosTableViewController: UITableViewController {
         self.getVideosForChannelAtIndex(0)
     }
     
-    /* Callback method for when user pulls down to refresh */
-    func refresh(sender:AnyObject) {
-        self.setUpRefresh()
-        self.tableView.reloadData()
-        self.refresh.endRefreshing()
-    }
-    
+//    /* Callback method for when user pulls down to refresh */
+//    func refresh(sender:AnyObject) {
+//        self.setUpRefresh()
+//        self.tableView.reloadData()
+//        self.refresh.endRefreshing()
+//    }
+//    
     // MARK: - Table view data source
     
     /* Asks the data source to return the number of sections in the table view. Default is 1. */
@@ -143,8 +151,10 @@ class VideosTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         // check if row is last row
         // perform operation to load new cell
-        if (indexPath.row == self.videos.count - 1) {
-            self.loadVideos()
+        if !self.filterFlag {
+            if (indexPath.row == self.videos.count - 1) {
+                self.loadVideos()
+            }
         }
     }
 
@@ -220,18 +230,23 @@ class VideosTableViewController: UITableViewController {
     /* Retrieves the videos for the Cru Channel, and loads it into our table */
     func getVideosForChannelAtIndex(index: Int) -> Void {
         // Get the selected channel's playlistID value from the channelsDataArray array and use it for fetching the proper video playlst.
-        
         let playlistID = channelsDataArray[index]["playlistID"] as! String
         
         let urlString: String
+        var kSearchForAmt = 10
+        
+        if self.filterFlag {
+            self.videos = [Video]()
+            kSearchForAmt = 50
+        }
         
         // Form the request URL string for first time fetch
         if (nextPageToken == "") {
-            urlString = "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=10&playlistId=\(playlistID)&key=\(apiKey)"
+            urlString = "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=\(kSearchForAmt)&playlistId=\(playlistID)&key=\(apiKey)"
         }
         // Or uses the nextPageToken as a user scrolls down the feed 
         else {
-             urlString = "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&pageToken=\(nextPageToken)&maxResults=10&playlistId=\(playlistID)&key=\(apiKey)"
+             urlString = "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&pageToken=\(nextPageToken)&maxResults=\(kSearchForAmt)&playlistId=\(playlistID)&key=\(apiKey)"
         }
         
         // Create a NSURL object based on the above string.
@@ -264,15 +279,24 @@ class VideosTableViewController: UITableViewController {
                         
                         // Adds the video to our list of videos
                         let newVideo = Video(id: desiredPlaylistItemDataDict["videoID"] as! String, title: desiredPlaylistItemDataDict["title"] as! String, summary: desiredPlaylistItemDataDict["description"] as! String)
-                        self.videos.append(newVideo)
                         
-                        // Reload the tableview.
-                        self.tableView.reloadData()
-                        
-                        // Finished loading videos, stop the indicator
-                        SwiftLoader.hide()
-                        //SwiftSpinner.hide()
+                        let temp = desiredPlaylistItemDataDict["title"] as! String
+                        if (self.filterFlag) {
+                            if temp.containsString(self.filterFor!) {
+                                self.videos.append(newVideo)
+                            }
+                        }
+                        else {
+                            self.videos.append(newVideo)
+                        }
                     }
+                    
+                    // Reload the tableview.
+                    self.tableView.reloadData()
+                    
+                    // Finished loading videos, stop the indicator
+                    SwiftLoader.hide()
+                    
                 } catch {
                     print(error)
                 }
@@ -282,6 +306,28 @@ class VideosTableViewController: UITableViewController {
                 print("Error while loading channel videos: \(error)")
             }
         })
+    }
+    
+    // MARK : - UISearchbarDelegate methods
+    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        self.filterFor = searchBar.text
+        self.nextPageToken = ""
+        self.filterFlag = true
+        self.getVideosForChannelAtIndex(0)
+    }
+    
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        print("cancel pressed")
+    }
+    
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        if (searchText == "") {
+            self.videos = [Video]()
+            self.nextPageToken = ""
+            self.filterFlag = false
+            self.getVideosForChannelAtIndex(0)
+        }
     }
     
 }

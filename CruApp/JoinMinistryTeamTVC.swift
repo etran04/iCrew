@@ -10,6 +10,8 @@ import UIKit
 
 class JoinMinistryTeamTVC: UITableViewController {
     
+    var popViewController : PopUpViewControllerSwift!
+    
     var ministryCollection: [MinistryData] = []
     var teamCollection = [[MinistryTeam]]()
     
@@ -81,8 +83,8 @@ class JoinMinistryTeamTVC: UITableViewController {
         let team = teamCollection[indexPath.section][indexPath.row]
         
         cell.teamName.text = team.name
-
-        
+        cell.section = indexPath.section
+        cell.row = indexPath.row
 
         return cell
     }
@@ -90,5 +92,35 @@ class JoinMinistryTeamTVC: UITableViewController {
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return ministryCollection[section].name
     }
+    
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        print(indexPath.row)
+        
+        let cell:UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
+        viewInfo(cell)
+
+    }
+    
+    func viewInfo(sender: AnyObject) {
+        let team = teamCollection[sender.section][sender.row]
+        
+        let loginController = UIAlertController(title: team.name, message: team.description, preferredStyle: UIAlertControllerStyle.Alert)
+        
+        //read in username and password
+        let signupAction = UIAlertAction(title: "Sign Up", style: UIAlertActionStyle.Default) { (action:UIAlertAction) -> Void in
+            
+           self.performSegueWithIdentifier("MinistryTeamSuccessSeg", sender: self)
+        }
+
+
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil)
+        
+        loginController.addAction(signupAction)
+        loginController.addAction(cancelAction)
+        
+        self.presentViewController(loginController, animated: true, completion: nil)    }
+
+
 
 }

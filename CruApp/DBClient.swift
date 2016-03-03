@@ -15,9 +15,10 @@ class DBClient {
     }
     
     func requestData(action: String, completionHandler : (NSData?, NSURLResponse?, NSError?) -> Void) {
-        //let url = "http://pcp079837pcs.wireless.calpoly.edu:3000/api/" + action + "/list"
-                
         let url = "http://localhost:3001/api/" + action + "/list"
+        //let url = "http://pcp070548pcs.wireless.calpoly.edu:3000/api/" + action + "/list"
+                
+        let url = "http://localhost:3000/api/" + action + "/list"
         //for sorting
         //let url = http://localhost:3000/api/minstry/find?order={name: 1}
         sendGetRequest(url, completionHandler: completionHandler)
@@ -56,8 +57,8 @@ class DBClient {
     //func addData(action: String, direction : String, seats : Int, driverNumber : Int, event : String, driverName : String) {
     func addData(action : String, body: NSData) {
 
-        //let url = "pcp079837pcs.wireless.calpoly.edu:3000/api/" + action + "/create"
-        let url = "http://localhost:3001/api/" + action + "/create"
+        //let url = "http://pcp070548pcs.wireless.calpoly.edu:3000/api/" + action + "/create"
+        let url = "http://localhost:3000/api/" + action + "/create"
 
         sendPostRequest(url, body: body, completionHandler: emptyHandler)
     }

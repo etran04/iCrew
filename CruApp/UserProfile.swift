@@ -43,7 +43,7 @@ class UserProfile {
         saveContext()
     }
     
-    class func addMinistryTeam(ministryTeam: MinistryTeam) {
+    class func addMinistryTeam(ministryTeam: MinistryTeamData) {
         let entity = NSEntityDescription.entityForName("MinistryTeam", inManagedObjectContext: coreDataManagedContext!)
         let ministryTeamObj = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: coreDataManagedContext!)
         
@@ -138,16 +138,16 @@ class UserProfile {
         return results;
     }
     
-    class func getMinistryTeams() -> [MinistryTeam] {
+    class func getMinistryTeams() -> [MinistryTeamData] {
         let fetchRequest = NSFetchRequest(entityName: "MinistryTeam")
-        var results = [MinistryTeam]()
+        var results = [MinistryTeamData]()
         
         do {
             let fetchedResult = try coreDataManagedContext!.executeFetchRequest(fetchRequest) as? [NSManagedObject]
             
             if let ministryTeams = fetchedResult {
                 for ministryTeam in ministryTeams {
-                    let ministryTeamObj = MinistryTeam(name: ministryTeam.valueForKey("name") as! String, parentMinistry: ministryTeam.valueForKey("ministryId") as! String, id: ministryTeam.valueForKey("id") as! String)
+                    let ministryTeamObj = MinistryTeamData(name: ministryTeam.valueForKey("name") as! String, description: "", parentMinistry: ministryTeam.valueForKey("ministryId") as! String, id: ministryTeam.valueForKey("id") as! String)
                     
                     results.append(ministryTeamObj)
                 }

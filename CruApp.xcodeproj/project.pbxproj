@@ -70,7 +70,7 @@
 		278C4C541C86646C00EB0AC1 /* FreigSanProSem.otf in Resources */ = {isa = PBXBuildFile; fileRef = 278C4C341C86640100EB0AC1 /* FreigSanProSem.otf */; };
 		278C4C551C86646C00EB0AC1 /* FreigSanProSemIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 278C4C351C86640100EB0AC1 /* FreigSanProSemIt.otf */; };
 		278C4C621C87A2B100EB0AC1 /* JoinMinistryTeamTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278C4C611C87A2B100EB0AC1 /* JoinMinistryTeamTVC.swift */; };
-		278C4C641C87A40A00EB0AC1 /* MinistryTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278C4C631C87A40A00EB0AC1 /* MinistryTeam.swift */; };
+		278C4C641C87A40A00EB0AC1 /* MinistryTeamData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278C4C631C87A40A00EB0AC1 /* MinistryTeamData.swift */; };
 		278C4C661C87AB9A00EB0AC1 /* MinistryTeamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278C4C651C87AB9A00EB0AC1 /* MinistryTeamTableViewCell.swift */; };
 		278C4C731C87E6FF00EB0AC1 /* MyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278C4C721C87E6FF00EB0AC1 /* MyButton.swift */; };
 		279326FC1C509C2100BAC73D /* PopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 279326EE1C509C2100BAC73D /* PopUpViewController.xib */; };
@@ -289,7 +289,7 @@
 		278C4C351C86640100EB0AC1 /* FreigSanProSemIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FreigSanProSemIt.otf; sourceTree = "<group>"; };
 		278C4C361C86640100EB0AC1 /* GF End User License.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "GF End User License.rtf"; sourceTree = "<group>"; };
 		278C4C611C87A2B100EB0AC1 /* JoinMinistryTeamTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoinMinistryTeamTVC.swift; sourceTree = "<group>"; };
-		278C4C631C87A40A00EB0AC1 /* MinistryTeam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinistryTeam.swift; sourceTree = "<group>"; };
+		278C4C631C87A40A00EB0AC1 /* MinistryTeamData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinistryTeamData.swift; sourceTree = "<group>"; };
 		278C4C651C87AB9A00EB0AC1 /* MinistryTeamTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinistryTeamTableViewCell.swift; sourceTree = "<group>"; };
 		278C4C721C87E6FF00EB0AC1 /* MyButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyButton.swift; sourceTree = "<group>"; };
 		279326EE1C509C2100BAC73D /* PopUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PopUpViewController.xib; path = NMPopUpView/Pod/Classes/PopUpViewController.xib; sourceTree = "<group>"; };
@@ -674,7 +674,7 @@
 				83B1CB231C4886F700145B6D /* CampusCoreData.swift */,
 				83244B6D1C7579BA00D913A6 /* CampusData.swift */,
 				83B1CB281C48880A00145B6D /* UserProfile.swift */,
-				278C4C631C87A40A00EB0AC1 /* MinistryTeam.swift */,
+				278C4C631C87A40A00EB0AC1 /* MinistryTeamData.swift */,
 				832FDCE81C881EC100836B7C /* MinistryTeamCoreData.swift */,
 				832FDCF41C881F4600836B7C /* CommunityGroupCoreData.swift */,
 				832FDCF81C88224500836B7C /* CommunityGroupData.swift */,
@@ -1124,7 +1124,7 @@
 				83B1CB291C48880A00145B6D /* UserProfile.swift in Sources */,
 				0725A0611C8679C7006E8E0C /* EnterLocationPlaceCell.swift in Sources */,
 				832FDCEB1C881EC100836B7C /* MinistryTeamCoreData.swift in Sources */,
-				278C4C641C87A40A00EB0AC1 /* MinistryTeam.swift in Sources */,
+				278C4C641C87A40A00EB0AC1 /* MinistryTeamData.swift in Sources */,
 				078739901C86179D00D09C14 /* PhoneNumCell.swift in Sources */,
 				83244B6E1C7579BA00D913A6 /* CampusData.swift in Sources */,
 				07AF13D31C749288004C28FA /* ToolTableViewCell.swift in Sources */,

@@ -48,7 +48,7 @@ class JoinMinistryTeamTVC: UITableViewController {
             //corresponds to the parentMinistry
             for (index, _) in ministryCollection.enumerate() {
                 if (ministryCollection[index].id == ministryId) {
-                    if(ministryTeam["descirption"] == nil) {
+                    if(ministryTeam["description"] == nil) {
                         break;
                     }
                     

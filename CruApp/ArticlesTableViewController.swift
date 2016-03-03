@@ -39,7 +39,7 @@ class ArticlesTableViewController: UITableViewController {
     var indicator = UIActivityIndicatorView()
     
     /* Holds all articles to be displayed */
-    var articles = [Resource]()
+    var articlesCollection = [Resource]()
     
     /* Called when the current view is loaded */
     override func viewDidLoad() {
@@ -108,18 +108,20 @@ class ArticlesTableViewController: UITableViewController {
     }
 
     /* Populates our articles from the Cru database */
-    func loadArticles(article : NSDictionary) {
+    func loadArticles(articles : NSArray) {
         //for article in articles {
         
-        //TODO: need to implement find to grab type=Article
-        let type = article["type"] as! String
-        if(type == "article") {
-            let title = article["title"] as! String
-            let url = article["url"] as! String
-            let tags = article["tags"] as! [String]
+        for article in articles {
+            //TODO: need to implement find to grab type=Article
+            let type = article["type"] as! String
+            if(type == "article") {
+                let title = article["title"] as! String
+                let url = article["url"] as! String
+                let tags = article["tags"] as! [String]
             
-            let articleObj = Resource(url : url, type : type, title : title, tags : tags)
-            articles.append(articleObj)
+                let articleObj = Resource(url : url, type : type, title : title, tags : tags)
+                articlesCollection.append(articleObj)
+            }
         }
         SwiftLoader.hide()
     }
@@ -133,19 +135,19 @@ class ArticlesTableViewController: UITableViewController {
 
     /* Dynamically size the table according to the number of articles */
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return articles.count
+        return articlesCollection.count
     }
     
     /* Loads each cell in the table with a link */
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("ArticleCell", forIndexPath: indexPath) as! ArticleTableViewCell
-        cell.setName(articles[indexPath.row].title)
+        cell.setName(articlesCollection[indexPath.row].title)
         return cell
     }
     
     /* Callback for when a link is clicked */
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        showLink(articles[indexPath.row].url)
+        showLink(articlesCollection[indexPath.row].url)
     }
     
     /* Callback for when a cell is individually displayed */

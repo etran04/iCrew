@@ -54,55 +54,58 @@ class EventsViewController: UITableViewController, DZNEmptyDataSetDelegate, DZNE
     
     //obtain information from the database to an Object
     //TODO: Move function into Event.swift
-    func setEvents(event:NSDictionary) {
+    func setEvents(events:NSArray) {
         //self.tableView.beginUpdates()
-
-        var existsInMinistry = false
         
-        if (event["parentMinistry"] == nil) {
-            let parentMinistries = event["parentMinistries"] as! [String]
+        for event in events {
+
+            var existsInMinistry = false
+        
+            if (event["parentMinistry"] == nil) {
+                let parentMinistries = event["parentMinistries"] as! [String]
             
-            for ministryId in parentMinistries {
+                for ministryId in parentMinistries {
+                    for ministry in ministryCollection {
+                        if (ministryId == ministry.id) {
+                            existsInMinistry = true;
+                        }
+                    }
+                }
+            }
+            else {
+                let ministryId = event["parentMinistry"] as! String
+            
                 for ministry in ministryCollection {
-                    if (ministryId == ministry.id) {
+                    if (ministry.id == ministryId) {
                         existsInMinistry = true;
                     }
                 }
             }
-        }
-        else {
-            let ministryId = event["parentMinistry"] as! String
-            
-            for ministry in ministryCollection {
-                if (ministry.id == ministryId) {
-                    existsInMinistry = true;
-                }
+        
+            if (!existsInMinistry) {
+                return;
             }
+        
+            let name = event["name"] as! String
+            let startDate = event["startDate"] as! String!
+            let endDate = event["endDate"] as! String!
+            let description = event["description"] as! String
+        
+            let location = Location(
+                postcode: event["location"]?!.objectForKey("postcode") as! String,
+                state: event["location"]?!.objectForKey("state") as! String,
+                suburb: event["location"]?!.objectForKey("suburb") as! String,
+                street1: event["location"]?!.objectForKey("street1") as! String,
+                country: event["location"]?!.objectForKey("country") as! String)
+        
+            let image = event["image"]?!.objectForKey("secure_url") as! String!
+            let url = event["url"] as! String
+            let rideShareEnabled = event["rideSharingEnabled"] as! Bool
+        
+            let eventObj = Event(name: name, startDate: startDate, endDate: endDate, location: location, image: image, description: description, url: url, rideShareFlag: rideShareEnabled)
+        
+            eventsCollection.append(eventObj)
         }
-        
-        if (!existsInMinistry) {
-            return;
-        }
-        
-        let name = event["name"] as! String
-        let startDate = event["startDate"] as! String!
-        let endDate = event["endDate"] as! String!
-        let description = event["description"] as! String
-        
-        let location = Location(
-            postcode: event["location"]?.objectForKey("postcode") as! String,
-            state: event["location"]?.objectForKey("state") as! String,
-            suburb: event["location"]?.objectForKey("suburb") as! String,
-            street1: event["location"]?.objectForKey("street1") as! String,
-            country: event["location"]?.objectForKey("country") as! String)
-        
-        let image = event["image"]?.objectForKey("secure_url") as! String!
-        let url = event["url"] as! String
-        let rideShareEnabled = event["rideSharingEnabled"] as! Bool
-        
-        let eventObj = Event(name: name, startDate: startDate, endDate: endDate, location: location, image: image, description: description, url: url, rideShareFlag: rideShareEnabled)
-        
-        eventsCollection.append(eventObj)
         self.tableView.reloadData()
     }
     

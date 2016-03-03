@@ -91,20 +91,22 @@ class SidebarTableViewController: UITableViewController {
     }
     
     //create a collection of users
-    func setUsers(user:NSDictionary) {
+    func setUsers(users:NSArray) {
+        for user in users{
         
-        //only create a user if the user's password is not nil
-        if let password = user["password"]
-        {
-            let email = user["email"] as! String
-            let userObj = User(email: email, password: password as? String)
-            userCollection.append(userObj)
-        }
+            //only create a user if the user's password is not nil
+            if let password = user["password"]
+            {
+                let email = user["email"] as! String
+                let userObj = User(email: email, password: password as? String)
+                userCollection.append(userObj)
+            }
         
-        //for testing use
-        for(var i = 0; i < userCollection.count; i++)
-        {
-            print("\(userCollection[i].email) : \(userCollection[i].password)")
+            //for testing use
+            for(var i = 0; i < userCollection.count; i++)
+            {
+                print("\(userCollection[i].email) : \(userCollection[i].password)")
+            }
         }
     }
     

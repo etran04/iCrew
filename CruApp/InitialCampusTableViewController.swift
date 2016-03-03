@@ -31,12 +31,15 @@ class InitialCampusTableViewController: UITableViewController {
 //        self.nextButton.enabled = false
     }
     
-    func setCampuses(campus:NSDictionary) {
-        let name = campus["name"] as! String
-        let id = campus["_id"] as! String
+    func setCampuses(campuses:NSArray) {
         
-        campusCollection.append(CampusData(name: name, id: id))
-        // TODO: Remove campuses Collection and use cache
+        for campus in campuses {
+            let name = campus["name"] as! String
+            let id = campus["_id"] as! String
+        
+            campusCollection.append(CampusData(name: name, id: id))
+            // TODO: Remove campuses Collection and use cache
+        }
         self.tableView.reloadData()
     }
     

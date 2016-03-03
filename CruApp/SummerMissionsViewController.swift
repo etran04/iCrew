@@ -26,47 +26,51 @@ class SummerMissionsViewController: UITableViewController, DZNEmptyDataSetSource
     }
     
     //TODO: move it into Mission.swift
-    func setMissions(mission:NSDictionary) -> () {
-        var url: String
-        var leaders: String
-        var image: String
+    func setMissions(missions:NSArray) -> () {
         
-        let name = nullToNil(mission["name"])
-        let description = nullToNil(mission["description"])
-        let startDate = nullToNil(mission["startDate"])
-        let endDate = nullToNil(mission["endDate"])
-        let cost = mission["cost"] as! Int
-        if ((mission["url"] as? String) != nil) {
-            url = mission["url"] as! String
-        } else {
-            url = ""
-        }
         
-        if ((mission["leaders"] as? String) != nil) {
-            leaders = mission["leaders"] as! String
-        } else {
-            leaders = "N/A"
-        }
+        for mission in missions {
+            var url: String
+            var leaders: String
+            var image: String
         
-        if ((mission["image"]?.objectForKey("secure_url") as? String) != nil) {
-            image = mission["image"]?.objectForKey("secure_url") as! String
-        } else {
-            image = ""
-        }
+            let name = nullToNil(mission["name"])
+            let description = nullToNil(mission["description"])
+            let startDate = nullToNil(mission["startDate"])
+            let endDate = nullToNil(mission["endDate"])
+            let cost = mission["cost"] as! Int
+            if ((mission["url"] as? String) != nil) {
+                url = mission["url"] as! String
+            } else {
+                url = ""
+            }
         
-        //let leaders = nullToNil(mission["leaders"])
-        //let image = nullToNil(mission["image"]?.objectForKey("secure_url"))
+            if ((mission["leaders"] as? String) != nil) {
+                leaders = mission["leaders"] as! String
+            } else {
+                leaders = "N/A"
+            }
+        
+            if ((mission["image"]??.objectForKey("secure_url") as? String) != nil) {
+                image = mission["image"]??.objectForKey("secure_url") as! String
+            } else {
+                image = ""
+            }
+        
+            //let leaders = nullToNil(mission["leaders"])
+            //let image = nullToNil(mission["image"]?.objectForKey("secure_url"))
        
-        let location = Location(
-            postcode: nullToNil(mission["location"]?.objectForKey("postcode")),
-            state: nullToNil(mission["location"]?.objectForKey("state")),
-            suburb: nullToNil(mission["location"]?.objectForKey("suburb")),
-            street1: nullToNil(mission["location"]?.objectForKey("street1")),
-            country: nullToNil(mission["location"]?.objectForKey("country")))
+            let location = Location(
+                postcode: nullToNil(mission["location"]?!.objectForKey("postcode")),
+                state: nullToNil(mission["location"]?!.objectForKey("state")),
+                suburb: nullToNil(mission["location"]?!.objectForKey("suburb")),
+                street1: nullToNil(mission["location"]?!.objectForKey("street1")),
+                country: nullToNil(mission["location"]?!.objectForKey("country")))
         
-        let missionObj = Mission(name: name, description: description, image: image, cost: cost, location: location, startDate: startDate, endDate: endDate, url: url, leaders: leaders)
+            let missionObj = Mission(name: name, description: description, image: image, cost: cost, location: location, startDate: startDate, endDate: endDate, url: url, leaders: leaders)
 
-        missionsCollection.append(missionObj)
+            missionsCollection.append(missionObj)
+        }
         self.tableView.reloadData()
     }
     

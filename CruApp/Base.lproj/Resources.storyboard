@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yMF-BQ-iAf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yMF-BQ-iAf">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -360,22 +360,18 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="YouTube summary description goes here." selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uIz-3V-OdK">
-                                            <rect key="frame" x="163" y="32" width="429" height="104"/>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="YouTube summary description goes here." translatesAutoresizingMaskIntoConstraints="NO" id="uIz-3V-OdK">
+                                            <rect key="frame" x="157" y="36" width="418" height="104"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="mYP-6P-fbR" firstAttribute="leading" secondItem="h9w-j8-UdK" secondAttribute="trailing" constant="8" id="2P8-bu-Lal"/>
                                         <constraint firstItem="h9w-j8-UdK" firstAttribute="top" secondItem="BqC-Tn-I46" secondAttribute="topMargin" constant="6" id="5D5-Ta-mCS"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="uIz-3V-OdK" secondAttribute="bottom" constant="4.5" id="9Gk-ph-fGN"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="uIz-3V-OdK" secondAttribute="trailing" id="Bzf-fb-zNJ"/>
                                         <constraint firstAttribute="topMargin" secondItem="mYP-6P-fbR" secondAttribute="top" constant="-6" id="bTp-2v-Yko"/>
-                                        <constraint firstItem="uIz-3V-OdK" firstAttribute="leading" secondItem="h9w-j8-UdK" secondAttribute="trailing" constant="8" id="e15-8p-ltg"/>
                                         <constraint firstAttribute="leadingMargin" secondItem="h9w-j8-UdK" secondAttribute="leading" id="snA-Vi-waP"/>
-                                        <constraint firstItem="uIz-3V-OdK" firstAttribute="top" secondItem="mYP-6P-fbR" secondAttribute="bottom" constant="-2" id="yec-6B-mqL"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>

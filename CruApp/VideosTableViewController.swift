@@ -117,6 +117,8 @@ class VideosTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("VideoTableCell", forIndexPath: indexPath) as! VideoTableViewCell
        
+        cell.summaryTextView.selectable = false
+        
         let currentVideo = videos[indexPath.row]
         if (currentVideo.getSummary() == "") {
             cell.setVideoInfo(currentVideo.getId(), title: currentVideo.getTitle(), summary: "No description available")

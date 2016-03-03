@@ -17,6 +17,7 @@ class PassengerQuestionnaireVC: UIViewController, UITableViewDelegate, UITableVi
     
     var passenger: Passenger!
     var eventChoices = [String]()
+    var eventIds = [String]()
     
     var cells = [AnyObject]()
     var ministryCollection: [MinistryData] = []
@@ -130,7 +131,9 @@ class PassengerQuestionnaireVC: UIViewController, UITableViewDelegate, UITableVi
         }
         
         let name = event["name"] as! String
+        let id = event["_id"] as! String
         self.eventChoices.append(name)
+        self.eventIds.append(id)
     }
     
     
@@ -184,11 +187,14 @@ class PassengerQuestionnaireVC: UIViewController, UITableViewDelegate, UITableVi
         let riderName = (cells[0] as! NameFieldCell).riderFullName.text
         let riderPhoneNum = parsePhoneNumber(((cells[1] as! PhoneNumCell).riderPhoneNum.text!))
         
+        print("Time: " + String((cells[3] as! DatePickerCell).datePicker.date))
+        
         passenger = Passenger(
             name: riderName!,
-            eventId: "563b11135e926d03001ac15c",
+            eventId: eventIds[(cells[2] as! ScrollPickerCell).scrollPicker.selectedRowInComponent(0)],
             phoneNumber: String(riderPhoneNum),
             direction: rideDirection,
+            time: String((cells[3] as! DatePickerCell).datePicker.date),
             gcmId: 1234567)
         
         let selectDriverViewController = segue.destinationViewController as! SelectDriverTableViewController

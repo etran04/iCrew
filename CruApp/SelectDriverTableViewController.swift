@@ -30,38 +30,44 @@ class SelectDriverTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func setDrivers(driver:NSDictionary) {
-        let eventId = driver["event"] as! String
-        let availableSeats = (driver["seats"] as! Int) - (driver["passengers"]!.count) as Int
-        let time = driver["time"] as! String
-        var direction = ""
+    func setDrivers(drivers:NSArray) {
         
-        if(driver["direction"] != nil) {
-            direction = driver["direction"] as! String
-        }
+        for driver in drivers {
+            
         
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.locale = NSLocale(localeIdentifier: "en_US")
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
-        let driverTime = dateFormatter.dateFromString(time)
+            let eventId = driver["event"] as! String
+            let availableSeats = (driver["seats"] as! Int) - (driver["passengers"]!!.count) as Int
+            let time = driver["time"] as! String
+            var direction = ""
         
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss Z'"
-        let passengerTime = dateFormatter.dateFromString(passenger.time)
+            if(driver["direction"] != nil) {
+                direction = driver["direction"] as! String
+            }
+        
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.locale = NSLocale(localeIdentifier: "en_US")
+            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+            let driverTime = dateFormatter.dateFromString(time)
+        
+            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss Z'"
+            let passengerTime = dateFormatter.dateFromString(passenger.time)
 
-        if (passenger.eventId == eventId
-            && availableSeats != 0
-            && driverTime!.compare(passengerTime!) == NSComparisonResult.OrderedAscending
-            && direction == passenger.direction) {
-                print("yay")
-            let id = driver["_id"] as! String
-            let name = driver["driverName"] as! String
-            let driverNumber = driver["driverNumber"] as! String
+            if (passenger.eventId == eventId
+                && availableSeats != 0
+                && driverTime!.compare(passengerTime!) == NSComparisonResult.OrderedAscending
+                && direction == passenger.direction) {
+                    print("yay")
+                    let id = driver["_id"] as! String
+                    let name = driver["driverName"] as! String
+                    let driverNumber = driver["driverNumber"] as! String
             
-            let driverObj = Driver(id: id, name: name, number : driverNumber, eventId: eventId, departureTime: time)
+                    let driverObj = Driver(id: id, name: name, number : driverNumber, eventId: eventId, departureTime: time)
             
-            driverCollection.append(driverObj)
-            self.tableView.reloadData()
+                    driverCollection.append(driverObj)
+            }
         }
+        self.tableView.reloadData()
+        
     }
 
     // MARK: - Table view data source

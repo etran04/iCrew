@@ -55,42 +55,42 @@ class InitialMinistryTableViewController: UITableViewController {
         
     }
     
-    func setMinistries(ministry:NSDictionary) {
+    func setMinistries(ministries:NSArray) {
         //self.tableView.beginUpdates()
+        for ministry in ministries {
         
-        let campus = ministry["campuses"] as! [String]
+            let campus = ministry["campuses"] as! [String]
         
-        if (campus.first == nil) {
-            return;
-        }
+            if (campus.first == nil) {
+                return;
+            }
         
-        let campusId = campus.first! as String
-        var existsInCampus = false
+            let campusId = campus.first! as String
+            var existsInCampus = false
         
-        for (index,_) in campusCollection.enumerate() {
-            if (campusCollection[index].id == campusId) {
-                let name = ministry["name"] as! String
-                let id = ministry["_id"] as! String
-                let description = ministry["description"] as! String!
-                let image = ministry["image"]?.objectForKey("secure_url") as! String!
-                //let campus = ministry["campuses"] as! String
+            for (index,_) in campusCollection.enumerate() {
+                if (campusCollection[index].id == campusId) {
+                    let name = ministry["name"] as! String
+                    let id = ministry["_id"] as! String
+                    let description = ministry["description"] as! String!
+                    let image = ministry["image"]??.objectForKey("secure_url") as! String!
+                    //let campus = ministry["campuses"] as! String
                 
-                let ministryObj = Ministry(name: name, description: description, image: image)
-                let ministryDataObj = MinistryData(name: name, id: id, campusId: campusId)
+                    let ministryObj = Ministry(name: name, description: description, image: image)
+                    let ministryDataObj = MinistryData(name: name, id: id, campusId: campusId)
                 
-                ministriesCollection[index].append(ministryObj)
-                ministryCollection.append(ministryDataObj)
-                
-                
-                
+                    ministriesCollection[index].append(ministryObj)
+                    ministryCollection.append(ministryDataObj)
+                }
+            
                 existsInCampus = true;
             }
-        }
         
-        if (!existsInCampus) {
-            return;
+            if (!existsInCampus) {
+                return;
+            }
         }
-        
+    
         self.tableView.reloadData()
     }
     

@@ -37,28 +37,27 @@ class JoinMinistryTeamTVC: UITableViewController {
     }
 
     //obtain information from the database to an Object
-    func setTeams(ministryTeam:NSDictionary) {
+    func setTeams(ministryTeams: NSArray) {
         //self.tableView.beginUpdates()
+        for ministryTeam in ministryTeams {
         
-        var existsInMinistry = false
-        let ministryId = ministryTeam["parentMinistry"] as! String
+            var existsInMinistry = false
+            let ministryId = ministryTeam["parentMinistry"] as! String
         
-        //go through user's ministries and if a ministry team's parentMinistry matches
-        //one of the user's ministries, add to index of teamCollection that 
-        //corresponds to the parentMinistry
-        for (index, _) in ministryCollection.enumerate() {
-            if (ministryCollection[index].id == ministryId) {
-                
-                let teamObj = MinistryTeamData(name: ministryTeam["name"] as! String, description: ministryTeam["description"] as! String, parentMinistry: ministryTeam["parentMinistry"] as! String, id: ministryTeam["id"] as! String)
-                teamCollection[index].append(teamObj)
-                existsInMinistry = true;
+            //go through user's ministries and if a ministry team's parentMinistry matches
+            //one of the user's ministries, add to index of teamCollection that
+            //corresponds to the parentMinistry
+            for (index, _) in ministryCollection.enumerate() {
+                if (ministryCollection[index].id == ministryId) {
+                    let teamObj = MinistryTeamData(name: ministryTeam["name"] as! String, description: ministryTeam["description"] as! String, parentMinistry: ministryTeam["parentMinistry"] as! String, id: ministryTeam["id"] as! String)
+                    teamCollection[index].append(teamObj)
+                    existsInMinistry = true;
+                }
             }
-        }
         
         if (!existsInMinistry) {
             return;
         }
-        
         self.tableView.reloadData()
     }
     

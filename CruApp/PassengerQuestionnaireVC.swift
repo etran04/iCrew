@@ -101,39 +101,42 @@ class PassengerQuestionnaireVC: UIViewController, UITableViewDelegate, UITableVi
     
     
     // Obtain event information from the database to an Object
-    func setEvents(event: NSDictionary) {
-        var existsInMinistry = false
+    func setEvents(events: NSArray) {
         
-        //filters events by ministryId
-        if (event["parentMinistry"] == nil) {
-            let parentMinistries = event["parentMinistries"] as! [String]
+        for event in events {
+            var existsInMinistry = false
+        
+            //filters events by ministryId
+            if (event["parentMinistry"] == nil) {
+                let parentMinistries = event["parentMinistries"] as! [String]
             
-            for ministryId in parentMinistries {
+                for ministryId in parentMinistries {
+                    for ministry in ministryCollection {
+                        if (ministryId == ministry.id) {
+                            existsInMinistry = true;
+                        }
+                    }
+                }
+            }
+            else {
+                let ministryId = event["parentMinistry"] as! String
+            
                 for ministry in ministryCollection {
-                    if (ministryId == ministry.id) {
+                    if (ministry.id == ministryId) {
                         existsInMinistry = true;
                     }
                 }
             }
-        }
-        else {
-            let ministryId = event["parentMinistry"] as! String
-            
-            for ministry in ministryCollection {
-                if (ministry.id == ministryId) {
-                    existsInMinistry = true;
-                }
-            }
-        }
         
-        if (!existsInMinistry) {
-            return;
-        }
+//            if (!existsInMinistry) {
+//                return;
+//            }
         
-        let name = event["name"] as! String
-        let id = event["_id"] as! String
-        self.eventChoices.append(name)
-        self.eventIds.append(id)
+            let name = event["name"] as! String
+            let id = event["_id"] as! String
+            self.eventChoices.append(name)
+            self.eventIds.append(id)
+        }
     }
     
     

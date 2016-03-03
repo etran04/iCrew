@@ -19,23 +19,53 @@ class ToolsTableViewController: UITableViewController {
     var indicator = UIActivityIndicatorView()
     
     /* Holds all tools to be displayed */
-    var tools = [Resource]()
+    var toolsCollection = [Resource]()
+    
     
     /* Called when the current view is loaded */
     override func viewDidLoad() {
         super.viewDidLoad()
         //self.setUpLoadSpinner()
-        self.loadTools()
+        
+        /* Sets up the database */
+        var dbClient: DBClient!
+        dbClient = DBClient()
+        dbClient.getData("resource", dict: loadArticles)
+        
+        self.tableView.reloadData()
+        
+        //self.loadTools()
     }
     
     /* Called when the current view appears */
     override func viewDidAppear(animated: Bool) {
+        
         self.setUpRefresh()
     }
     
     /* Sets up and starts the loading indicator */
     func setUpLoadSpinner() {
         SwiftLoader.show(title: "Loading...", animated: true)
+    }
+    
+    /* Populates our articles from the Cru database */
+    func loadArticles(resources : NSArray) {
+        //for article in articles {
+        
+        for resource in resources {
+            //TODO: need to implement find to grab type=Article
+            let type = resource["type"] as! String
+            if(type == "audio") {
+                let title = resource["title"] as! String
+                let url = resource["url"] as! String
+                let tags = resource["tags"] as! [String]
+                
+                let audioObj = Resource(url : url, type : type, title : title, tags : tags)
+                toolsCollection.append(audioObj)
+            }
+        }
+        self.tableView.reloadData()
+        SwiftLoader.hide()
     }
     
     /* Resets the refresh UI control */
@@ -80,19 +110,19 @@ class ToolsTableViewController: UITableViewController {
     
     /* Dynamically size the table according to the number of articles */
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tools.count
+        return toolsCollection.count
     }
     
     /* Loads each cell in the table with a link */
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("ToolCell", forIndexPath: indexPath) as! ToolTableViewCell
-        cell.setName(tools[indexPath.row].title)
+        cell.setName(toolsCollection[indexPath.row].title)
         return cell
     }
     
     /* Callback for when a link is clicked */
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        showLink(tools[indexPath.row].url)
+        showLink(toolsCollection[indexPath.row].url)
     }
     
     /* Callback for when a cell is individually displayed */

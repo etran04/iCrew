@@ -82,7 +82,7 @@
         <scene sceneID="IKy-TQ-5ie">
             <objects>
                 <tableViewController storyboardIdentifier="mainInvolvedTVC" id="lNH-Rv-4Jh" customClass="MainInvolvedTVC" customModule="CruApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="2Ke-g4-Tjg">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="2Ke-g4-Tjg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -94,11 +94,11 @@
                                         <rect key="frame" x="0.0" y="64" width="375" height="276"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="s3D-tj-ZR4" id="CsM-Kw-x1r">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="275"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="276"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QKA-iF-lVC">
-                                                    <rect key="frame" x="13" y="13" width="349" height="249"/>
+                                                    <rect key="frame" x="13" y="13" width="349" height="255"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="s3B-5T-WQH">
                                                             <rect key="frame" x="86" y="65" width="177" height="119"/>
@@ -116,9 +116,9 @@
                                                         <constraint firstItem="THe-qc-eWy" firstAttribute="top" secondItem="QKA-iF-lVC" secondAttribute="top" constant="205" id="BZs-Ly-tN7"/>
                                                         <constraint firstItem="THe-qc-eWy" firstAttribute="leading" secondItem="QKA-iF-lVC" secondAttribute="leading" constant="54" id="Cu4-VS-qTd"/>
                                                         <constraint firstItem="s3B-5T-WQH" firstAttribute="top" secondItem="QKA-iF-lVC" secondAttribute="top" constant="65" id="EMz-eF-g4r"/>
-                                                        <constraint firstAttribute="bottom" secondItem="THe-qc-eWy" secondAttribute="bottom" constant="16" id="UjD-nS-6ee"/>
+                                                        <constraint firstAttribute="bottom" secondItem="THe-qc-eWy" secondAttribute="bottom" constant="22" id="UjD-nS-6ee"/>
                                                         <constraint firstItem="s3B-5T-WQH" firstAttribute="centerX" secondItem="QKA-iF-lVC" secondAttribute="centerX" id="hv1-Iw-0Er"/>
-                                                        <constraint firstItem="s3B-5T-WQH" firstAttribute="centerY" secondItem="QKA-iF-lVC" secondAttribute="centerY" id="qf8-k1-olu"/>
+                                                        <constraint firstItem="s3B-5T-WQH" firstAttribute="centerY" secondItem="QKA-iF-lVC" secondAttribute="centerY" constant="-3" id="qf8-k1-olu"/>
                                                         <constraint firstItem="THe-qc-eWy" firstAttribute="centerX" secondItem="QKA-iF-lVC" secondAttribute="centerX" id="w98-36-lQX"/>
                                                         <constraint firstItem="s3B-5T-WQH" firstAttribute="leading" secondItem="QKA-iF-lVC" secondAttribute="leading" constant="86" id="wwS-0l-z9N"/>
                                                     </constraints>
@@ -126,11 +126,11 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="QKA-iF-lVC" firstAttribute="centerX" secondItem="CsM-Kw-x1r" secondAttribute="centerX" id="0y6-BZ-WzF"/>
-                                                <constraint firstItem="QKA-iF-lVC" firstAttribute="centerY" secondItem="CsM-Kw-x1r" secondAttribute="centerY" id="5GV-2y-i6t"/>
+                                                <constraint firstItem="QKA-iF-lVC" firstAttribute="centerY" secondItem="CsM-Kw-x1r" secondAttribute="centerY" constant="2.5" id="5GV-2y-i6t"/>
                                                 <constraint firstItem="QKA-iF-lVC" firstAttribute="leading" secondItem="CsM-Kw-x1r" secondAttribute="leadingMargin" constant="5" id="6SX-xP-YDB"/>
                                                 <constraint firstItem="QKA-iF-lVC" firstAttribute="top" secondItem="CsM-Kw-x1r" secondAttribute="topMargin" constant="5" id="Sf6-7r-IsD"/>
                                                 <constraint firstItem="QKA-iF-lVC" firstAttribute="height" secondItem="CsM-Kw-x1r" secondAttribute="height" id="XHg-2X-ppq"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="QKA-iF-lVC" secondAttribute="bottom" constant="5" id="hgA-03-nrs"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="QKA-iF-lVC" secondAttribute="bottom" id="hgA-03-nrs"/>
                                                 <constraint firstItem="QKA-iF-lVC" firstAttribute="width" secondItem="CsM-Kw-x1r" secondAttribute="width" id="oD3-zP-du6"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="QKA-iF-lVC" secondAttribute="trailing" constant="5" id="xsT-EI-Xgm"/>
                                             </constraints>
@@ -151,7 +151,7 @@
                                         <rect key="frame" x="0.0" y="340" width="375" height="284"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0Ig-JK-t4E" id="bYW-hI-NTr">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="283"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="284"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Frh-C7-jLw">

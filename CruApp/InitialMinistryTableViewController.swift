@@ -16,11 +16,12 @@ class InitialMinistryTableViewController: UITableViewController {
     var popViewController : PopUpViewControllerSwift!
     
     var campusCollection: [CampusData] = []
-    var ministryCollection = [MinistryData]()
-    var ministriesCollection = [[Ministry]]()
-    var selectedIndices: [Int] = []
+    var ministryCollection = [[MinistryData]]()
     
-    struct Ministry{
+    var ministriesCollection = [[Ministry]]() // Remove
+    var selectedIndices: [NSIndexPath] = []
+    
+    struct Ministry {
         var name: String
         var description: String?
         var image: String?
@@ -47,6 +48,7 @@ class InitialMinistryTableViewController: UITableViewController {
         
         campusCollection = UserProfile.getCampuses()
         ministriesCollection = Array(count: campusCollection.count, repeatedValue: [Ministry]())
+        ministryCollection = Array(count: campusCollection.count, repeatedValue: [MinistryData]())
         
         var dbClient: DBClient!
         dbClient = DBClient()
@@ -79,7 +81,7 @@ class InitialMinistryTableViewController: UITableViewController {
                         let ministryDataObj = MinistryData(name: name, id: id, campusId: campusId)
                 
                         ministriesCollection[index].append(ministryObj)
-                        ministryCollection.append(ministryDataObj)
+                        ministryCollection[index].append(ministryDataObj)
                     }
                 }
             }
@@ -121,19 +123,18 @@ class InitialMinistryTableViewController: UITableViewController {
         return cell
     }
     
-    
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print(indexPath.row)
         
         let cell:UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
         
-        if (!selectedIndices.contains(indexPath.row)) {
+        if (!selectedIndices.contains(indexPath)) {
             cell.accessoryType = UITableViewCellAccessoryType.Checkmark
-            selectedIndices.append(indexPath.row)
+            selectedIndices.append(indexPath)
         }
         else {
             cell.accessoryType = UITableViewCellAccessoryType.None
-            selectedIndices.removeAtIndex(selectedIndices.indexOf(indexPath.row)!)
+            selectedIndices.removeAtIndex(selectedIndices.indexOf(indexPath)!)
         }
         nextButton.enabled = selectedIndices.count > 0
     }
@@ -177,7 +178,7 @@ class InitialMinistryTableViewController: UITableViewController {
         
         for index in selectedIndices {
             print(index)
-            UserProfile.addMinistry(ministryCollection[index])
+            UserProfile.addMinistry(ministryCollection[index.section][index.row])
         }
         dump(UserProfile.getMinistries())
     }

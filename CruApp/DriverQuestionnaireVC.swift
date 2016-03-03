@@ -157,7 +157,6 @@ class DriverQuestionnaireVC: UIViewController, UITableViewDelegate, UITableViewD
         let name = event["name"] as! String
         let id = event["_id"] as! String
         let time = event["startDate"] as! String
-        print("appending...")
         self.eventChoices.append(name)
         self.eventIds.append(id)
         self.eventTime.append(time)
@@ -204,11 +203,12 @@ class DriverQuestionnaireVC: UIViewController, UITableViewDelegate, UITableViewD
         
         
         // GETTING DATE FROM DATEPICKER
-        print((cells[3] as! DatePickerCell).datePicker.date)
-        
+//        print((cells[3] as! DatePickerCell).datePicker.date)
+//
+//        
         // GETTING EVENT FROM SCROLLPICKER
-        print((cells[2] as! ScrollPickerCell).scrollPicker.selectedRowInComponent(0))
-        
+//        print((cells[2] as! ScrollPickerCell).scrollPicker.selectedRowInComponent(0))
+//        print("eventId" + eventIds[(cells[2] as! ScrollPickerCell).scrollPicker.selectedRowInComponent(0)])
         
         //grab questionaire data to add to data
         
@@ -237,8 +237,9 @@ class DriverQuestionnaireVC: UIViewController, UITableViewDelegate, UITableViewD
             "direction": rideDirection,
             "seats": numSeatsChoice,
             "driverNumber": drivePhoneNum,
-            "event": "563b11135e926d03001ac15c",
+            "event": eventIds[(cells[2] as! ScrollPickerCell).scrollPicker.selectedRowInComponent(0)],
             "driverName": driverName!,
+            "time": String((cells[3] as! DatePickerCell).datePicker.date),
             "gcm_id" : 1234567
         ]
 

@@ -19,7 +19,14 @@ class DriveTypeCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        if (driveTypes != nil) {
+            driveTypes.titleFont = UIFont(name: "FreightSansProMedium-Regular", size: 12.0)!
+        }
+        
+        if (driveTypes2 != nil) {
+            driveTypes2.titleFont = UIFont(name: "FreightSansProMedium-Regular", size: 12.0)!
+        }
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

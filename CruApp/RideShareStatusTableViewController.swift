@@ -98,7 +98,6 @@ class RideShareStatusTableViewController: UITableViewController {
         self.fetchStatuses()
     }
     
-    
     func fetchStatuses() {
         driverCollection = [RideShareDriver]()
         passengerCollection = [RideSharePassenger]()
@@ -231,7 +230,7 @@ class RideShareStatusTableViewController: UITableViewController {
         dateFormatter.timeStyle = .ShortStyle
         cell.departureTime.text = "Departure Time: " + dateFormatter.stringFromDate(date!)
         
-        cell.availableSeats.text = String(driver.availableSeats)
+        cell.availableSeats.text = String("Available Seats: " + String(driver.availableSeats))
         
 //        var spacer: CGFloat = 50
 //        for pssngr in driver.passengers {
@@ -297,6 +296,10 @@ class RideShareStatusTableViewController: UITableViewController {
         } catch {
             print("Error sending data to database")
         }
+    }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return CGFloat(138)
     }
     
 

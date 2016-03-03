@@ -128,7 +128,7 @@ class PassengerQuestionnaireVC: UIViewController, UITableViewDelegate, UITableVi
             }
             
             if (!existsInMinistry) {
-                break;
+                continue
             }
         
             let name = event["name"] as! String

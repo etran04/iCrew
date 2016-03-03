@@ -150,7 +150,7 @@ class DriverQuestionnaireVC: UIViewController, UITableViewDelegate, UITableViewD
             }
             
             if (!existsInMinistry) {
-                break;
+                continue
             }
         
             let name = event["name"] as! String

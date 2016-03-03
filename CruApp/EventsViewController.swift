@@ -83,7 +83,7 @@ class EventsViewController: UITableViewController, DZNEmptyDataSetDelegate, DZNE
             }
         
             if (!existsInMinistry) {
-                break;
+                continue
             }
         
             let name = event["name"] as! String

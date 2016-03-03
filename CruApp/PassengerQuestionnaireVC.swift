@@ -105,11 +105,10 @@ class PassengerQuestionnaireVC: UIViewController, UITableViewDelegate, UITableVi
         
         for event in events {
             var existsInMinistry = false
-        
-            //filters events by ministryId
-            if (event["parentMinistry"] == nil) {
-                let parentMinistries = event["parentMinistries"] as! [String]
             
+            if (event["parentMinistry"]! == nil) {
+                let parentMinistries = event["parentMinistries"] as! [String]
+                
                 for ministryId in parentMinistries {
                     for ministry in ministryCollection {
                         if (ministryId == ministry.id) {
@@ -120,17 +119,17 @@ class PassengerQuestionnaireVC: UIViewController, UITableViewDelegate, UITableVi
             }
             else {
                 let ministryId = event["parentMinistry"] as! String
-            
+                
                 for ministry in ministryCollection {
                     if (ministry.id == ministryId) {
                         existsInMinistry = true;
                     }
                 }
             }
-        
-//            if (!existsInMinistry) {
-//                return;
-//            }
+            
+            if (!existsInMinistry) {
+                break;
+            }
         
             let name = event["name"] as! String
             let id = event["_id"] as! String

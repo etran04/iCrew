@@ -57,31 +57,30 @@ class InitialMinistryTableViewController: UITableViewController {
     
     func setMinistries(ministries:NSArray) {
         //self.tableView.beginUpdates()
-        print(ministries)
+        print("Ministy size: " + String(ministries.count))
         for ministry in ministries {
+            print(ministry["name"])
             
             let campus = ministry["campuses"] as! [String]
         
-            if (campus.first == nil) {
-                break
-            }
-            
-            print(ministry)
-            let campusId = campus.first! as String
+            if (campus.first != nil) {
+                
+                let campusId = campus.first! as String
         
-            for (index,_) in campusCollection.enumerate() {
-                if (campusCollection[index].id == campusId) {
-                    let name = ministry["name"] as! String
-                    let id = ministry["_id"] as! String
-                    let description = ministry["description"] as! String!
-                    let image = ministry["image"]??.objectForKey("secure_url") as! String!
-                    //let campus = ministry["campuses"] as! String
+                for (index,_) in campusCollection.enumerate() {
+                    if (campusCollection[index].id == campusId) {
+                        let name = ministry["name"] as! String
+                        let id = ministry["_id"] as! String
+                        let description = ministry["description"] as! String!
+                        let image = ministry["image"]??.objectForKey("secure_url") as! String!
+                        //let campus = ministry["campuses"] as! String
                 
-                    let ministryObj = Ministry(name: name, description: description, image: image)
-                    let ministryDataObj = MinistryData(name: name, id: id, campusId: campusId)
+                        let ministryObj = Ministry(name: name, description: description, image: image)
+                        let ministryDataObj = MinistryData(name: name, id: id, campusId: campusId)
                 
-                    ministriesCollection[index].append(ministryObj)
-                    ministryCollection.append(ministryDataObj)
+                        ministriesCollection[index].append(ministryObj)
+                        ministryCollection.append(ministryDataObj)
+                    }
                 }
             }
         }

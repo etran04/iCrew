@@ -98,8 +98,9 @@ class EventsViewController: UITableViewController, DZNEmptyDataSetDelegate, DZNE
         
         let image = event["image"]?.objectForKey("secure_url") as! String!
         let url = event["url"] as! String
+        let rideShareEnabled = event["rideSharingEnabled"] as! Bool
         
-        let eventObj = Event(name: name, startDate: startDate, endDate: endDate, location: location, image: image, description: description, url: url)
+        let eventObj = Event(name: name, startDate: startDate, endDate: endDate, location: location, image: image, description: description, url: url, rideShareFlag: rideShareEnabled)
         
         eventsCollection.append(eventObj)
         self.tableView.reloadData()

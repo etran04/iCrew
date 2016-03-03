@@ -26,7 +26,7 @@ class AvailNumSeatCell: UITableViewCell {
     }
     
     @IBAction func stepperPressed(sender: AnyObject) {
-        numSeatsLabel.text = String(stepper.value)
+        numSeatsLabel.text = String(Int(stepper.value))
     }
     
 }

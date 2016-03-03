@@ -625,17 +625,17 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="moz-F5-2Rc" customClass="CheckmarkSegmentedControl" customModule="CheckmarkSegmentedControl">
-                                                    <rect key="frame" x="34" y="14" width="346" height="55"/>
+                                                    <rect key="frame" x="62" y="16" width="291" height="48"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="346" id="UvC-eS-Vfo"/>
+                                                        <constraint firstAttribute="width" constant="291" id="UvC-eS-Vfo"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="moz-F5-2Rc" firstAttribute="top" secondItem="ZFv-0A-gT8" secondAttribute="topMargin" constant="14" id="JnK-dc-78H"/>
-                                                <constraint firstItem="moz-F5-2Rc" firstAttribute="top" secondItem="ZFv-0A-gT8" secondAttribute="topMargin" constant="6" id="Mbv-Ho-jc6"/>
-                                                <constraint firstItem="moz-F5-2Rc" firstAttribute="centerY" secondItem="ZFv-0A-gT8" secondAttribute="centerY" constant="1.75" id="p4Z-GA-LMr"/>
+                                                <constraint firstItem="moz-F5-2Rc" firstAttribute="top" secondItem="ZFv-0A-gT8" secondAttribute="topMargin" constant="8" id="Mbv-Ho-jc6"/>
+                                                <constraint firstItem="moz-F5-2Rc" firstAttribute="centerY" secondItem="ZFv-0A-gT8" secondAttribute="centerY" constant="-0.5" id="p4Z-GA-LMr"/>
                                                 <constraint firstItem="moz-F5-2Rc" firstAttribute="top" secondItem="ZFv-0A-gT8" secondAttribute="topMargin" constant="6" id="piG-dx-5wf"/>
                                                 <constraint firstItem="moz-F5-2Rc" firstAttribute="centerX" secondItem="ZFv-0A-gT8" secondAttribute="centerX" id="szU-JU-8Vn"/>
                                             </constraints>

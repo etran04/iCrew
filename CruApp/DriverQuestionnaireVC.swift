@@ -44,6 +44,8 @@ class DriverQuestionnaireVC: UIViewController, UITableViewDelegate, UITableViewD
     
     var cells = [AnyObject]()
     var locationChoices = [String]()
+    var ministryCollection: [MinistryData] = []
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,14 +53,16 @@ class DriverQuestionnaireVC: UIViewController, UITableViewDelegate, UITableViewD
         /* sets up the database to pull from */
         dbClient = DBClient()
         dbClient.getData("event", dict: setEvents)
-        
-        /* prepares fields to be filled for questionaire */
-        initializeScreen()
+
+        ministryCollection = UserProfile.getMinistries()
+
     }
     
     override func viewDidAppear(animated : Bool) {
         super.viewDidAppear(animated)
-        
+        /* prepares fields to be filled for questionaire */
+        initializeScreen()
+
         // looks for single or multiple taps
 //        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
 //        view.addGestureRecognizer(tap)
@@ -121,6 +125,35 @@ class DriverQuestionnaireVC: UIViewController, UITableViewDelegate, UITableViewD
     
     // Obtain event information from the database to an Object
     func setEvents(event: NSDictionary) {
+        
+        var existsInMinistry = false
+        
+        //filters events by ministryId
+        if (event["parentMinistry"] == nil) {
+            let parentMinistries = event["parentMinistries"] as! [String]
+            
+            for ministryId in parentMinistries {
+                for ministry in ministryCollection {
+                    if (ministryId == ministry.id) {
+                        existsInMinistry = true;
+                    }
+                }
+            }
+        }
+        else {
+            let ministryId = event["parentMinistry"] as! String
+            
+            for ministry in ministryCollection {
+                if (ministry.id == ministryId) {
+                    existsInMinistry = true;
+                }
+            }
+        }
+        
+        if (!existsInMinistry) {
+            return;
+        }
+        
         let name = event["name"] as! String
         let id = event["_id"] as! String
         let time = event["startDate"] as! String
@@ -170,11 +203,12 @@ class DriverQuestionnaireVC: UIViewController, UITableViewDelegate, UITableViewD
         
         
         // GETTING DATE FROM DATEPICKER
-        print((cells[3] as! DatePickerCell).datePicker.date)
-        
+//        print((cells[3] as! DatePickerCell).datePicker.date)
+//
+//        
         // GETTING EVENT FROM SCROLLPICKER
-        print((cells[2] as! ScrollPickerCell).scrollPicker.selectedRowInComponent(0))
-        
+//        print((cells[2] as! ScrollPickerCell).scrollPicker.selectedRowInComponent(0))
+//        print("eventId" + eventIds[(cells[2] as! ScrollPickerCell).scrollPicker.selectedRowInComponent(0)])
         
         //grab questionaire data to add to data
         
@@ -203,8 +237,9 @@ class DriverQuestionnaireVC: UIViewController, UITableViewDelegate, UITableViewD
             "direction": rideDirection,
             "seats": numSeatsChoice,
             "driverNumber": drivePhoneNum,
-            "event": "563b11135e926d03001ac15c",
+            "event": eventIds[(cells[2] as! ScrollPickerCell).scrollPicker.selectedRowInComponent(0)],
             "driverName": driverName!,
+            "time": String((cells[3] as! DatePickerCell).datePicker.date),
             "gcm_id" : 1234567
         ]
 

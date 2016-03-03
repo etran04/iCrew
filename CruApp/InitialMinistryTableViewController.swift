@@ -17,7 +17,7 @@ class InitialMinistryTableViewController: UITableViewController {
     
     var campusCollection: [CampusData] = []
     var ministryCollection = [MinistryData]()
-    var ministriesCollection = [Ministry]()
+    var ministriesCollection = [[Ministry]]()
     var selectedIndices: [Int] = []
     
     struct Ministry{
@@ -44,13 +44,12 @@ class InitialMinistryTableViewController: UITableViewController {
         
         //set empty back button
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.Plain, target:nil, action:nil)
-//        self.nextButton.enabled = false;
         
         campusCollection = UserProfile.getCampuses()
+        ministriesCollection = Array(count: campusCollection.count, repeatedValue: [Ministry]())
         
         var dbClient: DBClient!
         dbClient = DBClient()
-        //”event”, “ministry”, “campus”, etc
         dbClient.getData("ministry", dict: setMinistries)
 
         
@@ -68,8 +67,22 @@ class InitialMinistryTableViewController: UITableViewController {
         let campusId = campus.first! as String
         var existsInCampus = false
         
-        for campusObj in campusCollection {
-            if (campusObj.id == campusId) {
+        for (index,_) in campusCollection.enumerate() {
+            if (campusCollection[index].id == campusId) {
+                let name = ministry["name"] as! String
+                let id = ministry["_id"] as! String
+                let description = ministry["description"] as! String!
+                let image = ministry["image"]?.objectForKey("secure_url") as! String!
+                //let campus = ministry["campuses"] as! String
+                
+                let ministryObj = Ministry(name: name, description: description, image: image)
+                let ministryDataObj = MinistryData(name: name, id: id, campusId: campusId)
+                
+                ministriesCollection[index].append(ministryObj)
+                ministryCollection.append(ministryDataObj)
+                
+                
+                
                 existsInCampus = true;
             }
         }
@@ -78,17 +91,6 @@ class InitialMinistryTableViewController: UITableViewController {
             return;
         }
         
-        let name = ministry["name"] as! String
-        let id = ministry["_id"] as! String
-        let description = ministry["description"] as! String!
-        let image = ministry["image"]?.objectForKey("secure_url") as! String!
-        //let campus = ministry["campuses"] as! String
-    
-        let ministryObj = Ministry(name: name, description: description, image: image)
-        let ministryDataObj = MinistryData(name: name, id: id, campusId: campusId)
-    
-        ministriesCollection.append(ministryObj)
-        ministryCollection.append(ministryDataObj)
         self.tableView.reloadData()
     }
     
@@ -101,23 +103,24 @@ class InitialMinistryTableViewController: UITableViewController {
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1 //
+        return campusCollection.count //
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return ministriesCollection.count //
+        return ministriesCollection[section].count //
     }
     
     // Uncomment
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell2", forIndexPath: indexPath) as! InitialMinistryTableViewCell
-        let ministry = ministriesCollection[indexPath.row]
+        let ministry = ministriesCollection[indexPath.section][indexPath.row]
         
         // Configure the cell...
         
         cell.ministry.text = ministry.name
-        cell.infoButton.tag = indexPath.row
+        cell.infoButton.section = indexPath.section
+        cell.infoButton.row = indexPath.row
         
         return cell
     }
@@ -140,7 +143,7 @@ class InitialMinistryTableViewController: UITableViewController {
     }
     
     @IBAction func clickInfo(sender: AnyObject) {
-        let ministry = ministriesCollection[sender.tag]
+        let ministry = ministriesCollection[sender.section][sender.row]
         
         var image = UIImage(named: "Cru-Logo.png")
         
@@ -154,20 +157,20 @@ class InitialMinistryTableViewController: UITableViewController {
         let bundle = NSBundle(forClass: PopUpViewControllerSwift.self)
         if (UIDevice.currentDevice().userInterfaceIdiom == .Pad) {
             self.popViewController = PopUpViewControllerSwift(nibName: "PopUpViewController_iPad", bundle: bundle)
-            self.popViewController.showInView(self.view, withImage: image, withMessage: ministriesCollection[sender.tag].description, animated: true)
+            self.popViewController.showInView(self.view, withImage: image, withMessage: ministry.description, animated: true)
         }
         else {
             if UIScreen.mainScreen().bounds.size.width > 320 {
                 if UIScreen.mainScreen().scale == 3 {
                     self.popViewController = PopUpViewControllerSwift(nibName: "PopUpViewController_iPhone6Plus", bundle: bundle)
-                    self.popViewController.showInView(self.view, withImage: image, withMessage: ministriesCollection[sender.tag].description, animated: true)
+                    self.popViewController.showInView(self.view, withImage: image, withMessage: ministry.description, animated: true)
                 } else {
                     self.popViewController = PopUpViewControllerSwift(nibName: "PopUpViewController_iPhone6", bundle: bundle)
-                    self.popViewController.showInView(self.view, withImage: image, withMessage: ministriesCollection[sender.tag].description, animated: true)
+                    self.popViewController.showInView(self.view, withImage: image, withMessage: ministry.description, animated: true)
                 }
             } else {
                 self.popViewController = PopUpViewControllerSwift(nibName: "PopUpViewController", bundle: bundle)
-                self.popViewController.showInView(self.view, withImage: image, withMessage: ministriesCollection[sender.tag].description, animated: true)
+                self.popViewController.showInView(self.view, withImage: image, withMessage: ministry.description, animated: true)
             }
         }
     }
@@ -181,6 +184,10 @@ class InitialMinistryTableViewController: UITableViewController {
             UserProfile.addMinistry(ministryCollection[index])
         }
         dump(UserProfile.getMinistries())
+    }
+    
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return campusCollection[section].name
     }
 
 }

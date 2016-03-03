@@ -72,6 +72,7 @@
 		278C4C621C87A2B100EB0AC1 /* JoinMinistryTeamTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278C4C611C87A2B100EB0AC1 /* JoinMinistryTeamTVC.swift */; };
 		278C4C641C87A40A00EB0AC1 /* MinistryTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278C4C631C87A40A00EB0AC1 /* MinistryTeam.swift */; };
 		278C4C661C87AB9A00EB0AC1 /* MinistryTeamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278C4C651C87AB9A00EB0AC1 /* MinistryTeamTableViewCell.swift */; };
+		278C4C731C87E6FF00EB0AC1 /* MyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278C4C721C87E6FF00EB0AC1 /* MyButton.swift */; };
 		279326FC1C509C2100BAC73D /* PopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 279326EE1C509C2100BAC73D /* PopUpViewController.xib */; };
 		279326FD1C509C2100BAC73D /* PopUpViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 279326EF1C509C2100BAC73D /* PopUpViewController_iPad.xib */; };
 		279326FE1C509C2100BAC73D /* PopUpViewController_iPhone6.xib in Resources */ = {isa = PBXBuildFile; fileRef = 279326F01C509C2100BAC73D /* PopUpViewController_iPhone6.xib */; };
@@ -287,6 +288,7 @@
 		278C4C611C87A2B100EB0AC1 /* JoinMinistryTeamTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoinMinistryTeamTVC.swift; sourceTree = "<group>"; };
 		278C4C631C87A40A00EB0AC1 /* MinistryTeam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinistryTeam.swift; sourceTree = "<group>"; };
 		278C4C651C87AB9A00EB0AC1 /* MinistryTeamTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinistryTeamTableViewCell.swift; sourceTree = "<group>"; };
+		278C4C721C87E6FF00EB0AC1 /* MyButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyButton.swift; sourceTree = "<group>"; };
 		279326EE1C509C2100BAC73D /* PopUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PopUpViewController.xib; path = NMPopUpView/Pod/Classes/PopUpViewController.xib; sourceTree = "<group>"; };
 		279326EF1C509C2100BAC73D /* PopUpViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PopUpViewController_iPad.xib; path = NMPopUpView/Pod/Classes/PopUpViewController_iPad.xib; sourceTree = "<group>"; };
 		279326F01C509C2100BAC73D /* PopUpViewController_iPhone6.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PopUpViewController_iPhone6.xib; path = NMPopUpView/Pod/Classes/PopUpViewController_iPhone6.xib; sourceTree = "<group>"; };
@@ -554,6 +556,7 @@
 				279327041C50A0EC00BAC73D /* InitialMinistryTableViewController.swift */,
 				279327061C50A10500BAC73D /* InitialMinistryTableViewCell.swift */,
 				83688B761C7F71E300470442 /* InitalScreenVC.swift */,
+				278C4C721C87E6FF00EB0AC1 /* MyButton.swift */,
 			);
 			name = Initial;
 			sourceTree = "<group>";
@@ -1125,6 +1128,7 @@
 				83244B801C75AD9400D913A6 /* SidebarTableViewController.swift in Sources */,
 				A441CE901C7F935600663057 /* RideShareStatusTableViewController.swift in Sources */,
 				A45573001C4CDAF60097DE0F /* MissionViewCell.swift in Sources */,
+				278C4C731C87E6FF00EB0AC1 /* MyButton.swift in Sources */,
 				07C196351C0E6D9F00375B8D /* ArticleTableViewCell.swift in Sources */,
 				832FDCD81C854D8100836B7C /* CGSuccessVC.swift in Sources */,
 				A441CE791C764BA600663057 /* SelectDriverTableViewController.swift in Sources */,

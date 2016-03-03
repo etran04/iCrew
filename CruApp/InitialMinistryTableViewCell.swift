@@ -11,7 +11,7 @@ import UIKit
 class InitialMinistryTableViewCell: UITableViewCell {
 
     @IBOutlet var ministry: UILabel!
-    @IBOutlet var infoButton: UIButton!
+    @IBOutlet var infoButton: MyButton!
     
     
     override func awakeFromNib() {

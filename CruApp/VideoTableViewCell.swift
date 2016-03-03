@@ -22,6 +22,11 @@ class VideoTableViewCell: UITableViewCell {
         videoTitle.font = UIFont(name: "FreightSansProBold-Regular", size: 17.0)
         summaryTextView.font = UIFont(name: "FreightSansProMedium-Regular", size: 14.0)
         summaryTextView.textContainer.lineBreakMode = .ByWordWrapping
+        summaryTextView.sizeToFit()
+        summaryTextView.layoutIfNeeded()
+        let height = summaryTextView.sizeThatFits(CGSizeMake(summaryTextView.frame.size.width, CGFloat.max)).height
+        summaryTextView.contentSize.height = height
+     //   summaryTextView.textContainer.size = CGSize(width: Double, height: <#T##Double#>)
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

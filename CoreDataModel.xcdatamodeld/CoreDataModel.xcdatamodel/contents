@@ -4,13 +4,26 @@
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="CommunityGroup" representedClassName=".CommunityGroup" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="leaders" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ministryId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="time" optional="YES" attributeType="Date" syncable="YES"/>
+    </entity>
     <entity name="Ministry" representedClassName=".Ministry" syncable="YES">
         <attribute name="campusId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="MinistryTeam" representedClassName=".MinistryTeam" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ministryId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <elements>
         <element name="Campus" positionX="18" positionY="99" width="128" height="75"/>
         <element name="Ministry" positionX="54" positionY="117" width="128" height="90"/>
+        <element name="MinistryTeam" positionX="36" positionY="135" width="128" height="90"/>
+        <element name="CommunityGroup" positionX="45" positionY="153" width="128" height="105"/>
     </elements>
 </model>

@@ -1,5 +1,5 @@
 //
-//  Campus.swift
+//  Ministry.swift
 //  CruApp
 //
 //  Created by Daniel Lee on 1/14/16.
@@ -10,9 +10,12 @@ import Foundation
 import CoreData
 
 
-class Campus: NSManagedObject {
+class MinistryCoreData : NSManagedObject {
 
     @NSManaged var name: String?
+    @NSManaged var campusId: String?
     @NSManaged var id: String?
     
 }
+
+

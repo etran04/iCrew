@@ -73,8 +73,7 @@ class MissionDetailsViewController: UIViewController {
                 let imageView = UIImageView(image: image)
                 imageView.contentMode = UIViewContentMode.ScaleAspectFit
                 imageView.clipsToBounds = true
-                missionImage.bounds.size.height = 112
-                missionImage.bounds.size.width = 329
+                missionImage.bounds.size.width = UIScreen.mainScreen().bounds.size.width
                 imageView.frame = missionImage.bounds
                 missionImage.contentMode = UIViewContentMode.ScaleAspectFit
                 missionImage.addSubview(imageView)
@@ -84,8 +83,8 @@ class MissionDetailsViewController: UIViewController {
                 let imageView = UIImageView(image: image)
                 imageView.contentMode = UIViewContentMode.ScaleAspectFit
                 imageView.clipsToBounds = true
-                missionImage.bounds.size.height = 112
-                missionImage.bounds.size.width = 329
+                missionImage.bounds.size.height = 1000
+                missionImage.bounds.size.width = UIScreen.mainScreen().bounds.size.width
                 imageView.frame = missionImage.bounds
                 missionImage.contentMode = UIViewContentMode.ScaleAspectFit
                 missionImage.addSubview(imageView)

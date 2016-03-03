@@ -46,12 +46,12 @@ class ArticlesTableViewController: UITableViewController {
         super.viewDidLoad()
         //self.setUpLoadSpinner()
         
-        /* Sets up the database */
-        var dbClient: DBClient!
-        dbClient = DBClient()
-        dbClient.getData("resource", dict: loadArticles)
-        
-        self.tableView.reloadData()
+//        /* Sets up the database */
+//        var dbClient: DBClient!
+//        dbClient = DBClient()
+//        dbClient.getData("resource", dict: loadArticles)
+//        
+//        self.tableView.reloadData()
         
     }
 
@@ -123,6 +123,7 @@ class ArticlesTableViewController: UITableViewController {
                 articlesCollection.append(articleObj)
             }
         }
+        self.tableView.reloadData()
         SwiftLoader.hide()
     }
     

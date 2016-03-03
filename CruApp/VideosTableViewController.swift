@@ -233,7 +233,7 @@ class VideosTableViewController: UITableViewController, UISearchBarDelegate {
         let playlistID = channelsDataArray[index]["playlistID"] as! String
         
         let urlString: String
-        var kSearchForAmt = 10
+        var kSearchForAmt = 5
         
         if self.filterFlag {
             self.videos = [Video]()

@@ -17,8 +17,9 @@ struct Event {
     var endDate: String?
     var location: Location?
     var url: String
+    var rideShareFlag: Bool?
     
-    init(name: String, startDate:String?, endDate:String?, location:Location?, image: String?, description: String, url:String) {
+    init(name: String, startDate:String?, endDate:String?, location:Location?, image: String?, description: String, url:String, rideShareFlag: Bool) {
         self.name = name
         self.description = description
         self.startDate = startDate
@@ -26,5 +27,6 @@ struct Event {
         self.location = location
         self.image = image
         self.url = url
+        self.rideShareFlag = rideShareFlag
     }
 }

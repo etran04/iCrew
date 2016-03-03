@@ -21,6 +21,8 @@ class EventDetailsViewController: UIViewController, UIPopoverPresentationControl
     @IBOutlet weak var googleButton: UIButton!      //Google button to save event to Google calendar
     @IBOutlet weak var calendarButton: UIButton!    //calendar button to save event to native calendar
     
+    @IBOutlet weak var rideSharebutton: UIBarButtonItem!
+    
     //Keys for accessing Google API
     //These will need to be changed upon release
     private let kKeychainItemName = "Google Calendar API"
@@ -120,6 +122,11 @@ class EventDetailsViewController: UIViewController, UIPopoverPresentationControl
                 imageView.frame = eventImage.bounds
                 eventImage.contentMode = UIViewContentMode.ScaleAspectFit
                 eventImage.addSubview(imageView)
+            }
+            
+            // check if ridesharing for event is enabled
+            if (event.rideShareFlag == false) {
+                self.rideSharebutton.enabled = false
             }
         }
         

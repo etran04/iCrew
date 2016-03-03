@@ -5,11 +5,11 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Activity-->
+        <!--Events-->
         <scene sceneID="0IQ-tr-zZP">
             <objects>
                 <navigationController id="QPd-rn-vY4" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Activity" image="Planner-25.png" id="64r-r9-mgz"/>
+                    <tabBarItem key="tabBarItem" title="Events" image="Planner-25.png" id="64r-r9-mgz"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="qcZ-Oq-UVF">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

@@ -38,10 +38,9 @@ class JoinMinistryTeamTVC: UITableViewController {
 
     //obtain information from the database to an Object
     func setTeams(ministryTeams: NSArray) {
+        var existsInMinistry = false
         //self.tableView.beginUpdates()
         for ministryTeam in ministryTeams {
-        
-            var existsInMinistry = false
             let ministryId = ministryTeam["parentMinistry"] as! String
         
             //go through user's ministries and if a ministry team's parentMinistry matches
@@ -50,11 +49,12 @@ class JoinMinistryTeamTVC: UITableViewController {
             for (index, _) in ministryCollection.enumerate() {
                 if (ministryCollection[index].id == ministryId) {
                     let teamObj = MinistryTeamData(name: ministryTeam["name"] as! String, description: ministryTeam["description"] as! String, parentMinistry: ministryTeam["parentMinistry"] as! String, id: ministryTeam["id"] as! String)
+                    
                     teamCollection[index].append(teamObj)
                     existsInMinistry = true;
                 }
             }
-        
+        }
         if (!existsInMinistry) {
             return;
         }

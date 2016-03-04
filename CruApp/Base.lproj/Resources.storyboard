@@ -346,8 +346,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="149"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t57-Xh-7ou">
-                                            <rect key="frame" x="8" y="10" width="584" height="139"/>
+                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t57-Xh-7ou">
+                                            <rect key="frame" x="8" y="8" width="584" height="139"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h9w-j8-UdK" customClass="YTPlayerView">
                                                     <rect key="frame" x="8" y="11" width="137" height="117"/>
@@ -357,15 +357,7 @@
                                                         <constraint firstAttribute="width" constant="137" id="jwx-JL-OIh"/>
                                                     </constraints>
                                                 </view>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="YouTube summary description goes here." translatesAutoresizingMaskIntoConstraints="NO" id="uIz-3V-OdK">
-                                                    <rect key="frame" x="153" y="49" width="423" height="79"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="79" id="Hov-aT-iy9"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                </textView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YouTube Video Title" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mYP-6P-fbR">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="YouTube Video Title" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mYP-6P-fbR">
                                                     <rect key="frame" x="153" y="11" width="200" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="200" id="i8S-lz-MdX"/>
@@ -374,6 +366,14 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="YouTube summary description goes here." translatesAutoresizingMaskIntoConstraints="NO" id="uIz-3V-OdK">
+                                                    <rect key="frame" x="153" y="49" width="423" height="79"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="79" id="Hov-aT-iy9"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
@@ -384,7 +384,6 @@
                                                 <constraint firstItem="mYP-6P-fbR" firstAttribute="leading" secondItem="h9w-j8-UdK" secondAttribute="trailing" constant="8" id="iOW-XD-6r3"/>
                                                 <constraint firstItem="h9w-j8-UdK" firstAttribute="leading" secondItem="t57-Xh-7ou" secondAttribute="leadingMargin" id="npi-Qu-Fdq"/>
                                                 <constraint firstItem="uIz-3V-OdK" firstAttribute="leading" secondItem="h9w-j8-UdK" secondAttribute="trailing" constant="8" id="pfG-c7-Yf0"/>
-                                                <constraint firstItem="uIz-3V-OdK" firstAttribute="top" secondItem="mYP-6P-fbR" secondAttribute="bottom" constant="8" id="yS7-tV-hns"/>
                                             </constraints>
                                         </view>
                                     </subviews>

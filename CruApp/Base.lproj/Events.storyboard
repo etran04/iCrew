@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="QPd-rn-vY4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="QPd-rn-vY4">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -145,89 +145,73 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HRy-Ov-E52" userLabel="Facebook Button">
-                                <rect key="frame" x="53" y="567" width="29" height="25"/>
-                                <color key="tintColor" red="0.24313725489999999" green="0.69411764710000001" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" image="Facebook-25.png">
-                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DOZ-Cg-rg7" userLabel="Google Calendar Button">
-                                <rect key="frame" x="175" y="567" width="25" height="25"/>
-                                <state key="normal" image="Google Plus-25.png"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FY4-iR-UDm" userLabel="iOS Calendar Button">
-                                <rect key="frame" x="289" y="567" width="31" height="25"/>
-                                <state key="normal" image="Calendar-25.png"/>
-                            </button>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" directionalLockEnabled="YES" bounces="NO" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ai3-mR-F2h">
-                                <rect key="frame" x="0.0" y="64" width="375" height="490"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mDg-bR-DJZ" userLabel="Icon View">
+                                <rect key="frame" x="0.0" y="64" width="375" height="51"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OhV-5r-wDx" userLabel="Content View">
-                                        <rect key="frame" x="2" y="0.0" width="373" height="500"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HuY-Lz-jYx" userLabel="Title Label">
-                                                <rect key="frame" x="22" y="167" width="329" height="32"/>
-                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="36"/>
-                                                <color key="textColor" red="0.24313725489999999" green="0.69411764710000001" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6HN-Db-h5N" userLabel="Event Descr">
-                                                <rect key="frame" x="41" y="326" width="291" height="21"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="300" id="Wqh-oz-OT1"/>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="egH-Gh-rUw"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                <color key="textColor" red="0.38431372549999998" green="0.37647058820000001" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FZK-uQ-Ald" userLabel="Location Label">
-                                                <rect key="frame" x="62" y="262" width="248" height="21"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="iAV-wj-Cc0"/>
-                                                    <constraint firstAttribute="width" constant="248" id="tAZ-7o-MB6"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
-                                                <color key="textColor" red="0.0" green="0.45098039220000002" blue="0.59607843140000005" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n1Y-B8-t3a" userLabel="Event Image">
-                                                <rect key="frame" x="0.0" y="0.0" width="373" height="150"/>
-                                            </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2FN-Ag-IGf" userLabel="Date Label">
-                                                <rect key="frame" x="48" y="233" width="276" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
-                                                <color key="textColor" red="0.86666666670000003" green="0.49019607840000001" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HRy-Ov-E52" userLabel="Facebook Button">
+                                        <rect key="frame" x="70" y="13" width="29" height="25"/>
+                                        <color key="tintColor" red="0.24313725489999999" green="0.69411764710000001" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" image="fb_icon.png">
+                                            <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DOZ-Cg-rg7" userLabel="Google Calendar Button">
+                                        <rect key="frame" x="175" y="13" width="25" height="25"/>
+                                        <state key="normal" image="google_icon.png"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FY4-iR-UDm" userLabel="iOS Calendar Button">
+                                        <rect key="frame" x="272" y="11" width="32" height="30"/>
+                                        <state key="normal" image="calendar_icon.png"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" directionalLockEnabled="YES" bounces="NO" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ai3-mR-F2h">
+                                <rect key="frame" x="0.0" y="115" width="375" height="500"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6HN-Db-h5N" userLabel="Event Descr">
+                                        <rect key="frame" x="28" y="306" width="319" height="21"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="100" id="NsI-wz-xTH"/>
-                                            <constraint firstAttribute="height" constant="1000" id="sdO-Yu-gMp"/>
+                                            <constraint firstAttribute="width" constant="304" id="Wqh-oz-OT1"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="egH-Gh-rUw"/>
                                         </constraints>
-                                    </view>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" red="0.38431372549999998" green="0.37647058820000001" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2FN-Ag-IGf" userLabel="Date Label">
+                                        <rect key="frame" x="51" y="207" width="276" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                        <color key="textColor" red="0.86666666670000003" green="0.49019607840000001" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FZK-uQ-Ald" userLabel="Location Label">
+                                        <rect key="frame" x="64" y="236" width="248" height="19"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="iAV-wj-Cc0"/>
+                                            <constraint firstAttribute="width" constant="248" id="tAZ-7o-MB6"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                        <color key="textColor" red="0.0" green="0.45098039220000002" blue="0.59607843140000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n1Y-B8-t3a" userLabel="Event Image">
+                                        <rect key="frame" x="2" y="0.0" width="373" height="150"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HuY-Lz-jYx" userLabel="Title Label">
+                                        <rect key="frame" x="20" y="167" width="339" height="32"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="22"/>
+                                        <color key="textColor" red="0.24313725489999999" green="0.69411764710000001" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="OhV-5r-wDx" secondAttribute="bottom" id="IMY-MM-1SH"/>
-                                    <constraint firstItem="OhV-5r-wDx" firstAttribute="leading" secondItem="ai3-mR-F2h" secondAttribute="leading" id="jyr-Z2-QkX"/>
-                                    <constraint firstItem="OhV-5r-wDx" firstAttribute="top" secondItem="ai3-mR-F2h" secondAttribute="top" id="m0L-fi-4Hs"/>
-                                    <constraint firstAttribute="trailing" secondItem="OhV-5r-wDx" secondAttribute="trailing" id="ubG-1l-ZRo"/>
-                                </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" red="0.24313725489999999" green="0.69411764710000001" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="FY4-iR-UDm" firstAttribute="top" secondItem="ai3-mR-F2h" secondAttribute="bottom" constant="13" id="2PU-un-69b"/>
-                            <constraint firstItem="ai3-mR-F2h" firstAttribute="top" secondItem="f04-9R-37d" secondAttribute="bottom" id="byO-yR-UN6"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ai3-mR-F2h" secondAttribute="trailing" placeholder="YES" id="h6p-KP-Ijf"/>
-                            <constraint firstItem="ai3-mR-F2h" firstAttribute="leading" secondItem="WSL-3E-Mm2" secondAttribute="leadingMargin" placeholder="YES" id="quR-bT-BPP"/>
-                        </constraints>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="Y4u-eg-C2P">
@@ -248,8 +232,8 @@
                         <outlet property="eventTitle" destination="HuY-Lz-jYx" id="tzx-9v-Sfs"/>
                         <outlet property="facebookButton" destination="HRy-Ov-E52" id="rUy-4M-NlU"/>
                         <outlet property="googleButton" destination="DOZ-Cg-rg7" id="Lre-hN-0MT"/>
-                        <outlet property="heightScrollConstraint" destination="sdO-Yu-gMp" id="obS-Lo-rnI"/>
                         <outlet property="rideSharebutton" destination="fSa-g9-8Ay" id="gJI-UT-b66"/>
+                        <outlet property="scrollView" destination="ai3-mR-F2h" id="9ao-dy-a5k"/>
                         <segue destination="UeY-o4-sbf" kind="show" identifier="goToRequestRide" id="ALS-1t-yOZ"/>
                         <segue destination="wQi-aZ-FQp" kind="show" identifier="goToOfferRide" id="myb-Gc-TO8"/>
                     </connections>
@@ -276,11 +260,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Calendar-25.png" width="25" height="25"/>
-        <image name="Facebook-25.png" width="25" height="25"/>
-        <image name="Google Plus-25.png" width="25" height="25"/>
         <image name="Planner-25.png" width="25" height="25"/>
         <image name="blank_calendar.png" width="512" height="512"/>
+        <image name="calendar_icon.png" width="64" height="64"/>
+        <image name="fb_icon.png" width="32" height="32"/>
+        <image name="google_icon.png" width="32" height="32"/>
         <image name="menu.png" width="22" height="22"/>
         <image name="rideShareIcon.png" width="33" height="33"/>
     </resources>

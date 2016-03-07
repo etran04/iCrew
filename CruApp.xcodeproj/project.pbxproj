@@ -81,6 +81,11 @@
 		279327051C50A0EC00BAC73D /* InitialMinistryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279327041C50A0EC00BAC73D /* InitialMinistryTableViewController.swift */; };
 		279327071C50A10500BAC73D /* InitialMinistryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279327061C50A10500BAC73D /* InitialMinistryTableViewCell.swift */; };
 		27A8DFB71C87F0C100A8F080 /* PopUpViewController_iPhone6.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27A8DFB61C87F0C100A8F080 /* PopUpViewController_iPhone6.xib */; };
+		27CA34451C8D3A8500C694A6 /* calendar_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 27CA34431C8D3A8500C694A6 /* calendar_icon.png */; };
+		27CA34461C8D3A8500C694A6 /* google_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 27CA34441C8D3A8500C694A6 /* google_icon.png */; };
+		27CA344E1C8D3AC000C694A6 /* fb_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 27CA344D1C8D3AC000C694A6 /* fb_logo.png */; };
+		27CA34501C8D3C0200C694A6 /* fb_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 27CA344F1C8D3C0200C694A6 /* fb_icon.png */; };
+		27CA34521C8D3EF400C694A6 /* calendar_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 27CA34511C8D3EF400C694A6 /* calendar_icon.png */; };
 		83244B6E1C7579BA00D913A6 /* CampusData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83244B6D1C7579BA00D913A6 /* CampusData.swift */; };
 		83244B761C7579F000D913A6 /* MinistryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83244B751C7579F000D913A6 /* MinistryData.swift */; };
 		83244B801C75AD9400D913A6 /* SidebarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83244B7F1C75AD9400D913A6 /* SidebarTableViewController.swift */; };
@@ -306,6 +311,11 @@
 		279327041C50A0EC00BAC73D /* InitialMinistryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialMinistryTableViewController.swift; sourceTree = "<group>"; };
 		279327061C50A10500BAC73D /* InitialMinistryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialMinistryTableViewCell.swift; sourceTree = "<group>"; };
 		27A8DFB61C87F0C100A8F080 /* PopUpViewController_iPhone6.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopUpViewController_iPhone6.xib; sourceTree = "<group>"; };
+		27CA34431C8D3A8500C694A6 /* calendar_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = calendar_icon.png; path = images/calendar_icon.png; sourceTree = "<group>"; };
+		27CA34441C8D3A8500C694A6 /* google_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = google_icon.png; path = images/google_icon.png; sourceTree = "<group>"; };
+		27CA344D1C8D3AC000C694A6 /* fb_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fb_logo.png; path = images/fb_logo.png; sourceTree = "<group>"; };
+		27CA344F1C8D3C0200C694A6 /* fb_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fb_icon.png; path = images/fb_icon.png; sourceTree = "<group>"; };
+		27CA34511C8D3EF400C694A6 /* calendar_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = calendar_icon.png; path = images/calendar_icon.png; sourceTree = "<group>"; };
 		4C75FBE0147F103088890A81 /* Pods-CruAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CruAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CruAppTests/Pods-CruAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		56975AA48A624728978E6E3E /* Pods-CruApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CruApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CruApp/Pods-CruApp.debug.xcconfig"; sourceTree = "<group>"; };
 		83244B6D1C7579BA00D913A6 /* CampusData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampusData.swift; sourceTree = "<group>"; };
@@ -715,7 +725,12 @@
 				07F802C11C76930B00A7A4BC /* rideShareIcon.png */,
 				07DA04251C88CBC7005A0ACB /* ToolsIcon.png */,
 				07DA04231C88CA8D005A0ACB /* ArticlesIcon.png */,
+				27CA34511C8D3EF400C694A6 /* calendar_icon.png */,
+				27CA344D1C8D3AC000C694A6 /* fb_logo.png */,
 				07DA041B1C88C8D3005A0ACB /* VideoIcon.png */,
+				27CA34431C8D3A8500C694A6 /* calendar_icon.png */,
+				27CA34441C8D3A8500C694A6 /* google_icon.png */,
+				27CA344F1C8D3C0200C694A6 /* fb_icon.png */,
 				07340BB91C5B36B5002C6015 /* info.png */,
 				0703C7311C4DFA8500C7D8ED /* blank_calendar.png */,
 				A4110B4F1C0F7EB500F47AB4 /* Facebook-25.png */,
@@ -945,6 +960,7 @@
 				278C4C3D1C86640100EB0AC1 /* FreigSanProLig.otf in Resources */,
 				A4110B481C0F7E3400F47AB4 /* Calendar-25.png in Resources */,
 				839F64431C0D4E4300CAEC9E /* Literature-25.png in Resources */,
+				27CA344E1C8D3AC000C694A6 /* fb_logo.png in Resources */,
 				278C4C3C1C86640100EB0AC1 /* FreigSanProBookIt.otf in Resources */,
 				279326FD1C509C2100BAC73D /* PopUpViewController_iPad.xib in Resources */,
 				A4A836431C83D0AA003FBD8D /* Delete-50.png in Resources */,
@@ -954,6 +970,7 @@
 				278C4C3B1C86640100EB0AC1 /* FreigSanProBook.otf in Resources */,
 				0703C7321C4DFA8500C7D8ED /* blank_calendar.png in Resources */,
 				278C4C381C86640100EB0AC1 /* FreigSanProBlkIt.otf in Resources */,
+				27CA34501C8D3C0200C694A6 /* fb_icon.png in Resources */,
 				A447DBBF1C5ACBBB000C6DEB /* Car-25.png in Resources */,
 				072519AF1BE9694000F38F81 /* Assets.xcassets in Resources */,
 				279326FF1C509C2100BAC73D /* PopUpViewController_iPhone6Plus.xib in Resources */,
@@ -961,12 +978,15 @@
 				83A98E821C63129300338D0A /* GoogleService-Info.plist in Resources */,
 				279327011C509C2100BAC73D /* Info.plist in Resources */,
 				A45572F91C49CCE90097DE0F /* Google Plus-25.png in Resources */,
+				27CA34521C8D3EF400C694A6 /* calendar_icon.png in Resources */,
 				279326FC1C509C2100BAC73D /* PopUpViewController.xib in Resources */,
 				839F64491C0D643A00CAEC9E /* menu.png in Resources */,
 				1EB405441C63E89900220D5B /* GTMOAuth2ViewTouch.xib in Resources */,
 				278C4C391C86640100EB0AC1 /* FreigSanProBold.otf in Resources */,
+				27CA34461C8D3A8500C694A6 /* google_icon.png in Resources */,
 				072519AD1BE9694000F38F81 /* Main.storyboard in Resources */,
 				278C4C401C86640100EB0AC1 /* FreigSanProMedIt.otf in Resources */,
+				27CA34451C8D3A8500C694A6 /* calendar_icon.png in Resources */,
 				839F64581C0D6C1E00CAEC9E /* SummerMissions.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

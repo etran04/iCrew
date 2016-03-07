@@ -17,6 +17,9 @@ class EventDetailsViewController: UIViewController, UIPopoverPresentationControl
     @IBOutlet weak var eventDate: UILabel!          //date and time of the event
     @IBOutlet weak var eventDescr: UILabel!         //description of the event
     
+    @IBOutlet weak var scrollView: UIScrollView!
+    
+    
     @IBOutlet weak var facebookButton: UIButton!    //Facebook button to the event page
     @IBOutlet weak var googleButton: UIButton!      //Google button to save event to Google calendar
     @IBOutlet weak var calendarButton: UIButton!    //calendar button to save event to native calendar
@@ -31,7 +34,7 @@ class EventDetailsViewController: UIViewController, UIPopoverPresentationControl
     private let scopes = [kGTLAuthScopeCalendar, "https://www.googleapis.com/auth/calendar"]
     private let service = GTLServiceCalendar()
     
-    @IBOutlet var heightScrollConstraint: NSLayoutConstraint!
+    //@IBOutlet var heightScrollConstraint: NSLayoutConstraint!
     
     var event: Event?
     
@@ -50,6 +53,7 @@ class EventDetailsViewController: UIViewController, UIPopoverPresentationControl
             
             //load events
             eventTitle.text = event.name
+            eventTitle.font = UIFont(name: "FreightSansProSemiBold-Regular", size: 22)
             eventDescr.text = event.description
             eventDescr.sizeToFit()
             eventLocation.text = (event.location?.getLocation())!
@@ -132,7 +136,9 @@ class EventDetailsViewController: UIViewController, UIPopoverPresentationControl
         
         
         //for scrolling
-        self.heightScrollConstraint.constant = self.eventDescr.frame.height + eventDescr.frame.origin.y
+        let screenWidth = UIScreen.mainScreen().bounds.width
+        let scrollHeight = eventDescr.frame.origin.y + eventDescr.frame.height
+        self.scrollView.contentSize = CGSizeMake(screenWidth, scrollHeight)
         self.view.layoutIfNeeded()
 
     }

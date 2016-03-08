@@ -91,12 +91,22 @@ class EventsViewController: UITableViewController, DZNEmptyDataSetDelegate, DZNE
             let endDate = event["endDate"] as! String!
             let description = event["description"] as! String
         
+            let postcode = event["location"]?!.objectForKey("postcode") as! String
+            let state = event["location"]?!.objectForKey("state") as! String
+            let suburb = event["location"]?!.objectForKey("suburb") as! String
+            let street1 = event["location"]?!.objectForKey("street1") as! String
+            
+            var country = ""
+            if(event["location"]?!.objectForKey("country") is NSNull) {
+            } else {
+                country = event["location"]?!.objectForKey("country") as! String
+            }
             let location = Location(
-                postcode: event["location"]?!.objectForKey("postcode") as! String,
-                state: event["location"]?!.objectForKey("state") as! String,
-                suburb: event["location"]?!.objectForKey("suburb") as! String,
-                street1: event["location"]?!.objectForKey("street1") as! String,
-                country: event["location"]?!.objectForKey("country") as! String)
+                postcode: postcode,
+                state: state,
+                suburb: suburb,
+                street1: street1,
+                country: country)
             
             var image : String
             if (event["image"]! == nil) {

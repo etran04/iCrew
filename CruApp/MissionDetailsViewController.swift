@@ -65,28 +65,33 @@ class MissionDetailsViewController: UIViewController {
                 missionButton.enabled = false
             }
             
+            let oldWidth = missionImage.frame.size.width
+            let oldHeight = missionImage.frame.size.height
+            let screenWidth = UIScreen.mainScreen().bounds.size.width
+            let newHeight = screenWidth * oldHeight / oldWidth
+            
             //Load event image is available
             if (mission.image != nil && mission.image != "") {
                 let url = NSURL(string: mission.image!)
                 let data = NSData(contentsOfURL: url!)
                 let image = UIImage(data: data!)
                 let imageView = UIImageView(image: image)
-                imageView.contentMode = UIViewContentMode.ScaleAspectFit
                 imageView.clipsToBounds = true
-                missionImage.bounds.size.width = UIScreen.mainScreen().bounds.size.width
-                imageView.frame = missionImage.bounds
-                missionImage.contentMode = UIViewContentMode.ScaleAspectFit
+                missionImage.frame = missionImage.bounds
+                
+                imageView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: newHeight)
+                imageView.contentMode = UIViewContentMode.ScaleAspectFill
+                print(imageView)
                 missionImage.addSubview(imageView)
             } else {
                 let imageName = "Cru-Logo.png"
                 let image = UIImage(named: imageName)
                 let imageView = UIImageView(image: image)
-                imageView.contentMode = UIViewContentMode.ScaleAspectFit
                 imageView.clipsToBounds = true
-                missionImage.bounds.size.height = 1000
-                missionImage.bounds.size.width = UIScreen.mainScreen().bounds.size.width
-                imageView.frame = missionImage.bounds
-                missionImage.contentMode = UIViewContentMode.ScaleAspectFit
+                missionImage.frame = missionImage.bounds
+                
+                imageView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: newHeight)
+                imageView.contentMode = UIViewContentMode.ScaleAspectFit
                 missionImage.addSubview(imageView)
             }
         }

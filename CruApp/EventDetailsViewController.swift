@@ -17,6 +17,7 @@ class EventDetailsViewController: UIViewController, UIPopoverPresentationControl
     @IBOutlet weak var eventDate: UILabel!          //date and time of the event
     @IBOutlet weak var eventDescr: UILabel!         //description of the event
     
+    @IBOutlet weak var iconView: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
     
     
@@ -110,7 +111,7 @@ class EventDetailsViewController: UIViewController, UIPopoverPresentationControl
                 let imageView = UIImageView(image: image)
                 imageView.contentMode = UIViewContentMode.ScaleAspectFit
                 imageView.clipsToBounds = true
-                eventImage.bounds.size.height = 128
+                //eventImage.bounds.size.height = 128
                 eventImage.bounds.size.width = UIScreen.mainScreen().bounds.width
                 imageView.frame = eventImage.bounds
                 eventImage.contentMode = UIViewContentMode.ScaleAspectFit
@@ -121,7 +122,7 @@ class EventDetailsViewController: UIViewController, UIPopoverPresentationControl
                 let imageView = UIImageView(image: image)
                 imageView.contentMode = UIViewContentMode.ScaleAspectFit
                 imageView.clipsToBounds = true
-                eventImage.bounds.size.height = 128
+                //eventImage.bounds.size.height = 128
                 eventImage.bounds.size.width = UIScreen.mainScreen().bounds.width
                 imageView.frame = eventImage.bounds
                 eventImage.contentMode = UIViewContentMode.ScaleAspectFit
@@ -133,7 +134,10 @@ class EventDetailsViewController: UIViewController, UIPopoverPresentationControl
                 self.rideSharebutton.enabled = false
             }
         }
+    
+        //iconView.layer.borderWidth = 1
         
+        //iconView.layer.borderColor = UIColor.grayColor().CGColor
         
         //for scrolling
         let screenWidth = UIScreen.mainScreen().bounds.width

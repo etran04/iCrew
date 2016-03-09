@@ -10,13 +10,11 @@ import UIKit
 
 class EventViewCell: UITableViewCell {
 
+    @IBOutlet weak var eventImage: UIImageView!
     @IBOutlet var cardView: UIView!
     @IBOutlet var eventName: UILabel!
-    @IBOutlet weak var eventImage: UIView!
     @IBOutlet weak var eventLocation: UILabel!
     @IBOutlet weak var eventStartTime: UILabel!
-    @IBOutlet weak var eventDayDate: UILabel!
-    @IBOutlet weak var eventMonthDate: UILabel!
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: .Default, reuseIdentifier: reuseIdentifier)

@@ -256,7 +256,7 @@ class RideShareStatusTableViewController: UITableViewController {
         
         return nil
     }
-    override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print(headerTitles[indexPath.section])
         switch(headerTitles[indexPath.section]) {
             case kDriverHeader:
@@ -350,7 +350,8 @@ class RideShareStatusTableViewController: UITableViewController {
         
         let confirmDialog = UIAlertController(title: titleMsg, message: msg, preferredStyle: .Alert)
         let okAction = UIAlertAction(title: "Confirm", style: .Default) { (UIAlertAction) -> Void in
-            let params = ["ride_id": (self.driverCollection[row].rideId)]
+
+            let params = ["ride_id": self.driverCollection[row].rideId]
             
             do {
                 let body = try NSJSONSerialization.dataWithJSONObject(params, options: NSJSONWritingOptions.PrettyPrinted)
@@ -359,7 +360,15 @@ class RideShareStatusTableViewController: UITableViewController {
                 dbClient = DBClient()
                 dbClient.postData("ride/dropRide", body:body)
                 
+                for pssngr in self.passengerCollection {
+                    if (pssngr.rideId == self.driverCollection[row].rideId) {
+                        self.passengerCollection.removeAtIndex(row)
+                    }
+                }
+                
                 self.driverCollection.removeAtIndex(row)
+
+            
                 self.tableData = [self.driverCollection, self.passengerCollection]
                 
                 self.tableView.reloadData()

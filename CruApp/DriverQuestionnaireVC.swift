@@ -379,7 +379,7 @@ extension DriverQuestionnaireVC: GMSAutocompleteViewControllerDelegate {
                 zipcode = comp.name
             }
         }
-        street = streetNumber + " " + streetName
+        street = streetNumber! + " " + streetName!
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     

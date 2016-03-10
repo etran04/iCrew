@@ -105,7 +105,7 @@ class SummerMissionsViewController: UITableViewController, DZNEmptyDataSetSource
             let mission = missionsCollection[indexPath.row]
             cell.missionTitle.text = mission.name
             
-            if (mission.image != nil && mission.image != "") {
+            if (mission.image != nil && mission.image != "" && cell.missionImage.subviews.count < 1) {
                 let url = NSURL(string: mission.image!)
                 let data = NSData(contentsOfURL: url!)
                 let image = UIImage(data: data!)

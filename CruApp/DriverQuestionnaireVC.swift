@@ -45,7 +45,13 @@ class DriverQuestionnaireVC: UIViewController, UITableViewDelegate, UITableViewD
     var cells = [AnyObject]()
     var locationChoices = [String]()
     var ministryCollection: [MinistryData] = []
-
+    
+    var pickupAdress: GMSPlace?
+    var zipcode: String?
+    var street: String?
+    var city: String?
+    var state: String?
+    var country: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -350,6 +356,30 @@ extension DriverQuestionnaireVC: GMSAutocompleteViewControllerDelegate {
         print("Place address: ", place.formattedAddress)
         print("Place attributions: ", place.attributions)
         (cells[6] as! EnterLocationPlaceCell).locationLabel.text = place.formattedAddress!
+        var components = place.addressComponents
+        var streetNumber: String?
+        var streetName: String?
+        for comp in components! {
+            if(comp.type == "street_number") {
+                streetNumber = comp.name
+            }
+            else if(comp.type == "route") {
+                streetName = comp.name
+            }
+            else if(comp.type == "locality") {
+                city = comp.name
+            }
+            else if(comp.type == "administrative_area_level_1") {
+                state = comp.name
+            }
+            else if(comp.type == "country") {
+                country = comp.name
+            }
+            else if(comp.type == "postal_code") {
+                zipcode = comp.name
+            }
+        }
+        street = streetNumber + " " + streetName
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     

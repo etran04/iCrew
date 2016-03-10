@@ -119,13 +119,9 @@ class DBClient {
         sendPostRequest(url, body: body, completionHandler: {(data : NSData?, response : NSURLResponse?, error : NSError?) in
             do {
                 if (data != nil) {
-                    print("it works here")
                     let JSONResponse = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
-                    print("hello, it's me")
                     //let JSONData = JSONResponse as! NSDictionary
-                    print("does it get this far?")
                     //let post = JSONResponse["post"] as! NSDictionary
-                    print("how about now?!")
                     let passengerId = JSONResponse["_id"] as! String
                     //let url = "http://localhost:3001/api/ride/addPassenger"
                     let url = "http://pcp070211pcs.wireless.calpoly.edu:3001/api/ride/addPassenger"

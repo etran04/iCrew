@@ -20,14 +20,16 @@ class RideSharePassenger {
     var passengerId:String
     var eventId:String
     var departureTime:String
+    var departureLoc:String
     var driverNumber:String
     var driverName:String
     
-    init(rideId:String, passengerId:String, eventId:String, departureTime:String, driverNumber:String, driverName:String) {
+    init(rideId:String, passengerId:String, eventId:String, departureTime:String, departureLoc:String, driverNumber:String, driverName:String) {
         self.rideId = rideId
         self.passengerId = passengerId
         self.eventId = eventId
         self.departureTime = departureTime
+        self.departureLoc = departureLoc
         self.driverNumber = driverNumber
         self.driverName = driverName
     }
@@ -51,13 +53,15 @@ class RideShareDriver {
     var rideId:String
     var eventId:String
     var departureTime:String
+    var departureLoc:String
     var availableSeats:Int
     var passengers = [PassengerData]()
     
-    init(rideId:String, eventId:String, departureTime:String, availableSeats:Int, passengers:[PassengerData]) {
+    init(rideId:String, eventId:String, departureTime:String, departureLoc: String, availableSeats:Int, passengers:[PassengerData]) {
         self.rideId = rideId
         self.eventId = eventId
         self.departureTime = departureTime
+        self.departureLoc = departureLoc
         self.availableSeats = availableSeats
         self.passengers += passengers
     }
@@ -153,6 +157,25 @@ class RideShareStatusTableViewController: UITableViewController {
             let availableSeats = (ride["seats"] as! Int) - (passengers.count)
             var passengersInfo = [PassengerData]()
             
+            var direction = ""
+            
+            if(ride["direction"]! != nil) {
+                direction = ride["direction"] as! String
+            }
+            
+            let zipcode = ride["location"]?!.objectForKey("postcode") as! String
+            let state = ride["location"]?!.objectForKey("state") as! String
+            var city = ""
+            
+            if(ride["location"]?!.objectForKey("suburb") != nil) {
+                city = ride["location"]?!.objectForKey("suburb") as! String
+            }
+            let street = ride["location"]?!.objectForKey("street1") as! String
+            let country = ride["location"]?!.objectForKey("country") as! String
+            
+            let location = street + ", " + city + ", " + state + ", " + country + " " + zipcode
+            
+            
             for pssngr in passengers{
                 for data in passengersData {
                     if data.id == pssngr {
@@ -160,7 +183,7 @@ class RideShareStatusTableViewController: UITableViewController {
                     
                         //if user is a passenger
                         if(gcm_id == data.gcmId) {
-                            let passengerObj = RideSharePassenger(rideId:rideId, passengerId:pssngr, eventId:event, departureTime:time, driverNumber:driverNumber, driverName:driverName)
+                            let passengerObj = RideSharePassenger(rideId:rideId, passengerId:pssngr, eventId:event, departureTime:time, departureLoc: location, driverNumber:driverNumber, driverName:driverName)
                             passengerCollection.append(passengerObj)
                         }
                     }
@@ -169,7 +192,7 @@ class RideShareStatusTableViewController: UITableViewController {
         
             //if user is a driver
             if(gcm_id == gcmId) {
-                let rideObj = RideShareDriver(rideId:rideId, eventId:event, departureTime:time, availableSeats:availableSeats, passengers:passengersInfo)
+                let rideObj = RideShareDriver(rideId:rideId, eventId:event, departureTime:time, departureLoc:location, availableSeats:availableSeats, passengers:passengersInfo)
                 driverCollection.append(rideObj)
             }
         }
@@ -304,7 +327,8 @@ class RideShareStatusTableViewController: UITableViewController {
         dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
         dateFormatter.timeStyle = .ShortStyle
         cell.departureTime.text = "Departure Time: " + dateFormatter.stringFromDate(date!)
-        
+        cell.departureLoc.text = driver.departureLoc
+
         cell.availableSeats.text = String("Available Seats: " + String(driver.availableSeats))
     }
     
@@ -363,8 +387,8 @@ class RideShareStatusTableViewController: UITableViewController {
         number = number.insert(") ", ind: 3)
         number = number.insert(" - ", ind: 7)
         cell.driverNumber.text = number
-    
-        cell.eventName.text = passenger.eventId
+
+        cell.departureLoc.text = passenger.departureLoc
         
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"

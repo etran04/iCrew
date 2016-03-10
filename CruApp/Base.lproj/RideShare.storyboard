@@ -38,15 +38,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PassengerCell" rowHeight="138" id="0Iz-rM-DRl" userLabel="PassengerCell" customClass="PassengerStatusTableViewCell" customModule="CruApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="375" height="138"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PassengerCell" rowHeight="173" id="0Iz-rM-DRl" userLabel="PassengerCell" customClass="PassengerStatusTableViewCell" customModule="CruApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="375" height="173"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0Iz-rM-DRl" id="g8f-lg-Lps">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="137.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="172.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pKg-i2-zFD" userLabel="CardView">
-                                            <rect key="frame" x="8" y="8" width="359" height="122"/>
+                                            <rect key="frame" x="8" y="8" width="359" height="156.5"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Event Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hew-HG-j3E" userLabel="Event Name">
                                                     <rect key="frame" x="8" y="1" width="343" height="21"/>
@@ -66,8 +66,8 @@
                                                     <color key="textColor" red="0.97647058823529409" green="0.71372549019607845" blue="0.14509803921568626" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Depature Location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tE6-tk-A7N" userLabel="Departure Location">
-                                                    <rect key="frame" x="8" y="96" width="343" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Depature Location" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tE6-tk-A7N" userLabel="Departure Location">
+                                                    <rect key="frame" x="8" y="96" width="343" height="52.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.97647058823529409" green="0.71372549019607845" blue="0.14509803921568626" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -100,15 +100,15 @@
                                     <outlet property="eventName" destination="Hew-HG-j3E" id="FSW-Ug-XGO"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DriverCell" rowHeight="97" id="ZHs-k1-rnG" userLabel="DriverCell" customClass="DriverStatusTableViewCell" customModule="CruApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="230" width="375" height="97"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DriverCell" rowHeight="144" id="ZHs-k1-rnG" userLabel="DriverCell" customClass="DriverStatusTableViewCell" customModule="CruApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="265" width="375" height="144"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZHs-k1-rnG" id="Svb-hA-FmF">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="96.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="143.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o2S-ix-v5S">
-                                            <rect key="frame" x="8" y="10" width="359" height="79"/>
+                                            <rect key="frame" x="8" y="10" width="359" height="125.5"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Event Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w8S-CD-Foe" userLabel="Event Name">
                                                     <rect key="frame" x="5" y="3" width="348" height="21"/>
@@ -117,13 +117,13 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Departure Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YMN-t7-Fe6" userLabel="DepartureTime">
-                                                    <rect key="frame" x="5" y="28" width="348" height="21"/>
+                                                    <rect key="frame" x="5" y="61" width="348" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.24313725490196078" green="0.69411764705882351" blue="0.78431372549019607" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Available Seats" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2jd-C5-ddJ" userLabel="available seats">
-                                                    <rect key="frame" x="5" y="57" width="348" height="21"/>
+                                                    <rect key="frame" x="5" y="32" width="348" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.24313725490196078" green="0.69411764705882351" blue="0.78431372549019607" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -135,6 +135,12 @@
                                                         <action selector="cancelPressed:" destination="ZHs-k1-rnG" eventType="touchUpInside" id="bht-ka-Qzg"/>
                                                     </connections>
                                                 </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SCh-fP-fX1">
+                                                    <rect key="frame" x="8" y="90" width="343" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.24313725490196078" green="0.69411764705882351" blue="0.78431372549019607" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </view>
@@ -144,12 +150,13 @@
                                 <connections>
                                     <outlet property="availableSeats" destination="2jd-C5-ddJ" id="6x9-bP-zHm"/>
                                     <outlet property="cardView" destination="o2S-ix-v5S" id="CUX-uR-R48"/>
+                                    <outlet property="departureLoc" destination="SCh-fP-fX1" id="1sa-0B-Jl3"/>
                                     <outlet property="departureTime" destination="YMN-t7-Fe6" id="NCk-kU-LVj"/>
                                     <outlet property="eventName" destination="w8S-CD-Foe" id="kHW-mx-pyn"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NoDataCell" rowHeight="200" id="KdX-uF-Qgq">
-                                <rect key="frame" x="0.0" y="327" width="375" height="200"/>
+                                <rect key="frame" x="0.0" y="409" width="375" height="200"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KdX-uF-Qgq" id="ClJ-PX-IhY">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="199.5"/>

@@ -13,6 +13,8 @@ class SummerMissionsViewController: UITableViewController, DZNEmptyDataSetSource
 
     var missionsCollection = [Mission]()
     
+    @IBOutlet weak var menuButton: UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,6 +25,14 @@ class SummerMissionsViewController: UITableViewController, DZNEmptyDataSetSource
         var dbClient:DBClient!
         dbClient = DBClient()
         dbClient.getData("summermission", dict: setMissions)
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        if (self.revealViewController() != nil) {
+            self.menuButton.target = self.revealViewController()
+            self.menuButton.action = "revealToggle:"
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
     }
     
     //TODO: move it into Mission.swift

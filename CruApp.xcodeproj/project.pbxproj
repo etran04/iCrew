@@ -120,6 +120,7 @@
 		83B1CB251C4886F700145B6D /* MinistryCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B1CB211C4886F700145B6D /* MinistryCoreData.swift */; };
 		83B1CB271C4886F700145B6D /* CampusCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B1CB231C4886F700145B6D /* CampusCoreData.swift */; };
 		83B1CB291C48880A00145B6D /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B1CB281C48880A00145B6D /* UserProfile.swift */; };
+		83CF292C1C92105800358FB3 /* MainRideShareVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CF292B1C92105800358FB3 /* MainRideShareVC.swift */; };
 		A40DD9941C0EC0FB00BCFEC5 /* DBClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40DD9931C0EC0FB00BCFEC5 /* DBClient.swift */; };
 		A40DD9A21C0EC61600BCFEC5 /* SummerMissionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40DD9A11C0EC61600BCFEC5 /* SummerMissionsViewController.swift */; };
 		A40DD9A41C0EC62F00BCFEC5 /* Mission.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40DD9A31C0EC62F00BCFEC5 /* Mission.swift */; };
@@ -355,6 +356,7 @@
 		83B1CB211C4886F700145B6D /* MinistryCoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinistryCoreData.swift; sourceTree = "<group>"; };
 		83B1CB231C4886F700145B6D /* CampusCoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampusCoreData.swift; sourceTree = "<group>"; };
 		83B1CB281C48880A00145B6D /* UserProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		83CF292B1C92105800358FB3 /* MainRideShareVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainRideShareVC.swift; sourceTree = "<group>"; };
 		9CC50D2817D518EDB9BF800C /* Pods-CruApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CruApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-CruApp/Pods-CruApp.release.xcconfig"; sourceTree = "<group>"; };
 		A40DD9931C0EC0FB00BCFEC5 /* DBClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBClient.swift; sourceTree = "<group>"; };
 		A40DD9A11C0EC61600BCFEC5 /* SummerMissionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummerMissionsViewController.swift; sourceTree = "<group>"; };
@@ -668,6 +670,7 @@
 				278C4C651C87AB9A00EB0AC1 /* MinistryTeamTableViewCell.swift */,
 				832FDCFB1C8832BF00836B7C /* JoinCommunityGroupTVC.swift */,
 				832FDD041C88D09100836B7C /* CommunityGroupCell.swift */,
+				83CF292B1C92105800358FB3 /* MainRideShareVC.swift */,
 			);
 			name = GetInvolved;
 			sourceTree = "<group>";
@@ -1118,6 +1121,7 @@
 				A40DD9941C0EC0FB00BCFEC5 /* DBClient.swift in Sources */,
 				278C4C621C87A2B100EB0AC1 /* JoinMinistryTeamTVC.swift in Sources */,
 				279327071C50A10500BAC73D /* InitialMinistryTableViewCell.swift in Sources */,
+				83CF292C1C92105800358FB3 /* MainRideShareVC.swift in Sources */,
 				83244B761C7579F000D913A6 /* MinistryData.swift in Sources */,
 				A40DD9A21C0EC61600BCFEC5 /* SummerMissionsViewController.swift in Sources */,
 				078739881C86178E00D09C14 /* NameFieldCell.swift in Sources */,

@@ -28,7 +28,7 @@ class InitialCampusTableViewController: UITableViewController {
         
         //set empty back button
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.Plain, target:nil, action:nil)
-//        self.nextButton.enabled = false
+        self.nextButton.enabled = false
     }
     
     func setCampuses(campuses:NSArray) {

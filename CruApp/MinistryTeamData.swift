@@ -14,11 +14,21 @@ struct MinistryTeamData {
     var name: String
     var description: String
     var parentMinistry: String
+    var leaders: [String]
+    
+    init(name: String, description: String, parentMinistry: String, id: String, leaders: [String]) {
+        self.name = name
+        self.description = description
+        self.parentMinistry = parentMinistry
+        self.id = id
+        self.leaders = leaders
+    }
     
     init(name: String, description: String, parentMinistry: String, id: String) {
         self.name = name
         self.description = description
         self.parentMinistry = parentMinistry
         self.id = id
+        self.leaders = []
     }
 }

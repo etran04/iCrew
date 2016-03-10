@@ -147,7 +147,11 @@ class UserProfile {
             
             if let ministryTeams = fetchedResult {
                 for ministryTeam in ministryTeams {
-                    let ministryTeamObj = MinistryTeamData(name: ministryTeam.valueForKey("name") as! String, description: "", parentMinistry: ministryTeam.valueForKey("ministryId") as! String, id: ministryTeam.valueForKey("id") as! String)
+                    let ministryTeamObj = MinistryTeamData(
+                        name: ministryTeam.valueForKey("name") as! String,
+                        description: "",
+                        parentMinistry: ministryTeam.valueForKey("ministryId") as! String,
+                        id: ministryTeam.valueForKey("id") as! String)
                     
                     results.append(ministryTeamObj)
                 }

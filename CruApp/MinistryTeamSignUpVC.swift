@@ -9,5 +9,22 @@
 import UIKit
 
 class MinistryTeamSignUpVC: UIViewController {
+    
+    var ministryTeam: MinistryTeamData?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        if(ministryTeam != nil) {
+           print(ministryTeam!.leaders)
+        }
+        
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        let teamSuccessVC = segue.destinationViewController as!  MinistryTeamSuccessVC
+        teamSuccessVC.ministryTeam = self.ministryTeam
+    }
 
 }

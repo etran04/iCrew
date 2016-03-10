@@ -43,6 +43,7 @@
 		271C78161C5040EA00F42EA0 /* Initial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 271C78151C5040EA00F42EA0 /* Initial.storyboard */; };
 		271C78211C50434000F42EA0 /* InitialCampusTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271C78201C50434000F42EA0 /* InitialCampusTableViewController.swift */; };
 		271C78231C5044B100F42EA0 /* InitialCampusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271C78221C5044B100F42EA0 /* InitialCampusTableViewCell.swift */; };
+		27529A491C9165D3008A0D06 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27529A481C9165D3008A0D06 /* UserData.swift */; };
 		277E67561BEB6362001C29DD /* CruAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277E67551BEB6362001C29DD /* CruAppTests.swift */; };
 		278C4C371C86640100EB0AC1 /* FreigSanProBlk.otf in Resources */ = {isa = PBXBuildFile; fileRef = 278C4C2A1C86640100EB0AC1 /* FreigSanProBlk.otf */; };
 		278C4C381C86640100EB0AC1 /* FreigSanProBlkIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 278C4C2B1C86640100EB0AC1 /* FreigSanProBlkIt.otf */; };
@@ -91,7 +92,6 @@
 		83244B801C75AD9400D913A6 /* SidebarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83244B7F1C75AD9400D913A6 /* SidebarTableViewController.swift */; };
 		832FDCCA1C8549FB00836B7C /* MainInvolvedTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832FDCC91C8549FB00836B7C /* MainInvolvedTVC.swift */; };
 		832FDCCC1C854B1600836B7C /* InvolvedGroupsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832FDCCB1C854B1600836B7C /* InvolvedGroupsTVC.swift */; };
-		832FDCD01C854C0900836B7C /* MinistryTeamDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832FDCCF1C854C0900836B7C /* MinistryTeamDetailVC.swift */; };
 		832FDCD21C854CBA00836B7C /* MinistryTeamSignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832FDCD11C854CBA00836B7C /* MinistryTeamSignUpVC.swift */; };
 		832FDCD41C854CE600836B7C /* MinistryTeamSuccessVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832FDCD31C854CE600836B7C /* MinistryTeamSuccessVC.swift */; };
 		832FDCD61C854D2E00836B7C /* CGQuestionnaireVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832FDCD51C854D2E00836B7C /* CGQuestionnaireVC.swift */; };
@@ -278,6 +278,7 @@
 		271C78151C5040EA00F42EA0 /* Initial.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Initial.storyboard; path = Base.lproj/Initial.storyboard; sourceTree = "<group>"; };
 		271C78201C50434000F42EA0 /* InitialCampusTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialCampusTableViewController.swift; sourceTree = "<group>"; };
 		271C78221C5044B100F42EA0 /* InitialCampusTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialCampusTableViewCell.swift; sourceTree = "<group>"; };
+		27529A481C9165D3008A0D06 /* UserData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		277E67531BEB6362001C29DD /* CruAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CruAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		277E67551BEB6362001C29DD /* CruAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CruAppTests.swift; sourceTree = "<group>"; };
 		277E67571BEB6362001C29DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -323,7 +324,6 @@
 		83244B7F1C75AD9400D913A6 /* SidebarTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidebarTableViewController.swift; sourceTree = "<group>"; };
 		832FDCC91C8549FB00836B7C /* MainInvolvedTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainInvolvedTVC.swift; sourceTree = "<group>"; };
 		832FDCCB1C854B1600836B7C /* InvolvedGroupsTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvolvedGroupsTVC.swift; sourceTree = "<group>"; };
-		832FDCCF1C854C0900836B7C /* MinistryTeamDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinistryTeamDetailVC.swift; sourceTree = "<group>"; };
 		832FDCD11C854CBA00836B7C /* MinistryTeamSignUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinistryTeamSignUpVC.swift; sourceTree = "<group>"; };
 		832FDCD31C854CE600836B7C /* MinistryTeamSuccessVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinistryTeamSuccessVC.swift; sourceTree = "<group>"; };
 		832FDCD51C854D2E00836B7C /* CGQuestionnaireVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGQuestionnaireVC.swift; sourceTree = "<group>"; };
@@ -657,7 +657,6 @@
 			children = (
 				832FDCC91C8549FB00836B7C /* MainInvolvedTVC.swift */,
 				832FDCCB1C854B1600836B7C /* InvolvedGroupsTVC.swift */,
-				832FDCCF1C854C0900836B7C /* MinistryTeamDetailVC.swift */,
 				832FDCD11C854CBA00836B7C /* MinistryTeamSignUpVC.swift */,
 				832FDCD31C854CE600836B7C /* MinistryTeamSuccessVC.swift */,
 				832FDCD51C854D2E00836B7C /* CGQuestionnaireVC.swift */,
@@ -691,6 +690,7 @@
 				832FDCE81C881EC100836B7C /* MinistryTeamCoreData.swift */,
 				832FDCF41C881F4600836B7C /* CommunityGroupCoreData.swift */,
 				832FDCF81C88224500836B7C /* CommunityGroupData.swift */,
+				27529A481C9165D3008A0D06 /* UserData.swift */,
 			);
 			name = UserProfile;
 			sourceTree = "<group>";
@@ -1127,13 +1127,13 @@
 				072519A81BE9694000F38F81 /* AppDelegate.swift in Sources */,
 				A487BBFB1C635E78006F9B3C /* Driver.swift in Sources */,
 				838564F51C0D9EDF00EB1728 /* SWRevealViewController.m in Sources */,
+				27529A491C9165D3008A0D06 /* UserData.swift in Sources */,
 				078739921C8617D000D09C14 /* ScrollPickerCell.swift in Sources */,
 				279327051C50A0EC00BAC73D /* InitialMinistryTableViewController.swift in Sources */,
 				271C78211C50434000F42EA0 /* InitialCampusTableViewController.swift in Sources */,
 				A487BBEF1C6353A5006F9B3C /* DriverStatusTableViewCell.swift in Sources */,
 				0725A05F1C867529006E8E0C /* DriveTypeCell.swift in Sources */,
 				A441CE801C7A957500663057 /* Resource.swift in Sources */,
-				832FDCD01C854C0900836B7C /* MinistryTeamDetailVC.swift in Sources */,
 				832FDCFC1C8832BF00836B7C /* JoinCommunityGroupTVC.swift in Sources */,
 				832FDCCC1C854B1600836B7C /* InvolvedGroupsTVC.swift in Sources */,
 				83B1CB101C4856BC00145B6D /* CoreDataModel.xcdatamodeld in Sources */,

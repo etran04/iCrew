@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CruApp/UserProfile.swift"
-            timestampString = "478684687.187395"
+            timestampString = "479288659.046218"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "175"
-            endingLineNumber = "175"
+            startingLineNumber = "179"
+            endingLineNumber = "179"
             landmarkName = "getCommunityGroups()"
             landmarkType = "5">
          </BreakpointContent>

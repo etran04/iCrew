@@ -81,11 +81,8 @@ class RideShareStatusTableViewController: UITableViewController {
         // Starts the loading spinner
         SwiftLoader.show(animated: true)
         
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        tableView.separatorStyle = .None
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -96,6 +93,8 @@ class RideShareStatusTableViewController: UITableViewController {
         
         // Gets the orders from Firebase
         self.fetchStatuses()
+        
+        tableView.separatorStyle = .SingleLine
     }
     
     func fetchStatuses() {
@@ -144,8 +143,6 @@ class RideShareStatusTableViewController: UITableViewController {
                         passengersInfo.append(data)
                     
                         //if user is a passenger
-                    
-                        print("user is a passenger")
                         if(gcm_id == data.gcmId) {
                             let passengerObj = RideSharePassenger(rideId:rideId, passengerId:pssngr, eventId:event, departureTime:time, driverNumber:driverNumber, driverName:driverName)
                             passengerCollection.append(passengerObj)
@@ -156,36 +153,58 @@ class RideShareStatusTableViewController: UITableViewController {
         
             //if user is a driver
             if(gcm_id == gcmId) {
-                print("user is a driver")
                 let rideObj = RideShareDriver(rideId:rideId, eventId:event, departureTime:time, availableSeats:availableSeats, passengers:passengersInfo)
                 driverCollection.append(rideObj)
             }
         }
         
-        // array to hold all status by section
         self.tableData = [self.driverCollection, self.passengerCollection]
         self.tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
 
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        print("table section: \(tableData.count)")
-
         return tableData.count
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        print("table rows: \(tableData[section].count)")
-        return tableData[section].count
+        let numCellsInSection = tableData[section].count
+        
+        if (numCellsInSection == 0) {
+            return 1
+        }
+        
+        return numCellsInSection
+    }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        var cell = UITableViewCell()
+        
+        switch (headerTitles[indexPath.section]) {
+        case kDriverHeader:
+            if (self.driverCollection.count > 0) {
+                cell = tableView.dequeueReusableCellWithIdentifier("DriverCell")!
+            } else {
+                cell = tableView.dequeueReusableCellWithIdentifier("NoDataCell")!
+            }
+            break
+        case kPassengerHeader:
+            if (self.passengerCollection.count > 0) {
+                cell = tableView.dequeueReusableCellWithIdentifier("PassengerCell")!
+            } else {
+                cell = tableView.dequeueReusableCellWithIdentifier("NoDataCell")!
+            }
+            break
+        default:
+            break
+        }
+        return cell.contentView.bounds.size.height
     }
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -203,12 +222,20 @@ class RideShareStatusTableViewController: UITableViewController {
         
         switch (headerTitles[indexPath.section]) {
             case kDriverHeader:
-                cell = tableView.dequeueReusableCellWithIdentifier("DriverCell", forIndexPath: indexPath)
-                populateDriverCell(indexPath, cell: (cell as! DriverStatusTableViewCell))
+                if (self.driverCollection.count > 0) {
+                    cell = tableView.dequeueReusableCellWithIdentifier("DriverCell", forIndexPath: indexPath)
+                    populateDriverCell(indexPath, cell: (cell as! DriverStatusTableViewCell))
+                } else {
+                    cell = tableView.dequeueReusableCellWithIdentifier("NoDataCell", forIndexPath: indexPath)
+                }
                 break
             case kPassengerHeader:
-                cell = tableView.dequeueReusableCellWithIdentifier("PassengerCell", forIndexPath: indexPath)
-                populatePassengerCell(indexPath, cell: (cell as! PassengerStatusTableViewCell))
+                if (self.passengerCollection.count > 0) {
+                    cell = tableView.dequeueReusableCellWithIdentifier("PassengerCell", forIndexPath: indexPath)
+                    populatePassengerCell(indexPath, cell: (cell as! PassengerStatusTableViewCell))
+                } else {
+                    cell = tableView.dequeueReusableCellWithIdentifier("NoDataCell", forIndexPath: indexPath)
+                }
                 break
             default:
                 break
@@ -217,8 +244,9 @@ class RideShareStatusTableViewController: UITableViewController {
         return cell
     }
     
-    /* Helper function for filling in pending cell with its information */
+    /* Helper function for filling in driver cell with its information */
     func populateDriverCell(indexPath: NSIndexPath, cell: DriverStatusTableViewCell) {
+        cell.tableController = self
         
         let driver = driverCollection[indexPath.row]
         
@@ -241,30 +269,46 @@ class RideShareStatusTableViewController: UITableViewController {
 //            self.view.addSubview(label)
 //            spacer = spacer + 50
 //        }
-        
-        cell.cancelDriver.addTarget(self, action: "cancelDriver:", forControlEvents: .TouchUpInside)
-        cell.cancelDriver.tag = indexPath.row
     }
     
-    func cancelDriver(sender: UIButton) {
-        let buttonTag = sender.tag
+    /* Callback for when a cancel button is pressed in a driver cell. Input is the row of the cell at which it's pressed */
+    func cancelDriver(row: Int) {
+        let titleMsg = "Are you sure?"
+        let msg = "Are you sure you want to cancel your ride offering?"
         
-        let params = ["ride_id": (driverCollection[buttonTag].rideId)]
-        
-        do {
-            let body = try NSJSONSerialization.dataWithJSONObject(params, options: NSJSONWritingOptions.PrettyPrinted)
+        let confirmDialog = UIAlertController(title: titleMsg, message: msg, preferredStyle: .Alert)
+        let okAction = UIAlertAction(title: "Confirm", style: .Default) { (UIAlertAction) -> Void in
+            let params = ["ride_id": (self.driverCollection[row].rideId)]
             
-            var dbClient: DBClient!
-            dbClient = DBClient()
-            dbClient.postData("api/ride/dropRide", body:body)
-            
-        } catch {
-            print("Error sending data to database")
+            do {
+                let body = try NSJSONSerialization.dataWithJSONObject(params, options: NSJSONWritingOptions.PrettyPrinted)
+                
+                var dbClient: DBClient!
+                dbClient = DBClient()
+                dbClient.postData("api/ride/dropRide", body:body)
+                
+                self.driverCollection.removeAtIndex(row)
+                self.tableData = [self.driverCollection, self.passengerCollection]
+                
+                self.tableView.reloadData()
+                
+            } catch {
+                print("Error sending data to database")
+            }
         }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        
+        confirmDialog.addAction(okAction)
+        confirmDialog.addAction(cancelAction)
+        
+        self.presentViewController(confirmDialog, animated: true, completion: nil)
     }
     
-    /* Helper function for filling in pending cell with its information */
+    /* Helper function for filling in passenger cell with its information */
     func populatePassengerCell(indexPath: NSIndexPath, cell: PassengerStatusTableViewCell) {
+        cell.tableController = self
+        
         let passenger = passengerCollection[indexPath.row]
 
         cell.driverName.text = "Driver's Name: " + passenger.driverName
@@ -278,74 +322,40 @@ class RideShareStatusTableViewController: UITableViewController {
         dateFormatter.timeStyle = .ShortStyle
         cell.departureTime.text = "Departure Time: " + dateFormatter.stringFromDate(date!)
     
-        cell.cancelButton.addTarget(self, action: "cancelPassenger:", forControlEvents: .TouchUpInside)
-        cell.cancelButton.tag = indexPath.row
     }
     
-    func cancelPassenger(sender: UIButton) {
-        let buttonTag = sender.tag
+    /* Callback for when a cancel button is pressed in a passenger cell. Input is the row of the cell at which it's pressed */
+    func cancelPassenger(row: Int) {
+        let titleMsg = "Are you sure?"
+        let msg = "Are you sure you want to cancel your spot in the ride?"
         
-        let params = ["ride_id": (passengerCollection[buttonTag].rideId), "passenger_id": (passengerCollection[buttonTag].passengerId)]
-        
-        do {
-            let body = try NSJSONSerialization.dataWithJSONObject(params, options: NSJSONWritingOptions.PrettyPrinted)
-            var dbClient: DBClient!
-            dbClient = DBClient()
-            dbClient.postData("api/ride/dropPassenger", body:body)
+        let confirmDialog = UIAlertController(title: titleMsg, message: msg, preferredStyle: .Alert)
+        let okAction = UIAlertAction(title: "Confirm", style: .Default) { (UIAlertAction) -> Void in
+            let params = ["ride_id": (self.passengerCollection[row].rideId), "passenger_id": (self.passengerCollection[row].passengerId)]
             
-        } catch {
-            print("Error sending data to database")
+            do {
+                let body = try NSJSONSerialization.dataWithJSONObject(params, options: NSJSONWritingOptions.PrettyPrinted)
+                var dbClient: DBClient!
+                dbClient = DBClient()
+                dbClient.postData("api/ride/dropPassenger", body:body)
+                
+                self.passengerCollection.removeAtIndex(row)
+                self.tableData = [self.driverCollection, self.passengerCollection]
+                
+                
+                self.tableView.reloadData()
+                
+            } catch {
+                print("Error sending data to database")
+            }
         }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        
+        confirmDialog.addAction(okAction)
+        confirmDialog.addAction(cancelAction)
+        
+        self.presentViewController(confirmDialog, animated: true, completion: nil)
     }
     
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return CGFloat(138)
-    }
-    
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

@@ -115,16 +115,20 @@ class DBClient {
     
     func addPassenger(rideId: String, action: String, body: NSData) {
         //let url = "http://localhost:3001/api/" + action + "/create"
-        let url = "http://pcp070211pcs.wireless.calpoly.edu:3001/passenger/create"
+        let url = "http://pcp070211pcs.wireless.calpoly.edu:3001/api/passenger/create"
         sendPostRequest(url, body: body, completionHandler: {(data : NSData?, response : NSURLResponse?, error : NSError?) in
             do {
                 if (data != nil) {
-                    let JSONResponse = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers)
-                    let JSONData = JSONResponse as! NSDictionary
-                    let post = JSONData["post"] as! NSDictionary
-                    let passengerId = post["_id"] as! String
-                    //let url = "http://localhost:3001/" + "api/ride/addPassenger"
-                    let url = "http://pcp070211pcs.wireless.calpoly.edu:3001/" + "api/ride/addPassenger"
+                    print("it works here")
+                    let JSONResponse = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
+                    print("hello, it's me")
+                    //let JSONData = JSONResponse as! NSDictionary
+                    print("does it get this far?")
+                    //let post = JSONResponse["post"] as! NSDictionary
+                    print("how about now?!")
+                    let passengerId = JSONResponse["_id"] as! String
+                    //let url = "http://localhost:3001/api/ride/addPassenger"
+                    let url = "http://pcp070211pcs.wireless.calpoly.edu:3001/api/ride/addPassenger"
 
                     let params = ["ride_id": rideId,"passenger_id": passengerId]
                     

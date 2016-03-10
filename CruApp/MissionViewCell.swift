@@ -11,12 +11,15 @@ import UIKit
 class MissionViewCell: UITableViewCell {
     @IBOutlet weak var missionTitle: UILabel!
     @IBOutlet weak var missionDate: UILabel!
+    @IBOutlet weak var missionImage: UIImageView!
     
     @IBOutlet weak var cardView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        self.missionTitle.font = UIFont.boldSystemFontOfSize(20)
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

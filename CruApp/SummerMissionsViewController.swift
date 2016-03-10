@@ -105,6 +105,17 @@ class SummerMissionsViewController: UITableViewController, DZNEmptyDataSetSource
             let mission = missionsCollection[indexPath.row]
             cell.missionTitle.text = mission.name
             
+            if (mission.image != nil && mission.image != "") {
+                let url = NSURL(string: mission.image!)
+                let data = NSData(contentsOfURL: url!)
+                let image = UIImage(data: data!)
+                let imageView = UIImageView(image: image)
+                imageView.clipsToBounds = true
+                cell.missionImage.frame = cell.missionImage.bounds
+                imageView.frame = cell.missionImage.frame
+                imageView.contentMode = UIViewContentMode.ScaleAspectFill
+                cell.missionImage.addSubview(imageView)
+            }
             
             //date formatting
             let dateFormatter = NSDateFormatter()

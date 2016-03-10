@@ -14,8 +14,9 @@ class PassengerStatusTableViewCell: UITableViewCell {
     @IBOutlet weak var eventName: UILabel!
     @IBOutlet weak var driverName: UILabel!
     @IBOutlet weak var driverNumber: UILabel!
-    @IBOutlet weak var departureLoc: UILabel!
     @IBOutlet weak var departureTime: UILabel!
+    @IBOutlet weak var departureLoc1: UILabel!
+    @IBOutlet weak var departureLoc2: UILabel!
     
     /* Reference to the parent table view controller */
     var tableController : UITableViewController

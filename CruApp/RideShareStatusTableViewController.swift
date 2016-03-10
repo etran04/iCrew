@@ -20,16 +20,18 @@ class RideSharePassenger {
     var passengerId:String
     var eventId:String
     var departureTime:String
-    var departureLoc:String
+    var departureLoc1:String
+    var departureLoc2:String
     var driverNumber:String
     var driverName:String
     
-    init(rideId:String, passengerId:String, eventId:String, departureTime:String, departureLoc:String, driverNumber:String, driverName:String) {
+    init(rideId:String, passengerId:String, eventId:String, departureTime:String, departureLoc1:String, departureLoc2:String, driverNumber:String, driverName:String) {
         self.rideId = rideId
         self.passengerId = passengerId
         self.eventId = eventId
         self.departureTime = departureTime
-        self.departureLoc = departureLoc
+        self.departureLoc1 = departureLoc1
+        self.departureLoc2 = departureLoc2
         self.driverNumber = driverNumber
         self.driverName = driverName
     }
@@ -53,15 +55,17 @@ class RideShareDriver {
     var rideId:String
     var eventId:String
     var departureTime:String
-    var departureLoc:String
+    var departureLoc1:String
+    var departureLoc2:String
     var availableSeats:Int
     var passengers = [PassengerData]()
     
-    init(rideId:String, eventId:String, departureTime:String, departureLoc: String, availableSeats:Int, passengers:[PassengerData]) {
+    init(rideId:String, eventId:String, departureTime:String, departureLoc1: String, departureLoc2:String, availableSeats:Int, passengers:[PassengerData]) {
         self.rideId = rideId
         self.eventId = eventId
         self.departureTime = departureTime
-        self.departureLoc = departureLoc
+        self.departureLoc1 = departureLoc1
+        self.departureLoc2 = departureLoc2
         self.availableSeats = availableSeats
         self.passengers += passengers
     }
@@ -146,7 +150,6 @@ class RideShareStatusTableViewController: UITableViewController {
     
     func setRides(rides:NSArray) {
         for ride in rides {
-            print("ridesszzz")
             let gcmId = ride["gcm_id"] as! String
             let rideId = ride["_id"] as! String
             let event = ride["event"] as! String
@@ -173,8 +176,8 @@ class RideShareStatusTableViewController: UITableViewController {
             let street = ride["location"]?!.objectForKey("street1") as! String
             let country = ride["location"]?!.objectForKey("country") as! String
             
-            let location = street + ", " + city + ", " + state + ", " + country + " " + zipcode
-            
+            let location2 = city + ", " + state + ", " + country + " " + zipcode
+
             
             for pssngr in passengers{
                 for data in passengersData {
@@ -183,7 +186,7 @@ class RideShareStatusTableViewController: UITableViewController {
                     
                         //if user is a passenger
                         if(gcm_id == data.gcmId) {
-                            let passengerObj = RideSharePassenger(rideId:rideId, passengerId:pssngr, eventId:event, departureTime:time, departureLoc: location, driverNumber:driverNumber, driverName:driverName)
+                            let passengerObj = RideSharePassenger(rideId:rideId, passengerId:pssngr, eventId:event, departureTime:time, departureLoc1: street, departureLoc2: location2, driverNumber:driverNumber, driverName:driverName)
                             passengerCollection.append(passengerObj)
                         }
                     }
@@ -192,7 +195,7 @@ class RideShareStatusTableViewController: UITableViewController {
         
             //if user is a driver
             if(gcm_id == gcmId) {
-                let rideObj = RideShareDriver(rideId:rideId, eventId:event, departureTime:time, departureLoc:location, availableSeats:availableSeats, passengers:passengersInfo)
+                let rideObj = RideShareDriver(rideId:rideId, eventId:event, departureTime:time, departureLoc1:street, departureLoc2:location2, availableSeats:availableSeats, passengers:passengersInfo)
                 driverCollection.append(rideObj)
             }
         }
@@ -254,17 +257,25 @@ class RideShareStatusTableViewController: UITableViewController {
         return nil
     }
     override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        print(headerTitles[indexPath.section])
         switch(headerTitles[indexPath.section]) {
             case kDriverHeader:
                 var alert = UIAlertView()
                 alert.delegate = self
-                alert.title = "Your Passengers"
+                alert.title = "Passengers"
                 let driver = driverCollection[indexPath.row] as RideShareDriver
             
                 if (driver.passengers.count != 0) {
                     var msg = ""
+                    
                     for index in 0...(driver.passengers.count - 1) {
-                        msg += driver.passengers[index].name + " " + driver.passengers[index].phoneNumber + "\n"
+                        
+                        var number = String(driver.passengers[index].phoneNumber)
+                        number = number.insert("(", ind: 0)
+                        number = number.insert(") ", ind: 4)
+                        number = number.insert(" - ", ind: 9)
+
+                        msg += driver.passengers[index].name + " " + number + "\n"
                     }
                     alert.message = msg
                 } else {
@@ -320,16 +331,16 @@ class RideShareStatusTableViewController: UITableViewController {
                 break
             }
         }
-        
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
         let date = dateFormatter.dateFromString(driver.departureTime)
         dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
         dateFormatter.timeStyle = .ShortStyle
-        cell.departureTime.text = "Departure Time: " + dateFormatter.stringFromDate(date!)
-        cell.departureLoc.text = driver.departureLoc
+        cell.departureTime.text = "Departure on " + dateFormatter.stringFromDate(date!)
+        cell.departureLoc1.text = driver.departureLoc1
+        cell.departureLoc2.text = driver.departureLoc2
 
-        cell.availableSeats.text = String("Available Seats: " + String(driver.availableSeats))
+        cell.availableSeats.text = String(driver.availableSeats) + " available seats left"
     }
     
     /* Callback for when a cancel button is pressed in a driver cell. Input is the row of the cell at which it's pressed */
@@ -375,20 +386,23 @@ class RideShareStatusTableViewController: UITableViewController {
         
         for index in 0...(eventIds.count - 1) {
             if(eventIds[index] == passenger.eventId) {
-                cell.driverName.text = eventNames[index]
-                cell.driverName.font = UIFont.boldSystemFontOfSize(20)
+                cell.eventName.text = eventNames[index]
+                cell.eventName.font = UIFont.boldSystemFontOfSize(20)
                 break
             }
         }
         
+        cell.driverName.text = passenger.driverName
+        
         var number = String(passenger.driverNumber)
 
         number = number.insert("(", ind: 0)
-        number = number.insert(") ", ind: 3)
-        number = number.insert(" - ", ind: 7)
+        number = number.insert(") ", ind: 4)
+        number = number.insert(" - ", ind: 9)
         cell.driverNumber.text = number
 
-        cell.departureLoc.text = passenger.departureLoc
+        cell.departureLoc1.text = passenger.departureLoc1
+        cell.departureLoc2.text = passenger.departureLoc2
         
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
@@ -435,10 +449,4 @@ class RideShareStatusTableViewController: UITableViewController {
     
    
     
-}
-
-extension String {
-    func insert(string:String,ind:Int) -> String {
-        return  String(self.characters.prefix(ind)) + string + String(self.characters.suffix(self.characters.count-ind))
-    }
 }

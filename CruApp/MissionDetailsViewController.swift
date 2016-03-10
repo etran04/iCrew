@@ -97,18 +97,16 @@ class MissionDetailsViewController: UIViewController {
             }
         }
         
-        
-        
         //for scrolling
         let screenWidth = UIScreen.mainScreen().bounds.width
         let scrollHeight = missionDescr.frame.origin.y + missionDescr.frame.height
         self.missionScrollView.contentSize = CGSizeMake(screenWidth, scrollHeight)
         
-
+        learnMoreButton.frame = CGRect(x:0, y:0 , width: learnMoreButton.frame.width, height: learnMoreButton.frame.height )
     }
     
     override func viewDidAppear(animated: Bool) {
-                learnMoreButton.frame = CGRect(x:0, y:0 , width: learnMoreButton.frame.width, height: learnMoreButton.frame.height );
+        
     }
     
     func openLink(sender:UIButton!) {

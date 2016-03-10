@@ -190,7 +190,7 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qtB-fB-qix" userLabel="Event Image">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="229"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZAx-qq-0br">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZAx-qq-0br">
                                         <rect key="frame" x="0.0" y="497" width="375" height="61"/>
                                         <color key="backgroundColor" red="0.86666666670000003" green="0.49019607840000001" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="Learn More">
@@ -202,6 +202,7 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="496" id="6nI-1A-pZj"/>
+                                    <constraint firstAttribute="bottom" secondItem="ZAx-qq-0br" secondAttribute="bottom" id="vCb-08-EDO"/>
                                 </constraints>
                             </scrollView>
                         </subviews>

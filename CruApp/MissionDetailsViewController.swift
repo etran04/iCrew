@@ -13,9 +13,10 @@ class MissionDetailsViewController: UIViewController {
     
     var mission: Mission?
 
+    @IBOutlet weak var contentView: UIView!
 
     @IBOutlet weak var learnMoreButton: UIButton!
-    @IBOutlet weak var missionScrollView: UIScrollView!
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var missionImage: UIImageView!
     @IBOutlet weak var missionTitle: UILabel!
     @IBOutlet weak var missionLeaders: UILabel!
@@ -36,6 +37,7 @@ class MissionDetailsViewController: UIViewController {
         
         if let mission = mission {
             missionTitle.text = mission.name
+            missionTitle.font = UIFont.boldSystemFontOfSize(20)
             missionDescr.text = mission.description
             missionDescr.sizeToFit()
             missionLocation.text = (mission.location?.getLocation())!
@@ -96,17 +98,13 @@ class MissionDetailsViewController: UIViewController {
                 missionImage.addSubview(imageView)
             }
         }
-        
-        //for scrolling
-        let screenWidth = UIScreen.mainScreen().bounds.width
-        let scrollHeight = missionDescr.frame.origin.y + missionDescr.frame.height
-        self.missionScrollView.contentSize = CGSizeMake(screenWidth, scrollHeight)
-        
-        learnMoreButton.frame = CGRect(x:0, y:0 , width: learnMoreButton.frame.width, height: learnMoreButton.frame.height )
     }
     
     override func viewDidAppear(animated: Bool) {
-        
+        //for scrolling
+        let screenWidth = UIScreen.mainScreen().bounds.width
+        let scrollHeight = learnMoreButton.frame.origin.y + learnMoreButton.frame.height
+        self.scrollView.contentSize = CGSizeMake(screenWidth, scrollHeight + 100)
     }
     
     func openLink(sender:UIButton!) {

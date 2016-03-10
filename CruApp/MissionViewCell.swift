@@ -20,6 +20,9 @@ class MissionViewCell: UITableViewCell {
         // Initialization code
         
         self.missionTitle.font = UIFont.boldSystemFontOfSize(20)
+        self.missionImage.clipsToBounds = true
+        self.missionImage.frame = self.missionImage.bounds
+        self.missionImage.contentMode = UIViewContentMode.ScaleAspectFill
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

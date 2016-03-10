@@ -28,6 +28,10 @@ class EventViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        self.eventImage.clipsToBounds = true
+        self.eventImage.frame = self.eventImage.bounds
+        self.eventImage.contentMode = UIViewContentMode.ScaleAspectFill
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

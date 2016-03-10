@@ -72,7 +72,8 @@ class RideShareStatusTableViewController: UITableViewController {
     var driverCollection = [RideShareDriver]()
     var passengerCollection = [RideSharePassenger]()
     var passengersData = [PassengerData]()
-    
+    var dbClient: DBClient!
+
     var tableData = [[AnyObject]]()
     
     override func viewDidLoad() {
@@ -101,14 +102,13 @@ class RideShareStatusTableViewController: UITableViewController {
         driverCollection = [RideShareDriver]()
         passengerCollection = [RideSharePassenger]()
         tableData = [[AnyObject]]()
-        
-        var dbClient: DBClient!
         dbClient = DBClient()
         dbClient.getData("passenger", dict: setPassenger)
-        dbClient.getData("ride", dict: setRides)
+        //dbClient.getData("ride", dict: setRides)
+
         
         SwiftLoader.hide()
-        
+
         self.tableView.reloadData()
     }
     
@@ -123,10 +123,12 @@ class RideShareStatusTableViewController: UITableViewController {
             let passengerObj = PassengerData(id:id, gcmId:gcmId, phoneNumber:phoneNumber, name:name)
             passengersData.append(passengerObj)
         }
+        dbClient.getData("ride", dict: setRides)
     }
     
     func setRides(rides:NSArray) {
         for ride in rides {
+            print("ridesszzz")
             let gcmId = ride["gcm_id"] as! String
             let rideId = ride["_id"] as! String
             let event = ride["event"] as! String

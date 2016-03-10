@@ -40,7 +40,7 @@ class SelectDriverTableViewController: UITableViewController {
             let time = driver["time"] as! String
             var direction = ""
         
-            if(driver["direction"] != nil) {
+            if(driver["direction"]! != nil) {
                 direction = driver["direction"] as! String
             }
         

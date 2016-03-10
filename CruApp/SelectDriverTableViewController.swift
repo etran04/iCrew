@@ -173,6 +173,7 @@ class SelectDriverTableViewController: UITableViewController {
         
         let button   = UIButton(type: UIButtonType.System) as UIButton
         button.frame = CGRectMake(50, 50, 50, 25)
+        button.frame.origin = CGPoint(x: 40, y: 100)
         button.backgroundColor = UIColor.whiteColor()
         button.setTitle("Back", forState: UIControlState.Normal)
         button.addTarget(self, action: "goBack:", forControlEvents: UIControlEvents.TouchUpInside)
@@ -183,9 +184,9 @@ class SelectDriverTableViewController: UITableViewController {
         marker.title = "Test Marker"
         marker.map = mapView
         
-        
         mapView.addSubview(button)
-        self.presentViewController(mapView, animated: <#T##Bool#>, completion: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>)
+        self.view = mapView
+
     }
     
     func goBack(sender:UIButton!)

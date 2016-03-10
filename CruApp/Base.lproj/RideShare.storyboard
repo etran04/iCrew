@@ -78,11 +78,13 @@
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gjg-09-C9G" userLabel="Cancel Button">
                                             <rect key="frame" x="342" y="8" width="25" height="25"/>
                                             <state key="normal" title="Button" image="Delete-50.png"/>
+                                            <connections>
+                                                <action selector="cancelPressed:" destination="0Iz-rM-DRl" eventType="touchUpInside" id="wrm-Q2-giT"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="cancelButton" destination="gjg-09-C9G" id="Kph-Ln-yqS"/>
                                     <outlet property="departureLoc" destination="tE6-tk-A7N" id="PS2-jT-pb0"/>
                                     <outlet property="departureTime" destination="IMN-sO-FyB" id="U58-Nj-Owi"/>
                                     <outlet property="driverName" destination="Z2j-bp-jto" id="CaM-zl-pnb"/>

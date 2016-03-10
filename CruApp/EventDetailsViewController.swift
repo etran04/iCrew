@@ -102,6 +102,10 @@ class EventDetailsViewController: UIViewController, UIPopoverPresentationControl
             googleButton.addTarget(self, action: "googleCalendarSync:",
                 forControlEvents: UIControlEvents.TouchUpInside)
         
+            let oldWidth = eventImage.frame.size.width
+            let oldHeight = eventImage.frame.size.height
+            let screenWidth = UIScreen.mainScreen().bounds.size.width
+            let newHeight = screenWidth * oldHeight / oldWidth
             
             //Load event image if available
             if (event.image != nil) {
@@ -109,23 +113,23 @@ class EventDetailsViewController: UIViewController, UIPopoverPresentationControl
                 let data = NSData(contentsOfURL: url!)
                 let image = UIImage(data: data!)
                 let imageView = UIImageView(image: image)
-                imageView.contentMode = UIViewContentMode.ScaleAspectFit
                 imageView.clipsToBounds = true
-                //eventImage.bounds.size.height = 128
-                eventImage.bounds.size.width = UIScreen.mainScreen().bounds.width
-                imageView.frame = eventImage.bounds
-                eventImage.contentMode = UIViewContentMode.ScaleAspectFit
+                eventImage.frame = eventImage.bounds
+                
+                imageView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: newHeight)
+                imageView.contentMode = UIViewContentMode.ScaleAspectFill
                 eventImage.addSubview(imageView)
+                
             } else {
                 let imageName = "Cru-Logo.png"
                 let image = UIImage(named: imageName)
                 let imageView = UIImageView(image: image)
-                imageView.contentMode = UIViewContentMode.ScaleAspectFit
+                imageView.contentMode = UIViewContentMode.ScaleAspectFill
                 imageView.clipsToBounds = true
-                //eventImage.bounds.size.height = 128
-                eventImage.bounds.size.width = UIScreen.mainScreen().bounds.width
-                imageView.frame = eventImage.bounds
-                eventImage.contentMode = UIViewContentMode.ScaleAspectFit
+                eventImage.frame = eventImage.bounds
+                
+                imageView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: newHeight)
+                imageView.contentMode = UIViewContentMode.ScaleAspectFill
                 eventImage.addSubview(imageView)
             }
             

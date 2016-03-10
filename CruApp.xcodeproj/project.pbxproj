@@ -23,6 +23,7 @@
 		078739901C86179D00D09C14 /* PhoneNumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0787398F1C86179D00D09C14 /* PhoneNumCell.swift */; };
 		078739921C8617D000D09C14 /* ScrollPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078739911C8617D000D09C14 /* ScrollPickerCell.swift */; };
 		078739941C8628CA00D09C14 /* StartTimePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078739931C8628CA00D09C14 /* StartTimePickerCell.swift */; };
+		07949D921C9177D100AA1FCD /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07949D911C9177D100AA1FCD /* MapViewController.swift */; };
 		07AF13CB1C748ACA004C28FA /* ToolsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AF13CA1C748ACA004C28FA /* ToolsTableViewController.swift */; };
 		07AF13D31C749288004C28FA /* ToolTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AF13D21C749288004C28FA /* ToolTableViewCell.swift */; };
 		07C196331C0E6AD400375B8D /* ArticlesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C196321C0E6AD400375B8D /* ArticlesTableViewController.swift */; };
@@ -255,6 +256,7 @@
 		0787398F1C86179D00D09C14 /* PhoneNumCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneNumCell.swift; sourceTree = "<group>"; };
 		078739911C8617D000D09C14 /* ScrollPickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollPickerCell.swift; sourceTree = "<group>"; };
 		078739931C8628CA00D09C14 /* StartTimePickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartTimePickerCell.swift; sourceTree = "<group>"; };
+		07949D911C9177D100AA1FCD /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		07AF13CA1C748ACA004C28FA /* ToolsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolsTableViewController.swift; sourceTree = "<group>"; };
 		07AF13D21C749288004C28FA /* ToolTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolTableViewCell.swift; sourceTree = "<group>"; };
 		07C196321C0E6AD400375B8D /* ArticlesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticlesTableViewController.swift; sourceTree = "<group>"; };
@@ -466,6 +468,7 @@
 				A487BBEE1C6353A5006F9B3C /* DriverStatusTableViewCell.swift */,
 				A4A8364A1C83D396003FBD8D /* PassengerStatusTableViewCell.swift */,
 				A441CE8F1C7F935600663057 /* RideShareStatusTableViewController.swift */,
+				07949D911C9177D100AA1FCD /* MapViewController.swift */,
 			);
 			name = RideShare;
 			sourceTree = "<group>";
@@ -1177,6 +1180,7 @@
 				A45573021C4E219A0097DE0F /* MissionDetailsViewController.swift in Sources */,
 				A45572FB1C4A176F0097DE0F /* EventDetailsViewController.swift in Sources */,
 				A441CE6F1C7634CB00663057 /* Passenger.swift in Sources */,
+				07949D921C9177D100AA1FCD /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

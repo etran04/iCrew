@@ -10,6 +10,7 @@ import UIKit
 
 class PassengerStatusTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var cardView: UIView!
     @IBOutlet weak var eventName: UILabel!
     @IBOutlet weak var driverName: UILabel!
     @IBOutlet weak var driverNumber: UILabel!
@@ -49,5 +50,21 @@ class PassengerStatusTableViewCell: UITableViewCell {
         
         let myRides = tableController as! RideShareStatusTableViewController
         myRides.cancelPassenger(indexPath!.row)
+    }
+    
+    override func layoutSubviews() {
+        self.cardSetup();
+    }
+    
+    func cardSetup() {
+        self.cardView.alpha = 1;
+        self.cardView.layer.masksToBounds = false;
+        self.cardView.layer.cornerRadius = 1;
+        self.cardView.layer.shadowOffset = CGSizeMake(-0.2, 0.2)
+        self.cardView.layer.shadowRadius = 10;
+        //let path = UIBezierPath(rect: self.cardView.bounds)
+        //self.cardView.layer.shadowPath = path.CGPath;
+        //self.cardView.layer.shadowOpacity = 0.2;
+        
     }
 }

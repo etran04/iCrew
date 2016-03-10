@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="QPd-rn-vY4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="QPd-rn-vY4">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -52,29 +52,17 @@
                                         <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3iQ-0s-IAu">
                                             <rect key="frame" x="12" y="8" width="350" height="128"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="blank_calendar.png" translatesAutoresizingMaskIntoConstraints="NO" id="TA2-Kk-zV0" userLabel="Event Image">
-                                                    <rect key="frame" x="8" y="14" width="100" height="100"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TA2-Kk-zV0" userLabel="Event Image">
+                                                    <rect key="frame" x="15" y="14" width="100" height="100"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GZc-FK-UTx" userLabel="Location">
-                                                    <rect key="frame" x="116" y="85" width="234" height="21"/>
+                                                    <rect key="frame" x="126" y="82" width="216" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.38431372549999998" green="0.37647058820000001" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Day" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b9o-dO-O8d" userLabel="Day Date">
-                                                    <rect key="frame" x="19" y="42" width="78" height="59"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Month" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FVT-ev-fam" userLabel="Month Date">
-                                                    <rect key="frame" x="19" y="21" width="78" height="21"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KlN-3k-s5R">
-                                                    <rect key="frame" x="116" y="15" width="222" height="33"/>
+                                                    <rect key="frame" x="126" y="24" width="216" height="33"/>
                                                     <attributedString key="attributedText">
                                                         <fragment content="Title">
                                                             <attributes>
@@ -87,7 +75,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Start Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BHE-65-e4p" userLabel="Start Time">
-                                                    <rect key="frame" x="116" y="62" width="226" height="21"/>
+                                                    <rect key="frame" x="126" y="57" width="216" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.86666666670000003" green="0.49019607840000001" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -106,10 +94,8 @@
                                 <inset key="separatorInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
                                 <connections>
                                     <outlet property="cardView" destination="3iQ-0s-IAu" id="LVN-TG-cwh"/>
-                                    <outlet property="eventDayDate" destination="b9o-dO-O8d" id="xhn-dE-iLp"/>
-                                    <outlet property="eventImage" destination="etK-eK-lzq" id="fcq-Cl-Xuz"/>
+                                    <outlet property="eventImage" destination="TA2-Kk-zV0" id="pFX-IW-jM3"/>
                                     <outlet property="eventLocation" destination="GZc-FK-UTx" id="F8q-3q-2lY"/>
-                                    <outlet property="eventMonthDate" destination="FVT-ev-fam" id="ixL-dK-JHk"/>
                                     <outlet property="eventName" destination="KlN-3k-s5R" id="UlH-b0-sCY"/>
                                     <outlet property="eventStartTime" destination="BHE-65-e4p" id="0Rp-tY-HyX"/>
                                     <segue destination="UuB-8l-udZ" kind="show" id="rx6-kX-JDf"/>
@@ -261,7 +247,6 @@
     </scenes>
     <resources>
         <image name="Planner-25.png" width="25" height="25"/>
-        <image name="blank_calendar.png" width="512" height="512"/>
         <image name="calendar_icon.png" width="64" height="64"/>
         <image name="fb_icon.png" width="32" height="32"/>
         <image name="google_icon.png" width="32" height="32"/>

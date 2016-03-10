@@ -13,19 +13,21 @@ struct Event {
     var name: String
     var description: String
     var image: String?
+    var imageSq: String?
     var startDate: String?
     var endDate: String?
     var location: Location?
     var url: String
     var rideShareFlag: Bool?
     
-    init(name: String, startDate:String?, endDate:String?, location:Location?, image: String?, description: String, url:String, rideShareFlag: Bool) {
+    init(name: String, startDate:String?, endDate:String?, location:Location?, image: String?, imageSq: String?, description: String, url:String, rideShareFlag: Bool) {
         self.name = name
         self.description = description
         self.startDate = startDate
         self.endDate = endDate
         self.location = location
         self.image = image
+        self.imageSq = imageSq
         self.url = url
         self.rideShareFlag = rideShareFlag
     }

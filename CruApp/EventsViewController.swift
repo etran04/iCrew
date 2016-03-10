@@ -115,11 +115,19 @@ class EventsViewController: UITableViewController, DZNEmptyDataSetDelegate, DZNE
             else {
                 image = event["image"]!!.objectForKey("secure_url") as! String!
             }
+            
+            var imageSq : String
+            if(event["imageSquare"]! == nil) {
+                imageSq = "http://res.cloudinary.com/dcyhqxvmq/image/upload/v1455219332/p33xvrfpnym61n4ycx3a.jpg"
+            }
+            else {
+                imageSq = event["imageSquare"]!!.objectForKey("secure_url") as! String!
+            }
         
             let url = event["url"] as! String
             let rideShareEnabled = event["rideSharingEnabled"] as! Bool
         
-            let eventObj = Event(name: name, startDate: startDate, endDate: endDate, location: location, image: image, description: description, url: url, rideShareFlag: rideShareEnabled)
+            let eventObj = Event(name: name, startDate: startDate, endDate: endDate, location: location, image: image, imageSq: imageSq, description: description, url: url, rideShareFlag: rideShareEnabled)
         
             eventsCollection.append(eventObj)
         }
@@ -201,26 +209,39 @@ class EventsViewController: UITableViewController, DZNEmptyDataSetDelegate, DZNE
         let event = eventsCollection[indexPath.row]
 
         cell.eventName.text = event.name
-        cell.eventLocation.text = "Where: " + (event.location?.suburb)! + ", " + (event.location?.state)!
+        
+        cell.eventName.font = UIFont.boldSystemFontOfSize(20)
 
+        cell.eventLocation.text = (event.location?.suburb)! + ", " + (event.location?.state)!
+        
+        let url = NSURL(string: event.imageSq!)
+        let data = NSData(contentsOfURL: url!)
+        let image = UIImage(data: data!)
+        let imageView = UIImageView(image: image)
+        imageView.contentMode = UIViewContentMode.ScaleAspectFit
+        imageView.clipsToBounds = true
+        cell.eventImage.bounds.size.height = 100
+        cell.eventImage.bounds.size.width = 100
+        imageView.frame = cell.eventImage.bounds
+        cell.eventImage.contentMode = UIViewContentMode.ScaleAspectFit
+        cell.eventImage.addSubview(imageView)
+        
         //date formatting
         let dateFormatter = NSDateFormatter()
         dateFormatter.locale = NSLocale(localeIdentifier: "en_US")
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
         let startDate = dateFormatter.dateFromString(event.startDate!)
         
-        //day of month formatter
-        dateFormatter.dateFormat = "d"
-        cell.eventDayDate.text = dateFormatter.stringFromDate(startDate!)
-        
-        //month formatter
-        dateFormatter.dateFormat = "MMM"
-        cell.eventMonthDate.text = dateFormatter.stringFromDate(startDate!)
+        //date formatter
+        dateFormatter.dateFormat = "MMM d, "
+        cell.eventStartTime.text = dateFormatter.stringFromDate(startDate!)
         
         //time formatter
         dateFormatter.dateFormat = "H:mm"
         dateFormatter.timeStyle = .ShortStyle
-        cell.eventStartTime.text = "Start Time: " + dateFormatter.stringFromDate(startDate!)
+        cell.eventStartTime.text = cell.eventStartTime.text! + dateFormatter.stringFromDate(startDate!)
+        
+        
         
         return cell
     }

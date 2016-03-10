@@ -60,8 +60,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GC
             }
         }
         
-        //set all labels to default font
+        // set all labels to default font
         UILabel.appearance().font = UIFont(name: "FreightSansProMedium-Regular", size: 16)
+        
+        // set all navigation bar text to be white
+        UINavigationBar.appearance().tintColor = UIColor.whiteColor()
 
         return true
     }

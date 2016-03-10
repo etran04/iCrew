@@ -65,6 +65,9 @@ class RideShareDriver {
 
 class RideShareStatusTableViewController: UITableViewController {
     
+    var eventNames = [String]()
+    var eventIds = [String]()
+    
     /* Header titles, can be changed if needed */
     let headerTitles = [kDriverHeader, kPassengerHeader]
     
@@ -103,7 +106,7 @@ class RideShareStatusTableViewController: UITableViewController {
         passengerCollection = [RideSharePassenger]()
         tableData = [[AnyObject]]()
         dbClient = DBClient()
-        dbClient.getData("passenger", dict: setPassenger)
+        dbClient.getData("event", dict: setEvents)
         //dbClient.getData("ride", dict: setRides)
 
         
@@ -112,7 +115,18 @@ class RideShareStatusTableViewController: UITableViewController {
         self.tableView.reloadData()
     }
     
-    
+    // Obtain event information from the database to an Object
+    func setEvents(events: NSArray) {
+        for event in events {
+            let name = event["name"] as! String
+            let id = event["_id"] as! String
+            self.eventNames.append(name)
+            self.eventIds.append(id)
+        }
+        dbClient.getData("passenger", dict: setPassenger)
+
+    }
+
     func setPassenger(passengers:NSArray){
         for passenger in passengers {
             let id = passenger["_id"] as! String
@@ -216,7 +230,31 @@ class RideShareStatusTableViewController: UITableViewController {
         
         return nil
     }
+    override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        switch(headerTitles[indexPath.section]) {
+            case kDriverHeader:
+                var alert = UIAlertView()
+                alert.delegate = self
+                alert.title = "Your Passengers"
+                let driver = driverCollection[indexPath.row] as RideShareDriver
+            
+                if (driver.passengers.count != 0) {
+                    var msg = ""
+                    for index in 0...(driver.passengers.count - 1) {
+                        msg += driver.passengers[index].name + " " + driver.passengers[index].phoneNumber + "\n"
+                    }
+                    alert.message = msg
+                } else {
+                    alert.message = "No passengers at this time."
+                }
+                alert.addButtonWithTitle("OK")
+                alert.show()
+                break
 
+            default:
+                break
+        }
+    }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 
@@ -252,7 +290,14 @@ class RideShareStatusTableViewController: UITableViewController {
         
         let driver = driverCollection[indexPath.row]
         
-        cell.eventName.text = driver.eventId
+        for index in 0...(eventIds.count - 1) {
+            if(eventIds[index] == driver.eventId) {
+                cell.eventName.text = eventNames[index]
+                cell.eventName.font = UIFont.boldSystemFontOfSize(20)
+                break
+            }
+        }
+        
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
         let date = dateFormatter.dateFromString(driver.departureTime)
@@ -303,8 +348,22 @@ class RideShareStatusTableViewController: UITableViewController {
         
         let passenger = passengerCollection[indexPath.row]
 
-        cell.driverName.text = "Driver's Name: " + passenger.driverName
-        cell.driverNumber.text = "Driver's Number: " + passenger.driverNumber
+        
+        for index in 0...(eventIds.count - 1) {
+            if(eventIds[index] == passenger.eventId) {
+                cell.driverName.text = eventNames[index]
+                cell.driverName.font = UIFont.boldSystemFontOfSize(20)
+                break
+            }
+        }
+        
+        var number = String(passenger.driverNumber)
+
+        number = number.insert("(", ind: 0)
+        number = number.insert(") ", ind: 3)
+        number = number.insert(" - ", ind: 7)
+        cell.driverNumber.text = number
+    
         cell.eventName.text = passenger.eventId
         
         let dateFormatter = NSDateFormatter()
@@ -312,7 +371,7 @@ class RideShareStatusTableViewController: UITableViewController {
         let date = dateFormatter.dateFromString(passenger.departureTime)
         dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
         dateFormatter.timeStyle = .ShortStyle
-        cell.departureTime.text = "Departure Time: " + dateFormatter.stringFromDate(date!)
+        cell.departureTime.text = "Departing on " + dateFormatter.stringFromDate(date!)
     
     }
     
@@ -350,4 +409,12 @@ class RideShareStatusTableViewController: UITableViewController {
         self.presentViewController(confirmDialog, animated: true, completion: nil)
     }
     
+   
+    
+}
+
+extension String {
+    func insert(string:String,ind:Int) -> String {
+        return  String(self.characters.prefix(ind)) + string + String(self.characters.suffix(self.characters.count-ind))
+    }
 }

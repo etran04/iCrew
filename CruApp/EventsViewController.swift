@@ -211,18 +211,11 @@ class EventsViewController: UITableViewController, DZNEmptyDataSetDelegate, DZNE
         cell.eventName.font = UIFont.boldSystemFontOfSize(20)
         cell.eventLocation.text = (event.location?.suburb)! + ", " + (event.location?.state)!
         
-        if (cell.eventImage.subviews.count < 1) {
-            let url = NSURL(string: event.imageSq!)
-            let data = NSData(contentsOfURL: url!)
-            let image = UIImage(data: data!)
-            let imageView = UIImageView(image: image)
-            
-            imageView.clipsToBounds = true
-            cell.eventImage.frame = cell.eventImage.bounds
-            imageView.frame = cell.eventImage.frame
-            imageView.contentMode = UIViewContentMode.ScaleAspectFill
-            cell.eventImage.addSubview(imageView)
-        }
+        let url = NSURL(string: event.imageSq!)
+        let data = NSData(contentsOfURL: url!)
+        let image = UIImage(data: data!)
+        
+        cell.eventImage.image = image
         
         //date formatting
         let dateFormatter = NSDateFormatter()

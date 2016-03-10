@@ -188,14 +188,8 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n1Y-B8-t3a" userLabel="Event Image">
-                                        <rect key="frame" x="-5" y="-8" width="386" height="159"/>
+                                        <rect key="frame" x="-6" y="-5" width="386" height="175"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HuY-Lz-jYx" userLabel="Title Label">
-                                        <rect key="frame" x="19" y="169" width="339" height="32"/>
-                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="22"/>
-                                        <color key="textColor" red="0.24313725489999999" green="0.69411764710000001" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FZK-uQ-Ald" userLabel="Location Label">
                                         <rect key="frame" x="64" y="248" width="248" height="19"/>
                                         <constraints>
@@ -204,6 +198,12 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                         <color key="textColor" red="0.0" green="0.45098039220000002" blue="0.59607843140000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HuY-Lz-jYx" userLabel="Title Label">
+                                        <rect key="frame" x="19" y="178" width="339" height="32"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="22"/>
+                                        <color key="textColor" red="0.24313725489999999" green="0.69411764710000001" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>

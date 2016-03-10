@@ -28,7 +28,6 @@ class SummerMissionsViewController: UITableViewController, DZNEmptyDataSetSource
     //TODO: move it into Mission.swift
     func setMissions(missions:NSArray) -> () {
         
-        
         for mission in missions {
             var url: String
             var leaders: String
@@ -105,16 +104,16 @@ class SummerMissionsViewController: UITableViewController, DZNEmptyDataSetSource
             let mission = missionsCollection[indexPath.row]
             cell.missionTitle.text = mission.name
             
-            if (mission.image != nil && mission.image != "" && cell.missionImage.subviews.count < 1) {
+            for view in cell.missionImage.subviews {
+                view.removeFromSuperview()
+            }
+            
+            if (mission.image != nil && mission.image != "") {
                 let url = NSURL(string: mission.image!)
                 let data = NSData(contentsOfURL: url!)
                 let image = UIImage(data: data!)
-                let imageView = UIImageView(image: image)
-                imageView.clipsToBounds = true
-                cell.missionImage.frame = cell.missionImage.bounds
-                imageView.frame = cell.missionImage.frame
-                imageView.contentMode = UIViewContentMode.ScaleAspectFill
-                cell.missionImage.addSubview(imageView)
+
+                cell.missionImage.image = image
             }
             
             //date formatting

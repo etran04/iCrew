@@ -15,14 +15,36 @@ class DriverStatusTableViewCell: UITableViewCell {
     @IBOutlet weak var departureTime: UILabel!
     @IBOutlet weak var availableSeats: UILabel!
     
+    /* Reference to the parent table view controller */
+    var tableController : UITableViewController
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
     
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        tableController = UITableViewController()
+        super.init(style: .Default, reuseIdentifier: reuseIdentifier)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        //fatalError("init(coder:) has not been implemented")
+        tableController = UITableViewController()
+        super.init(coder: aDecoder)
+    }
+    
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+    }
+    
+    @IBAction func cancelPressed(sender: UIButton) {
+        let tableView = self.superview!.superview as! UITableView
         
-        // Configure the view for the selected state
+        let buttonPosition = sender.convertPoint(CGPointZero, toView: tableView)
+        let indexPath = tableView.indexPathForRowAtPoint(buttonPosition)
+                
+        let myRides = tableController as! RideShareStatusTableViewController
+        myRides.cancelDriver(indexPath!.row)
     }
 }

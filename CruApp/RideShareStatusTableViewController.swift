@@ -261,16 +261,6 @@ class RideShareStatusTableViewController: UITableViewController {
         cell.departureTime.text = "Departure Time: " + dateFormatter.stringFromDate(date!)
         
         cell.availableSeats.text = String("Available Seats: " + String(driver.availableSeats))
-        
-//        var spacer: CGFloat = 50
-//        for pssngr in driver.passengers {
-//            var label = UILabel(frame: CGRectMake(0, 0, 200, 21))
-//            label.center = CGPointMake(160, 300 + spacer )
-//            label.textAlignment = NSTextAlignment.Center
-//            label.text = pssngr.name
-//            self.view.addSubview(label)
-//            spacer = spacer + 50
-//        }
     }
     
     /* Callback for when a cancel button is pressed in a driver cell. Input is the row of the cell at which it's pressed */
@@ -287,7 +277,7 @@ class RideShareStatusTableViewController: UITableViewController {
                 
                 var dbClient: DBClient!
                 dbClient = DBClient()
-                dbClient.postData("api/ride/dropRide", body:body)
+                dbClient.postData("ride/dropRide", body:body)
                 
                 self.driverCollection.removeAtIndex(row)
                 self.tableData = [self.driverCollection, self.passengerCollection]
@@ -339,7 +329,7 @@ class RideShareStatusTableViewController: UITableViewController {
                 let body = try NSJSONSerialization.dataWithJSONObject(params, options: NSJSONWritingOptions.PrettyPrinted)
                 var dbClient: DBClient!
                 dbClient = DBClient()
-                dbClient.postData("api/ride/dropPassenger", body:body)
+                dbClient.postData("ride/dropPassenger", body:body)
                 
                 self.passengerCollection.removeAtIndex(row)
                 self.tableData = [self.driverCollection, self.passengerCollection]

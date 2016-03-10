@@ -7,10 +7,23 @@
 //
 
 import UIKit
+import GoogleMaps
+import CoreLocation
+import AddressBookUI
 
 class SelectDriverTableViewController: UITableViewController {
     var passenger : Passenger!
     var driverCollection = [Driver]()
+    /*maps variables*/
+    var selectView: UIView?
+    var address: String = "";
+    var latitude: Double = 0.0;
+    var longitude: Double = 0.0;
+    
+    /*api keys*/
+    let baseUrl = "https://maps.googleapis.com/maps/api/geocode/json?"
+    let apikey = "AIzaSyCLsWMvLiBIEh76VETPgd6fQkeLo0LIJ7g"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,6 +36,7 @@ class SelectDriverTableViewController: UITableViewController {
         var dbClient: DBClient!
         dbClient = DBClient()
         dbClient.getData("ride", dict: setDrivers)
+        selectView = self.view
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,9 +54,19 @@ class SelectDriverTableViewController: UITableViewController {
             let time = driver["time"] as! String
             var direction = ""
         
-            if(driver["direction"] != nil) {
+            if(driver["direction"]! != nil) {
                 direction = driver["direction"] as! String
             }
+            
+            let zipcode = driver["location"]?!.objectForKey("postcode") as! String
+            let state = driver["location"]?!.objectForKey("state") as! String
+            var city = ""
+            
+            if(driver["location"]?!.objectForKey("suburb") != nil) {
+                city = driver["location"]?!.objectForKey("suburb") as! String
+            }
+            let street = driver["location"]?!.objectForKey("street1") as! String
+            let country = driver["location"]?!.objectForKey("country") as! String
         
             let dateFormatter = NSDateFormatter()
             dateFormatter.locale = NSLocale(localeIdentifier: "en_US")
@@ -52,6 +76,7 @@ class SelectDriverTableViewController: UITableViewController {
             dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss Z'"
             let passengerTime = dateFormatter.dateFromString(passenger.time)
 
+            
             if (passenger.eventId == eventId
                 && availableSeats != 0
                 && driverTime!.compare(passengerTime!) == NSComparisonResult.OrderedAscending
@@ -61,7 +86,7 @@ class SelectDriverTableViewController: UITableViewController {
                     let name = driver["driverName"] as! String
                     let driverNumber = driver["driverNumber"] as! String
             
-                    let driverObj = Driver(id: id, name: name, number : driverNumber, eventId: eventId, departureTime: time)
+                    let driverObj = Driver(id: id, name: name, number : driverNumber, eventId: eventId, departureTime: time, state: state, street: street, country: country, zipcode: zipcode, city: city)
             
                     driverCollection.append(driverObj)
             }
@@ -86,6 +111,7 @@ class SelectDriverTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 
         let cell = tableView.dequeueReusableCellWithIdentifier("SelectRideCell", forIndexPath: indexPath) as! SelectDriverTableViewCell
+        cell.tableController = self
         let driver = driverCollection[indexPath.row]
         
         let dateFormatter = NSDateFormatter()
@@ -98,6 +124,7 @@ class SelectDriverTableViewController: UITableViewController {
         cell.driverName.text = "Name: " + driver.name
         cell.driverNumber.text = "Phone Number: " + driver.number
         cell.depatureTime.text = "Departure Time: " + dateString
+        cell.location.text = "Location: " + driver.street + ", " + driver.city + ", " + driver.state + ", " + driver.country + " " + driver.zipcode
 
         return cell
     }
@@ -135,6 +162,62 @@ class SelectDriverTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
         
         
+    }
+    
+    func showMap(row: Int) {
+        let currentRide = driverCollection[row]
+        let location = currentRide.street
+        print(location);
+        forwardGeocoding(location)
+        let camera = GMSCameraPosition.cameraWithLatitude(latitude, longitude: longitude, zoom: 15)
+        let mapView = GMSMapView.mapWithFrame(CGRectZero, camera: camera)
+        mapView.settings.compassButton = true
+        mapView.settings.myLocationButton = true
+        
+        let button   = UIButton(type: UIButtonType.System) as UIButton
+        button.frame = CGRectMake(50, 50, 50, 25)
+        button.backgroundColor = UIColor.whiteColor()
+        button.setTitle("Back", forState: UIControlState.Normal)
+        button.addTarget(self, action: "goBack:", forControlEvents: UIControlEvents.TouchUpInside)
+        if !address.isEmpty {
+            forwardGeocoding(address)
+            let  position = CLLocationCoordinate2DMake(latitude, longitude)
+            let marker = GMSMarker(position: position)
+            marker.title = "Test Marker"
+            marker.map = mapView
+        }
+        
+        mapView.addSubview(button)
+        self.view = mapView
+    }
+    
+    func goBack(sender:UIButton!)
+    {
+        print("Button tapped")
+        self.view = selectView;
+    }
+    
+    func forwardGeocoding(address: String) {
+        CLGeocoder().geocodeAddressString(address, completionHandler: { (placemarks, error) in
+            if error != nil {
+                print(error)
+                return
+            }
+            if placemarks?.count > 0 {
+                let placemark = placemarks?[0]
+                let location = placemark?.location
+                let coordinate = location?.coordinate
+                print("\nlat: \(coordinate!.latitude), long: \(coordinate!.longitude)")
+                self.latitude = coordinate!.latitude
+                self.longitude = coordinate!.longitude
+                if placemark?.areasOfInterest?.count > 0 {
+                    let areaOfInterest = placemark!.areasOfInterest![0]
+                    print(areaOfInterest)
+                } else {
+                    print("No area of interest found.")
+                }
+            }
+        })
     }
 
     /*
@@ -181,5 +264,5 @@ class SelectDriverTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
 }

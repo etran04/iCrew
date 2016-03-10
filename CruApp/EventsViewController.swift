@@ -205,26 +205,17 @@ class EventsViewController: UITableViewController, DZNEmptyDataSetDelegate, DZNE
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("EventCell", forIndexPath: indexPath) as! EventViewCell
-        
         let event = eventsCollection[indexPath.row]
 
         cell.eventName.text = event.name
-        
         cell.eventName.font = UIFont.boldSystemFontOfSize(20)
-
         cell.eventLocation.text = (event.location?.suburb)! + ", " + (event.location?.state)!
         
         let url = NSURL(string: event.imageSq!)
         let data = NSData(contentsOfURL: url!)
         let image = UIImage(data: data!)
-        let imageView = UIImageView(image: image)
-        imageView.contentMode = UIViewContentMode.ScaleAspectFit
-        imageView.clipsToBounds = true
-        cell.eventImage.bounds.size.height = 100
-        cell.eventImage.bounds.size.width = 100
-        imageView.frame = cell.eventImage.bounds
-        cell.eventImage.contentMode = UIViewContentMode.ScaleAspectFit
-        cell.eventImage.addSubview(imageView)
+        
+        cell.eventImage.image = image
         
         //date formatting
         let dateFormatter = NSDateFormatter()
@@ -241,18 +232,14 @@ class EventsViewController: UITableViewController, DZNEmptyDataSetDelegate, DZNE
         dateFormatter.timeStyle = .ShortStyle
         cell.eventStartTime.text = cell.eventStartTime.text! + dateFormatter.stringFromDate(startDate!)
         
-        
-        
         return cell
     }
     
     
     // MARK: - Navigation
     
-    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
         let eventDetailViewController = segue.destinationViewController as! EventDetailsViewController
         if let selectedEventCell = sender as? EventViewCell {
             let indexPath = tableView.indexPathForCell(selectedEventCell)!
@@ -260,7 +247,7 @@ class EventsViewController: UITableViewController, DZNEmptyDataSetDelegate, DZNE
             eventDetailViewController.event = selectedEvent
         }
     }
-    
+
     
     // MARK: - DZNEmptySet Delegate methods
     
@@ -275,22 +262,4 @@ class EventsViewController: UITableViewController, DZNEmptyDataSetDelegate, DZNE
         let attrs = [NSFontAttributeName: UIFont.preferredFontForTextStyle(UIFontTextStyleBody)]
         return NSAttributedString(string: str, attributes: attrs)
     }
-    
-    //    func imageForEmptyDataSet(scrollView: UIScrollView!) -> UIImage! {
-    //        return UIImage(named: "taylor-swift")
-    //    }
-    
-    //    func buttonTitleForEmptyDataSet(scrollView: UIScrollView!, forState state: UIControlState) -> NSAttributedString! {
-    //        let str = "Placeholder for a button"
-    //        let attrs = [NSFontAttributeName: UIFont.preferredFontForTextStyle(UIFontTextStyleCallout)]
-    //        return NSAttributedString(string: str, attributes: attrs)
-    //    }
-    //
-    //    func emptyDataSetDidTapButton(scrollView: UIScrollView!) {
-    //        let ac = UIAlertController(title: "Button tapped!", message: nil, preferredStyle: .Alert)
-    //        ac.addAction(UIAlertAction(title: "Hurray", style: .Default, handler: nil))
-    //        presentViewController(ac, animated: true, completion: nil)
-    //    }
-
-    
 }

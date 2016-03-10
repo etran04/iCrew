@@ -41,7 +41,7 @@ class PassengerQuestionnaireVC: UIViewController, UITableViewDelegate, UITableVi
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         /* prepares fields to be filled for questionaire */
-        initializeChoices()
+        //initializeChoices()
 
 
         /* looks for single or multiple taps */
@@ -136,6 +136,8 @@ class PassengerQuestionnaireVC: UIViewController, UITableViewDelegate, UITableVi
             self.eventChoices.append(name)
             self.eventIds.append(id)
         }
+        /* prepares fields to be filled for questionaire */
+        initializeChoices()
     }
     
     

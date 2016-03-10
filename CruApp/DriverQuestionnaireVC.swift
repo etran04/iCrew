@@ -45,7 +45,13 @@ class DriverQuestionnaireVC: UIViewController, UITableViewDelegate, UITableViewD
     var cells = [AnyObject]()
     var locationChoices = [String]()
     var ministryCollection: [MinistryData] = []
-
+    
+    var pickupAdress: GMSPlace?
+    var zipcode: String?
+    var street: String?
+    var city: String?
+    var state: String?
+    var country: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,12 +61,13 @@ class DriverQuestionnaireVC: UIViewController, UITableViewDelegate, UITableViewD
         dbClient.getData("event", dict: setEvents)
 
         ministryCollection = UserProfile.getMinistries()
+        
     }
     
     override func viewDidAppear(animated : Bool) {
         super.viewDidAppear(animated)
         /* prepares fields to be filled for questionaire */
-        initializeScreen()
+        //initializeScreen()
 
         // looks for single or multiple taps
 //        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
@@ -161,6 +168,7 @@ class DriverQuestionnaireVC: UIViewController, UITableViewDelegate, UITableViewD
             self.eventTime.append(time)
             
         }
+        initializeScreen()
     }
     
     /* Callback for when a new radio button is clicked */
@@ -230,11 +238,22 @@ class DriverQuestionnaireVC: UIViewController, UITableViewDelegate, UITableViewD
         //TO DO - FIGURE OUT WHICH EVENT IS PICKED, AND GCM
         
         let driverName = (cells[0] as! NameFieldCell).driverFullName.text
+        print("number: " + ((cells[1] as! PhoneNumCell).driverPhoneNum.text!))
         let drivePhoneNum = parsePhoneNumber(((cells[1] as! PhoneNumCell).driverPhoneNum.text!))
         let numSeatsChoice = Int((cells[4] as! AvailNumSeatCell).stepper.value)
         
+        let location : [String: AnyObject] =
+        [
+            "postcode": zipcode!,
+            "state": state!,
+            "street1": street!,
+            "suburb": city!,
+            "country": country!
+        ]
+        
         let params : [String: AnyObject] =
         [
+            "location": location,
             "direction": rideDirection,
             "seats": numSeatsChoice,
             "driverNumber": drivePhoneNum,
@@ -350,6 +369,30 @@ extension DriverQuestionnaireVC: GMSAutocompleteViewControllerDelegate {
         print("Place address: ", place.formattedAddress)
         print("Place attributions: ", place.attributions)
         (cells[6] as! EnterLocationPlaceCell).locationLabel.text = place.formattedAddress!
+        var components = place.addressComponents
+        var streetNumber: String?
+        var streetName: String?
+        for comp in components! {
+            if(comp.type == "street_number") {
+                streetNumber = comp.name
+            }
+            else if(comp.type == "route") {
+                streetName = comp.name
+            }
+            else if(comp.type == "locality") {
+                city = comp.name
+            }
+            else if(comp.type == "administrative_area_level_1") {
+                state = comp.name
+            }
+            else if(comp.type == "country") {
+                country = comp.name
+            }
+            else if(comp.type == "postal_code") {
+                zipcode = comp.name
+            }
+        }
+        street = streetNumber! + " " + streetName!
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     

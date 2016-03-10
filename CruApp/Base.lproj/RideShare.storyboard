@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="APQ-AE-Llv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="APQ-AE-Llv">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -22,7 +22,7 @@
                         </textAttributes>
                     </navigationBar>
                     <connections>
-                        <segue destination="LbC-g2-YCA" kind="relationship" relationship="rootViewController" id="nsx-0u-ZUQ"/>
+                        <segue destination="mnm-8N-DxT" kind="relationship" relationship="rootViewController" id="Mxy-rB-9BE"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pa0-in-YLC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -42,7 +42,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="173"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0Iz-rM-DRl" id="g8f-lg-Lps">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="172"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="172.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pKg-i2-zFD" userLabel="CardView">
@@ -111,7 +111,7 @@
                                 <rect key="frame" x="0.0" y="265" width="375" height="144"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZHs-k1-rnG" id="Svb-hA-FmF">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="143"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="143.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o2S-ix-v5S">
@@ -169,15 +169,15 @@
                                     <outlet property="eventName" destination="w8S-CD-Foe" id="kHW-mx-pyn"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NoDataCell" rowHeight="200" id="KdX-uF-Qgq">
+                            <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NoDataCell" rowHeight="200" id="KdX-uF-Qgq">
                                 <rect key="frame" x="0.0" y="409" width="375" height="200"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KdX-uF-Qgq" id="ClJ-PX-IhY">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="199"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="199.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No Data Available" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VJq-56-R7W">
-                                            <rect key="frame" x="0.0" y="39" width="375" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No one at the moment!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VJq-56-R7W">
+                                            <rect key="frame" x="0.0" y="89" width="375" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -191,80 +191,22 @@
                             <outlet property="delegate" destination="mnm-8N-DxT" id="NaK-zW-pBz"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="EMb-EY-qZ4">
+                        <barButtonItem key="rightBarButtonItem" image="rideShareIcon.png" id="GgM-NF-RVo">
+                            <connections>
+                                <action selector="addButtonPressed:" destination="mnm-8N-DxT" id="TjB-GA-IhZ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <segue destination="8jq-wk-qcF" kind="show" identifier="toRiderQ" id="Ud3-tB-DZY"/>
+                        <segue destination="XGh-21-Tdj" kind="show" identifier="toDriverQ" id="KIu-hf-niJ"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hou-qO-vqo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="982.5" y="2675.5"/>
-        </scene>
-        <!--Ride Share-->
-        <scene sceneID="qCS-Mr-aM0">
-            <objects>
-                <viewController id="LbC-g2-YCA" customClass="MainRideShareVC" customModule="CruApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="MJX-P1-gzw"/>
-                        <viewControllerLayoutGuide type="bottom" id="sMb-43-pLZ"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="LAE-55-EMN">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pCH-ME-f3u" userLabel="passengerButton">
-                                <rect key="frame" x="283" y="300" width="50" height="50"/>
-                                <state key="normal" title="Button" image="Passenger-52.png"/>
-                                <connections>
-                                    <segue destination="8jq-wk-qcF" kind="show" id="UBx-bp-3my"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Phz-Wy-id6" userLabel="driverButton">
-                                <rect key="frame" x="160" y="279" width="54" height="71"/>
-                                <state key="normal" title="Button" image="Filled-Car-100.png"/>
-                                <connections>
-                                    <segue destination="XGh-21-Tdj" kind="show" id="MUA-JC-Sw1"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="driver" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FFo-xV-qlN">
-                                <rect key="frame" x="165" y="358" width="44" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="passenger" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wkx-EL-cAx">
-                                <rect key="frame" x="268" y="358" width="81" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mrG-Vi-acE">
-                                <rect key="frame" x="37" y="358" width="48" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q66-yO-yn8" userLabel="statusButton">
-                                <rect key="frame" x="36" y="300" width="50" height="50"/>
-                                <state key="normal" title="Button" image="Checked Checkbox 2-48.png"/>
-                                <connections>
-                                    <segue destination="mnm-8N-DxT" kind="show" id="iDv-Hb-25S"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Ride Share" id="vP6-Nb-uiC">
-                        <barButtonItem key="leftBarButtonItem" image="menu.png" id="WBx-pS-yL4">
-                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        </barButtonItem>
-                    </navigationItem>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <connections>
-                        <outlet property="menuButton" destination="WBx-pS-yL4" id="0YZ-17-L2u"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="OAv-jc-a1f" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1397.5" y="1809.5"/>
         </scene>
         <!--Rider Questionaire-->
         <scene sceneID="Ya0-Ac-X9b">
@@ -409,7 +351,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="155"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="baP-U1-tyi" id="GeM-z5-BZ3">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="154"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="154.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9wo-6y-6LH" userLabel="Card View">
@@ -539,9 +481,6 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qh3-4g-6re">
                                 <rect key="frame" x="172" y="517" width="30" height="30"/>
                                 <state key="normal" title="OK"/>
-                                <connections>
-                                    <segue destination="LbC-g2-YCA" kind="show" id="xsW-fa-Wnp"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Driver's Contact Information:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yqN-zJ-cLF">
                                 <rect key="frame" x="0.0" y="173" width="375" height="21"/>
@@ -815,7 +754,6 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
                         <outlet property="infoTable" destination="VBG-sP-A4d" id="kqn-Ef-hbx"/>
-                        <segue destination="LbC-g2-YCA" kind="show" identifier="finishQuestionaire" animates="NO" id="0cg-yg-gAR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Srr-N0-UzC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -825,13 +763,8 @@
     </scenes>
     <resources>
         <image name="Car-25.png" width="25" height="25"/>
-        <image name="Checked Checkbox 2-48.png" width="48" height="48"/>
         <image name="Delete-50.png" width="50" height="50"/>
         <image name="Filled-Car-100.png" width="96" height="96"/>
-        <image name="Passenger-52.png" width="52" height="52"/>
-        <image name="menu.png" width="22" height="22"/>
+        <image name="rideShareIcon.png" width="33" height="33"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="xsW-fa-Wnp"/>
-    </inferredMetricsTieBreakers>
 </document>

@@ -16,9 +16,9 @@ class SelectDriverTableViewController: UITableViewController {
     var driverCollection = [Driver]()
     /*maps variables*/
     var selectView: UIView?
-    var address: String = "";
-    var latitude: Double = 0.0;
-    var longitude: Double = 0.0;
+    var latitude: Double?
+    var longitude: Double?
+    var cityZip: String = "93405"
     
     /*api keys*/
     let baseUrl = "https://maps.googleapis.com/maps/api/geocode/json?"
@@ -81,7 +81,6 @@ class SelectDriverTableViewController: UITableViewController {
                 && availableSeats != 0
                 && driverTime!.compare(passengerTime!) == NSComparisonResult.OrderedAscending
                 && direction == passenger.direction) {
-                    print("yay")
                     let id = driver["_id"] as! String
                     let name = driver["driverName"] as! String
                     let driverNumber = driver["driverNumber"] as! String
@@ -167,28 +166,26 @@ class SelectDriverTableViewController: UITableViewController {
     func showMap(row: Int) {
         let currentRide = driverCollection[row]
         let location = currentRide.street
-        print(location);
-        forwardGeocoding(location)
-        let camera = GMSCameraPosition.cameraWithLatitude(latitude, longitude: longitude, zoom: 15)
+
+        getLatLngForZip(cityZip)
+        let camera = GMSCameraPosition.cameraWithLatitude(latitude!, longitude: longitude!, zoom: 15)
         let mapView = GMSMapView.mapWithFrame(CGRectZero, camera: camera)
-        mapView.settings.compassButton = true
-        mapView.settings.myLocationButton = true
         
         let button   = UIButton(type: UIButtonType.System) as UIButton
         button.frame = CGRectMake(50, 50, 50, 25)
         button.backgroundColor = UIColor.whiteColor()
         button.setTitle("Back", forState: UIControlState.Normal)
         button.addTarget(self, action: "goBack:", forControlEvents: UIControlEvents.TouchUpInside)
-        if !address.isEmpty {
-            forwardGeocoding(address)
-            let  position = CLLocationCoordinate2DMake(latitude, longitude)
-            let marker = GMSMarker(position: position)
-            marker.title = "Test Marker"
-            marker.map = mapView
-        }
+
+        forwardGeocoding(location)
+        let  position = CLLocationCoordinate2DMake(latitude!, longitude!)
+        let marker = GMSMarker(position: position)
+        marker.title = "Test Marker"
+        marker.map = mapView
+        
         
         mapView.addSubview(button)
-        self.view = mapView
+        self.presentViewController(mapView, animated: <#T##Bool#>, completion: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>)
     }
     
     func goBack(sender:UIButton!)
@@ -218,6 +215,21 @@ class SelectDriverTableViewController: UITableViewController {
                 }
             }
         })
+    }
+    
+    func getLatLngForZip(zipCode: String) {
+        let url = NSURL(string: "\(baseUrl)address=\(zipCode)&key=\(apikey)")
+        let data = NSData(contentsOfURL: url!)
+        let json = try! NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments) as! NSDictionary
+        if let result = json["results"] as? NSArray {
+            if let geometry = result[0]["geometry"] as? NSDictionary {
+                if let location = geometry["location"] as? NSDictionary {
+                    latitude = location["lat"] as! Double
+                    longitude = location["lng"] as! Double
+                    print("\n\(latitude), \(longitude)")
+                }
+            }
+        }
     }
 
     /*

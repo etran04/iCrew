@@ -281,7 +281,7 @@ class VideosTableViewController: UITableViewController, UISearchBarDelegate {
                         let newVideo = Video(id: desiredPlaylistItemDataDict["videoID"] as! String, title: desiredPlaylistItemDataDict["title"] as! String, summary: desiredPlaylistItemDataDict["description"] as! String)
                         
                         let temp = desiredPlaylistItemDataDict["title"] as! String
-                        if (self.filterFlag) {
+                        if self.filterFlag {
                             if temp.containsString(self.filterFor!) {
                                 self.videos.append(newVideo)
                             }
@@ -291,8 +291,23 @@ class VideosTableViewController: UITableViewController, UISearchBarDelegate {
                         }
                     }
                     
+//                    // Get the last index of videos 
+//                    let lastNdx = self.videos.count
+//                    var startReloadNdx = 0
+//                    if (lastNdx > 5) {
+//                        startReloadNdx = lastNdx - 5
+//                    }
+//                    
+//                    // Create indexPaths starting from startReloadNdx to end 
+//                    var rowArr = [NSIndexPath]()
+//                    for var i = startReloadNdx; i < lastNdx; i++ {
+//                        let indexPath = NSIndexPath(forRow: i, inSection: 0)
+//                        rowArr.append(indexPath)
+//                    }
+//                    
                     // Reload the tableview.
                     self.tableView.reloadData()
+//                    self.tableView.reloadRowsAtIndexPaths(rowArr, withRowAnimation: UITableViewRowAnimation.Top)
                     
                     // Finished loading videos, stop the indicator
                     SwiftLoader.hide()

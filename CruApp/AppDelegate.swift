@@ -60,11 +60,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GC
             }
         }
         
-        // set all labels to default font
+        // set all labels to Cru font
         UILabel.appearance().font = UIFont(name: "FreightSansProMedium-Regular", size: 16)
         
         // set all navigation bar text to be white
         UINavigationBar.appearance().tintColor = UIColor.whiteColor()
+        // set navigation bar font to Cru font
+        UINavigationBar.appearance().titleTextAttributes = [
+            NSFontAttributeName: UIFont(name: "FreightSansProMedium-Regular", size: 20)!,
+            NSForegroundColorAttributeName : UIColor.whiteColor()
+        ]
 
         return true
     }

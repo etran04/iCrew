@@ -114,7 +114,7 @@ class SidebarTableViewController: UITableViewController {
     //create the login pop up
     func loginView()
     {
-        let loginController = UIAlertController(title: "Enter Email and Password", message: "", preferredStyle: UIAlertControllerStyle.Alert)
+        let loginController = UIAlertController(title: "Login", message: "", preferredStyle: UIAlertControllerStyle.Alert)
         
         //read in username and password
         let loginAction = UIAlertAction(title: "Log In", style: UIAlertActionStyle.Default) { (action:UIAlertAction) -> Void in
@@ -177,7 +177,7 @@ class SidebarTableViewController: UITableViewController {
         
         
         loginController.addAction(loginAction)
-        loginController.addAction(forgotPasswordAction)
+        //loginController.addAction(forgotPasswordAction)
         loginController.addAction(cancelAction)
         
         self.presentViewController(loginController, animated: true, completion: nil)

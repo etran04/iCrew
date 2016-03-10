@@ -10,12 +10,13 @@ import UIKit
 
 class DriverStatusTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var departureLoc: UILabel!
     @IBOutlet weak var cardView: UIView!
     @IBOutlet weak var cancelDriver: UIButton!
     @IBOutlet weak var eventName: UILabel!
     @IBOutlet weak var departureTime: UILabel!
     @IBOutlet weak var availableSeats: UILabel!
+    @IBOutlet weak var departureLoc1: UILabel!
+    @IBOutlet weak var departureLoc2: UILabel!
     
     /* Reference to the parent table view controller */
     var tableController : UITableViewController

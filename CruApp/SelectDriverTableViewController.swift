@@ -83,8 +83,14 @@ class SelectDriverTableViewController: UITableViewController {
                 && direction == passenger.direction) {
                     let id = driver["_id"] as! String
                     let name = driver["driverName"] as! String
-                    let driverNumber = driver["driverNumber"] as! String
-            
+                    
+                    var driverNumber = driver["driverNumber"] as! String
+                    
+                    driverNumber = driverNumber.insert("(", ind: 0)
+                    driverNumber = driverNumber.insert(") ", ind: 4)
+                    driverNumber = driverNumber.insert(" - ", ind: 9)
+                    
+                    
                     let driverObj = Driver(id: id, name: name, number : driverNumber, eventId: eventId, departureTime: time, state: state, street: street, country: country, zipcode: zipcode, city: city)
             
                     driverCollection.append(driverObj)
@@ -278,4 +284,10 @@ class SelectDriverTableViewController: UITableViewController {
     }
     */
     
+}
+
+extension String {
+    func insert(string:String,ind:Int) -> String {
+        return  String(self.characters.prefix(ind)) + string + String(self.characters.suffix(self.characters.count-ind))
+    }
 }

@@ -136,7 +136,7 @@
                                 <rect key="frame" x="-4" y="64" width="383" height="603"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pYw-Le-WLq" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="383" height="603"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="383" height="1200"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZRC-jk-221" userLabel="Cost Label">
                                                 <rect key="frame" x="62" y="375" width="36" height="17"/>
@@ -223,6 +223,7 @@
                                             <constraint firstItem="zy4-HC-wIm" firstAttribute="centerX" secondItem="pYw-Le-WLq" secondAttribute="centerX" id="U1S-XZ-0zl"/>
                                             <constraint firstItem="zy4-HC-wIm" firstAttribute="top" secondItem="pYw-Le-WLq" secondAttribute="top" id="Wjl-PN-Kwv"/>
                                             <constraint firstItem="21V-YR-WIV" firstAttribute="leading" secondItem="5qG-5o-t8S" secondAttribute="leading" id="Yp9-yu-OWn"/>
+                                            <constraint firstAttribute="bottom" secondItem="hGY-6q-TBT" secondAttribute="bottom" constant="112" id="bRB-6l-p7k"/>
                                             <constraint firstAttribute="trailing" secondItem="zy4-HC-wIm" secondAttribute="trailing" id="ctl-BG-oBk"/>
                                             <constraint firstItem="u6F-Zc-yK1" firstAttribute="top" secondItem="suJ-aQ-ALq" secondAttribute="bottom" constant="8" id="d2b-zs-s5c"/>
                                             <constraint firstItem="zy4-HC-wIm" firstAttribute="leading" secondItem="pYw-Le-WLq" secondAttribute="leading" id="dN0-kZ-K6c"/>
@@ -234,7 +235,6 @@
                                             <constraint firstItem="p6g-hn-69z" firstAttribute="leading" secondItem="5qG-5o-t8S" secondAttribute="trailing" constant="10" id="kOa-eY-qlI"/>
                                             <constraint firstItem="p6g-hn-69z" firstAttribute="centerY" secondItem="5qG-5o-t8S" secondAttribute="centerY" id="l1P-3F-DIL"/>
                                             <constraint firstAttribute="bottom" secondItem="hGY-6q-TBT" secondAttribute="bottom" constant="69" id="mIA-RB-PaP"/>
-                                            <constraint firstAttribute="height" constant="603" id="nIn-gz-ZVD"/>
                                             <constraint firstItem="hGY-6q-TBT" firstAttribute="top" secondItem="ORG-wT-7gS" secondAttribute="bottom" constant="30" id="nO5-tq-8qj"/>
                                             <constraint firstItem="hGY-6q-TBT" firstAttribute="centerX" secondItem="pYw-Le-WLq" secondAttribute="centerX" id="o0x-9a-q4W"/>
                                             <constraint firstItem="suJ-aQ-ALq" firstAttribute="centerX" secondItem="pYw-Le-WLq" secondAttribute="centerX" id="qtI-TS-3Ol"/>
@@ -250,6 +250,7 @@
                                                 <exclude reference="g5s-5j-ElM"/>
                                                 <exclude reference="8f3-gj-VUi"/>
                                                 <exclude reference="hdv-1y-nMm"/>
+                                                <exclude reference="bRB-6l-p7k"/>
                                                 <exclude reference="mIA-RB-PaP"/>
                                             </mask>
                                         </variation>
@@ -260,10 +261,10 @@
                                 <constraints>
                                     <constraint firstItem="pYw-Le-WLq" firstAttribute="top" secondItem="XXD-3n-gPg" secondAttribute="top" id="QSa-1s-Mfg"/>
                                     <constraint firstAttribute="trailing" secondItem="pYw-Le-WLq" secondAttribute="trailing" id="Sg7-bS-42x"/>
-                                    <constraint firstItem="pYw-Le-WLq" firstAttribute="centerY" secondItem="XXD-3n-gPg" secondAttribute="centerY" id="V1v-i0-cwQ"/>
+                                    <constraint firstItem="pYw-Le-WLq" firstAttribute="centerY" secondItem="XXD-3n-gPg" secondAttribute="centerY" constant="298.5" id="V1v-i0-cwQ"/>
                                     <constraint firstItem="pYw-Le-WLq" firstAttribute="leading" secondItem="XXD-3n-gPg" secondAttribute="leading" id="eFU-M2-wtT"/>
                                     <constraint firstItem="pYw-Le-WLq" firstAttribute="centerX" secondItem="XXD-3n-gPg" secondAttribute="centerX" id="fLI-ka-N6O"/>
-                                    <constraint firstAttribute="bottom" secondItem="pYw-Le-WLq" secondAttribute="bottom" id="lna-x1-CC1"/>
+                                    <constraint firstAttribute="bottom" secondItem="pYw-Le-WLq" secondAttribute="bottom" constant="-597" id="lna-x1-CC1"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -279,7 +280,7 @@
                     <connections>
                         <outlet property="contentView" destination="pYw-Le-WLq" id="sLO-3Q-UFE"/>
                         <outlet property="learnMoreButton" destination="hGY-6q-TBT" id="3Qj-Eh-bbo"/>
-                        <outlet property="missionButton" destination="hGY-6q-TBT" id="Ssn-dj-3W7"/>
+                        <outlet property="missionButton" destination="hGY-6q-TBT" id="Hoe-BI-apl"/>
                         <outlet property="missionCost" destination="ZRC-jk-221" id="hO6-eK-1M5"/>
                         <outlet property="missionDate" destination="suJ-aQ-ALq" id="fUZ-Aq-m9F"/>
                         <outlet property="missionDescr" destination="ORG-wT-7gS" id="kmx-YZ-bdT"/>

@@ -21,8 +21,8 @@ class MissionDetailsViewController: UIViewController {
     @IBOutlet weak var missionTitle: UILabel!
     @IBOutlet weak var missionLeaders: UILabel!
 
-    @IBOutlet weak var missionDescr: UILabel!
     @IBOutlet weak var missionButton: UIButton!
+    @IBOutlet weak var missionDescr: UILabel!
     
     @IBOutlet weak var missionCost: UILabel!
     @IBOutlet weak var missionLocation: UILabel!

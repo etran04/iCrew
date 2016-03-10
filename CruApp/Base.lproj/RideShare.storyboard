@@ -39,7 +39,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PassengerCell" rowHeight="138" id="0Iz-rM-DRl" userLabel="PassengerCell" customClass="PassengerStatusTableViewCell" customModule="CruApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="138"/>
+                                <rect key="frame" x="0.0" y="92" width="375" height="138"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0Iz-rM-DRl" id="g8f-lg-Lps">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="137.5"/>
@@ -91,7 +91,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DriverCell" rowHeight="197" id="ZHs-k1-rnG" userLabel="DriverCell" customClass="DriverStatusTableViewCell" customModule="CruApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="166" width="375" height="197"/>
+                                <rect key="frame" x="0.0" y="230" width="375" height="197"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZHs-k1-rnG" id="Svb-hA-FmF">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="196.5"/>
@@ -124,15 +124,33 @@
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZNi-dX-DXW" userLabel="Cancel Button">
                                             <rect key="frame" x="342" y="8" width="25" height="25"/>
                                             <state key="normal" title="Button" image="Delete-50.png"/>
+                                            <connections>
+                                                <action selector="cancelPressed:" destination="ZHs-k1-rnG" eventType="touchUpInside" id="bht-ka-Qzg"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="availableSeats" destination="2jd-C5-ddJ" id="6x9-bP-zHm"/>
-                                    <outlet property="cancelDriver" destination="ZNi-dX-DXW" id="F6a-YC-EaJ"/>
                                     <outlet property="departureTime" destination="YMN-t7-Fe6" id="NCk-kU-LVj"/>
                                     <outlet property="eventName" destination="w8S-CD-Foe" id="kHW-mx-pyn"/>
                                 </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NoDataCell" rowHeight="100" id="KdX-uF-Qgq">
+                                <rect key="frame" x="0.0" y="427" width="375" height="100"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KdX-uF-Qgq" id="ClJ-PX-IhY">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No Data Available" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VJq-56-R7W">
+                                            <rect key="frame" x="0.0" y="39" width="375" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -452,7 +470,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Driver's Contact Information:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yqN-zJ-cLF">
                                 <rect key="frame" x="0.0" y="170" width="375" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -736,6 +754,6 @@
         <image name="menu.png" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="0cg-yg-gAR"/>
+        <segue reference="xsW-fa-Wnp"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -61,12 +61,13 @@ class DriverQuestionnaireVC: UIViewController, UITableViewDelegate, UITableViewD
         dbClient.getData("event", dict: setEvents)
 
         ministryCollection = UserProfile.getMinistries()
+        
     }
     
     override func viewDidAppear(animated : Bool) {
         super.viewDidAppear(animated)
         /* prepares fields to be filled for questionaire */
-        initializeScreen()
+        //initializeScreen()
 
         // looks for single or multiple taps
 //        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
@@ -167,6 +168,7 @@ class DriverQuestionnaireVC: UIViewController, UITableViewDelegate, UITableViewD
             self.eventTime.append(time)
             
         }
+        initializeScreen()
     }
     
     /* Callback for when a new radio button is clicked */
@@ -236,11 +238,22 @@ class DriverQuestionnaireVC: UIViewController, UITableViewDelegate, UITableViewD
         //TO DO - FIGURE OUT WHICH EVENT IS PICKED, AND GCM
         
         let driverName = (cells[0] as! NameFieldCell).driverFullName.text
+        print("number: " + ((cells[1] as! PhoneNumCell).driverPhoneNum.text!))
         let drivePhoneNum = parsePhoneNumber(((cells[1] as! PhoneNumCell).driverPhoneNum.text!))
         let numSeatsChoice = Int((cells[4] as! AvailNumSeatCell).stepper.value)
         
+        let location : [String: AnyObject] =
+        [
+            "postcode": zipcode!,
+            "state": state!,
+            "street1": street!,
+            "suburb": city!,
+            "country": country!
+        ]
+        
         let params : [String: AnyObject] =
         [
+            "location": location,
             "direction": rideDirection,
             "seats": numSeatsChoice,
             "driverNumber": drivePhoneNum,

@@ -115,6 +115,9 @@
                         <barButtonItem key="leftBarButtonItem" image="menu.png" id="qg4-wb-OYl"/>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="menuButton" destination="qg4-wb-OYl" id="WRM-Ah-6y7"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DYE-fo-w0o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

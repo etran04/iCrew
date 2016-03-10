@@ -1,14 +1,14 @@
 //
-//  MainInvolvedTVC.swift
+//  MainRideShareVC.swift
 //  CruApp
 //
-//  Created by Daniel Lee on 2/29/16.
+//  Created by Daniel Lee on 3/10/16.
 //  Copyright © 2016 iCrew. All rights reserved.
 //
 
 import UIKit
 
-class MainInvolvedTVC: UITableViewController {
+class MainRideShareVC: UIViewController {
 
     @IBOutlet weak var menuButton: UIBarButtonItem!
     

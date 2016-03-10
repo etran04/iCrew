@@ -749,7 +749,6 @@
                         <barButtonItem key="rightBarButtonItem" title="Submit" id="RON-SO-say">
                             <connections>
                                 <action selector="submitPressed:" destination="XGh-21-Tdj" id="hx6-lB-39U"/>
-                                <segue destination="mnm-8N-DxT" kind="show" identifier="finishQuestionaire" id="Kpd-gm-TLh"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -758,6 +757,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
                         <outlet property="infoTable" destination="VBG-sP-A4d" id="kqn-Ef-hbx"/>
+                        <segue destination="mnm-8N-DxT" kind="show" identifier="finishQuestionaire" id="ych-wR-L59"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Srr-N0-UzC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -772,6 +772,6 @@
         <image name="rideShareIcon.png" width="33" height="33"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Kpd-gm-TLh"/>
+        <segue reference="ych-wR-L59"/>
     </inferredMetricsTieBreakers>
 </document>

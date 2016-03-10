@@ -47,15 +47,16 @@ class JoinMinistryTeamTVC: UITableViewController {
             //corresponds to the parentMinistry
             for (index, _) in ministryCollection.enumerate() {
                 if (ministryCollection[index].id == ministryId) {
-                    if(ministryTeam["description"] == nil) {
-                        continue
-                    }
+//                    if(ministryTeam["description"] == nil) {
+//                        continue
+//                    }
                     
                     let teamObj = MinistryTeamData(
                         name: ministryTeam["name"] as! String,
                         description: ministryTeam["description"] as! String,
                         parentMinistry: ministryTeam["parentMinistry"] as! String,
-                        id: ministryTeam["_id"] as! String)
+                        id: ministryTeam["_id"] as! String,
+                        leaders: ministryTeam["leaders"] as! [String])
                     
                     teamCollection[index].append(teamObj)
                 }
@@ -114,7 +115,7 @@ class JoinMinistryTeamTVC: UITableViewController {
         let signupAction = UIAlertAction(title: "Sign Up", style: UIAlertActionStyle.Default) { (action:UIAlertAction) -> Void in
             
             UserProfile.addMinistryTeam(team)
-            self.performSegueWithIdentifier("MinistryTeamSuccessSeg", sender: self)
+            self.performSegueWithIdentifier("MinistryTeamSuccessSeg", sender: sender)
         }
 
 
@@ -124,5 +125,15 @@ class JoinMinistryTeamTVC: UITableViewController {
         loginController.addAction(cancelAction)
         
         self.presentViewController(loginController, animated: true, completion: nil)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        print(sender)
+        let teamSignUpVC = segue.destinationViewController as!  MinistryTeamSignUpVC
+        if let selectedTeamCell = sender as? MinistryTeamTableViewCell {
+            let indexPath = tableView.indexPathForCell(selectedTeamCell)!
+            let selectedTeam = teamCollection[indexPath.section][indexPath.row]
+            teamSignUpVC.ministryTeam = selectedTeam
+        }
     }
 }

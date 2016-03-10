@@ -262,7 +262,7 @@ class RideShareStatusTableViewController: UITableViewController {
             case kDriverHeader:
                 var alert = UIAlertView()
                 alert.delegate = self
-                alert.title = "Your Passengers"
+                alert.title = "Passengers"
                 let driver = driverCollection[indexPath.row] as RideShareDriver
             
                 if (driver.passengers.count != 0) {

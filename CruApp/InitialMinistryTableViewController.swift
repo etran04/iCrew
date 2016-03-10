@@ -53,8 +53,8 @@ class InitialMinistryTableViewController: UITableViewController {
         var dbClient: DBClient!
         dbClient = DBClient()
         dbClient.getData("ministry", dict: setMinistries)
-
         
+        self.nextButton.enabled = false
     }
     
     func setMinistries(ministries:NSArray) {

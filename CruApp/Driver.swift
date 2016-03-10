@@ -15,12 +15,22 @@ struct Driver {
     var number: String
     var eventId: String
     var departureTime: String
+    var state: String
+    var street: String
+    var country: String
+    var zipcode: String
+    var city: String
     
-    init(id: String, name: String, number: String, eventId: String, departureTime: String) {
+    init(id: String, name: String, number: String, eventId: String, departureTime: String, state: String, street: String, country: String, zipcode: String, city: String) {
         self.id = id
         self.name = name
         self.number = number
         self.eventId = eventId
         self.departureTime = departureTime
+        self.state = state
+        self.street = street
+        self.country = country
+        self.zipcode = zipcode
+        self.city = city
     }
 }

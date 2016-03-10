@@ -13,6 +13,8 @@ class SelectDriverTableViewCell: UITableViewCell {
     @IBOutlet weak var driverNumber: UILabel!
     @IBOutlet weak var driverName: UILabel!
     @IBOutlet weak var depatureTime: UILabel!
+    @IBOutlet weak var location: UILabel!
+    @IBOutlet weak var viewMapButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()

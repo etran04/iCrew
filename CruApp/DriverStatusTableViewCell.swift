@@ -10,6 +10,7 @@ import UIKit
 
 class DriverStatusTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var cardView: UIView!
     @IBOutlet weak var cancelDriver: UIButton!
     @IBOutlet weak var eventName: UILabel!
     @IBOutlet weak var departureTime: UILabel!
@@ -46,5 +47,21 @@ class DriverStatusTableViewCell: UITableViewCell {
                 
         let myRides = tableController as! RideShareStatusTableViewController
         myRides.cancelDriver(indexPath!.row)
+    }
+    
+    override func layoutSubviews() {
+        self.cardSetup();
+    }
+    
+    func cardSetup() {
+        self.cardView.alpha = 1;
+        self.cardView.layer.masksToBounds = false;
+        self.cardView.layer.cornerRadius = 1;
+        self.cardView.layer.shadowOffset = CGSizeMake(-0.2, 0.2)
+        self.cardView.layer.shadowRadius = 10;
+        //let path = UIBezierPath(rect: self.cardView.bounds)
+        //self.cardView.layer.shadowPath = path.CGPath;
+        //self.cardView.layer.shadowOpacity = 0.2;
+        
     }
 }

@@ -43,6 +43,16 @@ class SelectDriverTableViewController: UITableViewController {
             if(driver["direction"]! != nil) {
                 direction = driver["direction"] as! String
             }
+            
+            let zipcode = driver["location"]?!.objectForKey("postcode") as! String
+            let state = driver["location"]?!.objectForKey("state") as! String
+            var city = ""
+            
+            if(driver["location"]?!.objectForKey("suburb") != nil) {
+                city = driver["location"]?!.objectForKey("suburb") as! String
+            }
+            let street = driver["location"]?!.objectForKey("street1") as! String
+            let country = driver["location"]?!.objectForKey("country") as! String
         
             let dateFormatter = NSDateFormatter()
             dateFormatter.locale = NSLocale(localeIdentifier: "en_US")
@@ -52,6 +62,7 @@ class SelectDriverTableViewController: UITableViewController {
             dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss Z'"
             let passengerTime = dateFormatter.dateFromString(passenger.time)
 
+            
             if (passenger.eventId == eventId
                 && availableSeats != 0
                 && driverTime!.compare(passengerTime!) == NSComparisonResult.OrderedAscending
@@ -61,7 +72,7 @@ class SelectDriverTableViewController: UITableViewController {
                     let name = driver["driverName"] as! String
                     let driverNumber = driver["driverNumber"] as! String
             
-                    let driverObj = Driver(id: id, name: name, number : driverNumber, eventId: eventId, departureTime: time)
+                    let driverObj = Driver(id: id, name: name, number : driverNumber, eventId: eventId, departureTime: time, state: state, street: street, country: country, zipcode: zipcode, city: city)
             
                     driverCollection.append(driverObj)
             }
@@ -98,6 +109,7 @@ class SelectDriverTableViewController: UITableViewController {
         cell.driverName.text = "Name: " + driver.name
         cell.driverNumber.text = "Phone Number: " + driver.number
         cell.depatureTime.text = "Departure Time: " + dateString
+        cell.location.text = "Location: " + driver.street + ", " + driver.city + ", " + driver.state + ", " + driver.country + " " + driver.zipcode
 
         return cell
     }

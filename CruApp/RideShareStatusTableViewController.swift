@@ -429,8 +429,9 @@ class RideShareStatusTableViewController: UITableViewController {
         
         let confirmDialog = UIAlertController(title: titleMsg, message: msg, preferredStyle: .Alert)
         let okAction = UIAlertAction(title: "Confirm", style: .Default) { (UIAlertAction) -> Void in
-            let params = ["ride_id": (self.passengerCollection[row].rideId), "passenger_id": (self.passengerCollection[row].passengerId)]
-            
+            let params = ["ride_id": self.passengerCollection[row].rideId, "passenger_id": self.passengerCollection[row].passengerId]
+            print("rideId: " + self.passengerCollection[row].rideId)
+            print("passengerId: " + self.passengerCollection[row].passengerId)
             do {
                 let body = try NSJSONSerialization.dataWithJSONObject(params, options: NSJSONWritingOptions.PrettyPrinted)
                 var dbClient: DBClient!

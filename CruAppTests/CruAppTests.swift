@@ -17,6 +17,9 @@ class CruAppTests: XCTestCase {
         XCTAssertTrue(true)
     }
     
-
+    func testCreateVideo() {
+        let video = Video(id: "111", title: "test", summary: "this is a test video")
+        XCTAssertNotNil(video)
+    }
     
 }

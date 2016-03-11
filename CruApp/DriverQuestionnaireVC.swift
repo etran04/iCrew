@@ -276,7 +276,7 @@ class DriverQuestionnaireVC: UIViewController, UITableViewDelegate, UITableViewD
         successAlert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler:
             {
                 (action: UIAlertAction!) -> Void in
-                self.performSegueWithIdentifier("finishQuestionaire", sender: self)
+                self.navigationController?.popToRootViewControllerAnimated(true)
             }))
     
         self.presentViewController(successAlert, animated: true, completion: nil)

@@ -36,6 +36,7 @@ class DriverSelectedViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+        print("Hello memory warning")
     }
     
     // Obtain event information from the database to an Object
@@ -66,7 +67,6 @@ class DriverSelectedViewController: UIViewController {
         dateFormatter.timeStyle = .ShortStyle
         departureTime.text = "Departure Time: " + dateFormatter.stringFromDate(date!)
     }
-
     /*
     // MARK: - Navigation
 

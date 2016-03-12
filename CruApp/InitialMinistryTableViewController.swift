@@ -17,6 +17,7 @@ class InitialMinistryTableViewController: UITableViewController {
     
     var campusCollection: [CampusData] = []
     var ministryCollection = [[MinistryData]]()
+    var savedMinistries = [MinistryData]()
     
     var ministriesCollection = [[Ministry]]() // Remove
     var selectedIndices: [NSIndexPath] = []
@@ -53,6 +54,8 @@ class InitialMinistryTableViewController: UITableViewController {
         var dbClient: DBClient!
         dbClient = DBClient()
         dbClient.getData("ministry", dict: setMinistries)
+        
+        savedMinistries = UserProfile.getMinistries()
         
         self.nextButton.enabled = false
     }
@@ -120,6 +123,20 @@ class InitialMinistryTableViewController: UITableViewController {
         cell.infoButton.section = indexPath.section
         cell.infoButton.row = indexPath.row
         
+        var isSaved = false
+        for ministry in savedMinistries {
+            if ministry.name == cell.ministry.text {
+                isSaved = true
+                break
+            }
+        }
+        
+        if (isSaved) {
+            cell.accessoryType = UITableViewCellAccessoryType.Checkmark
+            self.nextButton.enabled = true
+            selectedIndices.append(indexPath)
+        }
+        
         return cell
     }
     
@@ -174,7 +191,7 @@ class InitialMinistryTableViewController: UITableViewController {
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         print("removing ministries")
-        UserProfile.removeObjects("Ministry")
+        UserProfile.removeAllEntities("Ministry")
         
         for index in selectedIndices {
             print(index)

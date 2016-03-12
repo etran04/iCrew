@@ -13,6 +13,7 @@ class InitialCampusTableViewController: UITableViewController {
     @IBOutlet weak var nextButton: UIBarButtonItem!
     
     var campusCollection = [CampusData]()
+    var savedCampuses = [CampusData]()
     var selectedIndices: [Int] = []
     
     override func viewDidLoad() {
@@ -22,6 +23,8 @@ class InitialCampusTableViewController: UITableViewController {
         var dbClient: DBClient!
         dbClient = DBClient()
         dbClient.getData("campus", dict: setCampuses)
+        
+        savedCampuses = UserProfile.getCampuses()
         
         //remove extra separators
         self.tableView.tableFooterView = UIView()
@@ -60,15 +63,28 @@ class InitialCampusTableViewController: UITableViewController {
         return campusCollection.count //
     }
     
-
-    
     // Uncomment
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! InitialCampusTableViewCell
 
         //set campus text
         cell.campus.text = campusCollection[indexPath.row].name;
-    
+        
+        var isSaved = false
+        for campus in savedCampuses {
+            if campus.name == cell.campus.text {
+                isSaved = true
+                break
+            }
+        }
+        
+        if (isSaved) {
+            cell.accessoryType = UITableViewCellAccessoryType.Checkmark
+            self.nextButton.enabled = true
+            selectedIndices.append(indexPath.row)
+        }
+        
+        
         return cell
     }
     
@@ -91,7 +107,7 @@ class InitialCampusTableViewController: UITableViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        UserProfile.removeObjects("Campus")
+        UserProfile.removeAllEntities("Campus")
         
         for index in selectedIndices {
             UserProfile.addCampus(campusCollection[index])

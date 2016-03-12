@@ -50,16 +50,14 @@ class EventDetailsViewController: UIViewController, UIPopoverPresentationControl
                 service.authorizer = auth
         }
         
-        
-        loadEventDetails()
-        loadButtons()
-        
         //for scrolling
         let screenWidth = UIScreen.mainScreen().bounds.width
         let scrollHeight = eventDescr.frame.origin.y + eventDescr.frame.height
         self.scrollView.contentSize = CGSizeMake(screenWidth, scrollHeight)
         self.view.layoutIfNeeded()
-
+        
+        loadEventDetails()
+        loadButtons()
     }
     
     func loadButtons() {
@@ -171,7 +169,6 @@ class EventDetailsViewController: UIViewController, UIPopoverPresentationControl
             dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
         
             let startDate = dateFormatter.dateFromString(event.startDate!)
-        
             let endDate = dateFormatter.dateFromString(event.endDate!)
         
             //checks for authorization to access calendar
@@ -180,8 +177,6 @@ class EventDetailsViewController: UIViewController, UIPopoverPresentationControl
                     eventStore.requestAccessToEntityType(.Event, completion: {
                         granted, error in self.createEvent(eventStore, title: name, startDate: startDate!, endDate: endDate!)
                     })
-                
-                
             } else {
                 createEvent(eventStore, title: name, startDate: startDate!, endDate: endDate!)
             }
@@ -193,6 +188,7 @@ class EventDetailsViewController: UIViewController, UIPopoverPresentationControl
             self.presentViewController(alertController, animated: true, completion: nil)
         }
     }
+    
     //Creates event and inserts event into local calendar
     func createEvent(eventStore: EKEventStore, title: String, startDate: NSDate, endDate: NSDate) {
         let event = EKEvent(eventStore: eventStore)
@@ -204,19 +200,17 @@ class EventDetailsViewController: UIViewController, UIPopoverPresentationControl
         do {
             try eventStore.saveEvent(event, span: .ThisEvent)
         } catch {
-            print("Bad")
+            print("Event was unable to be saved.")
         }
     }
     
     //Sync event to Google Calendar, check for authorization
     func googleCalendarSync(sender: UIButton!) {
         if let event = event{
-            
             let dateFormatter = NSDateFormatter()
             dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
             
             let startDate = dateFormatter.dateFromString(event.startDate!)
-            
             let endDate = dateFormatter.dateFromString(event.endDate!)
             
             //If needed, get user credentials to access Google account
@@ -257,6 +251,7 @@ class EventDetailsViewController: UIViewController, UIPopoverPresentationControl
             didFinishSelector: "finishInsert:finishedWithObject:error:"
         )
     }
+    
     //Error if couldn't sync to calendar
     func finishInsert(
         ticket: GTLServiceTicket,
@@ -270,7 +265,6 @@ class EventDetailsViewController: UIViewController, UIPopoverPresentationControl
             else {
                 showAlert("Synced", message: "Synced event to calendar")
             }
-            
     }
     
     // Creates the auth controller for authorizing access to Google Calendar API
@@ -296,7 +290,6 @@ class EventDetailsViewController: UIViewController, UIPopoverPresentationControl
                 showAlert("Authentication Error", message: error.localizedDescription)
                 return
             }
-            
             service.authorizer = authResult
             dismissViewControllerAnimated(true, completion: nil)
     }
@@ -308,7 +301,6 @@ class EventDetailsViewController: UIViewController, UIPopoverPresentationControl
         alert.addAction(okButton)
         presentViewController(alert, animated: true, completion: nil)
     }
-    
     
     @IBAction func rideSharePressed(sender: UIBarButtonItem) {
             //Create the AlertController
@@ -325,8 +317,6 @@ class EventDetailsViewController: UIViewController, UIPopoverPresentationControl
                 { action -> Void in
                     print("offer a ride selected")
                     self.performSegueWithIdentifier("goToOfferRide", sender: self)
-            
-        
             }
             actionSheetController.addAction(offerRideAction)
         
@@ -335,16 +325,13 @@ class EventDetailsViewController: UIViewController, UIPopoverPresentationControl
                 { action -> Void in
                     print("request a ride selected")
                     self.performSegueWithIdentifier("goToRequestRide", sender: self)
-                    
             }
             actionSheetController.addAction(requestRideAction)
         
             //We need to provide a popover sourceView when using it on iPad
-//            actionSheetController.popoverPresentationController?.sourceView = sender as UIView
+            //actionSheetController.popoverPresentationController?.sourceView = sender as UIView
         
             //Present the AlertController
             self.presentViewController(actionSheetController, animated: true, completion: nil)
-        
     }
-    
 }

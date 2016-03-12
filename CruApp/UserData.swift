@@ -13,21 +13,28 @@ struct UserData {
     var lastName: String
     var id: String
     var email: String
-    var phone: String
+    var phone: Int
+    var password: String
     
-    init(firstName: String, lastName: String, id: String, email: String, phone: String) {
-        self.firstName = firstName
-        self.lastName = lastName
-        self.id = id
-        self.email = email
-        self.phone = phone
+    init(user: AnyObject) {
+        firstName = user["name"]!!.objectForKey("first") as! String
+        lastName = user["name"]!!.objectForKey("last") as! String
+        id = user["_id"] as! String
+        email = user["email"] as! String
         
-        if (email.isEmpty) {
-            self.email = ""
+        if user["phone"]! != nil {
+            phone = user["phone"] as! Int
+        }
+        else {
+            phone = -1
         }
         
-        if (phone.isEmpty) {
-            self.phone = ""
+        if user["password"]! != nil {
+            password = user["password"] as! String
         }
+        else {
+            password = ""
+        }
+        
     }
 }

@@ -22,4 +22,14 @@ class CruAppTests: XCTestCase {
         XCTAssertNotNil(video)
     }
     
+    func testAddCampus() {
+        let campus = CampusData(name: "SLO HIGH", id: "1234")
+        var count = UserProfile.getCampuses().count
+        
+        UserProfile.addCampus(campus)
+        count = UserProfile.getCampuses().count - count
+        
+        XCTAssertTrue(count == 1)
+    }
+    
 }

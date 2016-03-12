@@ -42,17 +42,13 @@ class MinistryTeamSuccessVC: UIViewController {
             let userId = user["_id"] as! String
             
             
+            
             for leader in ministryTeam!.leaders {
                 if (leader == userId) {
                     
                     print("check")
                     
-                    let userObj = UserData(
-                        firstName: user["name"]!!.objectForKey("first") as! String,
-                        lastName: user["name"]!!.objectForKey("last") as! String,
-                        id: user["_id"] as! String,
-                        email: user["email"] as! String,
-                        phone: user["phone"] as! String)
+                    let userObj = UserData(user: leader)
                     
                     leaderCollection.append(userObj)
                     print(leaderCollection.count)
@@ -73,7 +69,7 @@ class MinistryTeamSuccessVC: UIViewController {
                 //TO DO: loop throuh for multiple leaders
                 leaderName.text = leaderCollection[0].firstName + " " + leaderCollection[0].lastName
                 leaderEmail.text = leaderCollection[0].email
-                leaderPhone.text = leaderCollection[0].phone
+                leaderPhone.text = String(leaderCollection[0].phone)
             }
             
             
@@ -85,5 +81,6 @@ class MinistryTeamSuccessVC: UIViewController {
         }
         
     }
+    
 
 }

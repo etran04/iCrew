@@ -9,10 +9,16 @@
 import Foundation
 import CoreData
 
+/**
+ * Static class that handles storing and pulling data into/from core data (cache).
+ */
 class UserProfile {
-    
+    // Handle used to grab core data model
     static let coreDataManagedContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     
+    /**
+     * Attempts to save current state of core data model.
+     */
     class func saveContext() {
         do {
             try self.coreDataManagedContext!.save()
@@ -22,8 +28,13 @@ class UserProfile {
         }
     }
     
+    /**
+     * Caches the given campus to core data and attempts to save core data state afterwards.
+     */
     class func addCampus(campus: CampusData) {
+        // Finds the data model for Campus
         let entity = NSEntityDescription.entityForName("Campus", inManagedObjectContext: coreDataManagedContext!)
+        // Creates a campus data object to cache into core data
         let campusObj = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: coreDataManagedContext!)
         
         campusObj.setValue(campus.name, forKey: "name")
@@ -32,6 +43,9 @@ class UserProfile {
         saveContext()
     }
     
+    /**
+     * Caches the given ministry to core data and attempts to save core data state afterwards.
+     */
     class func addMinistry(ministry: MinistryData) {
         let entity = NSEntityDescription.entityForName("Ministry", inManagedObjectContext: coreDataManagedContext!)
         let ministryObj = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: coreDataManagedContext!)
@@ -43,6 +57,9 @@ class UserProfile {
         saveContext()
     }
     
+    /**
+     * Caches the given ministryTeam to core data and attempts to save core data state afterwards.
+     */
     class func addMinistryTeam(ministryTeam: MinistryTeamData) {
         let entity = NSEntityDescription.entityForName("MinistryTeam", inManagedObjectContext: coreDataManagedContext!)
         let ministryTeamObj = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: coreDataManagedContext!)
@@ -54,6 +71,9 @@ class UserProfile {
         saveContext()
     }
     
+    /**
+     * Caches the given communityGroup to core data and attempts to save core data state afterwards.
+     */
     class func addCommunityGroup(communityGroup: CommunityGroupData) {
         let entity = NSEntityDescription.entityForName("CommunityGroup", inManagedObjectContext: coreDataManagedContext!)
         let communityGroupObj = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: coreDataManagedContext!)
@@ -66,15 +86,18 @@ class UserProfile {
         saveContext()
     }
     
-    class func removeObjects(entityName: String) {
+    /**
+     * Removes all entities for a given name such as Campus, Ministry, CommunityGroup, MinistryTeam.
+     */
+    class func removeAllEntities(entityName: String) {
         let fetchRequest = NSFetchRequest(entityName: entityName)
         
         do {
             let fetchedResult = try coreDataManagedContext!.executeFetchRequest(fetchRequest) as? [NSManagedObject]
             
-            if let ministries = fetchedResult {
-                for ministry in ministries {
-                    coreDataManagedContext?.deleteObject(ministry)
+            if let entities = fetchedResult {
+                for entity in entities {
+                    coreDataManagedContext?.deleteObject(entity)
                 }
             }
         }
@@ -86,6 +109,10 @@ class UserProfile {
         saveContext()
     }
     
+    /**
+     * Fetches all campus entities and stores them into a readable CampusData array that gets returned to
+     * the caller.
+     */
     class func getCampuses() -> [CampusData] {
         let fetchRequest = NSFetchRequest(entityName: "Campus")
         var results = [CampusData]()
@@ -111,6 +138,10 @@ class UserProfile {
         return results;
     }
     
+    /**
+     * Fetches all ministry entities and stores them into a readable MinistryData array that gets returned to
+     * the caller.
+     */
     class func getMinistries() -> [MinistryData] {
         let fetchRequest = NSFetchRequest(entityName: "Ministry")
         var results = [MinistryData]()
@@ -138,6 +169,10 @@ class UserProfile {
         return results;
     }
     
+    /**
+     * Fetches all ministryTeam entities and stores them into a readable MinistryTeamData array that gets returned to
+     * the caller.
+     */
     class func getMinistryTeams() -> [MinistryTeamData] {
         let fetchRequest = NSFetchRequest(entityName: "MinistryTeam")
         var results = [MinistryTeamData]()
@@ -167,6 +202,10 @@ class UserProfile {
         return results;
     }
     
+    /**
+     * Fetches all community group entities and stores them into a readable CommmunityGroupData array that gets
+     * returned to the caller.
+     */
     class func getCommunityGroups() -> [CommunityGroupData] {
         let fetchRequest = NSFetchRequest(entityName: "Ministry")
         var results = [CommunityGroupData]()

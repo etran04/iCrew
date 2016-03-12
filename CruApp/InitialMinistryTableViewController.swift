@@ -191,7 +191,7 @@ class InitialMinistryTableViewController: UITableViewController {
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         print("removing ministries")
-        UserProfile.removeObjects("Ministry")
+        UserProfile.removeAllEntities("Ministry")
         
         for index in selectedIndices {
             print(index)

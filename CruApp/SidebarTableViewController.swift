@@ -2,7 +2,7 @@
 //  SidebarTableViewController.swift
 //  CruApp
 //
-//  Created by Daniel Lee on 2/17/16.
+//  Created by Mariel Sanchez on 2/17/16.
 //  Copyright © 2016 iCrew. All rights reserved.
 //
 
@@ -10,31 +10,23 @@ import UIKit
 
 class SidebarTableViewController: UITableViewController {
 
-    @IBOutlet weak var loginCell: UITableViewCell!
-    private var userCollection = [User]()
+    let numSections = 1
+    let numRows = 3
+    let loginTitle = "Log In"
+    let invalidLoginMsg = "Invalid Login"
+    let successMsg = "Success!"
+    let okButtonLabel = "OK"
+    let cancelButtonLabel = "Cancel"
+    let emailInputPlaceholder = "Email"
+    let passwordInputPlaceholder = "Password"
     
-    //User object for emails and password
-    struct User
-    {
-        var email: String?
-        var password: String?
-        
-        init(email: String?, password: String?)
-        {
-            self.email = email
-            self.password = password
-        }
-        
-    }
+    
+    @IBOutlet weak var loginCell: UITableViewCell!
+    private var userCollection = [UserData]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //self.tableView.tableHeaderView = nil;
-        //let headerFrame = CGRect(self.tableView.tableHeaderView.frame)
-        //headerFrame.size.height      = self.myStatus.frame.size.height + offset;
-        //self.header.frame            = headerFrame;
-        //self.profile.tableHeaderView = self.header;
     }
 
     override func didReceiveMemoryWarning() {
@@ -46,21 +38,22 @@ class SidebarTableViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return numSections
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 3
+        return numRows
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 
     }
     
-    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 60.0
-    }
+//TO DO: set height for header
+//    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+//        return 60.0
+//    }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let storyboard = UIStoryboard(name: "Initial", bundle: nil)
@@ -95,10 +88,9 @@ class SidebarTableViewController: UITableViewController {
         for user in users{
         
             //only create a user if the user's password is not nil
-            if let password = user["password"]
+            if user["password"] != nil
             {
-                let email = user["email"] as! String
-                let userObj = User(email: email, password: password as? String)
+                let userObj = UserData(user: user)
                 userCollection.append(userObj)
             }
         
@@ -114,90 +106,81 @@ class SidebarTableViewController: UITableViewController {
     //create the login pop up
     func loginView()
     {
-        let loginController = UIAlertController(title: "Login", message: "", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        let loginController = UIAlertController(title: self.loginTitle, message: "", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        //both need to be false to enable login button
+        var isEmailEmpty = true
+        var isPasswordEmpty = true
         
         //read in username and password
-        let loginAction = UIAlertAction(title: "Log In", style: UIAlertActionStyle.Default) { (action:UIAlertAction) -> Void in
+        let loginAction = UIAlertAction(title: self.loginTitle, style: UIAlertActionStyle.Default) { (action:UIAlertAction) -> Void in
             
-            let loginTextField = loginController.textFields![0] as UITextField
+            let emailTextField = loginController.textFields![0] as UITextField
             let passwordTextField = loginController.textFields![1] as UITextField
             
             //determine if login info is invalid or nah
-            if(!self.isValid(loginTextField.text!, password: passwordTextField.text!)) {
-                let message = "Invalid Login"
+            if(!self.isValid(emailTextField.text!, password: passwordTextField.text!)) {
+                let message = self.invalidLoginMsg
                 loginController.title = message
                 self.presentViewController(loginController, animated: true, completion: nil)
             }
-            else
-            {
-                let successAlert = UIAlertController(title: "Success!", message: "", preferredStyle: UIAlertControllerStyle.Alert)
-                let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
+            else {
+                let successAlert = UIAlertController(title: self.successMsg, message: "", preferredStyle: UIAlertControllerStyle.Alert)
+                let okAction = UIAlertAction(title: self.okButtonLabel, style: UIAlertActionStyle.Default, handler: nil)
                 
                 successAlert.addAction(okAction)
                 self.presentViewController(successAlert, animated: true, completion: nil)
             }
         }
         loginAction.enabled = false
-
-        let forgotPasswordAction = UIAlertAction(title: "Forgot Password", style: UIAlertActionStyle.Destructive) { (action:UIAlertAction) -> Void in
-            
-            let forgotPasswordAlert = UIAlertController(title: "Contact CRU Admin", message: "", preferredStyle: UIAlertControllerStyle.Alert)
-            let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
-                
-            forgotPasswordAlert.addAction(okAction)
-            self.presentViewController(forgotPasswordAlert, animated: true, completion: nil)
-            
-        }
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: self.cancelButtonLabel, style: UIAlertActionStyle.Cancel, handler: nil)
         
-        //configure text fields
+        //configure the email text field with its label, keyboard type, and empty listener
         loginController.addTextFieldWithConfigurationHandler { (textField:UITextField!) -> Void in
             
-            textField.placeholder = "Email"
-            
+            textField.placeholder = self.emailInputPlaceholder
             textField.keyboardType = UIKeyboardType.EmailAddress
             
-            //listener for non empty tet fields
+            //listener for non empty text fields
             NSNotificationCenter.defaultCenter().addObserverForName(UITextFieldTextDidChangeNotification, object: textField, queue: NSOperationQueue.mainQueue(), usingBlock: { (notification:NSNotification!) -> Void in
                 
                 let textField = notification.object as! UITextField
-                loginAction.enabled = !textField.text!.isEmpty
+                isEmailEmpty = textField.text!.isEmpty
+                loginAction.enabled =  !isEmailEmpty && !isPasswordEmpty
                 
             })
             
         }
         
+        //configure the password text field with its label, password protection, and empty listener
         loginController.addTextFieldWithConfigurationHandler { (textField:UITextField!) -> Void in
             
-            textField.placeholder = "Password"
+            textField.placeholder = self.passwordInputPlaceholder
             textField.secureTextEntry = true
             
+            NSNotificationCenter.defaultCenter().addObserverForName(UITextFieldTextDidChangeNotification, object: textField, queue: NSOperationQueue.mainQueue(), usingBlock: { (notification:NSNotification!) -> Void in
+                
+                let textField = notification.object as! UITextField
+                isPasswordEmpty = textField.text!.isEmpty
+                loginAction.enabled =  !isEmailEmpty && !isPasswordEmpty
+                
+            })
         }
         
-        
         loginController.addAction(loginAction)
-        //loginController.addAction(forgotPasswordAction)
         loginController.addAction(cancelAction)
         
         self.presentViewController(loginController, animated: true, completion: nil)
     }
     
+    //TO DO: use correct database method to validate login
     //check if the login is valid
     func isValid(login: String, password: String) -> Bool
     {
         let ndx = userCollection.indexOf({$0.email == login})
-        
-        if(ndx != nil && userCollection[ndx!].password == password)
-        {
-            return true
-        }
-        else
-        {
-            return false
-        }
-        
-        
+        return ndx != nil && userCollection[ndx!].password == password
     }
 
     

@@ -19,10 +19,7 @@ class EventsViewController: UITableViewController, DZNEmptyDataSetDelegate, DZNE
     
     var eventsCollection = [Event]()
     var ministryCollection: [MinistryData] = []
-    
-    //    var service:EventService!
-    //    var settings:Settings!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,9 +32,7 @@ class EventsViewController: UITableViewController, DZNEmptyDataSetDelegate, DZNE
         
         ministryCollection = UserProfile.getMinistries()
         
-        var dbClient: DBClient!
-        dbClient = DBClient()
-        dbClient.getData("event", dict: setEvents)
+        DBClient.getData("event", dict: setEvents)
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -111,7 +106,7 @@ class EventsViewController: UITableViewController, DZNEmptyDataSetDelegate, DZNE
                 image = "http://res.cloudinary.com/dcyhqxvmq/image/upload/v1455219332/p33xvrfpnym61n4ycx3a.jpg"
             }
             else {
-                image = event["image"]!!.objectForKey("secure_url") as! String!
+                image = event["image"]!!.objectForKey("url") as! String!
             }
             
             var imageSq : String

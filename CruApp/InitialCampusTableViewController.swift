@@ -20,9 +20,7 @@ class InitialCampusTableViewController: UITableViewController {
         super.viewDidLoad()
 
         //set up database
-        var dbClient: DBClient!
-        dbClient = DBClient()
-        dbClient.getData("campus", dict: setCampuses)
+        DBClient.getData("campus", dict: setCampuses)
         
         savedCampuses = UserProfile.getCampuses()
         

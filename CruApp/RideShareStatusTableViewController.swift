@@ -83,8 +83,6 @@ class RideShareStatusTableViewController: UITableViewController {
     var driverCollection = [RideShareDriver]()
     var passengerCollection = [RideSharePassenger]()
     var passengersData = [PassengerData]()
-    var dbClient: DBClient!
-
     var tableData = [[AnyObject]]()
     
     override func viewDidLoad() {
@@ -113,8 +111,7 @@ class RideShareStatusTableViewController: UITableViewController {
         driverCollection = [RideShareDriver]()
         passengerCollection = [RideSharePassenger]()
         tableData = [[AnyObject]]()
-        dbClient = DBClient()
-        dbClient.getData("event", dict: setEvents)
+        DBClient.getData("event", dict: setEvents)
         //dbClient.getData("ride", dict: setRides)
 
         
@@ -131,7 +128,7 @@ class RideShareStatusTableViewController: UITableViewController {
             self.eventNames.append(name)
             self.eventIds.append(id)
         }
-        dbClient.getData("passenger", dict: setPassenger)
+        DBClient.getData("passenger", dict: setPassenger)
 
     }
 
@@ -145,7 +142,7 @@ class RideShareStatusTableViewController: UITableViewController {
             let passengerObj = PassengerData(id:id, gcmId:gcmId, phoneNumber:phoneNumber, name:name)
             passengersData.append(passengerObj)
         }
-        dbClient.getData("ride", dict: setRides)
+        DBClient.getData("ride", dict: setRides)
     }
     
     func setRides(rides:NSArray) {
@@ -356,9 +353,7 @@ class RideShareStatusTableViewController: UITableViewController {
             do {
                 let body = try NSJSONSerialization.dataWithJSONObject(params, options: NSJSONWritingOptions.PrettyPrinted)
                 
-                var dbClient: DBClient!
-                dbClient = DBClient()
-                dbClient.postData("ride/dropRide", body:body)
+                DBClient.postData("ride/dropRide", body:body)
                 
                 for pssngr in self.passengerCollection {
                     if (pssngr.rideId == self.driverCollection[row].rideId) {
@@ -434,9 +429,7 @@ class RideShareStatusTableViewController: UITableViewController {
             print("passengerId: " + self.passengerCollection[row].passengerId)
             do {
                 let body = try NSJSONSerialization.dataWithJSONObject(params, options: NSJSONWritingOptions.PrettyPrinted)
-                var dbClient: DBClient!
-                dbClient = DBClient()
-                dbClient.postData("ride/dropPassenger", body:body)
+                DBClient.postData("ride/dropPassenger", body:body)
                 
                 self.passengerCollection.removeAtIndex(row)
                 self.tableData = [self.driverCollection, self.passengerCollection]

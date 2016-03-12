@@ -57,8 +57,7 @@ class DriverQuestionnaireVC: UIViewController, UITableViewDelegate, UITableViewD
         super.viewDidLoad()
 
         /* sets up the database to pull from */
-        dbClient = DBClient()
-        dbClient.getData("event", dict: setEvents)
+        DBClient.getData("event", dict: setEvents)
 
         ministryCollection = UserProfile.getMinistries()
         
@@ -265,7 +264,7 @@ class DriverQuestionnaireVC: UIViewController, UITableViewDelegate, UITableViewD
 
         do {
             let body = try NSJSONSerialization.dataWithJSONObject(params, options: NSJSONWritingOptions.PrettyPrinted)
-            dbClient.addData("ride", body : body)
+            DBClient.addData("ride", body : body)
         } catch {
             print("Error sending data to database")
         }

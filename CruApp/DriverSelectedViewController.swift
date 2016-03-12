@@ -26,9 +26,7 @@ class DriverSelectedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        dbClient = DBClient()
-        dbClient.getData("event", dict: setEvents)
+        DBClient.getData("event", dict: setEvents)
     }
     
     

@@ -50,16 +50,54 @@ class EventDetailsViewController: UIViewController, UIPopoverPresentationControl
                 service.authorizer = auth
         }
         
+        
+        loadEventDetails()
+        loadButtons()
+        
+        //for scrolling
+        let screenWidth = UIScreen.mainScreen().bounds.width
+        let scrollHeight = eventDescr.frame.origin.y + eventDescr.frame.height
+        self.scrollView.contentSize = CGSizeMake(screenWidth, scrollHeight)
+        self.view.layoutIfNeeded()
+
+    }
+    
+    func loadButtons() {
         if let event = event {
+            // Calendar button
+            calendarButton.setTitle("", forState: UIControlState.Normal)
+            calendarButton.addTarget(self, action: "syncCalendar:", forControlEvents: UIControlEvents.TouchUpInside)
             
-            //load events
+            // Facebook button
+            if (event.url != "") {
+                facebookButton.setTitle("", forState: UIControlState.Normal)
+                facebookButton.addTarget(self, action: "openFacebook:", forControlEvents: .TouchUpInside)
+            } else {
+                facebookButton.enabled = false
+            }
+            
+            //Google calendar button
+            googleButton.setTitle("", forState: UIControlState.Normal)
+            googleButton.addTarget(self, action: "googleCalendarSync:",
+                forControlEvents: UIControlEvents.TouchUpInside)
+            
+            // check if ridesharing for event is enabled
+            if (event.rideShareFlag == false) {
+                self.rideSharebutton.enabled = false
+            }
+        }
+    }
+    
+    func loadEventDetails() {
+        if let event = event {
+            //load event data to display on screen
             eventTitle.text = event.name
             eventTitle.font = UIFont(name: "FreightSansProSemiBold-Regular", size: 22)
             eventDescr.text = event.description
             eventDescr.sizeToFit()
             eventLocation.text = (event.location?.getLocation())!
             eventLocation.sizeToFit()
-
+            
             //date formatting
             let dateFormatter = NSDateFormatter()
             dateFormatter.locale = NSLocale(localeIdentifier: "en_US")
@@ -71,84 +109,39 @@ class EventDetailsViewController: UIViewController, UIPopoverPresentationControl
             //checks if start and end date are the same
             if(dateFormatter.stringFromDate(startDate!) == dateFormatter.stringFromDate(endDate!)) {
                 eventDate.text = dateFormatter.stringFromDate(startDate!)
-                
-                dateFormatter.dateFormat = "H:mm"  //wuttt is thisssss?!
                 dateFormatter.timeStyle = .ShortStyle
-                dateFormatter.stringFromDate(startDate!)
-                
                 eventDate.text! += ", " + dateFormatter.stringFromDate(startDate!) + " – " + dateFormatter.stringFromDate(endDate!)
+                
             } else {
                 dateFormatter.dateStyle = .ShortStyle
                 dateFormatter.timeStyle = .ShortStyle
-            
                 eventDate.text = dateFormatter.stringFromDate(startDate!) + " – " + dateFormatter.stringFromDate(endDate!)
             }
             
-            //load buttons
-            // Calendar button
-            calendarButton.setTitle("", forState: UIControlState.Normal)
-            calendarButton.addTarget(self, action: "syncCalendar:", forControlEvents: UIControlEvents.TouchUpInside)
-        
-        
-            // Facebook button
-            if (event.url != "") {
-                facebookButton.setTitle("", forState: UIControlState.Normal)
-                facebookButton.addTarget(self, action: "openFacebook:", forControlEvents: .TouchUpInside)
-            } else {
-                facebookButton.enabled = false
-            }
-            
-            googleButton.setTitle("", forState: UIControlState.Normal)
-            googleButton.addTarget(self, action: "googleCalendarSync:",
-                forControlEvents: UIControlEvents.TouchUpInside)
-        
+            //image formatting
             let oldWidth = eventImage.frame.size.width
             let oldHeight = eventImage.frame.size.height
             let screenWidth = UIScreen.mainScreen().bounds.size.width
             let newHeight = screenWidth * oldHeight / oldWidth
+            let imageName = "Cru-Logo.png"
+            var image = UIImage(named: imageName)
+            
             
             //Load event image if available
             if (event.image != nil) {
                 let url = NSURL(string: event.image!)
                 let data = NSData(contentsOfURL: url!)
-                let image = UIImage(data: data!)
-                let imageView = UIImageView(image: image)
-                imageView.clipsToBounds = true
-                eventImage.frame = eventImage.bounds
-                
-                imageView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: newHeight)
-                imageView.contentMode = UIViewContentMode.ScaleAspectFill
-                eventImage.addSubview(imageView)
-                
-            } else {
-                let imageName = "Cru-Logo.png"
-                let image = UIImage(named: imageName)
-                let imageView = UIImageView(image: image)
-                imageView.contentMode = UIViewContentMode.ScaleAspectFill
-                imageView.clipsToBounds = true
-                eventImage.frame = eventImage.bounds
-                
-                imageView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: newHeight)
-                imageView.contentMode = UIViewContentMode.ScaleAspectFill
-                eventImage.addSubview(imageView)
+                image = UIImage(data: data!)
             }
             
-            // check if ridesharing for event is enabled
-            if (event.rideShareFlag == false) {
-                self.rideSharebutton.enabled = false
-            }
+            let imageView = UIImageView(image: image)
+            imageView.clipsToBounds = true
+            eventImage.frame = eventImage.bounds
+            
+            imageView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: newHeight)
+            imageView.contentMode = UIViewContentMode.ScaleAspectFill
+            eventImage.addSubview(imageView)
         }
-    
-        //iconView.layer.borderWidth = 1
-        
-        //iconView.layer.borderColor = UIColor.grayColor().CGColor
-        
-        //for scrolling
-        let screenWidth = UIScreen.mainScreen().bounds.width
-        let scrollHeight = eventDescr.frame.origin.y + eventDescr.frame.height
-        self.scrollView.contentSize = CGSizeMake(screenWidth, scrollHeight)
-        self.view.layoutIfNeeded()
-
     }
 
     override func didReceiveMemoryWarning() {
@@ -238,9 +231,8 @@ class EventDetailsViewController: UIViewController, UIPopoverPresentationControl
                 )
             }
         }
-
-        
     }
+    
     //Insert a new event to Google Calendar
     func insertGoogleEvent(title: String, startDate: NSDate, endDate: NSDate, desc: String) {
         let event = GTLCalendarEvent()
@@ -319,7 +311,6 @@ class EventDetailsViewController: UIViewController, UIPopoverPresentationControl
     
     
     @IBAction func rideSharePressed(sender: UIBarButtonItem) {
-        
             //Create the AlertController
             let actionSheetController: UIAlertController = UIAlertController(title: eventTitle.text!, message: "What would you like for the event?", preferredStyle: .ActionSheet)
         

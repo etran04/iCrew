@@ -32,4 +32,9 @@ class CruAppTests: XCTestCase {
         XCTAssertTrue(count == 1)
     }
     
+    func testCreateLocation() {
+        let location = Location(postcode: "93405", state: "California", suburb: "San Luis Obispo", street1: "1262 Murray Avenue", country: "USA")
+        XCTAssertNotNil(location)
+        
+    }
 }

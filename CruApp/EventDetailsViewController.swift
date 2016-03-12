@@ -11,6 +11,7 @@ import EventKit
 import SafariServices
 
 class EventDetailsViewController: UIViewController, UIPopoverPresentationControllerDelegate {
+    //Event detail labels
     @IBOutlet weak var eventImage: UIImageView!     //image banner for the event
     @IBOutlet weak var eventTitle: UILabel!         //title of the event
     @IBOutlet weak var eventLocation: UILabel!      //location of the event
@@ -20,7 +21,7 @@ class EventDetailsViewController: UIViewController, UIPopoverPresentationControl
     @IBOutlet weak var iconView: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
     
-    
+    //buttons linked to the event
     @IBOutlet weak var facebookButton: UIButton!    //Facebook button to the event page
     @IBOutlet weak var googleButton: UIButton!      //Google button to save event to Google calendar
     @IBOutlet weak var calendarButton: UIButton!    //calendar button to save event to native calendar
@@ -56,39 +57,19 @@ class EventDetailsViewController: UIViewController, UIPopoverPresentationControl
         self.scrollView.contentSize = CGSizeMake(screenWidth, scrollHeight)
         self.view.layoutIfNeeded()
         
+        //load details
         loadEventDetails()
         loadButtons()
     }
     
-    func loadButtons() {
-        if let event = event {
-            // Calendar button
-            calendarButton.setTitle("", forState: UIControlState.Normal)
-            calendarButton.addTarget(self, action: "syncCalendar:", forControlEvents: UIControlEvents.TouchUpInside)
-            
-            // Facebook button
-            if (event.url != "") {
-                facebookButton.setTitle("", forState: UIControlState.Normal)
-                facebookButton.addTarget(self, action: "openFacebook:", forControlEvents: .TouchUpInside)
-            } else {
-                facebookButton.enabled = false
-            }
-            
-            //Google calendar button
-            googleButton.setTitle("", forState: UIControlState.Normal)
-            googleButton.addTarget(self, action: "googleCalendarSync:",
-                forControlEvents: UIControlEvents.TouchUpInside)
-            
-            // check if ridesharing for event is enabled
-            if (event.rideShareFlag == false) {
-                self.rideSharebutton.enabled = false
-            }
-        }
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
     
+    //load event data to display on screen
     func loadEventDetails() {
         if let event = event {
-            //load event data to display on screen
             eventTitle.text = event.name
             eventTitle.font = UIFont(name: "FreightSansProSemiBold-Regular", size: 22)
             eventDescr.text = event.description
@@ -141,15 +122,36 @@ class EventDetailsViewController: UIViewController, UIPopoverPresentationControl
             eventImage.addSubview(imageView)
         }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    //set actions to the buttons
+    func loadButtons() {
+        if let event = event {
+            // Calendar button
+            calendarButton.setTitle("", forState: UIControlState.Normal)
+            calendarButton.addTarget(self, action: "syncCalendar:", forControlEvents: UIControlEvents.TouchUpInside)
+            
+            // Facebook button
+            if (event.url != "") {
+                facebookButton.setTitle("", forState: UIControlState.Normal)
+                facebookButton.addTarget(self, action: "openFacebook:", forControlEvents: .TouchUpInside)
+            } else {
+                facebookButton.enabled = false
+            }
+            
+            //Google calendar button
+            googleButton.setTitle("", forState: UIControlState.Normal)
+            googleButton.addTarget(self, action: "googleCalendarSync:",
+                forControlEvents: UIControlEvents.TouchUpInside)
+            
+            // check if ridesharing for event is enabled
+            if (event.rideShareFlag == false) {
+                self.rideSharebutton.enabled = false
+            }
+        }
     }
     
+    //opens up Facebook when Facebook button is selected
     func openFacebook(sender:UIButton!) {
-        //let event = eventsCollection[Int(sender.titleLabel!.text!)!]
-        
         if let url = NSURL(string: (event?.url)!) {
             let vc = SFSafariViewController(URL: url, entersReaderIfAvailable: true)
             presentViewController(vc, animated: false, completion: nil)

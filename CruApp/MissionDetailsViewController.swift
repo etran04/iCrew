@@ -59,7 +59,6 @@ class MissionDetailsViewController: UIViewController {
             dateFormatter.dateFormat = "MM/dd/YY"
             missionDate.text = dateFormatter.stringFromDate(startDate!) + " – " + dateFormatter.stringFromDate(endDate!)
             
-    
             // Mission link button
             if (mission.url != "") {
                 //missionButton.setTitle(, forState: UIControlState.Normal)
@@ -72,34 +71,25 @@ class MissionDetailsViewController: UIViewController {
             let oldHeight = missionImage.frame.size.height
             let screenWidth = UIScreen.mainScreen().bounds.size.width
             let newHeight = screenWidth * oldHeight / oldWidth
-            
+            let imageName = "Cru-Logo.png"
+            var image = UIImage(named: imageName)
             //Load event image is available
             if (mission.image != nil && mission.image != "") {
                 let url = NSURL(string: mission.image!)
                 let data = NSData(contentsOfURL: url!)
-                let image = UIImage(data: data!)
-                let imageView = UIImageView(image: image)
-                imageView.clipsToBounds = true
-                missionImage.frame = missionImage.bounds
-                
-                imageView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: newHeight)
-                imageView.contentMode = UIViewContentMode.ScaleAspectFill
-                print(imageView)
-                missionImage.addSubview(imageView)
-            } else {
-                let imageName = "Cru-Logo.png"
-                let image = UIImage(named: imageName)
-                let imageView = UIImageView(image: image)
-                imageView.clipsToBounds = true
-                missionImage.frame = missionImage.bounds
-                
-                imageView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: newHeight)
-                imageView.contentMode = UIViewContentMode.ScaleAspectFit
-                missionImage.addSubview(imageView)
+                image = UIImage(data: data!)
             }
+            
+            let imageView = UIImageView(image: image)
+            imageView.clipsToBounds = true
+            missionImage.frame = missionImage.bounds
+            
+            imageView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: newHeight)
+            imageView.contentMode = UIViewContentMode.ScaleAspectFill
+            print(imageView)
+            missionImage.addSubview(imageView)
         }
     }
-    
     override func viewDidAppear(animated: Bool) {
         //for scrolling
         let screenWidth = UIScreen.mainScreen().bounds.width
@@ -108,8 +98,6 @@ class MissionDetailsViewController: UIViewController {
     }
     
     func openLink(sender:UIButton!) {
-        //let event = eventsCollection[Int(sender.titleLabel!.text!)!]
-        
         if let url = NSURL(string: (mission?.url)!) {
             let vc = SFSafariViewController(URL: url, entersReaderIfAvailable: true)
             presentViewController(vc, animated: false, completion: nil)

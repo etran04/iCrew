@@ -89,7 +89,7 @@ class SelectDriverTableViewController: UITableViewController {
                     driverNumber = driverNumber.insert(" - ", ind: 9)
                     
                     
-                    let driverObj = Driver(id: id, name: name, number : driverNumber, eventId: eventId, departureTime: time, state: state, street: street, country: country, zipcode: zipcode, city: city)
+                    let driverObj = Driver(rideId: id, name: name, phoneNumber : driverNumber, eventId: eventId, departureTime: time, state: state, street: street, country: country, zipcode: zipcode, city: city)
             
                     driverCollection.append(driverObj)
             }
@@ -125,7 +125,7 @@ class SelectDriverTableViewController: UITableViewController {
         let dateString = dateFormatter.stringFromDate(date!)
         
         cell.driverName.text = "Name: " + driver.name
-        cell.driverNumber.text = "Phone Number: " + driver.number
+        cell.driverNumber.text = "Phone Number: " + driver.phoneNumber
         cell.depatureTime.text = "Departure Time: " + dateString
         cell.location.text = "Location: " + driver.street + ", " + driver.city + ", " + driver.state + ", " + driver.country + " " + driver.zipcode
 
@@ -150,7 +150,7 @@ class SelectDriverTableViewController: UITableViewController {
             
             do {
                 let body = try NSJSONSerialization.dataWithJSONObject(params, options: NSJSONWritingOptions.PrettyPrinted)
-                DBClient.addPassenger(selectedDriver.id, action: "passenger", body : body)
+                DBClient.addPassenger(selectedDriver.rideId, action: "passenger", body : body)
             } catch {
                 print("Error sending data to database")
             }

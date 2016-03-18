@@ -15,62 +15,6 @@ let kPassengerHeader = "You will be a passenger for..."
 
 let gcm_id = "1234567"
 
-//class RideSharePassenger {
-//    var rideId:String
-//    var passengerId:String
-//    var eventId:String
-//    var departureTime:String
-//    var departureLoc1:String
-//    var departureLoc2:String
-//    var driverNumber:String
-//    var driverName:String
-//    
-//    init(rideId:String, passengerId:String, eventId:String, departureTime:String, departureLoc1:String, departureLoc2:String, driverNumber:String, driverName:String) {
-//        self.rideId = rideId
-//        self.passengerId = passengerId
-//        self.eventId = eventId
-//        self.departureTime = departureTime
-//        self.departureLoc1 = departureLoc1
-//        self.departureLoc2 = departureLoc2
-//        self.driverNumber = driverNumber
-//        self.driverName = driverName
-//    }
-//}
-
-//class PassengerData {
-//    var id:String
-//    var gcmId:String
-//    var phoneNumber:String
-//    var name:String
-//    
-//    init(id:String, gcmId:String, phoneNumber:String, name:String) {
-//        self.id = id
-//        self.gcmId = gcmId
-//        self.phoneNumber = phoneNumber
-//        self.name = name
-//    }
-//}
-
-class RideShareDriver {
-    var rideId:String
-    var eventId:String
-    var departureTime:String
-    var departureLoc1:String
-    var departureLoc2:String
-    var availableSeats:Int
-    var passengers = [Passenger]()
-    
-    init(rideId:String, eventId:String, departureTime:String, departureLoc1: String, departureLoc2:String, availableSeats:Int, passengers:[Passenger]) {
-        self.rideId = rideId
-        self.eventId = eventId
-        self.departureTime = departureTime
-        self.departureLoc1 = departureLoc1
-        self.departureLoc2 = departureLoc2
-        self.availableSeats = availableSeats
-        self.passengers += passengers
-    }
-}
-
 class RideShareStatusTableViewController: UITableViewController {
     
     var eventNames = [String]()
@@ -80,7 +24,7 @@ class RideShareStatusTableViewController: UITableViewController {
     let headerTitles = [kDriverHeader, kPassengerHeader]
     
     /* Arrays used to hold each section of user's rideshare data */
-    var driverCollection = [RideShareDriver]()
+    var driverCollection = [Driver]()
     var passengerCollection = [Passenger]()
     var passengersData = [Passenger]()
     var tableData = [[AnyObject]]()
@@ -108,7 +52,7 @@ class RideShareStatusTableViewController: UITableViewController {
     }
     
     func fetchStatuses() {
-        driverCollection = [RideShareDriver]()
+        driverCollection = [Driver]()
         passengerCollection = [Passenger]()
         tableData = [[AnyObject]]()
         DBClient.getData("event", dict: setEvents)
@@ -190,7 +134,7 @@ class RideShareStatusTableViewController: UITableViewController {
         
             //if user is a driver
             if(gcm_id == gcmId) {
-                let rideObj = RideShareDriver(rideId:rideId, eventId:event, departureTime:time, departureLoc1:street, departureLoc2:location2, availableSeats:availableSeats, passengers:passengersInfo)
+                let rideObj = Driver(rideId:rideId, eventId:event, departureTime:time, departureLoc1:street, departureLoc2:location2, availableSeats:availableSeats, passengers:passengersInfo)
                 driverCollection.append(rideObj)
             }
         }
@@ -258,7 +202,7 @@ class RideShareStatusTableViewController: UITableViewController {
                 var alert = UIAlertView()
                 alert.delegate = self
                 alert.title = "Passengers"
-                let driver = driverCollection[indexPath.row] as RideShareDriver
+                let driver = driverCollection[indexPath.row] as Driver
             
                 if (driver.passengers.count != 0) {
                     var msg = ""

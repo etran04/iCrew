@@ -15,41 +15,41 @@ let kPassengerHeader = "You will be a passenger for..."
 
 let gcm_id = "1234567"
 
-class RideSharePassenger {
-    var rideId:String
-    var passengerId:String
-    var eventId:String
-    var departureTime:String
-    var departureLoc1:String
-    var departureLoc2:String
-    var driverNumber:String
-    var driverName:String
-    
-    init(rideId:String, passengerId:String, eventId:String, departureTime:String, departureLoc1:String, departureLoc2:String, driverNumber:String, driverName:String) {
-        self.rideId = rideId
-        self.passengerId = passengerId
-        self.eventId = eventId
-        self.departureTime = departureTime
-        self.departureLoc1 = departureLoc1
-        self.departureLoc2 = departureLoc2
-        self.driverNumber = driverNumber
-        self.driverName = driverName
-    }
-}
+//class RideSharePassenger {
+//    var rideId:String
+//    var passengerId:String
+//    var eventId:String
+//    var departureTime:String
+//    var departureLoc1:String
+//    var departureLoc2:String
+//    var driverNumber:String
+//    var driverName:String
+//    
+//    init(rideId:String, passengerId:String, eventId:String, departureTime:String, departureLoc1:String, departureLoc2:String, driverNumber:String, driverName:String) {
+//        self.rideId = rideId
+//        self.passengerId = passengerId
+//        self.eventId = eventId
+//        self.departureTime = departureTime
+//        self.departureLoc1 = departureLoc1
+//        self.departureLoc2 = departureLoc2
+//        self.driverNumber = driverNumber
+//        self.driverName = driverName
+//    }
+//}
 
-class PassengerData {
-    var id:String
-    var gcmId:String
-    var phoneNumber:String
-    var name:String
-    
-    init(id:String, gcmId:String, phoneNumber:String, name:String) {
-        self.id = id
-        self.gcmId = gcmId
-        self.phoneNumber = phoneNumber
-        self.name = name
-    }
-}
+//class PassengerData {
+//    var id:String
+//    var gcmId:String
+//    var phoneNumber:String
+//    var name:String
+//    
+//    init(id:String, gcmId:String, phoneNumber:String, name:String) {
+//        self.id = id
+//        self.gcmId = gcmId
+//        self.phoneNumber = phoneNumber
+//        self.name = name
+//    }
+//}
 
 class RideShareDriver {
     var rideId:String
@@ -58,9 +58,9 @@ class RideShareDriver {
     var departureLoc1:String
     var departureLoc2:String
     var availableSeats:Int
-    var passengers = [PassengerData]()
+    var passengers = [Passenger]()
     
-    init(rideId:String, eventId:String, departureTime:String, departureLoc1: String, departureLoc2:String, availableSeats:Int, passengers:[PassengerData]) {
+    init(rideId:String, eventId:String, departureTime:String, departureLoc1: String, departureLoc2:String, availableSeats:Int, passengers:[Passenger]) {
         self.rideId = rideId
         self.eventId = eventId
         self.departureTime = departureTime
@@ -81,8 +81,8 @@ class RideShareStatusTableViewController: UITableViewController {
     
     /* Arrays used to hold each section of user's rideshare data */
     var driverCollection = [RideShareDriver]()
-    var passengerCollection = [RideSharePassenger]()
-    var passengersData = [PassengerData]()
+    var passengerCollection = [Passenger]()
+    var passengersData = [Passenger]()
     var tableData = [[AnyObject]]()
     
     override func viewDidLoad() {
@@ -109,11 +109,9 @@ class RideShareStatusTableViewController: UITableViewController {
     
     func fetchStatuses() {
         driverCollection = [RideShareDriver]()
-        passengerCollection = [RideSharePassenger]()
+        passengerCollection = [Passenger]()
         tableData = [[AnyObject]]()
         DBClient.getData("event", dict: setEvents)
-        //dbClient.getData("ride", dict: setRides)
-
         
         SwiftLoader.hide()
 
@@ -134,12 +132,12 @@ class RideShareStatusTableViewController: UITableViewController {
 
     func setPassenger(passengers:NSArray){
         for passenger in passengers {
-            let id = passenger["_id"] as! String
+            let passengerId = passenger["_id"] as! String
             let gcmId = passenger["gcm_id"] as! String
             let phoneNumber = passenger["phone"] as! String
             let name = passenger["name"] as! String
         
-            let passengerObj = PassengerData(id:id, gcmId:gcmId, phoneNumber:phoneNumber, name:name)
+            let passengerObj = Passenger(passengerId:passengerId, gcmId:gcmId, phoneNumber:phoneNumber, name:name)
             passengersData.append(passengerObj)
         }
         DBClient.getData("ride", dict: setRides)
@@ -155,7 +153,7 @@ class RideShareStatusTableViewController: UITableViewController {
             let time = ride["time"] as! String
             let passengers = ride["passengers"] as! [String]
             let availableSeats = (ride["seats"] as! Int) - (passengers.count)
-            var passengersInfo = [PassengerData]()
+            var passengersInfo = [Passenger]()
             
             var direction = ""
             
@@ -178,12 +176,12 @@ class RideShareStatusTableViewController: UITableViewController {
             
             for pssngr in passengers{
                 for data in passengersData {
-                    if data.id == pssngr {
+                    if data.passengerId == pssngr {
                         passengersInfo.append(data)
                     
                         //if user is a passenger
                         if(gcm_id == data.gcmId) {
-                            let passengerObj = RideSharePassenger(rideId:rideId, passengerId:pssngr, eventId:event, departureTime:time, departureLoc1: street, departureLoc2: location2, driverNumber:driverNumber, driverName:driverName)
+                            let passengerObj = Passenger(rideId:rideId, passengerId:pssngr, eventId:event, departureTime:time, departureLoc1: street, departureLoc2: location2, driverNumber:driverNumber, driverName:driverName)
                             passengerCollection.append(passengerObj)
                         }
                     }

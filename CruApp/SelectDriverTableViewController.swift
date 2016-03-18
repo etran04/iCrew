@@ -72,7 +72,7 @@ class SelectDriverTableViewController: UITableViewController {
             let driverTime = dateFormatter.dateFromString(time)
         
             dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss Z'"
-            let passengerTime = dateFormatter.dateFromString(passenger.time)
+            let passengerTime = dateFormatter.dateFromString(passenger.departureTime)
 
             
             if (passenger.eventId == eventId

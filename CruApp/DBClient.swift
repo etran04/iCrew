@@ -97,13 +97,7 @@ class DBClient {
                 } else {
                     let jsonList = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as! NSArray
                     dispatch_async(dispatch_get_main_queue(), {
-                        
                         dict(jsonList)
-//                        for element in jsonList {
-//                            if let elem = element as? [String: AnyObject] {
-//                                dict(elem)
-//                            }
-//                        }
                     })
                 }
             } catch {

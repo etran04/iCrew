@@ -51,15 +51,15 @@ class EventDetailsViewController: UIViewController, UIPopoverPresentationControl
                 service.authorizer = auth
         }
         
+        //load details
+        loadEventDetails()
+        loadButtons()
+        
         //for scrolling
         let screenWidth = UIScreen.mainScreen().bounds.width
         let scrollHeight = eventDescr.frame.origin.y + eventDescr.frame.height
         self.scrollView.contentSize = CGSizeMake(screenWidth, scrollHeight)
         self.view.layoutIfNeeded()
-        
-        //load details
-        loadEventDetails()
-        loadButtons()
     }
     
     override func didReceiveMemoryWarning() {

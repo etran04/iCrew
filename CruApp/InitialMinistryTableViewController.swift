@@ -19,9 +19,10 @@ class InitialMinistryTableViewController: UITableViewController {
     var ministryCollection = [[MinistryData]]()
     var savedMinistries = [MinistryData]()
     
-    var ministriesCollection = [[Ministry]]() // Remove
+    var ministriesCollection = [[Ministry]]() // TODO: Remove
     var selectedIndices: [NSIndexPath] = []
     
+    //TODO: Remove
     struct Ministry {
         var name: String
         var description: String?
@@ -60,18 +61,22 @@ class InitialMinistryTableViewController: UITableViewController {
         self.nextButton.enabled = false
     }
     
+    //retreive ministries from the database that belong to the user's campuses
     func setMinistries(ministries:NSArray) {
         //self.tableView.beginUpdates()
-        print("Ministy size: " + String(ministries.count))
+
         for ministry in ministries {
             print(ministry["name"])
             
             let campus = ministry["campuses"] as! [String]
         
+            //check if campus is empty
             if (campus.first != nil) {
                 
                 let campusId = campus.first! as String
-        
+                
+                //if ministry belongs to one of the user's campuses, add it to the 
+                //ministry collection
                 for (index,_) in campusCollection.enumerate() {
                     if (campusCollection[index].id == campusId) {
                         let name = ministry["name"] as! String
@@ -89,8 +94,6 @@ class InitialMinistryTableViewController: UITableViewController {
                 }
             }
         }
-        
-        //dump(ministryCollection)
     
         self.tableView.reloadData()
     }
@@ -112,17 +115,19 @@ class InitialMinistryTableViewController: UITableViewController {
         return ministriesCollection[section].count //
     }
     
-    // Uncomment
+    // Configure table view cell
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell2", forIndexPath: indexPath) as! InitialMinistryTableViewCell
         let ministry = ministriesCollection[indexPath.section][indexPath.row]
         
         // Configure the cell...
-        
         cell.ministry.text = ministry.name
+        
+        //set info button with the cells row and section
         cell.infoButton.section = indexPath.section
         cell.infoButton.row = indexPath.row
         
+        //check if the ministry has already been saved to the user
         var isSaved = false
         for ministry in savedMinistries {
             if ministry.name == cell.ministry.text {
@@ -140,6 +145,7 @@ class InitialMinistryTableViewController: UITableViewController {
         return cell
     }
     
+    //actions when a row is selected
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print(indexPath.row)
         
@@ -156,6 +162,8 @@ class InitialMinistryTableViewController: UITableViewController {
         nextButton.enabled = selectedIndices.count > 0
     }
     
+    //outside library method
+    //show more info of the ministry when selected
     @IBAction func clickInfo(sender: AnyObject) {
         let ministry = ministriesCollection[sender.section][sender.row]
         
@@ -189,8 +197,8 @@ class InitialMinistryTableViewController: UITableViewController {
         }
     }
 
+    //save selected ministries into the user profile
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        print("removing ministries")
         UserProfile.removeAllEntities("Ministry")
         
         for index in selectedIndices {

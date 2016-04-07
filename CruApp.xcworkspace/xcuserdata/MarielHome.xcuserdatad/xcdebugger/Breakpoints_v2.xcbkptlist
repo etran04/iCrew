@@ -15,7 +15,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "179"
             endingLineNumber = "179"
-            landmarkName = "getCommunityGroups()"
+            landmarkName = "getMinistryTeams()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

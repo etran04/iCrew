@@ -26,9 +26,7 @@ class DriverSelectedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        dbClient = DBClient()
-        dbClient.getData("event", dict: setEvents)
+        DBClient.getData("event", dict: setEvents)
     }
     
     
@@ -56,7 +54,7 @@ class DriverSelectedViewController: UIViewController {
         }
         
         driverName.text = "Driver's Name: " + driver.name
-        driverNumber.text = "Driver's Phone Number: " + driver.number
+        driverNumber.text = "Driver's Phone Number: " + driver.phoneNumber
         successLabel.font = UIFont.boldSystemFontOfSize(24)
         successLabel.font = successLabel.font.fontWithSize(20)
         

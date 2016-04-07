@@ -22,9 +22,7 @@ class SummerMissionsViewController: UITableViewController, DZNEmptyDataSetSource
         tableView.emptyDataSetSource = self;
         tableView.emptyDataSetDelegate = self;
         
-        var dbClient:DBClient!
-        dbClient = DBClient()
-        dbClient.getData("summermission", dict: setMissions)
+        DBClient.getData("summermission", dict: setMissions)
     }
     
     override func viewDidAppear(animated: Bool) {

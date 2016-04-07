@@ -28,9 +28,7 @@ class ToolsTableViewController: UITableViewController {
         //self.setUpLoadSpinner()
         
         /* Sets up the database */
-        var dbClient: DBClient!
-        dbClient = DBClient()
-        dbClient.getData("resource", dict: loadArticles)
+        DBClient.getData("resource", dict: loadArticles)
         
         self.tableView.reloadData()
         

@@ -52,9 +52,7 @@ class InitialMinistryTableViewController: UITableViewController {
         ministriesCollection = Array(count: campusCollection.count, repeatedValue: [Ministry]())
         ministryCollection = Array(count: campusCollection.count, repeatedValue: [MinistryData]())
         
-        var dbClient: DBClient!
-        dbClient = DBClient()
-        dbClient.getData("ministry", dict: setMinistries)
+        DBClient.getData("ministry", dict: setMinistries)
         
         savedMinistries = UserProfile.getMinistries()
         

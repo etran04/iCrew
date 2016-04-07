@@ -33,9 +33,7 @@ class SelectDriverTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
-        var dbClient: DBClient!
-        dbClient = DBClient()
-        dbClient.getData("ride", dict: setDrivers)
+        DBClient.getData("ride", dict: setDrivers)
         selectView = self.view
     }
 
@@ -74,7 +72,7 @@ class SelectDriverTableViewController: UITableViewController {
             let driverTime = dateFormatter.dateFromString(time)
         
             dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss Z'"
-            let passengerTime = dateFormatter.dateFromString(passenger.time)
+            let passengerTime = dateFormatter.dateFromString(passenger.departureTime)
 
             
             if (passenger.eventId == eventId
@@ -91,7 +89,7 @@ class SelectDriverTableViewController: UITableViewController {
                     driverNumber = driverNumber.insert(" - ", ind: 9)
                     
                     
-                    let driverObj = Driver(id: id, name: name, number : driverNumber, eventId: eventId, departureTime: time, state: state, street: street, country: country, zipcode: zipcode, city: city)
+                    let driverObj = Driver(rideId: id, name: name, phoneNumber : driverNumber, eventId: eventId, departureTime: time, state: state, street: street, country: country, zipcode: zipcode, city: city)
             
                     driverCollection.append(driverObj)
             }
@@ -127,7 +125,7 @@ class SelectDriverTableViewController: UITableViewController {
         let dateString = dateFormatter.stringFromDate(date!)
         
         cell.driverName.text = "Name: " + driver.name
-        cell.driverNumber.text = "Phone Number: " + driver.number
+        cell.driverNumber.text = "Phone Number: " + driver.phoneNumber
         cell.depatureTime.text = "Departure Time: " + dateString
         cell.location.text = "Location: " + driver.street + ", " + driver.city + ", " + driver.state + ", " + driver.country + " " + driver.zipcode
 
@@ -152,9 +150,7 @@ class SelectDriverTableViewController: UITableViewController {
             
             do {
                 let body = try NSJSONSerialization.dataWithJSONObject(params, options: NSJSONWritingOptions.PrettyPrinted)
-                var dbClient: DBClient!
-                dbClient = DBClient()
-                dbClient.addPassenger(selectedDriver.id, action: "passenger", body : body)
+                DBClient.addPassenger(selectedDriver.rideId, action: "passenger", body : body)
             } catch {
                 print("Error sending data to database")
             }

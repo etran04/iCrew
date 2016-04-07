@@ -30,9 +30,7 @@ class PassengerQuestionnaireVC: UIViewController, UITableViewDelegate, UITableVi
         super.viewDidLoad()
         
         /* sets up the database to pull from */
-        var dbClient: DBClient!
-        dbClient = DBClient()
-        dbClient.getData("event", dict: setEvents)
+        DBClient.getData("event", dict: setEvents)
         
         ministryCollection = UserProfile.getMinistries()
 
@@ -198,8 +196,8 @@ class PassengerQuestionnaireVC: UIViewController, UITableViewDelegate, UITableVi
             eventId: eventIds[(cells[2] as! ScrollPickerCell).scrollPicker.selectedRowInComponent(0)],
             phoneNumber: String(riderPhoneNum),
             direction: rideDirection,
-            time: String((cells[3] as! DatePickerCell).datePicker.date),
-            gcmId: 1234567)
+            departureTime: String((cells[3] as! DatePickerCell).datePicker.date),
+            gcmId: "1234567")
         
         let selectDriverViewController = segue.destinationViewController as! SelectDriverTableViewController
         selectDriverViewController.passenger = passenger

@@ -94,7 +94,7 @@ class VideosTableViewController: UITableViewController, UISearchBarDelegate {
         self.refresh.attributedTitle = NSAttributedString(string: updateString)
         
         /* Set the callback for when pulled down */
-        self.refresh.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+        self.refresh.addTarget(self, action: Selector("refresh:"), forControlEvents: UIControlEvents.ValueChanged)
     }
     
     /* Populates the list of videos with videos from the Cru Database */
@@ -266,7 +266,7 @@ class VideosTableViewController: UITableViewController, UISearchBarDelegate {
                     let items: Array<Dictionary<NSObject, AnyObject>> = resultsDict["items"] as! Array<Dictionary<NSObject, AnyObject>>
                     
                     // Use a loop to go through all video items.
-                    for var i=0; i<items.count; ++i {
+                    for var i = 0; i < items.count; ++i {
                         let playlistSnippetDict = (items[i] as Dictionary<NSObject, AnyObject>)["snippet"] as! Dictionary<NSObject, AnyObject>
                         
                         // Initialize a new dictionary and store the data of interest.
@@ -280,9 +280,11 @@ class VideosTableViewController: UITableViewController, UISearchBarDelegate {
                         // Adds the video to our list of videos
                         let newVideo = Video(id: desiredPlaylistItemDataDict["videoID"] as! String, title: desiredPlaylistItemDataDict["title"] as! String, summary: desiredPlaylistItemDataDict["description"] as! String)
                         
-                        let temp = desiredPlaylistItemDataDict["title"] as! String
+                        // If title or summary has a filter keyword, and filter flag is on, filter the videos accordingly
+                        let titleHolder = desiredPlaylistItemDataDict["title"] as! String
+                        let summaryHolder = desiredPlaylistItemDataDict["description"] as! String
                         if self.filterFlag {
-                            if temp.containsString(self.filterFor!) {
+                            if titleHolder.containsString(self.filterFor!) || summaryHolder.containsString(self.filterFor!) {
                                 self.videos.append(newVideo)
                             }
                         }
@@ -291,23 +293,24 @@ class VideosTableViewController: UITableViewController, UISearchBarDelegate {
                         }
                     }
                     
-//                    // Get the last index of videos 
-//                    let lastNdx = self.videos.count
-//                    var startReloadNdx = 0
-//                    if (lastNdx > 5) {
-//                        startReloadNdx = lastNdx - 5
-//                    }
-//                    
-//                    // Create indexPaths starting from startReloadNdx to end 
-//                    var rowArr = [NSIndexPath]()
-//                    for var i = startReloadNdx; i < lastNdx; i++ {
-//                        let indexPath = NSIndexPath(forRow: i, inSection: 0)
-//                        rowArr.append(indexPath)
-//                    }
-//                    
+                    // Get the last index of videos 
+                    let lastNdx = self.videos.count
+                    var startReloadNdx = 0
+                    if (lastNdx > 5) {
+                        startReloadNdx = lastNdx - 5
+                    }
+                    
+                    // Create indexPaths starting from startReloadNdx to end 
+                    var rowArr = [NSIndexPath]()
+                    for var i = startReloadNdx; i < lastNdx; i++ {
+                        let indexPath = NSIndexPath(forRow: i, inSection: 0)
+                        rowArr.append(indexPath)
+                    }
+                    
                     // Reload the tableview.
-                    self.tableView.reloadData()
-//                    self.tableView.reloadRowsAtIndexPaths(rowArr, withRowAnimation: UITableViewRowAnimation.Top)
+                    self.tableView.beginUpdates()
+                    self.tableView.insertRowsAtIndexPaths(rowArr, withRowAnimation: UITableViewRowAnimation.Automatic)
+                    self.tableView.endUpdates()
                     
                     // Finished loading videos, stop the indicator
                     SwiftLoader.hide()

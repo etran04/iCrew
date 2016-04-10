@@ -98,7 +98,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GC
         // Connect to the GCM server to receive non-APNS notifications
         if (!connectedToGCM) {
             GCMService.sharedInstance().connectWithHandler({
-                (NSError error) -> Void in
+                (error) -> Void in
                 if error != nil {
                     print("Could not connect to GCM: \(error.localizedDescription)")
                 } else {
@@ -151,7 +151,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GC
         // topic
         if(self.registrationToken != nil && self.connectedToGCM) {
             GCMPubSub.sharedInstance().subscribeWithToken(self.registrationToken, topic: subscriptionTopic,
-                options: nil, handler: {(NSError error) -> Void in
+                options: nil, handler: {(error) -> Void in
                     if (error != nil) {
                         // Treat the "already subscribed" error more gently
                         if error.code == 3001 {

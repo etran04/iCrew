@@ -84,7 +84,6 @@
 		279327051C50A0EC00BAC73D /* InitialMinistryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279327041C50A0EC00BAC73D /* InitialMinistryTableViewController.swift */; };
 		279327071C50A10500BAC73D /* InitialMinistryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279327061C50A10500BAC73D /* InitialMinistryTableViewCell.swift */; };
 		27A8DFB71C87F0C100A8F080 /* PopUpViewController_iPhone6.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27A8DFB61C87F0C100A8F080 /* PopUpViewController_iPhone6.xib */; };
-		27CA34451C8D3A8500C694A6 /* calendar_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 27CA34431C8D3A8500C694A6 /* calendar_icon.png */; };
 		27CA34461C8D3A8500C694A6 /* google_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 27CA34441C8D3A8500C694A6 /* google_icon.png */; };
 		27CA344E1C8D3AC000C694A6 /* fb_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 27CA344D1C8D3AC000C694A6 /* fb_logo.png */; };
 		27CA34501C8D3C0200C694A6 /* fb_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 27CA344F1C8D3C0200C694A6 /* fb_icon.png */; };
@@ -838,7 +837,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0710;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = iCrew;
 				TargetAttributes = {
 					072519A31BE9694000F38F81 = {
@@ -995,7 +994,6 @@
 				27CA34461C8D3A8500C694A6 /* google_icon.png in Resources */,
 				072519AD1BE9694000F38F81 /* Main.storyboard in Resources */,
 				278C4C401C86640100EB0AC1 /* FreigSanProMedIt.otf in Resources */,
-				27CA34451C8D3A8500C694A6 /* calendar_icon.png in Resources */,
 				839F64581C0D6C1E00CAEC9E /* SummerMissions.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

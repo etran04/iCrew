@@ -109,10 +109,13 @@ class RideShareStatusTableViewController: UITableViewController {
             let state = ride["location"]?!.objectForKey("state") as! String
             var city = ""
             
-            if(ride["location"]?!.objectForKey("suburb") != nil) {
+            if(ride["location"]?!.objectForKey("sguburb") != nil) {
                 city = ride["location"]?!.objectForKey("suburb") as! String
             }
-            let street = ride["location"]?!.objectForKey("street1") as! String
+            var street = ""
+            if(ride["location"]?!.objectForKey("street1") != nil) {
+                street = ride["location"]?!.objectForKey("street1") as! String
+            }
             let country = ride["location"]?!.objectForKey("country") as! String
             
             let location2 = city + ", " + state + ", " + country + " " + zipcode

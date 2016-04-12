@@ -13,7 +13,7 @@ struct UserData {
     var lastName: String
     var id: String
     var email: String
-    var phone: Int
+    var phone: String
     var password: String
     
     init(user: AnyObject) {
@@ -23,10 +23,10 @@ struct UserData {
         email = user["email"] as! String
         
         if user["phone"]! != nil {
-            phone = user["phone"] as! Int
+            phone = user["phone"] as! String
         }
         else {
-            phone = -1
+            phone = ""
         }
         
         if user["password"]! != nil {

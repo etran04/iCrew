@@ -18,7 +18,6 @@ class DriverSelectedViewController: UIViewController {
     @IBOutlet weak var departureTime: UILabel!
     
     var driver : Driver!
-    var dbClient: DBClient!
 
     var eventNames = [String]()
     var eventIds = [String]()
@@ -26,7 +25,7 @@ class DriverSelectedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        DBClient.getData("event", dict: setEvents)
+        DBClient.getData("events", dict: setEvents)
     }
     
     

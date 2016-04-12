@@ -33,7 +33,7 @@ class SelectDriverTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
-        DBClient.getData("ride", dict: setDrivers)
+        DBClient.getData("rides", dict: setDrivers)
         selectView = self.view
     }
 
@@ -150,7 +150,7 @@ class SelectDriverTableViewController: UITableViewController {
             
             do {
                 let body = try NSJSONSerialization.dataWithJSONObject(params, options: NSJSONWritingOptions.PrettyPrinted)
-                DBClient.addPassenger(selectedDriver.rideId, action: "passenger", body : body)
+                DBClient.addPassenger(selectedDriver.rideId, action: "passengers", body : body)
             } catch {
                 print("Error sending data to database")
             }

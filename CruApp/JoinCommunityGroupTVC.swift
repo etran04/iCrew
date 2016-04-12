@@ -32,8 +32,6 @@ class JoinCommunityGroupTVC: UITableViewController {
         cgCollection = Array(count: ministryCollection.count, repeatedValue: [CommunityGroupData]())
         
         //setup database
-        var dbClient: DBClient!
-        dbClient = DBClient()
 //        dbClient.getData("communitygroup", dict: setCommunityGroups)
         
         setMockData()

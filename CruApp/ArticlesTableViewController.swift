@@ -47,7 +47,7 @@ class ArticlesTableViewController: UITableViewController {
         //self.setUpLoadSpinner()
         
         /* Sets up the database */
-        DBClient.getData("resource", dict: loadArticles)
+        DBClient.getData("resources", dict: loadArticles)
         
         self.tableView.reloadData()
         

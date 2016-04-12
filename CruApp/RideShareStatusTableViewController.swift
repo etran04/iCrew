@@ -55,7 +55,7 @@ class RideShareStatusTableViewController: UITableViewController {
         driverCollection = [Driver]()
         passengerCollection = [Passenger]()
         tableData = [[AnyObject]]()
-        DBClient.getData("event", dict: setEvents)
+        DBClient.getData("events", dict: setEvents)
         
         SwiftLoader.hide()
 
@@ -70,7 +70,7 @@ class RideShareStatusTableViewController: UITableViewController {
             self.eventNames.append(name)
             self.eventIds.append(id)
         }
-        DBClient.getData("passenger", dict: setPassenger)
+        DBClient.getData("passengers", dict: setPassenger)
 
     }
 
@@ -84,7 +84,7 @@ class RideShareStatusTableViewController: UITableViewController {
             let passengerObj = Passenger(passengerId:passengerId, gcmId:gcmId, phoneNumber:phoneNumber, name:name)
             passengersData.append(passengerObj)
         }
-        DBClient.getData("ride", dict: setRides)
+        DBClient.getData("rides", dict: setRides)
     }
     
     func setRides(rides:NSArray) {
@@ -295,7 +295,7 @@ class RideShareStatusTableViewController: UITableViewController {
             do {
                 let body = try NSJSONSerialization.dataWithJSONObject(params, options: NSJSONWritingOptions.PrettyPrinted)
                 
-                DBClient.postData("ride/dropRide", body:body)
+                DBClient.postData("rides/dropRide", body:body)
                 
                 for pssngr in self.passengerCollection {
                     if (pssngr.rideId == self.driverCollection[row].rideId) {
@@ -371,7 +371,7 @@ class RideShareStatusTableViewController: UITableViewController {
             print("passengerId: " + self.passengerCollection[row].passengerId)
             do {
                 let body = try NSJSONSerialization.dataWithJSONObject(params, options: NSJSONWritingOptions.PrettyPrinted)
-                DBClient.postData("ride/dropPassenger", body:body)
+                DBClient.postData("rides/dropPassenger", body:body)
                 
                 self.passengerCollection.removeAtIndex(row)
                 self.tableData = [self.driverCollection, self.passengerCollection]

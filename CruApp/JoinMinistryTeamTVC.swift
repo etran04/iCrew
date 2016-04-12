@@ -30,7 +30,7 @@ class JoinMinistryTeamTVC: UITableViewController {
         teamCollection = Array(count: ministryCollection.count, repeatedValue: [MinistryTeamData]())
     
         //setup database
-        DBClient.getData("ministryteam", dict: setTeams)
+        DBClient.getData("ministryteams", dict: setTeams)
         
     }
 

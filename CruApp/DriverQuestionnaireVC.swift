@@ -35,8 +35,6 @@ class DriverQuestionnaireVC: UIViewController, UITableViewDelegate, UITableViewD
         autocompleteController.delegate = self
         self.presentViewController(autocompleteController, animated: true, completion: nil)
     }
-    
-    var dbClient: DBClient!
 
     var eventChoices = [String]()
     var eventIds = [String]()
@@ -57,7 +55,7 @@ class DriverQuestionnaireVC: UIViewController, UITableViewDelegate, UITableViewD
         super.viewDidLoad()
 
         /* sets up the database to pull from */
-        DBClient.getData("event", dict: setEvents)
+        DBClient.getData("events", dict: setEvents)
 
         ministryCollection = UserProfile.getMinistries()
         
@@ -264,7 +262,7 @@ class DriverQuestionnaireVC: UIViewController, UITableViewDelegate, UITableViewD
 
         do {
             let body = try NSJSONSerialization.dataWithJSONObject(params, options: NSJSONWritingOptions.PrettyPrinted)
-            DBClient.addData("ride", body : body)
+            DBClient.addData("rides", body : body)
         } catch {
             print("Error sending data to database")
         }

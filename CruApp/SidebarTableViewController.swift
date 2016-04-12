@@ -74,7 +74,7 @@ class SidebarTableViewController: UITableViewController {
         //go to login screen
         else {
             //setup database
-            DBClient.getData("user", dict: setUsers)
+            DBClient.getData("users", dict: setUsers)
             
             //display login pop up
             self.loginView()

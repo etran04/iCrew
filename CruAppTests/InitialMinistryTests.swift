@@ -23,8 +23,7 @@ class InitialMinistryTests: XCTestCase {
     
     func testSetMinistries() {
         let vc = InitialMinistryTableViewController()
-        let dbClient = DBClient()
-        dbClient.getData("ministry", dict: vc.setMinistries)
+        DBClient.getData("ministries", dict: vc.setMinistries)
         
         XCTAssertTrue(vc.ministriesCollection.count == 2)
     }

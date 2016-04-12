@@ -32,7 +32,7 @@ class EventsViewController: UITableViewController, DZNEmptyDataSetDelegate, DZNE
         
         ministryCollection = UserProfile.getMinistries()
         
-        DBClient.getData("event", dict: setEvents)
+        DBClient.getData("events", dict: setEvents)
     }
     
     override func viewDidAppear(animated: Bool) {

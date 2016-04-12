@@ -27,7 +27,7 @@ class MinistryTeamSuccessVC: UIViewController {
         
         
         //setup database
-        DBClient.getData("user", dict: setLeaders)
+        DBClient.getData("users", dict: setLeaders)
         
 
     }

@@ -30,7 +30,7 @@ class PassengerQuestionnaireVC: UIViewController, UITableViewDelegate, UITableVi
         super.viewDidLoad()
         
         /* sets up the database to pull from */
-        DBClient.getData("event", dict: setEvents)
+        DBClient.getData("events", dict: setEvents)
         
         ministryCollection = UserProfile.getMinistries()
 

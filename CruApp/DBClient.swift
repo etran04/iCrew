@@ -15,8 +15,8 @@ class DBClient {
     }
     
     static func requestData(action: String, completionHandler : (NSData?, NSURLResponse?, NSError?) -> Void) {
-        let url = "http://localhost:3001/api/" + action + "/list"
-        //let url = "http://pcp070211pcs.wireless.calpoly.edu:3001/api/" + action + "/list"
+        //let url = "http://localhost:3001/api/" + action + "/list"
+        let url = "http://pcp070211pcs.wireless.calpoly.edu:3001/api/" + action
         
         //for sorting
         //let url = http://localhost:3000/api/minstry/find?order={name: 1}
@@ -56,8 +56,8 @@ class DBClient {
     //func addData(action: String, direction : String, seats : Int, driverNumber : Int, event : String, driverName : String) {
     static func addData(action : String, body: NSData) {
 
-        //let url = "http://pcp070211pcs.wireless.calpoly.edu:3001/api/" + action + "/create"
-        let url = "http://localhost:3001/api/" + action + "/create"
+        let url = "http://pcp070211pcs.wireless.calpoly.edu:3001/api/" + action
+        //let url = "http://localhost:3001/api/" + action + "/create"
 
         sendPostRequest(url, body: body, completionHandler: emptyHandler)
     }
@@ -67,8 +67,8 @@ class DBClient {
     }
     
     static func postData(action: String, body: NSData) {
-        //let url = "http://pcp070211pcs.wireless.calpoly.edu:3001/api/" + action
-        let url = "http://localhost:3001/api/" + action
+        let url = "http://pcp070211pcs.wireless.calpoly.edu:3001/api/" + action
+        //let url = "http://localhost:3001/api/" + action
     
         sendPostRequest(url, body: body, completionHandler: emptyHandler)
     }
@@ -108,8 +108,8 @@ class DBClient {
     }
     
     static func addPassenger(rideId: String, action: String, body: NSData) {
-        let url = "http://localhost:3001/api/" + action + "/create"
-        //let url = "http://pcp070211pcs.wireless.calpoly.edu:3001/api/passenger/create"
+        //let url = "http://localhost:3001/api/" + action + "/create"
+        let url = "http://pcp070211pcs.wireless.calpoly.edu:3001/api/passenger/create"
         sendPostRequest(url, body: body, completionHandler: {(data : NSData?, response : NSURLResponse?, error : NSError?) in
             do {
                 if (data != nil) {
@@ -117,8 +117,8 @@ class DBClient {
                     //let JSONData = JSONResponse as! NSDictionary
                     //let post = JSONResponse["post"] as! NSDictionary
                     let passengerId = JSONResponse["_id"] as! String
-                    let url = "http://localhost:3001/api/ride/addPassenger"
-                    //let url = "http://pcp070211pcs.wireless.calpoly.edu:3001/api/ride/addPassenger"
+                    //let url = "http://localhost:3001/api/ride/addPassenger"
+                    let url = "http://pcp070211pcs.wireless.calpoly.edu:3001/api/ride/addPassenger"
 
                     let params = ["ride_id": rideId,"passenger_id": passengerId]
                     

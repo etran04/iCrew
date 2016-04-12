@@ -63,7 +63,13 @@ class SelectDriverTableViewController: UITableViewController {
             if(driver["location"]?!.objectForKey("suburb") != nil) {
                 city = driver["location"]?!.objectForKey("suburb") as! String
             }
-            let street = driver["location"]?!.objectForKey("street1") as! String
+            
+            var street = ""
+            if(driver["location"]?!.objectForKey("street1") != nil) {
+            
+                street = driver["location"]?!.objectForKey("street1") as! String
+            }
+            
             let country = driver["location"]?!.objectForKey("country") as! String
         
             let dateFormatter = NSDateFormatter()

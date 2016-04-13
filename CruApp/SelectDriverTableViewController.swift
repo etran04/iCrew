@@ -63,7 +63,13 @@ class SelectDriverTableViewController: UITableViewController {
             if(driver["location"]?!.objectForKey("suburb") != nil) {
                 city = driver["location"]?!.objectForKey("suburb") as! String
             }
-            let street = driver["location"]?!.objectForKey("street1") as! String
+            
+            var street = ""
+            if(driver["location"]?!.objectForKey("street1") != nil) {
+            
+                street = driver["location"]?!.objectForKey("street1") as! String
+            }
+            
             let country = driver["location"]?!.objectForKey("country") as! String
         
             let dateFormatter = NSDateFormatter()
@@ -77,7 +83,7 @@ class SelectDriverTableViewController: UITableViewController {
             
             if (passenger.eventId == eventId
                 && availableSeats != 0
-                && driverTime!.compare(passengerTime!) == NSComparisonResult.OrderedAscending
+                && passengerTime!.compare(driverTime!) == NSComparisonResult.OrderedAscending
                 && direction == passenger.direction) {
                     let id = driver["_id"] as! String
                     let name = driver["driverName"] as! String

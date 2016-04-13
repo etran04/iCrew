@@ -27,8 +27,6 @@ class DriverSelectedViewController: UIViewController {
         
         DBClient.getData("events", dict: setEvents)
     }
-    
-    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -64,6 +62,12 @@ class DriverSelectedViewController: UIViewController {
         dateFormatter.timeStyle = .ShortStyle
         departureTime.text = "Departure Time: " + dateFormatter.stringFromDate(date!)
     }
+    
+    @IBAction func submitPressed(sender: UIButton) {
+        self.navigationController?.popToRootViewControllerAnimated(true)
+
+    }
+    
     /*
     // MARK: - Navigation
 

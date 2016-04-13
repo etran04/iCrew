@@ -8,6 +8,7 @@
 
 import UIKit
 import DZNEmptyDataSet
+import SwiftLoader
 
 class SummerMissionsViewController: UITableViewController, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
 
@@ -18,9 +19,7 @@ class SummerMissionsViewController: UITableViewController, DZNEmptyDataSetSource
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Sets up the controller to display notification screen if no events populate
-        tableView.emptyDataSetSource = self;
-        tableView.emptyDataSetDelegate = self;
+        SwiftLoader.show(title: "Loading...", animated: true)
         
         DBClient.getData("summermissions", dict: setMissions)
     }
@@ -78,7 +77,14 @@ class SummerMissionsViewController: UITableViewController, DZNEmptyDataSetSource
 
             missionsCollection.append(missionObj)
         }
+        SwiftLoader.hide()
         self.tableView.reloadData()
+        
+        // Sets up the controller to display notification screen if no events populate
+        tableView.emptyDataSetSource = self;
+        tableView.emptyDataSetDelegate = self;
+        
+        self.tableView.reloadEmptyDataSet()
     }
     
     func nullToNil(value : AnyObject?) -> String {

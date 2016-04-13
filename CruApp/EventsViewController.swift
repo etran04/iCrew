@@ -12,6 +12,7 @@ import Alamofire
 import SafariServices
 import ReachabilitySwift
 import DZNEmptyDataSet
+import SwiftLoader
 
 class EventsViewController: UITableViewController, DZNEmptyDataSetDelegate, DZNEmptyDataSetSource {
     
@@ -23,16 +24,15 @@ class EventsViewController: UITableViewController, DZNEmptyDataSetDelegate, DZNE
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Sets up the controller to display notification screen if no events populate
-        tableView.emptyDataSetSource = self;
-        tableView.emptyDataSetDelegate = self;
-        
         // A little trick for removing the cell separators
         self.tableView.tableFooterView = UIView()
         
         ministryCollection = UserProfile.getMinistries()
         
+        SwiftLoader.show(title: "Loading...", animated: true)
+        
         DBClient.getData("events", dict: setEvents)
+    
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -124,7 +124,15 @@ class EventsViewController: UITableViewController, DZNEmptyDataSetDelegate, DZNE
         
             eventsCollection.append(eventObj)
         }
+        
+        SwiftLoader.hide()
         self.tableView.reloadData()
+        
+        // Sets up the controller to display notification screen if no events populate
+        tableView.emptyDataSetSource = self;
+        tableView.emptyDataSetDelegate = self;
+        
+        tableView.reloadEmptyDataSet()
     }
     
     

@@ -25,6 +25,8 @@ class MinistryTeamSignUpVC: UIViewController {
         
         let teamSuccessVC = segue.destinationViewController as!  MinistryTeamSuccessVC
         teamSuccessVC.ministryTeam = self.ministryTeam
+        
+        UserProfile.addMinistryTeam(self.ministryTeam!)
     }
 
 }

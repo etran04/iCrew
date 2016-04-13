@@ -27,8 +27,6 @@ class DriverSelectedViewController: UIViewController {
         
         DBClient.getData("events", dict: setEvents)
     }
-    
-    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

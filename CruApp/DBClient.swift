@@ -57,7 +57,7 @@ class DBClient {
     static func addData(action : String, body: NSData) {
 
         let url = "http://pcp070211pcs.wireless.calpoly.edu:3001/api/" + action
-        //let url = "http://localhost:3001/api/" + action + "/create"
+        //let url = "http://localhost:3001/api/" + action
 
         sendPostRequest(url, body: body, completionHandler: emptyHandler)
     }
@@ -66,11 +66,27 @@ class DBClient {
         
     }
     
-    static func postData(action: String, body: NSData) {
+//    static func deleteData(action: String, body: NSData) {
+    static func deleteData(action: String) {
         let url = "http://pcp070211pcs.wireless.calpoly.edu:3001/api/" + action
         //let url = "http://localhost:3001/api/" + action
     
-        sendPostRequest(url, body: body, completionHandler: emptyHandler)
+        sendDeleteRequest(url, completionHandler: emptyHandler)
+    }
+    
+    //HTTP DELETE request
+    static func sendDeleteRequest(url : String, completionHandler : (NSData?, NSURLResponse?, NSError?) -> Void) -> NSURLSessionDataTask {
+        let reqURL = NSURL(string: url)
+        let request = NSMutableURLRequest(URL: reqURL!)
+        request.HTTPMethod = "DELETE"
+        
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+//        request.HTTPBody = body //.dataUsingEncoding(NSUTF8StringEncoding)
+        
+        let task = NSURLSession.sharedSession().dataTaskWithRequest(request, completionHandler : completionHandler)
+        task.resume()
+        return task
     }
     
     //HTTP POST request
@@ -108,8 +124,8 @@ class DBClient {
     }
     
     static func addPassenger(rideId: String, action: String, body: NSData) {
-        //let url = "http://localhost:3001/api/" + action + "/create"
-        let url = "http://pcp070211pcs.wireless.calpoly.edu:3001/api/passenger/create"
+        //let url = "http://localhost:3001/api/" + action
+        let url = "http://pcp070211pcs.wireless.calpoly.edu:3001/api/passengers"
         sendPostRequest(url, body: body, completionHandler: {(data : NSData?, response : NSURLResponse?, error : NSError?) in
             do {
                 if (data != nil) {
@@ -118,9 +134,9 @@ class DBClient {
                     //let post = JSONResponse["post"] as! NSDictionary
                     let passengerId = JSONResponse["_id"] as! String
                     //let url = "http://localhost:3001/api/ride/addPassenger"
-                    let url = "http://pcp070211pcs.wireless.calpoly.edu:3001/api/ride/addPassenger"
+                    let url = "http://pcp070211pcs.wireless.calpoly.edu:3001/api/rides/" + rideId + "/passengers"
 
-                    let params = ["ride_id": rideId,"passenger_id": passengerId]
+                    let params = ["passenger_id": passengerId]
                     
                     do {
                         let body = try NSJSONSerialization.dataWithJSONObject(params, options: NSJSONWritingOptions.PrettyPrinted)

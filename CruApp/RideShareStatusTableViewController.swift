@@ -292,14 +292,16 @@ class RideShareStatusTableViewController: UITableViewController {
         
         let confirmDialog = UIAlertController(title: titleMsg, message: msg, preferredStyle: .Alert)
         let okAction = UIAlertAction(title: "Confirm", style: .Default) { (UIAlertAction) -> Void in
-
-            let params = ["ride_id": self.driverCollection[row].rideId]
+            let rideId = self.driverCollection[row].rideId;
+//            let params = ["ride_id": self.driverCollection[row].rideId]
+//            
+//            do {
+//                let body = try NSJSONSerialization.dataWithJSONObject(params, options: NSJSONWritingOptions.PrettyPrinted)
             
-            do {
-                let body = try NSJSONSerialization.dataWithJSONObject(params, options: NSJSONWritingOptions.PrettyPrinted)
-                
-                DBClient.postData("rides/dropRide", body:body)
-                
+//                DBClient.deleteData("rides/" + rideId, body:body)
+            DBClient.deleteData("rides/" + rideId)
+
+            
                 for pssngr in self.passengerCollection {
                     if (pssngr.rideId == self.driverCollection[row].rideId) {
                         self.passengerCollection.removeAtIndex(row)
@@ -313,9 +315,9 @@ class RideShareStatusTableViewController: UITableViewController {
                 
                 self.tableView.reloadData()
                 
-            } catch {
-                print("Error sending data to database")
-            }
+//            } catch {
+//                print("Error sending data to database")
+//            }
         }
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
@@ -369,22 +371,23 @@ class RideShareStatusTableViewController: UITableViewController {
         
         let confirmDialog = UIAlertController(title: titleMsg, message: msg, preferredStyle: .Alert)
         let okAction = UIAlertAction(title: "Confirm", style: .Default) { (UIAlertAction) -> Void in
-            let params = ["ride_id": self.passengerCollection[row].rideId, "passenger_id": self.passengerCollection[row].passengerId]
-            print("rideId: " + self.passengerCollection[row].rideId)
-            print("passengerId: " + self.passengerCollection[row].passengerId)
-            do {
-                let body = try NSJSONSerialization.dataWithJSONObject(params, options: NSJSONWritingOptions.PrettyPrinted)
-                DBClient.postData("rides/dropPassenger", body:body)
-                
+//            let params = ["ride_id": self.passengerCollection[row].rideId, "passenger_id": self.passengerCollection[row].passengerId]
+            let rideId = self.passengerCollection[row].rideId
+            let passengerId = self.passengerCollection[row].passengerId
+//            do {
+//                let body = try NSJSONSerialization.dataWithJSONObject(params, options: NSJSONWritingOptions.PrettyPrinted)
+//                DBClient.deleteData("rides/dropPassenger", body:body)
+            
+            DBClient.deleteData("rides/" + rideId + "/passengers/" + passengerId)
                 self.passengerCollection.removeAtIndex(row)
                 self.tableData = [self.driverCollection, self.passengerCollection]
                 
                 
                 self.tableView.reloadData()
-                
-            } catch {
-                print("Error sending data to database")
-            }
+//                
+//            } catch {
+//                print("Error sending data to database")
+//            }
         }
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)

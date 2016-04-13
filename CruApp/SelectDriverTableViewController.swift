@@ -83,7 +83,7 @@ class SelectDriverTableViewController: UITableViewController {
             
             if (passenger.eventId == eventId
                 && availableSeats != 0
-                && driverTime!.compare(passengerTime!) == NSComparisonResult.OrderedAscending
+                && passengerTime!.compare(driverTime!) == NSComparisonResult.OrderedAscending
                 && direction == passenger.direction) {
                     let id = driver["_id"] as! String
                     let name = driver["driverName"] as! String

@@ -100,23 +100,36 @@ class RideShareStatusTableViewController: UITableViewController {
             var passengersInfo = [Passenger]()
             
             var direction = ""
+            var street = ""
+            var city = ""
+            var zipcode = ""
+            var suburb = ""
+            var state = ""
+            var country = ""
             
             if(ride["direction"]! != nil) {
                 direction = ride["direction"] as! String
             }
             
-            let zipcode = ride["location"]?!.objectForKey("postcode") as! String
-            let state = ride["location"]?!.objectForKey("state") as! String
-            var city = ""
+            if(ride["location"]?!.objectForKey("postcode") != nil) {
+                zipcode = ride["location"]?!.objectForKey("postcode") as! String
+            }
             
-            if(ride["location"]?!.objectForKey("sguburb") != nil) {
+            if(ride["location"]?!.objectForKey("state") != nil) {
+                state = ride["location"]?!.objectForKey("state") as! String
+            }
+            
+            if(ride["location"]?!.objectForKey("suburb") != nil) {
                 city = ride["location"]?!.objectForKey("suburb") as! String
             }
-            var street = ""
+            
             if(ride["location"]?!.objectForKey("street1") != nil) {
                 street = ride["location"]?!.objectForKey("street1") as! String
             }
-            let country = ride["location"]?!.objectForKey("country") as! String
+            
+            if(ride["location"]?!.objectForKey("country") != nil) {
+                country = ride["location"]?!.objectForKey("country") as! String
+            }
             
             let location2 = city + ", " + state + ", " + country + " " + zipcode
 

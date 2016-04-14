@@ -26,17 +26,13 @@ class EventsViewController: UITableViewController, DZNEmptyDataSetDelegate, DZNE
         
         // A little trick for removing the cell separators
         self.tableView.tableFooterView = UIView()
-        
-        ministryCollection = UserProfile.getMinistries()
-        
-        SwiftLoader.show(title: "Loading...", animated: true)
-        
-        DBClient.getData("events", dict: setEvents)
-    
+
+        // Checks internet, and if internet connectivity is there, load from database
+        checkInternet()
+
     }
     
     override func viewDidAppear(animated: Bool) {
-        checkInternet()
         
         if (self.revealViewController() != nil) {
             self.menuButton.target = self.revealViewController()
@@ -45,10 +41,70 @@ class EventsViewController: UITableViewController, DZNEmptyDataSetDelegate, DZNE
         }
     }
     
+    /* Determines whether or not the device is connected to WiFi or 4g. Alerts user if they are not.
+     * Without internet, data might not populate, aside from cached data */
+    func checkInternet() {
+        
+        // Checks for internet connectivity (Wifi/4G)
+        let reachability: Reachability
+        do {
+            reachability = try Reachability.reachabilityForInternetConnection()
+        } catch {
+            print("Unable to create Reachability")
+            return
+        }
+
+        SwiftLoader.show(title: "Loading...", animated: true)
+
+        // If device does have internet
+        reachability.whenReachable = { reachability in
+            dispatch_async(dispatch_get_main_queue()) {
+                if reachability.isReachableViaWiFi() {
+                    print("Reachable via WiFi")
+                } else {
+                    print("Reachable via Cellular")
+                }
+                
+                // Get the user's ministries, and load the events
+                self.ministryCollection = UserProfile.getMinistries()
+                DBClient.getData("events", dict: self.setEvents)
+            }
+        }
+        
+        reachability.whenUnreachable = { reachability in
+            dispatch_async(dispatch_get_main_queue()) {
+                
+                // If unreachable, hide the loading indicator anyways
+                SwiftLoader.hide()
+                
+                // If no internet, display an alert notifying user they have no internet connectivity
+                let g_alert = UIAlertController(title: "Checking for Internet...", message: "If this dialog appears, please check to make sure you have internet connectivity. ", preferredStyle: .Alert)
+                let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
+                    // Dismiss alert dialog
+                    print("Dismissed No Internet Dialog")
+                }
+                g_alert.addAction(OKAction)
+                
+                // Sets up the controller to display notification screen if no events populate
+                self.tableView.emptyDataSetSource = self;
+                self.tableView.emptyDataSetDelegate = self;
+                self.tableView.reloadEmptyDataSet()
+                
+                self.presentViewController(g_alert, animated: true, completion: nil)
+            }
+        }
+        
+        do {
+            try reachability.startNotifier()
+        } catch {
+            print("Unable to start notifier")
+        }
+        
+    }
+    
     //obtain information from the database to an Object
     //TODO: Move function into Event.swift
     func setEvents(events:NSArray) {
-        //self.tableView.beginUpdates()
         
         for event in events {
 
@@ -130,68 +186,8 @@ class EventsViewController: UITableViewController, DZNEmptyDataSetDelegate, DZNE
         
         // Sets up the controller to display notification screen if no events populate
         tableView.emptyDataSetSource = self;
-        tableView.emptyDataSetDelegate = self;
-        
+        tableView.emptyDataSetDelegate = self;        
         tableView.reloadEmptyDataSet()
-    }
-    
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
-    /* Determines whether or not the device is connected to WiFi or 4g. Alerts user if they are not.
-     * Without internet, data might not populate, aside from cached data */
-    func checkInternet() {
-        /*
-        * Tokens is a inner class, used to make sure internet connectivity is check
-        * only once when the app is intially launched.
-        */
-        struct Tokens {
-            static var token: dispatch_once_t = 0
-        }
-        
-        dispatch_once(&Tokens.token) {
-
-            // Checks for internet connectivity (Wifi/4G)
-            let reachability: Reachability
-            do {
-                reachability = try Reachability.reachabilityForInternetConnection()
-            } catch {
-                print("Unable to create Reachability")
-                return
-            }
-            
-            // If device does have internet
-            reachability.whenReachable = { reachability in
-                dispatch_async(dispatch_get_main_queue()) {
-                    if reachability.isReachableViaWiFi() {
-                        print("Reachable via WiFi")
-                    } else {
-                        print("Reachable via Cellular")
-                    }
-                }
-            }
-            
-            reachability.whenUnreachable = { reachability in
-                dispatch_async(dispatch_get_main_queue()) {
-                    // If no internet, display an alert notifying user they have no internet connectivity
-                    let g_alert = UIAlertController(title: "Checking for Internet...", message: "If this dialog appears, please check to make sure you have internet connectivity. ", preferredStyle: .Alert)
-                    let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
-                        // Dismiss alert dialog
-                        print("Dismissed No Internet Dialog")
-                    }
-                    g_alert.addAction(OKAction)
-                    self.presentViewController(g_alert, animated: true, completion: nil)
-                }
-            }
-            
-            do {
-                try reachability.startNotifier()
-            } catch {
-                print("Unable to start notifier")
-            }
-        }
     }
     
     // MARK: - Table view data source

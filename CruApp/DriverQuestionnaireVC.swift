@@ -366,9 +366,17 @@ extension DriverQuestionnaireVC: GMSAutocompleteViewControllerDelegate {
         print("Place address: ", place.formattedAddress)
         print("Place attributions: ", place.attributions)
         (cells[6] as! EnterLocationPlaceCell).locationLabel.text = place.formattedAddress!
-        var components = place.addressComponents
+        let components = place.addressComponents
         var streetNumber: String?
         var streetName: String?
+        
+        streetNumber = ""
+        streetName = ""
+        city = ""
+        state = ""
+        country = ""
+        zipcode = ""
+        
         for comp in components! {
             if(comp.type == "street_number") {
                 streetNumber = comp.name
@@ -389,7 +397,9 @@ extension DriverQuestionnaireVC: GMSAutocompleteViewControllerDelegate {
                 zipcode = comp.name
             }
         }
+        
         street = streetNumber! + " " + streetName!
+        
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     

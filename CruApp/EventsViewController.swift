@@ -26,7 +26,7 @@ class EventsViewController: UITableViewController, DZNEmptyDataSetDelegate, DZNE
         
         // A little trick for removing the cell separators
         self.tableView.tableFooterView = UIView()
-
+        
         // Checks internet, and if internet connectivity is there, load from database
         checkInternet()
 
@@ -210,9 +210,10 @@ class EventsViewController: UITableViewController, DZNEmptyDataSetDelegate, DZNE
         
         let url = NSURL(string: event.imageSq!)
         let data = NSData(contentsOfURL: url!)
-        let image = UIImage(data: data!)
         
-        cell.eventImage.image = image
+        if let data = NSData(contentsOfURL: url!) {
+            cell.eventImage.image = UIImage(data: data)
+        }
         
         //date formatting
         let dateFormatter = NSDateFormatter()

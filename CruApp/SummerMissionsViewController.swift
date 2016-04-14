@@ -20,10 +20,12 @@ class SummerMissionsViewController: UITableViewController, DZNEmptyDataSetSource
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Checks internet, and if internet connectivity is there, load from database
         checkInternet()
     }
     
     override func viewDidAppear(animated: Bool) {
+        
         if (self.revealViewController() != nil) {
             self.menuButton.target = self.revealViewController()
             self.menuButton.action = "revealToggle:"
@@ -182,9 +184,10 @@ class SummerMissionsViewController: UITableViewController, DZNEmptyDataSetSource
             if (mission.image != nil && mission.image != "") {
                 let url = NSURL(string: mission.image!)
                 let data = NSData(contentsOfURL: url!)
-                let image = UIImage(data: data!)
-
-                cell.missionImage.image = image
+                
+                if (data != nil) {
+                    cell.missionImage.image = UIImage(data: data!)
+                }
             }
             
             //date formatting

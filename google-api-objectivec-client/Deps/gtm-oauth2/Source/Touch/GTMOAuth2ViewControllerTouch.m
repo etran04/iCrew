@@ -378,11 +378,29 @@ static GTMOAuth2Keychain* gGTMOAuth2DefaultKeychain = nil;
 - (void)viewDidLoad {
   [super viewDidLoad];
   [self setUpNavigation];
+    [self.navigationController.navigationBar setTitleTextAttributes:@   {NSForegroundColorAttributeName : [UIColor blueColor]}];
+    self.navigationController.navigationBar.translucent = NO;
+    
+    UINavigationBar *naviBarObj = [[UINavigationBar alloc] initWithFrame:CGRectMake(0., 0., [[UIScreen mainScreen] bounds].size.width, 63.)];
+    [self.view addSubview:naviBarObj];
+    
+    UIBarButtonItem *cancelItem = [[UIBarButtonItem alloc]initWithTitle:[NSString stringWithFormat:NSLocalizedString(@"Cancel", nil)] style:UIBarButtonItemStylePlain target:self action:@selector(cancelGdriveSignIn:)];
+    double greenVal = 122.0/255.0;
+    cancelItem.tintColor = [UIColor colorWithRed:0.0 green: (float) greenVal blue:1.0 alpha:1.0];
+    UINavigationItem *navigItem = [[UINavigationItem alloc] initWithTitle:@"Google"];
+    navigItem.rightBarButtonItem = cancelItem;
+    naviBarObj.items = [NSArray arrayWithObjects: navigItem,nil];
 }
 
-- (void)setUpNavigation {
-  rightBarButtonItem_.customView = navButtonsView_;
-  self.navigationItem.rightBarButtonItem = rightBarButtonItem_;
+-(void)cancelGdriveSignIn:(id)sender
+{
+    [self dismissViewControllerAnimated:YES completion:^(void){}];
+}
+
+-(void)setUpNavigation // Default Method Available
+{
+    rightBarButtonItem_.customView = navButtonsView_;
+    self.navigationItem.rightBarButtonItem = rightBarButtonItem_;
 }
 
 - (void)popView {

@@ -8,6 +8,8 @@
 
 import UIKit
 import SwiftLoader
+import DZNEmptyDataSet
+import ReachabilitySwift
 
 /* Video represents a holder for metadata of a single individual youtube video */
 class Video {
@@ -39,7 +41,7 @@ class Video {
 }
 
 /* VideosTableVC is the screen that loads a list of videos and displays them in a table */
-class VideosTableViewController: UITableViewController, UISearchBarDelegate {
+class VideosTableViewController: UITableViewController, UISearchBarDelegate, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate{
     
     /* A reference to the pull-down-to-refresh ui */
     @IBOutlet weak var refresh: UIRefreshControl!
@@ -69,32 +71,14 @@ class VideosTableViewController: UITableViewController, UISearchBarDelegate {
     /* Called when the current view is loaded */
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setUpLoadSpinner()
-        self.getChannelDetailsAndLoadVideos(false)
+        
+        // checks internet, and then if phone has internet, then start loading videos within
+        checkInternet()
     }
     
     /* Called when the current view appears */
     override func viewDidAppear(animated: Bool) {
-        //self.setUpRefresh()
         searchBar.delegate = self
-    }
-    
-    /* Sets up and starts the loading indicator */
-    func setUpLoadSpinner() {
-        SwiftLoader.show(title: "Loading...", animated: true)
-    }
-    
-    /* Resets the refresh UI control */
-    func setUpRefresh() {
-        // Update the displayed "Last update: " time in the UIRefreshControl
-        let date = NSDate()
-        let formatter = NSDateFormatter()
-        formatter.timeStyle = .ShortStyle
-        let updateString = "Last updated: " + formatter.stringFromDate(date)
-        self.refresh.attributedTitle = NSAttributedString(string: updateString)
-        
-        /* Set the callback for when pulled down */
-        self.refresh.addTarget(self, action: Selector("refresh:"), forControlEvents: UIControlEvents.ValueChanged)
     }
     
     /* Populates the list of videos with videos from the Cru Database */
@@ -102,13 +86,64 @@ class VideosTableViewController: UITableViewController, UISearchBarDelegate {
         self.getVideosForChannelAtIndex(0)
     }
     
-//    /* Callback method for when user pulls down to refresh */
-//    func refresh(sender:AnyObject) {
-//        self.setUpRefresh()
-//        self.tableView.reloadData()
-//        self.refresh.endRefreshing()
-//    }
-//    
+    /* Determines whether or not the device is connected to WiFi or 4g. Alerts user if they are not.
+     * Without internet, data might not populate, aside from cached data */
+    func checkInternet() {
+            
+        // Checks for internet connectivity (Wifi/4G)
+        let reachability: Reachability
+        do {
+            reachability = try Reachability.reachabilityForInternetConnection()
+        } catch {
+            print("Unable to create Reachability")
+            return
+        }
+        
+        SwiftLoader.show(title: "Loading...", animated: true)
+        
+        // If device does have internet
+        reachability.whenReachable = { reachability in
+            dispatch_async(dispatch_get_main_queue()) {
+                if reachability.isReachableViaWiFi() {
+                    print("Reachable via WiFi")
+                } else {
+                    print("Reachable via Cellular")
+                }
+                self.getChannelDetailsAndLoadVideos(false)
+            }
+        }
+        
+        reachability.whenUnreachable = { reachability in
+            
+            // If unreachable, hide the loading indicator anyways
+            SwiftLoader.hide()
+            
+            dispatch_async(dispatch_get_main_queue()) {
+                // If no internet, display an alert notifying user they have no internet connectivity
+                let g_alert = UIAlertController(title: "Checking for Internet...", message: "If this dialog appears, please check to make sure you have internet connectivity. ", preferredStyle: .Alert)
+                let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
+                    // Dismiss alert dialog
+                    print("Dismissed No Internet Dialog")
+                }
+                g_alert.addAction(OKAction)
+                
+                // Sets up the controller to display notification screen if no events populate
+                self.tableView.emptyDataSetSource = self;
+                self.tableView.emptyDataSetDelegate = self;
+                self.tableView.reloadEmptyDataSet()
+                
+                self.presentViewController(g_alert, animated: true, completion: nil)
+            }
+        }
+        
+        do {
+            try reachability.startNotifier()
+        } catch {
+            print("Unable to start notifier")
+        }
+        
+    }
+    
     // MARK: - Table view data source
     
     /* Asks the data source to return the number of sections in the table view. Default is 1. */
@@ -133,12 +168,6 @@ class VideosTableViewController: UITableViewController, UISearchBarDelegate {
         } else {
             cell.setVideoInfo(currentVideo.getId(), title: currentVideo.getTitle(), summary: currentVideo.getSummary())
         }
-        
-        // Make videos a fixed size
-//        cell.videoPlayer.contentMode = .ScaleAspectFit
-//        cell.videoPlayer.clipsToBounds = true
-//        cell.videoPlayer.bounds.size.height = 137
-//        cell.videoPlayer.bounds.size.width = 117
         
         return cell
     }
@@ -178,6 +207,7 @@ class VideosTableViewController: UITableViewController, UISearchBarDelegate {
     
     /* Retrieves the information about the Cru channel and saves it */
     func getChannelDetailsAndLoadVideos(useChannelIDParam: Bool) -> Void{
+        
         var urlString: String!
         if !useChannelIDParam {
             urlString = "https://www.googleapis.com/youtube/v3/channels?part=contentDetails,snippet&forUsername=\(desiredChannelsArray[channelIndex])&key=\(apiKey)"
@@ -315,6 +345,12 @@ class VideosTableViewController: UITableViewController, UISearchBarDelegate {
                     // Finished loading videos, stop the indicator
                     SwiftLoader.hide()
                     
+                    // Sets up the controller to display notification screen if no articles populate
+                    self.tableView.emptyDataSetSource = self
+                    self.tableView.emptyDataSetDelegate = self
+                    self.tableView.reloadEmptyDataSet()
+                    
+                    
                 } catch {
                     print(error)
                 }
@@ -346,6 +382,20 @@ class VideosTableViewController: UITableViewController, UISearchBarDelegate {
             self.filterFlag = false
             self.getVideosForChannelAtIndex(0)
         }
+    }
+    
+    // MARK: - DZNEmptySet Delegate methods
+    
+    func titleForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
+        let str = "No videos to display!"
+        let attrs = [NSFontAttributeName: UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline)]
+        return NSAttributedString(string: str, attributes: attrs)
+    }
+    
+    func descriptionForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
+        let str = "Please check back later."
+        let attrs = [NSFontAttributeName: UIFont.preferredFontForTextStyle(UIFontTextStyleBody)]
+        return NSAttributedString(string: str, attributes: attrs)
     }
     
 }

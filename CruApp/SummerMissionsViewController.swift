@@ -8,6 +8,8 @@
 
 import UIKit
 import DZNEmptyDataSet
+import SwiftLoader
+import ReachabilitySwift
 
 class SummerMissionsViewController: UITableViewController, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
 
@@ -18,14 +20,12 @@ class SummerMissionsViewController: UITableViewController, DZNEmptyDataSetSource
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Sets up the controller to display notification screen if no events populate
-        tableView.emptyDataSetSource = self;
-        tableView.emptyDataSetDelegate = self;
-        
-        DBClient.getData("summermissions", dict: setMissions)
+        // Checks internet, and if internet connectivity is there, load from database
+        checkInternet()
     }
     
     override func viewDidAppear(animated: Bool) {
+        
         if (self.revealViewController() != nil) {
             self.menuButton.target = self.revealViewController()
             self.menuButton.action = "revealToggle:"
@@ -33,8 +33,71 @@ class SummerMissionsViewController: UITableViewController, DZNEmptyDataSetSource
         }
     }
     
+    /* Determines whether or not the device is connected to WiFi or 4g. Alerts user if they are not.
+     * Without internet, data might not populate, aside from cached data */
+    func checkInternet() {
+        
+        // Checks for internet connectivity (Wifi/4G)
+        let reachability: Reachability
+        do {
+            reachability = try Reachability.reachabilityForInternetConnection()
+        } catch {
+            print("Unable to create Reachability")
+            return
+        }
+        
+        SwiftLoader.show(title: "Loading...", animated: true)
+        
+        
+        // If device does have internet
+        reachability.whenReachable = { reachability in
+            dispatch_async(dispatch_get_main_queue()) {
+                if reachability.isReachableViaWiFi() {
+                    print("Reachable via WiFi")
+                } else {
+                    print("Reachable via Cellular")
+                }
+                
+                // Has internet, load summer missions
+                DBClient.getData("summermissions", dict: self.setMissions)
+            }
+        }
+        
+        reachability.whenUnreachable = { reachability in
+            dispatch_async(dispatch_get_main_queue()) {
+                
+                // If unreachable, hide the loading indicator anyways
+                SwiftLoader.hide()
+                
+                // If no internet, display an alert notifying user they have no internet connectivity
+                let g_alert = UIAlertController(title: "Checking for Internet...", message: "If this dialog appears, please check to make sure you have internet connectivity. ", preferredStyle: .Alert)
+                let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
+                    // Dismiss alert dialog
+                    print("Dismissed No Internet Dialog")
+                }
+                g_alert.addAction(OKAction)
+                
+                // Sets up the controller to display notification screen if no events populate
+                self.tableView.emptyDataSetSource = self;
+                self.tableView.emptyDataSetDelegate = self;
+                self.tableView.reloadEmptyDataSet()
+                
+                self.presentViewController(g_alert, animated: true, completion: nil)
+            }
+        }
+        
+        do {
+            try reachability.startNotifier()
+        } catch {
+            print("Unable to start notifier")
+        }
+        
+    }
+    
     //TODO: move it into Mission.swift
     func setMissions(missions:NSArray) -> () {
+        
+        SwiftLoader.show(title: "Loading...", animated: true)
         
         for mission in missions {
             var url: String
@@ -78,7 +141,14 @@ class SummerMissionsViewController: UITableViewController, DZNEmptyDataSetSource
 
             missionsCollection.append(missionObj)
         }
+        SwiftLoader.hide()
         self.tableView.reloadData()
+        
+        // Sets up the controller to display notification screen if no summer missions to populate
+        tableView.emptyDataSetSource = self;
+        tableView.emptyDataSetDelegate = self;
+        
+        self.tableView.reloadEmptyDataSet()
     }
     
     func nullToNil(value : AnyObject?) -> String {
@@ -87,11 +157,6 @@ class SummerMissionsViewController: UITableViewController, DZNEmptyDataSetSource
         } else {
             return value as! String
         }
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     // MARK: - Table view data source
@@ -119,9 +184,10 @@ class SummerMissionsViewController: UITableViewController, DZNEmptyDataSetSource
             if (mission.image != nil && mission.image != "") {
                 let url = NSURL(string: mission.image!)
                 let data = NSData(contentsOfURL: url!)
-                let image = UIImage(data: data!)
-
-                cell.missionImage.image = image
+                
+                if (data != nil) {
+                    cell.missionImage.image = UIImage(data: data!)
+                }
             }
             
             //date formatting

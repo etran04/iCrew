@@ -8,7 +8,8 @@
 
 import Foundation
 
-let databaseURL = "http://pcp070211pcs.wireless.calpoly.edu:3001/api/"
+let databaseURL = "http://ec2-52-32-197-212.us-west-2.compute.amazonaws.com:3001/api/"
+//let databaseURL = "http://pcp070211pcs.wireless.calpoly.edu:3001/api/"
 
 //let databaseURL = "http://localhost:3001/api/"
 

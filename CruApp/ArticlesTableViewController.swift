@@ -9,28 +9,11 @@
 import UIKit
 import SafariServices
 import SwiftLoader
-
-///* URLResources is a inner class to hold metadata for a single article or a single tool */
-//class URLResources {
-//    private var name: String?
-//    private var url: String?
-//    
-//    init(name: String, url: String) {
-//        self.name = name
-//        self.url = url
-//    }
-//    
-//    func getName() -> String {
-//        return self.name!
-//    }
-//    
-//    func getURL() -> String {
-//        return self.url!
-//    }
-//}
+import DZNEmptyDataSet
+import ReachabilitySwift
 
 /* ArticlesTableVC is the screen that holds all articles for user to view */
-class ArticlesTableViewController: UITableViewController {
+class ArticlesTableViewController: UITableViewController, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
 
     /* A reference to the pull-down-to-refresh ui */
     @IBOutlet weak var refresh: UIRefreshControl!
@@ -44,34 +27,18 @@ class ArticlesTableViewController: UITableViewController {
     /* Called when the current view is loaded */
     override func viewDidLoad() {
         super.viewDidLoad()
-        //self.setUpLoadSpinner()
         
-        /* Sets up the database */
-        DBClient.getData("resources", dict: loadArticles)
+        // A little trick for removing the cell separators
+        self.tableView.tableFooterView = UIView()
         
-        self.tableView.reloadData()
-        
+        // Check internet, and if applicable, starts to load the articles
+        checkInternet()
+
     }
 
     /* Called when the current view appears */
     override func viewDidAppear(animated: Bool) {
         self.setUpRefresh()
-        
-//        articlesCollection = [Resource]()
-//        
-//        /* Sets up the database */
-//        var dbClient: DBClient!
-//        dbClient = DBClient()
-//        dbClient.getData("resource", dict: loadArticles)
-//        
-//        self.tableView.reloadData()
-        
-        //self.loadArticles()
-    }
-    
-    /* Sets up and starts the loading indicator */
-    func setUpLoadSpinner() {
-        SwiftLoader.show(title: "Loading...", animated: true)
     }
     
     /* Resets the refresh UI control */
@@ -102,17 +69,71 @@ class ArticlesTableViewController: UITableViewController {
             presentViewController(vc, animated: false, completion: nil)
         }
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
 
+    /* Determines whether or not the device is connected to WiFi or 4g. Alerts user if they are not.
+     * Without internet, data might not populate, aside from cached data */
+    func checkInternet() {
+            
+        // Checks for internet connectivity (Wifi/4G)
+        let reachability: Reachability
+        do {
+            reachability = try Reachability.reachabilityForInternetConnection()
+        } catch {
+            print("Unable to create Reachability")
+            return
+        }
+        
+        SwiftLoader.show(title: "Loading...", animated: true)
+        
+        // If device does have internet
+        reachability.whenReachable = { reachability in
+            dispatch_async(dispatch_get_main_queue()) {
+                if reachability.isReachableViaWiFi() {
+                    print("Reachable via WiFi")
+                } else {
+                    print("Reachable via Cellular")
+                }
+                
+                /* Call to database to load articles  */
+                DBClient.getData("resources", dict: self.loadArticles)
+            }
+        }
+        
+        reachability.whenUnreachable = { reachability in
+            dispatch_async(dispatch_get_main_queue()) {
+                // If unreachable, hide the loading indicator anyways
+                SwiftLoader.hide()
+                
+                // If no internet, display an alert notifying user they have no internet connectivity
+                let g_alert = UIAlertController(title: "Checking for Internet...", message: "If this dialog appears, please check to make sure you have internet connectivity. ", preferredStyle: .Alert)
+                let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
+                    // Dismiss alert dialog
+                    print("Dismissed No Internet Dialog")
+                }
+                g_alert.addAction(OKAction)
+                
+                // Sets up the controller to display notification screen if no events populate
+                self.tableView.emptyDataSetSource = self;
+                self.tableView.emptyDataSetDelegate = self;
+                self.tableView.reloadEmptyDataSet()
+                
+                self.presentViewController(g_alert, animated: true, completion: nil)
+            }
+        }
+        
+        do {
+            try reachability.startNotifier()
+        } catch {
+            print("Unable to start notifier")
+        }
+        
+    }
+    
     /* Populates our articles from the Cru database */
-    func loadArticles(articles : NSArray) {
-        //for article in articles {
+    func loadArticles(articles : NSArray) {        
+        articlesCollection = [Resource]()
         
         for article in articles {
-            //TODO: need to implement find to grab type=Article
             let type = article["type"] as! String
             if(type == "article") {
                 let title = article["title"] as! String
@@ -123,8 +144,14 @@ class ArticlesTableViewController: UITableViewController {
                 articlesCollection.append(articleObj)
             }
         }
-        self.tableView.reloadData()
+        
         SwiftLoader.hide()
+        self.tableView.reloadData()
+    
+        // Sets up the controller to display notification screen if no articles populate
+        self.tableView.emptyDataSetSource = self
+        self.tableView.emptyDataSetDelegate = self
+        self.tableView.reloadEmptyDataSet()
     }
     
     // MARK: - Table view data source
@@ -159,6 +186,20 @@ class ArticlesTableViewController: UITableViewController {
             // This is the last cell in the table, stop the loading indicator
             SwiftLoader.hide()
         }
+    }
+    
+    // MARK: - DZNEmptySet Delegate methods
+    
+    func titleForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
+        let str = "No articles to display!"
+        let attrs = [NSFontAttributeName: UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline)]
+        return NSAttributedString(string: str, attributes: attrs)
+    }
+    
+    func descriptionForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
+        let str = "Please check back later."
+        let attrs = [NSFontAttributeName: UIFont.preferredFontForTextStyle(UIFontTextStyleBody)]
+        return NSAttributedString(string: str, attributes: attrs)
     }
 
 }

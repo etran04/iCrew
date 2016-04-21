@@ -109,8 +109,9 @@ class EventDetailsViewController: UIViewController, UIPopoverPresentationControl
             //Load event image if available
             if (event.image != nil) {
                 let url = NSURL(string: event.image!)
-                let data = NSData(contentsOfURL: url!)
-                image = UIImage(data: data!)
+                if let data = NSData(contentsOfURL: url!) {
+                    image = UIImage(data: data)
+                }
             }
             
             let imageView = UIImageView(image: image)

@@ -384,7 +384,8 @@ static GTMOAuth2Keychain* gGTMOAuth2DefaultKeychain = nil;
     [self.view addSubview:naviBarObj];
     
     UIBarButtonItem *cancelItem = [[UIBarButtonItem alloc]initWithTitle:[NSString stringWithFormat:NSLocalizedString(@"Cancel", nil)] style:UIBarButtonItemStylePlain target:self action:@selector(cancelGdriveSignIn:)];
-    cancelItem.tintColor = [UIColor colorWithRed:0.0 green:122.0/255.0 blue:1.0 alpha:1.0];
+    double greenVal = 122.0/255.0;
+    cancelItem.tintColor = [UIColor colorWithRed:0.0 green: (float) greenVal blue:1.0 alpha:1.0];
     UINavigationItem *navigItem = [[UINavigationItem alloc] initWithTitle:@"Google"];
     navigItem.rightBarButtonItem = cancelItem;
     naviBarObj.items = [NSArray arrayWithObjects: navigItem,nil];

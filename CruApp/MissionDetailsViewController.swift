@@ -61,7 +61,6 @@ class MissionDetailsViewController: UIViewController {
             
             // Mission link button
             if (mission.url != "") {
-                //missionButton.setTitle(, forState: UIControlState.Normal)
                 missionButton.addTarget(self, action: "openLink:", forControlEvents: .TouchUpInside)
             } else {
                 missionButton.enabled = false
@@ -76,18 +75,20 @@ class MissionDetailsViewController: UIViewController {
             //Load event image is available
             if (mission.image != nil && mission.image != "") {
                 let url = NSURL(string: mission.image!)
-                let data = NSData(contentsOfURL: url!)
-                image = UIImage(data: data!)
+                
+                
+                if let data = NSData(contentsOfURL: url!) {
+                    image = UIImage(data: data)
+                    
+                    let imageView = UIImageView(image: image)
+                    imageView.clipsToBounds = true
+                    missionImage.frame = missionImage.bounds
+                    
+                    imageView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: newHeight)
+                    imageView.contentMode = UIViewContentMode.ScaleAspectFill
+                    missionImage.addSubview(imageView)
+                }
             }
-            
-            let imageView = UIImageView(image: image)
-            imageView.clipsToBounds = true
-            missionImage.frame = missionImage.bounds
-            
-            imageView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: newHeight)
-            imageView.contentMode = UIViewContentMode.ScaleAspectFill
-            print(imageView)
-            missionImage.addSubview(imageView)
         }
     }
     override func viewDidAppear(animated: Bool) {

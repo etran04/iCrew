@@ -2,21 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>UIAppFonts</key>
-	<array>
-		<string>FreigSanProBlk.otf</string>
-		<string>FreigSanProBlkIt.otf</string>
-		<string>FreigSanProBold.otf</string>
-		<string>FreigSanProBoldIt.otf</string>
-		<string>FreigSanProBook.otf</string>
-		<string>FreigSanProBookIt.otf</string>
-		<string>FreigSanProLig.otf</string>
-		<string>FreigSanProLigIt.otf</string>
-		<string>FreigSanProMed.otf</string>
-		<string>FreigSanProMedIt.otf</string>
-		<string>FreigSanProSem.otf</string>
-		<string>FreigSanProSemIt.otf</string>
-	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
@@ -42,6 +27,21 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>FreigSanProBlk.otf</string>
+		<string>FreigSanProBlkIt.otf</string>
+		<string>FreigSanProBold.otf</string>
+		<string>FreigSanProBoldIt.otf</string>
+		<string>FreigSanProBook.otf</string>
+		<string>FreigSanProBookIt.otf</string>
+		<string>FreigSanProLig.otf</string>
+		<string>FreigSanProLigIt.otf</string>
+		<string>FreigSanProMed.otf</string>
+		<string>FreigSanProMedIt.otf</string>
+		<string>FreigSanProSem.otf</string>
+		<string>FreigSanProSemIt.otf</string>
+	</array>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>remote-notification</string>

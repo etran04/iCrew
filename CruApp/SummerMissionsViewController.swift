@@ -137,8 +137,14 @@ class SummerMissionsViewController: UITableViewController, DZNEmptyDataSetSource
                 street1: nullToNil(mission["location"]?!.objectForKey("street1")),
                 country: nullToNil(mission["location"]?!.objectForKey("country")))
         
-            let missionObj = Mission(name: name, description: description, image: image, cost: cost, location: location, startDate: startDate, endDate: endDate, url: url, leaders: leaders)
-
+            var missionObj = Mission(name: name, description: description, image: image, cost: cost, location: location, startDate: startDate, endDate: endDate, url: url, leaders: leaders)
+            
+            if (image != "") {
+                if let data = NSData(contentsOfURL: NSURL(string: image)!) {
+                    missionObj.displayingImage = UIImage(data: data)
+                }
+            }
+            
             missionsCollection.append(missionObj)
         }
         SwiftLoader.hide()
@@ -181,13 +187,8 @@ class SummerMissionsViewController: UITableViewController, DZNEmptyDataSetSource
                 view.removeFromSuperview()
             }
             
-            if (mission.image != nil && mission.image != "") {
-                let url = NSURL(string: mission.image!)
-                let data = NSData(contentsOfURL: url!)
-                
-                if (data != nil) {
-                    cell.missionImage.image = UIImage(data: data!)
-                }
+            if let image = mission.displayingImage {
+                cell.missionImage.image = image
             }
             
             //date formatting

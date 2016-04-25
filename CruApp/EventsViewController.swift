@@ -176,7 +176,14 @@ class EventsViewController: UITableViewController, DZNEmptyDataSetDelegate, DZNE
             let url = event["url"] as! String
             let rideShareEnabled = event["rideSharingEnabled"] as! Bool
         
-            let eventObj = Event(name: name, startDate: startDate, endDate: endDate, location: location, image: image, imageSq: imageSq, description: description, url: url, rideShareFlag: rideShareEnabled)
+            var eventObj = Event(name: name, startDate: startDate, endDate: endDate, location: location, image: image, imageSq: imageSq, description: description, url: url, rideShareFlag: rideShareEnabled)
+            
+            // Caches the square image of event
+            if let imageUrl = NSURL(string: eventObj.imageSq!) {
+                if let data = NSData(contentsOfURL: imageUrl) {
+                    eventObj.displayingImage = UIImage(data: data)
+                }
+            }
         
             eventsCollection.append(eventObj)
         }
@@ -208,11 +215,8 @@ class EventsViewController: UITableViewController, DZNEmptyDataSetDelegate, DZNE
         cell.eventName.font = UIFont.boldSystemFontOfSize(20)
         cell.eventLocation.text = (event.location?.suburb)! + ", " + (event.location?.state)!
         
-        let url = NSURL(string: event.imageSq!)
-        let data = NSData(contentsOfURL: url!)
-        
-        if let data = NSData(contentsOfURL: url!) {
-            cell.eventImage.image = UIImage(data: data)
+        if let image = event.displayingImage {
+            cell.eventImage.image = image
         }
         
         //date formatting

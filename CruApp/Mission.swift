@@ -19,6 +19,7 @@ struct Mission {
     var endDate: String?
     var url: String
     var leaders: String
+    var displayingImage: UIImage?
     
     init(name: String, description: String, image: String, cost: Int, location: Location, startDate: String, endDate: String, url: String, leaders: String) {
         self.name = name
@@ -30,6 +31,7 @@ struct Mission {
         self.endDate = endDate
         self.url = url
         self.leaders = leaders
+        self.displayingImage = nil
     }
 }
 

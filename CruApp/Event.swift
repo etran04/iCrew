@@ -19,6 +19,7 @@ struct Event {
     var location: Location?
     var url: String
     var rideShareFlag: Bool?
+    var displayingImage: UIImage?
     
     init(name: String, startDate:String?, endDate:String?, location:Location?, image: String?, imageSq: String?, description: String, url:String, rideShareFlag: Bool) {
         self.name = name
@@ -30,5 +31,6 @@ struct Event {
         self.imageSq = imageSq
         self.url = url
         self.rideShareFlag = rideShareFlag
+        self.displayingImage = nil
     }
 }

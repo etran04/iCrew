@@ -46,6 +46,7 @@
 		271C78211C50434000F42EA0 /* InitialCampusTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271C78201C50434000F42EA0 /* InitialCampusTableViewController.swift */; };
 		271C78231C5044B100F42EA0 /* InitialCampusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271C78221C5044B100F42EA0 /* InitialCampusTableViewCell.swift */; };
 		27529A491C9165D3008A0D06 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27529A481C9165D3008A0D06 /* UserData.swift */; };
+		2770E7B11CD091AE002794DF /* MWSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2770E7B01CD091AE002794DF /* MWSegmentedControl.swift */; };
 		277E67561BEB6362001C29DD /* CruAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277E67551BEB6362001C29DD /* CruAppTests.swift */; };
 		278C4C371C86640100EB0AC1 /* FreigSanProBlk.otf in Resources */ = {isa = PBXBuildFile; fileRef = 278C4C2A1C86640100EB0AC1 /* FreigSanProBlk.otf */; };
 		278C4C381C86640100EB0AC1 /* FreigSanProBlkIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 278C4C2B1C86640100EB0AC1 /* FreigSanProBlkIt.otf */; };
@@ -284,6 +285,7 @@
 		271C78201C50434000F42EA0 /* InitialCampusTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialCampusTableViewController.swift; sourceTree = "<group>"; };
 		271C78221C5044B100F42EA0 /* InitialCampusTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialCampusTableViewCell.swift; sourceTree = "<group>"; };
 		27529A481C9165D3008A0D06 /* UserData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		2770E7B01CD091AE002794DF /* MWSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MWSegmentedControl.swift; sourceTree = "<group>"; };
 		277E67531BEB6362001C29DD /* CruAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CruAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		277E67551BEB6362001C29DD /* CruAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CruAppTests.swift; sourceTree = "<group>"; };
 		277E67571BEB6362001C29DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -551,6 +553,7 @@
 		1EB404DA1C633E6E00220D5B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				2770E7B01CD091AE002794DF /* MWSegmentedControl.swift */,
 				A43482D11C0D290E00B62D6C /* Images */,
 				279326FB1C509C2100BAC73D /* NMPopUpViewSwift */,
 				278C4C291C86640100EB0AC1 /* FreightSansPro  */,
@@ -1140,6 +1143,7 @@
 				A487BBFB1C635E78006F9B3C /* Driver.swift in Sources */,
 				838564F51C0D9EDF00EB1728 /* SWRevealViewController.m in Sources */,
 				27529A491C9165D3008A0D06 /* UserData.swift in Sources */,
+				2770E7B11CD091AE002794DF /* MWSegmentedControl.swift in Sources */,
 				078739921C8617D000D09C14 /* ScrollPickerCell.swift in Sources */,
 				279327051C50A0EC00BAC73D /* InitialMinistryTableViewController.swift in Sources */,
 				271C78211C50434000F42EA0 /* InitialCampusTableViewController.swift in Sources */,

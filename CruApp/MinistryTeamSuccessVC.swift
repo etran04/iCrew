@@ -35,7 +35,6 @@ class MinistryTeamSuccessVC: UIViewController {
     
     //obtain information from the database to an Object
     func setLeaders(users: NSArray) {
-        //self.tableView.beginUpdates()
         for user in users {
             let userId = user["_id"] as! String
             
@@ -44,9 +43,7 @@ class MinistryTeamSuccessVC: UIViewController {
             for leader in ministryTeam!.leaders {
                 if (leader == userId) {
                     
-                    print("check")
-                    
-                    let userObj = UserData(user: leader)
+                    let userObj = UserData(user: user)
                     
                     leaderCollection.append(userObj)
                     print(leaderCollection.count)

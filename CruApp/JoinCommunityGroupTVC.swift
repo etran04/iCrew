@@ -16,40 +16,34 @@ class JoinCommunityGroupTVC: UITableViewController {
     
     var ministryCollection: [MinistryData] = []
     var cgCollection = [[CommunityGroupData]]()
-//    var ministryTeamCollection = [CommunityGroupData]()
     
-    var selectedIndices : [Int] = []
+    var days: [String] = []
+    
+    var selectedIndices : [NSIndexPath] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // A little trick for removing the cell separators
         self.tableView.tableFooterView = UIView()
-        
+
         //set users ministry collection and the teamMinistry collection array
         ministryCollection = UserProfile.getMinistries()
-//        ministryTeamCollection = UserProfile.getMinistryTeams()
+
         cgCollection = Array(count: ministryCollection.count, repeatedValue: [CommunityGroupData]())
         
-        //setup database
-//        dbClient.getData("communitygroup", dict: setCommunityGroups)
         
-        setMockData()
+        //setup database
+        DBClient.getData("communitygroups", dict: setCommunityGroups)
+        
     }
     
-    func setMockData() {
-        
-        for (var count = 0; count < 5; count++) {
-            for (var i = 0; i < ministryCollection.count; i++) {
-                cgCollection[i].append(CommunityGroupData(id: "Community Group \(count)\(i)", ministryId: "123", time: NSDate(), leaders: "Lalala"))
-            }
-        }
-    }
     
     //obtain information from the database to an Object
     func setCommunityGroups(communityGroups: NSArray) {
+
         for communityGroup in communityGroups {
-            let ministryId = communityGroup["parentMinistry"] as! String
+            let ministryId = communityGroup["ministry"] as! String
             
             //go through user's ministries and if a ministry team's parentMinistry matches
             //one of the user's ministries, add to index of teamCollection that
@@ -57,10 +51,11 @@ class JoinCommunityGroupTVC: UITableViewController {
             for (index, _) in ministryCollection.enumerate() {
                 if (ministryCollection[index].id == ministryId) {
                     let cgObj = CommunityGroupData(
-                        id: communityGroup["name"] as! String,
+                        id: communityGroup["_id"] as! String,
+                        name: communityGroup["name"] as! String,
                         ministryId: ministryId,
-                        time: communityGroup["meetingTime"] as! NSDate,
-                        leaders: communityGroup["leaders"] as! String)
+                        time: communityGroup["meetingTime"] as! String,
+                        leaders: communityGroup["leaders"] as! [String])
                     
                     cgCollection[index].append(cgObj)
                 }
@@ -92,7 +87,7 @@ class JoinCommunityGroupTVC: UITableViewController {
         
         let communityGroup = cgCollection[indexPath.section][indexPath.row]
         
-        cell.nameLabel!.text = communityGroup.id
+        cell.nameLabel!.text = communityGroup.name
         
         return cell
     }
@@ -105,15 +100,27 @@ class JoinCommunityGroupTVC: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let cell:UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
         
-        if (!selectedIndices.contains(indexPath.row)) {
+        if (!selectedIndices.contains(indexPath)) {
             cell.accessoryType = UITableViewCellAccessoryType.Checkmark
-            selectedIndices.append(indexPath.row)
+            selectedIndices.append(indexPath)
         }
         else {
             cell.accessoryType = UITableViewCellAccessoryType.None
-            selectedIndices.removeAtIndex(selectedIndices.indexOf(indexPath.row)!)
+            selectedIndices.removeAtIndex(selectedIndices.indexOf(indexPath)!)
         }
         
         doneButton.enabled = selectedIndices.count > 0
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        let cgSuccess = segue.destinationViewController as!  CGSuccessVC
+        
+//        //sending in selected community groups
+//        for index in selectedIndices {
+//            cgSuccess.selectedCG = (cgCollection[index.section][index.row])
+//        }
+        
+        
     }
 }

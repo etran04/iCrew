@@ -17,6 +17,7 @@ struct UserData {
     var password: String
     
     init(user: AnyObject) {
+
         firstName = user["name"]!!.objectForKey("first") as! String
         lastName = user["name"]!!.objectForKey("last") as! String
         id = user["_id"] as! String

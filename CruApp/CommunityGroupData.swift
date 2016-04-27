@@ -10,12 +10,14 @@ import Foundation
 
 struct CommunityGroupData {
     var id: String
+    var name: String
     var ministryId: String
-    var time: NSDate
-    var leaders: String
+    var time: String
+    var leaders: [String]
     
-    init(id: String, ministryId: String, time: NSDate, leaders: String) {
+    init(id: String, name: String, ministryId: String, time: String, leaders: [String]) {
         self.id = id
+        self.name = name
         self.ministryId = ministryId
         self.time = time
         self.leaders = leaders

@@ -9,6 +9,8 @@
 import UIKit
 
 class CGSuccessVC: UIViewController {
+    
+    var selectedCG: [CommunityGroupData] = []
 
     @IBAction func finishPressed(sender: AnyObject) {
         self.navigationController?.popToRootViewControllerAnimated(true)

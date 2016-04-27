@@ -150,7 +150,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" directionalLockEnabled="YES" bounces="NO" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ai3-mR-F2h">
                                 <rect key="frame" x="0.0" y="64" width="375" height="551"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mDg-bR-DJZ" userLabel="Icon View">
+                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mDg-bR-DJZ" userLabel="Icon View">
                                         <rect key="frame" x="-5" y="304" width="386" height="45"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HRy-Ov-E52" userLabel="Facebook Button">
@@ -175,7 +175,6 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="304" id="Wqh-oz-OT1"/>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="egH-Gh-rUw"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" red="0.38431372549999998" green="0.37647058820000001" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -197,7 +196,7 @@
                                         <color key="textColor" red="0.0" green="0.45098039220000002" blue="0.59607843140000005" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n1Y-B8-t3a" userLabel="Event Image">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n1Y-B8-t3a" userLabel="Event Image">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="175"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HuY-Lz-jYx" userLabel="Title Label">
@@ -210,11 +209,11 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="2FN-Ag-IGf" firstAttribute="centerX" secondItem="ai3-mR-F2h" secondAttribute="centerX" id="97U-LT-oF4"/>
-                                    <constraint firstItem="FZK-uQ-Ald" firstAttribute="centerX" secondItem="ai3-mR-F2h" secondAttribute="centerX" id="A8u-N3-rhK"/>
-                                    <constraint firstItem="FZK-uQ-Ald" firstAttribute="top" secondItem="2FN-Ag-IGf" secondAttribute="bottom" constant="8" id="b7s-FL-MVE"/>
-                                    <constraint firstItem="FZK-uQ-Ald" firstAttribute="top" secondItem="2FN-Ag-IGf" secondAttribute="bottom" constant="8" id="f5q-8V-cHL"/>
-                                    <constraint firstItem="HuY-Lz-jYx" firstAttribute="top" secondItem="n1Y-B8-t3a" secondAttribute="bottom" constant="4" id="kLk-XC-OEE"/>
+                                    <constraint firstItem="mDg-bR-DJZ" firstAttribute="centerX" secondItem="ai3-mR-F2h" secondAttribute="centerX" id="6de-Lc-vTK"/>
+                                    <constraint firstItem="2FN-Ag-IGf" firstAttribute="centerX" secondItem="ai3-mR-F2h" secondAttribute="centerX" id="Cec-mj-b03"/>
+                                    <constraint firstItem="6HN-Db-h5N" firstAttribute="centerX" secondItem="ai3-mR-F2h" secondAttribute="centerX" id="E7J-eC-Vfi"/>
+                                    <constraint firstItem="FZK-uQ-Ald" firstAttribute="centerX" secondItem="ai3-mR-F2h" secondAttribute="centerX" id="GaH-Tv-NQW"/>
+                                    <constraint firstAttribute="bottom" secondItem="6HN-Db-h5N" secondAttribute="bottom" constant="160" id="uyf-F9-Mws"/>
                                     <constraint firstItem="HuY-Lz-jYx" firstAttribute="centerX" secondItem="ai3-mR-F2h" secondAttribute="centerX" id="x6F-6x-29t"/>
                                 </constraints>
                             </scrollView>

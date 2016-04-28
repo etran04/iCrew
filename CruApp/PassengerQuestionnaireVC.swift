@@ -145,7 +145,7 @@ class PassengerQuestionnaireVC: UIViewController, UITableViewDelegate, UITableVi
 //        view.endEditing(true)
 //    }
     
-    func parsePhoneNumber(phoneNum : String) -> Int {
+    func parsePhoneNumber(phoneNum : String) -> String {
         // split by '-'
         let full = phoneNum.componentsSeparatedByString("-")
         let left = full[0]
@@ -165,7 +165,7 @@ class PassengerQuestionnaireVC: UIViewController, UITableViewDelegate, UITableVi
         // = right
         
         let finalPhoneNum = areaCode + threeDigits + right
-        return Int(finalPhoneNum)!
+        return finalPhoneNum
         
     }
     
@@ -187,24 +187,42 @@ class PassengerQuestionnaireVC: UIViewController, UITableViewDelegate, UITableVi
         }
         
         let riderName = (cells[0] as! NameFieldCell).riderFullName.text
-        let riderPhoneNum = parsePhoneNumber(((cells[1] as! PhoneNumCell).riderPhoneNum.text!))
+        
+        var riderPhoneNum = ""
+        if(!((cells[1] as! PhoneNumCell).riderPhoneNum.text!).isEmpty) {
+            riderPhoneNum = parsePhoneNumber(((cells[1] as! PhoneNumCell).riderPhoneNum.text!))
+        }
         
         print("Time: " + String((cells[3] as! DatePickerCell).datePicker.date))
+        let time = String((cells[3] as! DatePickerCell).datePicker.date)
         
-        passenger = Passenger(
-            name: riderName!,
-            eventId: eventIds[(cells[2] as! ScrollPickerCell).scrollPicker.selectedRowInComponent(0)],
-            phoneNumber: String(riderPhoneNum),
-            direction: rideDirection,
-            departureTime: String((cells[3] as! DatePickerCell).datePicker.date),
-            gcmId: "1234567")
+        let event = eventIds[(cells[2] as! ScrollPickerCell).scrollPicker.selectedRowInComponent(0)]
         
-        let selectDriverViewController = segue.destinationViewController as! SelectDriverTableViewController
-        selectDriverViewController.passenger = passenger
+        if(riderName!.isEmpty || riderPhoneNum.isEmpty || event.isEmpty || time.isEmpty) {
+            let alertController = UIAlertController(title: "ERROR", message:
+                "Please fill out form before submitting.", preferredStyle: UIAlertControllerStyle.Alert)
+            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default, handler:nil))
+            
+            self.presentViewController(alertController, animated: true, completion: nil)
+            
+        } else {
         
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+            print("Time: " + String((cells[3] as! DatePickerCell).datePicker.date))
         
+            passenger = Passenger(
+                name: riderName!,
+                eventId: eventIds[(cells[2] as! ScrollPickerCell).scrollPicker.selectedRowInComponent(0)],
+                phoneNumber: riderPhoneNum,
+                direction: rideDirection,
+                departureTime: String((cells[3] as! DatePickerCell).datePicker.date),
+                gcmId: "1234567")
+        
+            let selectDriverViewController = segue.destinationViewController as! SelectDriverTableViewController
+            selectDriverViewController.passenger = passenger
+        
+            // Get the new view controller using segue.destinationViewController.
+            // Pass the selected object to the new view controller.
+        }
         
     }
     

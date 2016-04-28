@@ -26,6 +26,10 @@ class SummerMissionsViewController: UITableViewController, DZNEmptyDataSetSource
     
     override func viewDidAppear(animated: Bool) {
         
+        if (missionsCollection.isEmpty) {
+            checkInternet()
+        }
+        
         if (self.revealViewController() != nil) {
             self.menuButton.target = self.revealViewController()
             self.menuButton.action = "revealToggle:"

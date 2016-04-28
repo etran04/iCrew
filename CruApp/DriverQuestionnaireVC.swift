@@ -179,7 +179,7 @@ class DriverQuestionnaireVC: UIViewController, UITableViewDelegate, UITableViewD
 //        infoTable.endEditing(true)
 //    }
     
-    func parsePhoneNumber(phoneNum : String) -> Int {
+    func parsePhoneNumber(phoneNum : String) -> String {
         // split by '-'
         let full = phoneNum.componentsSeparatedByString("-")
         let left = full[0]
@@ -199,7 +199,8 @@ class DriverQuestionnaireVC: UIViewController, UITableViewDelegate, UITableViewD
         // = right
 
         let finalPhoneNum = areaCode + threeDigits + right
-        return Int(finalPhoneNum)!
+        //return Int(finalPhoneNum)!
+        return finalPhoneNum
 
     }
     
@@ -236,47 +237,67 @@ class DriverQuestionnaireVC: UIViewController, UITableViewDelegate, UITableViewD
         
         let driverName = (cells[0] as! NameFieldCell).driverFullName.text
         print("number: " + ((cells[1] as! PhoneNumCell).driverPhoneNum.text!))
-        let drivePhoneNum = parsePhoneNumber(((cells[1] as! PhoneNumCell).driverPhoneNum.text!))
+        
+        var driverPhoneNum = ""
+        if(!((cells[1] as! PhoneNumCell).driverPhoneNum.text!).isEmpty) {
+            driverPhoneNum = parsePhoneNumber(((cells[1] as! PhoneNumCell).driverPhoneNum.text!))
+        }
         let numSeatsChoice = Int((cells[4] as! AvailNumSeatCell).stepper.value)
         
-        let location : [String: AnyObject] =
-        [
-            "postcode": zipcode!,
-            "state": state!,
-            "street1": street!,
-            "suburb": city!,
-            "country": country!
-        ]
+        let time = String((cells[3] as! DatePickerCell).datePicker.date);
         
-        let params : [String: AnyObject] =
-        [
-            "location": location,
-            "direction": rideDirection,
-            "seats": numSeatsChoice,
-            "driverNumber": drivePhoneNum,
-            "event": eventIds[(cells[2] as! ScrollPickerCell).scrollPicker.selectedRowInComponent(0)],
-            "driverName": driverName!,
-            "time": String((cells[3] as! DatePickerCell).datePicker.date),
-            "gcm_id" : 1234567
-        ]
+        let event = eventIds[(cells[2] as! ScrollPickerCell).scrollPicker.selectedRowInComponent(0)];
+        
+        //makes sure info is filled before being submitted
+        if(driverPhoneNum.isEmpty || driverName == nil || event.isEmpty || time.isEmpty || street!.isEmpty) {
 
-        do {
-            let body = try NSJSONSerialization.dataWithJSONObject(params, options: NSJSONWritingOptions.PrettyPrinted)
-            DBClient.addData("rides", body : body)
-        } catch {
-            print("Error sending data to database")
-        }
+            let alertController = UIAlertController(title: "ERROR", message:
+                "Please fill out form before submitting.", preferredStyle: UIAlertControllerStyle.Alert)
+            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default, handler:nil))
+            
+            self.presentViewController(alertController, animated: true, completion: nil)
+            
+        } else {
         
-        /* Show a visual alert displaying successful signup */
-        let successAlert = UIAlertController(title: "Success!", message:
-            "Thank you for signing up as a driver!", preferredStyle: UIAlertControllerStyle.Alert)
-        successAlert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler:
-            {
-                (action: UIAlertAction!) -> Void in
-                self.navigationController?.popToRootViewControllerAnimated(true)
-            }))
+            let location : [String: AnyObject] =
+            [
+                "postcode": zipcode!,
+                "state": state!,
+                "street1": street!,
+                "suburb": city!,
+                "country": country!
+            ]
+        
+            let params : [String: AnyObject] =
+            [
+                "location": location,
+                "direction": rideDirection,
+                "seats": numSeatsChoice,
+                "driverNumber": driverPhoneNum,
+                "event": event,
+                "driverName": driverName!,
+                "time": time,
+                "gcm_id" : 1234567
+            ]
+
+            do {
+                let body = try NSJSONSerialization.dataWithJSONObject(params, options: NSJSONWritingOptions.PrettyPrinted)
+                DBClient.addData("rides", body : body)
+            } catch {
+                print("Error sending data to database")
+            }
+        
+            /* Show a visual alert displaying successful signup */
+            let successAlert = UIAlertController(title: "Success!", message:
+                "Thank you for signing up as a driver!", preferredStyle: UIAlertControllerStyle.Alert)
+            successAlert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler:
+                {
+                    (action: UIAlertAction!) -> Void in
+                    self.navigationController?.popToRootViewControllerAnimated(true)
+                }))
     
-        self.presentViewController(successAlert, animated: true, completion: nil)
+            self.presentViewController(successAlert, animated: true, completion: nil)
+        }
     }
     
     /* Returns height of row in tableview */

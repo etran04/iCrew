@@ -14,6 +14,8 @@ class InvolvedGroupsTVC: UITableViewController {
     var combinedGroups = [[CombinedObject]]()
     var involvedGroupIds = [String]()
     
+    @IBOutlet weak var editButton: UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -21,7 +23,6 @@ class InvolvedGroupsTVC: UITableViewController {
         savedMinistryTeams = UserProfile.getMinistryTeams()
         combinedGroups = Array(count: 2, repeatedValue: [CombinedObject]())
         combineGroups()
-        
         
         //remove extra separators
         self.tableView.tableFooterView = UIView()
@@ -62,7 +63,7 @@ class InvolvedGroupsTVC: UITableViewController {
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return combinedGroups[section].count //
+        return combinedGroups[section].count == 0 ? 1 : combinedGroups[section].count
     }
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -72,21 +73,28 @@ class InvolvedGroupsTVC: UITableViewController {
     // Uncomment
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("MinistryTeamDataCell", forIndexPath: indexPath) as! MinistryTeamDataCell
-        let group = combinedGroups[indexPath.section][indexPath.row]
         
-        if (group.ministryTeam != nil) {
-            cell.nameLabel.text = group.ministryTeam!.name
-            cell.locationLabel.text = UserProfile.getMinistryNameFromID(group.ministryTeam!.parentMinistry)
+        if (combinedGroups[indexPath.section].count == 0) {
+            cell.nameLabel.text = "None"
+            cell.locationLabel.text = ""
         }
         else {
-            // TODO: Fix date
-//            let dateFormatter = NSDateFormatter()
-//            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS"
-//            let date = dateFormatter.dateFromString((group.communityGroup?.time)!)
-//            dateFormatter.dateFormat = "eeee, h:mm a"
+            let group = combinedGroups[indexPath.section][indexPath.row]
             
-            cell.nameLabel.text = group.communityGroup?.name
-            cell.locationLabel.text = (group.communityGroup?.time)!
+            if (group.ministryTeam != nil) {
+                cell.nameLabel.text = group.ministryTeam!.name
+                cell.locationLabel.text = UserProfile.getMinistryNameFromID(group.ministryTeam!.parentMinistry)
+            }
+            else {
+                // TODO: Fix date
+                //            let dateFormatter = NSDateFormatter()
+                //            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS"
+                //            let date = dateFormatter.dateFromString((group.communityGroup?.time)!)
+                //            dateFormatter.dateFormat = "eeee, h:mm a"
+                
+                cell.nameLabel.text = group.communityGroup?.name
+                cell.locationLabel.text = (group.communityGroup?.time)!
+            }
         }
         
         return cell
@@ -114,10 +122,45 @@ class InvolvedGroupsTVC: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let cell:UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
+//        let cell:UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
+    }
+    
+    override func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
+        if (self.tableView.editing) {
+            return UITableViewCellEditingStyle.Delete;
+        }
+        
+        return UITableViewCellEditingStyle.None;
+    }
+    
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.Delete) {
+            combinedGroups[indexPath.section].removeAtIndex(indexPath.row)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+        }
+    }
+    
+    @IBAction func editPressed(sender: AnyObject) {
+        if (self.tableView.editing) {
+            editButton.title = "Edit"
+            self.tableView.setEditing(false, animated: true)
+        } else {
+            editButton.title = "Done"
+            self.tableView.setEditing(true, animated: true)
+        }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-
+        let arr = Array(combinedGroups.flatten())
+        dump(arr)
+        UserProfile.refreshInvolvedGroups(arr)
+        print("getting here")
+    }
+    
+    override func willMoveToParentViewController(parent: UIViewController?) {
+        let arr = Array(combinedGroups.flatten())
+        dump(arr)
+        UserProfile.refreshInvolvedGroups(arr)
+        print("getting here")
     }
 }

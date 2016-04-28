@@ -250,4 +250,21 @@ class UserProfile {
         
         return ""
     }
+    
+    /**
+     * Removes all involved groups and adds it with the given array of involved groups.
+     */
+    class func refreshInvolvedGroups(groups: [CombinedObject]) {
+        self.removeAllEntities("CommunityGroup")
+        self.removeAllEntities("MinistryTeam")
+        
+        for group in groups {
+            if let team = group.ministryTeam {
+                self.addMinistryTeam(team)
+            }
+            else {
+                self.addCommunityGroup(group.communityGroup!)
+            }
+        }
+    }
 }

@@ -25,11 +25,6 @@ class SummerMissionsViewController: UITableViewController, DZNEmptyDataSetSource
     }
     
     override func viewDidAppear(animated: Bool) {
-        
-        if (missionsCollection.isEmpty) {
-            checkInternet()
-        }
-        
         if (self.revealViewController() != nil) {
             self.menuButton.target = self.revealViewController()
             self.menuButton.action = "revealToggle:"
@@ -221,7 +216,7 @@ class SummerMissionsViewController: UITableViewController, DZNEmptyDataSetSource
         }
     }
     
-    // MARK: - DZNEmptySet Delegate methods
+    // MARK: - DZNEmptySet Delegate/Datasource methods
     
     func titleForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
         let str = "No summer missions to display!"
@@ -235,20 +230,14 @@ class SummerMissionsViewController: UITableViewController, DZNEmptyDataSetSource
         return NSAttributedString(string: str, attributes: attrs)
     }
     
-    //    func imageForEmptyDataSet(scrollView: UIScrollView!) -> UIImage! {
-    //        return UIImage(named: "taylor-swift")
-    //    }
+    func buttonTitleForEmptyDataSet(scrollView: UIScrollView!, forState state: UIControlState) -> NSAttributedString! {
+        let str = "Click to refresh!"
+        let attrs = [NSFontAttributeName: UIFont.preferredFontForTextStyle(UIFontTextStyleBody)]
+        return NSAttributedString(string: str, attributes: attrs)
+    }
     
-    //    func buttonTitleForEmptyDataSet(scrollView: UIScrollView!, forState state: UIControlState) -> NSAttributedString! {
-    //        let str = "Placeholder for a button"
-    //        let attrs = [NSFontAttributeName: UIFont.preferredFontForTextStyle(UIFontTextStyleCallout)]
-    //        return NSAttributedString(string: str, attributes: attrs)
-    //    }
-    //
-    //    func emptyDataSetDidTapButton(scrollView: UIScrollView!) {
-    //        let ac = UIAlertController(title: "Button tapped!", message: nil, preferredStyle: .Alert)
-    //        ac.addAction(UIAlertAction(title: "Hurray", style: .Default, handler: nil))
-    //        presentViewController(ac, animated: true, completion: nil)
-    //    }
+    func emptyDataSetDidTapButton(scrollView: UIScrollView!) {
+        checkInternet()
+    }
 
 }

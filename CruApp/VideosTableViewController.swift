@@ -289,8 +289,13 @@ class VideosTableViewController: UITableViewController, UISearchBarDelegate, DZN
                     // Convert the JSON data into a dictionary.
                     let resultsDict = try NSJSONSerialization.JSONObjectWithData(data!, options: []) as! Dictionary<NSObject, AnyObject>
                     
-                    // Save the next page token
-                    self.nextPageToken = resultsDict["nextPageToken"] as! String
+                    
+                    if resultsDict["nextPageToken"] != nil {
+                        // Save the next page token
+                        self.nextPageToken = resultsDict["nextPageToken"] as! String
+                    } else {
+                        return
+                    }
                     
                     // Get all playlist items ("items" array).
                     let items: Array<Dictionary<NSObject, AnyObject>> = resultsDict["items"] as! Array<Dictionary<NSObject, AnyObject>>

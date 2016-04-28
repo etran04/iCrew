@@ -492,6 +492,10 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Omo-Qq-Qg8" userLabel="Days" customClass="MWSegmentedControl" customModule="CruApp">
+                                <rect key="frame" x="8" y="352" width="359" height="31"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Available Days:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vqz-6g-3ep">
                                 <rect key="frame" x="8" y="323" width="115" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -504,13 +508,13 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UFu-PQ-FyM">
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FLC-pb-um3">
                                 <rect key="frame" x="8" y="215" width="359" height="86"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="4wo-LD-YIA" id="xtS-IZ-Sdz"/>
+                                    <outlet property="delegate" destination="4wo-LD-YIA" id="MPW-qq-BeO"/>
+                                </connections>
                             </pickerView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Omo-Qq-Qg8" userLabel="Days" customClass="MWSegmentedControl" customModule="CruApp">
-                                <rect key="frame" x="8" y="352" width="359" height="31"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -525,6 +529,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="dayPicker" destination="Omo-Qq-Qg8" id="028-yw-qY1"/>
+                        <outlet property="ministryPicker" destination="FLC-pb-um3" id="uft-tL-nh1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Iwe-3a-hzc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -535,7 +540,7 @@
         <scene sceneID="tAh-kS-DzB">
             <objects>
                 <tableViewController id="8vx-lf-eb8" customClass="JoinCommunityGroupTVC" customModule="CruApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="56" sectionHeaderHeight="28" sectionFooterHeight="28" id="Huu-x9-T2f">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="56" sectionHeaderHeight="28" sectionFooterHeight="28" id="Huu-x9-T2f">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

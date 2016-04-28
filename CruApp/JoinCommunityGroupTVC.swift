@@ -14,23 +14,16 @@ class JoinCommunityGroupTVC: UITableViewController {
     
     var popViewController : PopUpViewControllerSwift!
     
-    var ministryCollection: [MinistryData] = []
-    var cgCollection = [[CommunityGroupData]]()
-    
-    var days: [String] = []
-    
-    var selectedIndices : [NSIndexPath] = []
+    var selectedMinistry : MinistryData!
+    var cgCollection = [CommunityGroupData]()
+    var days: [Int] = []
+    var selectedIndices : [Int] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // A little trick for removing the cell separators
         self.tableView.tableFooterView = UIView()
-
-        //set users ministry collection and the teamMinistry collection array
-        ministryCollection = UserProfile.getMinistries()
-
-        cgCollection = Array(count: ministryCollection.count, repeatedValue: [CommunityGroupData]())
         
         
         //setup database
@@ -45,20 +38,14 @@ class JoinCommunityGroupTVC: UITableViewController {
         for communityGroup in communityGroups {
             let ministryId = communityGroup["ministry"] as! String
             
-            //go through user's ministries and if a ministry team's parentMinistry matches
-            //one of the user's ministries, add to index of teamCollection that
-            //corresponds to the parentMinistry
-            for (index, _) in ministryCollection.enumerate() {
-                if (ministryCollection[index].id == ministryId) {
-                    let cgObj = CommunityGroupData(
-                        id: communityGroup["_id"] as! String,
-                        name: communityGroup["name"] as! String,
-                        ministryId: ministryId,
-                        time: communityGroup["meetingTime"] as! String,
-                        leaders: communityGroup["leaders"] as! [String])
-                    
-                    cgCollection[index].append(cgObj)
-                }
+              //go through the community groups,
+            //if the community group is in the selected ministry,
+            //add it to the cgCollection
+            if ministryId == selectedMinistry.id
+                && days.contains(getDayOfWeek(communityGroup["meetingTime"] as! String)!){
+                
+                let cgObj = CommunityGroupData(id: communityGroup["_id"] as! String, name: communityGroup["name"] as! String , ministryId: communityGroup["ministry"] as! String, time: communityGroup["meetingTime"] as! String, leaders: communityGroup["leaders"] as! [String])
+                cgCollection.append(cgObj)
             }
         }
         self.tableView.reloadData()
@@ -73,43 +60,42 @@ class JoinCommunityGroupTVC: UITableViewController {
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return ministryCollection.count
+        return 1
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return cgCollection[section].count
+        return cgCollection.count
     }
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("communityGroupCell", forIndexPath: indexPath) as! CommunityGroupCell
         
-        let communityGroup = cgCollection[indexPath.section][indexPath.row]
+        let communityGroup = cgCollection[indexPath.row]
         
         cell.nameLabel!.text = communityGroup.name
         
         return cell
     }
     
-    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return ministryCollection[section].name
-    }
-    
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let cell:UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
         
-        if (!selectedIndices.contains(indexPath)) {
+        if (!selectedIndices.contains(indexPath.row)) {
             cell.accessoryType = UITableViewCellAccessoryType.Checkmark
-            selectedIndices.append(indexPath)
+            selectedIndices.append(indexPath.row)
         }
         else {
             cell.accessoryType = UITableViewCellAccessoryType.None
-            selectedIndices.removeAtIndex(selectedIndices.indexOf(indexPath)!)
+            selectedIndices.removeAtIndex(selectedIndices.indexOf(indexPath.row)!)
         }
         
         doneButton.enabled = selectedIndices.count > 0
+    }
+    
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return selectedMinistry.name
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -122,5 +108,23 @@ class JoinCommunityGroupTVC: UITableViewController {
 //        }
         
         
+    }
+    
+    
+    //should take in a date in the format of 2016-04-26T18:06:19.000Z
+    func getDayOfWeek(today:String)->Int? {
+        //make today into the correct format of yyyy-MM-dd
+        var tokens = today.componentsSeparatedByString("T")
+        
+        let formatter  = NSDateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        if let todayDate = formatter.dateFromString(tokens[0]) {
+            let myCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
+            let myComponents = myCalendar.components(.Weekday, fromDate: todayDate)
+            let weekDay = myComponents.weekday
+            return weekDay
+        } else {
+            return nil
+        }
     }
 }

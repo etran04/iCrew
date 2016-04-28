@@ -13,6 +13,7 @@ class InvolvedGroupsTVC: UITableViewController {
     var savedMinistryTeams = [MinistryTeamData]()
     var combinedGroups = [[CombinedObject]]()
     var involvedGroupIds = [String]()
+    var totalGroups = 0
     
     @IBOutlet weak var editButton: UIBarButtonItem!
     
@@ -29,6 +30,7 @@ class InvolvedGroupsTVC: UITableViewController {
         
         //set empty back button
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.Plain, target:nil, action:nil)
+        print("view did load!")
     }
     
     func combineGroups() {
@@ -115,7 +117,6 @@ class InvolvedGroupsTVC: UITableViewController {
         
         label.backgroundColor = label.backgroundColor?.colorWithAlphaComponent(1.0)
         label.textColor = UIColor.whiteColor()
-
         label.font = UIFont.boldSystemFontOfSize(15)
         
         return label
@@ -150,17 +151,10 @@ class InvolvedGroupsTVC: UITableViewController {
         }
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let arr = Array(combinedGroups.flatten())
-        dump(arr)
-        UserProfile.refreshInvolvedGroups(arr)
-        print("getting here")
-    }
-    
-    override func willMoveToParentViewController(parent: UIViewController?) {
-        let arr = Array(combinedGroups.flatten())
-        dump(arr)
-        UserProfile.refreshInvolvedGroups(arr)
-        print("getting here")
+    override func viewWillDisappear(animated: Bool) {
+        if (involvedGroupIds.count != combinedGroups[0].count + combinedGroups[1].count) {
+            let arr = Array(combinedGroups.flatten())
+            UserProfile.refreshInvolvedGroups(arr)
+        }
     }
 }

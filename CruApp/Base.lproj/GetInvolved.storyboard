@@ -70,7 +70,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Involved Groups" id="IiS-vR-3PG">
                         <barButtonItem key="backBarButtonItem" title=" " id="tn9-bt-u9u"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="LRg-h0-rnl">
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="LRg-h0-rnl">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="editPressed:" destination="HW4-oR-vhn" id="uWC-EU-lXL"/>

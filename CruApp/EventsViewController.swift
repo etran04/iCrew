@@ -34,6 +34,10 @@ class EventsViewController: UITableViewController, DZNEmptyDataSetDelegate, DZNE
     
     override func viewDidAppear(animated: Bool) {
         
+        if (eventsCollection.isEmpty) {
+            checkInternet()
+        }
+        
         if (self.revealViewController() != nil) {
             self.menuButton.target = self.revealViewController()
             self.menuButton.action = "revealToggle:"

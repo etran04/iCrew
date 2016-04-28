@@ -14,9 +14,6 @@ import ReachabilitySwift
 
 class ToolsTableViewController: UITableViewController, DZNEmptyDataSetDelegate, DZNEmptyDataSetSource {
     
-    /* A reference to the pull-down-to-refresh ui */
-    @IBOutlet weak var refresh: UIRefreshControl!
-    
     /* A reference to the animated loading spinner */
     var indicator = UIActivityIndicatorView()
     
@@ -37,7 +34,6 @@ class ToolsTableViewController: UITableViewController, DZNEmptyDataSetDelegate, 
     
     /* Called when the current view appears */
     override func viewDidAppear(animated: Bool) {
-        self.setUpRefresh()
     }
     
     /* Determines whether or not the device is connected to WiFi or 4g. Alerts user if they are not.
@@ -123,26 +119,6 @@ class ToolsTableViewController: UITableViewController, DZNEmptyDataSetDelegate, 
         self.tableView.emptyDataSetDelegate = self
         self.tableView.emptyDataSetSource = self
         self.tableView.reloadEmptyDataSet()
-    }
-    
-    /* Resets the refresh UI control */
-    func setUpRefresh() {
-        // Update the displayed "Last update: " time in the UIRefreshControl
-        let date = NSDate()
-        let formatter = NSDateFormatter()
-        formatter.timeStyle = .MediumStyle
-        let updateString = "Last updated: " + formatter.stringFromDate(date)
-        self.refresh.attributedTitle = NSAttributedString(string: updateString)
-        
-        /* Set the callback for when pulled down */
-        self.refresh.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
-    }
-    
-    /* Callback method for when user pulls down to refresh */
-    func refresh(sender:AnyObject) {
-        self.setUpRefresh()
-        self.tableView.reloadData()
-        self.refresh.endRefreshing()
     }
     
     /* Opens a url string in an embedded web browser */

@@ -107,7 +107,9 @@ class JoinCommunityGroupTVC: UITableViewController {
 //            cgSuccess.selectedCG = (cgCollection[index.section][index.row])
 //        }
         
-        
+        for index in selectedIndices {
+            UserProfile.addCommunityGroup(cgCollection[index])
+        }
     }
     
     

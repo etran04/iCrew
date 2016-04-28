@@ -11,4 +11,5 @@ import UIKit
 class MinistryTeamDataCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
 
+    @IBOutlet weak var locationLabel: UILabel!
 }

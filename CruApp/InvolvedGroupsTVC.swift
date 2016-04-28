@@ -9,18 +9,43 @@
 import UIKit
 
 class InvolvedGroupsTVC: UITableViewController {
+    var savedCGs = [CommunityGroupData]()
     var savedMinistryTeams = [MinistryTeamData]()
+    var combinedGroups = [[CombinedObject]]()
+    var involvedGroupIds = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        savedCGs = UserProfile.getCommunityGroups()
         savedMinistryTeams = UserProfile.getMinistryTeams()
+        combinedGroups = Array(count: 2, repeatedValue: [CombinedObject]())
+        combineGroups()
+        
         
         //remove extra separators
         self.tableView.tableFooterView = UIView()
         
         //set empty back button
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.Plain, target:nil, action:nil)
+    }
+    
+    func combineGroups() {
+        combinedGroups.append([CombinedObject]())
+        combinedGroups.append([CombinedObject]())
+        
+        for cg in savedCGs {
+            if !involvedGroupIds.contains(cg.id) {
+                combinedGroups[0].append(CombinedObject(cg: cg))
+            }
+            involvedGroupIds.append(cg.id)
+        }
+        for ministryTeam in savedMinistryTeams {
+            if !involvedGroupIds.contains(ministryTeam.id) {
+                combinedGroups[1].append(CombinedObject(ministryTeam: ministryTeam))
+            }
+            involvedGroupIds.append(ministryTeam.id)
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -32,28 +57,63 @@ class InvolvedGroupsTVC: UITableViewController {
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1 //
+        return 2 //
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return savedMinistryTeams.count //
+        return combinedGroups[section].count //
+    }
+    
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return section == 0 ? "Community Groups" : "Ministry Teams"
     }
     
     // Uncomment
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("MinistryTeamDataCell", forIndexPath: indexPath) as! MinistryTeamDataCell
-        let team = savedMinistryTeams[indexPath.row]
+        let group = combinedGroups[indexPath.section][indexPath.row]
         
-        cell.nameLabel.text = team.name
+        if (group.ministryTeam != nil) {
+            cell.nameLabel.text = group.ministryTeam!.name
+            cell.locationLabel.text = UserProfile.getMinistryNameFromID(group.ministryTeam!.parentMinistry)
+        }
+        else {
+            // TODO: Fix date
+//            let dateFormatter = NSDateFormatter()
+//            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS"
+//            let date = dateFormatter.dateFromString((group.communityGroup?.time)!)
+//            dateFormatter.dateFormat = "eeee, h:mm a"
+            
+            cell.nameLabel.text = group.communityGroup?.name
+            cell.locationLabel.text = (group.communityGroup?.time)!
+        }
         
         return cell
     }
     
+    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let label = UILabel()
+        let padding = "   "
+        
+        if (section == 0) {
+            label.backgroundColor = UIColor(red: 249/255, green: 182/255, blue: 37/255, alpha: 1.0)
+            label.text = padding + "Community Groups"
+        }
+        else {
+            label.backgroundColor = UIColor(red: 221/255, green: 125/255, blue: 27/255, alpha: 1.0)
+            label.text = padding + "Ministry Teams"
+        }
+        
+        label.backgroundColor = label.backgroundColor?.colorWithAlphaComponent(1.0)
+        label.textColor = UIColor.whiteColor()
+
+        label.font = UIFont.boldSystemFontOfSize(15)
+        
+        return label
+    }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        print(indexPath.row)
-        
         let cell:UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
     }
     

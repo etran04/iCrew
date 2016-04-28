@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15B42" minimumToolsVersion="Xcode 7.0">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10171" systemVersion="15B42" minimumToolsVersion="Xcode 7.0">
     <entity name="Campus" representedClassName=".CampusCoreData" syncable="YES">
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
@@ -8,7 +8,8 @@
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="leaders" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="ministryId" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="time" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="time" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Ministry" representedClassName=".MinistryCoreData" syncable="YES">
         <attribute name="campusId" optional="YES" attributeType="String" syncable="YES"/>
@@ -22,7 +23,7 @@
     </entity>
     <elements>
         <element name="Campus" positionX="18" positionY="99" width="128" height="75"/>
-        <element name="CommunityGroup" positionX="45" positionY="153" width="128" height="105"/>
+        <element name="CommunityGroup" positionX="45" positionY="153" width="128" height="120"/>
         <element name="Ministry" positionX="54" positionY="117" width="128" height="90"/>
         <element name="MinistryTeam" positionX="36" positionY="135" width="128" height="90"/>
     </elements>

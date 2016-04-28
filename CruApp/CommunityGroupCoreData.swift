@@ -16,7 +16,8 @@ class CommunityGroupCoreData : NSManagedObject {
 
     @NSManaged var id: String?
     @NSManaged var ministryId: String?
-    @NSManaged var time: NSDate?
+    @NSManaged var time: String?
     @NSManaged var leaders: String?
+    @NSManaged var name: String?
 
 }

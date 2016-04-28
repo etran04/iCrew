@@ -78,10 +78,11 @@ class UserProfile {
         let entity = NSEntityDescription.entityForName("CommunityGroup", inManagedObjectContext: coreDataManagedContext!)
         let communityGroupObj = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: coreDataManagedContext!)
         
+        communityGroupObj.setValue(communityGroup.name, forKey: "name")
         communityGroupObj.setValue(communityGroup.time, forKey: "time")
         communityGroupObj.setValue(communityGroup.ministryId, forKey: "ministryId")
         communityGroupObj.setValue(communityGroup.id, forKey: "id")
-        communityGroupObj.setValue(communityGroup.leaders, forKey: "leaders")
+        communityGroupObj.setValue(communityGroup.leaders.joinWithSeparator(";"), forKey: "leaders")
         
         saveContext()
     }
@@ -207,7 +208,7 @@ class UserProfile {
      * returned to the caller.
      */
     class func getCommunityGroups() -> [CommunityGroupData] {
-        let fetchRequest = NSFetchRequest(entityName: "Ministry")
+        let fetchRequest = NSFetchRequest(entityName: "CommunityGroup")
         var results = [CommunityGroupData]()
         
         do {
@@ -215,7 +216,10 @@ class UserProfile {
             
             if let communityGroups = fetchedResult {
                 for communityGroup in communityGroups {
-                    let communityGroupObj = CommunityGroupData(id: communityGroup.valueForKey("id") as! String, name: communityGroup.valueForKey("name") as! String, ministryId: communityGroup.valueForKey("ministryId") as! String, time: communityGroup.valueForKey("time") as! String, leaders: communityGroup.valueForKey("leaders") as! [String])
+                    let leaders = communityGroup.valueForKey("leaders") as! String
+                    let leadersArr = leaders.componentsSeparatedByString(";")
+                    
+                    let communityGroupObj = CommunityGroupData(id: communityGroup.valueForKey("id") as! String, name: communityGroup.valueForKey("name") as! String, ministryId: communityGroup.valueForKey("ministryId") as! String, time: communityGroup.valueForKey("time") as! String, leaders: leadersArr)
                     
                     results.append(communityGroupObj)
                 }
@@ -229,5 +233,21 @@ class UserProfile {
         }
         
         return results;
+    }
+    
+    /**
+     * Fetches user's ministries and grabs the name of the ministry associated with the given
+     * id.
+     */
+    class func getMinistryNameFromID(id: String) -> String {
+        let ministries = getMinistries()
+        
+        for ministry in ministries {
+            if ministry.id == id {
+                return ministry.name
+            }
+        }
+        
+        return ""
     }
 }

@@ -33,11 +33,6 @@ class EventsViewController: UITableViewController, DZNEmptyDataSetDelegate, DZNE
     }
     
     override func viewDidAppear(animated: Bool) {
-        
-        if (eventsCollection.isEmpty) {
-            checkInternet()
-        }
-        
         if (self.revealViewController() != nil) {
             self.menuButton.target = self.revealViewController()
             self.menuButton.action = "revealToggle:"
@@ -255,7 +250,7 @@ class EventsViewController: UITableViewController, DZNEmptyDataSetDelegate, DZNE
     }
 
     
-    // MARK: - DZNEmptySet Delegate methods
+    // MARK: - DZNEmptySet Delegate/DataSource methods
     
     func titleForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
         let str = "No events to display!"
@@ -267,5 +262,15 @@ class EventsViewController: UITableViewController, DZNEmptyDataSetDelegate, DZNE
         let str = "Please check back later or add more ministries."
         let attrs = [NSFontAttributeName: UIFont.preferredFontForTextStyle(UIFontTextStyleBody)]
         return NSAttributedString(string: str, attributes: attrs)
+    }
+    
+    func buttonTitleForEmptyDataSet(scrollView: UIScrollView!, forState state: UIControlState) -> NSAttributedString! {
+        let str = "Click to refresh!"
+        let attrs = [NSFontAttributeName: UIFont.preferredFontForTextStyle(UIFontTextStyleBody)]
+        return NSAttributedString(string: str, attributes: attrs)
+    }
+    
+    func emptyDataSetDidTapButton(scrollView: UIScrollView!) {
+        checkInternet()
     }
 }

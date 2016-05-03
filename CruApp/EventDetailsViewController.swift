@@ -118,7 +118,8 @@ class EventDetailsViewController: UIViewController, UIPopoverPresentationControl
             imageView.clipsToBounds = true
             eventImage.frame = eventImage.bounds
             
-            imageView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: newHeight)
+            // 10 added to width to fill in buffered white space 
+            imageView.frame = CGRect(x: 0, y: 0, width: screenWidth + 10, height: newHeight)
             imageView.contentMode = UIViewContentMode.ScaleAspectFill
             eventImage.addSubview(imageView)
         }

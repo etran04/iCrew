@@ -25,7 +25,6 @@ class JoinCommunityGroupTVC: UITableViewController {
         // A little trick for removing the cell separators
         self.tableView.tableFooterView = UIView()
         
-        
         //setup database
         DBClient.getData("communitygroups", dict: setCommunityGroups)
         
@@ -38,8 +37,10 @@ class JoinCommunityGroupTVC: UITableViewController {
         for communityGroup in communityGroups {
             let ministryId = communityGroup["ministry"] as! String
             
-              //go through the community groups,
+            
+            //go through the community groups,
             //if the community group is in the selected ministry,
+            //and it is during the available day of the week
             //add it to the cgCollection
             if ministryId == selectedMinistry.id
                 && days.contains(getDayOfWeek(communityGroup["meetingTime"] as! String)!){
@@ -114,6 +115,7 @@ class JoinCommunityGroupTVC: UITableViewController {
     
     
     //should take in a date in the format of 2016-04-26T18:06:19.000Z
+    //return the day of the week as an int, 0-6, Sunday-Saturday
     func getDayOfWeek(today:String)->Int? {
         //make today into the correct format of yyyy-MM-dd
         var tokens = today.componentsSeparatedByString("T")
@@ -124,7 +126,7 @@ class JoinCommunityGroupTVC: UITableViewController {
             let myCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
             let myComponents = myCalendar.components(.Weekday, fromDate: todayDate)
             let weekDay = myComponents.weekday
-            return weekDay
+            return weekDay - 1
         } else {
             return nil
         }

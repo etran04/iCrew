@@ -34,15 +34,10 @@ class CGQuestionnaireVC: UIViewController, UIPickerViewDataSource, UIPickerViewD
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
-        for num in dayPicker.getSelected() {
-            print(num)
-        }
-        
+                
         let joinCG = segue.destinationViewController as!  JoinCommunityGroupTVC
         joinCG.days = selectedDaysToInt()
         joinCG.selectedMinistry = ministriesCollection[ministryPicker.selectedRowInComponent(0)]
-        print(joinCG.selectedMinistry.id)
         
     }
     

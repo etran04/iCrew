@@ -225,6 +225,8 @@
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="ai3-mR-F2h" secondAttribute="trailing" constant="-20" id="7L7-SV-pFZ"/>
+                            <constraint firstItem="ai3-mR-F2h" firstAttribute="top" secondItem="f04-9R-37d" secondAttribute="bottom" id="HSd-2l-Slj"/>
+                            <constraint firstItem="jaG-Ti-frZ" firstAttribute="top" secondItem="ai3-mR-F2h" secondAttribute="bottom" id="lyR-cZ-3Ul"/>
                             <constraint firstItem="ai3-mR-F2h" firstAttribute="leading" secondItem="WSL-3E-Mm2" secondAttribute="leadingMargin" constant="-20" id="vdW-fR-uXV"/>
                         </constraints>
                     </view>

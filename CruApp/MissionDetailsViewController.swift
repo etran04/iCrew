@@ -72,6 +72,7 @@ class MissionDetailsViewController: UIViewController {
             let newHeight = screenWidth * oldHeight / oldWidth
             let imageName = "Cru-Logo.png"
             var image = UIImage(named: imageName)
+            
             //Load event image is available
             if (mission.image != nil && mission.image != "") {
                 let url = NSURL(string: mission.image!)
@@ -84,8 +85,9 @@ class MissionDetailsViewController: UIViewController {
                     imageView.clipsToBounds = true
                     missionImage.frame = missionImage.bounds
                     
-                    imageView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: newHeight)
+                    imageView.frame = CGRect(x: 0, y: 0, width: screenWidth + 10, height: newHeight)
                     imageView.contentMode = UIViewContentMode.ScaleAspectFill
+//                    missionImage = imageView
                     missionImage.addSubview(imageView)
                 }
             }

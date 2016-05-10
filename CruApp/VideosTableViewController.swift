@@ -72,13 +72,23 @@ class VideosTableViewController: UITableViewController, UISearchBarDelegate, DZN
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Looks for single or multiple taps.
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        view.addGestureRecognizer(tap)
+        
         // checks internet, and then if phone has internet, then start loading videos within
-        checkInternet()
+        checkInternetAndLoadVideos()
     }
     
     /* Called when the current view appears */
     override func viewDidAppear(animated: Bool) {
         searchBar.delegate = self
+    }
+    
+    /* Calls this function when the tap is recognized. */
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
     
     /* Populates the list of videos with videos from the Cru Database */
@@ -88,7 +98,7 @@ class VideosTableViewController: UITableViewController, UISearchBarDelegate, DZN
     
     /* Determines whether or not the device is connected to WiFi or 4g. Alerts user if they are not.
      * Without internet, data might not populate, aside from cached data */
-    func checkInternet() {
+    func checkInternetAndLoadVideos() {
             
         // Checks for internet connectivity (Wifi/4G)
         let reachability: Reachability
@@ -109,7 +119,13 @@ class VideosTableViewController: UITableViewController, UISearchBarDelegate, DZN
                 } else {
                     print("Reachable via Cellular")
                 }
-                self.getChannelDetailsAndLoadVideos(false)
+                
+                if (self.filterFlag) {
+                    self.getVideosForChannelAtIndex(0)
+                }
+                else {
+                    self.getChannelDetailsAndLoadVideos(false)
+                }
             }
         }
         
@@ -266,7 +282,6 @@ class VideosTableViewController: UITableViewController, UISearchBarDelegate, DZN
         var kSearchForAmt = 5
         
         if self.filterFlag {
-            self.videos = [Video]()
             kSearchForAmt = 50
         }
         
@@ -293,8 +308,6 @@ class VideosTableViewController: UITableViewController, UISearchBarDelegate, DZN
                     if resultsDict["nextPageToken"] != nil {
                         // Save the next page token
                         self.nextPageToken = resultsDict["nextPageToken"] as! String
-                    } else {
-                        return
                     }
                     
                     // Get all playlist items ("items" array).
@@ -350,7 +363,7 @@ class VideosTableViewController: UITableViewController, UISearchBarDelegate, DZN
                     // Finished loading videos, stop the indicator
                     SwiftLoader.hide()
                     
-                    // Sets up the controller to display notification screen if no articles populate
+                    // Sets up the controller to display notification screen if no videos populate
                     self.tableView.emptyDataSetSource = self
                     self.tableView.emptyDataSetDelegate = self
                     self.tableView.reloadEmptyDataSet()
@@ -371,21 +384,26 @@ class VideosTableViewController: UITableViewController, UISearchBarDelegate, DZN
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
         self.filterFor = searchBar.text
+        self.videos = [Video]()
+        self.tableView.reloadData()
         self.nextPageToken = ""
         self.filterFlag = true
-        self.getVideosForChannelAtIndex(0)
+        self.checkInternetAndLoadVideos()
+        self.view.endEditing(true)
     }
     
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
-        print("cancel pressed")
+        self.view.endEditing(true)
     }
     
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
         if (searchText == "") {
+            self.filterFor = ""
             self.videos = [Video]()
+            self.tableView.reloadData()
             self.nextPageToken = ""
             self.filterFlag = false
-            self.getVideosForChannelAtIndex(0)
+            self.checkInternetAndLoadVideos()
         }
     }
     

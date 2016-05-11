@@ -93,7 +93,7 @@ class SidebarTableViewController: UITableViewController {
             }
         
             //for testing use
-            for(var i = 0; i < userCollection.count; i++)
+            for(var i = 0; i < userCollection.count; i += 1)
             {
                 print("\(userCollection[i].email) : \(userCollection[i].password)")
             }

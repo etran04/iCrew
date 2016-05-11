@@ -61,7 +61,7 @@ class MissionDetailsViewController: UIViewController {
             
             // Mission link button
             if (mission.url != "") {
-                missionButton.addTarget(self, action: "openLink:", forControlEvents: .TouchUpInside)
+                missionButton.addTarget(self, action: #selector(MissionDetailsViewController.openLink(_:)), forControlEvents: .TouchUpInside)
             } else {
                 missionButton.enabled = false
             }

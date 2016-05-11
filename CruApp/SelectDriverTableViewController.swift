@@ -184,7 +184,7 @@ class SelectDriverTableViewController: UITableViewController {
         button.frame.origin = CGPoint(x: 40, y: 100)
         button.backgroundColor = UIColor.whiteColor()
         button.setTitle("Back", forState: UIControlState.Normal)
-        button.addTarget(self, action: "goBack:", forControlEvents: UIControlEvents.TouchUpInside)
+        button.addTarget(self, action: #selector(SelectDriverTableViewController.goBack(_:)), forControlEvents: UIControlEvents.TouchUpInside)
 
         forwardGeocoding(location)
         let  position = CLLocationCoordinate2DMake(latitude!, longitude!)
@@ -233,8 +233,8 @@ class SelectDriverTableViewController: UITableViewController {
         if let result = json["results"] as? NSArray {
             if let geometry = result[0]["geometry"] as? NSDictionary {
                 if let location = geometry["location"] as? NSDictionary {
-                    latitude = location["lat"] as! Double
-                    longitude = location["lng"] as! Double
+                    latitude = location["lat"] as? Double
+                    longitude = location["lng"] as? Double
                     print("\n\(latitude), \(longitude)")
                 }
             }

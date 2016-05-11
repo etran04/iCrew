@@ -61,7 +61,7 @@ class PassengerQuestionnaireVC: UIViewController, UITableViewDelegate, UITableVi
             CheckmarkOption(title:"To & From Event \n(Round Trip)"),
             CheckmarkOption(title: "To Event \n(One-way)"),
             CheckmarkOption(title: "From Event \n(One-way)")]
-        driveTypeCell.driveTypes2.addTarget(self, action: "optionSelected:", forControlEvents: UIControlEvents.ValueChanged)
+        driveTypeCell.driveTypes2.addTarget(self, action: #selector(PassengerQuestionnaireVC.optionSelected(_:)), forControlEvents: UIControlEvents.ValueChanged)
         
         infoTable.delegate = self
         infoTable.dataSource = self
@@ -253,7 +253,7 @@ class PassengerQuestionnaireVC: UIViewController, UITableViewDelegate, UITableVi
             self.infoTable.deselectRowAtIndexPath(indexPath, animated: true)
             
             // Collapses all other cells
-            for (var i = 0; i < cells.count; i++) {
+            for (var i = 0; i < cells.count; i += 1) {
                 if (cells[i].isKindOfClass(ScrollPickerCell)) {
                     if (i != indexPath.row && cells[i].expanded == true) {
                         (cells[i] as! ScrollPickerCell).selectedInTableView(tableView)
@@ -272,7 +272,7 @@ class PassengerQuestionnaireVC: UIViewController, UITableViewDelegate, UITableVi
             self.infoTable.deselectRowAtIndexPath(indexPath, animated: true)
             
             // Collapses all other cells
-            for (var i = 0; i < cells.count; i++) {
+            for (var i = 0; i < cells.count; i += 1) {
                 if (cells[i].isKindOfClass(ScrollPickerCell)) {
                     if (i != indexPath.row && cells[i].expanded == true) {
                         (cells[i] as! ScrollPickerCell).selectedInTableView(tableView)

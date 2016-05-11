@@ -130,19 +130,19 @@ class EventDetailsViewController: UIViewController, UIPopoverPresentationControl
         if let event = event {
             // Calendar button
             calendarButton.setTitle("", forState: UIControlState.Normal)
-            calendarButton.addTarget(self, action: "syncCalendar:", forControlEvents: UIControlEvents.TouchUpInside)
+            calendarButton.addTarget(self, action: #selector(EventDetailsViewController.syncCalendar(_:)), forControlEvents: UIControlEvents.TouchUpInside)
             
             // Facebook button
             if (event.url != "") {
                 facebookButton.setTitle("", forState: UIControlState.Normal)
-                facebookButton.addTarget(self, action: "openFacebook:", forControlEvents: .TouchUpInside)
+                facebookButton.addTarget(self, action: #selector(EventDetailsViewController.openFacebook(_:)), forControlEvents: .TouchUpInside)
             } else {
                 facebookButton.enabled = false
             }
             
             //Google calendar button
             googleButton.setTitle("", forState: UIControlState.Normal)
-            googleButton.addTarget(self, action: "googleCalendarSync:",
+            googleButton.addTarget(self, action: #selector(EventDetailsViewController.googleCalendarSync(_:)),
                 forControlEvents: UIControlEvents.TouchUpInside)
             
             // check if ridesharing for event is enabled

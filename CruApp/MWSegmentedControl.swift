@@ -39,7 +39,7 @@ class MWSegmentedControl: UIView {
                 newButton.setTitle(button, forState: .Normal)
                 newButton.setTitleColor(self.textColor, forState: .Normal)
                 newButton.titleLabel?.font = self.font!
-                newButton.addTarget(self, action: "changeSegment:", forControlEvents: .TouchUpInside)
+                newButton.addTarget(self, action: #selector(MWSegmentedControl.changeSegment(_:)), forControlEvents: .TouchUpInside)
                 newButton.layer.borderWidth = 1
                 newButton.layer.borderColor = self.borderColor.CGColor
                 newButton.tag = index

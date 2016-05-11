@@ -73,7 +73,7 @@ class VideosTableViewController: UITableViewController, UISearchBarDelegate, DZN
         super.viewDidLoad()
         
         //Looks for single or multiple taps.
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(VideosTableViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
         
         // checks internet, and then if phone has internet, then start loading videos within
@@ -314,7 +314,7 @@ class VideosTableViewController: UITableViewController, UISearchBarDelegate, DZN
                     let items: Array<Dictionary<NSObject, AnyObject>> = resultsDict["items"] as! Array<Dictionary<NSObject, AnyObject>>
                     
                     // Use a loop to go through all video items.
-                    for var i = 0; i < items.count; ++i {
+                    for var i = 1; i < items.count; i+=1 {
                         let playlistSnippetDict = (items[i] as Dictionary<NSObject, AnyObject>)["snippet"] as! Dictionary<NSObject, AnyObject>
                         
                         // Initialize a new dictionary and store the data of interest.
@@ -350,7 +350,7 @@ class VideosTableViewController: UITableViewController, UISearchBarDelegate, DZN
                     
                     // Create indexPaths starting from startReloadNdx to end 
                     var rowArr = [NSIndexPath]()
-                    for var i = startReloadNdx; i < lastNdx; i++ {
+                    for var i = startReloadNdx; i < lastNdx; i += 1 {
                         let indexPath = NSIndexPath(forRow: i, inSection: 0)
                         rowArr.append(indexPath)
                     }

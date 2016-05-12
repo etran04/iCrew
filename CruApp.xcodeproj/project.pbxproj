@@ -89,6 +89,7 @@
 		27CA344E1C8D3AC000C694A6 /* fb_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 27CA344D1C8D3AC000C694A6 /* fb_logo.png */; };
 		27CA34501C8D3C0200C694A6 /* fb_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 27CA344F1C8D3C0200C694A6 /* fb_icon.png */; };
 		27CA34521C8D3EF400C694A6 /* calendar_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 27CA34511C8D3EF400C694A6 /* calendar_icon.png */; };
+		27D528921CE4515D00BCFB4E /* CGCustomQuestionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D528911CE4515D00BCFB4E /* CGCustomQuestionsVC.swift */; };
 		83244B6E1C7579BA00D913A6 /* CampusData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83244B6D1C7579BA00D913A6 /* CampusData.swift */; };
 		83244B761C7579F000D913A6 /* MinistryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83244B751C7579F000D913A6 /* MinistryData.swift */; };
 		83244B801C75AD9400D913A6 /* SidebarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83244B7F1C75AD9400D913A6 /* SidebarTableViewController.swift */; };
@@ -325,6 +326,7 @@
 		27CA344D1C8D3AC000C694A6 /* fb_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fb_logo.png; path = images/fb_logo.png; sourceTree = "<group>"; };
 		27CA344F1C8D3C0200C694A6 /* fb_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fb_icon.png; path = images/fb_icon.png; sourceTree = "<group>"; };
 		27CA34511C8D3EF400C694A6 /* calendar_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = calendar_icon.png; path = images/calendar_icon.png; sourceTree = "<group>"; };
+		27D528911CE4515D00BCFB4E /* CGCustomQuestionsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGCustomQuestionsVC.swift; sourceTree = "<group>"; };
 		4C75FBE0147F103088890A81 /* Pods-CruAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CruAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CruAppTests/Pods-CruAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		56975AA48A624728978E6E3E /* Pods-CruApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CruApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CruApp/Pods-CruApp.debug.xcconfig"; sourceTree = "<group>"; };
 		83244B6D1C7579BA00D913A6 /* CampusData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampusData.swift; sourceTree = "<group>"; };
@@ -682,6 +684,7 @@
 				83CF292B1C92105800358FB3 /* MainRideShareVC.swift */,
 				8370F3E01CBF0A36001EBD00 /* MinistryTeamDataCell.swift */,
 				839C9B211CD2662600165FEF /* CombinedObject.swift */,
+				27D528911CE4515D00BCFB4E /* CGCustomQuestionsVC.swift */,
 			);
 			name = GetInvolved;
 			sourceTree = "<group>";
@@ -1167,6 +1170,7 @@
 				832FDCCA1C8549FB00836B7C /* MainInvolvedTVC.swift in Sources */,
 				83B1CB291C48880A00145B6D /* UserProfile.swift in Sources */,
 				0725A0611C8679C7006E8E0C /* EnterLocationPlaceCell.swift in Sources */,
+				27D528921CE4515D00BCFB4E /* CGCustomQuestionsVC.swift in Sources */,
 				832FDCEB1C881EC100836B7C /* MinistryTeamCoreData.swift in Sources */,
 				278C4C641C87A40A00EB0AC1 /* MinistryTeamData.swift in Sources */,
 				078739901C86179D00D09C14 /* PhoneNumCell.swift in Sources */,

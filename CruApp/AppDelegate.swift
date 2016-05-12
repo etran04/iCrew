@@ -79,7 +79,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GC
         // set the navigation bar color app wide
         UINavigationBar.appearance().barTintColor = UIColor(red: 0, green: 115/255, blue: 152/255, alpha: 1.0)
 
-
         return true
     }
 

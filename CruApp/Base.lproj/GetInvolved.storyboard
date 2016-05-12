@@ -595,7 +595,7 @@
         <!--Success!-->
         <scene sceneID="O4J-Yy-Agf">
             <objects>
-                <viewController id="uZl-bn-RGD" customClass="CGSuccessVC" customModule="CruApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CGSuccess" id="uZl-bn-RGD" customClass="CGSuccessVC" customModule="CruApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="RKr-Ks-PY7"/>
                         <viewControllerLayoutGuide type="bottom" id="Npv-Qw-29n"/>

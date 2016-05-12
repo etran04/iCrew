@@ -20,6 +20,7 @@ class CGQuestionnaireVC: UIViewController, UIPickerViewDataSource, UIPickerViewD
     @IBOutlet weak var dayPicker: MWSegmentedControl!
     
     @IBOutlet weak var ministryPicker: UIPickerView!
+    var selectedMinistry: String = ""
 
     
     override func viewDidLoad() {
@@ -33,25 +34,28 @@ class CGQuestionnaireVC: UIViewController, UIPickerViewDataSource, UIPickerViewD
             pickerData.append(ministry.name)
         }
 
+
     }
     
     
     @IBAction func nextButtonTransition(sender: AnyObject) {
         let controller = QuestionController()
-        self.presentViewController(controller, animated: true, completion: nil)
+        self.navigationController?.pushViewController(controller, animated: true)
     }
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        
-//
-//                
-////        let joinCG = segue.destinationViewController as!  JoinCommunityGroupTVC
-////        joinCG.days = selectedDaysToInt()
-////        joinCG.selectedMinistry = ministriesCollection[ministryPicker.selectedRowInComponent(0)]
-//        
-//        let moreQuestions = segue.destinationViewController as!  QuestionController
-//        
-//        
-//    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+
+                
+//        let joinCG = segue.destinationViewController as!  JoinCommunityGroupTVC
+//        joinCG.days = selectedDaysToInt()
+//        joinCG.selectedMinistry = ministriesCollection[ministryPicker.selectedRowInComponent(0)]
+        
+        let moreQuestions = segue.destinationViewController as!  QuestionController
+        moreQuestions.selectedMinistry = selectedMinistry
+        
+        
+    }
     
     func selectedDaysToInt() -> [Int]{
     
@@ -97,9 +101,9 @@ class CGQuestionnaireVC: UIViewController, UIPickerViewDataSource, UIPickerViewD
         return pickerData[row]
     }
     
-//    public func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-//        rightLabel.text = pickerData[row]
-//    }
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        selectedMinistry = pickerData[row]
+    }
 
 
 }

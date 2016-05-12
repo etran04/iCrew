@@ -8,22 +8,27 @@
 
 import UIKit
 
-
 struct Question {
     var questionString: String?
     var answers: [String]?
     var selectedAnswerIndex: Int?
 }
 
+var questionsList: [Question] = [Question(questionString: "What is your favorite type of food?", answers: ["Sandwiches", "Pizza", "Seafood", "Unagi"], selectedAnswerIndex: nil), Question(questionString: "What do you do for a living?", answers: ["Paleontologist", "Actor", "Chef", "Waitress"], selectedAnswerIndex: nil), Question(questionString: "Were you on a break?", answers: ["Yes", "No"], selectedAnswerIndex: nil)]
+
+//var questionsList = [QuestionData]()
+
+
 class QuestionController: UITableViewController {
     
+    var selectedMinistry = String()
     let cellId = "cellId"
     let headerId = "headerId"
     
-    var question = Question(questionString: "What is your favorite type of food?", answers: ["Sandwiches", "Pizza", "Seafood", "Unagi"], selectedAnswerIndex: nil)
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        //DBClient.getData("ministryquestions", dict: setQuestions)
         
         navigationItem.title = "Question"
         
@@ -35,49 +40,104 @@ class QuestionController: UITableViewController {
         
         tableView.sectionHeaderHeight = 50
         tableView.tableFooterView = UIView()
+
+        
     }
     
+    //obtain information from the database to an Object
+//    func setQuestions(questions: NSArray) {
+//        print("setting questions")
+//        
+//        //self.tableView.beginUpdates()
+//        for question in questions {
+//            print("blah")
+//            if(selectedMinistry == question["ministry"] as! String){
+//                let questionObj = QuestionData(ministry: selectedMinistry, question: question["question"]! as! String, type: question["type"] as! String, options: question["selectOptions"] as! [String])
+//                questionsList.append(questionObj)
+//            }
+//            
+//            
+//            
+//          }
+//        
+//        self.tableView.reloadData()
+//    }
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let count = question.answers?.count {
-            return count
+        
+        if let index = navigationController?.viewControllers.indexOf(self) {
+            let question = questionsList[index - 2]
+            if let count = question.answers?.count {
+                return count
+            }
+
         }
         return 0
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(cellId, forIndexPath: indexPath) as! AnswerCell
-        cell.nameLabel.text = question.answers?[indexPath.row]
+        
+        if let index = navigationController?.viewControllers.indexOf(self) {
+            let question = questionsList[index - 2]
+            cell.nameLabel.text = question.answers?[indexPath.row]
+        }
+        
         return cell
     }
     
-    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    override func tableView(tableView: UITableView,
+                            viewForHeaderInSection section: Int) -> UIView? {
         let header = tableView.dequeueReusableHeaderFooterViewWithIdentifier(headerId) as! QuestionHeader
-        header.nameLabel.text = question.questionString
+        
+        if let index = navigationController?.viewControllers.indexOf(self) {
+            let question = questionsList[index - 2]
+            header.nameLabel.text = question.questionString
+            
+        }
+        
         return header
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        question.selectedAnswerIndex = indexPath.row
+        if let index = navigationController?.viewControllers.indexOf(self) {
+            questionsList[index-2].selectedAnswerIndex = indexPath.item
+
+            print(index)
+            if index - 2 < questionsList.count - 1 {
+                let questionController = QuestionController()
+                self.navigationController?.pushViewController(questionController, animated: true)
+
+            } else {
+                let controller = ResultsController()
+                self.navigationController?.pushViewController(controller, animated: true)
+            }
+        }
+    }
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        let controller = ResultsController()
-        controller.question = question
-        navigationController?.pushViewController(controller, animated: true)
+        
+        
+        //        let joinCG = segue.destinationViewController as!  JoinCommunityGroupTVC
+        //        joinCG.days = selectedDaysToInt()
+        //        joinCG.selectedMinistry = ministriesCollection[ministryPicker.selectedRowInComponent(0)]
+        
+        let moreQuestions = segue.destinationViewController as!  QuestionController
+        moreQuestions.selectedMinistry = selectedMinistry
+        
+        let results = segue.destinationViewController as!  ResultsController
+        results.selectedMinistry = selectedMinistry
+        
     }
     
 }
 
 class ResultsController: UIViewController {
     
-    var question: Question? {
-        didSet {
-            
-            let names = ["Ross", "Joey", "Chandler", "Monica", "Rachel", "Phoebe"]
-            
-            let result = names[question!.selectedAnswerIndex!]
-            resultsLabel.text = "Congratulations, you're a total \(result)!"
-        }
-    }
+    var selectedMinistry = String()
     
     let resultsLabel: UILabel = {
         let label = UILabel()
@@ -91,6 +151,8 @@ class ResultsController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .Plain, target: self, action: "done")
+        
         navigationItem.title = "Results"
         
         view.backgroundColor = UIColor.whiteColor()
@@ -98,7 +160,28 @@ class ResultsController: UIViewController {
         view.addSubview(resultsLabel)
         view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[v0]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": resultsLabel]))
         view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[v0]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": resultsLabel]))
+        
+        let names = ["Ross", "Joey", "Chandler", "Monica", "Rachel", "Phoebe"]
+        
+        var score = 0
+        for question in questionsList {
+            if let ndx = question.selectedAnswerIndex {
+                score += ndx
+            }
+            
+        }
+        
+        let result = names[score % names.count]
+        resultsLabel.text = "Congratulations, you're a total \(result)!"
     }
+    
+    func done() {
+        
+        let storyboard = UIStoryboard(name: "GetInvolved", bundle: NSBundle.mainBundle())
+        let vc : UIViewController = storyboard.instantiateViewControllerWithIdentifier("CGSuccess") as UIViewController
+        self.navigationController!.pushViewController(vc, animated: true)
+    }
+
     
 }
 

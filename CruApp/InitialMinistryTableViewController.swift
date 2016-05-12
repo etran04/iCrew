@@ -193,6 +193,21 @@ class InitialMinistryTableViewController: UITableViewController {
                 self.popViewController.showInView(self.view, withImage: image, withMessage: ministry.description, animated: true)
             }
         }
+        
+        let tapRecognizer = UITapGestureRecognizer(target: self,
+                                                   action: #selector(InitialMinistryTableViewController.closePopupViewController(_:)))
+        let ignoreTap = UITapGestureRecognizer(target: self,
+                                             action: #selector(InitialMinistryTableViewController.doNothing))
+        self.view.addGestureRecognizer(tapRecognizer)
+        self.popViewController.popUpView.addGestureRecognizer(ignoreTap)
+    }
+    
+    func doNothing() {
+        // Does nothing to prevent touching popupview from closing
+    }
+    
+    @IBAction func closePopupViewController(recognizer:UITapGestureRecognizer) {
+        self.popViewController.removeAnimate()
     }
 
     //save selected ministries into the user profile

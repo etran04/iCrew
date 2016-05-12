@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		0703C7321C4DFA8500C7D8ED /* blank_calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 0703C7311C4DFA8500C7D8ED /* blank_calendar.png */; };
 		070861B11C0DC67200D6D646 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 271BDF541C0D53710075A29E /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		071042931CE468D800DACFF9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 071042921CE468D800DACFF9 /* GoogleService-Info.plist */; };
+		0710429C1CE46AE500DACFF9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0710429B1CE46AE500DACFF9 /* GoogleService-Info.plist */; };
 		072519A81BE9694000F38F81 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072519A71BE9694000F38F81 /* AppDelegate.swift */; };
 		072519AD1BE9694000F38F81 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 072519AB1BE9694000F38F81 /* Main.storyboard */; };
 		072519AF1BE9694000F38F81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 072519AE1BE9694000F38F81 /* Assets.xcassets */; };
@@ -245,7 +245,7 @@
 
 /* Begin PBXFileReference section */
 		0703C7311C4DFA8500C7D8ED /* blank_calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blank_calendar.png; path = images/blank_calendar.png; sourceTree = "<group>"; };
-		071042921CE468D800DACFF9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0710429B1CE46AE500DACFF9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		072519A41BE9694000F38F81 /* CruApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CruApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		072519A71BE9694000F38F81 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		072519AC1BE9694000F38F81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -458,7 +458,7 @@
 				072519AE1BE9694000F38F81 /* Assets.xcassets */,
 				072519A71BE9694000F38F81 /* AppDelegate.swift */,
 				072519B31BE9694000F38F81 /* Info.plist */,
-				071042921CE468D800DACFF9 /* GoogleService-Info.plist */,
+				0710429B1CE46AE500DACFF9 /* GoogleService-Info.plist */,
 				1EB404DA1C633E6E00220D5B /* Supporting Files */,
 				07EE5F7D1BFE6BA8009A2B44 /* VCs */,
 				07EE5F7C1BFE6B92009A2B44 /* Storyboards */,
@@ -1004,7 +1004,7 @@
 				278C4C391C86640100EB0AC1 /* FreigSanProBold.otf in Resources */,
 				27CA34461C8D3A8500C694A6 /* google_icon.png in Resources */,
 				072519AD1BE9694000F38F81 /* Main.storyboard in Resources */,
-				071042931CE468D800DACFF9 /* GoogleService-Info.plist in Resources */,
+				0710429C1CE46AE500DACFF9 /* GoogleService-Info.plist in Resources */,
 				278C4C401C86640100EB0AC1 /* FreigSanProMedIt.otf in Resources */,
 				839F64581C0D6C1E00CAEC9E /* SummerMissions.storyboard in Resources */,
 			);

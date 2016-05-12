@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftLoader
+import DZNEmptyDataSet
 
 
 let kDriverHeader = "You will be a driver for..."
@@ -15,7 +16,7 @@ let kPassengerHeader = "You will be a passenger for..."
 
 let gcm_id = "1234567"
 
-class RideShareStatusTableViewController: UITableViewController {
+class RideShareStatusTableViewController: UITableViewController, DZNEmptyDataSetDelegate, DZNEmptyDataSetSource {
     
     var eventNames = [String]()
     var eventIds = [String]()
@@ -31,12 +32,7 @@ class RideShareStatusTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Starts the loading spinner
-        SwiftLoader.show(animated: true)
-        
         tableView.separatorStyle = .None
-
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -52,14 +48,11 @@ class RideShareStatusTableViewController: UITableViewController {
     }
     
     func fetchStatuses() {
+        SwiftLoader.show(title: "Loading...", animated: true)
         driverCollection = [Driver]()
         passengerCollection = [Passenger]()
         tableData = [[AnyObject]]()
         DBClient.getData("events", dict: setEvents)
-        
-        SwiftLoader.hide()
-
-        self.tableView.reloadData()
     }
     
     // Obtain event information from the database to an Object
@@ -71,16 +64,16 @@ class RideShareStatusTableViewController: UITableViewController {
             self.eventIds.append(id)
         }
         DBClient.getData("passengers", dict: setPassenger)
-
+        
     }
-
+    
     func setPassenger(passengers:NSArray){
         for passenger in passengers {
             let passengerId = passenger["_id"] as! String
             let gcmId = passenger["gcm_id"] as! String
             let phoneNumber = passenger["phone"] as! String
             let name = passenger["name"] as! String
-        
+            
             let passengerObj = Passenger(passengerId:passengerId, gcmId:gcmId, phoneNumber:phoneNumber, name:name)
             passengersData.append(passengerObj)
         }
@@ -111,34 +104,34 @@ class RideShareStatusTableViewController: UITableViewController {
                 direction = ride["direction"] as! String
             }
             
-            if(ride["location"]?!.objectForKey("postcode") != nil) {
+            if(ride["location"]?!.objectForKey("postcode") != nil && !(ride["location"]?!.objectForKey("postcode") is NSNull)) {
                 zipcode = ride["location"]?!.objectForKey("postcode") as! String
             }
             
-            if(ride["location"]?!.objectForKey("state") != nil) {
+            if(ride["location"]?!.objectForKey("state") != nil && !(ride["location"]?!.objectForKey("state") is NSNull)) {
                 state = ride["location"]?!.objectForKey("state") as! String
             }
             
-            if(ride["location"]?!.objectForKey("suburb") != nil) {
+            if(ride["location"]?!.objectForKey("suburb") != nil && !(ride["location"]?!.objectForKey("suburb") is NSNull)) {
                 city = ride["location"]?!.objectForKey("suburb") as! String
             }
             
-            if(ride["location"]?!.objectForKey("street1") != nil) {
+            if(ride["location"]?!.objectForKey("street1") != nil && !(ride["location"]?!.objectForKey("street1") is NSNull)) {
                 street = ride["location"]?!.objectForKey("street1") as! String
             }
             
-            if(ride["location"]?!.objectForKey("country") != nil) {
+            if(ride["location"]?!.objectForKey("country") != nil && !(ride["location"]?!.objectForKey("country") is NSNull)) {
                 country = ride["location"]?!.objectForKey("country") as! String
             }
             
             let location2 = city + ", " + state + ", " + country + " " + zipcode
-
+            
             
             for pssngr in passengers{
                 for data in passengersData {
                     if data.passengerId == pssngr {
                         passengersInfo.append(data)
-                    
+                        
                         //if user is a passenger
                         if(gcm_id == data.gcmId) {
                             let passengerObj = Passenger(rideId:rideId, passengerId:pssngr, eventId:event, departureTime:time, departureLoc1: street, departureLoc2: location2, driverNumber:driverNumber, driverName:driverName)
@@ -147,7 +140,7 @@ class RideShareStatusTableViewController: UITableViewController {
                     }
                 }
             }
-        
+            
             //if user is a driver
             if(gcm_id == gcmId) {
                 let rideObj = Driver(rideId:rideId, eventId:event, departureTime:time, departureLoc1:street, departureLoc2:location2, availableSeats:availableSeats, passengers:passengersInfo)
@@ -156,20 +149,21 @@ class RideShareStatusTableViewController: UITableViewController {
         }
         
         self.tableData = [self.driverCollection, self.passengerCollection]
+        SwiftLoader.hide()
+        
+        // Sets up the controller to display notification screen if no ridesharing can be accessed
+        self.tableView.emptyDataSetSource = self;
+        self.tableView.emptyDataSetDelegate = self;
+        
         self.tableView.reloadData()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
     
-
     // MARK: - Table view data source
-
+    
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return tableData.count
     }
-
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let numCellsInSection = tableData[section].count
         
@@ -212,62 +206,61 @@ class RideShareStatusTableViewController: UITableViewController {
         return nil
     }
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        print(headerTitles[indexPath.section])
         switch(headerTitles[indexPath.section]) {
-            case kDriverHeader:
-                let alert = UIAlertView()
-                alert.delegate = self
-                alert.title = "Passengers"
-                let driver = driverCollection[indexPath.row] as Driver
+        case kDriverHeader:
+            let alert = UIAlertView()
+            alert.delegate = self
+            alert.title = "Passengers"
+            let driver = driverCollection[indexPath.row] as Driver
             
-                if (driver.passengers.count != 0) {
-                    var msg = ""
+            if (driver.passengers.count != 0) {
+                var msg = ""
+                
+                for index in 0...(driver.passengers.count - 1) {
                     
-                    for index in 0...(driver.passengers.count - 1) {
-                        
-                        var number = String(driver.passengers[index].phoneNumber)
-                        number = number.insert("(", ind: 0)
-                        number = number.insert(") ", ind: 4)
-                        number = number.insert(" - ", ind: 9)
-
-                        msg += driver.passengers[index].name + " " + number + "\n"
-                    }
-                    alert.message = msg
-                } else {
-                    alert.message = "No passengers at this time."
+                    var number = String(driver.passengers[index].phoneNumber)
+                    number = number.insert("(", ind: 0)
+                    number = number.insert(") ", ind: 4)
+                    number = number.insert(" - ", ind: 9)
+                    
+                    msg += driver.passengers[index].name + " " + number + "\n"
                 }
-                alert.addButtonWithTitle("OK")
-                alert.show()
-                break
-
-            default:
-                break
+                alert.message = msg
+            } else {
+                alert.message = "No passengers at this time."
+            }
+            alert.addButtonWithTitle("OK")
+            alert.show()
+            break
+            
+        default:
+            break
         }
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-
+        
         var cell = UITableViewCell()
         
         switch (headerTitles[indexPath.section]) {
-            case kDriverHeader:
-                if (self.driverCollection.count > 0) {
-                    cell = tableView.dequeueReusableCellWithIdentifier("DriverCell", forIndexPath: indexPath)
-                    populateDriverCell(indexPath, cell: (cell as! DriverStatusTableViewCell))
-                } else {
-                    cell = tableView.dequeueReusableCellWithIdentifier("NoDataCell", forIndexPath: indexPath)
-                }
-                break
-            case kPassengerHeader:
-                if (self.passengerCollection.count > 0) {
-                    cell = tableView.dequeueReusableCellWithIdentifier("PassengerCell", forIndexPath: indexPath)
-                    populatePassengerCell(indexPath, cell: (cell as! PassengerStatusTableViewCell))
-                } else {
-                    cell = tableView.dequeueReusableCellWithIdentifier("NoDataCell", forIndexPath: indexPath)
-                }
-                break
-            default:
-                break
+        case kDriverHeader:
+            if (self.driverCollection.count > 0) {
+                cell = tableView.dequeueReusableCellWithIdentifier("DriverCell", forIndexPath: indexPath)
+                populateDriverCell(indexPath, cell: (cell as! DriverStatusTableViewCell))
+            } else {
+                cell = tableView.dequeueReusableCellWithIdentifier("NoDataCell", forIndexPath: indexPath)
+            }
+            break
+        case kPassengerHeader:
+            if (self.passengerCollection.count > 0) {
+                cell = tableView.dequeueReusableCellWithIdentifier("PassengerCell", forIndexPath: indexPath)
+                populatePassengerCell(indexPath, cell: (cell as! PassengerStatusTableViewCell))
+            } else {
+                cell = tableView.dequeueReusableCellWithIdentifier("NoDataCell", forIndexPath: indexPath)
+            }
+            break
+        default:
+            break
         }
         
         return cell
@@ -294,7 +287,7 @@ class RideShareStatusTableViewController: UITableViewController {
         cell.departureTime.text = "Departure on " + dateFormatter.stringFromDate(date!)
         cell.departureLoc1.text = driver.departureLoc1
         cell.departureLoc2.text = driver.departureLoc2
-
+        
         cell.availableSeats.text = String(driver.availableSeats) + " available seats left"
     }
     
@@ -305,32 +298,24 @@ class RideShareStatusTableViewController: UITableViewController {
         
         let confirmDialog = UIAlertController(title: titleMsg, message: msg, preferredStyle: .Alert)
         let okAction = UIAlertAction(title: "Confirm", style: .Default) { (UIAlertAction) -> Void in
+            
             let rideId = self.driverCollection[row].rideId;
-//            let params = ["ride_id": self.driverCollection[row].rideId]
-//            
-//            do {
-//                let body = try NSJSONSerialization.dataWithJSONObject(params, options: NSJSONWritingOptions.PrettyPrinted)
-            
-//                DBClient.deleteData("rides/" + rideId, body:body)
             DBClient.deleteData("rides/" + rideId)
-
             
-                for pssngr in self.passengerCollection {
-                    if (pssngr.rideId == self.driverCollection[row].rideId) {
-                        self.passengerCollection.removeAtIndex(row)
-                    }
+            
+            for pssngr in self.passengerCollection {
+                if (pssngr.rideId == self.driverCollection[row].rideId) {
+                    self.passengerCollection.removeAtIndex(row)
                 }
-                
-                self.driverCollection.removeAtIndex(row)
-
+            }
             
-                self.tableData = [self.driverCollection, self.passengerCollection]
-                
-                self.tableView.reloadData()
-                
-//            } catch {
-//                print("Error sending data to database")
-//            }
+            self.driverCollection.removeAtIndex(row)
+            
+            
+            self.tableData = [self.driverCollection, self.passengerCollection]
+            
+            self.tableView.reloadData()
+            
         }
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
@@ -346,7 +331,7 @@ class RideShareStatusTableViewController: UITableViewController {
         cell.tableController = self
         
         let passenger = passengerCollection[indexPath.row]
-
+        
         
         for index in 0...(eventIds.count - 1) {
             if(eventIds[index] == passenger.eventId) {
@@ -359,12 +344,12 @@ class RideShareStatusTableViewController: UITableViewController {
         cell.driverName.text = passenger.driverName
         
         var number = String(passenger.driverNumber)
-
+        
         number = number.insert("(", ind: 0)
         number = number.insert(") ", ind: 4)
         number = number.insert(" - ", ind: 9)
         cell.driverNumber.text = number
-
+        
         cell.departureLoc1.text = passenger.departureLoc1
         cell.departureLoc2.text = passenger.departureLoc2
         
@@ -374,7 +359,7 @@ class RideShareStatusTableViewController: UITableViewController {
         dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
         dateFormatter.timeStyle = .ShortStyle
         cell.departureTime.text = "Departing on " + dateFormatter.stringFromDate(date!)
-    
+        
     }
     
     /* Callback for when a cancel button is pressed in a passenger cell. Input is the row of the cell at which it's pressed */
@@ -384,23 +369,23 @@ class RideShareStatusTableViewController: UITableViewController {
         
         let confirmDialog = UIAlertController(title: titleMsg, message: msg, preferredStyle: .Alert)
         let okAction = UIAlertAction(title: "Confirm", style: .Default) { (UIAlertAction) -> Void in
-//            let params = ["ride_id": self.passengerCollection[row].rideId, "passenger_id": self.passengerCollection[row].passengerId]
+            //            let params = ["ride_id": self.passengerCollection[row].rideId, "passenger_id": self.passengerCollection[row].passengerId]
             let rideId = self.passengerCollection[row].rideId
             let passengerId = self.passengerCollection[row].passengerId
-//            do {
-//                let body = try NSJSONSerialization.dataWithJSONObject(params, options: NSJSONWritingOptions.PrettyPrinted)
-//                DBClient.deleteData("rides/dropPassenger", body:body)
+            //            do {
+            //                let body = try NSJSONSerialization.dataWithJSONObject(params, options: NSJSONWritingOptions.PrettyPrinted)
+            //                DBClient.deleteData("rides/dropPassenger", body:body)
             
             DBClient.deleteData("rides/" + rideId + "/passengers/" + passengerId)
-                self.passengerCollection.removeAtIndex(row)
-                self.tableData = [self.driverCollection, self.passengerCollection]
-                
-                
-                self.tableView.reloadData()
-//                
-//            } catch {
-//                print("Error sending data to database")
-//            }
+            self.passengerCollection.removeAtIndex(row)
+            self.tableData = [self.driverCollection, self.passengerCollection]
+            
+            
+            self.tableView.reloadData()
+            //
+            //            } catch {
+            //                print("Error sending data to database")
+            //            }
         }
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
@@ -411,7 +396,7 @@ class RideShareStatusTableViewController: UITableViewController {
         self.presentViewController(confirmDialog, animated: true, completion: nil)
     }
     
-   
+    
     @IBAction func addButtonPressed(sender: UIBarButtonItem) {
         
         //Create the AlertController
@@ -425,16 +410,16 @@ class RideShareStatusTableViewController: UITableViewController {
         
         //Create and add first option action
         let offerRideAction: UIAlertAction = UIAlertAction(title: "Offer a ride", style: .Default)
-            { action -> Void in
-                self.performSegueWithIdentifier("toDriverQ", sender: self)
+        { action -> Void in
+            self.performSegueWithIdentifier("toDriverQ", sender: self)
         }
         actionSheetController.addAction(offerRideAction)
         
         //Create and add a second option action
         let requestRideAction: UIAlertAction = UIAlertAction(title: "Request a ride", style: .Default)
-            { action -> Void in
-                self.performSegueWithIdentifier("toRiderQ", sender: self)
-                
+        { action -> Void in
+            self.performSegueWithIdentifier("toRiderQ", sender: self)
+            
         }
         actionSheetController.addAction(requestRideAction)
         
@@ -445,5 +430,18 @@ class RideShareStatusTableViewController: UITableViewController {
         self.presentViewController(actionSheetController, animated: true, completion: nil)
         
     }
+    
+    func titleForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
+        let str = "Ride Share can't be loaded."
+        let attrs = [NSFontAttributeName: UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline)]
+        return NSAttributedString(string: str, attributes: attrs)
+    }
+    
+    func descriptionForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
+        let str = "Please make sure you have internet connectivity."
+        let attrs = [NSFontAttributeName: UIFont.preferredFontForTextStyle(UIFontTextStyleBody)]
+        return NSAttributedString(string: str, attributes: attrs)
+    }
+    
     
 }

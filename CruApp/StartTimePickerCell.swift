@@ -17,7 +17,9 @@ class StartTimePickerCell: DatePickerCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         super.leftLabel.text = "Departure time"
         super.rightLabel.text = "Choose the ideal time"
-        super.datePicker.minuteInterval = 15
+        super.datePicker.minuteInterval = 1
+        
+        super.datePicker.minimumDate = NSDate()
         super.datePicker.addTarget(self, action: #selector(StartTimePickerCell.saveDate), forControlEvents: UIControlEvents.AllEvents)
         
         super.leftLabel.font = UIFont(name: "FreightSansProMedium-Regular", size: 17.0)
@@ -28,8 +30,18 @@ class StartTimePickerCell: DatePickerCell {
         super.init(coder: aDecoder)
     }
     
+    override func selectedInTableView(tableView: UITableView) {
+        super.selectedInTableView(tableView)
+        // initialized choice to first option when cell is opened for the first time
+        if (super.rightLabel.text == "Choose the ideal time") {
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateStyle = .MediumStyle
+            dateFormatter.timeStyle = .ShortStyle
+            rightLabel.text = dateFormatter.stringFromDate(super.datePicker.date)
+        }
+    }
+    
     func saveDate() {
-        print("save")
     }
     
 }

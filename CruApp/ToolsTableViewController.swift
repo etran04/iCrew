@@ -32,10 +32,6 @@ class ToolsTableViewController: UITableViewController, DZNEmptyDataSetDelegate, 
         checkInternet()
     }
     
-    /* Called when the current view appears */
-    override func viewDidAppear(animated: Bool) {
-    }
-    
     /* Determines whether or not the device is connected to WiFi or 4g. Alerts user if they are not.
      * Without internet, data might not populate, aside from cached data */
     func checkInternet() {
@@ -127,11 +123,6 @@ class ToolsTableViewController: UITableViewController, DZNEmptyDataSetDelegate, 
             let vc = SFSafariViewController(URL: url, entersReaderIfAvailable: true)
             presentViewController(vc, animated: false, completion: nil)
         }
-    }
-    
-    /* Populates our articles from the Cru database */
-    func loadTools() {
-        //#warning to fill in later
     }
     
     // MARK: - Table view data source

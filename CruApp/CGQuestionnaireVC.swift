@@ -10,7 +10,9 @@ import UIKit
 import Foundation
 
 
+
 class CGQuestionnaireVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+
     
     var ministriesCollection: [MinistryData] = []
     var pickerData: [String] = []
@@ -30,16 +32,26 @@ class CGQuestionnaireVC: UIViewController, UIPickerViewDataSource, UIPickerViewD
         for ministry in  ministriesCollection {
             pickerData.append(ministry.name)
         }
-        
+
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-                
-        let joinCG = segue.destinationViewController as!  JoinCommunityGroupTVC
-        joinCG.days = selectedDaysToInt()
-        joinCG.selectedMinistry = ministriesCollection[ministryPicker.selectedRowInComponent(0)]
-        
+    
+    @IBAction func nextButtonTransition(sender: AnyObject) {
+        let controller = QuestionController()
+        self.presentViewController(controller, animated: true, completion: nil)
     }
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        
+//
+//                
+////        let joinCG = segue.destinationViewController as!  JoinCommunityGroupTVC
+////        joinCG.days = selectedDaysToInt()
+////        joinCG.selectedMinistry = ministriesCollection[ministryPicker.selectedRowInComponent(0)]
+//        
+//        let moreQuestions = segue.destinationViewController as!  QuestionController
+//        
+//        
+//    }
     
     func selectedDaysToInt() -> [Int]{
     

@@ -8,8 +8,11 @@
 
 import UIKit
 import Foundation
+import SwiftLoader
+import DZNEmptyDataSet
+import ReachabilitySwift
 
-class InitialMinistryTableViewController: UITableViewController {
+class InitialMinistryTableViewController: UITableViewController, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
 
     @IBOutlet weak var nextButton: UIBarButtonItem!
     
@@ -22,7 +25,6 @@ class InitialMinistryTableViewController: UITableViewController {
     var ministriesCollection = [[Ministry]]() // TODO: Remove
     var selectedIndices: [NSIndexPath] = []
     
-    //TODO: Remove
     struct Ministry {
         var name: String
         var description: String?
@@ -48,20 +50,79 @@ class InitialMinistryTableViewController: UITableViewController {
         //set empty back button
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.Plain, target:nil, action:nil)
         
-        campusCollection = UserProfile.getCampuses()
-        ministriesCollection = Array(count: campusCollection.count, repeatedValue: [Ministry]())
-        ministryCollection = Array(count: campusCollection.count, repeatedValue: [MinistryData]())
-        
-        DBClient.getData("ministries", dict: setMinistries)
-        
-        savedMinistries = UserProfile.getMinistries()
+        checkInternet()
         
         self.nextButton.enabled = false
     }
     
+    
+    /* Determines whether or not the device is connected to WiFi or 4g. Alerts user if they are not.
+     * Without internet, data might not populate, aside from cached data */
+    func checkInternet() {
+        
+        // Checks for internet connectivity (Wifi/4G)
+        let reachability: Reachability
+        do {
+            reachability = try Reachability.reachabilityForInternetConnection()
+        } catch {
+            print("Unable to create Reachability")
+            return
+        }
+        
+        SwiftLoader.show(title: "Loading...", animated: true)
+        
+        // If device does have internet
+        reachability.whenReachable = { reachability in
+            dispatch_async(dispatch_get_main_queue()) {
+                if reachability.isReachableViaWiFi() {
+                    print("Reachable via WiFi")
+                } else {
+                    print("Reachable via Cellular")
+                }
+                
+                self.campusCollection = UserProfile.getCampuses()
+                self.ministriesCollection = Array(count: self.campusCollection.count, repeatedValue: [Ministry]())
+                self.ministryCollection = Array(count: self.campusCollection.count, repeatedValue: [MinistryData]())
+                
+                DBClient.getData("ministries", dict: self.setMinistries)
+                
+                self.savedMinistries = UserProfile.getMinistries()
+            }
+        }
+        
+        reachability.whenUnreachable = { reachability in
+            dispatch_async(dispatch_get_main_queue()) {
+                
+                // If unreachable, hide the loading indicator anyways
+                SwiftLoader.hide()
+                
+                // If no internet, display an alert notifying user they have no internet connectivity
+                let g_alert = UIAlertController(title: "Checking for Internet...", message: "If this dialog appears, please check to make sure you have internet connectivity. ", preferredStyle: .Alert)
+                let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
+                    // Dismiss alert dialog
+                    print("Dismissed No Internet Dialog")
+                }
+                g_alert.addAction(OKAction)
+                
+                // Sets up the controller to display notification screen if no events populate
+                self.tableView.emptyDataSetSource = self;
+                self.tableView.emptyDataSetDelegate = self;
+                self.tableView.reloadEmptyDataSet()
+                
+                self.presentViewController(g_alert, animated: true, completion: nil)
+            }
+        }
+        
+        do {
+            try reachability.startNotifier()
+        } catch {
+            print("Unable to start notifier")
+        }
+        
+    }
+    
     //retreive ministries from the database that belong to the user's campuses
     func setMinistries(ministries:NSArray) {
-        //self.tableView.beginUpdates()
 
         for ministry in ministries {
             print(ministry["name"])
@@ -93,24 +154,18 @@ class InitialMinistryTableViewController: UITableViewController {
             }
         }
     
+        SwiftLoader.hide()
         self.tableView.reloadData()
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     // MARK: - Table view data source
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return campusCollection.count //
+        return campusCollection.count
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return ministriesCollection[section].count //
+        return ministriesCollection[section].count
     }
     
     // Configure table view cell
@@ -223,6 +278,30 @@ class InitialMinistryTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return campusCollection[section].name
+    }
+    
+    // MARK: - DZNEmptySet Delegate/DataSource methods
+    
+    func titleForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
+        let str = "No ministries to display!"
+        let attrs = [NSFontAttributeName: UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline)]
+        return NSAttributedString(string: str, attributes: attrs)
+    }
+    
+    func descriptionForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
+        let str = "Please check your internet."
+        let attrs = [NSFontAttributeName: UIFont.preferredFontForTextStyle(UIFontTextStyleBody)]
+        return NSAttributedString(string: str, attributes: attrs)
+    }
+    
+    func buttonTitleForEmptyDataSet(scrollView: UIScrollView!, forState state: UIControlState) -> NSAttributedString! {
+        let str = "Click to refresh!"
+        let attrs = [NSFontAttributeName: UIFont.preferredFontForTextStyle(UIFontTextStyleBody)]
+        return NSAttributedString(string: str, attributes: attrs)
+    }
+    
+    func emptyDataSetDidTapButton(scrollView: UIScrollView!) {
+        checkInternet()
     }
 
 }

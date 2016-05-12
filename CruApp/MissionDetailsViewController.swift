@@ -64,6 +64,7 @@ class MissionDetailsViewController: UIViewController {
                 missionButton.addTarget(self, action: #selector(MissionDetailsViewController.openLink(_:)), forControlEvents: .TouchUpInside)
             } else {
                 missionButton.enabled = false
+                missionButton.hidden = true;
             }
             
             let oldWidth = missionImage.frame.size.width

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="9Yo-Ha-dso">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="9Yo-Ha-dso">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -497,10 +497,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Omo-Qq-Qg8" userLabel="Days" customClass="MWSegmentedControl" customModule="CruApp">
-                                <rect key="frame" x="8" y="352" width="359" height="31"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Available Days:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vqz-6g-3ep">
                                 <rect key="frame" x="8" y="323" width="115" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -520,14 +516,18 @@
                                     <outlet property="delegate" destination="4wo-LD-YIA" id="MPW-qq-BeO"/>
                                 </connections>
                             </pickerView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Omo-Qq-Qg8" userLabel="Days" customClass="MWSegmentedControl" customModule="CruApp">
+                                <rect key="frame" x="8" y="352" width="359" height="31"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Sign-up" id="Lvi-j3-Y1S">
                         <barButtonItem key="backBarButtonItem" title=" " id="ggo-ii-QeN"/>
-                        <barButtonItem key="rightBarButtonItem" title="Submit" id="QtQ-Zo-HcY">
+                        <barButtonItem key="rightBarButtonItem" title="Next" id="QtQ-Zo-HcY">
                             <connections>
-                                <segue destination="8vx-lf-eb8" kind="show" id="20W-Sp-2v7"/>
+                                <action selector="nextButtonTransition:" destination="6XW-1X-TIo" id="q8Z-Vo-2v4"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -551,7 +551,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="communityGroupCell" rowHeight="56" id="LGq-cc-PSR" customClass="CommunityGroupCell" customModule="CruApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="375" height="56"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="56"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LGq-cc-PSR" id="vF7-Uq-8HD">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="55.5"/>
@@ -609,7 +609,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="hzV-yN-Wcu">
-                                        <rect key="frame" x="0.0" y="92" width="375" height="65"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hzV-yN-Wcu" id="tx9-lY-kp0">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="64.5"/>

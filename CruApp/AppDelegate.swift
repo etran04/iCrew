@@ -46,19 +46,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GC
         GCMService.sharedInstance().startWithConfig(gcmConfig)
         
         //API key for Google Maps
-        GMSServices.provideAPIKey("AIzaSyCLsWMvLiBIEh76VETPgd6fQkeLo0LIJ7g")
+        GMSServices.provideAPIKey("AIzaSyCn66MiM73S-eiiA7MCip3YAAaYzvqe4Gk")
         
         initCoreDataModel()
         
-        //print out font families for testing
-        for family: String in UIFont.familyNames()
-        {
-            print("\(family)")
-            for names: String in UIFont.fontNamesForFamilyName(family)
-            {
-                print("== \(names)")
-            }
-        }
+//        //print out font families for testing
+//        for family: String in UIFont.familyNames()
+//        {
+//            print("\(family)")
+//            for names: String in UIFont.fontNamesForFamilyName(family)
+//            {
+//                print("== \(names)")
+//            }
+//        }
         
         // set all labels to Cru font
         UILabel.appearance().font = UIFont(name: "FreightSansProMedium-Regular", size: 16)
@@ -78,7 +78,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GC
         
         // set the navigation bar color app wide
         UINavigationBar.appearance().barTintColor = UIColor(red: 0, green: 115/255, blue: 152/255, alpha: 1.0)
-
 
         return true
     }

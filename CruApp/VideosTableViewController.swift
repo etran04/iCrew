@@ -279,7 +279,7 @@ class VideosTableViewController: UITableViewController, UISearchBarDelegate, DZN
         let playlistID = channelsDataArray[index]["playlistID"] as! String
         
         let urlString: String
-        var kSearchForAmt = 5
+        var kSearchForAmt = 10
         
         if self.filterFlag {
             kSearchForAmt = 50
@@ -308,6 +308,8 @@ class VideosTableViewController: UITableViewController, UISearchBarDelegate, DZN
                     if resultsDict["nextPageToken"] != nil {
                         // Save the next page token
                         self.nextPageToken = resultsDict["nextPageToken"] as! String
+                    } else {
+                        return
                     }
                     
                     // Get all playlist items ("items" array).
@@ -344,8 +346,8 @@ class VideosTableViewController: UITableViewController, UISearchBarDelegate, DZN
                     // Get the last index of videos
                     let lastNdx = self.videos.count
                     var startReloadNdx = 0
-                    if (lastNdx > 5) {
-                        startReloadNdx = lastNdx - 5
+                    if (lastNdx > 10) {
+                        startReloadNdx = lastNdx - 10
                     }
                     
                     // Create indexPaths starting from startReloadNdx to end
@@ -354,7 +356,7 @@ class VideosTableViewController: UITableViewController, UISearchBarDelegate, DZN
                         let indexPath = NSIndexPath(forRow: i, inSection: 0)
                         rowArr.append(indexPath)
                     }
-                    
+                
                     // Reload the tableview.
                     self.tableView.beginUpdates()
                     self.tableView.insertRowsAtIndexPaths(rowArr, withRowAnimation: UITableViewRowAnimation.Automatic)

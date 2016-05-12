@@ -29,17 +29,17 @@
             </objects>
             <point key="canvasLocation" x="678" y="1810"/>
         </scene>
-        <!--Ride Sharing-->
+        <!--Ride Share Status Table View Controller-->
         <scene sceneID="aND-sK-BRQ">
             <objects>
-                <tableViewController title="Ride Sharing" id="mnm-8N-DxT" customClass="RideShareStatusTableViewController" customModule="CruApp" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="mnm-8N-DxT" customClass="RideShareStatusTableViewController" customModule="CruApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="4Ay-t2-RJw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PassengerCell" rowHeight="173" id="0Iz-rM-DRl" userLabel="PassengerCell" customClass="PassengerStatusTableViewCell" customModule="CruApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="375" height="173"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="173"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0Iz-rM-DRl" id="g8f-lg-Lps">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="172.5"/>
@@ -108,7 +108,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DriverCell" rowHeight="144" id="ZHs-k1-rnG" userLabel="DriverCell" customClass="DriverStatusTableViewCell" customModule="CruApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="265" width="375" height="144"/>
+                                <rect key="frame" x="0.0" y="201" width="375" height="144"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZHs-k1-rnG" id="Svb-hA-FmF">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="143.5"/>
@@ -170,7 +170,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NoDataCell" rowHeight="200" id="KdX-uF-Qgq">
-                                <rect key="frame" x="0.0" y="409" width="375" height="200"/>
+                                <rect key="frame" x="0.0" y="345" width="375" height="200"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KdX-uF-Qgq" id="ClJ-PX-IhY">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="199.5"/>
@@ -191,7 +191,7 @@
                             <outlet property="delegate" destination="mnm-8N-DxT" id="NaK-zW-pBz"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Ride Share" id="EMb-EY-qZ4">
+                    <navigationItem key="navigationItem" id="EMb-EY-qZ4">
                         <barButtonItem key="rightBarButtonItem" image="rideShareIcon.png" id="GgM-NF-RVo">
                             <connections>
                                 <action selector="addButtonPressed:" destination="mnm-8N-DxT" id="TjB-GA-IhZ"/>
@@ -772,6 +772,6 @@
         <image name="rideShareIcon.png" width="33" height="33"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Mxy-rB-9BE"/>
+        <segue reference="ych-wR-L59"/>
     </inferredMetricsTieBreakers>
 </document>

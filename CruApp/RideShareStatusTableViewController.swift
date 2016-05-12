@@ -8,7 +8,6 @@
 
 import UIKit
 import SwiftLoader
-import DZNEmptyDataSet
 
 
 let kDriverHeader = "You will be a driver for..."
@@ -16,7 +15,7 @@ let kPassengerHeader = "You will be a passenger for..."
 
 let gcm_id = "1234567"
 
-class RideShareStatusTableViewController: UITableViewController, DZNEmptyDataSetDelegate, DZNEmptyDataSetSource {
+class RideShareStatusTableViewController: UITableViewController {
     
     var eventNames = [String]()
     var eventIds = [String]()
@@ -32,7 +31,12 @@ class RideShareStatusTableViewController: UITableViewController, DZNEmptyDataSet
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        // Starts the loading spinner
+        SwiftLoader.show(animated: true)
+        
         tableView.separatorStyle = .None
+
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -48,11 +52,14 @@ class RideShareStatusTableViewController: UITableViewController, DZNEmptyDataSet
     }
     
     func fetchStatuses() {
-        SwiftLoader.show(title: "Loading...", animated: true)
         driverCollection = [Driver]()
         passengerCollection = [Passenger]()
         tableData = [[AnyObject]]()
         DBClient.getData("events", dict: setEvents)
+        
+        SwiftLoader.hide()
+
+        self.tableView.reloadData()
     }
     
     // Obtain event information from the database to an Object
@@ -104,23 +111,23 @@ class RideShareStatusTableViewController: UITableViewController, DZNEmptyDataSet
                 direction = ride["direction"] as! String
             }
             
-            if(ride["location"]?!.objectForKey("postcode") != nil && !(ride["location"]?!.objectForKey("postcode") is NSNull)) {
+            if(ride["location"]?!.objectForKey("postcode") != nil) {
                 zipcode = ride["location"]?!.objectForKey("postcode") as! String
             }
             
-            if(ride["location"]?!.objectForKey("state") != nil && !(ride["location"]?!.objectForKey("state") is NSNull)) {
+            if(ride["location"]?!.objectForKey("state") != nil) {
                 state = ride["location"]?!.objectForKey("state") as! String
             }
             
-            if(ride["location"]?!.objectForKey("suburb") != nil && !(ride["location"]?!.objectForKey("suburb") is NSNull)) {
+            if(ride["location"]?!.objectForKey("suburb") != nil) {
                 city = ride["location"]?!.objectForKey("suburb") as! String
             }
             
-            if(ride["location"]?!.objectForKey("street1") != nil && !(ride["location"]?!.objectForKey("street1") is NSNull)) {
+            if(ride["location"]?!.objectForKey("street1") != nil) {
                 street = ride["location"]?!.objectForKey("street1") as! String
             }
             
-            if(ride["location"]?!.objectForKey("country") != nil && !(ride["location"]?!.objectForKey("country") is NSNull)) {
+            if(ride["location"]?!.objectForKey("country") != nil) {
                 country = ride["location"]?!.objectForKey("country") as! String
             }
             
@@ -149,14 +156,13 @@ class RideShareStatusTableViewController: UITableViewController, DZNEmptyDataSet
         }
         
         self.tableData = [self.driverCollection, self.passengerCollection]
-        SwiftLoader.hide()
-        
-        // Sets up the controller to display notification screen if no ridesharing can be accessed
-        self.tableView.emptyDataSetSource = self;
-        self.tableView.emptyDataSetDelegate = self;
-        
         self.tableView.reloadData()
     }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
 
     // MARK: - Table view data source
 
@@ -206,6 +212,7 @@ class RideShareStatusTableViewController: UITableViewController, DZNEmptyDataSet
         return nil
     }
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        print(headerTitles[indexPath.section])
         switch(headerTitles[indexPath.section]) {
             case kDriverHeader:
                 let alert = UIAlertView()
@@ -298,8 +305,13 @@ class RideShareStatusTableViewController: UITableViewController, DZNEmptyDataSet
         
         let confirmDialog = UIAlertController(title: titleMsg, message: msg, preferredStyle: .Alert)
         let okAction = UIAlertAction(title: "Confirm", style: .Default) { (UIAlertAction) -> Void in
-            
             let rideId = self.driverCollection[row].rideId;
+//            let params = ["ride_id": self.driverCollection[row].rideId]
+//            
+//            do {
+//                let body = try NSJSONSerialization.dataWithJSONObject(params, options: NSJSONWritingOptions.PrettyPrinted)
+            
+//                DBClient.deleteData("rides/" + rideId, body:body)
             DBClient.deleteData("rides/" + rideId)
 
             
@@ -316,6 +328,9 @@ class RideShareStatusTableViewController: UITableViewController, DZNEmptyDataSet
                 
                 self.tableView.reloadData()
                 
+//            } catch {
+//                print("Error sending data to database")
+//            }
         }
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
@@ -430,18 +445,5 @@ class RideShareStatusTableViewController: UITableViewController, DZNEmptyDataSet
         self.presentViewController(actionSheetController, animated: true, completion: nil)
         
     }
-    
-    func titleForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
-        let str = "Ride Share can't be loaded."
-        let attrs = [NSFontAttributeName: UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline)]
-        return NSAttributedString(string: str, attributes: attrs)
-    }
-    
-    func descriptionForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
-        let str = "Please make sure you have internet connectivity."
-        let attrs = [NSFontAttributeName: UIFont.preferredFontForTextStyle(UIFontTextStyleBody)]
-        return NSAttributedString(string: str, attributes: attrs)
-    }
-    
     
 }

@@ -73,7 +73,7 @@ class VideosTableViewController: UITableViewController, UISearchBarDelegate, DZN
         super.viewDidLoad()
         
         //Looks for single or multiple taps.
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(VideosTableViewController.dismissKeyboard))
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tap)
         
         // checks internet, and then if phone has internet, then start loading videos within
@@ -99,7 +99,7 @@ class VideosTableViewController: UITableViewController, UISearchBarDelegate, DZN
     /* Determines whether or not the device is connected to WiFi or 4g. Alerts user if they are not.
      * Without internet, data might not populate, aside from cached data */
     func checkInternetAndLoadVideos() {
-            
+        
         // Checks for internet connectivity (Wifi/4G)
         let reachability: Reachability
         do {
@@ -175,7 +175,7 @@ class VideosTableViewController: UITableViewController, UISearchBarDelegate, DZN
     /* Loads each individual cell in the table with a video */
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("VideoTableCell", forIndexPath: indexPath) as! VideoTableViewCell
-       
+        
         cell.summaryTextView.selectable = false
         
         let currentVideo = videos[indexPath.row]
@@ -202,7 +202,7 @@ class VideosTableViewController: UITableViewController, UISearchBarDelegate, DZN
             }
         }
     }
-
+    
     /* Helper method to perform a simple get request */
     func performGetRequest(targetURL: NSURL!, completion: (data: NSData?, HTTPStatusCode: Int, error: NSError?) -> Void) {
         let request = NSMutableURLRequest(URL: targetURL)
@@ -289,9 +289,9 @@ class VideosTableViewController: UITableViewController, UISearchBarDelegate, DZN
         if (nextPageToken == "") {
             urlString = "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=\(kSearchForAmt)&playlistId=\(playlistID)&key=\(apiKey)"
         }
-        // Or uses the nextPageToken as a user scrolls down the feed 
+            // Or uses the nextPageToken as a user scrolls down the feed
         else {
-             urlString = "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&pageToken=\(nextPageToken)&maxResults=\(kSearchForAmt)&playlistId=\(playlistID)&key=\(apiKey)"
+            urlString = "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&pageToken=\(nextPageToken)&maxResults=\(kSearchForAmt)&playlistId=\(playlistID)&key=\(apiKey)"
         }
         
         // Create a NSURL object based on the above string.
@@ -314,7 +314,7 @@ class VideosTableViewController: UITableViewController, UISearchBarDelegate, DZN
                     let items: Array<Dictionary<NSObject, AnyObject>> = resultsDict["items"] as! Array<Dictionary<NSObject, AnyObject>>
                     
                     // Use a loop to go through all video items.
-                    for var i = 1; i < items.count; i+=1 {
+                    for var i = 0; i < items.count; ++i {
                         let playlistSnippetDict = (items[i] as Dictionary<NSObject, AnyObject>)["snippet"] as! Dictionary<NSObject, AnyObject>
                         
                         // Initialize a new dictionary and store the data of interest.
@@ -341,16 +341,16 @@ class VideosTableViewController: UITableViewController, UISearchBarDelegate, DZN
                         }
                     }
                     
-                    // Get the last index of videos 
+                    // Get the last index of videos
                     let lastNdx = self.videos.count
                     var startReloadNdx = 0
                     if (lastNdx > 5) {
                         startReloadNdx = lastNdx - 5
                     }
                     
-                    // Create indexPaths starting from startReloadNdx to end 
+                    // Create indexPaths starting from startReloadNdx to end
                     var rowArr = [NSIndexPath]()
-                    for var i = startReloadNdx; i < lastNdx; i += 1 {
+                    for var i = startReloadNdx; i < lastNdx; i++ {
                         let indexPath = NSIndexPath(forRow: i, inSection: 0)
                         rowArr.append(indexPath)
                     }

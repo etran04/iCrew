@@ -26,22 +26,11 @@ class ArticlesTableViewController: UITableViewController, DZNEmptyDataSetSource,
         self.tableView.tableFooterView = UIView()
         
         // Check internet, and if applicable, starts to load the articles
-        let internetHelper = InternetHelper()
-        
-        if (internetHelper.checkInternet(self)) {
+        if (InternetHelper.checkInternet(self)) {
             /* Call to database to load articles  */
             DBClient.getData("resources", dict: self.loadArticles)
         }
         else {
-            // Sets up the controller to display notification screen if no events populate
-            self.tableView.emptyDataSetSource = self;
-            self.tableView.emptyDataSetDelegate = self;
-            self.tableView.reloadEmptyDataSet()
-        }
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        if (!InternetHelper().checkInternet(self)) {
             // Sets up the controller to display notification screen if no events populate
             self.tableView.emptyDataSetSource = self;
             self.tableView.emptyDataSetDelegate = self;

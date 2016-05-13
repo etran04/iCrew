@@ -221,6 +221,29 @@ class VideosTableViewController: UITableViewController, UISearchBarDelegate, DZN
         task.resume()
     }
     
+    func convertDataToChannelDict(data: NSData) throws -> Dictionary<NSObject, AnyObject> {
+        // Convert the JSON data to a dictionary.
+        let resultsDict = try NSJSONSerialization.JSONObjectWithData(data, options: []) as! Dictionary<NSObject, AnyObject>
+        
+        // Get the first dictionary item from the returned items (usually there's just one item).
+        let items: AnyObject! = resultsDict["items"] as AnyObject!
+        let firstItemDict = (items as! Array<AnyObject>)[0] as! Dictionary<NSObject, AnyObject>
+        
+        // Get the snippet dictionary that contains the desired data.
+        let snippetDict = firstItemDict["snippet"] as! Dictionary<NSObject, AnyObject>
+        
+        // Create a new dictionary to store only the values we care about.
+        var desiredValuesDict: Dictionary<NSObject, AnyObject> = Dictionary<NSObject, AnyObject>()
+        desiredValuesDict["title"] = snippetDict["title"]
+        desiredValuesDict["description"] = snippetDict["description"]
+        desiredValuesDict["thumbnail"] = ((snippetDict["thumbnails"] as! Dictionary<NSObject, AnyObject>)["default"] as! Dictionary<NSObject, AnyObject>)["url"]
+        
+        // Save the channel's uploaded videos playlist ID.
+        desiredValuesDict["playlistID"] = ((firstItemDict["contentDetails"] as! Dictionary<NSObject, AnyObject>)["relatedPlaylists"] as! Dictionary<NSObject, AnyObject>)["uploads"]
+        
+        return desiredValuesDict
+    }
+    
     /* Retrieves the information about the Cru channel and saves it */
     func getChannelDetailsAndLoadVideos(useChannelIDParam: Bool) -> Void{
         
@@ -238,24 +261,9 @@ class VideosTableViewController: UITableViewController, UISearchBarDelegate, DZN
             if HTTPStatusCode == 200 && error == nil {
                 
                 do {
-                    // Convert the JSON data to a dictionary.
-                    let resultsDict = try NSJSONSerialization.JSONObjectWithData(data!, options: []) as! Dictionary<NSObject, AnyObject>
                     
-                    // Get the first dictionary item from the returned items (usually there's just one item).
-                    let items: AnyObject! = resultsDict["items"] as AnyObject!
-                    let firstItemDict = (items as! Array<AnyObject>)[0] as! Dictionary<NSObject, AnyObject>
-                    
-                    // Get the snippet dictionary that contains the desired data.
-                    let snippetDict = firstItemDict["snippet"] as! Dictionary<NSObject, AnyObject>
-                    
-                    // Create a new dictionary to store only the values we care about.
-                    var desiredValuesDict: Dictionary<NSObject, AnyObject> = Dictionary<NSObject, AnyObject>()
-                    desiredValuesDict["title"] = snippetDict["title"]
-                    desiredValuesDict["description"] = snippetDict["description"]
-                    desiredValuesDict["thumbnail"] = ((snippetDict["thumbnails"] as! Dictionary<NSObject, AnyObject>)["default"] as! Dictionary<NSObject, AnyObject>)["url"]
-                    
-                    // Save the channel's uploaded videos playlist ID.
-                    desiredValuesDict["playlistID"] = ((firstItemDict["contentDetails"] as! Dictionary<NSObject, AnyObject>)["relatedPlaylists"] as! Dictionary<NSObject, AnyObject>)["uploads"]
+                    // Takes JSON from the GET Request, and parses it so we can add to collection of dataD
+                    let desiredValuesDict = try self.convertDataToChannelDict(data!)
                     
                     // Append the desiredValuesDict dictionary to the following array.
                     self.channelsDataArray.append(desiredValuesDict)
@@ -281,9 +289,9 @@ class VideosTableViewController: UITableViewController, UISearchBarDelegate, DZN
         let urlString: String
         var kSearchForAmt = 10
         
-        if self.filterFlag {
-            kSearchForAmt = 50
-        }
+//        if self.filterFlag {
+//            kSearchForAmt = 50
+//        }
         
         // Form the request URL string for first time fetch
         if (nextPageToken == "") {

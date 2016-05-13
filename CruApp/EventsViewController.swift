@@ -120,15 +120,6 @@ class EventsViewController: UITableViewController, DZNEmptyDataSetDelegate, DZNE
                     }
                 }
             }
-//            else {
-//                let ministryId = event["parentMinistry"] as! String
-//            
-//                for ministry in ministryCollection {
-//                    if (ministry.id == ministryId) {
-//                        existsInMinistry = true;
-//                    }
-//                }
-//            }
         
             if (!existsInMinistry) {
                 continue

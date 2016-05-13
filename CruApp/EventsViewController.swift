@@ -109,8 +109,8 @@ class EventsViewController: UITableViewController, DZNEmptyDataSetDelegate, DZNE
 
             var existsInMinistry = false
         
-            if (event["parentMinistry"]! == nil) {
-                let parentMinistries = event["parentMinistries"] as! [String]
+            if (event["ministries"]! != nil) {
+                let parentMinistries = event["ministries"] as! [String]
             
                 for ministryId in parentMinistries {
                     for ministry in ministryCollection {
@@ -120,15 +120,15 @@ class EventsViewController: UITableViewController, DZNEmptyDataSetDelegate, DZNE
                     }
                 }
             }
-            else {
-                let ministryId = event["parentMinistry"] as! String
-            
-                for ministry in ministryCollection {
-                    if (ministry.id == ministryId) {
-                        existsInMinistry = true;
-                    }
-                }
-            }
+//            else {
+//                let ministryId = event["parentMinistry"] as! String
+//            
+//                for ministry in ministryCollection {
+//                    if (ministry.id == ministryId) {
+//                        existsInMinistry = true;
+//                    }
+//                }
+//            }
         
             if (!existsInMinistry) {
                 continue
@@ -173,7 +173,7 @@ class EventsViewController: UITableViewController, DZNEmptyDataSetDelegate, DZNE
             }
         
             let url = event["url"] as! String
-            let rideShareEnabled = event["rideSharingEnabled"] as! Bool
+            let rideShareEnabled = event["rideSharing"] as! Bool
         
             var eventObj = Event(name: name, startDate: startDate, endDate: endDate, location: location, image: image, imageSq: imageSq, description: description, url: url, rideShareFlag: rideShareEnabled)
             

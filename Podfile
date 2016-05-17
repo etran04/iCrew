@@ -15,6 +15,8 @@ def shared_pods
     pod 'Alamofire'
     pod 'DatePickerCell'
     pod 'DZNEmptyDataSet'
+    pod 'Fabric'
+    pod 'Crashlytics'
 
 end
 

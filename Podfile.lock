@@ -1,9 +1,12 @@
 PODS:
   - Alamofire (3.4.0)
   - CheckmarkSegmentedControl (0.1.1)
+  - Crashlytics (3.7.0):
+    - Fabric (~> 1.6.3)
   - DatePickerCell (1.0.4)
   - DownPicker (0.1.34)
   - DZNEmptyDataSet (1.8)
+  - Fabric (1.6.7)
   - GGLInstanceID (1.2.1)
   - Google/CloudMessaging (2.0.4):
     - GGLInstanceID (~> 1.0)
@@ -37,9 +40,11 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - CheckmarkSegmentedControl
+  - Crashlytics
   - DatePickerCell
   - DownPicker
   - DZNEmptyDataSet
+  - Fabric
   - Google/CloudMessaging
   - GoogleMaps
   - NMPopUpViewSwift
@@ -66,9 +71,11 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   Alamofire: c19a627cefd6a95f840401c49ab1f124e07f54ee
   CheckmarkSegmentedControl: ce70c9fb699b623cef8e72c2b8578b505fbf2f48
+  Crashlytics: c3a2333dea9e2733d2777f730910321fc9e25c0d
   DatePickerCell: 20d2ba8b5cd5bb8a5a79e2b43bc7758e3b65daf2
   DownPicker: c00ea63f08ae82116cc93d0eba74e86bf3d4c68e
   DZNEmptyDataSet: d2351b2e8daefa40433ef292e246e21f6be31a7b
+  Fabric: caf7580c725e64db144f610ac65cd60956911dc7
   GGLInstanceID: 4a317044f744281b82cd03015f379899f277cad3
   Google: d0932824c5b97c96be489aa6f4e8cd6c294d637d
   GoogleCloudMessaging: f37ea14dd0f41d4d889c10b5559dd35bbfd9ac26

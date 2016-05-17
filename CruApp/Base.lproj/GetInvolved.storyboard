@@ -114,7 +114,7 @@
                                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Join a Community Group" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="THe-qc-eWy">
                                                             <rect key="frame" x="54" y="205" width="240" height="28"/>
                                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <color key="textColor" red="0.0" green="0.45098039215686275" blue="0.59607843137254901" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="textColor" red="0.24313725489999999" green="0.69411764710000001" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
                                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                         </textView>
@@ -171,7 +171,7 @@
                                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Join a Ministry Team" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AC9-QR-WmY">
                                                             <rect key="frame" x="54" y="203" width="240" height="30"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                            <color key="textColor" red="0.0" green="0.45098039220000002" blue="0.59607843140000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="textColor" red="0.24313725489999999" green="0.69411764710000001" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
                                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                         </textView>

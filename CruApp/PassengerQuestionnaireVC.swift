@@ -104,7 +104,19 @@ class PassengerQuestionnaireVC: UIViewController, UITableViewDelegate, UITableVi
         for event in events {
             var existsInMinistry = false
             
-            if (event["parentMinistry"]! == nil) {
+            if(event["parentMinistry"]! == nil && event["parentMinistries"]! == nil) {
+                let parentMinistries = event["ministries"] as! [String]
+                
+                for ministryId in parentMinistries {
+                    for ministry in ministryCollection {
+                        if (ministryId == ministry.id) {
+                            existsInMinistry = true;
+                        }
+                    }
+                }
+                
+            }
+            else if (event["parentMinistry"]! == nil) {
                 let parentMinistries = event["parentMinistries"] as! [String]
                 
                 for ministryId in parentMinistries {

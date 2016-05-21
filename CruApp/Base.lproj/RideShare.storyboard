@@ -29,7 +29,7 @@
             </objects>
             <point key="canvasLocation" x="678" y="1810"/>
         </scene>
-        <!--Ride Share Status Table View Controller-->
+        <!--Ride Share-->
         <scene sceneID="aND-sK-BRQ">
             <objects>
                 <tableViewController id="mnm-8N-DxT" customClass="RideShareStatusTableViewController" customModule="CruApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -191,7 +191,7 @@
                             <outlet property="delegate" destination="mnm-8N-DxT" id="NaK-zW-pBz"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="EMb-EY-qZ4">
+                    <navigationItem key="navigationItem" title="Ride Share" id="EMb-EY-qZ4">
                         <barButtonItem key="leftBarButtonItem" image="Menu" id="1ii-6R-Cf1"/>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>

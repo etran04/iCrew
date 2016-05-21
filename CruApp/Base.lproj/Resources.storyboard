@@ -9,7 +9,7 @@
         <scene sceneID="iR6-4u-iXb">
             <objects>
                 <navigationController id="yMF-BQ-iAf" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Resources" image="Literature-25.png" id="GZB-nX-s8N"/>
+                    <tabBarItem key="tabBarItem" title="Resources" image="Resources" id="GZB-nX-s8N"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="waK-zS-ccd">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -408,7 +408,7 @@
     </scenes>
     <resources>
         <image name="ArticlesIcon.png" width="120" height="87"/>
-        <image name="Literature-25.png" width="25" height="25"/>
+        <image name="Resources" width="25" height="25"/>
         <image name="ToolsIcon.png" width="120" height="87"/>
         <image name="VideoIcon.png" width="95" height="69"/>
         <image name="menu.png" width="22" height="22"/>

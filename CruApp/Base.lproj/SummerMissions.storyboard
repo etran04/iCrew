@@ -9,7 +9,7 @@
         <scene sceneID="v0R-xR-P9z">
             <objects>
                 <navigationController id="iOS-mX-yL5" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Summer Missions" image="Summer-25.png" id="mOT-99-Xdo"/>
+                    <tabBarItem key="tabBarItem" title="Summer Missions" image="Summer Missions" id="mOT-99-Xdo"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="03n-m5-Gp2">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -251,7 +251,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Summer-25.png" width="25" height="25"/>
+        <image name="Summer Missions" width="25" height="25"/>
         <image name="menu.png" width="22" height="22"/>
     </resources>
 </document>

@@ -9,7 +9,7 @@
         <scene sceneID="hSs-N7-8ml">
             <objects>
                 <navigationController storyboardIdentifier="mainInvolvedNC" id="9Yo-Ha-dso" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Get Involved" image="User Group-25.png" id="BVl-5U-bdr"/>
+                    <tabBarItem key="tabBarItem" title="Get Involved" image="Get Involved" id="BVl-5U-bdr"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Tpn-cJ-Knh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -662,7 +662,7 @@
     </scenes>
     <resources>
         <image name="Box-25.png" width="25" height="25"/>
-        <image name="User Group-25.png" width="25" height="25"/>
+        <image name="Get Involved" width="25" height="25"/>
         <image name="menu.png" width="22" height="22"/>
     </resources>
 </document>

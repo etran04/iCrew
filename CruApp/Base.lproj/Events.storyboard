@@ -9,7 +9,7 @@
         <scene sceneID="0IQ-tr-zZP">
             <objects>
                 <navigationController id="QPd-rn-vY4" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Events" image="Planner-25.png" id="64r-r9-mgz"/>
+                    <tabBarItem key="tabBarItem" title="Events" image="Events" id="64r-r9-mgz"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="qcZ-Oq-UVF">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -278,7 +278,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Planner-25.png" width="25" height="25"/>
+        <image name="Events" width="25" height="25"/>
         <image name="calendar_icon.png" width="64" height="64"/>
         <image name="fb_icon.png" width="32" height="32"/>
         <image name="google_icon.png" width="32" height="32"/>

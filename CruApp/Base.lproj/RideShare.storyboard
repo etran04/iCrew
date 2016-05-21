@@ -11,7 +11,7 @@
         <scene sceneID="gBW-nf-y7E">
             <objects>
                 <navigationController id="APQ-AE-Llv" userLabel="Ride Share" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Ride Share" image="Car-25.png" id="J4m-ub-KoX"/>
+                    <tabBarItem key="tabBarItem" title="Ride Share" image="Rideshare" id="J4m-ub-KoX"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="474-eW-T6t">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -766,9 +766,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Car-25.png" width="25" height="25"/>
         <image name="Delete-50.png" width="50" height="50"/>
         <image name="Filled-Car-100.png" width="96" height="96"/>
+        <image name="Rideshare" width="25" height="25"/>
         <image name="rideShareIcon.png" width="33" height="33"/>
     </resources>
     <inferredMetricsTieBreakers>

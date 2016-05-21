@@ -5,7 +5,7 @@ PODS:
     - Fabric (~> 1.6.3)
   - DatePickerCell (1.0.4)
   - DownPicker (0.1.34)
-  - DZNEmptyDataSet (1.8)
+  - DZNEmptyDataSet (1.8.1)
   - Fabric (1.6.7)
   - GGLInstanceID (1.2.1)
   - Google/CloudMessaging (2.0.4):
@@ -35,6 +35,7 @@ PODS:
   - NMPopUpViewSwift (3.0.1)
   - ReachabilitySwift (2.3.3)
   - SwiftLoader (0.2.5)
+  - SwiftPages (1.1.0)
   - youtube-ios-player-helper (0.1.5)
 
 DEPENDENCIES:
@@ -50,6 +51,7 @@ DEPENDENCIES:
   - NMPopUpViewSwift
   - ReachabilitySwift (from `https://github.com/ashleymills/Reachability.swift`)
   - SwiftLoader
+  - SwiftPages
   - youtube-ios-player-helper (from `https://github.com/youtube/youtube-ios-player-helper`,
     commit `head`)
 
@@ -74,7 +76,7 @@ SPEC CHECKSUMS:
   Crashlytics: c3a2333dea9e2733d2777f730910321fc9e25c0d
   DatePickerCell: 20d2ba8b5cd5bb8a5a79e2b43bc7758e3b65daf2
   DownPicker: c00ea63f08ae82116cc93d0eba74e86bf3d4c68e
-  DZNEmptyDataSet: d2351b2e8daefa40433ef292e246e21f6be31a7b
+  DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   Fabric: caf7580c725e64db144f610ac65cd60956911dc7
   GGLInstanceID: 4a317044f744281b82cd03015f379899f277cad3
   Google: d0932824c5b97c96be489aa6f4e8cd6c294d637d
@@ -88,6 +90,7 @@ SPEC CHECKSUMS:
   NMPopUpViewSwift: 23a44d6db17a9abc6b806f9fac597be6d7e9f300
   ReachabilitySwift: e0f6b6f280effb47731acfaaa2d5ffe223703793
   SwiftLoader: 12d7a6f661f5e9a2c9a72003e7dd6162f4ff0cc4
+  SwiftPages: 1b24565cb91f24f4f912fbd9878a9c74b41a2ca6
   youtube-ios-player-helper: 921da8927a575debc293a94c678c658f38cde150
 
 COCOAPODS: 0.39.0

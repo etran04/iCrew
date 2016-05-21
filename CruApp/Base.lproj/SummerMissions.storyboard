@@ -112,7 +112,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Summer Missions" id="bR7-qk-PI9">
-                        <barButtonItem key="leftBarButtonItem" image="menu.png" id="qg4-wb-OYl"/>
+                        <barButtonItem key="leftBarButtonItem" image="Menu" id="qg4-wb-OYl"/>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
@@ -251,7 +251,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Menu" width="25" height="25"/>
         <image name="Summer Missions" width="25" height="25"/>
-        <image name="menu.png" width="22" height="22"/>
     </resources>
 </document>

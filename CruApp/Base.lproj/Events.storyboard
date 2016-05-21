@@ -124,7 +124,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Events" id="kj2-c5-3Oo">
-                        <barButtonItem key="leftBarButtonItem" image="menu.png" id="yWV-Oq-fEi"/>
+                        <barButtonItem key="leftBarButtonItem" image="Menu" id="yWV-Oq-fEi"/>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
@@ -232,7 +232,7 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="Y4u-eg-C2P">
-                        <barButtonItem key="rightBarButtonItem" image="rideShareIcon.png" id="fSa-g9-8Ay">
+                        <barButtonItem key="rightBarButtonItem" image="RideshareFill" id="fSa-g9-8Ay">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="rideSharePressed:" destination="UuB-8l-udZ" id="4MM-XL-Wh8"/>
@@ -279,10 +279,10 @@
     </scenes>
     <resources>
         <image name="Events" width="25" height="25"/>
+        <image name="Menu" width="25" height="25"/>
+        <image name="RideshareFill" width="22" height="22"/>
         <image name="calendar_icon.png" width="64" height="64"/>
         <image name="fb_icon.png" width="32" height="32"/>
         <image name="google_icon.png" width="32" height="32"/>
-        <image name="menu.png" width="22" height="22"/>
-        <image name="rideShareIcon.png" width="33" height="33"/>
     </resources>
 </document>

@@ -34,7 +34,6 @@
 		07DA04241C88CA8D005A0ACB /* ArticlesIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 07DA04231C88CA8D005A0ACB /* ArticlesIcon.png */; };
 		07DA04261C88CBC7005A0ACB /* ToolsIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 07DA04251C88CBC7005A0ACB /* ToolsIcon.png */; };
 		07ED81711C0D7ECC007FFB53 /* ResourcesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07ED81701C0D7ECC007FFB53 /* ResourcesViewController.swift */; };
-		07F802C51C76930B00A7A4BC /* rideShareIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 07F802C11C76930B00A7A4BC /* rideShareIcon.png */; };
 		1E37E7261C0E362D0054607A /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E37E71E1C0E362D0054607A /* Event.swift */; };
 		1E37E7291C0E362D0054607A /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E37E7211C0E362D0054607A /* EventsViewController.swift */; };
 		1E37E72A1C0E362D0054607A /* VideosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E37E7221C0E362D0054607A /* VideosTableViewController.swift */; };
@@ -112,16 +111,10 @@
 		839C9B221CD2662600165FEF /* CombinedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839C9B211CD2662600165FEF /* CombinedObject.swift */; };
 		839C9B2E1CE59CC900165FEF /* InternetHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839C9B2D1CE59CC900165FEF /* InternetHelper.swift */; };
 		839F64411C0D4E4300CAEC9E /* Cru-Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 839F643B1C0D4E4300CAEC9E /* Cru-Logo.png */; };
-		839F64421C0D4E4300CAEC9E /* Home-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 839F643C1C0D4E4300CAEC9E /* Home-25.png */; };
-		839F64431C0D4E4300CAEC9E /* Literature-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 839F643D1C0D4E4300CAEC9E /* Literature-25.png */; };
-		839F64441C0D4E4300CAEC9E /* Planner-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 839F643E1C0D4E4300CAEC9E /* Planner-25.png */; };
-		839F64451C0D4E4300CAEC9E /* Summer-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 839F643F1C0D4E4300CAEC9E /* Summer-25.png */; };
-		839F64461C0D4E4300CAEC9E /* User Group-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 839F64401C0D4E4300CAEC9E /* User Group-25.png */; };
 		839F64491C0D643A00CAEC9E /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 839F64481C0D643A00CAEC9E /* menu.png */; };
 		839F64551C0D6BD100CAEC9E /* GetInvolved.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 839F64531C0D6BD100CAEC9E /* GetInvolved.storyboard */; };
 		839F64581C0D6C1E00CAEC9E /* SummerMissions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 839F64561C0D6C1E00CAEC9E /* SummerMissions.storyboard */; };
 		839F645B1C0D6C4C00CAEC9E /* Resources.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 839F64591C0D6C4C00CAEC9E /* Resources.storyboard */; };
-		839F64601C0D70AA00CAEC9E /* Box-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 839F645F1C0D70AA00CAEC9E /* Box-25.png */; };
 		83B1CB101C4856BC00145B6D /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 83B1CB0E1C4856BC00145B6D /* CoreDataModel.xcdatamodeld */; };
 		83B1CB251C4886F700145B6D /* MinistryCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B1CB211C4886F700145B6D /* MinistryCoreData.swift */; };
 		83B1CB271C4886F700145B6D /* CampusCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B1CB231C4886F700145B6D /* CampusCoreData.swift */; };
@@ -131,8 +124,6 @@
 		A40DD9A21C0EC61600BCFEC5 /* SummerMissionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40DD9A11C0EC61600BCFEC5 /* SummerMissionsViewController.swift */; };
 		A40DD9A41C0EC62F00BCFEC5 /* Mission.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40DD9A31C0EC62F00BCFEC5 /* Mission.swift */; };
 		A40DD9AB1C0ED54F00BCFEC5 /* EventViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40DD9AA1C0ED54F00BCFEC5 /* EventViewCell.swift */; };
-		A4110B481C0F7E3400F47AB4 /* Calendar-25.png in Resources */ = {isa = PBXBuildFile; fileRef = A4110B471C0F7E3400F47AB4 /* Calendar-25.png */; };
-		A4110B501C0F7EB500F47AB4 /* Facebook-25.png in Resources */ = {isa = PBXBuildFile; fileRef = A4110B4F1C0F7EB500F47AB4 /* Facebook-25.png */; };
 		A4110B521C0FA44700F47AB4 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4110B511C0FA44700F47AB4 /* Location.swift */; };
 		A441CE6C1C75B0FD00663057 /* RideShare.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A441CE6B1C75B0FD00663057 /* RideShare.storyboard */; };
 		A441CE6F1C7634CB00663057 /* Passenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A441CE6E1C7634CB00663057 /* Passenger.swift */; };
@@ -142,11 +133,8 @@
 		A441CE801C7A957500663057 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A441CE7F1C7A957500663057 /* Resource.swift */; };
 		A441CE901C7F935600663057 /* RideShareStatusTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A441CE8F1C7F935600663057 /* RideShareStatusTableViewController.swift */; };
 		A447DBB31C5AC8D3000C6DEB /* Events.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A447DBAF1C5AC8D3000C6DEB /* Events.storyboard */; };
-		A447DBBF1C5ACBBB000C6DEB /* Car-25.png in Resources */ = {isa = PBXBuildFile; fileRef = A447DBBB1C5ACBBB000C6DEB /* Car-25.png */; };
 		A447DBC01C5ACBBB000C6DEB /* Checked Checkbox 2-48.png in Resources */ = {isa = PBXBuildFile; fileRef = A447DBBC1C5ACBBB000C6DEB /* Checked Checkbox 2-48.png */; };
-		A447DBC11C5ACBBB000C6DEB /* Filled-Car-100.png in Resources */ = {isa = PBXBuildFile; fileRef = A447DBBD1C5ACBBB000C6DEB /* Filled-Car-100.png */; };
 		A447DBC21C5ACBBB000C6DEB /* Passenger-52.png in Resources */ = {isa = PBXBuildFile; fileRef = A447DBBE1C5ACBBB000C6DEB /* Passenger-52.png */; };
-		A45572F91C49CCE90097DE0F /* Google Plus-25.png in Resources */ = {isa = PBXBuildFile; fileRef = A45572F81C49CCE90097DE0F /* Google Plus-25.png */; };
 		A45572FB1C4A176F0097DE0F /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45572FA1C4A176F0097DE0F /* EventDetailsViewController.swift */; };
 		A45573001C4CDAF60097DE0F /* MissionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45572FF1C4CDAF60097DE0F /* MissionViewCell.swift */; };
 		A45573021C4E219A0097DE0F /* MissionDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45573011C4E219A0097DE0F /* MissionDetailsViewController.swift */; };
@@ -274,7 +262,6 @@
 		07DA04231C88CA8D005A0ACB /* ArticlesIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ArticlesIcon.png; sourceTree = "<group>"; };
 		07DA04251C88CBC7005A0ACB /* ToolsIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ToolsIcon.png; sourceTree = "<group>"; };
 		07ED81701C0D7ECC007FFB53 /* ResourcesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourcesViewController.swift; sourceTree = "<group>"; };
-		07F802C11C76930B00A7A4BC /* rideShareIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rideShareIcon.png; path = images/rideShareIcon.png; sourceTree = "<group>"; };
 		14A37DE1D2D4A3701357F6E0 /* Pods-CruAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CruAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CruAppTests/Pods-CruAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		1E37E71E1C0E362D0054607A /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		1E37E7211C0E362D0054607A /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
@@ -355,16 +342,10 @@
 		839C9B211CD2662600165FEF /* CombinedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombinedObject.swift; sourceTree = "<group>"; };
 		839C9B2D1CE59CC900165FEF /* InternetHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InternetHelper.swift; sourceTree = "<group>"; };
 		839F643B1C0D4E4300CAEC9E /* Cru-Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Cru-Logo.png"; path = "images/Cru-Logo.png"; sourceTree = "<group>"; };
-		839F643C1C0D4E4300CAEC9E /* Home-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Home-25.png"; path = "images/Home-25.png"; sourceTree = "<group>"; };
-		839F643D1C0D4E4300CAEC9E /* Literature-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Literature-25.png"; path = "images/Literature-25.png"; sourceTree = "<group>"; };
-		839F643E1C0D4E4300CAEC9E /* Planner-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Planner-25.png"; path = "images/Planner-25.png"; sourceTree = "<group>"; };
-		839F643F1C0D4E4300CAEC9E /* Summer-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Summer-25.png"; path = "images/Summer-25.png"; sourceTree = "<group>"; };
-		839F64401C0D4E4300CAEC9E /* User Group-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "User Group-25.png"; path = "images/User Group-25.png"; sourceTree = "<group>"; };
 		839F64481C0D643A00CAEC9E /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menu.png; path = images/menu.png; sourceTree = "<group>"; };
 		839F64541C0D6BD100CAEC9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/GetInvolved.storyboard; sourceTree = "<group>"; };
 		839F64571C0D6C1E00CAEC9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SummerMissions.storyboard; sourceTree = "<group>"; };
 		839F645A1C0D6C4C00CAEC9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Resources.storyboard; sourceTree = "<group>"; };
-		839F645F1C0D70AA00CAEC9E /* Box-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Box-25.png"; path = "images/Box-25.png"; sourceTree = "<group>"; };
 		83B1CB0F1C4856BC00145B6D /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
 		83B1CB211C4886F700145B6D /* MinistryCoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinistryCoreData.swift; sourceTree = "<group>"; };
 		83B1CB231C4886F700145B6D /* CampusCoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampusCoreData.swift; sourceTree = "<group>"; };
@@ -375,8 +356,6 @@
 		A40DD9A11C0EC61600BCFEC5 /* SummerMissionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummerMissionsViewController.swift; sourceTree = "<group>"; };
 		A40DD9A31C0EC62F00BCFEC5 /* Mission.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mission.swift; sourceTree = "<group>"; };
 		A40DD9AA1C0ED54F00BCFEC5 /* EventViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewCell.swift; sourceTree = "<group>"; };
-		A4110B471C0F7E3400F47AB4 /* Calendar-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Calendar-25.png"; path = "images/Calendar-25.png"; sourceTree = "<group>"; };
-		A4110B4F1C0F7EB500F47AB4 /* Facebook-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Facebook-25.png"; path = "images/Facebook-25.png"; sourceTree = "<group>"; };
 		A4110B511C0FA44700F47AB4 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		A441CE6B1C75B0FD00663057 /* RideShare.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = RideShare.storyboard; path = Base.lproj/RideShare.storyboard; sourceTree = "<group>"; };
 		A441CE6E1C7634CB00663057 /* Passenger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Passenger.swift; sourceTree = "<group>"; };
@@ -386,11 +365,8 @@
 		A441CE7F1C7A957500663057 /* Resource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
 		A441CE8F1C7F935600663057 /* RideShareStatusTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RideShareStatusTableViewController.swift; sourceTree = "<group>"; };
 		A447DBB01C5AC8D3000C6DEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Events.storyboard; sourceTree = "<group>"; };
-		A447DBBB1C5ACBBB000C6DEB /* Car-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Car-25.png"; path = "images/Car-25.png"; sourceTree = SOURCE_ROOT; };
 		A447DBBC1C5ACBBB000C6DEB /* Checked Checkbox 2-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Checked Checkbox 2-48.png"; path = "images/Checked Checkbox 2-48.png"; sourceTree = SOURCE_ROOT; };
-		A447DBBD1C5ACBBB000C6DEB /* Filled-Car-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Filled-Car-100.png"; path = "images/Filled-Car-100.png"; sourceTree = SOURCE_ROOT; };
 		A447DBBE1C5ACBBB000C6DEB /* Passenger-52.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Passenger-52.png"; path = "images/Passenger-52.png"; sourceTree = SOURCE_ROOT; };
-		A45572F81C49CCE90097DE0F /* Google Plus-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Google Plus-25.png"; path = "images/Google Plus-25.png"; sourceTree = SOURCE_ROOT; };
 		A45572FA1C4A176F0097DE0F /* EventDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailsViewController.swift; sourceTree = "<group>"; };
 		A45572FF1C4CDAF60097DE0F /* MissionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MissionViewCell.swift; sourceTree = "<group>"; };
 		A45573011C4E219A0097DE0F /* MissionDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MissionDetailsViewController.swift; sourceTree = "<group>"; };
@@ -748,7 +724,6 @@
 			isa = PBXGroup;
 			children = (
 				A4A836421C83D0AA003FBD8D /* Delete-50.png */,
-				07F802C11C76930B00A7A4BC /* rideShareIcon.png */,
 				07DA04251C88CBC7005A0ACB /* ToolsIcon.png */,
 				07DA04231C88CA8D005A0ACB /* ArticlesIcon.png */,
 				27CA34511C8D3EF400C694A6 /* calendar_icon.png */,
@@ -759,21 +734,10 @@
 				27CA344F1C8D3C0200C694A6 /* fb_icon.png */,
 				07340BB91C5B36B5002C6015 /* info.png */,
 				0703C7311C4DFA8500C7D8ED /* blank_calendar.png */,
-				A4110B4F1C0F7EB500F47AB4 /* Facebook-25.png */,
-				839F645F1C0D70AA00CAEC9E /* Box-25.png */,
 				839F64481C0D643A00CAEC9E /* menu.png */,
 				839F643B1C0D4E4300CAEC9E /* Cru-Logo.png */,
-				A45572F81C49CCE90097DE0F /* Google Plus-25.png */,
-				839F643C1C0D4E4300CAEC9E /* Home-25.png */,
-				839F643D1C0D4E4300CAEC9E /* Literature-25.png */,
-				839F643E1C0D4E4300CAEC9E /* Planner-25.png */,
-				839F643F1C0D4E4300CAEC9E /* Summer-25.png */,
-				A447DBBB1C5ACBBB000C6DEB /* Car-25.png */,
 				A447DBBC1C5ACBBB000C6DEB /* Checked Checkbox 2-48.png */,
-				A447DBBD1C5ACBBB000C6DEB /* Filled-Car-100.png */,
 				A447DBBE1C5ACBBB000C6DEB /* Passenger-52.png */,
-				A4110B471C0F7E3400F47AB4 /* Calendar-25.png */,
-				839F64401C0D4E4300CAEC9E /* User Group-25.png */,
 			);
 			name = Images;
 			path = ..;
@@ -959,11 +923,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A447DBC11C5ACBBB000C6DEB /* Filled-Car-100.png in Resources */,
 				A447DBC01C5ACBBB000C6DEB /* Checked Checkbox 2-48.png in Resources */,
 				278C4C371C86640100EB0AC1 /* FreigSanProBlk.otf in Resources */,
-				839F64461C0D4E4300CAEC9E /* User Group-25.png in Resources */,
-				839F64451C0D4E4300CAEC9E /* Summer-25.png in Resources */,
 				07DA04241C88CA8D005A0ACB /* ArticlesIcon.png in Resources */,
 				278C4C3F1C86640100EB0AC1 /* FreigSanProMed.otf in Resources */,
 				839F64551C0D6BD100CAEC9E /* GetInvolved.storyboard in Resources */,
@@ -978,32 +939,23 @@
 				839F64411C0D4E4300CAEC9E /* Cru-Logo.png in Resources */,
 				A447DBB31C5AC8D3000C6DEB /* Events.storyboard in Resources */,
 				278C4C3A1C86640100EB0AC1 /* FreigSanProBoldIt.otf in Resources */,
-				839F64441C0D4E4300CAEC9E /* Planner-25.png in Resources */,
 				278C4C411C86640100EB0AC1 /* FreigSanProSem.otf in Resources */,
 				278C4C3E1C86640100EB0AC1 /* FreigSanProLigIt.otf in Resources */,
-				07F802C51C76930B00A7A4BC /* rideShareIcon.png in Resources */,
 				07DA04261C88CBC7005A0ACB /* ToolsIcon.png in Resources */,
-				A4110B501C0F7EB500F47AB4 /* Facebook-25.png in Resources */,
 				278C4C3D1C86640100EB0AC1 /* FreigSanProLig.otf in Resources */,
-				A4110B481C0F7E3400F47AB4 /* Calendar-25.png in Resources */,
-				839F64431C0D4E4300CAEC9E /* Literature-25.png in Resources */,
 				27CA344E1C8D3AC000C694A6 /* fb_logo.png in Resources */,
 				278C4C3C1C86640100EB0AC1 /* FreigSanProBookIt.otf in Resources */,
 				279326FD1C509C2100BAC73D /* PopUpViewController_iPad.xib in Resources */,
 				A4A836431C83D0AA003FBD8D /* Delete-50.png in Resources */,
-				839F64421C0D4E4300CAEC9E /* Home-25.png in Resources */,
-				839F64601C0D70AA00CAEC9E /* Box-25.png in Resources */,
 				A441CE6C1C75B0FD00663057 /* RideShare.storyboard in Resources */,
 				278C4C3B1C86640100EB0AC1 /* FreigSanProBook.otf in Resources */,
 				0703C7321C4DFA8500C7D8ED /* blank_calendar.png in Resources */,
 				278C4C381C86640100EB0AC1 /* FreigSanProBlkIt.otf in Resources */,
 				27CA34501C8D3C0200C694A6 /* fb_icon.png in Resources */,
-				A447DBBF1C5ACBBB000C6DEB /* Car-25.png in Resources */,
 				072519AF1BE9694000F38F81 /* Assets.xcassets in Resources */,
 				279326FF1C509C2100BAC73D /* PopUpViewController_iPhone6Plus.xib in Resources */,
 				278C4C421C86640100EB0AC1 /* FreigSanProSemIt.otf in Resources */,
 				279327011C509C2100BAC73D /* Info.plist in Resources */,
-				A45572F91C49CCE90097DE0F /* Google Plus-25.png in Resources */,
 				27CA34521C8D3EF400C694A6 /* calendar_icon.png in Resources */,
 				279326FC1C509C2100BAC73D /* PopUpViewController.xib in Resources */,
 				839F64491C0D643A00CAEC9E /* menu.png in Resources */,

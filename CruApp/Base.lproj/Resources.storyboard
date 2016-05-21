@@ -253,7 +253,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Resources" id="dWj-dW-o6f">
                         <barButtonItem key="backBarButtonItem" title=" " id="KgQ-57-xvo"/>
-                        <barButtonItem key="leftBarButtonItem" image="menu.png" id="5TO-Kh-Txt">
+                        <barButtonItem key="leftBarButtonItem" image="Menu" id="5TO-Kh-Txt">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </barButtonItem>
                     </navigationItem>
@@ -408,9 +408,9 @@
     </scenes>
     <resources>
         <image name="ArticlesIcon.png" width="120" height="87"/>
+        <image name="Menu" width="25" height="25"/>
         <image name="Resources" width="25" height="25"/>
         <image name="ToolsIcon.png" width="120" height="87"/>
         <image name="VideoIcon.png" width="95" height="69"/>
-        <image name="menu.png" width="22" height="22"/>
     </resources>
 </document>

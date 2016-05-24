@@ -102,11 +102,11 @@ class EventDetailsViewController: UIViewController, UIPopoverPresentationControl
             let oldHeight = eventImage.frame.size.height
             let screenWidth = UIScreen.mainScreen().bounds.size.width
             let newHeight = screenWidth * oldHeight / oldWidth
-            let imageName = "Cru-Logo.png"
-            var image = UIImage(named: imageName)
+            var image = UIImage(named: "CruIcon")
             
             
             //Load event image if available
+    
             if (event.image != nil) {
                 let url = NSURL(string: event.image!)
                 if let data = NSData(contentsOfURL: url!) {

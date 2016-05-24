@@ -148,19 +148,19 @@ class EventsViewController: UITableViewController, DZNEmptyDataSetDelegate, DZNE
                 country: country)
             
             var image : String
-            if (event["image"]! == nil) {
-                image = "http://res.cloudinary.com/dcyhqxvmq/image/upload/v1455219332/p33xvrfpnym61n4ycx3a.jpg"
+            if (event["imageLink"]! == nil) {
+                image = ""
             }
             else {
-                image = event["image"]!!.objectForKey("url") as! String!
+                image = event["imageLink"] as! String!
             }
             
             var imageSq : String
-            if(event["imageSquare"]! == nil) {
-                imageSq = "http://res.cloudinary.com/dcyhqxvmq/image/upload/v1455219332/p33xvrfpnym61n4ycx3a.jpg"
+            if(event["squareImageLink"]! == nil) {
+                imageSq = ""
             }
             else {
-                imageSq = event["imageSquare"]!!.objectForKey("secure_url") as! String!
+                imageSq = event["squareImageLink"] as! String!
             }
         
             let url = event["url"] as! String
@@ -169,11 +169,17 @@ class EventsViewController: UITableViewController, DZNEmptyDataSetDelegate, DZNE
             var eventObj = Event(name: name, startDate: startDate, endDate: endDate, location: location, image: image, imageSq: imageSq, description: description, url: url, rideShareFlag: rideShareEnabled)
             
             // Caches the square image of event
-            if let imageUrl = NSURL(string: eventObj.imageSq!) {
-                if let data = NSData(contentsOfURL: imageUrl) {
-                    eventObj.displayingImage = UIImage(data: data)
+            if(imageSq == "") {
+                eventObj.displayingImage = UIImage(named: "CruSquareIcon")
+            } else {
+                if let imageUrl = NSURL(string: eventObj.imageSq!) {
+                    if let data = NSData(contentsOfURL: imageUrl) {
+                        eventObj.displayingImage = UIImage(data: data)
+                    }
                 }
             }
+            
+            
         
             eventsCollection.append(eventObj)
         }

@@ -17,8 +17,6 @@ def shared_pods
     pod 'DZNEmptyDataSet'
     pod 'Fabric'
     pod 'Crashlytics'
-    pod "SwiftPages"
-
 
 end
 

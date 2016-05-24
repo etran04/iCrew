@@ -64,7 +64,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   ReachabilitySwift:
-    :commit: fa90df50c04f5743fbdf643cbe8d10562d75673d
+    :commit: cecd16a3ef8d77e916a66a5d7422c34a3e6d0e29
     :git: https://github.com/ashleymills/Reachability.swift
   youtube-ios-player-helper:
     :commit: head

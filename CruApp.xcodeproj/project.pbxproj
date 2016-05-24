@@ -20,7 +20,6 @@
 		0727F9A51C5AD13000066948 /* DriverQuestionnaireVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0727F9A41C5AD13000066948 /* DriverQuestionnaireVC.swift */; };
 		07340BB21C5B3606002C6015 /* PassengerQuestionnaireVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07340BB11C5B3606002C6015 /* PassengerQuestionnaireVC.swift */; };
 		07340BBA1C5B36B5002C6015 /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = 07340BB91C5B36B5002C6015 /* info.png */; };
-		075CFD541CF041AE00EAD071 /* SwiftPages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075CFD531CF041AE00EAD071 /* SwiftPages.swift */; };
 		078739881C86178E00D09C14 /* NameFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078739871C86178E00D09C14 /* NameFieldCell.swift */; };
 		078739901C86179D00D09C14 /* PhoneNumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0787398F1C86179D00D09C14 /* PhoneNumCell.swift */; };
 		078739921C8617D000D09C14 /* ScrollPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078739911C8617D000D09C14 /* ScrollPickerCell.swift */; };
@@ -249,7 +248,6 @@
 		0727F9A41C5AD13000066948 /* DriverQuestionnaireVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriverQuestionnaireVC.swift; sourceTree = "<group>"; };
 		07340BB11C5B3606002C6015 /* PassengerQuestionnaireVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassengerQuestionnaireVC.swift; sourceTree = "<group>"; };
 		07340BB91C5B36B5002C6015 /* info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = info.png; path = images/info.png; sourceTree = "<group>"; };
-		075CFD531CF041AE00EAD071 /* SwiftPages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftPages.swift; sourceTree = "<group>"; };
 		078739871C86178E00D09C14 /* NameFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameFieldCell.swift; sourceTree = "<group>"; };
 		0787398F1C86179D00D09C14 /* PhoneNumCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneNumCell.swift; sourceTree = "<group>"; };
 		078739911C8617D000D09C14 /* ScrollPickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollPickerCell.swift; sourceTree = "<group>"; };
@@ -477,7 +475,6 @@
 				1E37E7221C0E362D0054607A /* VideosTableViewController.swift */,
 				07C196321C0E6AD400375B8D /* ArticlesTableViewController.swift */,
 				07AF13CA1C748ACA004C28FA /* ToolsTableViewController.swift */,
-				075CFD531CF041AE00EAD071 /* SwiftPages.swift */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1176,7 +1173,6 @@
 				078739941C8628CA00D09C14 /* StartTimePickerCell.swift in Sources */,
 				07340BB21C5B3606002C6015 /* PassengerQuestionnaireVC.swift in Sources */,
 				A45573021C4E219A0097DE0F /* MissionDetailsViewController.swift in Sources */,
-				075CFD541CF041AE00EAD071 /* SwiftPages.swift in Sources */,
 				A45572FB1C4A176F0097DE0F /* EventDetailsViewController.swift in Sources */,
 				A441CE6F1C7634CB00663057 /* Passenger.swift in Sources */,
 				07949D921C9177D100AA1FCD /* MapViewController.swift in Sources */,

@@ -12,17 +12,20 @@ import UIKit
  * possible resources, such as Videos, Articles, and Tools */ 
 class ResourcesViewController: UITableViewController {
     
-    @IBOutlet var cells: [UITableViewCell]!
     @IBOutlet weak var menuButton: UIBarButtonItem!
 
     var rowSizes: [Int: CGFloat] = [:]
+    var swiftPagesView : SwiftPages!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.tableView.tableFooterView = UIView()
         
-        cardsSetup()
+        swiftPagesView = SwiftPages(frame: CGRectMake(0, 0, self.view.frame.width, self.view.frame.height))
+
+
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -31,17 +34,18 @@ class ResourcesViewController: UITableViewController {
             self.menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
+        let VCIDs : [String] = ["VideoVC", "ArticleVC", "AudioVC"]
+        let buttonImages : [UIImage] = [UIImage(named:"Video")!,
+                                        UIImage(named:"Article")!,
+                                        UIImage(named:"Audio")!]
+                swiftPagesView.initializeWithVCIDsArrayAndButtonImagesArray(VCIDs, buttonImagesArray: buttonImages)
+        
+        if (!self.view.subviews.contains(swiftPagesView)) {
+            self.view.addSubview(swiftPagesView)
+        }
+
     }
     
-    func cardsSetup() {
-        for cell in cells {
-            cell.viewWithTag(0)?.alpha = 1;
-            cell.viewWithTag(0)?.layer.masksToBounds = false;
-            cell.viewWithTag(0)?.layer.cornerRadius = 1;
-            cell.viewWithTag(0)?.layer.shadowOffset = CGSizeMake(-0.2, 0.2)
-            cell.viewWithTag(0)?.layer.shadowRadius = 5;
-        }
-    }
     
     @IBAction func text(sender: UIButton) {
         // print("texting...")

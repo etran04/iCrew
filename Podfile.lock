@@ -35,6 +35,7 @@ PODS:
   - NMPopUpViewSwift (3.0.1)
   - ReachabilitySwift (2.3.3)
   - SwiftLoader (0.2.5)
+  - SwiftPages (1.1.0)
   - youtube-ios-player-helper (0.1.5)
 
 DEPENDENCIES:
@@ -50,6 +51,7 @@ DEPENDENCIES:
   - NMPopUpViewSwift
   - ReachabilitySwift (from `https://github.com/ashleymills/Reachability.swift`)
   - SwiftLoader
+  - SwiftPages
   - youtube-ios-player-helper (from `https://github.com/youtube/youtube-ios-player-helper`,
     commit `head`)
 
@@ -88,6 +90,7 @@ SPEC CHECKSUMS:
   NMPopUpViewSwift: 23a44d6db17a9abc6b806f9fac597be6d7e9f300
   ReachabilitySwift: e0f6b6f280effb47731acfaaa2d5ffe223703793
   SwiftLoader: 12d7a6f661f5e9a2c9a72003e7dd6162f4ff0cc4
+  SwiftPages: 1b24565cb91f24f4f912fbd9878a9c74b41a2ca6
   youtube-ios-player-helper: 921da8927a575debc293a94c678c658f38cde150
 
 COCOAPODS: 0.39.0

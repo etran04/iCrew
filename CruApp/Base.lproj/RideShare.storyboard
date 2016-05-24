@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="APQ-AE-Llv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="APQ-AE-Llv">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
@@ -193,11 +193,6 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Ride Share" id="EMb-EY-qZ4">
                         <barButtonItem key="leftBarButtonItem" image="Menu" id="1ii-6R-Cf1"/>
-                        <barButtonItem key="rightBarButtonItem" image="RideshareFill" id="TH9-ME-Uv9">
-                            <connections>
-                                <action selector="addButtonPressed:" destination="mnm-8N-DxT" id="dIg-NO-rVd"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -772,7 +767,6 @@
         <image name="Filled-Car-100.png" width="96" height="96"/>
         <image name="Menu" width="25" height="25"/>
         <image name="Rideshare" width="25" height="25"/>
-        <image name="RideshareFill" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Mxy-rB-9BE"/>

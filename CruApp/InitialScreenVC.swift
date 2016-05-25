@@ -1,5 +1,5 @@
 //
-//  InitalScreenVC.swift
+//  InitialScreenVC.swift
 //  CruApp
 //
 //  Created by Daniel Lee on 2/25/16.
@@ -8,11 +8,11 @@
 
 import UIKit
 
-class InitalScreenVC: UIViewController {
+class InitialScreenVC: UIViewController {
     override func viewDidLoad() {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
-        if (UserProfile.getCampuses().count > 0) {
+        if (UserProfile.getMinistries().count > 0) {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let viewController = storyboard.instantiateViewControllerWithIdentifier("mainRootViewController") as! SWRevealViewController
             appDelegate.window?.rootViewController = viewController

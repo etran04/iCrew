@@ -40,7 +40,6 @@ class InitialMinistryTableViewController: UITableViewController, DZNEmptyDataSet
         }
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -49,12 +48,21 @@ class InitialMinistryTableViewController: UITableViewController, DZNEmptyDataSet
         
         //set empty back button
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.Plain, target:nil, action:nil)
-        
         checkInternet()
         
         self.nextButton.enabled = false
     }
     
+    //save selected ministries into the user profile
+    override func viewWillDisappear(animated: Bool) {
+        UserProfile.removeAllEntities("Ministry")
+        
+        for index in selectedIndices {
+            print(index)
+            UserProfile.addMinistry(ministryCollection[index.section][index.row])
+        }
+    }
+
     /* Determines whether or not the device is connected to WiFi or 4g. Alerts user if they are not.
      * Without internet, data might not populate, aside from cached data */
     func checkInternet() {
@@ -122,14 +130,11 @@ class InitialMinistryTableViewController: UITableViewController, DZNEmptyDataSet
     
     //retreive ministries from the database that belong to the user's campuses
     func setMinistries(ministries:NSArray) {
-
         for ministry in ministries {
-            
             let campus = ministry["campuses"] as! [String]
         
             //check if campus is empty
             if (campus.first != nil) {
-                
                 let campusId = campus.first! as String
                 
                 //if ministry belongs to one of the user's campuses, add it to the 
@@ -151,7 +156,6 @@ class InitialMinistryTableViewController: UITableViewController, DZNEmptyDataSet
                 }
             }
         }
-    
         SwiftLoader.hide()
         self.tableView.reloadData()
     }
@@ -263,16 +267,6 @@ class InitialMinistryTableViewController: UITableViewController, DZNEmptyDataSet
     
     @IBAction func closePopupViewController(recognizer:UITapGestureRecognizer) {
         self.popViewController.removeAnimate()
-    }
-
-    //save selected ministries into the user profile
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        UserProfile.removeAllEntities("Ministry")
-        
-        for index in selectedIndices {
-            print(index)
-            UserProfile.addMinistry(ministryCollection[index.section][index.row])
-        }
     }
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {

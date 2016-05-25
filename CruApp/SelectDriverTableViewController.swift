@@ -287,9 +287,9 @@ class SelectDriverTableViewController: UITableViewController {
     */
     
 }
-
-extension String {
-    func insert(string:String,ind:Int) -> String {
-        return  String(self.characters.prefix(ind)) + string + String(self.characters.suffix(self.characters.count-ind))
-    }
-}
+//
+//extension String {
+//    func insert(string:String,ind:Int) -> String {
+//        return  String(self.characters.prefix(ind)) + string + String(self.characters.suffix(self.characters.count-ind))
+//    }
+//}

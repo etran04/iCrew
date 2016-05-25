@@ -175,8 +175,8 @@ class OfferedRidesVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     /* Dynamically size the number of rows to match the number of statuses we have */
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return driverCollection.count
-        return 4
+        return driverCollection.count
+//        return 4
     }
     
     /* Loads each individual cell in the table with a offered status */
@@ -186,6 +186,35 @@ class OfferedRidesVC: UIViewController, UITableViewDelegate, UITableViewDataSour
 //        populateDriverCell(indexPath, cell: cell as! DriverStatusCell)
         
         return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let alert = UIAlertView()
+        alert.delegate = self
+        alert.title = "Passengers"
+        let driver = driverCollection[indexPath.row] as Driver
+            
+        if (driver.passengers.count != 0) {
+            var msg = ""
+            
+            for index in 0...(driver.passengers.count - 1) {
+                    
+                var number = String(driver.passengers[index].phoneNumber)
+                number = number.insert("(", ind: 0)
+                number = number.insert(") ", ind: 4)
+                number = number.insert(" - ", ind: 9)
+                
+                msg += driver.passengers[index].name + " " + number + "\n"
+            }
+            alert.message = msg
+        } else {
+            alert.message = "No passengers at this time."
+        }
+        alert.addButtonWithTitle("OK")
+        alert.show()
+        
+        tableview.deselectRowAtIndexPath(indexPath, animated: true)
+
     }
     
     // MARK: - DZN Empty data set methods 

@@ -200,6 +200,10 @@ class RequestedRidesVC: UIViewController, UITableViewDelegate, UITableViewDataSo
         return cell
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableview.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+    
     // MARK: - DZN Empty data set methods
     func titleForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
         let str = "You currently are not requesting any rides to an event."

@@ -55,7 +55,6 @@ class InitialMinistryTableViewController: UITableViewController, DZNEmptyDataSet
         self.nextButton.enabled = false
     }
     
-    
     /* Determines whether or not the device is connected to WiFi or 4g. Alerts user if they are not.
      * Without internet, data might not populate, aside from cached data */
     func checkInternet() {
@@ -125,7 +124,6 @@ class InitialMinistryTableViewController: UITableViewController, DZNEmptyDataSet
     func setMinistries(ministries:NSArray) {
 
         for ministry in ministries {
-            print(ministry["name"])
             
             let campus = ministry["campuses"] as! [String]
         
@@ -204,6 +202,8 @@ class InitialMinistryTableViewController: UITableViewController, DZNEmptyDataSet
         
         let cell:UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
         
+        UserProfile.addMinistry(ministryCollection[indexPath.section][indexPath.row])
+        
         if (!selectedIndices.contains(indexPath)) {
             cell.accessoryType = UITableViewCellAccessoryType.Checkmark
             selectedIndices.append(indexPath)
@@ -273,7 +273,6 @@ class InitialMinistryTableViewController: UITableViewController, DZNEmptyDataSet
             print(index)
             UserProfile.addMinistry(ministryCollection[index.section][index.row])
         }
-        dump(UserProfile.getMinistries())
     }
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {

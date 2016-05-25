@@ -14,6 +14,7 @@ class InvolvedGroupsTVC: UITableViewController {
     var combinedGroups = [[CombinedObject]]()
     var involvedGroupIds = [String]()
     var totalGroups = 0
+    let padding = "   "
     
     @IBOutlet weak var editButton: UIBarButtonItem!
     
@@ -30,13 +31,9 @@ class InvolvedGroupsTVC: UITableViewController {
         
         //set empty back button
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.Plain, target:nil, action:nil)
-        print("view did load!")
     }
     
     func combineGroups() {
-        combinedGroups.append([CombinedObject]())
-        combinedGroups.append([CombinedObject]())
-        
         for cg in savedCGs {
             if !involvedGroupIds.contains(cg.id) {
                 combinedGroups[0].append(CombinedObject(cg: cg))
@@ -49,6 +46,8 @@ class InvolvedGroupsTVC: UITableViewController {
             }
             involvedGroupIds.append(ministryTeam.id)
         }
+        
+        self.editButton.enabled = involvedGroupIds.count != 0
     }
     
     override func didReceiveMemoryWarning() {
@@ -65,38 +64,45 @@ class InvolvedGroupsTVC: UITableViewController {
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return combinedGroups[section].count == 0 ? 1 : combinedGroups[section].count
+        return combinedGroups[section].count
     }
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return section == 0 ? "Community Groups" : "Ministry Teams"
     }
     
+    override func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        if (combinedGroups[section].count == 0) {
+            let label = UILabel(frame: CGRect(x: 0, y: 0, width: self.tableView.bounds.size.width, height: 100))
+            label.text = section == 0 ? padding + "No community groups yet" : padding + "No ministry teams yet"
+            label.sizeToFit()
+            
+            return label
+        }
+        return UIView()
+    }
+    
     // Uncomment
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("MinistryTeamDataCell", forIndexPath: indexPath) as! MinistryTeamDataCell
         
-        if (combinedGroups[indexPath.section].count == 0) {
-            cell.nameLabel.text = "None"
-            cell.locationLabel.text = ""
+        print("got here")
+        
+        let group = combinedGroups[indexPath.section][indexPath.row]
+        
+        if (group.ministryTeam != nil) {
+            cell.nameLabel.text = group.ministryTeam!.name
+            cell.locationLabel.text = UserProfile.getMinistryNameFromID(group.ministryTeam!.parentMinistry)
         }
         else {
-            let group = combinedGroups[indexPath.section][indexPath.row]
+            // TODO: Fix date
+            //            let dateFormatter = NSDateFormatter()
+            //            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS"
+            //            let date = dateFormatter.dateFromString((group.communityGroup?.time)!)
+            //            dateFormatter.dateFormat = "eeee, h:mm a"
             
-            if (group.ministryTeam != nil) {
-                cell.nameLabel.text = group.ministryTeam!.name
-                cell.locationLabel.text = UserProfile.getMinistryNameFromID(group.ministryTeam!.parentMinistry)
-            }
-            else {
-                // TODO: Fix date
-                //            let dateFormatter = NSDateFormatter()
-                //            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS"
-                //            let date = dateFormatter.dateFromString((group.communityGroup?.time)!)
-                //            dateFormatter.dateFormat = "eeee, h:mm a"
-                
-                cell.nameLabel.text = group.communityGroup?.name
-                cell.locationLabel.text = (group.communityGroup?.time)!
-            }
+            cell.nameLabel.text = group.communityGroup?.name
+            cell.locationLabel.text = (group.communityGroup?.time)!
         }
         
         return cell
@@ -104,7 +110,7 @@ class InvolvedGroupsTVC: UITableViewController {
     
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let label = UILabel()
-        let padding = "   "
+
         
         if (section == 0) {
             label.backgroundColor = UIColor(red: 249/255, green: 182/255, blue: 37/255, alpha: 1.0)

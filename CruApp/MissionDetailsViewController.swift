@@ -71,18 +71,18 @@ class MissionDetailsViewController: UIViewController {
             let oldHeight = missionImage.frame.size.height
             let screenWidth = UIScreen.mainScreen().bounds.size.width
             let newHeight = screenWidth * oldHeight / oldWidth
-            let imageName = "Cru-Logo.png"
-            var image = UIImage(named: imageName)
+            //let imageName = "Cru-Logo.png"
+            //var image = UIImage(named: imageName)
             
             //Load event image is available
-            if (mission.image != nil && mission.image != "") {
-                let url = NSURL(string: mission.image!)
+            //if (mission.displayingImage != nil || mission.displayingGroupImage != nil) {
+                //let url = NSURL(string: mission.image!)
                 
                 
-                if let data = NSData(contentsOfURL: url!) {
-                    image = UIImage(data: data)
+                //if let data = NSData(contentsOfURL: url!) {
+                    //image = UIImage(data: data)
                     
-                    let imageView = UIImageView(image: image)
+                    let imageView = UIImageView(image: mission.displayingGroupImage)
                     imageView.clipsToBounds = true
                     missionImage.frame = missionImage.bounds
                     
@@ -90,8 +90,8 @@ class MissionDetailsViewController: UIViewController {
                     imageView.contentMode = UIViewContentMode.ScaleAspectFill
 //                    missionImage = imageView
                     missionImage.addSubview(imageView)
-                }
-            }
+                //}
+            //}
         }
     }
     override func viewDidAppear(animated: Bool) {

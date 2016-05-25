@@ -12,7 +12,6 @@ import UIKit
 struct Mission {
     var name: String
     var description: String
-    var image: String?
     var cost: Int
     var location: Location?
     var startDate: String?
@@ -20,11 +19,11 @@ struct Mission {
     var url: String
     var leaders: String
     var displayingImage: UIImage?
+    var displayingGroupImage: UIImage?
     
-    init(name: String, description: String, image: String, cost: Int, location: Location, startDate: String, endDate: String, url: String, leaders: String) {
+    init(name: String, description: String, cost: Int, location: Location, startDate: String, endDate: String, url: String, leaders: String) {
         self.name = name
         self.description = description
-        self.image = image
         self.cost = cost
         self.location = location
         self.startDate = startDate
@@ -32,6 +31,7 @@ struct Mission {
         self.url = url
         self.leaders = leaders
         self.displayingImage = nil
+        self.displayingGroupImage = nil
     }
 }
 

@@ -102,6 +102,7 @@ class SummerMissionsViewController: UITableViewController, DZNEmptyDataSetSource
             var url: String
             var leaders: String
             var image: String
+            var groupImage: String
         
             let name = nullToNil(mission["name"])
             let description = nullToNil(mission["description"])
@@ -120,11 +121,18 @@ class SummerMissionsViewController: UITableViewController, DZNEmptyDataSetSource
                 leaders = "N/A"
             }
         
-            if ((mission["image"]??.objectForKey("secure_url") as? String) != nil) {
-                image = mission["image"]??.objectForKey("secure_url") as! String
+            if ((mission["imageLink"] as? String) != nil) {
+                image = mission["imageLink"] as! String
             } else {
                 image = ""
             }
+            
+            if ((mission["groupImageLink"] as? String) != nil) {
+                groupImage = mission["groupImageLink"] as! String
+            } else {
+                groupImage = ""
+            }
+            
         
             //let leaders = nullToNil(mission["leaders"])
             //let image = nullToNil(mission["image"]?.objectForKey("secure_url"))
@@ -136,11 +144,21 @@ class SummerMissionsViewController: UITableViewController, DZNEmptyDataSetSource
                 street1: nullToNil(mission["location"]?!.objectForKey("street1")),
                 country: nullToNil(mission["location"]?!.objectForKey("country")))
         
-            var missionObj = Mission(name: name, description: description, image: image, cost: cost, location: location, startDate: startDate, endDate: endDate, url: url, leaders: leaders)
+            var missionObj = Mission(name: name, description: description, cost: cost, location: location, startDate: startDate, endDate: endDate, url: url, leaders: leaders)
             
             if (image != "") {
                 if let data = NSData(contentsOfURL: NSURL(string: image)!) {
                     missionObj.displayingImage = UIImage(data: data)
+                    missionObj.displayingGroupImage = UIImage(data:data)
+                }
+            } else {
+                missionObj.displayingImage = UIImage(named: "CruIcon")
+                missionObj.displayingGroupImage = UIImage(named: "CruIcon")
+            }
+            
+            if (groupImage != "") {
+                if let data = NSData(contentsOfURL: NSURL(string: groupImage)!) {
+                    missionObj.displayingGroupImage = UIImage(data: data)
                 }
             }
             

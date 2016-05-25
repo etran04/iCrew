@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="QPd-rn-vY4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="QPd-rn-vY4">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -161,8 +161,8 @@
                                                 </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DOZ-Cg-rg7" userLabel="Google Calendar Button">
-                                                <rect key="frame" x="181" y="8" width="25" height="25"/>
-                                                <state key="normal" image="google_icon.png"/>
+                                                <rect key="frame" x="176" y="6" width="34" height="31"/>
+                                                <state key="normal" image="google-calendar.png"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FY4-iR-UDm" userLabel="iOS Calendar Button">
                                                 <rect key="frame" x="280" y="6" width="32" height="30"/>
@@ -283,6 +283,6 @@
         <image name="RideshareFill" width="22" height="22"/>
         <image name="calendar_icon.png" width="64" height="64"/>
         <image name="fb_icon.png" width="32" height="32"/>
-        <image name="google_icon.png" width="32" height="32"/>
+        <image name="google-calendar.png" width="300" height="300"/>
     </resources>
 </document>

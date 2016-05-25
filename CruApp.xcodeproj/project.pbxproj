@@ -41,6 +41,7 @@
 		1EB4053F1C63E87200220D5B /* GTL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EB4053E1C63E87200220D5B /* GTL.framework */; };
 		1EB405421C63E88A00220D5B /* GTLCalendar_Sources.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EB405401C63E88A00220D5B /* GTLCalendar_Sources.m */; };
 		1EB405441C63E89900220D5B /* GTMOAuth2ViewTouch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EB405431C63E89900220D5B /* GTMOAuth2ViewTouch.xib */; };
+		1EE554901CF4F13800AE0391 /* google-calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EE5548F1CF4F13800AE0391 /* google-calendar.png */; };
 		271BDF631C0D538A0075A29E /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 271BDF541C0D53710075A29E /* Alamofire.framework */; };
 		271C273F1C93D0D400D8988D /* InitialMinistryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271C273E1C93D0D400D8988D /* InitialMinistryTests.swift */; };
 		271C78161C5040EA00F42EA0 /* Initial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 271C78151C5040EA00F42EA0 /* Initial.storyboard */; };
@@ -273,6 +274,7 @@
 		1EB405401C63E88A00220D5B /* GTLCalendar_Sources.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTLCalendar_Sources.m; path = "google-api-objectivec-client/Source/Services/Calendar/Generated/GTLCalendar_Sources.m"; sourceTree = "<group>"; };
 		1EB405411C63E88A00220D5B /* GTLCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTLCalendar.h; path = "google-api-objectivec-client/Source/Services/Calendar/Generated/GTLCalendar.h"; sourceTree = "<group>"; };
 		1EB405431C63E89900220D5B /* GTMOAuth2ViewTouch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GTMOAuth2ViewTouch.xib; path = "google-api-objectivec-client/Deps/gtm-oauth2/Source/Touch/GTMOAuth2ViewTouch.xib"; sourceTree = SOURCE_ROOT; };
+		1EE5548F1CF4F13800AE0391 /* google-calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "google-calendar.png"; path = "images/google-calendar.png"; sourceTree = "<group>"; };
 		271BDF491C0D53710075A29E /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "frameworks/Alamofire-master/Alamofire.xcodeproj"; sourceTree = "<group>"; };
 		271C273E1C93D0D400D8988D /* InitialMinistryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialMinistryTests.swift; sourceTree = "<group>"; };
 		271C78151C5040EA00F42EA0 /* Initial.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Initial.storyboard; path = Base.lproj/Initial.storyboard; sourceTree = "<group>"; };
@@ -726,6 +728,7 @@
 		A43482D11C0D290E00B62D6C /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				1EE5548F1CF4F13800AE0391 /* google-calendar.png */,
 				A4A836421C83D0AA003FBD8D /* Delete-50.png */,
 				07DA04251C88CBC7005A0ACB /* ToolsIcon.png */,
 				07DA04231C88CA8D005A0ACB /* ArticlesIcon.png */,
@@ -964,6 +967,7 @@
 				839F64491C0D643A00CAEC9E /* menu.png in Resources */,
 				1EB405441C63E89900220D5B /* GTMOAuth2ViewTouch.xib in Resources */,
 				278C4C391C86640100EB0AC1 /* FreigSanProBold.otf in Resources */,
+				1EE554901CF4F13800AE0391 /* google-calendar.png in Resources */,
 				27CA34461C8D3A8500C694A6 /* google_icon.png in Resources */,
 				072519AD1BE9694000F38F81 /* Main.storyboard in Resources */,
 				0710429C1CE46AE500DACFF9 /* GoogleService-Info.plist in Resources */,

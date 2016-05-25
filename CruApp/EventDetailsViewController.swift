@@ -219,14 +219,14 @@ class EventDetailsViewController: UIViewController, UIPopoverPresentationControl
             
             //If needed, get user credentials to access Google account
             if let authorizer = service.authorizer,
-                canAuth = authorizer.canAuthorize where canAuth {
-                    insertGoogleEvent(event.name, startDate: startDate!, endDate: endDate!, desc: event.description)
-            } else {
+                canAuth = authorizer.canAuthorize where !canAuth {
                 presentViewController(
                     createAuthController(),
                     animated: true,
                     completion: nil
                 )
+            } else {
+                insertGoogleEvent(event.name, startDate: startDate!, endDate: endDate!, desc: event.description)
             }
         }
     }
@@ -267,7 +267,7 @@ class EventDetailsViewController: UIViewController, UIPopoverPresentationControl
                 return
             }
             else {
-                showAlert("Synced", message: "Synced event to calendar")
+                showAlert("Synced", message: "Synced event to Google calendar")
             }
     }
     
@@ -288,10 +288,10 @@ class EventDetailsViewController: UIViewController, UIPopoverPresentationControl
     // with the new credentials.
     func viewController(vc : UIViewController,
         finishedWithAuth authResult : GTMOAuth2Authentication, error : NSError?) {
-            
-            if let error = error {
+        
+            if (error != nil) {
                 service.authorizer = nil
-                showAlert("Authentication Error", message: error.localizedDescription)
+                //showAlert("Authentication Error", message: error.localizedDescription)
                 return
             }
             service.authorizer = authResult

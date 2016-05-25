@@ -127,7 +127,8 @@
                         <barButtonItem key="rightBarButtonItem" title="Next" id="iXx-d1-viQ">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
-                                <segue destination="5wo-9Q-WLh" kind="presentation" id="f6E-OD-KiS"/>
+                                <action selector="pressedNext:" destination="beF-nV-Tik" id="NXH-78-EdG"/>
+                                <segue destination="5wo-9Q-WLh" kind="presentation" identifier="showMainSegue" id="f6E-OD-KiS"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

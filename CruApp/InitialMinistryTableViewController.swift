@@ -62,6 +62,10 @@ class InitialMinistryTableViewController: UITableViewController, DZNEmptyDataSet
             UserProfile.addMinistry(ministryCollection[index.section][index.row])
         }
     }
+    
+    @IBAction func pressedNext(sender: AnyObject) {
+        print(selectedIndices.count == 0)
+    }
 
     /* Determines whether or not the device is connected to WiFi or 4g. Alerts user if they are not.
      * Without internet, data might not populate, aside from cached data */
@@ -259,6 +263,7 @@ class InitialMinistryTableViewController: UITableViewController, DZNEmptyDataSet
                                              action: #selector(InitialMinistryTableViewController.doNothing))
         self.view.addGestureRecognizer(tapRecognizer)
         self.popViewController.popUpView.addGestureRecognizer(ignoreTap)
+        self.tableView.scrollEnabled = false
     }
     
     func doNothing() {
@@ -267,6 +272,8 @@ class InitialMinistryTableViewController: UITableViewController, DZNEmptyDataSet
     
     @IBAction func closePopupViewController(recognizer:UITapGestureRecognizer) {
         self.popViewController.removeAnimate()
+        self.view.removeGestureRecognizer(recognizer)
+        self.tableView.scrollEnabled = true
     }
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {

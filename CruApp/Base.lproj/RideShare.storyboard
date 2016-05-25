@@ -668,7 +668,7 @@
                                                     <color key="textColor" red="0.38431372549999998" green="0.37647058820000001" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Driver@Cell number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aTO-bg-Bq6">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Driver@Cell number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aTO-bg-Bq6">
                                                     <rect key="frame" x="24" y="70" width="158" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.45098039220000002" blue="0.59607843140000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -680,6 +680,7 @@
                                                 <constraint firstItem="3gW-Br-lP8" firstAttribute="leading" secondItem="O47-Do-931" secondAttribute="leadingMargin" constant="28" id="LjX-4a-qJo"/>
                                                 <constraint firstItem="4n6-T4-K44" firstAttribute="leading" secondItem="O47-Do-931" secondAttribute="leadingMargin" constant="16" id="Zgl-wu-bYw"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="wR2-Ul-MA5" secondAttribute="trailing" id="kYW-ON-oLF"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="aTO-bg-Bq6" secondAttribute="bottom" constant="0.5" id="oTd-m0-2KE"/>
                                                 <constraint firstItem="aTO-bg-Bq6" firstAttribute="leading" secondItem="O47-Do-931" secondAttribute="leadingMargin" constant="16" id="uWA-Q8-6HN"/>
                                             </constraints>
                                         </tableViewCellContentView>

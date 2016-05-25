@@ -91,7 +91,7 @@
                         <sections>
                             <tableViewSection id="kmB-M5-vTi">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="140" id="v9Z-XL-PRM">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="140" id="v9Z-XL-PRM" customClass="VideosMainCell" customModule="CruApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="64" width="600" height="140"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="v9Z-XL-PRM" id="ONV-A8-fiQ">
@@ -107,9 +107,9 @@
                                                             <color key="textColor" red="0.20392156859999999" green="0.63529411759999999" blue="0.73725490199999999" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="VideoIcon.png" translatesAutoresizingMaskIntoConstraints="NO" id="b8f-cm-zqT">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Videos" translatesAutoresizingMaskIntoConstraints="NO" id="b8f-cm-zqT">
                                                             <rect key="frame" x="247" y="17" width="90" height="66"/>
-                                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="tintColor" red="0.20392156859999999" green="0.63529411759999999" blue="0.73725490199999999" alpha="1" colorSpace="calibratedRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="90" id="HZb-ce-1PF"/>
                                                                 <constraint firstAttribute="width" constant="240" id="P4n-Qd-NcT"/>
@@ -153,7 +153,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="geV-Ej-u3s">
                                                     <rect key="frame" x="8" y="10" width="584" height="130"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ArticlesIcon.png" translatesAutoresizingMaskIntoConstraints="NO" id="lzY-1c-3Vg">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Article" translatesAutoresizingMaskIntoConstraints="NO" id="lzY-1c-3Vg">
                                                             <rect key="frame" x="237" y="8" width="110" height="80"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="110" id="5Be-5l-Ld4"/>
@@ -205,8 +205,8 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l0W-Da-t1X">
                                                     <rect key="frame" x="8" y="10" width="584" height="130"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tools" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9EO-NC-VHv">
-                                                            <rect key="frame" x="272" y="91" width="41" height="21"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Audio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9EO-NC-VHv">
+                                                            <rect key="frame" x="268" y="91" width="48" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="Xvx-mi-cac"/>
                                                             </constraints>
@@ -214,7 +214,7 @@
                                                             <color key="textColor" red="0.85490196080000003" green="0.36078431370000003" blue="0.078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ToolsIcon.png" translatesAutoresizingMaskIntoConstraints="NO" id="5q7-x3-rVk">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Audio" translatesAutoresizingMaskIntoConstraints="NO" id="5q7-x3-rVk">
                                                             <rect key="frame" x="242" y="10" width="100" height="73"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="100" id="2pS-kL-zlu"/>
@@ -408,10 +408,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ArticlesIcon.png" width="120" height="87"/>
+        <image name="Article" width="50" height="50"/>
+        <image name="Audio" width="25" height="25"/>
         <image name="Menu" width="25" height="25"/>
         <image name="Resources" width="25" height="25"/>
-        <image name="ToolsIcon.png" width="120" height="87"/>
-        <image name="VideoIcon.png" width="95" height="69"/>
+        <image name="Videos" width="25" height="25"/>
     </resources>
 </document>

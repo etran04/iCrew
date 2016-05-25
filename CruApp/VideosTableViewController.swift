@@ -289,9 +289,11 @@ class VideosTableViewController: UITableViewController, UISearchBarDelegate, DZN
         let urlString: String
         var kSearchForAmt = 10
         
-//        if self.filterFlag {
-//            kSearchForAmt = 50
-//        }
+        if self.filterFlag {
+            kSearchForAmt = 50
+        }
+        
+        print(filterFor)
         
         // Form the request URL string for first time fetch
         if (nextPageToken == "") {

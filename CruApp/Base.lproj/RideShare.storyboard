@@ -552,40 +552,40 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="84.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="# seats " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Fw-rV-Cwm">
-                                                    <rect key="frame" x="300" y="8" width="61" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Departure time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A26-6e-2P1">
-                                                    <rect key="frame" x="245" y="50" width="116" height="21"/>
+                                                    <rect key="frame" x="245" y="8" width="116" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.86666666670000003" green="0.49019607840000001" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Event name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WLu-y9-09w">
                                                     <rect key="frame" x="34" y="8" width="143" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.24313725489999999" green="0.69411764710000001" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Departure location 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BGK-Bs-5ww">
-                                                    <rect key="frame" x="34" y="30" width="155" height="21"/>
+                                                    <rect key="frame" x="44" y="30" width="155" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.38431372549999998" green="0.37647058820000001" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Departure location 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2gb-XW-Vfg">
-                                                    <rect key="frame" x="34" y="50" width="157" height="21"/>
+                                                    <rect key="frame" x="44" y="50" width="157" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.38431372549999998" green="0.37647058820000001" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="# seats " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Fw-rV-Cwm">
+                                                    <rect key="frame" x="300" y="50" width="61" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.45098039220000002" blue="0.59607843140000005" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="BGK-Bs-5ww" firstAttribute="leading" secondItem="hbw-Cx-YSL" secondAttribute="leadingMargin" constant="26" id="1vw-tH-QGe"/>
-                                                <constraint firstItem="2gb-XW-Vfg" firstAttribute="leading" secondItem="hbw-Cx-YSL" secondAttribute="leadingMargin" constant="26" id="62h-uj-JaB"/>
+                                                <constraint firstItem="BGK-Bs-5ww" firstAttribute="leading" secondItem="hbw-Cx-YSL" secondAttribute="leadingMargin" constant="36" id="1vw-tH-QGe"/>
+                                                <constraint firstItem="2gb-XW-Vfg" firstAttribute="leading" secondItem="hbw-Cx-YSL" secondAttribute="leadingMargin" constant="36" id="62h-uj-JaB"/>
                                                 <constraint firstItem="WLu-y9-09w" firstAttribute="leading" secondItem="hbw-Cx-YSL" secondAttribute="leadingMargin" constant="26" id="WW5-RK-H6J"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="A26-6e-2P1" secondAttribute="trailing" constant="6" id="ZEF-Iz-gBe"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="8Fw-rV-Cwm" secondAttribute="trailing" constant="6" id="zKZ-fu-kiB"/>
@@ -634,7 +634,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="112" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="X1Z-Ra-eVD">
-                                <rect key="frame" x="-1" y="64" width="375" height="553"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="553"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RequestStatusCell" rowHeight="100" id="Iur-1T-cAu" customClass="RiderStatusCell" customModule="CruApp" customModuleProvider="target">
@@ -647,47 +647,40 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Event name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4n6-T4-K44">
                                                     <rect key="frame" x="24" y="8" width="90" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.24313725490196078" green="0.69411764705882351" blue="0.78431372549019607" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Departure time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wR2-Ul-MA5">
                                                     <rect key="frame" x="251" y="7" width="116" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.8666666666666667" green="0.49019607843137253" blue="0.10588235294117647" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Departure location 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3gW-Br-lP8">
                                                     <rect key="frame" x="36" y="29" width="155" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Cell number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aTO-bg-Bq6">
-                                                    <rect key="frame" x="274" y="73" width="93" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.38431372549019605" green="0.37647058823529411" blue="0.38431372549019605" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Departure location 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pci-G9-JsI">
                                                     <rect key="frame" x="36" y="49" width="157" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.38431372549999998" green="0.37647058820000001" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Driver's name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wo6-nm-B3n">
-                                                    <rect key="frame" x="24" y="73" width="105" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Driver@Cell number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aTO-bg-Bq6">
+                                                    <rect key="frame" x="24" y="70" width="158" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.0" green="0.45098039220000002" blue="0.59607843140000005" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="aTO-bg-Bq6" secondAttribute="trailing" id="9OE-S6-fSR"/>
-                                                <constraint firstItem="Wo6-nm-B3n" firstAttribute="leading" secondItem="O47-Do-931" secondAttribute="leadingMargin" constant="16" id="Dxt-w8-BnK"/>
                                                 <constraint firstItem="pci-G9-JsI" firstAttribute="leading" secondItem="O47-Do-931" secondAttribute="leadingMargin" constant="28" id="Go7-Cd-lFp"/>
                                                 <constraint firstItem="3gW-Br-lP8" firstAttribute="leading" secondItem="O47-Do-931" secondAttribute="leadingMargin" constant="28" id="LjX-4a-qJo"/>
                                                 <constraint firstItem="4n6-T4-K44" firstAttribute="leading" secondItem="O47-Do-931" secondAttribute="leadingMargin" constant="16" id="Zgl-wu-bYw"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="wR2-Ul-MA5" secondAttribute="trailing" id="ujz-kw-aMq"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="wR2-Ul-MA5" secondAttribute="trailing" id="kYW-ON-oLF"/>
+                                                <constraint firstItem="aTO-bg-Bq6" firstAttribute="leading" secondItem="O47-Do-931" secondAttribute="leadingMargin" constant="16" id="uWA-Q8-6HN"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -695,7 +688,6 @@
                                             <outlet property="departLoc2" destination="pci-G9-JsI" id="cBW-sO-Rut"/>
                                             <outlet property="departureTime" destination="wR2-Ul-MA5" id="IdX-nP-N3m"/>
                                             <outlet property="driversCell" destination="aTO-bg-Bq6" id="rxK-Tb-jEX"/>
-                                            <outlet property="driversName" destination="Wo6-nm-B3n" id="3lI-dj-A8P"/>
                                             <outlet property="eventName" destination="4n6-T4-K44" id="XU4-am-jOu"/>
                                         </connections>
                                     </tableViewCell>

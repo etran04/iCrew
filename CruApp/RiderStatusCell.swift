@@ -11,7 +11,6 @@ import UIKit
 class RiderStatusCell: UITableViewCell {
         
     @IBOutlet weak var driversCell: UILabel!
-    @IBOutlet weak var driversName: UILabel!
     @IBOutlet weak var departLoc2: UILabel!
     @IBOutlet weak var departLoc1: UILabel!
     @IBOutlet weak var departureTime: UILabel!

@@ -157,14 +157,12 @@ class RequestedRidesVC: UIViewController, UITableViewDelegate, UITableViewDataSo
             }
         }
         
-        cell.driversName.text = passenger.driverName
-        
         var number = String(passenger.driverNumber)
         
         number = number.insert("(", ind: 0)
         number = number.insert(") ", ind: 4)
         number = number.insert(" - ", ind: 9)
-        cell.driversCell.text = number
+        cell.driversCell.text = passenger.driverName + "@" + number
         
         cell.departLoc1.text = passenger.departureLoc1
         cell.departLoc2.text = passenger.departureLoc2
@@ -188,7 +186,7 @@ class RequestedRidesVC: UIViewController, UITableViewDelegate, UITableViewDataSo
     /* Dynamically size the number of rows to match the number of statuses we have */
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 //        return passengerCollection.count
-        return 5
+        return 3
     }
     
     /* Loads each individual cell in the table with a offered status */

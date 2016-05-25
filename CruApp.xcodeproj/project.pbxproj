@@ -21,12 +21,15 @@
 		07340BB21C5B3606002C6015 /* PassengerQuestionnaireVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07340BB11C5B3606002C6015 /* PassengerQuestionnaireVC.swift */; };
 		07340BBA1C5B36B5002C6015 /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = 07340BB91C5B36B5002C6015 /* info.png */; };
 		075639AD1CF587420012E1AD /* RideshareMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075639AC1CF587420012E1AD /* RideshareMainVC.swift */; };
+		075639B51CF593410012E1AD /* DriverStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075639B41CF593410012E1AD /* DriverStatusCell.swift */; };
+		075639B71CF5939B0012E1AD /* OfferedRidesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075639B61CF5939B0012E1AD /* OfferedRidesVC.swift */; };
+		075639B91CF59E310012E1AD /* RiderStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075639B81CF59E310012E1AD /* RiderStatusCell.swift */; };
+		075639BB1CF59E550012E1AD /* RequestedRidesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075639BA1CF59E550012E1AD /* RequestedRidesVC.swift */; };
 		075CFD541CF041AE00EAD071 /* SwiftPages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075CFD531CF041AE00EAD071 /* SwiftPages.swift */; };
 		078739881C86178E00D09C14 /* NameFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078739871C86178E00D09C14 /* NameFieldCell.swift */; };
 		078739901C86179D00D09C14 /* PhoneNumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0787398F1C86179D00D09C14 /* PhoneNumCell.swift */; };
 		078739921C8617D000D09C14 /* ScrollPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078739911C8617D000D09C14 /* ScrollPickerCell.swift */; };
 		078739941C8628CA00D09C14 /* StartTimePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078739931C8628CA00D09C14 /* StartTimePickerCell.swift */; };
-		07949D921C9177D100AA1FCD /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07949D911C9177D100AA1FCD /* MapViewController.swift */; };
 		07AF13CB1C748ACA004C28FA /* ToolsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AF13CA1C748ACA004C28FA /* ToolsTableViewController.swift */; };
 		07AF13D31C749288004C28FA /* ToolTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AF13D21C749288004C28FA /* ToolTableViewCell.swift */; };
 		07C196331C0E6AD400375B8D /* ArticlesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C196321C0E6AD400375B8D /* ArticlesTableViewController.swift */; };
@@ -252,12 +255,15 @@
 		07340BB11C5B3606002C6015 /* PassengerQuestionnaireVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassengerQuestionnaireVC.swift; sourceTree = "<group>"; };
 		07340BB91C5B36B5002C6015 /* info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = info.png; path = images/info.png; sourceTree = "<group>"; };
 		075639AC1CF587420012E1AD /* RideshareMainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RideshareMainVC.swift; sourceTree = "<group>"; };
+		075639B41CF593410012E1AD /* DriverStatusCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriverStatusCell.swift; sourceTree = "<group>"; };
+		075639B61CF5939B0012E1AD /* OfferedRidesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfferedRidesVC.swift; sourceTree = "<group>"; };
+		075639B81CF59E310012E1AD /* RiderStatusCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RiderStatusCell.swift; sourceTree = "<group>"; };
+		075639BA1CF59E550012E1AD /* RequestedRidesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestedRidesVC.swift; sourceTree = "<group>"; };
 		075CFD531CF041AE00EAD071 /* SwiftPages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftPages.swift; sourceTree = "<group>"; };
 		078739871C86178E00D09C14 /* NameFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameFieldCell.swift; sourceTree = "<group>"; };
 		0787398F1C86179D00D09C14 /* PhoneNumCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneNumCell.swift; sourceTree = "<group>"; };
 		078739911C8617D000D09C14 /* ScrollPickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollPickerCell.swift; sourceTree = "<group>"; };
 		078739931C8628CA00D09C14 /* StartTimePickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartTimePickerCell.swift; sourceTree = "<group>"; };
-		07949D911C9177D100AA1FCD /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		07AF13CA1C748ACA004C28FA /* ToolsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolsTableViewController.swift; sourceTree = "<group>"; };
 		07AF13D21C749288004C28FA /* ToolTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolTableViewCell.swift; sourceTree = "<group>"; };
 		07C196321C0E6AD400375B8D /* ArticlesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticlesTableViewController.swift; sourceTree = "<group>"; };
@@ -465,9 +471,12 @@
 				A487BBEE1C6353A5006F9B3C /* DriverStatusTableViewCell.swift */,
 				A4A8364A1C83D396003FBD8D /* PassengerStatusTableViewCell.swift */,
 				A441CE8F1C7F935600663057 /* RideShareStatusTableViewController.swift */,
-				07949D911C9177D100AA1FCD /* MapViewController.swift */,
-				075639AC1CF587420012E1AD /* RideshareMainVC.swift */,
 				075CFD531CF041AE00EAD071 /* SwiftPages.swift */,
+				075639AC1CF587420012E1AD /* RideshareMainVC.swift */,
+				075639B61CF5939B0012E1AD /* OfferedRidesVC.swift */,
+				075639B41CF593410012E1AD /* DriverStatusCell.swift */,
+				075639BA1CF59E550012E1AD /* RequestedRidesVC.swift */,
+				075639B81CF59E310012E1AD /* RiderStatusCell.swift */,
 			);
 			name = RideShare;
 			sourceTree = "<group>";
@@ -1131,6 +1140,7 @@
 				072519A81BE9694000F38F81 /* AppDelegate.swift in Sources */,
 				A487BBFB1C635E78006F9B3C /* Driver.swift in Sources */,
 				838564F51C0D9EDF00EB1728 /* SWRevealViewController.m in Sources */,
+				075639B91CF59E310012E1AD /* RiderStatusCell.swift in Sources */,
 				27529A491C9165D3008A0D06 /* UserData.swift in Sources */,
 				2770E7B11CD091AE002794DF /* MWSegmentedControl.swift in Sources */,
 				839C9B2E1CE59CC900165FEF /* InternetHelper.swift in Sources */,
@@ -1157,6 +1167,7 @@
 				0725A0611C8679C7006E8E0C /* EnterLocationPlaceCell.swift in Sources */,
 				27D528921CE4515D00BCFB4E /* CGCustomQuestionsVC.swift in Sources */,
 				832FDCEB1C881EC100836B7C /* MinistryTeamCoreData.swift in Sources */,
+				075639B51CF593410012E1AD /* DriverStatusCell.swift in Sources */,
 				278C4C641C87A40A00EB0AC1 /* MinistryTeamData.swift in Sources */,
 				078739901C86179D00D09C14 /* PhoneNumCell.swift in Sources */,
 				83244B6E1C7579BA00D913A6 /* CampusData.swift in Sources */,
@@ -1176,6 +1187,7 @@
 				278C4C731C87E6FF00EB0AC1 /* MyButton.swift in Sources */,
 				07C196351C0E6D9F00375B8D /* ArticleTableViewCell.swift in Sources */,
 				832FDCD81C854D8100836B7C /* CGSuccessVC.swift in Sources */,
+				075639BB1CF59E550012E1AD /* RequestedRidesVC.swift in Sources */,
 				A441CE791C764BA600663057 /* SelectDriverTableViewController.swift in Sources */,
 				278C4C661C87AB9A00EB0AC1 /* MinistryTeamTableViewCell.swift in Sources */,
 				1E37E7291C0E362D0054607A /* EventsViewController.swift in Sources */,
@@ -1184,10 +1196,10 @@
 				078739941C8628CA00D09C14 /* StartTimePickerCell.swift in Sources */,
 				07340BB21C5B3606002C6015 /* PassengerQuestionnaireVC.swift in Sources */,
 				A45573021C4E219A0097DE0F /* MissionDetailsViewController.swift in Sources */,
+				075639B71CF5939B0012E1AD /* OfferedRidesVC.swift in Sources */,
 				075CFD541CF041AE00EAD071 /* SwiftPages.swift in Sources */,
 				A45572FB1C4A176F0097DE0F /* EventDetailsViewController.swift in Sources */,
 				A441CE6F1C7634CB00663057 /* Passenger.swift in Sources */,
-				07949D921C9177D100AA1FCD /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

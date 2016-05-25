@@ -28,12 +28,6 @@ class DriverSelectedViewController: UIViewController {
         DBClient.getData("events", dict: setEvents)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-        print("Hello memory warning")
-    }
-    
     // Obtain event information from the database to an Object
     func setEvents(events: NSArray) {
         for event in events {
@@ -67,15 +61,5 @@ class DriverSelectedViewController: UIViewController {
         self.navigationController?.popToRootViewControllerAnimated(true)
 
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

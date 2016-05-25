@@ -138,6 +138,7 @@
 		A441CE7B1C765D4800663057 /* DriverSelectedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A441CE7A1C765D4800663057 /* DriverSelectedViewController.swift */; };
 		A441CE801C7A957500663057 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A441CE7F1C7A957500663057 /* Resource.swift */; };
 		A441CE901C7F935600663057 /* RideShareStatusTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A441CE8F1C7F935600663057 /* RideShareStatusTableViewController.swift */; };
+		A44530A41CF61DD3003B8340 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44530A31CF61DD3003B8340 /* Utils.swift */; };
 		A447DBB31C5AC8D3000C6DEB /* Events.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A447DBAF1C5AC8D3000C6DEB /* Events.storyboard */; };
 		A447DBC01C5ACBBB000C6DEB /* Checked Checkbox 2-48.png in Resources */ = {isa = PBXBuildFile; fileRef = A447DBBC1C5ACBBB000C6DEB /* Checked Checkbox 2-48.png */; };
 		A447DBC21C5ACBBB000C6DEB /* Passenger-52.png in Resources */ = {isa = PBXBuildFile; fileRef = A447DBBE1C5ACBBB000C6DEB /* Passenger-52.png */; };
@@ -376,6 +377,7 @@
 		A441CE7A1C765D4800663057 /* DriverSelectedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriverSelectedViewController.swift; sourceTree = "<group>"; };
 		A441CE7F1C7A957500663057 /* Resource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
 		A441CE8F1C7F935600663057 /* RideShareStatusTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RideShareStatusTableViewController.swift; sourceTree = "<group>"; };
+		A44530A31CF61DD3003B8340 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		A447DBB01C5AC8D3000C6DEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Events.storyboard; sourceTree = "<group>"; };
 		A447DBBC1C5ACBBB000C6DEB /* Checked Checkbox 2-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Checked Checkbox 2-48.png"; path = "images/Checked Checkbox 2-48.png"; sourceTree = SOURCE_ROOT; };
 		A447DBBE1C5ACBBB000C6DEB /* Passenger-52.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Passenger-52.png"; path = "images/Passenger-52.png"; sourceTree = SOURCE_ROOT; };
@@ -416,6 +418,7 @@
 			isa = PBXGroup;
 			children = (
 				A40DD9931C0EC0FB00BCFEC5 /* DBClient.swift */,
+				A44530A31CF61DD3003B8340 /* Utils.swift */,
 			);
 			name = DB;
 			sourceTree = "<group>";
@@ -1149,6 +1152,7 @@
 				271C78211C50434000F42EA0 /* InitialCampusTableViewController.swift in Sources */,
 				A487BBEF1C6353A5006F9B3C /* DriverStatusTableViewCell.swift in Sources */,
 				0725A05F1C867529006E8E0C /* DriveTypeCell.swift in Sources */,
+				A44530A41CF61DD3003B8340 /* Utils.swift in Sources */,
 				A441CE801C7A957500663057 /* Resource.swift in Sources */,
 				832FDCFC1C8832BF00836B7C /* JoinCommunityGroupTVC.swift in Sources */,
 				832FDCCC1C854B1600836B7C /* InvolvedGroupsTVC.swift in Sources */,

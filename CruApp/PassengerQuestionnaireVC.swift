@@ -157,29 +157,6 @@ class PassengerQuestionnaireVC: UIViewController, UITableViewDelegate, UITableVi
 //        view.endEditing(true)
 //    }
     
-    func parsePhoneNumber(phoneNum : String) -> String {
-        // split by '-'
-        let full = phoneNum.componentsSeparatedByString("-")
-        let left = full[0]
-        let right = full[1]
-        
-        // get area code from ()
-        var index1 = left.startIndex.advancedBy(1)
-        let delFirstParen = left.substringFromIndex(index1)
-        let index2 = delFirstParen.startIndex.advancedBy(3)
-        let areaCode = delFirstParen.substringToIndex(index2)
-        
-        // get first three digits
-        index1 = left.startIndex.advancedBy(6)
-        let threeDigits = left.substringFromIndex(index1)
-        
-        // get last four digits
-        // = right
-        
-        let finalPhoneNum = areaCode + threeDigits + right
-        return finalPhoneNum
-        
-    }
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -202,7 +179,7 @@ class PassengerQuestionnaireVC: UIViewController, UITableViewDelegate, UITableVi
         
         var riderPhoneNum = ""
         if(!((cells[1] as! PhoneNumCell).riderPhoneNum.text!).isEmpty) {
-            riderPhoneNum = parsePhoneNumber(((cells[1] as! PhoneNumCell).riderPhoneNum.text!))
+            riderPhoneNum = Utils.parsePhoneNumber(((cells[1] as! PhoneNumCell).riderPhoneNum.text!))
         }
         
         print("Time: " + String((cells[3] as! DatePickerCell).datePicker.date))

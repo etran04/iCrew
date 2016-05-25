@@ -47,7 +47,7 @@ public class SwiftPages: UIView {
     private var barShadow = true
     private var shadowView : UIView!
     private var shadowViewGradient = CAGradientLayer()
-    private var buttonsTextFontAndSize = UIFont(name: "HelveticaNeue-Light", size: 20)!
+    private var buttonsTextFontAndSize = UIFont(name: "FreightSansProMedium-Regular", size: 20)!
     private var blurView : UIVisualEffectView!
     private var barButtons = [UIButton?]()
     
@@ -250,7 +250,7 @@ public class SwiftPages: UIView {
         frame.origin.y = 0.0
         
         // Look for the VC by its identifier in the storyboard and add it to the scrollview
-        let newPageView = UIStoryboard(name: "Resources", bundle: nil).instantiateViewControllerWithIdentifier(viewControllerIDs[page])
+        let newPageView = UIStoryboard(name: "RideShare", bundle: nil).instantiateViewControllerWithIdentifier(viewControllerIDs[page])
         newPageView.view.frame = frame
         scrollView.addSubview(newPageView.view)
         

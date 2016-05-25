@@ -20,6 +20,7 @@
 		0727F9A51C5AD13000066948 /* DriverQuestionnaireVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0727F9A41C5AD13000066948 /* DriverQuestionnaireVC.swift */; };
 		07340BB21C5B3606002C6015 /* PassengerQuestionnaireVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07340BB11C5B3606002C6015 /* PassengerQuestionnaireVC.swift */; };
 		07340BBA1C5B36B5002C6015 /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = 07340BB91C5B36B5002C6015 /* info.png */; };
+		075639AD1CF587420012E1AD /* RideshareMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075639AC1CF587420012E1AD /* RideshareMainVC.swift */; };
 		075CFD541CF041AE00EAD071 /* SwiftPages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075CFD531CF041AE00EAD071 /* SwiftPages.swift */; };
 		078739881C86178E00D09C14 /* NameFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078739871C86178E00D09C14 /* NameFieldCell.swift */; };
 		078739901C86179D00D09C14 /* PhoneNumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0787398F1C86179D00D09C14 /* PhoneNumCell.swift */; };
@@ -250,6 +251,7 @@
 		0727F9A41C5AD13000066948 /* DriverQuestionnaireVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriverQuestionnaireVC.swift; sourceTree = "<group>"; };
 		07340BB11C5B3606002C6015 /* PassengerQuestionnaireVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassengerQuestionnaireVC.swift; sourceTree = "<group>"; };
 		07340BB91C5B36B5002C6015 /* info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = info.png; path = images/info.png; sourceTree = "<group>"; };
+		075639AC1CF587420012E1AD /* RideshareMainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RideshareMainVC.swift; sourceTree = "<group>"; };
 		075CFD531CF041AE00EAD071 /* SwiftPages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftPages.swift; sourceTree = "<group>"; };
 		078739871C86178E00D09C14 /* NameFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameFieldCell.swift; sourceTree = "<group>"; };
 		0787398F1C86179D00D09C14 /* PhoneNumCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneNumCell.swift; sourceTree = "<group>"; };
@@ -464,6 +466,8 @@
 				A4A8364A1C83D396003FBD8D /* PassengerStatusTableViewCell.swift */,
 				A441CE8F1C7F935600663057 /* RideShareStatusTableViewController.swift */,
 				07949D911C9177D100AA1FCD /* MapViewController.swift */,
+				075639AC1CF587420012E1AD /* RideshareMainVC.swift */,
+				075CFD531CF041AE00EAD071 /* SwiftPages.swift */,
 			);
 			name = RideShare;
 			sourceTree = "<group>";
@@ -479,7 +483,6 @@
 				1E37E7221C0E362D0054607A /* VideosTableViewController.swift */,
 				07C196321C0E6AD400375B8D /* ArticlesTableViewController.swift */,
 				07AF13CA1C748ACA004C28FA /* ToolsTableViewController.swift */,
-				075CFD531CF041AE00EAD071 /* SwiftPages.swift */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1143,6 +1146,7 @@
 				832FDCF61C881F4600836B7C /* CommunityGroupCoreData.swift in Sources */,
 				83688B771C7F71E300470442 /* InitialScreenVC.swift in Sources */,
 				27D528961CE4850800BCFB4E /* QuestionData.swift in Sources */,
+				075639AD1CF587420012E1AD /* RideshareMainVC.swift in Sources */,
 				1E37E7261C0E362D0054607A /* Event.swift in Sources */,
 				1E37E72A1C0E362D0054607A /* VideosTableViewController.swift in Sources */,
 				832FDCD41C854CE600836B7C /* MinistryTeamSuccessVC.swift in Sources */,

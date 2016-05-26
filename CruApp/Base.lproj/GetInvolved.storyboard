@@ -117,19 +117,21 @@
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                         </textView>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="JoinCG" translatesAutoresizingMaskIntoConstraints="NO" id="s3B-5T-WQH">
-                                                            <rect key="frame" x="86" y="68" width="177" height="119"/>
+                                                            <rect key="frame" x="127" y="95" width="94" height="65"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="94" id="JTB-QO-B6Q"/>
+                                                            </constraints>
                                                         </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstItem="THe-qc-eWy" firstAttribute="centerX" secondItem="QKA-iF-lVC" secondAttribute="centerX" id="4yx-tF-dRL"/>
-                                                        <constraint firstItem="s3B-5T-WQH" firstAttribute="centerY" secondItem="QKA-iF-lVC" secondAttribute="centerY" id="7DV-cc-hnc"/>
                                                         <constraint firstItem="THe-qc-eWy" firstAttribute="leading" secondItem="QKA-iF-lVC" secondAttribute="leading" constant="54" id="CYV-ar-lcT"/>
-                                                        <constraint firstItem="s3B-5T-WQH" firstAttribute="leading" secondItem="QKA-iF-lVC" secondAttribute="leading" constant="86" id="GYC-6a-sc4"/>
-                                                        <constraint firstItem="s3B-5T-WQH" firstAttribute="centerX" secondItem="THe-qc-eWy" secondAttribute="centerX" id="NNB-Sw-RDx"/>
-                                                        <constraint firstItem="THe-qc-eWy" firstAttribute="top" secondItem="s3B-5T-WQH" secondAttribute="bottom" constant="18" id="XFQ-hi-U4K"/>
-                                                        <constraint firstItem="s3B-5T-WQH" firstAttribute="top" secondItem="QKA-iF-lVC" secondAttribute="top" constant="68" id="bST-vE-Em4"/>
+                                                        <constraint firstItem="s3B-5T-WQH" firstAttribute="top" secondItem="QKA-iF-lVC" secondAttribute="top" constant="95" id="GXQ-gw-N94"/>
+                                                        <constraint firstItem="THe-qc-eWy" firstAttribute="top" secondItem="s3B-5T-WQH" secondAttribute="bottom" constant="45" id="krP-EL-a3q"/>
                                                         <constraint firstAttribute="bottom" secondItem="THe-qc-eWy" secondAttribute="bottom" constant="22" id="lTr-fK-SFD"/>
+                                                        <constraint firstItem="s3B-5T-WQH" firstAttribute="centerX" secondItem="THe-qc-eWy" secondAttribute="centerX" id="mbT-yJ-cqe"/>
+                                                        <constraint firstItem="s3B-5T-WQH" firstAttribute="centerY" secondItem="QKA-iF-lVC" secondAttribute="centerY" id="nAf-7i-DlG"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -168,9 +170,6 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Frh-C7-jLw">
                                                     <rect key="frame" x="13" y="8" width="349" height="249"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MinistryTeam" translatesAutoresizingMaskIntoConstraints="NO" id="Ew7-y7-ek2">
-                                                            <rect key="frame" x="86" y="65" width="177" height="119"/>
-                                                        </imageView>
                                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Join a Ministry Team" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AC9-QR-WmY">
                                                             <rect key="frame" x="54" y="203" width="240" height="30"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -178,15 +177,18 @@
                                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                         </textView>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MinistryTeam" translatesAutoresizingMaskIntoConstraints="NO" id="Ew7-y7-ek2">
+                                                            <rect key="frame" x="126" y="89" width="97" height="72"/>
+                                                        </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstItem="AC9-QR-WmY" firstAttribute="leading" secondItem="Frh-C7-jLw" secondAttribute="leading" constant="54" id="7SF-Pr-5b1"/>
                                                         <constraint firstAttribute="bottom" secondItem="AC9-QR-WmY" secondAttribute="bottom" constant="16" id="AGY-U0-jmc"/>
                                                         <constraint firstItem="AC9-QR-WmY" firstAttribute="centerX" secondItem="Frh-C7-jLw" secondAttribute="centerX" id="HrE-UV-sos"/>
-                                                        <constraint firstItem="Ew7-y7-ek2" firstAttribute="leading" secondItem="Frh-C7-jLw" secondAttribute="leading" constant="86" id="JXM-5o-F4y"/>
+                                                        <constraint firstItem="Ew7-y7-ek2" firstAttribute="leading" secondItem="Frh-C7-jLw" secondAttribute="leading" constant="126" id="JXM-5o-F4y"/>
                                                         <constraint firstItem="Ew7-y7-ek2" firstAttribute="centerY" secondItem="Frh-C7-jLw" secondAttribute="centerY" id="ZX7-nC-NTW"/>
-                                                        <constraint firstItem="Ew7-y7-ek2" firstAttribute="top" secondItem="Frh-C7-jLw" secondAttribute="top" constant="65" id="fns-6V-vkx"/>
+                                                        <constraint firstItem="Ew7-y7-ek2" firstAttribute="top" secondItem="Frh-C7-jLw" secondAttribute="top" constant="89" id="fns-6V-vkx"/>
                                                         <constraint firstItem="AC9-QR-WmY" firstAttribute="top" secondItem="Frh-C7-jLw" secondAttribute="top" constant="203" id="jFe-Aw-aLx"/>
                                                         <constraint firstItem="Ew7-y7-ek2" firstAttribute="centerX" secondItem="Frh-C7-jLw" secondAttribute="centerX" id="lti-E3-eGi"/>
                                                     </constraints>

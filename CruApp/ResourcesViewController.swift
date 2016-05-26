@@ -40,7 +40,6 @@ class ResourcesViewController: UITableViewController {
             cell.viewWithTag(0)?.layer.cornerRadius = 1;
             cell.viewWithTag(0)?.layer.shadowOffset = CGSizeMake(-0.2, 0.2)
             cell.viewWithTag(0)?.layer.shadowRadius = 5;
-            cell.im
         }
     }
     

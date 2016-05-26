@@ -14,9 +14,6 @@ import ReachabilitySwift
 
 class ToolsTableViewController: UITableViewController, DZNEmptyDataSetDelegate, DZNEmptyDataSetSource {
     
-    /* A reference to the animated loading spinner */
-    var indicator = UIActivityIndicatorView()
-    
     /* Holds all tools to be displayed */
     var toolsCollection = [Resource]()
     
@@ -149,20 +146,10 @@ class ToolsTableViewController: UITableViewController, DZNEmptyDataSetDelegate, 
         showLink(toolsCollection[indexPath.row].url)
     }
     
-    /* Callback for when a cell is individually displayed */
-    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        let sectionsAmount = tableView.numberOfSections
-        let rowsAmount = tableView.numberOfRowsInSection(indexPath.section)
-        if (indexPath.section == sectionsAmount - 1 && indexPath.row == rowsAmount - 1) {
-            // This is the last cell in the table, stop the loading indicator
-            SwiftLoader.hide()
-        }
-    }
-    
     // MARK: - DZNEmptySet Delegate methods
     
     func titleForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
-        let str = "No tools to display!"
+        let str = "No audio files to display!"
         let attrs = [NSFontAttributeName: UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline)]
         return NSAttributedString(string: str, attributes: attrs)
     }

@@ -292,9 +292,7 @@ class VideosTableViewController: UITableViewController, UISearchBarDelegate, DZN
         if self.filterFlag {
             kSearchForAmt = 50
         }
-        
-        print(filterFor)
-        
+                
         // Form the request URL string for first time fetch
         if (nextPageToken == "") {
             urlString = "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=\(kSearchForAmt)&playlistId=\(playlistID)&key=\(apiKey)"

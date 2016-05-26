@@ -274,12 +274,20 @@ public class SwiftPages: UIView {
     }
     
     public func barButtonAction(sender: UIButton?) {
-        let index = sender!.tag
+        var index: Int!
+        if (sender != nil) {
+            index = sender!.tag
+        } else {
+            index = 0
+        }
+        
         let pagesScrollViewSize = scrollView.frame.size
         
         scrollView.setContentOffset(CGPoint(x: pagesScrollViewSize.width * CGFloat(index), y: 0), animated: true)
         
         currentPage = index
+        
+        print("here with index: \(index)")
     }
     
     // MARK: - Orientation Handling Functions -
@@ -353,7 +361,7 @@ extension SwiftPages: UIScrollViewDelegate {
     public func scrollViewDidScroll(scrollView: UIScrollView) {
         // Load the pages that are now on screen
         loadVisiblePages()
-        
+
         // The calculations for the animated bar's movements
         // The offset addition is based on the width of the animated bar (button width times 0.8)
         let offsetAddition = (containerView.frame.size.width / CGFloat(viewControllerIDs.count)) * 0.1

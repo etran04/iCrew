@@ -21,6 +21,8 @@ class RideshareMainVC: UIViewController {
         let buttonTitles : [String] = ["Offered Rides", "Requested Rides"]
         
         swiftPagesView.initializeWithVCIDsArrayAndButtonTitlesArray(VCIDs, buttonTitlesArray: buttonTitles)
+        
+        print("in view did load")
 
     }
     
@@ -30,6 +32,7 @@ class RideshareMainVC: UIViewController {
             self.menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
+        print("in view did appear")
     }
     
     @IBAction func addButtonPressed(sender: UIBarButtonItem) {

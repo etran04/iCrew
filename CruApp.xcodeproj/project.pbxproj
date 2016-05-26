@@ -25,7 +25,6 @@
 		075639B71CF5939B0012E1AD /* OfferedRidesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075639B61CF5939B0012E1AD /* OfferedRidesVC.swift */; };
 		075639B91CF59E310012E1AD /* RiderStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075639B81CF59E310012E1AD /* RiderStatusCell.swift */; };
 		075639BB1CF59E550012E1AD /* RequestedRidesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075639BA1CF59E550012E1AD /* RequestedRidesVC.swift */; };
-		075639BE1CF66CE90012E1AD /* VideosMainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075639BD1CF66CE90012E1AD /* VideosMainCell.swift */; };
 		075CFD541CF041AE00EAD071 /* SwiftPages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075CFD531CF041AE00EAD071 /* SwiftPages.swift */; };
 		078739881C86178E00D09C14 /* NameFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078739871C86178E00D09C14 /* NameFieldCell.swift */; };
 		078739901C86179D00D09C14 /* PhoneNumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0787398F1C86179D00D09C14 /* PhoneNumCell.swift */; };
@@ -261,7 +260,6 @@
 		075639B61CF5939B0012E1AD /* OfferedRidesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfferedRidesVC.swift; sourceTree = "<group>"; };
 		075639B81CF59E310012E1AD /* RiderStatusCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RiderStatusCell.swift; sourceTree = "<group>"; };
 		075639BA1CF59E550012E1AD /* RequestedRidesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestedRidesVC.swift; sourceTree = "<group>"; };
-		075639BD1CF66CE90012E1AD /* VideosMainCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideosMainCell.swift; sourceTree = "<group>"; };
 		075CFD531CF041AE00EAD071 /* SwiftPages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftPages.swift; sourceTree = "<group>"; };
 		078739871C86178E00D09C14 /* NameFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameFieldCell.swift; sourceTree = "<group>"; };
 		0787398F1C86179D00D09C14 /* PhoneNumCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneNumCell.swift; sourceTree = "<group>"; };
@@ -497,7 +495,6 @@
 				1E37E7221C0E362D0054607A /* VideosTableViewController.swift */,
 				07C196321C0E6AD400375B8D /* ArticlesTableViewController.swift */,
 				07AF13CA1C748ACA004C28FA /* ToolsTableViewController.swift */,
-				075639BD1CF66CE90012E1AD /* VideosMainCell.swift */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1150,7 +1147,6 @@
 				27529A491C9165D3008A0D06 /* UserData.swift in Sources */,
 				2770E7B11CD091AE002794DF /* MWSegmentedControl.swift in Sources */,
 				839C9B2E1CE59CC900165FEF /* InternetHelper.swift in Sources */,
-				075639BE1CF66CE90012E1AD /* VideosMainCell.swift in Sources */,
 				078739921C8617D000D09C14 /* ScrollPickerCell.swift in Sources */,
 				279327051C50A0EC00BAC73D /* InitialMinistryTableViewController.swift in Sources */,
 				271C78211C50434000F42EA0 /* InitialCampusTableViewController.swift in Sources */,

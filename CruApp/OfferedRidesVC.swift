@@ -175,15 +175,15 @@ class OfferedRidesVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     /* Dynamically size the number of rows to match the number of statuses we have */
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return driverCollection.count
-        return 3
+        return driverCollection.count
+//        return 3
     }
     
     /* Loads each individual cell in the table with a offered status */
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell: UITableViewCell
         cell = tableview.dequeueReusableCellWithIdentifier("OfferedStatusCell", forIndexPath: indexPath) as! DriverStatusCell
-//        populateDriverCell(indexPath, cell: cell as! DriverStatusCell)
+        populateDriverCell(indexPath, cell: cell as! DriverStatusCell)
         
         return cell
     }

@@ -185,15 +185,15 @@ class RequestedRidesVC: UIViewController, UITableViewDelegate, UITableViewDataSo
     
     /* Dynamically size the number of rows to match the number of statuses we have */
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return passengerCollection.count
-        return 3
+        return passengerCollection.count
+//        return 3
     }
     
     /* Loads each individual cell in the table with a offered status */
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell: UITableViewCell
         cell = tableview.dequeueReusableCellWithIdentifier("RequestStatusCell", forIndexPath: indexPath) as! RiderStatusCell
-//        populatePassengerCell(indexPath, cell: cell as! RiderStatusCell)
+        populatePassengerCell(indexPath, cell: cell as! RiderStatusCell)
         
         return cell
     }

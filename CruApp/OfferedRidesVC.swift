@@ -189,29 +189,29 @@ class OfferedRidesVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let alert = UIAlertView()
-        alert.delegate = self
-        alert.title = "Passengers"
-        let driver = driverCollection[indexPath.row] as Driver
-            
-        if (driver.passengers.count != 0) {
-            var msg = ""
-            
-            for index in 0...(driver.passengers.count - 1) {
-                    
-                var number = String(driver.passengers[index].phoneNumber)
-                number = number.insert("(", ind: 0)
-                number = number.insert(") ", ind: 4)
-                number = number.insert(" - ", ind: 9)
-                
-                msg += driver.passengers[index].name + " " + number + "\n"
-            }
-            alert.message = msg
-        } else {
-            alert.message = "No passengers at this time."
-        }
-        alert.addButtonWithTitle("OK")
-        alert.show()
+//        let alert = UIAlertView()
+//        alert.delegate = self
+//        alert.title = "Passengers"
+//        let driver = driverCollection[indexPath.row] as Driver
+//            
+//        if (driver.passengers.count != 0) {
+//            var msg = ""
+//            
+//            for index in 0...(driver.passengers.count - 1) {
+//                    
+//                var number = String(driver.passengers[index].phoneNumber)
+//                number = number.insert("(", ind: 0)
+//                number = number.insert(") ", ind: 4)
+//                number = number.insert(" - ", ind: 9)
+//                
+//                msg += driver.passengers[index].name + " " + number + "\n"
+//            }
+//            alert.message = msg
+//        } else {
+//            alert.message = "No passengers at this time."
+//        }
+//        alert.addButtonWithTitle("OK")
+//        alert.show()
         
         tableview.deselectRowAtIndexPath(indexPath, animated: true)
 

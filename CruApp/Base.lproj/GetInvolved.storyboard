@@ -486,46 +486,81 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Full Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LaW-tl-taD">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Full Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LaW-tl-taD">
                                 <rect key="frame" x="8" y="72" width="359" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="seG-ID-R5v"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jqJ-MW-biV">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jqJ-MW-biV">
                                 <rect key="frame" x="8" y="110" width="359" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="A9L-Nu-W6L"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Gender" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H11-ce-Wvv">
-                                <rect key="frame" x="8" y="148" width="359" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Available Days:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vqz-6g-3ep">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Available Days:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vqz-6g-3ep">
                                 <rect key="frame" x="8" y="323" width="115" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ministry " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P8R-Dm-Ikr">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ministry " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P8R-Dm-Ikr">
                                 <rect key="frame" x="8" y="186" width="66" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Ue1-KN-V6G"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FLC-pb-um3">
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FLC-pb-um3">
                                 <rect key="frame" x="8" y="215" width="359" height="86"/>
                                 <connections>
                                     <outlet property="dataSource" destination="4wo-LD-YIA" id="xtS-IZ-Sdz"/>
                                     <outlet property="delegate" destination="4wo-LD-YIA" id="MPW-qq-BeO"/>
                                 </connections>
                             </pickerView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Omo-Qq-Qg8" userLabel="Days" customClass="MWSegmentedControl" customModule="CruApp">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Omo-Qq-Qg8" userLabel="Days" customClass="MWSegmentedControl" customModule="CruApp">
                                 <rect key="frame" x="8" y="352" width="359" height="31"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Gender" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H11-ce-Wvv">
+                                <rect key="frame" x="8" y="148" width="359" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="h3T-VF-1M8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="LaW-tl-taD" firstAttribute="top" secondItem="Z2N-OJ-T8D" secondAttribute="bottom" constant="8" symbolic="YES" id="4EK-qa-bpj"/>
+                            <constraint firstItem="jqJ-MW-biV" firstAttribute="top" secondItem="LaW-tl-taD" secondAttribute="bottom" constant="8" symbolic="YES" id="63a-OI-qla"/>
+                            <constraint firstItem="LaW-tl-taD" firstAttribute="trailing" secondItem="jqJ-MW-biV" secondAttribute="trailing" id="9II-va-vHK"/>
+                            <constraint firstItem="H11-ce-Wvv" firstAttribute="top" secondItem="jqJ-MW-biV" secondAttribute="bottom" constant="8" symbolic="YES" id="AYS-Px-4LR"/>
+                            <constraint firstItem="LaW-tl-taD" firstAttribute="leading" secondItem="jqJ-MW-biV" secondAttribute="leading" id="Ha4-go-fve"/>
+                            <constraint firstItem="FLC-pb-um3" firstAttribute="top" secondItem="P8R-Dm-Ikr" secondAttribute="bottom" constant="8" symbolic="YES" id="LtX-ch-Nw6"/>
+                            <constraint firstItem="P8R-Dm-Ikr" firstAttribute="leading" secondItem="FLC-pb-um3" secondAttribute="leading" id="MKb-NI-faO"/>
+                            <constraint firstItem="jqJ-MW-biV" firstAttribute="leading" secondItem="H11-ce-Wvv" secondAttribute="leading" id="NjA-CV-I3z"/>
+                            <constraint firstItem="Q3v-4V-wLm" firstAttribute="top" secondItem="Omo-Qq-Qg8" secondAttribute="bottom" constant="235" id="Por-HD-arK"/>
+                            <constraint firstItem="Vqz-6g-3ep" firstAttribute="leading" secondItem="Omo-Qq-Qg8" secondAttribute="leading" id="RQn-vW-YMG"/>
+                            <constraint firstItem="LaW-tl-taD" firstAttribute="centerX" secondItem="4wo-LD-YIA" secondAttribute="centerX" id="TfZ-qz-ewD"/>
+                            <constraint firstItem="FLC-pb-um3" firstAttribute="leading" secondItem="Vqz-6g-3ep" secondAttribute="leading" id="UCR-At-pQA"/>
+                            <constraint firstItem="H11-ce-Wvv" firstAttribute="leading" secondItem="P8R-Dm-Ikr" secondAttribute="leading" id="VEp-Hf-zC8"/>
+                            <constraint firstItem="P8R-Dm-Ikr" firstAttribute="top" secondItem="H11-ce-Wvv" secondAttribute="bottom" constant="8" symbolic="YES" id="Ygv-4D-TS4"/>
+                            <constraint firstItem="Vqz-6g-3ep" firstAttribute="centerY" secondItem="4wo-LD-YIA" secondAttribute="centerY" id="a5U-DD-Fis"/>
+                            <constraint firstItem="jqJ-MW-biV" firstAttribute="trailing" secondItem="H11-ce-Wvv" secondAttribute="trailing" id="cei-kG-WAh"/>
+                            <constraint firstItem="FLC-pb-um3" firstAttribute="trailing" secondItem="Omo-Qq-Qg8" secondAttribute="trailing" id="lXN-Bl-aNa"/>
+                            <constraint firstItem="H11-ce-Wvv" firstAttribute="trailing" secondItem="FLC-pb-um3" secondAttribute="trailing" id="ny7-JG-gUG"/>
+                            <constraint firstItem="Vqz-6g-3ep" firstAttribute="top" secondItem="FLC-pb-um3" secondAttribute="bottom" constant="22" id="qt3-1A-NMF"/>
+                            <constraint firstItem="LaW-tl-taD" firstAttribute="leading" secondItem="4wo-LD-YIA" secondAttribute="leadingMargin" constant="-8" id="ujo-fQ-14n"/>
+                            <constraint firstItem="Omo-Qq-Qg8" firstAttribute="top" secondItem="Vqz-6g-3ep" secondAttribute="bottom" constant="8" symbolic="YES" id="uqK-wj-DW0"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Sign-up" id="Lvi-j3-Y1S">
                         <barButtonItem key="backBarButtonItem" title=" " id="ggo-ii-QeN"/>

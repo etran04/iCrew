@@ -286,8 +286,6 @@ public class SwiftPages: UIView {
         scrollView.setContentOffset(CGPoint(x: pagesScrollViewSize.width * CGFloat(index), y: 0), animated: true)
         
         currentPage = index
-        
-        print("here with index: \(index)")
     }
     
     // MARK: - Orientation Handling Functions -

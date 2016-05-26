@@ -11,6 +11,7 @@ import GoogleMaps
 import CoreLocation
 import AddressBookUI
 
+
 class SelectDriverTableViewController: UITableViewController {
     var passenger : Passenger!
     var driverCollection = [Driver]()
@@ -151,7 +152,7 @@ class SelectDriverTableViewController: UITableViewController {
                 "name": passenger.name,
                 "direction": passenger.direction,
                 "phone": passenger.phoneNumber,
-                "gcm_id" : 1234567
+                "gcm_id" : gcm_id!
             ]
             
             do {

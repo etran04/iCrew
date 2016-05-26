@@ -14,14 +14,6 @@ import DZNEmptyDataSet
 let kDriverHeader = "You will be a driver for..."
 let kPassengerHeader = "You will be a passenger for..."
 
-//#if TARGET_OS_SIMULATOR
-//simulator
-let gcm_id = "1234567"
-//#else
-//get GCM ID
-//let gcm_id =
-//#endif
-
 class RideShareStatusTableViewController: UITableViewController, DZNEmptyDataSetDelegate, DZNEmptyDataSetSource {
     
     var eventNames = [String]()

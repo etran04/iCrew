@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RideshareMainVC: UIViewController {
+class RideshareMainVC: UIViewController, SWRevealViewControllerDelegate {
 
     @IBOutlet weak var swiftPagesView: SwiftPages!
     
@@ -21,9 +21,7 @@ class RideshareMainVC: UIViewController {
         let buttonTitles : [String] = ["Offered Rides", "Requested Rides"]
         
         swiftPagesView.initializeWithVCIDsArrayAndButtonTitlesArray(VCIDs, buttonTitlesArray: buttonTitles)
-        
-        print("in view did load")
-
+        self.revealViewController().delegate = self
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -32,7 +30,24 @@ class RideshareMainVC: UIViewController {
             self.menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
-        print("in view did appear")
+    }
+    
+    //reveal controller function for disabling the current view
+    func revealController(revealController: SWRevealViewController!, willMoveToPosition position: FrontViewPosition) {
+        if position == FrontViewPosition.Left {
+            
+            for view in self.view.subviews {
+                view.userInteractionEnabled = true
+            }
+            self.tabBarController?.tabBar.userInteractionEnabled = true
+        }
+        else if position == FrontViewPosition.Right {
+            
+            for view in self.view.subviews {
+                view.userInteractionEnabled = false
+            }
+            self.tabBarController?.tabBar.userInteractionEnabled = false
+        }
     }
     
     @IBAction func addButtonPressed(sender: UIBarButtonItem) {

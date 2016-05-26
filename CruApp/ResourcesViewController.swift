@@ -10,7 +10,7 @@ import UIKit
 
 /* ResourcesVC is the main branch, leading into the different
  * possible resources, such as Videos, Articles, and Tools */ 
-class ResourcesViewController: UITableViewController {
+class ResourcesViewController: UITableViewController, SWRevealViewControllerDelegate {
     
     @IBOutlet var cells: [UITableViewCell]!
     @IBOutlet weak var menuButton: UIBarButtonItem!
@@ -22,6 +22,8 @@ class ResourcesViewController: UITableViewController {
         
         self.tableView.tableFooterView = UIView()
         
+        self.revealViewController().delegate = self
+        
         cardsSetup()
     }
     
@@ -30,6 +32,26 @@ class ResourcesViewController: UITableViewController {
             self.menuButton.target = self.revealViewController()
             self.menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
+    }
+    
+    //reveal controller function for disabling the current view
+    func revealController(revealController: SWRevealViewController!, willMoveToPosition position: FrontViewPosition) {
+        if position == FrontViewPosition.Left {
+            self.tableView.scrollEnabled = true
+            
+            for view in self.tableView.subviews {
+                view.userInteractionEnabled = true
+            }
+            self.tabBarController?.tabBar.userInteractionEnabled = true
+        }
+        else if position == FrontViewPosition.Right {
+            self.tableView.scrollEnabled = false
+            
+            for view in self.tableView.subviews {
+                view.userInteractionEnabled = false
+            }
+            self.tabBarController?.tabBar.userInteractionEnabled = false
         }
     }
     

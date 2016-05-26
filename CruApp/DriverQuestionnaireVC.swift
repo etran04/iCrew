@@ -13,10 +13,10 @@ import Alamofire
 import GoogleMaps
 import DatePickerCell
 
-
 /* This class is used to gather information from a potential driver of the RideShare feature */
 class DriverQuestionnaireVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    
     /* constants for setting up datepicker in ideal pickup time */
     let IDEAL_TIME_INTERVAL = 15
     let TIME_FORMAT = "hh:mm a"
@@ -265,7 +265,7 @@ class DriverQuestionnaireVC: UIViewController, UITableViewDelegate, UITableViewD
                 "event": event,
                 "driverName": driverName!,
                 "time": time,
-                "gcm_id" : 1234567
+                "gcm_id" : gcm_id!
             ]
 
             do {

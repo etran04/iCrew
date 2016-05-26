@@ -7,6 +7,15 @@
 //
 
 import Foundation
+
+#if TARGET_OS_SIMULATOR
+    //simulator
+let gcm_id = "1234567"
+#else
+let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+let gcm_id = appDelegate.registrationToken
+#endif
+
 class Utils {
     static func parsePhoneNumber(phoneNum : String) -> String {
         // split by '-'

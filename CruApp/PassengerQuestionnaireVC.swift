@@ -11,7 +11,6 @@ import DownPicker
 import CheckmarkSegmentedControl
 import DatePickerCell
 
-
 /* This class is used to gather information from a potential rider of the RideShare feature */
 class PassengerQuestionnaireVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     

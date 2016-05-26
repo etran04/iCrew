@@ -26,6 +26,7 @@ class OfferedRidesVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.tableview.delegate = self
         self.tableview.dataSource = self
         self.tableview.separatorStyle = .SingleLine
+        self.tableview.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         
         self.fetchStatuses()
     }
@@ -93,22 +94,35 @@ class OfferedRidesVC: UIViewController, UITableViewDelegate, UITableViewDataSour
             if(ride["location"]?!.objectForKey("postcode") != nil && !(ride["location"]?!.objectForKey("postcode") is NSNull)) {
                 zipcode = ride["location"]?!.objectForKey("postcode") as! String
             }
+            else {
+                zipcode = "N/A"
+            }
             
             if(ride["location"]?!.objectForKey("state") != nil && !(ride["location"]?!.objectForKey("state") is NSNull)) {
                 state = ride["location"]?!.objectForKey("state") as! String
+            } else {
+                state = "N/A'"
             }
             
             if(ride["location"]?!.objectForKey("suburb") != nil && !(ride["location"]?!.objectForKey("suburb") is NSNull)) {
                 city = ride["location"]?!.objectForKey("suburb") as! String
+            } else {
+                city = "N/A"
             }
             
             if(ride["location"]?!.objectForKey("street1") != nil && !(ride["location"]?!.objectForKey("street1") is NSNull)) {
                 street = ride["location"]?!.objectForKey("street1") as! String
+            } else {
+                street = "N/A"
             }
             
             if(ride["location"]?!.objectForKey("country") != nil && !(ride["location"]?!.objectForKey("country") is NSNull)) {
                 country = ride["location"]?!.objectForKey("country") as! String
+            } else {
+                country = "N/A"
             }
+            
+            
             
             let location2 = city + ", " + state + ", " + country + " " + zipcode
             

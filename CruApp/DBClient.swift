@@ -8,7 +8,7 @@
 
 import Foundation
 
-let databaseURL = "http://ec2-52-32-197-212.us-west-2.compute.amazonaws.com:3001/api/"
+let databaseURL = "http://ec2-52-32-197-212.us-west-2.compute.amazonaws.com:3000/api/"
 //let databaseURL = "http://pcp070211pcs.wireless.calpoly.edu:3001/api/"
 
 //let databaseURL = "http://localhost:3001/api/"
@@ -145,6 +145,33 @@ class DBClient {
             }
         })
     }
+    
+    
+    
+    static func loginUser(body: NSData, completionHandler : (success : Bool) -> Void) {
+        //var params = ["username":login, "password":password]
+        let url = databaseURL + "signin"
+        //let body
+        //do{
+            //let body = try NSJSONSerialization.dataWithJSONObject(params, options: NSJSONWritingOptions.PrettyPrinted)
+            
+            sendPostRequest(url, body: body, completionHandler: {(data : NSData?, response : NSURLResponse?, error : NSError?) in
+                do{
+                    if (data != nil) {
+                        let JSONResponse = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
+                        let success = JSONResponse["success"] as! Bool
+                        completionHandler(success: success)
+                    }
+                    else {
+                        print("ERROR: Data not obtained from database")
+                    }
+                }catch {
+                    print("error")
+                }
+            })
+        //}
+    }
+    
     
     static func emptyHandler(data : NSData?, response : NSURLResponse?, error : NSError?) {}
     

@@ -77,31 +77,31 @@ class SidebarTableViewController: UITableViewController {
         //go to login screen
         else {
             //setup database
-            DBClient.getData("users", dict: setUsers)
+            //DBClient.getData("users", dict: setUsers)
             
             //display login pop up
             self.loginView()
         }
     }
     
-    //create a collection of users
-    func setUsers(users:NSArray) {
-        for user in users{
-        
-            //only create a user if the user's password is not nil
-            if user["password"] != nil
-            {
-                let userObj = UserData(user: user)
-                userCollection.append(userObj)
-            }
-        
-            //for testing use
-            for(var i = 0; i < userCollection.count; i += 1)
-            {
-                print("\(userCollection[i].email) : \(userCollection[i].password)")
-            }
-        }
-    }
+//    //create a collection of users
+//    func setUsers(users:NSArray) {
+//        for user in users{
+//        
+//            //only create a user if the user's password is not nil
+//            if user["password"] != nil
+//            {
+//                let userObj = UserData(user: user)
+//                userCollection.append(userObj)
+//            }
+//        
+//            //for testing use
+//            for(var i = 0; i < userCollection.count; i += 1)
+//            {
+//                print("\(userCollection[i].email) : \(userCollection[i].password)")
+//            }
+//        }
+//    }
     
     
     //create the login pop up
@@ -119,20 +119,20 @@ class SidebarTableViewController: UITableViewController {
             
             let emailTextField = loginController.textFields![0] as UITextField
             let passwordTextField = loginController.textFields![1] as UITextField
-            
+            self.isValid(emailTextField.text!, password: passwordTextField.text!, loginController: loginController)
             //determine if login info is invalid or nah
-            if(!self.isValid(emailTextField.text!, password: passwordTextField.text!)) {
-                let message = self.invalidLoginMsg
-                loginController.title = message
-                self.presentViewController(loginController, animated: true, completion: nil)
-            }
-            else {
-                let successAlert = UIAlertController(title: self.successMsg, message: "", preferredStyle: UIAlertControllerStyle.Alert)
-                let okAction = UIAlertAction(title: self.okButtonLabel, style: UIAlertActionStyle.Default, handler: nil)
-                
-                successAlert.addAction(okAction)
-                self.presentViewController(successAlert, animated: true, completion: nil)
-            }
+//            if(self.isValid(emailTextField.text!, password: passwordTextField.text!, loginController) == false) {
+//                let message = self.invalidLoginMsg
+//                loginController.title = message
+//                self.presentViewController(loginController, animated: true, completion: nil)
+//            }
+//            else {
+//                let successAlert = UIAlertController(title: self.successMsg, message: "", preferredStyle: UIAlertControllerStyle.Alert)
+//                let okAction = UIAlertAction(title: self.okButtonLabel, style: UIAlertActionStyle.Default, handler: nil)
+//                
+//                successAlert.addAction(okAction)
+//                self.presentViewController(successAlert, animated: true, completion: nil)
+//            }
         }
         loginAction.enabled = false
         
@@ -178,13 +178,34 @@ class SidebarTableViewController: UITableViewController {
     
     //TO DO: use correct database method to validate login
     //check if the login is valid
-    func isValid(login: String, password: String) -> Bool
+    func isValid(login: String, password: String, loginController: UIAlertController)
     {
-        let ndx = userCollection.indexOf({$0.email == login})
-        return ndx != nil && userCollection[ndx!].password == password
+        let params = ["username":login, "password":password]
+
+        do{
+        
+            let body = try NSJSONSerialization.dataWithJSONObject(params, options: NSJSONWritingOptions.PrettyPrinted)
+        
+            DBClient.loginUser(body, completionHandler : {(success : Bool) in
+                //determine if login info is invalid or nah
+                if(success == false) {
+                    let message = self.invalidLoginMsg
+                    loginController.title = message
+                    self.presentViewController(loginController, animated: true, completion: nil)
+                }
+                else {
+                    let successAlert = UIAlertController(title: self.successMsg, message: "", preferredStyle: UIAlertControllerStyle.Alert)
+                    let okAction = UIAlertAction(title: self.okButtonLabel, style: UIAlertActionStyle.Default, handler: nil)
+                    
+                    successAlert.addAction(okAction)
+                    self.presentViewController(successAlert, animated: true, completion: nil)
+                }
+            
+            })
+        } catch {
+            print("did not work")
+        }
     }
-
     
-
-
 }
+

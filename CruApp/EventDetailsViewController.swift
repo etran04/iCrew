@@ -184,12 +184,6 @@ class EventDetailsViewController: UIViewController, UIPopoverPresentationControl
             } else {
                 createEvent(eventStore, title: name, startDate: startDate!, endDate: endDate!)
             }
-            //Alert if calendar sync was succesful
-            let alertController = UIAlertController(title: name, message:
-                "Event synced to calendar", preferredStyle: UIAlertControllerStyle.Alert)
-            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
-        
-            self.presentViewController(alertController, animated: true, completion: nil)
         }
     }
     
@@ -203,6 +197,12 @@ class EventDetailsViewController: UIViewController, UIPopoverPresentationControl
         event.calendar = eventStore.defaultCalendarForNewEvents
         do {
             try eventStore.saveEvent(event, span: .ThisEvent)
+            //Alert if calendar sync was succesful
+            let alertController = UIAlertController(title: title, message:
+                "Event synced to calendar", preferredStyle: UIAlertControllerStyle.Alert)
+            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+            
+            self.presentViewController(alertController, animated: true, completion: nil)
         } catch {
             print("Event was unable to be saved.")
         }

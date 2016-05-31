@@ -122,21 +122,25 @@ class SelectDriverTableViewController: UITableViewController {
 
         let cell = tableView.dequeueReusableCellWithIdentifier("SelectRideCell", forIndexPath: indexPath) as! SelectDriverTableViewCell
         cell.tableController = self
-        let driver = driverCollection[indexPath.row]
         
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
-        let date = dateFormatter.dateFromString(driver.departureTime)
-        dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
-        dateFormatter.timeStyle = .ShortStyle
-        let dateString = dateFormatter.stringFromDate(date!)
+        let driver = driverCollection[indexPath.row]
         
         cell.driverName.text = "Name: " + driver.name
         cell.driverNumber.text = "Phone Number: " + driver.phoneNumber
-        cell.depatureTime.text = "Departure Time: " + dateString
+        cell.depatureTime.text = "Departure Time: " + formatDate(driver.departureTime)
         cell.location.text = "Location: " + driver.street + ", " + driver.city + ", " + driver.state + ", " + driver.country + " " + driver.zipcode
 
         return cell
+    }
+    
+    func formatDate(inputDate : String) -> String {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+        let date = dateFormatter.dateFromString(inputDate)
+        dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
+        dateFormatter.timeStyle = .ShortStyle
+        let dateString = dateFormatter.stringFromDate(date!)
+        return dateString
     }
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation

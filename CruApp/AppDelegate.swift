@@ -83,6 +83,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GC
         
         // Integrates crashlytics
         Fabric.with([Crashlytics.self])
+        
+        // Hides the status bar at the top of the app. (One more criteria in Info.plist
+//        UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation: .Fade)
+
 
         return true
     }

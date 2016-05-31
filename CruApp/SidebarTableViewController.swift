@@ -27,6 +27,11 @@ class SidebarTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Changes color of the tableview
+//        self.tableView.backgroundColor = UIColor(red: 0, green: 115/255, blue: 152/255, alpha: 1.0)
+        
+        // A little trick for removing the cell separators
+        self.tableView.tableFooterView = UIView()
     }
 
     override func didReceiveMemoryWarning() {
@@ -48,14 +53,31 @@ class SidebarTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 75
+        return 60
     }
+    
+//    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+//        var cell: UITableViewCell
+//        if indexPath.row == 0 {
+//            cell = tableView.dequeueReusableCellWithIdentifier("EditMinistryCell")! as UITableViewCell
+//        } else if indexPath.row == 1 {
+//            cell = tableView.dequeueReusableCellWithIdentifier("EditCampusCell")! as UITableViewCell
+//        }
+//        else {
+//            cell = tableView.dequeueReusableCellWithIdentifier("LoginCell")! as UITableViewCell
+//
+//        }
+//        cell.backgroundColor = UIColor(red: 0, green: 115/255, blue: 152/255, alpha: 1.0)
+//        return cell
+//    }
     
     override func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int)
     {
         let header = view as! UITableViewHeaderFooterView
         header.textLabel?.font = UIFont(name: "FreightSansProMedium-Regular", size: 25)!
-        header.textLabel?.textColor = UIColor.blackColor()
+        header.textLabel?.textColor = UIColor(red: 98/255, green: 96/255, blue: 98/255, alpha: 1.0)
+        header.tintColor = UIColor.whiteColor()
+//        header.tintColor = UIColor(red: 0, green: 115/255, blue: 152/255, alpha: 1.0)
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

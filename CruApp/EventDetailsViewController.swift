@@ -42,22 +42,14 @@ class EventDetailsViewController: UIViewController, UIPopoverPresentationControl
         super.viewDidLoad()
         
         //Checks if user's google account is already identified
-        if let auth = GTMOAuth2ViewControllerTouch.authForGoogleFromKeychainForName(
-            keys.getKeyChain(),
-            clientID: keys.getClientID(),
-            clientSecret: keys.getSecret()) {
-                service.authorizer = auth
-        }
+        checkGoogleAccount()
         
         //load details
         loadEventDetails()
         loadButtons()
         
         //for scrolling
-        let screenWidth = UIScreen.mainScreen().bounds.width
-        let scrollHeight = eventDescr.frame.origin.y + eventDescr.frame.height
-        self.scrollView.contentSize = CGSizeMake(screenWidth, scrollHeight)
-        self.view.layoutIfNeeded()
+        scrollingCustomization()
     }
     
     override func didReceiveMemoryWarning() {
@@ -158,6 +150,8 @@ class EventDetailsViewController: UIViewController, UIPopoverPresentationControl
         }
     }
     
+    
+    
     //Triggered when calendar button is pressed, gets information to make event
     func syncCalendar(sender: UIButton!) {
         //let event = eventsCollection[Int(sender.titleLabel!.text!)!]
@@ -227,6 +221,25 @@ class EventDetailsViewController: UIViewController, UIPopoverPresentationControl
                 insertGoogleEvent(event.name, startDate: startDate!, endDate: endDate!, desc: event.description)
             }
         }
+    }
+    
+    //
+    func checkGoogleAccount() {
+        //Checks if user's google account is already identified
+        if let auth = GTMOAuth2ViewControllerTouch.authForGoogleFromKeychainForName(
+            keys.getKeyChain(),
+            clientID: keys.getClientID(),
+            clientSecret: keys.getSecret()) {
+            service.authorizer = auth
+        }
+    }
+    
+    func scrollingCustomization() {
+        //for scrolling
+        let screenWidth = UIScreen.mainScreen().bounds.width
+        let scrollHeight = eventDescr.frame.origin.y + eventDescr.frame.height
+        self.scrollView.contentSize = CGSizeMake(screenWidth, scrollHeight)
+        self.view.layoutIfNeeded()
     }
     
     //Insert a new event to Google Calendar

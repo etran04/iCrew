@@ -17,6 +17,7 @@ let gcm_id = appDelegate.registrationToken
 #endif
 
 class Utils {
+    
     static func parsePhoneNumber(phoneNum : String) -> String {
         // split by '-'
         let full = phoneNum.componentsSeparatedByString("-")
@@ -40,7 +41,10 @@ class Utils {
         return finalPhoneNum
         
     }
-    
+//    static func validPhoneNumber(phoneNum:String) -> Boolean {
+//        let full = phoneNum.componentsSeparatedByString("-")
+//        
+//    }
 }
 
 extension String {

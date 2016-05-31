@@ -48,7 +48,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GC
         GCMService.sharedInstance().startWithConfig(gcmConfig)
         
         //API key for Google Maps
-        GMSServices.provideAPIKey("AIzaSyCn66MiM73S-eiiA7MCip3YAAaYzvqe4Gk")
+        GMSServices.provideAPIKey("AIzaSyCLsWMvLiBIEh76VETPgd6fQkeLo0LIJ7g")
         
         initCoreDataModel()
         

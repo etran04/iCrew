@@ -45,6 +45,7 @@
 		1EB4053F1C63E87200220D5B /* GTL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EB4053E1C63E87200220D5B /* GTL.framework */; };
 		1EB405421C63E88A00220D5B /* GTLCalendar_Sources.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EB405401C63E88A00220D5B /* GTLCalendar_Sources.m */; };
 		1EB405441C63E89900220D5B /* GTMOAuth2ViewTouch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EB405431C63E89900220D5B /* GTMOAuth2ViewTouch.xib */; };
+		1EBD8D351CFD47CD00503DBD /* GoogleKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EBD8D341CFD47CD00503DBD /* GoogleKeys.swift */; };
 		1EE554901CF4F13800AE0391 /* google-calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EE5548F1CF4F13800AE0391 /* google-calendar.png */; };
 		271BDF631C0D538A0075A29E /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 271BDF541C0D53710075A29E /* Alamofire.framework */; };
 		271C273F1C93D0D400D8988D /* InitialMinistryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271C273E1C93D0D400D8988D /* InitialMinistryTests.swift */; };
@@ -283,6 +284,7 @@
 		1EB405401C63E88A00220D5B /* GTLCalendar_Sources.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTLCalendar_Sources.m; path = "google-api-objectivec-client/Source/Services/Calendar/Generated/GTLCalendar_Sources.m"; sourceTree = "<group>"; };
 		1EB405411C63E88A00220D5B /* GTLCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTLCalendar.h; path = "google-api-objectivec-client/Source/Services/Calendar/Generated/GTLCalendar.h"; sourceTree = "<group>"; };
 		1EB405431C63E89900220D5B /* GTMOAuth2ViewTouch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GTMOAuth2ViewTouch.xib; path = "google-api-objectivec-client/Deps/gtm-oauth2/Source/Touch/GTMOAuth2ViewTouch.xib"; sourceTree = SOURCE_ROOT; };
+		1EBD8D341CFD47CD00503DBD /* GoogleKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleKeys.swift; sourceTree = "<group>"; };
 		1EE5548F1CF4F13800AE0391 /* google-calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "google-calendar.png"; path = "images/google-calendar.png"; sourceTree = "<group>"; };
 		271BDF491C0D53710075A29E /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "frameworks/Alamofire-master/Alamofire.xcodeproj"; sourceTree = "<group>"; };
 		271C273E1C93D0D400D8988D /* InitialMinistryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialMinistryTests.swift; sourceTree = "<group>"; };
@@ -736,6 +738,7 @@
 				A40DD9AA1C0ED54F00BCFEC5 /* EventViewCell.swift */,
 				A4110B511C0FA44700F47AB4 /* Location.swift */,
 				A45572FA1C4A176F0097DE0F /* EventDetailsViewController.swift */,
+				1EBD8D341CFD47CD00503DBD /* GoogleKeys.swift */,
 			);
 			name = Events;
 			sourceTree = "<group>";
@@ -1183,6 +1186,7 @@
 				A441CE771C763AC400663057 /* SelectDriverTableViewCell.swift in Sources */,
 				07AF13CB1C748ACA004C28FA /* ToolsTableViewController.swift in Sources */,
 				A4110B521C0FA44700F47AB4 /* Location.swift in Sources */,
+				1EBD8D351CFD47CD00503DBD /* GoogleKeys.swift in Sources */,
 				A40DD9A41C0EC62F00BCFEC5 /* Mission.swift in Sources */,
 				83B1CB271C4886F700145B6D /* CampusCoreData.swift in Sources */,
 				83244B801C75AD9400D913A6 /* SidebarTableViewController.swift in Sources */,

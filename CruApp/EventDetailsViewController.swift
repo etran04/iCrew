@@ -30,9 +30,7 @@ class EventDetailsViewController: UIViewController, UIPopoverPresentationControl
     
     //Keys for accessing Google API
     //These will need to be changed upon release
-    private let kKeychainItemName = "Google Calendar API"
-    private let kClientID = "466090597779-cqphfvmo2focdg82kpm2rh5qg4u0vgkd.apps.googleusercontent.com"
-    private let kSecret = "fyM1MvYHSkXPl9plSlkYgYcw"
+    private let keys = GoogleKeys()
     private let scopes = [kGTLAuthScopeCalendar, "https://www.googleapis.com/auth/calendar"]
     private let service = GTLServiceCalendar()
     
@@ -45,9 +43,9 @@ class EventDetailsViewController: UIViewController, UIPopoverPresentationControl
         
         //Checks if user's google account is already identified
         if let auth = GTMOAuth2ViewControllerTouch.authForGoogleFromKeychainForName(
-            kKeychainItemName,
-            clientID: kClientID,
-            clientSecret: kSecret) {
+            keys.getKeyChain(),
+            clientID: keys.getClientID(),
+            clientSecret: keys.getSecret()) {
                 service.authorizer = auth
         }
         
@@ -276,9 +274,9 @@ class EventDetailsViewController: UIViewController, UIPopoverPresentationControl
         let scopeString = scopes.joinWithSeparator(" ")
         return GTMOAuth2ViewControllerTouch(
             scope: scopeString,
-            clientID: kClientID,
-            clientSecret: kSecret,
-            keychainItemName: kKeychainItemName,
+            clientID: keys.getClientID(),
+            clientSecret: keys.getSecret(),
+            keychainItemName: keys.getKeyChain(),
             delegate: self,
             finishedSelector: "viewController:finishedWithAuth:error:"
         )

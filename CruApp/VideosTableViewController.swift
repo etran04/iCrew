@@ -280,6 +280,25 @@ class VideosTableViewController: UITableViewController, UISearchBarDelegate, DZN
             }
         })
     }
+
+    /* Sprout method, pulled out functionality for creating new cells to insert into table as user scrolls */
+    func createRowsToInsertAndInsert() -> [NSIndexPath] {
+        // Get the last index of videos
+        let lastNdx = self.videos.count
+        var startReloadNdx = 0
+        if (lastNdx > 10) {
+            startReloadNdx = lastNdx - 10
+        }
+        
+        // Create indexPaths starting from startReloadNdx to end
+        var rowArr = [NSIndexPath]()
+        for var i = startReloadNdx; i < lastNdx; i++ {
+            let indexPath = NSIndexPath(forRow: i, inSection: 0)
+            rowArr.append(indexPath)
+        }
+        
+        return rowArr
+    }
     
     /* Retrieves the videos for the Cru Channel, and loads it into our table */
     func getVideosForChannelAtIndex(index: Int) -> Void {
@@ -351,19 +370,8 @@ class VideosTableViewController: UITableViewController, UISearchBarDelegate, DZN
                         }
                     }
                     
-                    // Get the last index of videos
-                    let lastNdx = self.videos.count
-                    var startReloadNdx = 0
-                    if (lastNdx > 10) {
-                        startReloadNdx = lastNdx - 10
-                    }
-                    
-                    // Create indexPaths starting from startReloadNdx to end
-                    var rowArr = [NSIndexPath]()
-                    for var i = startReloadNdx; i < lastNdx; i++ {
-                        let indexPath = NSIndexPath(forRow: i, inSection: 0)
-                        rowArr.append(indexPath)
-                    }
+                    // Create rows to insert starting from the last index of the tableview
+                    let rowArr = self.createRowsToInsertAndInsert()
                 
                     // Reload the tableview.
                     self.tableView.beginUpdates()

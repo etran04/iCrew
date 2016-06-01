@@ -645,7 +645,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Event name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="4n6-T4-K44">
-                                                    <rect key="frame" x="8" y="8" width="90" height="21"/>
+                                                    <rect key="frame" x="28" y="8" width="90" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.24313725490196078" green="0.69411764705882351" blue="0.78431372549019607" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -657,19 +657,19 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Departure location 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="pci-G9-JsI">
-                                                    <rect key="frame" x="25" y="49" width="157" height="21"/>
+                                                    <rect key="frame" x="45" y="49" width="157" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.38431372549999998" green="0.37647058820000001" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Driver@Cell number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="aTO-bg-Bq6">
-                                                    <rect key="frame" x="8" y="70" width="158" height="21"/>
+                                                    <rect key="frame" x="28" y="70" width="158" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.45098039220000002" blue="0.59607843140000005" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Departure location 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="3gW-Br-lP8">
-                                                    <rect key="frame" x="25" y="29" width="155" height="21"/>
+                                                    <rect key="frame" x="45" y="29" width="155" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.38431372549019605" green="0.37647058823529411" blue="0.38431372549019605" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -677,10 +677,10 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailingMargin" secondItem="wR2-Ul-MA5" secondAttribute="trailing" id="3gX-Mw-xt0"/>
-                                                <constraint firstItem="3gW-Br-lP8" firstAttribute="leading" secondItem="O47-Do-931" secondAttribute="leadingMargin" constant="17" id="EWX-O7-wmU"/>
-                                                <constraint firstAttribute="leadingMargin" secondItem="4n6-T4-K44" secondAttribute="leading" id="PsN-or-fSg"/>
-                                                <constraint firstItem="pci-G9-JsI" firstAttribute="leading" secondItem="O47-Do-931" secondAttribute="leadingMargin" constant="17" id="dlp-eM-EFp"/>
-                                                <constraint firstAttribute="leadingMargin" secondItem="aTO-bg-Bq6" secondAttribute="leading" id="npN-zY-lxR"/>
+                                                <constraint firstItem="3gW-Br-lP8" firstAttribute="leading" secondItem="O47-Do-931" secondAttribute="leadingMargin" constant="37" id="EWX-O7-wmU"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="4n6-T4-K44" secondAttribute="leading" constant="-20" id="PsN-or-fSg"/>
+                                                <constraint firstItem="pci-G9-JsI" firstAttribute="leading" secondItem="O47-Do-931" secondAttribute="leadingMargin" constant="37" id="dlp-eM-EFp"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="aTO-bg-Bq6" secondAttribute="leading" constant="-20" id="npN-zY-lxR"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>

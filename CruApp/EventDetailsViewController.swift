@@ -189,6 +189,10 @@ class EventDetailsViewController: UIViewController, UIPopoverPresentationControl
         event.calendar = eventStore.defaultCalendarForNewEvents
         do {
             try eventStore.saveEvent(event, span: .ThisEvent)
+            
+            // Saves a reminder for the iOS device
+            self.scheduleLocal(title, startDate: startDate)
+            
             //Alert if calendar sync was succesful
             let alertController = UIAlertController(title: title, message:
                 "Event synced to calendar", preferredStyle: UIAlertControllerStyle.Alert)
@@ -198,6 +202,29 @@ class EventDetailsViewController: UIViewController, UIPopoverPresentationControl
         } catch {
             print("Event was unable to be saved.")
         }
+    }
+    
+    /* Schedules the local notification for the event */
+    func scheduleLocal(eventName: String, startDate: NSDate) {
+        let settings = UIApplication.sharedApplication().currentUserNotificationSettings()
+        
+        if settings!.types == .None {
+            let ac = UIAlertController(title: "Can't schedule", message: "Either we don't have permission to schedule notifications, or we haven't asked yet.", preferredStyle: .Alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+            presentViewController(ac, animated: true, completion: nil)
+            return
+        }
+        
+        // Gets the NSDate three days prior to the event start date
+        let threeDaysPrior = NSCalendar.currentCalendar().dateByAddingUnit(.Day, value: -3, toDate: startDate, options:NSCalendarOptions(rawValue: 0))
+        
+        let notification = UILocalNotification()
+        notification.fireDate = threeDaysPrior
+        notification.alertBody = "You have " + eventName + " in 3 days!"
+        notification.alertAction = "Get ready!"
+        notification.soundName = UILocalNotificationDefaultSoundName
+        notification.userInfo = ["CustomField1": "w00t"]
+        UIApplication.sharedApplication().scheduleLocalNotification(notification)
     }
     
     //Sync event to Google Calendar, check for authorization

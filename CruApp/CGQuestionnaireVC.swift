@@ -17,12 +17,14 @@ class CGQuestionnaireVC: UIViewController, UIPickerViewDataSource, UIPickerViewD
     
     var ministriesCollection: [MinistryData] = []
     var pickerData: [String] = []
-    
+    var selectedMinistry: MinistryData?
+    var ministryId = ""
+    var questionCount = 0
 
     @IBOutlet weak var dayPicker: MWSegmentedControl!
     
     @IBOutlet weak var ministryPicker: UIPickerView!
-    var selectedMinistry: String = ""
+    var selectedMinistryName: String = ""
 
     
     override func viewDidLoad() {
@@ -30,49 +32,55 @@ class CGQuestionnaireVC: UIViewController, UIPickerViewDataSource, UIPickerViewD
         self.ministryPicker.dataSource = self;
         self.ministryPicker.delegate = self;
         
+        
+        
         ministriesCollection = UserProfile.getMinistries();
         
         for ministry in ministriesCollection {
             pickerData.append(ministry.name)
         }
         
-        selectedMinistry = pickerData[0]
-        
+        selectedMinistryName = pickerData[0]
+        selectedMinistry = ministriesCollection[0]
     }
     
     
     @IBAction func nextButtonTransition(sender: AnyObject) {
+        DBClient.getData("ministryquestions", dict: setQuestions)
+        
+    }
+    
+    //obtain information from the database to an Object
+    func setQuestions(questions: NSArray) {
+        self.questionCount = 0
+        for question in questions {
+            if let ministryId = question["ministry"] as! String? {
+                if (ministryId == self.selectedMinistry!.id && question["type"] as! String == "select") {
+                    self.questionCount += 1
+                }
+            }
+        }
+        
+        if (self.questionCount == 0) {
+            let storyboard = UIStoryboard(name: "GetInvolved", bundle: nil)
+            let controller = storyboard.instantiateViewControllerWithIdentifier("joinCGTVC") as! JoinCommunityGroupTVC
+            
+            controller.selectedMinistry = selectedMinistry
+            self.navigationController?.pushViewController(controller, animated: true)
+            
+            return
+        }
+        
         let controller = QuestionController()
         
         for ministry in ministriesCollection {
-            if (selectedMinistry == ministry.name) {
-                controller.selectedMinistryId = ministry.id
-                
+            if (selectedMinistryName == ministry.name) {
+                controller.selectedMinistry = ministry
+                selectedMinistry = ministry
             }
         }
         
         self.navigationController?.pushViewController(controller, animated: true)
-        
-    }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
-
-                
-//        let joinCG = segue.destinationViewController as!  JoinCommunityGroupTVC
-//        joinCG.days = selectedDaysToInt()
-//        joinCG.selectedMinistry = ministriesCollection[ministryPicker.selectedRowInComponent(0)]
-        
-//        let moreQuestions = segue.destinationViewController as!  QuestionController
-//        for ministry in ministriesCollection {
-//            if (selectedMinistry == ministry.name) {
-//                moreQuestions.selectedMinistryId = ministry.id
-//                
-//            }
-//        }
-        
-        
-        
     }
     
     func selectedDaysToInt() -> [Int]{
@@ -120,7 +128,8 @@ class CGQuestionnaireVC: UIViewController, UIPickerViewDataSource, UIPickerViewD
     }
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        selectedMinistry = pickerData[row]
+        selectedMinistryName = pickerData[row]
+        selectedMinistry = ministriesCollection[row]
     }
 
 

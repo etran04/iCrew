@@ -44,17 +44,22 @@ class DriverSelectedViewController: UIViewController {
             }
         }
         
-        driverName.text = "Driver's Name: " + driver.name
-        driverNumber.text = "Driver's Phone Number: " + driver.phoneNumber
-        successLabel.font = UIFont.boldSystemFontOfSize(24)
-        successLabel.font = successLabel.font.fontWithSize(20)
+        driverName.text = driver.name
+        driverNumber.text = driver.phoneNumber
+        successLabel.font = UIFont.boldSystemFontOfSize(50)
+        successLabel.font = successLabel.font.fontWithSize(60)
+        eventName.font = eventName.font.fontWithSize(24)
+        driverName.font = driverName.font.fontWithSize(24)
+        driverNumber.font = driverNumber.font.fontWithSize(24)
+        departureTime.font = departureTime.font.fontWithSize(24)
+        driverContactInfoLabel.font = driverContactInfoLabel.font.fontWithSize(24)
         
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
         let date = dateFormatter.dateFromString(driver.departureTime)
         dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
         dateFormatter.timeStyle = .ShortStyle
-        departureTime.text = "Departure Time: " + dateFormatter.stringFromDate(date!)
+        departureTime.text = dateFormatter.stringFromDate(date!)
     }
     
     @IBAction func submitPressed(sender: UIButton) {

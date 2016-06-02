@@ -169,18 +169,29 @@ class SummerMissionsViewController: UITableViewController, DZNEmptyDataSetSource
             var missionObj = Mission(name: name, description: description, cost: cost, location: location, startDate: startDate, endDate: endDate, url: url, leaders: leaders)
             
             if (image != "") {
-                if let data = NSData(contentsOfURL: NSURL(string: image)!) {
-                    missionObj.displayingImage = UIImage(data: data)
-                    missionObj.displayingGroupImage = UIImage(data:data)
+                if let imageUrl = NSURL(string: image) {
+                    NSURLSession.sharedSession().dataTaskWithURL(imageUrl, completionHandler: {(data, response, error) in
+                        dispatch_async(dispatch_get_main_queue()) { () -> Void in
+                            guard let data = data where error == nil else { return }
+                            missionObj.displayingImage = UIImage(data: data)
+                            missionObj.displayingGroupImage = UIImage(data: data)
+                        }
+                    }).resume()
                 }
             } else {
                 missionObj.displayingImage = UIImage(named: "CruIcon")
                 missionObj.displayingGroupImage = UIImage(named: "CruIcon")
             }
+            missionObj.imageUrl = image
             
             if (groupImage != "") {
-                if let data = NSData(contentsOfURL: NSURL(string: groupImage)!) {
-                    missionObj.displayingGroupImage = UIImage(data: data)
+                if let imageUrl = NSURL(string: groupImage) {
+                    NSURLSession.sharedSession().dataTaskWithURL(imageUrl, completionHandler: {(data, response, error) in
+                        dispatch_async(dispatch_get_main_queue()) { () -> Void in
+                            guard let data = data where error == nil else { return }
+                            missionObj.displayingGroupImage = UIImage(data: data)
+                        }
+                    }).resume()
                 }
             }
             
@@ -228,6 +239,17 @@ class SummerMissionsViewController: UITableViewController, DZNEmptyDataSetSource
             
             if let image = mission.displayingImage {
                 cell.missionImage.image = image
+            }
+            else {
+                if let imageUrl = NSURL(string: mission.imageUrl) {
+                    NSURLSession.sharedSession().dataTaskWithURL(imageUrl, completionHandler: {(data, response, error) in
+                        dispatch_async(dispatch_get_main_queue()) { () -> Void in
+                            guard let data = data where error == nil else { return }
+                            self.missionsCollection[indexPath.row].displayingImage = UIImage(data: data)
+                            cell.missionImage.image = UIImage(data: data)
+                        }
+                    }).resume()
+                }
             }
             
             //date formatting

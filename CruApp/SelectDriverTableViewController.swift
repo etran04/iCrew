@@ -56,9 +56,15 @@ class SelectDriverTableViewController: UITableViewController {
             if(driver["direction"]! != nil) {
                 direction = driver["direction"] as! String
             }
-            
-            let zipcode = driver["location"]?!.objectForKey("postcode") as! String
-            let state = driver["location"]?!.objectForKey("state") as! String
+            var zipcode = ""
+            print(driver["location"])
+            if(driver["location"]?!.objectForKey("postcode") != nil) {
+                zipcode = driver["location"]?!.objectForKey("postcode") as! String
+            }
+            var state = ""
+            if(driver["location"]?!.objectForKey("postcode") != nil) {
+                state = driver["location"]?!.objectForKey("state") as! String
+            }
             var city = ""
             
             if(driver["location"]?!.objectForKey("suburb") != nil) {
@@ -70,8 +76,10 @@ class SelectDriverTableViewController: UITableViewController {
             
                 street = driver["location"]?!.objectForKey("street1") as! String
             }
-            
-            let country = driver["location"]?!.objectForKey("country") as! String
+            var country = ""
+            if(driver["location"]?!.objectForKey("country") != nil) {
+                country = driver["location"]?!.objectForKey("country") as! String
+            }
         
             let dateFormatter = NSDateFormatter()
             dateFormatter.locale = NSLocale(localeIdentifier: "en_US")

@@ -206,7 +206,7 @@ class PassengerQuestionnaireVC: UIViewController, UITableViewDelegate, UITableVi
                 phoneNumber: riderPhoneNum,
                 direction: rideDirection,
                 departureTime: time,
-                gcmId: gcm_id)
+                gcmId: gcm_id!)
         
             let selectDriverViewController = segue.destinationViewController as! SelectDriverTableViewController
             selectDriverViewController.passenger = passenger

@@ -182,7 +182,7 @@ class SelectDriverTableViewController: UITableViewController, DZNEmptyDataSetSou
                 "name": passenger.name,
                 "direction": passenger.direction,
                 "phone": passenger.phoneNumber,
-                "gcm_id" : gcm_id
+                "gcm_id" : gcm_id! as String
             ]
             
             do {

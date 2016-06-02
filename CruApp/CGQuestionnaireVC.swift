@@ -32,7 +32,7 @@ class CGQuestionnaireVC: UIViewController, UIPickerViewDataSource, UIPickerViewD
         
         ministriesCollection = UserProfile.getMinistries();
         
-        for ministry in  ministriesCollection {
+        for ministry in ministriesCollection {
             pickerData.append(ministry.name)
         }
         

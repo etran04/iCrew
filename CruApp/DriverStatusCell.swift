@@ -10,6 +10,8 @@ import UIKit
 
 class DriverStatusCell: UITableViewCell {
 
+    @IBOutlet weak var departureDate: UILabel!
+    @IBOutlet weak var departLoc3: UILabel!
     @IBOutlet weak var departLoc2: UILabel!
     @IBOutlet weak var departLoc1: UILabel!
     @IBOutlet weak var departureTime: UILabel!

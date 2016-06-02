@@ -191,18 +191,19 @@ class EventsViewController: UITableViewController, DZNEmptyDataSetDelegate, DZNE
             var eventObj = Event(name: name, startDate: startDate, endDate: endDate, location: location, image: image, imageSq: imageSq, description: description, url: url, rideShareFlag: rideShareEnabled)
             
             // Caches the square image of event
-            if(imageSq == "") {
+            if (imageSq == "") {
                 eventObj.displayingImage = UIImage(named: "CruSquareIcon")
             } else {
+                
                 if let imageUrl = NSURL(string: eventObj.imageSq!) {
-                    if let data = NSData(contentsOfURL: imageUrl) {
-                        eventObj.displayingImage = UIImage(data: data)
-                    }
+                    NSURLSession.sharedSession().dataTaskWithURL(imageUrl, completionHandler: {(data, response, error) in
+                        dispatch_async(dispatch_get_main_queue()) { () -> Void in
+                            guard let data = data where error == nil else { return }
+                            eventObj.displayingImage = UIImage(data: data)
+                        }
+                    }).resume()
                 }
             }
-            
-            
-        
             eventsCollection.append(eventObj)
         }
         
@@ -235,6 +236,17 @@ class EventsViewController: UITableViewController, DZNEmptyDataSetDelegate, DZNE
         
         if let image = event.displayingImage {
             cell.eventImage.image = image
+        }
+        else {
+            if let imageUrl = NSURL(string: event.imageSq!) {
+                NSURLSession.sharedSession().dataTaskWithURL(imageUrl, completionHandler: {(data, response, error) in
+                    dispatch_async(dispatch_get_main_queue()) { () -> Void in
+                        guard let data = data where error == nil else { return }
+                        self.eventsCollection[indexPath.row].displayingImage = UIImage(data: data)
+                        cell.eventImage.image = UIImage(data: data)
+                    }
+                }).resume()
+            }
         }
         
         //date formatting

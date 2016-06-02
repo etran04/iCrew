@@ -20,6 +20,7 @@ struct Mission {
     var leaders: String
     var displayingImage: UIImage?
     var displayingGroupImage: UIImage?
+    var imageUrl: String
     
     init(name: String, description: String, cost: Int, location: Location, startDate: String, endDate: String, url: String, leaders: String) {
         self.name = name
@@ -32,6 +33,7 @@ struct Mission {
         self.leaders = leaders
         self.displayingImage = nil
         self.displayingGroupImage = nil
+        self.imageUrl = ""
     }
 }
 

@@ -11,17 +11,16 @@ import UIKit
 class RideshareMainVC: UIViewController, SWRevealViewControllerDelegate {
 
     @IBOutlet weak var swiftPagesView: SwiftPages!
-    
     @IBOutlet weak var menuButton: UIBarButtonItem!
+    
+    let VCIDs : [String] = ["OfferedVC", "RequestedVC"]
+    let buttonTitles : [String] = ["Offered Rides", "Requested Rides"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let VCIDs : [String] = ["OfferedVC", "RequestedVC"]
-        let buttonTitles : [String] = ["Offered Rides", "Requested Rides"]
+        self.revealViewController().delegate = self
         
         swiftPagesView.initializeWithVCIDsArrayAndButtonTitlesArray(VCIDs, buttonTitlesArray: buttonTitles)
-        self.revealViewController().delegate = self
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -30,6 +29,7 @@ class RideshareMainVC: UIViewController, SWRevealViewControllerDelegate {
             self.menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
+        swiftPagesView.initializeWithVCIDsArrayAndButtonTitlesArray(VCIDs, buttonTitlesArray: buttonTitles)
     }
     
     //reveal controller function for disabling the current view

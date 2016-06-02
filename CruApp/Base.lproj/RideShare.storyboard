@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="APQ-AE-Llv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="APQ-AE-Llv">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
@@ -360,7 +360,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Request Ride" id="DWk-u5-Vxq">
-                        <barButtonItem key="rightBarButtonItem" title="Submit" id="j6u-eP-oQQ">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Submit" id="j6u-eP-oQQ">
                             <connections>
                                 <segue destination="WiO-dx-ez4" kind="show" id="Lpt-oP-5pe"/>
                             </connections>
@@ -371,6 +371,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="infoTable" destination="uQw-6j-pn4" id="JaU-vc-PWi"/>
+                        <outlet property="submitButton" destination="j6u-eP-oQQ" id="joQ-x7-Lo5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b9E-xm-yyE" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -233,7 +233,8 @@ class DriverQuestionnaireVC: UIViewController, UITableViewDelegate, UITableViewD
         }
         let numSeatsChoice = Int((cells[4] as! AvailNumSeatCell).stepper.value)
         
-        let time = String((cells[3] as! DatePickerCell).datePicker.date);
+        let time = String((cells[3] as! DatePickerCell).datePicker.date)
+        let timeString = (cells[3] as! DatePickerCell).rightLabel.text
         
         let event = eventIds[(cells[2] as! ScrollPickerCell).scrollPicker.selectedRowInComponent(0)]
         let eventName = (cells[2] as! ScrollPickerCell).rightLabel.text
@@ -241,7 +242,8 @@ class DriverQuestionnaireVC: UIViewController, UITableViewDelegate, UITableViewD
         //makes sure info is filled before being submitted
         print("event: " + eventName!)
         print("name: " + driverName!)
-        if(driverPhoneNum.isEmpty || driverName == nil || driverName!.isEmpty || eventName == "Choose an event" || time.isEmpty || street!.isEmpty) {
+        print("time" + timeString!)
+        if(driverPhoneNum.isEmpty || driverName!.isEmpty || eventName == "Choose an event" || timeString == "Choose the ideal time" || street!.isEmpty) {
 
             let alertController = UIAlertController(title: "ERROR", message:
                 "Please fill out form before submitting.", preferredStyle: UIAlertControllerStyle.Alert)

@@ -8,7 +8,7 @@
 
 import Foundation
 
-#if TARGET_OS_SIMULATOR
+#if (arch(i386) || arch(x86_64)) && os(iOS)
     //simulator
 let gcm_id = "1234567"
 #else

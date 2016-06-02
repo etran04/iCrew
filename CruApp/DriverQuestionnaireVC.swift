@@ -29,6 +29,7 @@ class DriverQuestionnaireVC: UIViewController, UITableViewDelegate, UITableViewD
     
     @IBOutlet weak var infoTable: UITableView!
     
+    @IBOutlet weak var submitButton: UIBarButtonItem!
     // Present the Autocomplete view controller when the button is pressed.
     @IBAction func autocompleteClicked(sender: AnyObject) {
         let autocompleteController = GMSAutocompleteViewController()
@@ -234,10 +235,13 @@ class DriverQuestionnaireVC: UIViewController, UITableViewDelegate, UITableViewD
         
         let time = String((cells[3] as! DatePickerCell).datePicker.date);
         
-        let event = eventIds[(cells[2] as! ScrollPickerCell).scrollPicker.selectedRowInComponent(0)];
+        let event = eventIds[(cells[2] as! ScrollPickerCell).scrollPicker.selectedRowInComponent(0)]
+        let eventName = (cells[2] as! ScrollPickerCell).rightLabel.text
         
         //makes sure info is filled before being submitted
-        if(driverPhoneNum.isEmpty || driverName == nil || event.isEmpty || time.isEmpty || street!.isEmpty) {
+        print("event: " + eventName!)
+        print("name: " + driverName!)
+        if(driverPhoneNum.isEmpty || driverName == nil || driverName!.isEmpty || eventName == "Choose an event" || time.isEmpty || street!.isEmpty) {
 
             let alertController = UIAlertController(title: "ERROR", message:
                 "Please fill out form before submitting.", preferredStyle: UIAlertControllerStyle.Alert)
@@ -246,6 +250,7 @@ class DriverQuestionnaireVC: UIViewController, UITableViewDelegate, UITableViewD
             self.presentViewController(alertController, animated: true, completion: nil)
             
         } else {
+            
         
             let location : [String: AnyObject] =
             [
@@ -408,7 +413,7 @@ extension DriverQuestionnaireVC: GMSAutocompleteViewControllerDelegate {
         }
         
         street = streetNumber! + " " + streetName!
-        
+        self.submitButton.enabled = true
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     

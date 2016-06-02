@@ -133,10 +133,21 @@ class SelectDriverTableViewController: UITableViewController {
         
         let driver = driverCollection[indexPath.row]
         
-        cell.driverName.text = "Name: " + driver.name
-        cell.driverNumber.text = "Phone Number: " + driver.phoneNumber
-        cell.depatureTime.text = "Departure Time: " + formatDate(driver.departureTime)
-        cell.location.text = "Location: " + driver.street + ", " + driver.city + ", " + driver.state + ", " + driver.country + " " + driver.zipcode
+        
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+        let date = dateFormatter.dateFromString(driver.departureTime)
+        dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
+        dateFormatter.timeStyle = .ShortStyle
+        
+        var dateAndTime = dateFormatter.stringFromDate(date!).componentsSeparatedByString(",")
+        cell.departureDate.text = dateAndTime[0]
+        cell.depatureTime.text = dateAndTime[1]
+        
+        cell.driverName.text = driver.name
+        cell.driverNumber.text = driver.phoneNumber
+        cell.location.text = driver.street + ", "
+        cell.location2.text = driver.city + ", " + driver.state + ", " + driver.country + " " + driver.zipcode
 
         return cell
     }

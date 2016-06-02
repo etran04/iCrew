@@ -46,8 +46,8 @@ class DriverSelectedViewController: UIViewController {
         
         driverName.text = "Driver's Name: " + driver.name
         driverNumber.text = "Driver's Phone Number: " + driver.phoneNumber
-        successLabel.font = UIFont.boldSystemFontOfSize(24)
-        successLabel.font = successLabel.font.fontWithSize(20)
+        successLabel.font = UIFont.boldSystemFontOfSize(50)
+        successLabel.font = successLabel.font.fontWithSize(60)
         
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"

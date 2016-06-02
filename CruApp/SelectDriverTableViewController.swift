@@ -156,7 +156,7 @@ class SelectDriverTableViewController: UITableViewController {
                 "name": passenger.name,
                 "direction": passenger.direction,
                 "phone": passenger.phoneNumber,
-                "gcm_id" : gcm_id!
+                "gcm_id" : gcm_id
             ]
             
             do {

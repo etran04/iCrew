@@ -27,11 +27,11 @@ class OfferedRidesVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.tableview.dataSource = self
         self.tableview.separatorStyle = .SingleLine
         self.tableview.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        
-        self.fetchStatuses()
     }
     
     override func viewDidAppear(animated: Bool) {
+        self.fetchStatuses()
+        
         // Replaces the extra cells at the end with a clear view
         self.tableview.tableFooterView = UIView(frame: CGRect.zero)
     }
@@ -122,9 +122,9 @@ class OfferedRidesVC: UIViewController, UITableViewDelegate, UITableViewDataSour
                 country = "N/A"
             }
             
+            let location2 = city + ", " + state
             
-            
-            let location2 = city + ", " + state + ", " + country + " " + zipcode
+            let location3 = country + " " + zipcode
             
             
             for pssngr in passengers{
@@ -134,7 +134,7 @@ class OfferedRidesVC: UIViewController, UITableViewDelegate, UITableViewDataSour
                         
                         //if user is a passenger
                         if(gcm_id == data.gcmId) {
-                            let passengerObj = Passenger(rideId:rideId, passengerId:pssngr, eventId:event, departureTime:time, departureLoc1: street, departureLoc2: location2, driverNumber:driverNumber, driverName:driverName)
+                            let passengerObj = Passenger(rideId:rideId, passengerId:pssngr, eventId:event, departureTime:time, departureLoc1: street, departureLoc2: location2, departureLoc3: location3, driverNumber:driverNumber, driverName:driverName)
                             passengerCollection.append(passengerObj)
                         }
                     }
@@ -143,18 +143,19 @@ class OfferedRidesVC: UIViewController, UITableViewDelegate, UITableViewDataSour
             
             //if user is a driver
             if(gcm_id == gcmId) {
-                let rideObj = Driver(rideId:rideId, eventId:event, departureTime:time, departureLoc1:street, departureLoc2:location2, availableSeats:availableSeats, passengers:passengersInfo)
+                let rideObj = Driver(rideId:rideId, eventId:event, departureTime:time, departureLoc1:street, departureLoc2:location2, departureLoc3: location3, availableSeats:availableSeats, passengers:passengersInfo)
                 driverCollection.append(rideObj)
             }
         }
-        
-        SwiftLoader.hide()
         
         // Sets up the controller to display notification screen if no ridesharing can be accessed
         self.tableview.emptyDataSetSource = self;
         self.tableview.emptyDataSetDelegate = self;
         
         self.tableview.reloadData()
+        
+        SwiftLoader.hide()
+
     }
     
     /* Helper function for filling in driver cell with its information */
@@ -173,11 +174,16 @@ class OfferedRidesVC: UIViewController, UITableViewDelegate, UITableViewDataSour
         let date = dateFormatter.dateFromString(driver.departureTime)
         dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
         dateFormatter.timeStyle = .ShortStyle
-        cell.departureTime.text = "Departure on " + dateFormatter.stringFromDate(date!)
+        
+        var dateAndTime = dateFormatter.stringFromDate(date!).componentsSeparatedByString(",")
+        cell.departureDate.text = dateAndTime[0]
+        cell.departureTime.text = dateAndTime[1]
+        
         cell.departLoc1.text = driver.departureLoc1
         cell.departLoc2.text = driver.departureLoc2
+        cell.departLoc3.text = driver.departureLoc3
         
-        cell.numSeats.text = String(driver.availableSeats) + " seats free"
+        cell.numSeats.text = String(driver.availableSeats) + " seats"
     }
     
     // MARK: - Table view data source

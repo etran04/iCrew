@@ -38,8 +38,10 @@ class OfferedRidesVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func fetchStatuses() {
         SwiftLoader.show(title: "Loading...", animated: true)
+        
         driverCollection = [Driver]()
         passengerCollection = [Passenger]()
+        
         DBClient.getData("events", dict: setEvents)
     }
 
@@ -197,7 +199,6 @@ class OfferedRidesVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     /* Dynamically size the number of rows to match the number of statuses we have */
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return driverCollection.count
-//        return 1
     }
     
     /* Loads each individual cell in the table with a offered status */
@@ -235,8 +236,8 @@ class OfferedRidesVC: UIViewController, UITableViewDelegate, UITableViewDataSour
             message = "No passengers at this time."
         }
     
-        let alert = UIAlertController(title: "Current ride!", message: message, preferredStyle: .Alert)
-        alert.addAction(UIAlertAction(title: "Okay", style: .Default) { _ in })
+        let alert = UIAlertController(title: "Current passengers:", message: message, preferredStyle: .Alert)
+        alert.addAction(UIAlertAction(title: "Got it!", style: .Default) { _ in })
         alert.addAction(UIAlertAction(title: "Cancel Ride", style: .Default) { _ in self.cancelDriver(indexPath.row)})
         self.presentViewController(alert, animated: true){}
     }

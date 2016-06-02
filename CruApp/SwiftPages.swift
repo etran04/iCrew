@@ -3,6 +3,7 @@
 //  SwiftPages
 //
 //  Created by Gabriel Alvarado on 6/27/15.
+//  Edited by Eric Tran on 6/1/16.
 //  Copyright (c) 2015 Gabriel Alvarado. All rights reserved.
 //
 
@@ -28,7 +29,7 @@ public class SwiftPages: UIView {
     
     // Container view position variables
     private var xOrigin: CGFloat = 0
-    private var yOrigin: CGFloat = 0
+    private var yOrigin: CGFloat = 64
     private var distanceToBottom: CGFloat = 0
     
     // Color variables
@@ -246,10 +247,10 @@ public class SwiftPages: UIView {
 //
 //            if (className == "CruApp.OfferedRidesVC") {
 //                let tempVC = pageViews[page] as! OfferedRidesVC
-//                tempVC.fetchStatuses()
+//                tempVC.viewDidAppear(true)
 //            } else if (className == "CruApp.RequestedRidesVC") {
 //                let tempVC = pageViews[page] as! RequestedRidesVC
-//                tempVC.fetchStatuses()
+//                tempVC.tableview.reloadData()
 //            }
             return
         }
@@ -313,7 +314,7 @@ public class SwiftPages: UIView {
         
         // Set the new frame of the scrollview contents
         for (index, controller) in pageViews.enumerate() {
-            controller?.view.frame = CGRect(x: CGFloat(index) * scrollView.bounds.size.width, y: 0, width: scrollView.bounds.size.width, height: scrollView.bounds.size.height)
+            controller?.view.frame = CGRect(x: CGFloat(index) * scrollView.bounds.size.width, y: -self.topBarHeight, width: scrollView.bounds.size.width, height: scrollView.bounds.size.height)
         }
         
         // Set the new frame for the top bar buttons
@@ -337,7 +338,7 @@ public class SwiftPages: UIView {
     func orientationDidChange() {
         //Update the view
         alignSubviews()
-        scrollView.contentOffset = CGPoint(x: CGFloat(currentPage) * scrollView.frame.size.width, y: 0)
+        scrollView.contentOffset = CGPoint(x: CGFloat(currentPage) * scrollView.frame.size.width, y: -self.topBarHeight)
     }
     
     // MARK: - ScrollView delegate -

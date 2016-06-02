@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="APQ-AE-Llv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="APQ-AE-Llv">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
@@ -360,7 +360,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Request Ride" id="DWk-u5-Vxq">
-                        <barButtonItem key="rightBarButtonItem" title="Submit" id="j6u-eP-oQQ">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Submit" id="j6u-eP-oQQ">
                             <connections>
                                 <segue destination="WiO-dx-ez4" kind="show" id="Lpt-oP-5pe"/>
                             </connections>
@@ -371,6 +371,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="infoTable" destination="uQw-6j-pn4" id="JaU-vc-PWi"/>
+                        <outlet property="submitButton" destination="j6u-eP-oQQ" id="joQ-x7-Lo5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b9E-xm-yyE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -580,27 +581,27 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Departure location 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="BGK-Bs-5ww">
-                                                    <rect key="frame" x="28" y="37" width="155" height="21"/>
+                                                    <rect key="frame" x="28" y="37" width="278" height="21"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="155" id="3Ty-hw-6UV"/>
+                                                        <constraint firstAttribute="width" constant="278" id="3Ty-hw-6UV"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.38431372549999998" green="0.37647058820000001" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Departure location 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="2gb-XW-Vfg">
-                                                    <rect key="frame" x="28" y="55" width="157" height="21"/>
+                                                    <rect key="frame" x="28" y="55" width="278" height="21"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="157" id="gLc-5j-PPI"/>
+                                                        <constraint firstAttribute="width" constant="278" id="gLc-5j-PPI"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.38431372549999998" green="0.37647058820000001" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Departure location 3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="z2Y-kS-k4b" userLabel="Depart Loc3">
-                                                    <rect key="frame" x="28" y="73" width="157" height="21"/>
+                                                    <rect key="frame" x="28" y="73" width="219" height="21"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="157" id="ANA-mV-ZOX"/>
+                                                        <constraint firstAttribute="width" constant="219" id="ANA-mV-ZOX"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.38431372549999998" green="0.37647058820000001" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -694,9 +695,9 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Departure location 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="pci-G9-JsI">
-                                                    <rect key="frame" x="28" y="55" width="157" height="21"/>
+                                                    <rect key="frame" x="28" y="55" width="277" height="21"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="157" id="beX-o6-YwB"/>
+                                                        <constraint firstAttribute="width" constant="277" id="beX-o6-YwB"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.38431372549999998" green="0.37647058820000001" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -712,16 +713,19 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Departure location 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="3gW-Br-lP8">
-                                                    <rect key="frame" x="28" y="37" width="157" height="21"/>
+                                                    <rect key="frame" x="28" y="37" width="277" height="21"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="157" id="jIy-17-hIV"/>
+                                                        <constraint firstAttribute="width" constant="277" id="jIy-17-hIV"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.38431372549019605" green="0.37647058823529411" blue="0.38431372549019605" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Driver@Cell number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="aTO-bg-Bq6">
-                                                    <rect key="frame" x="193" y="73" width="158" height="21"/>
+                                                    <rect key="frame" x="199" y="73" width="152" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="152" id="s6k-rr-JLs"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.45098039220000002" blue="0.59607843140000005" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -734,7 +738,6 @@
                                                 <constraint firstAttribute="leadingMargin" secondItem="4n6-T4-K44" secondAttribute="leading" constant="-20" id="PsN-or-fSg"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="aTO-bg-Bq6" secondAttribute="trailing" constant="16" id="U7O-iq-6Bg"/>
                                                 <constraint firstItem="pci-G9-JsI" firstAttribute="leading" secondItem="O47-Do-931" secondAttribute="leadingMargin" constant="20" id="dlp-eM-EFp"/>
-                                                <constraint firstAttribute="leadingMargin" secondItem="aTO-bg-Bq6" secondAttribute="leading" constant="-20" id="npN-zY-lxR"/>
                                                 <constraint firstItem="WMJ-YA-Fee" firstAttribute="leading" secondItem="O47-Do-931" secondAttribute="leadingMargin" constant="20" id="pMD-s0-a8q"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -977,7 +980,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Offer Ride" id="97i-4E-GXh">
-                        <barButtonItem key="rightBarButtonItem" title="Submit" id="RON-SO-say">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Submit" id="RON-SO-say">
                             <connections>
                                 <action selector="submitPressed:" destination="XGh-21-Tdj" id="hx6-lB-39U"/>
                             </connections>
@@ -988,6 +991,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="infoTable" destination="VBG-sP-A4d" id="kqn-Ef-hbx"/>
+                        <outlet property="submitButton" destination="RON-SO-say" id="Qsp-H4-QA0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Srr-N0-UzC" userLabel="First Responder" sceneMemberID="firstResponder"/>

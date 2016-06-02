@@ -39,6 +39,7 @@ class OfferedRidesVC: UIViewController, UITableViewDelegate, UITableViewDataSour
     func fetchStatuses() {
         SwiftLoader.show(title: "Loading...", animated: true)
         driverCollection = [Driver]()
+        passengerCollection = [Passenger]()
         DBClient.getData("events", dict: setEvents)
     }
 

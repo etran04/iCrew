@@ -28,11 +28,11 @@ public class SwiftPages: UIView {
     
     // Container view position variables
     private var xOrigin: CGFloat = 0
-    private var yOrigin: CGFloat = 64
+    private var yOrigin: CGFloat = 0
     private var distanceToBottom: CGFloat = 0
     
     // Color variables
-    private var animatedBarColor = UIColor(red: 28/255, green: 95/255, blue: 185/255, alpha: 1)
+    private var animatedBarColor = UIColor(red: 0/255, green: 115/255, blue: 152/255, alpha: 1)
     private var topBarBackground = UIColor.whiteColor()
     private var buttonsTextColor = UIColor.grayColor()
     private var containerViewBackground = UIColor.whiteColor()
@@ -208,7 +208,7 @@ public class SwiftPages: UIView {
             self.loadVisiblePages()
             
             // Do the initial alignment of the subViews
-            self.alignSubviews()
+            //self.alignSubviews()
         }
     }
     
@@ -287,16 +287,11 @@ public class SwiftPages: UIView {
     
     public func barButtonAction(sender: UIButton?) {
         
-        var index: Int!
-        if (sender != nil) {
-            index = sender!.tag
-        } else {
-            index = 0
-        }
+        let index = sender!.tag
         
         let pagesScrollViewSize = scrollView.frame.size
         
-        scrollView.setContentOffset(CGPoint(x: pagesScrollViewSize.width * CGFloat(index), y: 0), animated: true)
+        scrollView.setContentOffset(CGPoint(x: pagesScrollViewSize.width * CGFloat(index), y: -self.topBarHeight), animated: true)
         
         currentPage = index
     }

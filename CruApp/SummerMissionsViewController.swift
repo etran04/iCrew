@@ -185,13 +185,8 @@ class SummerMissionsViewController: UITableViewController, DZNEmptyDataSetSource
             missionObj.imageUrl = image
             
             if (groupImage != "") {
-                if let imageUrl = NSURL(string: groupImage) {
-                    NSURLSession.sharedSession().dataTaskWithURL(imageUrl, completionHandler: {(data, response, error) in
-                        dispatch_async(dispatch_get_main_queue()) { () -> Void in
-                            guard let data = data where error == nil else { return }
-                            missionObj.displayingGroupImage = UIImage(data: data)
-                        }
-                    }).resume()
+                if let data = NSData(contentsOfURL: NSURL(string: groupImage)!) {
+                    missionObj.displayingGroupImage = UIImage(data: data)
                 }
             }
             

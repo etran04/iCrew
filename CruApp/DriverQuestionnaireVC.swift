@@ -272,7 +272,7 @@ class DriverQuestionnaireVC: UIViewController, UITableViewDelegate, UITableViewD
                 "event": event,
                 "driverName": driverName!,
                 "time": time,
-                "gcm_id" : gcm_id!
+                "gcm_id" : gcm_id
             ]
 
             do {

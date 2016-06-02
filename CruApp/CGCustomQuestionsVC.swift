@@ -14,21 +14,22 @@ struct Question {
     var selectedAnswerIndex: Int?
 }
 
-var questionsList: [Question] = [Question(questionString: "What is your favorite type of food?", answers: ["Sandwiches", "Pizza", "Seafood", "Unagi"], selectedAnswerIndex: nil), Question(questionString: "What do you do for a living?", answers: ["Paleontologist", "Actor", "Chef", "Waitress"], selectedAnswerIndex: nil), Question(questionString: "Were you on a break?", answers: ["Yes", "No"], selectedAnswerIndex: nil)]
+//var questionsList: [Question] = [Question(questionString: "What is your favorite type of food?", answers: ["Sandwiches", "Pizza", "Seafood", "Unagi"], selectedAnswerIndex: nil), Question(questionString: "What do you do for a living?", answers: ["Paleontologist", "Actor", "Chef", "Waitress"], selectedAnswerIndex: nil), Question(questionString: "Were you on a break?", answers: ["Yes", "No"], selectedAnswerIndex: nil)]
 
-//var questionsList = [QuestionData]()
+var questionsList = [QuestionData]()
 
 
 class QuestionController: UITableViewController {
     
-    var selectedMinistry = String()
+    var selectedMinistryId: String = ""
     let cellId = "cellId"
     let headerId = "headerId"
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(selectedMinistryId)
 
-        //DBClient.getData("ministryquestions", dict: setQuestions)
+        DBClient.getData("ministryquestions", dict: setQuestions)
         
         navigationItem.title = "Question"
         
@@ -45,32 +46,30 @@ class QuestionController: UITableViewController {
     }
     
     //obtain information from the database to an Object
-//    func setQuestions(questions: NSArray) {
-//        print("setting questions")
-//        
-//        //self.tableView.beginUpdates()
-//        for question in questions {
-//            print("blah")
-//            if(selectedMinistry == question["ministry"] as! String){
-//                let questionObj = QuestionData(ministry: selectedMinistry, question: question["question"]! as! String, type: question["type"] as! String, options: question["selectOptions"] as! [String])
-//                questionsList.append(questionObj)
-//            }
-//            
-//            
-//            
-//          }
-//        
-//        self.tableView.reloadData()
-//    }
+    func setQuestions(questions: NSArray) {
+        
+        for question in questions {
+            if(selectedMinistryId == question["ministry"] as! String && question["type"] as! String == "select"){
+                print("check")
+                let questionObj = QuestionData(ministry: selectedMinistryId, question: question["question"]! as! String, type: question["type"] as! String, options: question["selectOptions"] as! [NSDictionary])
+                questionsList.append(questionObj)
+            }
+            
+        }
+        
+        //print(questionsList[0].question)
+        self.tableView.reloadData()
+    }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        if let index = navigationController?.viewControllers.indexOf(self) {
-            let question = questionsList[index - 2]
-            if let count = question.answers?.count {
-                return count
+        if(questionsList.count > 0) {
+        
+            if let index = navigationController?.viewControllers.indexOf(self) {
+                print(index)
+                let question = questionsList[index - 2]  //index
+                return question.options.count
             }
-
         }
         return 0
     }
@@ -78,9 +77,13 @@ class QuestionController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(cellId, forIndexPath: indexPath) as! AnswerCell
         
-        if let index = navigationController?.viewControllers.indexOf(self) {
-            let question = questionsList[index - 2]
-            cell.nameLabel.text = question.answers?[indexPath.row]
+        if(questionsList.count > 0) {
+            if let index = navigationController?.viewControllers.indexOf(self) {
+                let question = questionsList[index - 2]
+                let dict = question.options[indexPath.row] as NSDictionary
+                let option = dict["value"] as! String
+                cell.nameLabel.text = option
+            }
         }
         
         return cell
@@ -90,10 +93,12 @@ class QuestionController: UITableViewController {
                             viewForHeaderInSection section: Int) -> UIView? {
         let header = tableView.dequeueReusableHeaderFooterViewWithIdentifier(headerId) as! QuestionHeader
         
-        if let index = navigationController?.viewControllers.indexOf(self) {
-            let question = questionsList[index - 2]
-            header.nameLabel.text = question.questionString
-            
+        if(questionsList.count > 0) {
+            if let index = navigationController?.viewControllers.indexOf(self) {
+                let question = questionsList[index - 2]
+                header.nameLabel.text = question.question
+                
+            }
         }
         
         return header
@@ -126,10 +131,10 @@ class QuestionController: UITableViewController {
         //        joinCG.selectedMinistry = ministriesCollection[ministryPicker.selectedRowInComponent(0)]
         
         let moreQuestions = segue.destinationViewController as!  QuestionController
-        moreQuestions.selectedMinistry = selectedMinistry
+        moreQuestions.selectedMinistryId = selectedMinistryId
         
         let results = segue.destinationViewController as!  ResultsController
-        results.selectedMinistry = selectedMinistry
+        results.selectedMinistry = selectedMinistryId
         
     }
     
@@ -164,12 +169,12 @@ class ResultsController: UIViewController {
         let names = ["Ross", "Joey", "Chandler", "Monica", "Rachel", "Phoebe"]
         
         var score = 0
-        for question in questionsList {
-            if let ndx = question.selectedAnswerIndex {
-                score += ndx
-            }
-            
-        }
+//        for question in questionsList {
+//            if let ndx = question.selectedAnswerIndex {
+//                score += ndx
+//            }
+        
+//        }
         
         let result = names[score % names.count]
         resultsLabel.text = "Congratulations, you're a total \(result)!"

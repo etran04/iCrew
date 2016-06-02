@@ -186,7 +186,7 @@ class RequestedRidesVC: UIViewController, UITableViewDelegate, UITableViewDataSo
     /* Dynamically size the number of rows to match the number of statuses we have */
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return passengerCollection.count
-//        return 3
+//        return 1
     }
     
     /* Loads each individual cell in the table with a offered status */
@@ -199,7 +199,41 @@ class RequestedRidesVC: UIViewController, UITableViewDelegate, UITableViewDataSo
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        cancelPassenger(indexPath.row)
         tableview.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+    
+    /* Callback for when a cancel button is pressed in a passenger cell. Input is the row of the cell at which it's pressed */
+    func cancelPassenger(row: Int) {
+        let titleMsg = "Would you like to cancel this ride?"
+        let msg = "Are you sure you want to cancel your spot in this ride?"
+        
+        let confirmDialog = UIAlertController(title: titleMsg, message: msg, preferredStyle: .Alert)
+        let okAction = UIAlertAction(title: "Confirm", style: .Default) { (UIAlertAction) -> Void in
+            //            let params = ["ride_id": self.passengerCollection[row].rideId, "passenger_id": self.passengerCollection[row].passengerId]
+            let rideId = self.passengerCollection[row].rideId
+            let passengerId = self.passengerCollection[row].passengerId
+            //            do {
+            //                let body = try NSJSONSerialization.dataWithJSONObject(params, options: NSJSONWritingOptions.PrettyPrinted)
+            //                DBClient.deleteData("rides/dropPassenger", body:body)
+            
+            DBClient.deleteData("rides/" + rideId + "/passengers/" + passengerId)
+            self.passengerCollection.removeAtIndex(row)
+            
+            
+            self.tableview.reloadData()
+            //
+            //            } catch {
+            //                print("Error sending data to database")
+            //            }
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Default, handler: nil)
+        
+        confirmDialog.addAction(okAction)
+        confirmDialog.addAction(cancelAction)
+        
+        self.presentViewController(confirmDialog, animated: true, completion: nil)
     }
     
     // MARK: - DZN Empty data set methods

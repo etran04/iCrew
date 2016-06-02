@@ -42,22 +42,14 @@ class EventDetailsViewController: UIViewController, UIPopoverPresentationControl
         super.viewDidLoad()
         
         //Checks if user's google account is already identified
-        if let auth = GTMOAuth2ViewControllerTouch.authForGoogleFromKeychainForName(
-            keys.getKeyChain(),
-            clientID: keys.getClientID(),
-            clientSecret: keys.getSecret()) {
-                service.authorizer = auth
-        }
+        checkGoogleAccount()
         
         //load details
         loadEventDetails()
         loadButtons()
         
         //for scrolling
-        let screenWidth = UIScreen.mainScreen().bounds.width
-        let scrollHeight = eventDescr.frame.origin.y + eventDescr.frame.height
-        self.scrollView.contentSize = CGSizeMake(screenWidth, scrollHeight)
-        self.view.layoutIfNeeded()
+        scrollingCustomization()
     }
     
     override func didReceiveMemoryWarning() {
@@ -158,6 +150,8 @@ class EventDetailsViewController: UIViewController, UIPopoverPresentationControl
         }
     }
     
+    
+    
     //Triggered when calendar button is pressed, gets information to make event
     func syncCalendar(sender: UIButton!) {
         //let event = eventsCollection[Int(sender.titleLabel!.text!)!]
@@ -195,6 +189,10 @@ class EventDetailsViewController: UIViewController, UIPopoverPresentationControl
         event.calendar = eventStore.defaultCalendarForNewEvents
         do {
             try eventStore.saveEvent(event, span: .ThisEvent)
+            
+            // Saves a reminder for the iOS device
+            self.scheduleLocal(title, startDate: startDate)
+            
             //Alert if calendar sync was succesful
             let alertController = UIAlertController(title: title, message:
                 "Event synced to calendar", preferredStyle: UIAlertControllerStyle.Alert)
@@ -204,6 +202,29 @@ class EventDetailsViewController: UIViewController, UIPopoverPresentationControl
         } catch {
             print("Event was unable to be saved.")
         }
+    }
+    
+    /* Schedules the local notification for the event */
+    func scheduleLocal(eventName: String, startDate: NSDate) {
+        let settings = UIApplication.sharedApplication().currentUserNotificationSettings()
+        
+        if settings!.types == .None {
+            let ac = UIAlertController(title: "Can't schedule", message: "Either we don't have permission to schedule notifications, or we haven't asked yet.", preferredStyle: .Alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+            presentViewController(ac, animated: true, completion: nil)
+            return
+        }
+        
+        // Gets the NSDate three days prior to the event start date
+        let threeDaysPrior = NSCalendar.currentCalendar().dateByAddingUnit(.Day, value: -3, toDate: startDate, options:NSCalendarOptions(rawValue: 0))
+        
+        let notification = UILocalNotification()
+        notification.fireDate = threeDaysPrior
+        notification.alertBody = "You have " + eventName + " in 3 days!"
+        notification.alertAction = "Get ready!"
+        notification.soundName = UILocalNotificationDefaultSoundName
+        notification.userInfo = ["CustomField1": "w00t"]
+        UIApplication.sharedApplication().scheduleLocalNotification(notification)
     }
     
     //Sync event to Google Calendar, check for authorization
@@ -227,6 +248,25 @@ class EventDetailsViewController: UIViewController, UIPopoverPresentationControl
                 insertGoogleEvent(event.name, startDate: startDate!, endDate: endDate!, desc: event.description)
             }
         }
+    }
+    
+    //
+    func checkGoogleAccount() {
+        //Checks if user's google account is already identified
+        if let auth = GTMOAuth2ViewControllerTouch.authForGoogleFromKeychainForName(
+            keys.getKeyChain(),
+            clientID: keys.getClientID(),
+            clientSecret: keys.getSecret()) {
+            service.authorizer = auth
+        }
+    }
+    
+    func scrollingCustomization() {
+        //for scrolling
+        let screenWidth = UIScreen.mainScreen().bounds.width
+        let scrollHeight = eventDescr.frame.origin.y + eventDescr.frame.height
+        self.scrollView.contentSize = CGSizeMake(screenWidth, scrollHeight)
+        self.view.layoutIfNeeded()
     }
     
     //Insert a new event to Google Calendar

@@ -162,7 +162,7 @@ class RequestedRidesVC: UIViewController, UITableViewDelegate, UITableViewDataSo
         number = number.insert("(", ind: 0)
         number = number.insert(") ", ind: 4)
         number = number.insert(" - ", ind: 9)
-        cell.driversCell.text = passenger.driverName + "@" + number
+        cell.driversCell.text = passenger.driverName + " @ " + number
         
         cell.departLoc1.text = passenger.departureLoc1
         cell.departLoc2.text = passenger.departureLoc2
@@ -173,7 +173,10 @@ class RequestedRidesVC: UIViewController, UITableViewDelegate, UITableViewDataSo
         let date = dateFormatter.dateFromString(passenger.departureTime)
         dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
         dateFormatter.timeStyle = .ShortStyle
-        cell.departureTime.text = dateFormatter.stringFromDate(date!)
+        
+        var dateAndTime = dateFormatter.stringFromDate(date!).componentsSeparatedByString(",")
+        cell.departureDate.text = dateAndTime[0]
+        cell.departureTime.text = dateAndTime[1]
         
     }
     
@@ -186,15 +189,15 @@ class RequestedRidesVC: UIViewController, UITableViewDelegate, UITableViewDataSo
     
     /* Dynamically size the number of rows to match the number of statuses we have */
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return passengerCollection.count
-        return 1
+        return passengerCollection.count
+//        return 1
     }
     
     /* Loads each individual cell in the table with a offered status */
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell: UITableViewCell
         cell = tableview.dequeueReusableCellWithIdentifier("RequestStatusCell", forIndexPath: indexPath) as! RiderStatusCell
-//        populatePassengerCell(indexPath, cell: cell as! RiderStatusCell)
+        populatePassengerCell(indexPath, cell: cell as! RiderStatusCell)
         
         return cell
     }

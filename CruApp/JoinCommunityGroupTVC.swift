@@ -30,22 +30,24 @@ class JoinCommunityGroupTVC: UITableViewController {
         
     }
     
-    
     //obtain information from the database to an Object
     func setCommunityGroups(communityGroups: NSArray) {
 
         for communityGroup in communityGroups {
             let ministryId = communityGroup["ministry"] as! String
-            
+            let leaders = ["John Smith", "Alex Park"]
+            var meetingTime = "NA"
             
             //go through the community groups,
             //if the community group is in the selected ministry,
             //and it is during the available day of the week
             //add it to the cgCollection
-            if ministryId == selectedMinistry.id
-                && days.contains(getDayOfWeek(communityGroup["meetingTime"] as! String)!){
-                
-                let cgObj = CommunityGroupData(id: communityGroup["_id"] as! String, name: communityGroup["name"] as! String , ministryId: communityGroup["ministry"] as! String, time: communityGroup["meetingTime"] as! String, leaders: communityGroup["leaders"] as! [String])
+            if !(communityGroup["meetingTime"] is NSNull) && (communityGroup["meetingTime"] as! String?) != nil {
+                meetingTime = communityGroup["meetingTime"] as! String
+            }
+            
+            if ministryId == selectedMinistry.id {
+                let cgObj = CommunityGroupData(id: communityGroup["_id"] as! String, name: communityGroup["name"] as! String , ministryId: communityGroup["ministry"] as! String, time: meetingTime, leaders: leaders)
                 cgCollection.append(cgObj)
             }
         }
@@ -111,6 +113,7 @@ class JoinCommunityGroupTVC: UITableViewController {
         for index in selectedIndices {
             UserProfile.addCommunityGroup(cgCollection[index])
         }
+        print("got here")
     }
     
     

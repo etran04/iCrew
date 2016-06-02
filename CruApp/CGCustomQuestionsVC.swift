@@ -21,13 +21,12 @@ var questionsList = [QuestionData]()
 
 class QuestionController: UITableViewController {
     
-    var selectedMinistryId: String = ""
+    var selectedMinistry: MinistryData!
     let cellId = "cellId"
     let headerId = "headerId"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(selectedMinistryId)
 
         DBClient.getData("ministryquestions", dict: setQuestions)
         
@@ -41,22 +40,34 @@ class QuestionController: UITableViewController {
         
         tableView.sectionHeaderHeight = 50
         tableView.tableFooterView = UIView()
-
         
     }
     
     //obtain information from the database to an Object
     func setQuestions(questions: NSArray) {
+        questionsList = [QuestionData]()
         
         for question in questions {
-            if(selectedMinistryId == question["ministry"] as! String && question["type"] as! String == "select"){
-                print("check")
-                let questionObj = QuestionData(ministry: selectedMinistryId, question: question["question"]! as! String, type: question["type"] as! String, options: question["selectOptions"] as! [NSDictionary])
-                questionsList.append(questionObj)
+            if let ministryId = question["ministry"] as! String? {
+                if (selectedMinistry.id == question["ministry"] as! String
+                    && question["type"] as! String == "select") {
+                    let questionObj = QuestionData(ministry: selectedMinistry.id, question: question["question"]! as! String, type: question["type"] as! String, options: question["selectOptions"] as! [NSDictionary])
+                    questionsList.append(questionObj)
+                }
             }
             
         }
         
+    
+        if (questionsList.count == 0) {
+            let storyboard = UIStoryboard(name: "GetInvolved", bundle: nil)
+            let controller = storyboard.instantiateViewControllerWithIdentifier("joinCGTVC") as! JoinCommunityGroupTVC
+            
+            controller.selectedMinistry = selectedMinistry
+            self.navigationController?.pushViewController(controller, animated: true)
+            
+            return
+        }
         //print(questionsList[0].question)
         self.tableView.reloadData()
     }
@@ -66,7 +77,6 @@ class QuestionController: UITableViewController {
         if(questionsList.count > 0) {
         
             if let index = navigationController?.viewControllers.indexOf(self) {
-                print(index)
                 let question = questionsList[index - 2]  //index
                 return question.options.count
             }
@@ -108,35 +118,39 @@ class QuestionController: UITableViewController {
         
         if let index = navigationController?.viewControllers.indexOf(self) {
             questionsList[index-2].selectedAnswerIndex = indexPath.item
-
+            print("questions = \(questionsList.count)")
             print(index)
             if index - 2 < questionsList.count - 1 {
                 let questionController = QuestionController()
+                questionController.selectedMinistry = selectedMinistry
                 self.navigationController?.pushViewController(questionController, animated: true)
 
             } else {
-                let controller = ResultsController()
+                let storyboard = UIStoryboard(name: "GetInvolved", bundle: nil)
+                let controller = storyboard.instantiateViewControllerWithIdentifier("joinCGTVC") as! JoinCommunityGroupTVC
+                
+                controller.selectedMinistry = selectedMinistry
                 self.navigationController?.pushViewController(controller, animated: true)
             }
         }
     }
     
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
-        
-        
-        //        let joinCG = segue.destinationViewController as!  JoinCommunityGroupTVC
-        //        joinCG.days = selectedDaysToInt()
-        //        joinCG.selectedMinistry = ministriesCollection[ministryPicker.selectedRowInComponent(0)]
-        
-        let moreQuestions = segue.destinationViewController as!  QuestionController
-        moreQuestions.selectedMinistryId = selectedMinistryId
-        
-        let results = segue.destinationViewController as!  ResultsController
-        results.selectedMinistry = selectedMinistryId
-        
-    }
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        
+//        
+//        
+//        //        let joinCG = segue.destinationViewController as!  JoinCommunityGroupTVC
+//        //        joinCG.days = selectedDaysToInt()
+//        //        joinCG.selectedMinistry = ministriesCollection[ministryPicker.selectedRowInComponent(0)]
+//        
+//        let moreQuestions = segue.destinationViewController as!  QuestionController
+//        moreQuestions.selectedMinistryId = selectedMinistryId
+//        
+//        let results = segue.destinationViewController as!  ResultsController
+//        results.selectedMinistry = selectedMinistry.id
+//        
+//    }
     
 }
 

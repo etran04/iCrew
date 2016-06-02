@@ -20,6 +20,7 @@ class Passenger {
     var departureTime: String
     var departureLoc1: String
     var departureLoc2: String
+    var departureLoc3: String
     var driverName: String
     var driverNumber: String
     
@@ -34,6 +35,7 @@ class Passenger {
         self.rideId = ""
         self.departureLoc1 = ""
         self.departureLoc2 = ""
+        self.departureLoc3 = ""
         self.driverName = ""
         self.driverNumber = ""
     }
@@ -49,18 +51,20 @@ class Passenger {
         self.departureTime = ""
         self.departureLoc1 = ""
         self.departureLoc2 = ""
+        self.departureLoc3 = ""
         self.driverName = ""
         self.driverNumber = ""
         self.rideId = ""
     }
     
-    init(rideId:String, passengerId:String, eventId:String, departureTime:String, departureLoc1:String, departureLoc2:String, driverNumber:String, driverName:String) {
+    init(rideId:String, passengerId:String, eventId:String, departureTime:String, departureLoc1:String, departureLoc2:String, departureLoc3: String, driverNumber:String, driverName:String) {
         self.rideId = rideId
         self.passengerId = passengerId
         self.eventId = eventId
         self.departureTime = departureTime
         self.departureLoc1 = departureLoc1
         self.departureLoc2 = departureLoc2
+        self.departureLoc3 = departureLoc3
         self.driverNumber = driverNumber
         self.driverName = driverName
         self.phoneNumber = ""

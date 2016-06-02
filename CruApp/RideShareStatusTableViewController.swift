@@ -132,8 +132,8 @@ class RideShareStatusTableViewController: UITableViewController, DZNEmptyDataSet
                         
                         //if user is a passenger
                         if(gcm_id == data.gcmId) {
-                            let passengerObj = Passenger(rideId:rideId, passengerId:pssngr, eventId:event, departureTime:time, departureLoc1: street, departureLoc2: location2, driverNumber:driverNumber, driverName:driverName)
-                            passengerCollection.append(passengerObj)
+//                            let passengerObj = Passenger(rideId:rideId, passengerId:pssngr, eventId:event, departureTime:time, departureLoc1: street, departureLoc2: location2, driverNumber:driverNumber, driverName:driverName)
+//                            passengerCollection.append(passengerObj)
                         }
                     }
                 }
@@ -141,8 +141,8 @@ class RideShareStatusTableViewController: UITableViewController, DZNEmptyDataSet
             
             //if user is a driver
             if(gcm_id == gcmId) {
-                let rideObj = Driver(rideId:rideId, eventId:event, departureTime:time, departureLoc1:street, departureLoc2:location2, availableSeats:availableSeats, passengers:passengersInfo)
-                driverCollection.append(rideObj)
+//                let rideObj = Driver(rideId:rideId, eventId:event, departureTime:time, departureLoc1:street, departureLoc2:location2, availableSeats:availableSeats, passengers:passengersInfo)
+//                driverCollection.append(rideObj)
             }
         }
         

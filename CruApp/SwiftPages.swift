@@ -239,10 +239,10 @@ public class SwiftPages: UIView {
         // If it's outside the range of what you have to display, then do nothing
         guard page >= 0 && page < viewControllerIDs.count else { return }
         
-        // Do nothing if the view is already loaded.
-        guard pageViews[page] == nil else { return }
+//        // Do nothing if the view is already loaded.
+//        guard pageViews[page] == nil else { return }
         
-        print("Loading Page \(page)")
+//        print("Loading Page \(page)")
         
         // The pageView instance is nil, create the page
         var frame = scrollView.bounds
@@ -286,6 +286,8 @@ public class SwiftPages: UIView {
         scrollView.setContentOffset(CGPoint(x: pagesScrollViewSize.width * CGFloat(index), y: 0), animated: true)
         
         currentPage = index
+//        
+//        loadPage(index)
     }
     
     // MARK: - Orientation Handling Functions -

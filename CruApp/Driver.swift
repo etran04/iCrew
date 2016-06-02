@@ -23,6 +23,7 @@ class Driver {
     var city: String
     var departureLoc1: String
     var departureLoc2: String
+    var departureLoc3: String
     var passengers = [Passenger]()
     
     
@@ -39,16 +40,18 @@ class Driver {
         self.city = city
         self.departureLoc1 = ""
         self.departureLoc2 = ""
+        self.departureLoc3 = ""
         self.passengers = []
         self.availableSeats = 0
     }
     
-    init(rideId:String, eventId:String, departureTime:String, departureLoc1: String, departureLoc2:String, availableSeats:Int, passengers:[Passenger]) {
+    init(rideId:String, eventId:String, departureTime:String, departureLoc1: String, departureLoc2:String, departureLoc3: String, availableSeats:Int, passengers:[Passenger]) {
         self.rideId = rideId
         self.eventId = eventId
         self.departureTime = departureTime
         self.departureLoc1 = departureLoc1
         self.departureLoc2 = departureLoc2
+        self.departureLoc3 = departureLoc3
         self.availableSeats = availableSeats
         self.passengers += passengers
         self.state = ""

@@ -56,9 +56,15 @@ class SelectDriverTableViewController: UITableViewController {
             if(driver["direction"]! != nil) {
                 direction = driver["direction"] as! String
             }
-            
-            let zipcode = driver["location"]?!.objectForKey("postcode") as! String
-            let state = driver["location"]?!.objectForKey("state") as! String
+            var zipcode = ""
+            print(driver["location"])
+            if(driver["location"]?!.objectForKey("postcode") != nil) {
+                zipcode = driver["location"]?!.objectForKey("postcode") as! String
+            }
+            var state = ""
+            if(driver["location"]?!.objectForKey("postcode") != nil) {
+                state = driver["location"]?!.objectForKey("state") as! String
+            }
             var city = ""
             
             if(driver["location"]?!.objectForKey("suburb") != nil) {
@@ -70,8 +76,10 @@ class SelectDriverTableViewController: UITableViewController {
             
                 street = driver["location"]?!.objectForKey("street1") as! String
             }
-            
-            let country = driver["location"]?!.objectForKey("country") as! String
+            var country = ""
+            if(driver["location"]?!.objectForKey("country") != nil) {
+                country = driver["location"]?!.objectForKey("country") as! String
+            }
         
             let dateFormatter = NSDateFormatter()
             dateFormatter.locale = NSLocale(localeIdentifier: "en_US")
@@ -125,10 +133,21 @@ class SelectDriverTableViewController: UITableViewController {
         
         let driver = driverCollection[indexPath.row]
         
-        cell.driverName.text = "Name: " + driver.name
-        cell.driverNumber.text = "Phone Number: " + driver.phoneNumber
-        cell.depatureTime.text = "Departure Time: " + formatDate(driver.departureTime)
-        cell.location.text = "Location: " + driver.street + ", " + driver.city + ", " + driver.state + ", " + driver.country + " " + driver.zipcode
+        
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+        let date = dateFormatter.dateFromString(driver.departureTime)
+        dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
+        dateFormatter.timeStyle = .ShortStyle
+        
+        var dateAndTime = dateFormatter.stringFromDate(date!).componentsSeparatedByString(",")
+        cell.departureDate.text = dateAndTime[0]
+        cell.depatureTime.text = dateAndTime[1]
+        
+        cell.driverName.text = driver.name
+        cell.driverNumber.text = driver.phoneNumber
+        cell.location.text = driver.street + ", "
+        cell.location2.text = driver.city + ", " + driver.state + ", " + driver.country + " " + driver.zipcode
 
         return cell
     }

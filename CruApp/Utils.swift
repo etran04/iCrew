@@ -19,30 +19,47 @@ let gcm_id = appDelegate.registrationToken
 class Utils {
     
     static func parsePhoneNumber(phoneNum : String) -> String {
-        // split by '-'
-        let full = phoneNum.componentsSeparatedByString("-")
-        let left = full[0]
-        let right = full[1]
+//        // split by '-'
+//        let full = phoneNum.componentsSeparatedByString("-")
+//        let left = full[0]
+//        let right = full[1]
+//        
+//        // get area code from ()
+//        var index1 = left.startIndex.advancedBy(1)
+//        let delFirstParen = left.substringFromIndex(index1)
+//        let index2 = delFirstParen.startIndex.advancedBy(3)
+//        let areaCode = delFirstParen.substringToIndex(index2)
+//        
+//        // get first three digits
+//        index1 = left.startIndex.advancedBy(6)
+//        let threeDigits = left.substringFromIndex(index1)
+//        
+//        // get last four digits
+//        // = right
+//        
+//        let finalPhoneNum = areaCode + threeDigits + right
         
-        // get area code from ()
-        var index1 = left.startIndex.advancedBy(1)
-        let delFirstParen = left.substringFromIndex(index1)
-        let index2 = delFirstParen.startIndex.advancedBy(3)
-        let areaCode = delFirstParen.substringToIndex(index2)
+        let phoneArray = phoneNum.componentsSeparatedByCharactersInSet(
+            NSCharacterSet.decimalDigitCharacterSet().invertedSet)
         
-        // get first three digits
-        index1 = left.startIndex.advancedBy(6)
-        let threeDigits = left.substringFromIndex(index1)
+        let phoneString = phoneArray.joinWithSeparator("")
         
-        // get last four digits
-        // = right
-        
-        let finalPhoneNum = areaCode + threeDigits + right
-        return finalPhoneNum
+        if(phoneString.characters.count != 10) {
+            return ""
+        }
+
+        return phoneString
         
     }
-//    static func validPhoneNumber(phoneNum:String) -> Boolean {
-//        let full = phoneNum.componentsSeparatedByString("-")
+//    static func validPhoneNumberFormat(phoneNum:String) -> Boolean {
+//        let phoneString = phoneNum.componentsSeparatedByCharactersInSet(
+//            NSCharacterSet
+//                .decimalDigitCharacterSet()
+//                .invertedSet)
+//            .joinWithSeparator("")
+//        
+//        if(phoneString.)
+//
 //        
 //    }
 }

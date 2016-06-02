@@ -12,10 +12,12 @@ class SelectDriverTableViewCell: UITableViewCell {
 
     @IBOutlet weak var cardView: UIView!
     @IBOutlet weak var driverNumber: UILabel!
+    @IBOutlet weak var departureDate: UILabel!
     @IBOutlet weak var driverName: UILabel!
     @IBOutlet weak var depatureTime: UILabel!
     @IBOutlet weak var location: UILabel!
     @IBOutlet weak var viewMapButton: UIButton!
+    @IBOutlet weak var location2: UILabel!
     
     /* Reference to the parent table view controller */
     var tableController : UITableViewController

@@ -3,6 +3,7 @@
 //  SwiftPages
 //
 //  Created by Gabriel Alvarado on 6/27/15.
+//  Edited by Eric Tran on 6/1/16.
 //  Copyright (c) 2015 Gabriel Alvarado. All rights reserved.
 //
 
@@ -32,7 +33,7 @@ public class SwiftPages: UIView {
     private var distanceToBottom: CGFloat = 0
     
     // Color variables
-    private var animatedBarColor = UIColor(red: 28/255, green: 95/255, blue: 185/255, alpha: 1)
+    private var animatedBarColor = UIColor(red: 0/255, green: 115/255, blue: 152/255, alpha: 1)
     private var topBarBackground = UIColor.whiteColor()
     private var buttonsTextColor = UIColor.grayColor()
     private var containerViewBackground = UIColor.whiteColor()
@@ -208,7 +209,7 @@ public class SwiftPages: UIView {
             self.loadVisiblePages()
             
             // Do the initial alignment of the subViews
-            self.alignSubviews()
+            //self.alignSubviews()
         }
     }
     
@@ -246,10 +247,10 @@ public class SwiftPages: UIView {
 //
 //            if (className == "CruApp.OfferedRidesVC") {
 //                let tempVC = pageViews[page] as! OfferedRidesVC
-//                tempVC.fetchStatuses()
+//                tempVC.viewDidAppear(true)
 //            } else if (className == "CruApp.RequestedRidesVC") {
 //                let tempVC = pageViews[page] as! RequestedRidesVC
-//                tempVC.fetchStatuses()
+//                tempVC.tableview.reloadData()
 //            }
             return
         }
@@ -287,16 +288,11 @@ public class SwiftPages: UIView {
     
     public func barButtonAction(sender: UIButton?) {
         
-        var index: Int!
-        if (sender != nil) {
-            index = sender!.tag
-        } else {
-            index = 0
-        }
+        let index = sender!.tag
         
         let pagesScrollViewSize = scrollView.frame.size
         
-        scrollView.setContentOffset(CGPoint(x: pagesScrollViewSize.width * CGFloat(index), y: 0), animated: true)
+        scrollView.setContentOffset(CGPoint(x: pagesScrollViewSize.width * CGFloat(index), y: -self.topBarHeight), animated: true)
         
         currentPage = index
     }
@@ -318,7 +314,7 @@ public class SwiftPages: UIView {
         
         // Set the new frame of the scrollview contents
         for (index, controller) in pageViews.enumerate() {
-            controller?.view.frame = CGRect(x: CGFloat(index) * scrollView.bounds.size.width, y: 0, width: scrollView.bounds.size.width, height: scrollView.bounds.size.height)
+            controller?.view.frame = CGRect(x: CGFloat(index) * scrollView.bounds.size.width, y: -self.topBarHeight, width: scrollView.bounds.size.width, height: scrollView.bounds.size.height)
         }
         
         // Set the new frame for the top bar buttons
@@ -342,7 +338,7 @@ public class SwiftPages: UIView {
     func orientationDidChange() {
         //Update the view
         alignSubviews()
-        scrollView.contentOffset = CGPoint(x: CGFloat(currentPage) * scrollView.frame.size.width, y: 0)
+        scrollView.contentOffset = CGPoint(x: CGFloat(currentPage) * scrollView.frame.size.width, y: -self.topBarHeight)
     }
     
     // MARK: - ScrollView delegate -

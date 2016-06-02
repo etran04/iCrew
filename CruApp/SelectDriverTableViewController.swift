@@ -10,9 +10,10 @@ import UIKit
 import GoogleMaps
 import CoreLocation
 import AddressBookUI
+import DZNEmptyDataSet
 
 
-class SelectDriverTableViewController: UITableViewController {
+class SelectDriverTableViewController: UITableViewController, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
     var passenger : Passenger!
     var driverCollection = [Driver]()
     /*maps variables*/
@@ -36,6 +37,10 @@ class SelectDriverTableViewController: UITableViewController {
         
         DBClient.getData("rides", dict: setDrivers)
         selectView = self.view
+        
+        // Sets up the controller to display notification screen if no ridesharing can be accessed
+        self.tableView.emptyDataSetSource = self;
+        self.tableView.emptyDataSetDelegate = self;
     }
 
     override func didReceiveMemoryWarning() {
@@ -109,6 +114,8 @@ class SelectDriverTableViewController: UITableViewController {
                     driverCollection.append(driverObj)
             }
         }
+        
+        
         self.tableView.reloadData()
         
     }
@@ -265,50 +272,19 @@ class SelectDriverTableViewController: UITableViewController {
         }
     }
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+
+    // MARK: - DZN Empty data set methods
+    func titleForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
+        let str = "No available drivers currently"
+        let attrs = [NSFontAttributeName: UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline)]
+        return NSAttributedString(string: str, attributes: attrs)
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+    
+    func descriptionForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
+        let str = "Try an earlier time!"
+        let attrs = [NSFontAttributeName: UIFont.preferredFontForTextStyle(UIFontTextStyleBody)]
+        return NSAttributedString(string: str, attributes: attrs)
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
 }
 //

@@ -29,7 +29,9 @@ class RideshareMainVC: UIViewController, SWRevealViewControllerDelegate {
             self.menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
+        print("got here")
         swiftPagesView.initializeWithVCIDsArrayAndButtonTitlesArray(VCIDs, buttonTitlesArray: buttonTitles)
+        swiftPagesView.loadVisiblePages()
     }
     
     //reveal controller function for disabling the current view

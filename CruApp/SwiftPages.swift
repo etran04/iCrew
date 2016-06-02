@@ -241,19 +241,19 @@ public class SwiftPages: UIView {
         guard page >= 0 && page < viewControllerIDs.count else { return }
         
         // Do nothing if the view is already loaded.
-        guard pageViews[page] == nil else {
+//        guard pageViews[page] == nil else {
 //            // If view is already loaded, just reload the data within
 //            let className = NSStringFromClass(pageViews[page]!.classForCoder)
 //
 //            if (className == "CruApp.OfferedRidesVC") {
 //                let tempVC = pageViews[page] as! OfferedRidesVC
-//                tempVC.viewDidAppear(true)
+//                tempVC.fetchStatuses()
 //            } else if (className == "CruApp.RequestedRidesVC") {
 //                let tempVC = pageViews[page] as! RequestedRidesVC
-//                tempVC.tableview.reloadData()
+//                tempVC.fetchStatuses()
 //            }
-            return
-        }
+//            return
+//        }
         
         print("Loading Page \(page)")
         

@@ -13,9 +13,11 @@ import Foundation
 
 class CGQuestionnaireVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 
+    @IBOutlet weak var nextButton: UIBarButtonItem!
     
     var ministriesCollection: [MinistryData] = []
     var pickerData: [String] = []
+    
 
     @IBOutlet weak var dayPicker: MWSegmentedControl!
     
@@ -33,12 +35,24 @@ class CGQuestionnaireVC: UIViewController, UIPickerViewDataSource, UIPickerViewD
         for ministry in ministriesCollection {
             pickerData.append(ministry.name)
         }
+        
+        selectedMinistry = pickerData[0]
+        
     }
     
     
     @IBAction func nextButtonTransition(sender: AnyObject) {
         let controller = QuestionController()
+        
+        for ministry in ministriesCollection {
+            if (selectedMinistry == ministry.name) {
+                controller.selectedMinistryId = ministry.id
+                
+            }
+        }
+        
         self.navigationController?.pushViewController(controller, animated: true)
+        
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -49,8 +63,14 @@ class CGQuestionnaireVC: UIViewController, UIPickerViewDataSource, UIPickerViewD
 //        joinCG.days = selectedDaysToInt()
 //        joinCG.selectedMinistry = ministriesCollection[ministryPicker.selectedRowInComponent(0)]
         
-        let moreQuestions = segue.destinationViewController as!  QuestionController
-        moreQuestions.selectedMinistry = selectedMinistry
+//        let moreQuestions = segue.destinationViewController as!  QuestionController
+//        for ministry in ministriesCollection {
+//            if (selectedMinistry == ministry.name) {
+//                moreQuestions.selectedMinistryId = ministry.id
+//                
+//            }
+//        }
+        
         
         
     }

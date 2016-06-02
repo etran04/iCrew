@@ -12,10 +12,10 @@ struct QuestionData {
     var ministry: String
     var question: String
     var type: String
-    var options: [String]
+    var options: [NSDictionary]
     var selectedAnswerIndex: Int
     
-    init(ministry: String, question: String, type: String, options: [String]!){
+    init(ministry: String, question: String, type: String, options: [NSDictionary]!){
         self.ministry = ministry;
         self.question = question;
         self.type = type;

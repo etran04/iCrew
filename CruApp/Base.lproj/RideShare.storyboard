@@ -721,7 +721,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Driver@Cell number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="aTO-bg-Bq6">
-                                                    <rect key="frame" x="193" y="73" width="158" height="21"/>
+                                                    <rect key="frame" x="199" y="73" width="152" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.45098039220000002" blue="0.59607843140000005" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -734,7 +734,6 @@
                                                 <constraint firstAttribute="leadingMargin" secondItem="4n6-T4-K44" secondAttribute="leading" constant="-20" id="PsN-or-fSg"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="aTO-bg-Bq6" secondAttribute="trailing" constant="16" id="U7O-iq-6Bg"/>
                                                 <constraint firstItem="pci-G9-JsI" firstAttribute="leading" secondItem="O47-Do-931" secondAttribute="leadingMargin" constant="20" id="dlp-eM-EFp"/>
-                                                <constraint firstAttribute="leadingMargin" secondItem="aTO-bg-Bq6" secondAttribute="leading" constant="-20" id="npN-zY-lxR"/>
                                                 <constraint firstItem="WMJ-YA-Fee" firstAttribute="leading" secondItem="O47-Do-931" secondAttribute="leadingMargin" constant="20" id="pMD-s0-a8q"/>
                                             </constraints>
                                         </tableViewCellContentView>

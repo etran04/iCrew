@@ -33,8 +33,6 @@ class CGQuestionnaireVC: UIViewController, UIPickerViewDataSource, UIPickerViewD
         for ministry in  ministriesCollection {
             pickerData.append(ministry.name)
         }
-
-
     }
     
     

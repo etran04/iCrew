@@ -45,15 +45,22 @@ class JoinMinistryTeamTVC: UITableViewController {
             //corresponds to the parentMinistry
             for (index, _) in ministryCollection.enumerate() {
                 if (ministryCollection[index].id == ministryId) {
+                    let name = ministryTeam["name"] as! String
+                    let description = ministryTeam["description"] as! String
+                    let parentMinistry = ministryTeam["parentMinistry"] as! String
+                    let id = ministryTeam["_id"] as! String
+                    var teamObj: MinistryTeamData?
                     
-                    let teamObj = MinistryTeamData(
-                        name: ministryTeam["name"] as! String,
-                        description: ministryTeam["description"] as! String,
-                        parentMinistry: ministryTeam["parentMinistry"] as! String,
-                        id: ministryTeam["_id"] as! String,
-                        leaders: ministryTeam["leaders"] as! [String])
+                    if ministryTeam["leaders"] is NSNull {
+                        teamObj = MinistryTeamData(name: name, description: description, parentMinistry: parentMinistry, id: id)
+                    }
+                    else {
+                        let leaders = ministryTeam["leaders"] as! [NSDictionary]
+                        
+                        teamObj = MinistryTeamData(name: name, description: description, parentMinistry: parentMinistry, id: id, leaders: leaders)
+                    }
                     
-                    teamCollection[index].append(teamObj)
+                    teamCollection[index].append(teamObj!)
                 }
             }
         }

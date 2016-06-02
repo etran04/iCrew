@@ -14,9 +14,9 @@ struct MinistryTeamData {
     var name: String
     var description: String
     var parentMinistry: String
-    var leaders: [String]
+    var leaders: [NSDictionary]
     
-    init(name: String, description: String, parentMinistry: String, id: String, leaders: [String]) {
+    init(name: String, description: String, parentMinistry: String, id: String, leaders: [NSDictionary]) {
         self.name = name
         self.description = description
         self.parentMinistry = parentMinistry

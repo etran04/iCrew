@@ -12,7 +12,7 @@ import CheckmarkSegmentedControl
 import DatePickerCell
 
 /* This class is used to gather information from a potential rider of the RideShare feature */
-class PassengerQuestionnaireVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class PassengerQuestionnaireVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
     
     var passenger: Passenger!
     var eventChoices = [String]()
@@ -22,12 +22,13 @@ class PassengerQuestionnaireVC: UIViewController, UITableViewDelegate, UITableVi
     var ministryCollection: [MinistryData] = []
 
     let kDefaultCellHeight = 44
-    
+
+    @IBOutlet weak var submitButton: UIBarButtonItem!
     @IBOutlet weak var infoTable: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+ 
         /* sets up the database to pull from */
         DBClient.getData("events", dict: setEvents)
         
@@ -181,12 +182,14 @@ class PassengerQuestionnaireVC: UIViewController, UITableViewDelegate, UITableVi
             riderPhoneNum = Utils.parsePhoneNumber(((cells[1] as! PhoneNumCell).riderPhoneNum.text!))
         }
         
-        print("Time: " + String((cells[3] as! DatePickerCell).datePicker.date))
+        //print("Time: " + String((cells[3] as! DatePickerCell).datePicker.date))
         let time = String((cells[3] as! DatePickerCell).datePicker.date)
-        
+        let timeString = (cells[3] as! DatePickerCell).rightLabel.text
+
         let event = eventIds[(cells[2] as! ScrollPickerCell).scrollPicker.selectedRowInComponent(0)]
-        
-        if(riderName!.isEmpty || riderPhoneNum.isEmpty || event.isEmpty || time.isEmpty) {
+        let eventName = (cells[2] as! ScrollPickerCell).rightLabel.text
+
+        if(riderPhoneNum.isEmpty || riderName!.isEmpty || eventName == "Choose an event" || timeString == "Choose the ideal time") {
             let alertController = UIAlertController(title: "ERROR", message:
                 "Please fill out form before submitting.", preferredStyle: UIAlertControllerStyle.Alert)
             alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default, handler:nil))
@@ -199,11 +202,11 @@ class PassengerQuestionnaireVC: UIViewController, UITableViewDelegate, UITableVi
         
             passenger = Passenger(
                 name: riderName!,
-                eventId: eventIds[(cells[2] as! ScrollPickerCell).scrollPicker.selectedRowInComponent(0)],
+                eventId: event,
                 phoneNumber: riderPhoneNum,
                 direction: rideDirection,
-                departureTime: String((cells[3] as! DatePickerCell).datePicker.date),
-                gcmId: "1234567")
+                departureTime: time,
+                gcmId: gcm_id)
         
             let selectDriverViewController = segue.destinationViewController as! SelectDriverTableViewController
             selectDriverViewController.passenger = passenger
@@ -212,6 +215,18 @@ class PassengerQuestionnaireVC: UIViewController, UITableViewDelegate, UITableVi
             // Pass the selected object to the new view controller.
         }
         
+    }
+    
+    func verifyAllFields() -> Bool {
+        let timeString = (cells[3] as! DatePickerCell).rightLabel.text
+    
+        let eventName = (cells[2] as! ScrollPickerCell).rightLabel.text
+    
+        if(eventName == "Choose an event" || timeString == "Choose the ideal time") {
+            print("FALSEE!")
+            return false
+        }
+        return true
     }
     
     /* Returns height of row in tableview */
@@ -273,6 +288,8 @@ class PassengerQuestionnaireVC: UIViewController, UITableViewDelegate, UITableVi
                 }
             }
         }
+        
+        self.submitButton.enabled = self.verifyAllFields();
     }
     
     /* Called to determine number of sections in tableView */
